@@ -1,0 +1,15 @@
+{
+    "name": "msgphp/msgphp.github.io",
+    "type": "project",
+    "require": {
+        "couscous/couscous": "^1.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gawain Lynch",
+            "email": "gawain.lynch@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,15 @@
+include:
+    - docs
+
+exclude:
+    - vendor
+    - website
+    - some/dir
+    - %gitignore%
+
+cname: msgphp.github.io
+
+branch: master
+
+baseUrl: https://msgphp.github.io
+
