@@ -1,0 +1,139 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\nNews\n\n\n\n\n2018-01-18\n Initial documentation setup. Work in progress as of today.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#msgphp-documentation", 
+            "text": "MsgPHP  is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.", 
+            "title": "MsgPHP Documentation"
+        }, 
+        {
+            "location": "/#news", 
+            "text": "2018-01-18  Initial documentation setup. Work in progress as of today.", 
+            "title": "News"
+        }, 
+        {
+            "location": "/ddd/identifiers/", 
+            "text": "Identifiers\n\n\nAn identifier is a domain value object and is bound to \nMsgPhp\\Domain\\DomainIdInterface\n. It's used to identity domain\nobjects, i.e. entities.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainId\n (generic scalar values)\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n (UUID values)\n\n\nrequires: \nramsey/uuid\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nFactorizes a new identifier from a primitive value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n1\n);\n \n// allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// not allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty. In general this is the case when an identifier is created for a\nprimitive \nNULL\n value, and therefor enables to differ its string value from an explicit empty string value (\n\"\"\n).\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// null\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// \n\n\n\n\n\n\n\n\nequals(): bool\n\n\nTells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered \nnot\n equal when comparing e.g.:\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n \n{\n \n}\n\n\n\nDomainId\n::\nfromValue\n(\n1\n)\n-\nequals\n(\nMyDomainId\n::\nfromValue\n(\n1\n));\n \n// false!\n\n\n\n\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the string value of the identifier. If the the identifier is empty (see \nisEmpty\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\nUUID example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n$uuid4\n \n=\n \nDomainId\n::\nfromValue\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$uuid4Alt\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nfromString\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n));\n\n\n$uuid4Alt2\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nuuid4\n());\n\n\n$newUuid4\n \n=\n \nnew\n \nDomainId\n();\n\n\n$newUuid5\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid5\n(\nUuid\n::\nNAMESPACE_URL\n,\n \nhttp://php.net/\n));", 
+            "title": "Identifiers"
+        }, 
+        {
+            "location": "/ddd/identifiers/#identifiers", 
+            "text": "An identifier is a domain value object and is bound to  MsgPhp\\Domain\\DomainIdInterface . It's used to identity domain\nobjects, i.e. entities.", 
+            "title": "Identifiers"
+        }, 
+        {
+            "location": "/ddd/identifiers/#implementations", 
+            "text": "MsgPhp\\Domain\\DomainId  (generic scalar values)  MsgPhp\\Domain\\Infra\\Uuid\\DomainId  (UUID values)  requires:  ramsey/uuid", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/identifiers/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/identifiers/#static-fromvaluevalue-domainidinterface", 
+            "text": "Factorizes a new identifier from a primitive value.  ?php  use   MsgPhp\\Domain\\DomainId ;  $id   =   DomainId :: fromValue ( 1 );   // allowed  $id   =   new   DomainId ( 1 );   // not allowed  $id   =   new   DomainId ( 1 );   // allowed", 
+            "title": "static fromValue($value): DomainIdInterface"
+        }, 
+        {
+            "location": "/ddd/identifiers/#isempty-bool", 
+            "text": "Tells if an identifier value is considered empty. In general this is the case when an identifier is created for a\nprimitive  NULL  value, and therefor enables to differ its string value from an explicit empty string value ( \"\" ).  ?php  use   MsgPhp\\Domain\\DomainId ;  $id   =   new   DomainId ();  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   // null  $id   =   new   DomainId ( );  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   //", 
+            "title": "isEmpty(): bool"
+        }, 
+        {
+            "location": "/ddd/identifiers/#equals-bool", 
+            "text": "Tells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered  not  equal when comparing e.g.:  ?php  use   MsgPhp\\Domain\\DomainId ;  class   MyDomainId   extends   DomainId   {   }  DomainId :: fromValue ( 1 ) - equals ( MyDomainId :: fromValue ( 1 ));   // false!", 
+            "title": "equals(): bool"
+        }, 
+        {
+            "location": "/ddd/identifiers/#tostring-string-__tostring-string", 
+            "text": "Returns the string value of the identifier. If the the identifier is empty (see  isEmpty ) an empty string ( \"\" ) \nshould be returned.", 
+            "title": "toString(): string / __toString(): string"
+        }, 
+        {
+            "location": "/ddd/identifiers/#uuid-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId ;  use   Ramsey\\Uuid\\Uuid ;  $uuid4   =   DomainId :: fromValue ( cf3d2f85-6c86-44d1-8634-af51c91a9a74 );  $uuid4Alt   =   DomainId :: fromValue ( Uuid :: fromString ( cf3d2f85-6c86-44d1-8634-af51c91a9a74 ));  $uuid4Alt2   =   DomainId :: fromValue ( Uuid :: uuid4 ());  $newUuid4   =   new   DomainId ();  $newUuid5   =   new   DomainId ( Uuid :: uuid5 ( Uuid :: NAMESPACE_URL ,   http://php.net/ ));", 
+            "title": "UUID example"
+        }, 
+        {
+            "location": "/ddd/collections/", 
+            "text": "Collections\n\n\nA domain collection is bound to \nMsgPhp\\Domain\\DomainCollectionInterface\n. It's main usage is to aggregate objects bound\ntogether by a root entity.\n\n\nThe technical implementation is generic and may hold any type of elements from any iterable value.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainCollection\n (generic collection)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n (Doctrine collection)\n\n\nrequires: \ndoctrine/collections\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue(?iterable $value): DomainCollectionInterface\n\n\nFactorizes a new collection from a primitive iterable value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnull\n);\n \n// allowed; empty collection\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n(\nnull\n);\n \n// not allowed\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if a colletion is considered empty, i.e. contains zero elements.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([]);\n\n\n$collection\n-\nisEmpty\n();\n \n// true\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nisEmpty\n();\n \n// false\n\n\n\n\n\n\n\n\ncontains($element): bool\n\n\nTells if a collection contains the given element. Comparison is done strictly.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// true\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// false\n\n\n\n\n\n\n\n\nfirst()\n\n\nReturns the first element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nfirst\n();\n \n// int(1)\n\n\n\n\n\n\n\n\nlast()\n\n\nReturns the last element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nlast\n();\n \n// int(3)\n\n\n\n\n\n\n\n\nfilter(callable $filter): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing only elements for which \n$filter\n returns \ntrue\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$twoOrHigher\n \n=\n \n$collection\n-\nfilter\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nbool\n \n{\n\n    \nreturn\n \n$element\n \n=\n \n2\n;\n\n\n});\n\n\n\n\n\n\n\n\nslice(int $offset, int $limit = 0): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing a slice of elements. By default the slice has no limit, implied by integer \n0\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$onlyTwo\n \n=\n \n$collection\n-\nslice\n(\n1\n,\n \n1\n);\n\n\n$twoAndThree\n \n=\n \n$collection\n-\nslice\n(\n1\n);\n\n\n\n\n\n\n\n\nmap(callable $mapper): array\n\n\nReturns a map of each collection element as returned by \n$mapper\n.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$timesTwo\n \n=\n \n$collection\n-\nmap\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nint\n \n{\n\n    \nreturn\n \n$element\n \n*\n \n2\n;\n\n\n});\n\n\n\n\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collectionAlt\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));\n\n\n$collectionAlt2\n \n=\n \nnew\n \nDomainCollection\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
+            "title": "Collections"
+        }, 
+        {
+            "location": "/ddd/collections/#collections", 
+            "text": "A domain collection is bound to  MsgPhp\\Domain\\DomainCollectionInterface . It's main usage is to aggregate objects bound\ntogether by a root entity.  The technical implementation is generic and may hold any type of elements from any iterable value.", 
+            "title": "Collections"
+        }, 
+        {
+            "location": "/ddd/collections/#implementations", 
+            "text": "MsgPhp\\Domain\\DomainCollection  (generic collection)  MsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection  (Doctrine collection)  requires:  doctrine/collections", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/collections/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/collections/#static-fromvalueiterable-value-domaincollectioninterface", 
+            "text": "Factorizes a new collection from a primitive iterable value.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   DomainCollection :: fromValue ( null );   // allowed; empty collection  $collection   =   new   DomainCollection ( null );   // not allowed  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);   // allowed", 
+            "title": "static fromValue(?iterable $value): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/collections/#isempty-bool", 
+            "text": "Tells if a colletion is considered empty, i.e. contains zero elements.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([]);  $collection - isEmpty ();   // true  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - isEmpty ();   // false", 
+            "title": "isEmpty(): bool"
+        }, 
+        {
+            "location": "/ddd/collections/#containselement-bool", 
+            "text": "Tells if a collection contains the given element. Comparison is done strictly.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - contains ( 2 );   // true  $collection - contains ( 2 );   // false", 
+            "title": "contains($element): bool"
+        }, 
+        {
+            "location": "/ddd/collections/#first", 
+            "text": "Returns the first element value, or  false  if the collection is empty.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - first ();   // int(1)", 
+            "title": "first()"
+        }, 
+        {
+            "location": "/ddd/collections/#last", 
+            "text": "Returns the last element value, or  false  if the collection is empty.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - last ();   // int(3)", 
+            "title": "last()"
+        }, 
+        {
+            "location": "/ddd/collections/#filtercallable-filter-domaincollectioninterface", 
+            "text": "Returns a  new  collection containing only elements for which  $filter  returns  true . Keys are preserved.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $twoOrHigher   =   $collection - filter ( function   ( int   $element ) :   bool   { \n     return   $element   =   2 ;  });", 
+            "title": "filter(callable $filter): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/collections/#sliceint-offset-int-limit-0-domaincollectioninterface", 
+            "text": "Returns a  new  collection containing a slice of elements. By default the slice has no limit, implied by integer  0 . Keys are preserved.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $onlyTwo   =   $collection - slice ( 1 ,   1 );  $twoAndThree   =   $collection - slice ( 1 );", 
+            "title": "slice(int $offset, int $limit = 0): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/collections/#mapcallable-mapper-array", 
+            "text": "Returns a map of each collection element as returned by  $mapper .  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $timesTwo   =   $collection - map ( function   ( int   $element ) :   int   { \n     return   $element   *   2 ;  });", 
+            "title": "map(callable $mapper): array"
+        }, 
+        {
+            "location": "/ddd/collections/#doctrine-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection ;  use   Doctrine\\Common\\Collections\\ArrayCollection ;  $collection   =   DomainCollection :: fromValue ([ 1 ,   2 ,   3 ]);  $collectionAlt   =   DomainCollection :: fromValue ( new   ArrayCollection ([ 1 ,   2 ,   3 ]));  $collectionAlt2   =   new   DomainCollection ( new   ArrayCollection ([ 1 ,   2 ,   3 ]));", 
+            "title": "Doctrine example"
+        }, 
+        {
+            "location": "/ddd/object_factories/", 
+            "text": "Object factories\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. It's usage is to initialize\nany domain object based on a class name and context.", 
+            "title": "Object factories"
+        }, 
+        {
+            "location": "/ddd/object_factories/#object-factories", 
+            "text": "A domain object factory is bound to  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface . It's usage is to initialize\nany domain object based on a class name and context.", 
+            "title": "Object factories"
+        }
+    ]
+}
