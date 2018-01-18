@@ -18,6 +18,12 @@
     </url>
         
     <url>
+     <loc>/ddd/identity_mapping/</loc>
+     <lastmod>2018-01-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/ddd/collections/</loc>
      <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
@@ -26,6 +32,18 @@
     <url>
      <loc></loc>
      <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ddd/repositories/</loc>
+     <lastmod>2018-01-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ddd/exceptions/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

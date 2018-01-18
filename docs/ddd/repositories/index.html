@@ -34,7 +34,7 @@
     
     
       
-        <title>Object factories - MsgPHP Documentation</title>
+        <title>Repositories - MsgPHP Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Object factories
+                Repositories
               </span>
             
           
@@ -277,12 +277,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
       Factories
@@ -298,115 +296,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Object factories
-      </label>
-    
-    <a href="./" title="Object factories" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../object_factories/" title="Object factories" class="md-nav__link">
       Object factories
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorychainobjectfactory" title="MsgPhp\Domain\Factory\ChainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ChainObjectFactory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactoryclassmappingobjectfactory" title="MsgPhp\Domain\Factory\ClassMappingObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ClassMappingObjectFactory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorydomainobjectfactory" title="MsgPhp\Domain\Factory\DomainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\DomainObjectFactory
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
-    create(string $class, array $context = []): object
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chain-example" title="Chain example" class="md-nav__link">
-    Chain example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-mapping-example" title="Class mapping example" class="md-nav__link">
-    Class mapping example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -443,11 +337,123 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Repositories
+      </label>
+    
+    <a href="./" title="Repositories" class="md-nav__link md-nav__link--active">
       Repositories
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dofindallint-offset-0-int-limit-0-domaincollectioninterface" title="doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface" class="md-nav__link">
+    doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface" title="doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface" class="md-nav__link">
+    doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindid-idn-object" title="doFind($id, ...$idN): object" class="md-nav__link">
+    doFind($id, ...$idN): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindbyfieldsarray-fields-object" title="doFindByFields(array $fields): object" class="md-nav__link">
+    doFindByFields(array $fields): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doexistsid-idn-bool" title="doExists($id, ...$idN): bool" class="md-nav__link">
+    doExists($id, ...$idN): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doexistsbyfieldsarray-fields-bool" title="doExistsByFields(array $fields): bool" class="md-nav__link">
+    doExistsByFields(array $fields): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dosaveobject-entity-void" title="doSave(object $entity): void" class="md-nav__link">
+    doSave(object $entity): void
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dodeleteobject-entity-void" title="doDelete(object $entity): void" class="md-nav__link">
+    doDelete(object $entity): void
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-doctrine-repository-example" title="Generic Doctrine repository example" class="md-nav__link">
+    Generic Doctrine repository example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -493,33 +499,6 @@
     Implementations
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorychainobjectfactory" title="MsgPhp\Domain\Factory\ChainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ChainObjectFactory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactoryclassmappingobjectfactory" title="MsgPhp\Domain\Factory\ClassMappingObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ClassMappingObjectFactory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorydomainobjectfactory" title="MsgPhp\Domain\Factory\DomainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\DomainObjectFactory
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -531,8 +510,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
-    create(string $class, array $context = []): object
+  <a href="#dofindallint-offset-0-int-limit-0-domaincollectioninterface" title="doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface" class="md-nav__link">
+    doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface" title="doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface" class="md-nav__link">
+    doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindid-idn-object" title="doFind($id, ...$idN): object" class="md-nav__link">
+    doFind($id, ...$idN): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dofindbyfieldsarray-fields-object" title="doFindByFields(array $fields): object" class="md-nav__link">
+    doFindByFields(array $fields): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doexistsid-idn-bool" title="doExists($id, ...$idN): bool" class="md-nav__link">
+    doExists($id, ...$idN): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doexistsbyfieldsarray-fields-bool" title="doExistsByFields(array $fields): bool" class="md-nav__link">
+    doExistsByFields(array $fields): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dosaveobject-entity-void" title="doSave(object $entity): void" class="md-nav__link">
+    doSave(object $entity): void
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dodeleteobject-entity-void" title="doDelete(object $entity): void" class="md-nav__link">
+    doDelete(object $entity): void
   </a>
   
 </li>
@@ -543,22 +571,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chain-example" title="Chain example" class="md-nav__link">
-    Chain example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-mapping-example" title="Class mapping example" class="md-nav__link">
-    Class mapping example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
+  <a href="#generic-doctrine-repository-example" title="Generic Doctrine repository example" class="md-nav__link">
+    Generic Doctrine repository example
   </a>
   
 </li>
@@ -577,89 +591,61 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/object_factories.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/repositories.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="object-factories">Object factories</h1>
-<p>A domain object factory is bound to <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface</code>. It's usage is to initialize
-any domain object based on a class name and context.</p>
+                <h1 id="repositories">Repositories</h1>
+<p>A repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, 
+depending on the type of infrastructure needed. By design they follow the same API although there might be subtle
+differences per infrastructure type.</p>
 <h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomainfactorychainobjectfactory"><code>MsgPhp\Domain\Factory\ChainObjectFactory</code></h3>
-<p>Holds many object factories. It returns a domain object from the first supporting factory.</p>
-<h3 id="msgphpdomainfactoryclassmappingobjectfactory"><code>MsgPhp\Domain\Factory\ClassMappingObjectFactory</code></h3>
-<p>Decorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses
-the original provided class name.</p>
-<h3 id="msgphpdomainfactorydomainobjectfactory"><code>MsgPhp\Domain\Factory\DomainObjectFactory</code></h3>
-<p>Generic object factory. Initializes the given class name by reading its constructor arguments. Argument values are
-resolved from the provided context. By convention a camel cased argument name (e.g. <code>$myArgument</code>) matches a
-corresponding underscored context key (e.g. <code>['my_argument' =&gt; 'value']</code>). If the context key is numeric its value will
-be provided to a corresponding argument at index N.</p>
-<p>Any sub class of <code>MsgPhp\Domain\DomainIdInterface</code> or <code>MsgPhp\Domain\DomainCollectionInterface</code> will be initialized
-from <code>$class::fromValue()</code> by default, otherwise initialization happens regulary (i.e. <code>new $class(...$args)</code>).</p>
-<p>Nested objects (e.g. <code>MyObject $myArgument</code>) might be provided as nested context (thus array). The current factory will
-be used to initialize the object as argument value. Another (decorating) factory can be set using 
-<code>DomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory)</code>.</p>
+<ul>
+<li><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code> (In-memory persistence)</li>
+<li><code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code> (Doctrine persistence)<ul>
+<li>requires: <code>doctrine/orm</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="api">API</h2>
-<h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
-<p>Factorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.</p>
-<h2 id="chain-example">Chain example</h2>
+<p>Note this API is exposed privately as a trait. You can decide to <a href="https://secure.php.net/manual/en/language.oop5.traits.php#language.oop5.traits.visibility">change method visibility</a>
+on a per case basis.</p>
+<h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
+<p>Finds all entities available.</p>
+<h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
+<p>Finds all entities matching all specified fields.</p>
+<h3 id="dofindid-idn-object"><code>doFind($id, ...$idN): object</code></h3>
+<p>Finds a single entity by its identity.</p>
+<h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code></h3>
+<p>Finds the first entity matching all specified fields.</p>
+<h3 id="doexistsid-idn-bool"><code>doExists($id, ...$idN): bool</code></h3>
+<p>Verify if an entity exists by its identity.</p>
+<h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code></h3>
+<p>Verify if an entity exists matching all specified fields.</p>
+<h3 id="dosaveobject-entity-void"><code>doSave(object $entity): void</code></h3>
+<p>Persist an entity in the identity map. The entity will be available on any subsequent query.</p>
+<h3 id="dodeleteobject-entity-void"><code>doDelete(object $entity): void</code></h3>
+<p>Remove an entity from the identity map. The entity will be unavailable on any subsequent query.</p>
+<h2 id="generic-doctrine-repository-example">Generic Doctrine repository example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\ChainObjectFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 
-<span class="nv">$firstFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$secondFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChainObjectFactory</span><span class="p">([</span><span class="nv">$firstFactory</span><span class="p">,</span> <span class="nv">$secondFactory</span><span class="p">]);</span>
-<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">SomeObject</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
-</pre></div>
-
-
-<h2 id="class-mapping-example">Class mapping example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\ClassMappingObjectFactory</span><span class="p">;</span>
-
-<span class="k">interface</span> <span class="nx">KnownInterface</span> <span class="p">{</span> <span class="p">}</span>
-<span class="k">class</span> <span class="nc">Subject</span> <span class="k">implements</span> <span class="nx">KnownInterface</span> <span class="p">{</span> <span class="p">}</span>
-
-<span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassMappingObjectFactory</span><span class="p">([</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">Subject</span><span class="o">::</span><span class="na">class</span><span class="p">],</span> <span class="nv">$realFactory</span><span class="p">);</span>
-
-<span class="sd">/** @var Subject $object */</span>
-<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-</pre></div>
-
-
-<h2 id="generic-example">Generic example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Some</span>
+<span class="k">class</span> <span class="nc">MyGenericRepository</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
-    <span class="p">{</span> <span class="p">}</span>
+    <span class="k">use</span> <span class="nx">DomainEntityRepositoryTrait</span> <span class="p">{</span>
+        <span class="nx">doFind</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">find</span><span class="p">;</span>
+        <span class="nx">doExists</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">exists</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">Subject</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">Some</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span> <span class="p">}</span>
-<span class="p">}</span>
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">();</span>
+<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGenericRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span> 
 
-<span class="sd">/** @var Subject $object */</span>
-<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">Subject</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
-    <span class="s1">&#39;argument&#39;</span> <span class="o">=&gt;</span>  <span class="s1">&#39;value&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="s1">&#39;other_subject&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;argument&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;other_value&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="p">],</span>
-<span class="p">]);</span>
+<span class="sd">/** @var MyEntity $entity */</span>
+<span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
 </pre></div>
                 
                   
@@ -679,7 +665,7 @@ be used to initialize the object as argument value. Another (decorating) factory
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../static_factories/" title="Static factories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -688,19 +674,19 @@ be used to initialize the object as argument value. Another (decorating) factory
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Collections
+                Static factories
               </span>
             </div>
           </a>
         
         
-          <a href="../entity_factories/" title="Entity factories" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../exceptions/" title="Exceptions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Entity factories
+                Exceptions
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -17,12 +17,12 @@
         }, 
         {
             "location": "/ddd/identifiers/", 
-            "text": "Identifiers\n\n\nAn identifier is a domain value object and is bound to \nMsgPhp\\Domain\\DomainIdInterface\n. It's used to identity domain\nobjects, i.e. entities.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainId\n (generic scalar values)\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n (UUID values)\n\n\nrequires: \nramsey/uuid\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nFactorizes a new identifier from a primitive value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n1\n);\n \n// allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// not allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty. In general this is the case when an identifier is created from a\nprimitive \nNULL\n value, and therefor enables to differ its string value from an explicit empty string value (\n\"\"\n).\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// null\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// \n\n\n\n\n\n\n\n\nequals(): bool\n\n\nTells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered \nnot\n equal when comparing e.g.:\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n \n{\n \n}\n\n\n\nDomainId\n::\nfromValue\n(\n1\n)\n-\nequals\n(\nMyDomainId\n::\nfromValue\n(\n1\n));\n \n// false!\n\n\n\n\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the string value of the identifier. If the the identifier is empty (see \nisEmpty\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\nUUID example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n$uuid4\n \n=\n \nDomainId\n::\nfromValue\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$uuid4Alt\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nfromString\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n));\n\n\n$uuid4Alt2\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nuuid4\n());\n\n\n$newUuid4\n \n=\n \nnew\n \nDomainId\n();\n\n\n$newUuid5\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid5\n(\nUuid\n::\nNAMESPACE_URL\n,\n \nhttp://php.net/\n));", 
+            "text": "Identifiers\n\n\nAn identifier is a domain value object and is bound to \nMsgPhp\\Domain\\DomainIdInterface\n. It's used to identify domain\nobjects, i.e. entities.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainId\n (generic scalar values)\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n (UUID values)\n\n\nrequires: \nramsey/uuid\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nFactorizes a new identifier from a primitive value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n1\n);\n \n// allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// not allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty. In general this is the case when an identifier is created from a\nprimitive \nNULL\n value, and therefor enables to differ its string value from an explicit empty string value (\n\"\"\n).\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// null\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// \n\n\n\n\n\n\n\n\nequals(): bool\n\n\nTells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered \nnot\n equal when comparing e.g.:\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n \n{\n \n}\n\n\n\nDomainId\n::\nfromValue\n(\n1\n)\n-\nequals\n(\nMyDomainId\n::\nfromValue\n(\n1\n));\n \n// false!\n\n\n\n\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the string value of the identifier. If the the identifier is empty (see \nisEmpty\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\necho\n \n(\nnew\n \nDomainId\n(\n1\n))\n-\ntoString\n();\n\n\necho\n \nnew\n \nDomainId\n(\n2\n);\n\n\n\n\n\n\nUUID example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n$uuid4\n \n=\n \nDomainId\n::\nfromValue\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$uuid4Alt\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nfromString\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n));\n\n\n$uuid4Alt2\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nuuid4\n());\n\n\n$newUuid4\n \n=\n \nnew\n \nDomainId\n();\n\n\n$newUuid5\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid5\n(\nUuid\n::\nNAMESPACE_URL\n,\n \nhttp://php.net/\n));", 
             "title": "Identifiers"
         }, 
         {
             "location": "/ddd/identifiers/#identifiers", 
-            "text": "An identifier is a domain value object and is bound to  MsgPhp\\Domain\\DomainIdInterface . It's used to identity domain\nobjects, i.e. entities.", 
+            "text": "An identifier is a domain value object and is bound to  MsgPhp\\Domain\\DomainIdInterface . It's used to identify domain\nobjects, i.e. entities.", 
             "title": "Identifiers"
         }, 
         {
@@ -52,7 +52,7 @@
         }, 
         {
             "location": "/ddd/identifiers/#tostring-string-__tostring-string", 
-            "text": "Returns the string value of the identifier. If the the identifier is empty (see  isEmpty ) an empty string ( \"\" ) \nshould be returned.", 
+            "text": "Returns the string value of the identifier. If the the identifier is empty (see  isEmpty ) an empty string ( \"\" ) \nshould be returned.  ?php  use   MsgPhp\\Domain\\DomainId ;  echo   ( new   DomainId ( 1 )) - toString ();  echo   new   DomainId ( 2 );", 
             "title": "toString(): string / __toString(): string"
         }, 
         {
@@ -61,8 +61,18 @@
             "title": "UUID example"
         }, 
         {
+            "location": "/ddd/identity_mapping/", 
+            "text": "Identity mapping", 
+            "title": "Identity mapping"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#identity-mapping", 
+            "text": "", 
+            "title": "Identity mapping"
+        }, 
+        {
             "location": "/ddd/collections/", 
-            "text": "Collections\n\n\nA domain collection is bound to \nMsgPhp\\Domain\\DomainCollectionInterface\n. It's main usage is to aggregate objects bound\ntogether by a root entity.\n\n\nThe technical implementation is generic and may hold any type of elements from any iterable value.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainCollection\n (generic collection)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n (Doctrine collection)\n\n\nrequires: \ndoctrine/collections\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue(?iterable $value): DomainCollectionInterface\n\n\nFactorizes a new collection from a primitive iterable value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnull\n);\n \n// allowed; empty collection\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n(\nnull\n);\n \n// not allowed\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if a colletion is considered empty, i.e. contains zero elements.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([]);\n\n\n$collection\n-\nisEmpty\n();\n \n// true\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nisEmpty\n();\n \n// false\n\n\n\n\n\n\n\n\ncontains($element): bool\n\n\nTells if a collection contains the given element. Comparison is done strictly.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// true\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// false\n\n\n\n\n\n\n\n\nfirst()\n\n\nReturns the first element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nfirst\n();\n \n// int(1)\n\n\n\n\n\n\n\n\nlast()\n\n\nReturns the last element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nlast\n();\n \n// int(3)\n\n\n\n\n\n\n\n\nfilter(callable $filter): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing only elements for which \n$filter\n returns \ntrue\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$twoOrHigher\n \n=\n \n$collection\n-\nfilter\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nbool\n \n{\n\n    \nreturn\n \n$element\n \n=\n \n2\n;\n\n\n});\n\n\n\n\n\n\n\n\nslice(int $offset, int $limit = 0): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing a slice of elements. By default the slice has no limit, implied by integer \n0\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$onlyTwo\n \n=\n \n$collection\n-\nslice\n(\n1\n,\n \n1\n);\n\n\n$twoAndThree\n \n=\n \n$collection\n-\nslice\n(\n1\n);\n\n\n\n\n\n\n\n\nmap(callable $mapper): array\n\n\nReturns a map with each collection element as returned by \n$mapper\n.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$timesTwo\n \n=\n \n$collection\n-\nmap\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nint\n \n{\n\n    \nreturn\n \n$element\n \n*\n \n2\n;\n\n\n});\n\n\n\n\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collectionAlt\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));\n\n\n$collectionAlt2\n \n=\n \nnew\n \nDomainCollection\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
+            "text": "Collections\n\n\nA domain collection is bound to \nMsgPhp\\Domain\\DomainCollectionInterface\n. It's main usage is to aggregate objects bound\ntogether by a root entity.\n\n\nThe technical implementation is generic and may hold any type of elements from any iterable value.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainCollection\n (generic collection)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n (Doctrine collection)\n\n\nrequires: \ndoctrine/collections\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue(?iterable $value): DomainCollectionInterface\n\n\nFactorizes a new collection from a primitive iterable value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnull\n);\n \n// allowed; empty collection\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n(\nnull\n);\n \n// not allowed\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if a collection is considered empty, i.e. contains zero elements.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([]);\n\n\n$collection\n-\nisEmpty\n();\n \n// true\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nisEmpty\n();\n \n// false\n\n\n\n\n\n\n\n\ncontains($element): bool\n\n\nTells if a collection contains the given element. Comparison is done strictly.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// true\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// false\n\n\n\n\n\n\n\n\nfirst()\n\n\nReturns the first element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nfirst\n();\n \n// int(1)\n\n\n\n\n\n\n\n\nlast()\n\n\nReturns the last element value, or \nfalse\n if the collection is empty.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collection\n-\nlast\n();\n \n// int(3)\n\n\n\n\n\n\n\n\nfilter(callable $filter): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing only elements for which \n$filter\n returns \ntrue\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$twoOrHigher\n \n=\n \n$collection\n-\nfilter\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nbool\n \n{\n\n    \nreturn\n \n$element\n \n=\n \n2\n;\n\n\n});\n\n\n\n\n\n\n\n\nslice(int $offset, int $limit = 0): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing a slice of elements. By default the slice has no limit, implied by integer \n0\n. Keys are preserved.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$onlyTwo\n \n=\n \n$collection\n-\nslice\n(\n1\n,\n \n1\n);\n\n\n$twoAndThree\n \n=\n \n$collection\n-\nslice\n(\n1\n);\n\n\n\n\n\n\n\n\nmap(callable $mapper): array\n\n\nReturns a map with each collection element as returned by \n$mapper\n.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$timesTwo\n \n=\n \n$collection\n-\nmap\n(\nfunction\n \n(\nint\n \n$element\n)\n:\n \nint\n \n{\n\n    \nreturn\n \n$element\n \n*\n \n2\n;\n\n\n});\n\n\n\n\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n$collectionAlt\n \n=\n \nDomainCollection\n::\nfromValue\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));\n\n\n$collectionAlt2\n \n=\n \nnew\n \nDomainCollection\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
             "title": "Collections"
         }, 
         {
@@ -87,7 +97,7 @@
         }, 
         {
             "location": "/ddd/collections/#isempty-bool", 
-            "text": "Tells if a colletion is considered empty, i.e. contains zero elements.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([]);  $collection - isEmpty ();   // true  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - isEmpty ();   // false", 
+            "text": "Tells if a collection is considered empty, i.e. contains zero elements.  ?php  use   MsgPhp\\Domain\\DomainCollection ;  $collection   =   new   DomainCollection ([]);  $collection - isEmpty ();   // true  $collection   =   new   DomainCollection ([ 1 ,   2 ,   3 ]);  $collection - isEmpty ();   // false", 
             "title": "isEmpty(): bool"
         }, 
         {
@@ -259,6 +269,81 @@
             "location": "/ddd/static_factories/#basic-example_1", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\DomainCollectionFactory ;  use   MsgPhp\\Domain\\DomainCollection ;  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection   as   DoctrineDomainCollection ;  use   Doctrine\\Common\\Collections\\ArrayCollection ;  /** @var DomainCollection $collection */  $collection   =   DomainCollectionFactory :: create ([ 1 ,   2 ,   3 ]);  /** @var DoctrineDomainCollection $doctrineCollection */  $doctrineCollection   =   DomainCollectionFactory :: create ( new   ArrayCollection ([ 1 ,   2 ,   3 ]));", 
             "title": "Basic example"
+        }, 
+        {
+            "location": "/ddd/repositories/", 
+            "text": "Repositories\n\n\nA repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per infrastructure type.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n (In-memory persistence)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n (Doctrine persistence)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/ddd/repositories/#repositories", 
+            "text": "A repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per infrastructure type.", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/ddd/repositories/#implementations", 
+            "text": "MsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait  (In-memory persistence)  MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait  (Doctrine persistence)  requires:  doctrine/orm", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/repositories/#api", 
+            "text": "Note this API is exposed privately as a trait. You can decide to  change method visibility \non a per case basis.", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindallint-offset-0-int-limit-0-domaincollectioninterface", 
+            "text": "Finds all entities available.", 
+            "title": "doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface", 
+            "text": "Finds all entities matching all specified fields.", 
+            "title": "doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindid-idn-object", 
+            "text": "Finds a single entity by its identity.", 
+            "title": "doFind($id, ...$idN): object"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindbyfieldsarray-fields-object", 
+            "text": "Finds the first entity matching all specified fields.", 
+            "title": "doFindByFields(array $fields): object"
+        }, 
+        {
+            "location": "/ddd/repositories/#doexistsid-idn-bool", 
+            "text": "Verify if an entity exists by its identity.", 
+            "title": "doExists($id, ...$idN): bool"
+        }, 
+        {
+            "location": "/ddd/repositories/#doexistsbyfieldsarray-fields-bool", 
+            "text": "Verify if an entity exists matching all specified fields.", 
+            "title": "doExistsByFields(array $fields): bool"
+        }, 
+        {
+            "location": "/ddd/repositories/#dosaveobject-entity-void", 
+            "text": "Persist an entity in the identity map. The entity will be available on any subsequent query.", 
+            "title": "doSave(object $entity): void"
+        }, 
+        {
+            "location": "/ddd/repositories/#dodeleteobject-entity-void", 
+            "text": "Remove an entity from the identity map. The entity will be unavailable on any subsequent query.", 
+            "title": "doDelete(object $entity): void"
+        }, 
+        {
+            "location": "/ddd/repositories/#generic-doctrine-repository-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait ;  use   Doctrine\\ORM\\EntityManagerInterface ;  class   MyGenericRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n     }  }  /** @var EntityManagerInterface $em */  $em   =   ... ;  $repository   =   new   MyGenericRepository ( MyEntity :: class ,   $em );   /** @var MyEntity $entity */  $entity   =   $repository - find ( 1 );", 
+            "title": "Generic Doctrine repository example"
+        }, 
+        {
+            "location": "/ddd/exceptions/", 
+            "text": "Exceptions", 
+            "title": "Exceptions"
+        }, 
+        {
+            "location": "/ddd/exceptions/#exceptions", 
+            "text": "", 
+            "title": "Exceptions"
         }
     ]
 }

@@ -52,6 +52,8 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
+      <link rel="stylesheet" href="../../style.css">
+    
     
   </head>
   
@@ -337,6 +339,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../identity_mapping/" title="Identity mapping" class="md-nav__link">
+      Identity mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
@@ -350,13 +364,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
-    <label class="md-nav__link" for="nav-2-3">
+    <label class="md-nav__link" for="nav-2-4">
       Factories
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
+      <label class="md-nav__title" for="nav-2-4">
         Factories
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -400,6 +414,30 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" title="Repositories" class="md-nav__link">
+      Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../exceptions/" title="Exceptions" class="md-nav__link">
+      Exceptions
+    </a>
   </li>
 
         
@@ -501,7 +539,7 @@
                 
                 
                 <h1 id="identifiers">Identifiers</h1>
-<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. It's used to identity domain
+<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. It's used to identify domain
 objects, i.e. entities.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
@@ -558,6 +596,15 @@ same identifier value is considered <strong>not</strong> equal when comparing e.
 <h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code></h3>
 <p>Returns the string value of the identifier. If the the identifier is empty (see <code>isEmpty</code>) an empty string (<code>""</code>) 
 should be returned.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span>
+<span class="k">echo</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+</pre></div>
+
+
 <h2 id="uuid-example">UUID example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -603,13 +650,13 @@ should be returned.</p>
           </a>
         
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../identity_mapping/" title="Identity mapping" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Collections
+                Identity mapping
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
