@@ -306,9 +306,90 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Entity factories
+      </label>
+    
     <a href="./" title="Entity factories" class="md-nav__link md-nav__link--active">
       Entity factories
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainfactoryentityfactory" title="MsgPhp\Domain\Factory\EntityFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\EntityFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
+    create(string $class, array $context = []): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $id): DomainIdInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextidentitystring-class-domainidinterface" title="nextIdentity(string $class): DomainIdInterface" class="md-nav__link">
+    nextIdentity(string $class): DomainIdInterface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -352,6 +433,74 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainfactoryentityfactory" title="MsgPhp\Domain\Factory\EntityFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\EntityFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
+    create(string $class, array $context = []): object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $id): DomainIdInterface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextidentitystring-class-domainidinterface" title="nextIdentity(string $class): DomainIdInterface" class="md-nav__link">
+    nextIdentity(string $class): DomainIdInterface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -366,6 +515,45 @@
                 
                 
                 <h1 id="entity-factories">Entity factories</h1>
+<p>An entity factory is a domain object factory and is bound to <code>MsgPhp\Domain\Factory\EntityFactoryInterface</code>.
+Besides initializing the entity via <code>create()</code> it can also initialize an identifier using either <code>identify()</code> or 
+<code>nextIdentity()</code>.</p>
+<h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomainfactoryentityfactory"><code>MsgPhp\Domain\Factory\EntityFactory</code></h3>
+<p>Generic entity factory and decorates any object factory. Additionally it must be provided with the identifier class 
+mapping.</p>
+<h2 id="api">API</h2>
+<h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
+<p>Inherited from <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface::create()</code>.</p>
+<hr />
+<h3 id="identifystring-class-id-domainidinterface"><code>identify(string $class, $id): DomainIdInterface</code></h3>
+<p>Returns an identifier for the given entity class from a known primitive value.</p>
+<hr />
+<h3 id="nextidentitystring-class-domainidinterface"><code>nextIdentity(string $class): DomainIdInterface</code></h3>
+<p>Returns the next identifier for the given entity. Depending on the identifier implementation its value might be 
+considered empty in case it's not capable to calculate a value upfront.</p>
+<h2 id="generic-example">Generic example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\EntityFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
+
+<span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityFactory</span><span class="p">([</span>
+    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">],</span> <span class="nv">$realFactory</span><span class="p">);</span>
+
+<span class="sd">/** @var DomainId $object */</span>
+<span class="nv">$entityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentity</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
+
+<span class="sd">/** @var DomainUuid $object */</span>
+<span class="nv">$otherEntityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentity</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
+</pre></div>
                 
                   
                 

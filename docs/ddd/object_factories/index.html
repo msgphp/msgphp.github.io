@@ -599,11 +599,14 @@ be used to initialize the object as argument value. Another (decorating) factory
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Some</span> <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Some</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
     <span class="p">{</span> <span class="p">}</span>
 <span class="p">}</span>
-<span class="k">class</span> <span class="nc">Subject</span> <span class="p">{</span>
+
+<span class="k">class</span> <span class="nc">Subject</span>
+<span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">Some</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -616,6 +619,7 @@ be used to initialize the object as argument value. Another (decorating) factory
     <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
     <span class="s1">&#39;other_subject&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;argument&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;other_value&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">],</span>
     <span class="p">],</span>
 <span class="p">]);</span>
 </pre></div>

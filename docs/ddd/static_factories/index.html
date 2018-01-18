@@ -318,9 +318,76 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Static factories
+      </label>
+    
     <a href="./" title="Static factories" class="md-nav__link md-nav__link--active">
       Static factories
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
+    Domain identifier factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
+    Domain collection factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -352,6 +419,60 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
+    Domain identifier factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
+    Domain collection factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -366,6 +487,47 @@
                 
                 
                 <h1 id="static-factories">Static factories</h1>
+<p>A static factory is a utility class, it cannot be initialized as a new instance using <code>new ...();</code>. In general its
+purpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used
+internally mainly.</p>
+<h2 id="implementations">Implementations</h2>
+<ul>
+<li><code>MsgPhp\Domain\Factory\DomainIdFactory</code></li>
+<li><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></li>
+</ul>
+<h2 id="domain-identifier-factory">Domain identifier factory</h2>
+<p>Factorizes a <code>MsgPhp\Domain\DomainIdInterface</code>.</p>
+<h3 id="basic-example">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainIdFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
+
+<span class="sd">/** @var DomainId $id */</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainIdFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="sd">/** @var DomainUuid $uuid */</span>
+<span class="nv">$uuid</span> <span class="o">=</span> <span class="nx">DomainIdFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<h2 id="domain-collection-factory">Domain collection factory</h2>
+<p>Factorizes a <code>MsgPhp\Domain\DomainCollectionInterface</code>.</p>
+<h3 id="basic-example_1">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainCollectionFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainCollection</span> <span class="k">as</span> <span class="nx">DoctrineDomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\Common\Collections\ArrayCollection</span><span class="p">;</span>
+
+<span class="sd">/** @var DomainCollection $collection */</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="sd">/** @var DoctrineDomainCollection $doctrineCollection */</span>
+<span class="nv">$doctrineCollection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
+</pre></div>
                 
                   
                 
