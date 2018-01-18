@@ -263,9 +263,70 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Identity mapping
+      </label>
+    
     <a href="./" title="Identity mapping" class="md-nav__link md-nav__link--active">
       Identity mapping
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
+    Doctrine example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -354,18 +415,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../exceptions/" title="Exceptions" class="md-nav__link">
-      Exceptions
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -388,6 +437,54 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
+    Doctrine example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -402,6 +499,51 @@
                 
                 
                 <h1 id="identity-mapping">Identity mapping</h1>
+<p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainMappingInterface</code>. It tells about the
+identifier mappings for a known domain object.</p>
+<h2 id="implementations">Implementations</h2>
+<ul>
+<li><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code> (uses in-memory identity map)</li>
+<li><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code> (uses Doctrine identity map)<ul>
+<li>requires: <code>doctrine/orm</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="api">API</h2>
+<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
+<p>Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of
+these field values.</p>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
+<p>Returns the actual identity value for the given object. Indexed by identifier field names.</p>
+<h2 id="doctrine-example">Doctrine example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+
+<span class="sd">/** @ORM\Entity() */</span>
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="nv">$identityMapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentifierFieldNames</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// [&#39;name&#39;, &#39;year&#39;]</span>
+<span class="nv">$identity</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentity</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&#39;name&#39; =&gt; ..., &#39;year&#39; =&gt; ...]</span>
+</pre></div>
                 
                   
                 

@@ -62,13 +62,38 @@
         }, 
         {
             "location": "/ddd/identity_mapping/", 
-            "text": "Identity mapping", 
+            "text": "Identity mapping\n\n\nAn identity mapping is a domain service and is bound to \nMsgPhp\\Domain\\DomainMappingInterface\n. It tells about the\nidentifier mappings for a known domain object.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n (uses in-memory identity map)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n (uses Doctrine identity map)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the (composite) identifier field names for the given class. Any instance should have an identity composed of\nthese field values.\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual identity value for the given object. Indexed by identifier field names.\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nname\n \n=\n \n...\n;\n\n\n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$identityMapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n$fields\n \n=\n \n$identityMapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n$identity\n \n=\n \n$identityMapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]", 
             "title": "Identity mapping"
         }, 
         {
             "location": "/ddd/identity_mapping/#identity-mapping", 
-            "text": "", 
+            "text": "An identity mapping is a domain service and is bound to  MsgPhp\\Domain\\DomainMappingInterface . It tells about the\nidentifier mappings for a known domain object.", 
             "title": "Identity mapping"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#implementations", 
+            "text": "MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping  (uses in-memory identity map)  MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping  (uses Doctrine identity map)  requires:  doctrine/orm", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#getidentifierfieldnamesstring-class-array", 
+            "text": "Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of\nthese field values.", 
+            "title": "getIdentifierFieldNames(string $class): array"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#getidentityobject-object-array", 
+            "text": "Returns the actual identity value for the given object. Indexed by identifier field names.", 
+            "title": "getIdentity(object $object): array"
+        }, 
+        {
+            "location": "/ddd/identity_mapping/#doctrine-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping ;  use   Doctrine\\ORM\\EntityManagerInterface ;  use   Doctrine\\ORM\\Mapping   as   ORM ;  /** @ORM\\Entity() */  class   MyEntity  { \n     /** @ORM\\Id @ORM\\Column(type= string ) */ \n     public   $name ; \n\n     /** @ORM\\Id @ORM\\Column(type= integer ) */ \n     public   $year ;  }  $entity   =   new   MyEntity ();  $entity - name   =   ... ;  $entity - year   =   ... ;  /** @var EntityManagerInterface $em */  $em   =   ... ;  $identityMapping   =   new   DomainIdentityMapping ( $em );  $fields   =   $identityMapping - getIdentifierFieldNames ( MyEntity :: class );   // [ name ,  year ]  $identity   =   $identityMapping - getIdentity ( $entity );   // [ name  =  ...,  year  =  ...]", 
+            "title": "Doctrine example"
         }, 
         {
             "location": "/ddd/collections/", 
@@ -272,12 +297,12 @@
         }, 
         {
             "location": "/ddd/repositories/", 
-            "text": "Repositories\n\n\nA repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per infrastructure type.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n (In-memory persistence)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n (Doctrine persistence)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
+            "text": "Repositories\n\n\nA repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n (In-memory persistence)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n (Doctrine persistence)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\n?php\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nnull\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nvalue\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \n[\none\n,\n \nof\n,\n \nthese\n]);\n\n\n\n\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
             "title": "Repositories"
         }, 
         {
             "location": "/ddd/repositories/#repositories", 
-            "text": "A repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per infrastructure type.", 
+            "text": "A repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.", 
             "title": "Repositories"
         }, 
         {
@@ -297,7 +322,7 @@
         }, 
         {
             "location": "/ddd/repositories/#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface", 
-            "text": "Finds all entities matching all specified fields.", 
+            "text": "Finds all entities matching all specified fields.  ?php  $this - doFindAllByFields ([ field   =   null ]);  $this - doFindAllByFields ([ field   =   value ]);  $this - doFindAllByFields ([ field   =   [ one ,   of ,   these ]);", 
             "title": "doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface"
         }, 
         {
@@ -334,16 +359,6 @@
             "location": "/ddd/repositories/#generic-doctrine-repository-example", 
             "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait ;  use   Doctrine\\ORM\\EntityManagerInterface ;  class   MyGenericRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n     }  }  /** @var EntityManagerInterface $em */  $em   =   ... ;  $repository   =   new   MyGenericRepository ( MyEntity :: class ,   $em );   /** @var MyEntity $entity */  $entity   =   $repository - find ( 1 );", 
             "title": "Generic Doctrine repository example"
-        }, 
-        {
-            "location": "/ddd/exceptions/", 
-            "text": "Exceptions", 
-            "title": "Exceptions"
-        }, 
-        {
-            "location": "/ddd/exceptions/#exceptions", 
-            "text": "", 
-            "title": "Exceptions"
         }
     ]
 }

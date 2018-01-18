@@ -457,18 +457,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../exceptions/" title="Exceptions" class="md-nav__link">
-      Exceptions
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -595,9 +583,9 @@
                 
                 
                 <h1 id="repositories">Repositories</h1>
-<p>A repository is not interface bounded by default. Instead you can leverage various trait objects to rapidly create one, 
+<p>A repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, 
 depending on the type of infrastructure needed. By design they follow the same API although there might be subtle
-differences per infrastructure type.</p>
+differences per implementation.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code> (In-memory persistence)</li>
@@ -613,6 +601,13 @@ on a per case basis.</p>
 <p>Finds all entities available.</p>
 <h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
 <p>Finds all entities matching all specified fields.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">]);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;these&#39;</span><span class="p">]);</span>
+</pre></div>
+
+
 <h3 id="dofindid-idn-object"><code>doFind($id, ...$idN): object</code></h3>
 <p>Finds a single entity by its identity.</p>
 <h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code></h3>
@@ -679,20 +674,6 @@ on a per case basis.</p>
             </div>
           </a>
         
-        
-          <a href="../exceptions/" title="Exceptions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Exceptions
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
