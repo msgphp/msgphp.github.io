@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/ddd/identifiers/", 
-            "text": "Identifiers\n\n\nAn identifier is a domain value object and is bound to \nMsgPhp\\Domain\\DomainIdInterface\n. It's used to identity domain\nobjects, i.e. entities.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainId\n (generic scalar values)\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n (UUID values)\n\n\nrequires: \nramsey/uuid\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nFactorizes a new identifier from a primitive value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n1\n);\n \n// allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// not allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty. In general this is the case when an identifier is created for a\nprimitive \nNULL\n value, and therefor enables to differ its string value from an explicit empty string value (\n\"\"\n).\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// null\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// \n\n\n\n\n\n\n\n\nequals(): bool\n\n\nTells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered \nnot\n equal when comparing e.g.:\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n \n{\n \n}\n\n\n\nDomainId\n::\nfromValue\n(\n1\n)\n-\nequals\n(\nMyDomainId\n::\nfromValue\n(\n1\n));\n \n// false!\n\n\n\n\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the string value of the identifier. If the the identifier is empty (see \nisEmpty\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\nUUID example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n$uuid4\n \n=\n \nDomainId\n::\nfromValue\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$uuid4Alt\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nfromString\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n));\n\n\n$uuid4Alt2\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nuuid4\n());\n\n\n$newUuid4\n \n=\n \nnew\n \nDomainId\n();\n\n\n$newUuid5\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid5\n(\nUuid\n::\nNAMESPACE_URL\n,\n \nhttp://php.net/\n));", 
+            "text": "Identifiers\n\n\nAn identifier is a domain value object and is bound to \nMsgPhp\\Domain\\DomainIdInterface\n. It's used to identity domain\nobjects, i.e. entities.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\DomainId\n (generic scalar values)\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n (UUID values)\n\n\nrequires: \nramsey/uuid\n\n\n\n\n\n\n\n\nAPI\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nFactorizes a new identifier from a primitive value.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n1\n);\n \n// allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// not allowed\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n \n// allowed\n\n\n\n\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty. In general this is the case when an identifier is created from a\nprimitive \nNULL\n value, and therefor enables to differ its string value from an explicit empty string value (\n\"\"\n).\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// null\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$value\n \n=\n \n$id\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n(\nstring\n)\n \n$id\n;\n \n// \n\n\n\n\n\n\n\n\nequals(): bool\n\n\nTells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the\nsame identifier value is considered \nnot\n equal when comparing e.g.:\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n \n{\n \n}\n\n\n\nDomainId\n::\nfromValue\n(\n1\n)\n-\nequals\n(\nMyDomainId\n::\nfromValue\n(\n1\n));\n \n// false!\n\n\n\n\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the string value of the identifier. If the the identifier is empty (see \nisEmpty\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\nUUID example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n$uuid4\n \n=\n \nDomainId\n::\nfromValue\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$uuid4Alt\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nfromString\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n));\n\n\n$uuid4Alt2\n \n=\n \nDomainId\n::\nfromValue\n(\nUuid\n::\nuuid4\n());\n\n\n$newUuid4\n \n=\n \nnew\n \nDomainId\n();\n\n\n$newUuid5\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid5\n(\nUuid\n::\nNAMESPACE_URL\n,\n \nhttp://php.net/\n));", 
             "title": "Identifiers"
         }, 
         {
@@ -42,7 +42,7 @@
         }, 
         {
             "location": "/ddd/identifiers/#isempty-bool", 
-            "text": "Tells if an identifier value is considered empty. In general this is the case when an identifier is created for a\nprimitive  NULL  value, and therefor enables to differ its string value from an explicit empty string value ( \"\" ).  ?php  use   MsgPhp\\Domain\\DomainId ;  $id   =   new   DomainId ();  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   // null  $id   =   new   DomainId ( );  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   //", 
+            "text": "Tells if an identifier value is considered empty. In general this is the case when an identifier is created from a\nprimitive  NULL  value, and therefor enables to differ its string value from an explicit empty string value ( \"\" ).  ?php  use   MsgPhp\\Domain\\DomainId ;  $id   =   new   DomainId ();  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   // null  $id   =   new   DomainId ( );  $value   =   $id - isEmpty ()   ?   null   :   ( string )   $id ;   //", 
             "title": "isEmpty(): bool"
         }, 
         {
@@ -127,13 +127,78 @@
         }, 
         {
             "location": "/ddd/object_factories/", 
-            "text": "Object factories\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. It's usage is to initialize\nany domain object based on a class name and context.", 
+            "text": "Object factories\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. It's usage is to initialize\nany domain object based on a class name and context.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n\n\nHolds many object factories. It returns a domain object from the first supporting factory.\n\n\nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n\n\nDecorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses\nthe original provided class name.\n\n\nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n\n\nGeneric object factory. Initializes the given class name by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g. \n$myArgument\n) matches a\ncorresponding underscored context key (e.g. \n['my_argument' =\n 'value']\n). If the context key is numeric its value will\nbe provided to a corresponding argument at index N.\n\n\nAny sub class of \nMsgPhp\\Domain\\DomainIdInterface\n or \nMsgPhp\\Domain\\DomainCollectionInterface\n will be initialized\nfrom \n$class::fromValue()\n by default, otherwise initialization happens regulary (i.e. \nnew $class(...$args)\n).\n\n\nNested objects (e.g. \nMyObject $myArgument\n) might be provided as nested context (thus array). The current factory will\nbe used to initialize the object as argument value. Another (decorating) factory can be set using \n\nDomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory)\n.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nFactorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.\n\n\nChain example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n;\n\n\n\n$firstFactory\n \n=\n \n...\n;\n\n\n$secondFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nChainObjectFactory\n([\n$firstFactory\n,\n \n$secondFactory\n]);\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSomeObject\n::\nclass\n,\n \n[\nkey\n \n=\n \nvalue\n]);\n\n\n\n\n\n\nClass mapping example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n;\n\n\n\ninterface\n \nKnownInterface\n \n{\n \n}\n\n\nclass\n \nSubject\n \nimplements\n \nKnownInterface\n \n{\n \n}\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nClassMappingObjectFactory\n([\nKnownInterface\n::\nclass\n \n=\n \nSubject\n::\nclass\n],\n \n$realFactory\n);\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nKnownInterface\n::\nclass\n);\n\n\n\n\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n;\n\n\n\nclass\n \nSome\n \n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nint\n \n$a\n,\n \nint\n \n$b\n,\n \nint\n \n$c\n)\n\n    \n{\n \n}\n\n\n}\n\n\nclass\n \nSubject\n \n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \nSome\n \n$some\n,\n \nSubject\n \n$otherSubject\n \n=\n \nnull\n)\n\n    \n{\n \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nDomainObjectFactory\n();\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSubject\n::\nclass\n,\n \n[\n\n    \nargument\n \n=\n  \nvalue\n,\n\n    \nsome\n \n=\n \n[\n1\n,\n \n2\n,\n \n3\n],\n\n    \nother_subject\n \n=\n \n[\n\n        \nargument\n \n=\n \nother_value\n,\n\n    \n],\n\n\n]);", 
             "title": "Object factories"
         }, 
         {
             "location": "/ddd/object_factories/#object-factories", 
             "text": "A domain object factory is bound to  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface . It's usage is to initialize\nany domain object based on a class name and context.", 
             "title": "Object factories"
+        }, 
+        {
+            "location": "/ddd/object_factories/#implementations", 
+            "text": "", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/object_factories/#msgphpdomainfactorychainobjectfactory", 
+            "text": "Holds many object factories. It returns a domain object from the first supporting factory.", 
+            "title": "MsgPhp\\Domain\\Factory\\ChainObjectFactory"
+        }, 
+        {
+            "location": "/ddd/object_factories/#msgphpdomainfactoryclassmappingobjectfactory", 
+            "text": "Decorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses\nthe original provided class name.", 
+            "title": "MsgPhp\\Domain\\Factory\\ClassMappingObjectFactory"
+        }, 
+        {
+            "location": "/ddd/object_factories/#msgphpdomainfactorydomainobjectfactory", 
+            "text": "Generic object factory. Initializes the given class name by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g.  $myArgument ) matches a\ncorresponding underscored context key (e.g.  ['my_argument' =  'value'] ). If the context key is numeric its value will\nbe provided to a corresponding argument at index N.  Any sub class of  MsgPhp\\Domain\\DomainIdInterface  or  MsgPhp\\Domain\\DomainCollectionInterface  will be initialized\nfrom  $class::fromValue()  by default, otherwise initialization happens regulary (i.e.  new $class(...$args) ).  Nested objects (e.g.  MyObject $myArgument ) might be provided as nested context (thus array). The current factory will\nbe used to initialize the object as argument value. Another (decorating) factory can be set using  DomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory) .", 
+            "title": "MsgPhp\\Domain\\Factory\\DomainObjectFactory"
+        }, 
+        {
+            "location": "/ddd/object_factories/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/object_factories/#createstring-class-array-context-object", 
+            "text": "Factorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.", 
+            "title": "create(string $class, array $context = []): object"
+        }, 
+        {
+            "location": "/ddd/object_factories/#chain-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Factory\\ChainObjectFactory ;  $firstFactory   =   ... ;  $secondFactory   =   ... ;  $factory   =   new   ChainObjectFactory ([ $firstFactory ,   $secondFactory ]);  $object   =   $factory - create ( SomeObject :: class ,   [ key   =   value ]);", 
+            "title": "Chain example"
+        }, 
+        {
+            "location": "/ddd/object_factories/#class-mapping-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Factory\\ClassMappingObjectFactory ;  interface   KnownInterface   {   }  class   Subject   implements   KnownInterface   {   }  $realFactory   =   ... ;  $factory   =   new   ClassMappingObjectFactory ([ KnownInterface :: class   =   Subject :: class ],   $realFactory );  /** @var Subject $object */  $object   =   $factory - create ( KnownInterface :: class );", 
+            "title": "Class mapping example"
+        }, 
+        {
+            "location": "/ddd/object_factories/#generic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Factory\\DomainObjectFactory ;  class   Some   { \n     public   function   __construct ( int   $a ,   int   $b ,   int   $c ) \n     {   }  }  class   Subject   { \n     public   function   __construct ( string   $argument ,   Some   $some ,   Subject   $otherSubject   =   null ) \n     {   }  }  $factory   =   new   DomainObjectFactory ();  /** @var Subject $object */  $object   =   $factory - create ( Subject :: class ,   [ \n     argument   =    value , \n     some   =   [ 1 ,   2 ,   3 ], \n     other_subject   =   [ \n         argument   =   other_value , \n     ],  ]);", 
+            "title": "Generic example"
+        }, 
+        {
+            "location": "/ddd/entity_factories/", 
+            "text": "Entity factories", 
+            "title": "Entity factories"
+        }, 
+        {
+            "location": "/ddd/entity_factories/#entity-factories", 
+            "text": "", 
+            "title": "Entity factories"
+        }, 
+        {
+            "location": "/ddd/static_factories/", 
+            "text": "Static factories", 
+            "title": "Static factories"
+        }, 
+        {
+            "location": "/ddd/static_factories/#static-factories", 
+            "text": "", 
+            "title": "Static factories"
         }
     ]
 }

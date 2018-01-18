@@ -34,7 +34,7 @@
     
     
       
-        <title>Identifiers - MsgPHP Documentation</title>
+        <title>Entity factories - MsgPHP Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Identifiers
+                Entity factories
               </span>
             
           
@@ -239,95 +239,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Identifiers
-      </label>
-    
-    <a href="./" title="Identifiers" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#static-fromvaluevalue-domainidinterface" title="static fromValue($value): DomainIdInterface" class="md-nav__link">
-    static fromValue($value): DomainIdInterface
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#isempty-bool" title="isEmpty(): bool" class="md-nav__link">
-    isEmpty(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tostring-string-__tostring-string" title="toString(): string / __toString(): string" class="md-nav__link">
-    toString(): string / __toString(): string
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -347,10 +263,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       Factories
@@ -378,11 +296,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../entity_factories/" title="Entity factories" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Entity factories" class="md-nav__link md-nav__link--active">
       Entity factories
     </a>
+    
   </li>
 
         
@@ -425,68 +352,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#static-fromvaluevalue-domainidinterface" title="static fromValue($value): DomainIdInterface" class="md-nav__link">
-    static fromValue($value): DomainIdInterface
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#isempty-bool" title="isEmpty(): bool" class="md-nav__link">
-    isEmpty(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tostring-string-__tostring-string" title="toString(): string / __toString(): string" class="md-nav__link">
-    toString(): string / __toString(): string
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -497,79 +362,10 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identifiers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/entity_factories.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identifiers">Identifiers</h1>
-<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. It's used to identity domain
-objects, i.e. entities.</p>
-<h2 id="implementations">Implementations</h2>
-<ul>
-<li><code>MsgPhp\Domain\DomainId</code> (generic scalar values)</li>
-<li><code>MsgPhp\Domain\Infra\Uuid\DomainId</code> (UUID values)<ul>
-<li>requires: <code>ramsey/uuid</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="api">API</h2>
-<h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code></h3>
-<p>Factorizes a new identifier from a primitive value.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// not allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// allowed</span>
-</pre></div>
-
-
-<hr />
-<h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
-<p>Tells if an identifier value is considered empty. In general this is the case when an identifier is created from a
-primitive <code>NULL</code> value, and therefor enables to differ its string value from an explicit empty string value (<code>""</code>).</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// null</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// &quot;&quot;</span>
-</pre></div>
-
-
-<hr />
-<h3 id="equals-bool"><code>equals(): bool</code></h3>
-<p>Tells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the
-same identifier value is considered <strong>not</strong> equal when comparing e.g.:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span> <span class="p">{</span> <span class="p">}</span>
-
-<span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="nx">MyDomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false!</span>
-</pre></div>
-
-
-<hr />
-<h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code></h3>
-<p>Returns the string value of the identifier. If the the identifier is empty (see <code>isEmpty</code>) an empty string (<code>""</code>) 
-should be returned.</p>
-<h2 id="uuid-example">UUID example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Ramsey\Uuid\Uuid</span><span class="p">;</span>
-
-<span class="nv">$uuid4</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
-<span class="nv">$uuid4Alt</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">));</span>
-<span class="nv">$uuid4Alt2</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid4</span><span class="p">());</span>
-<span class="nv">$newUuid4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$newUuid5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid5</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">NAMESPACE_URL</span><span class="p">,</span> <span class="s1">&#39;http://php.net/&#39;</span><span class="p">));</span>
-</pre></div>
+                <h1 id="entity-factories">Entity factories</h1>
                 
                   
                 
@@ -588,7 +384,7 @@ should be returned.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../object_factories/" title="Object factories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -597,19 +393,19 @@ should be returned.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Object factories
               </span>
             </div>
           </a>
         
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../static_factories/" title="Static factories" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Collections
+                Static factories
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
