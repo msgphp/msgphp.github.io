@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>MsgPhp\User\Infra\InMemory\Repository\UserAttributeValueRepository | Message driven PHP - API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
+        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:MsgPhp_User_Infra_InMemory_Repository_UserAttributeValueRepository" data-root-path="../../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../../index.html">Message driven PHP - API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/InMemory.html">InMemory</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/InMemory/Repository.html">Repository</a></li><li class="backslash">\</li><li>UserAttributeValueRepository</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            UserAttributeValueRepository
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>UserAttributeValueRepository</strong>        implements
+        <a href="../../../../../MsgPhp/User/Repository/UserAttributeValueRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserAttributeValueRepositoryInterface">UserAttributeValueRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php">View source</a>)
+</p>
+
+        
+    
+
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../../MsgPhp/Domain/Infra/InMemory/DomainEntityRepositoryTrait.html"><abbr title="MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait">DomainEntityRepositoryTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(string $class, <a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $fieldMapping = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findAllByAttributeId">findAllByAttributeId</a>(<a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, int $offset = 0, int $limit = 0)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findAllByAttributeIdAndValue">findAllByAttributeIdAndValue</a>(<a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, $value, int $offset = 0, int $limit = 0)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findAllByUserId">findAllByUserId</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_findAllByUserIdAndAttributeId">findAllByUserIdAndAttributeId</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, int $offset = 0, int $limit = 0)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_find">find</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a> $attributeValueId)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_exists">exists</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a> $attributeValueId)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_save">save</a>(<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_delete">delete</a>(<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">in <a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/AbstractDomainEntityRepositoryTrait.php#L18">line 18</a></div>
+        <code>                    
+    <strong>__construct</strong>(string $class, <a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $fieldMapping = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a></td>
+                <td>$identityMapping</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$fieldMapping</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findAllByAttributeId">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L24">line 24</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+    <strong>findAllByAttributeId</strong>(<a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, int $offset = 0, int $limit = 0)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a></td>
+                <td>$attributeId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$offset</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$limit</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findAllByAttributeIdAndValue">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L36">line 36</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+    <strong>findAllByAttributeIdAndValue</strong>(<a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, $value, int $offset = 0, int $limit = 0)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a></td>
+                <td>$attributeId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$offset</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$limit</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findAllByUserId">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L48">line 48</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+    <strong>findAllByUserId</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
+                <td>$userId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$offset</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$limit</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_findAllByUserIdAndAttributeId">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L56">line 56</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]
+    <strong>findAllByUserIdAndAttributeId</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a> $attributeId, int $offset = 0, int $limit = 0)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
+                <td>$userId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a></td>
+                <td>$attributeId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$offset</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$limit</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a>[]</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_find">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L65">line 65</a></div>
+        <code>                    
+    <strong>find</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a> $attributeValueId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
+                <td>$userId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a></td>
+                <td>$attributeValueId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_exists">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L70">line 70</a></div>
+        <code>                    
+    <strong>exists</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, <a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a> $attributeValueId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
+                <td>$userId</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a></td>
+                <td>$attributeValueId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_save">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L75">line 75</a></div>
+        <code>                    
+    <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a></td>
+                <td>$userAttributeValue</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_delete">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/InMemory/Repository/UserAttributeValueRepository.php#L80">line 80</a></div>
+        <code>                    
+    <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a></td>
+                <td>$userAttributeValue</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
