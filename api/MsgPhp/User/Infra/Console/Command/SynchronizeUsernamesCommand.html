@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\DependencyInjection\Compiler\DoctrineObjectFieldMappingPass | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Console\Command\SynchronizeUsernamesCommand | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_DependencyInjection_Compiler_DoctrineObjectFieldMappingPass" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Console_Command_SynchronizeUsernamesCommand" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,43 +66,41 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection/Compiler.html">Compiler</a></li><li class="backslash">\</li><li>DoctrineObjectFieldMappingPass</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console/Command.html">Command</a></li><li class="backslash">\</li><li>SynchronizeUsernamesCommand</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DoctrineObjectFieldMappingPass
+            SynchronizeUsernamesCommand
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>DoctrineObjectFieldMappingPass</strong>        implements
-        <abbr title="Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface">CompilerPassInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php">View source</a>)
+    <strong>SynchronizeUsernamesCommand</strong>        extends <abbr title="Symfony\Component\Console\Command\Command">Command</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php">View source</a>)
 </p>
 
         
     
 
     
-            <h2>Traits</h2>
+    
+    
+            <h2>Properties</h2>
 
-        
-    <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-6">
-                                            <abbr title="Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait">PriorityTaggedServiceTrait</abbr>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
-                </div>
-            </div>
-            </div>
-    
-    
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_defaultName">
+                    static                    protected                                        
+                </td>
+                <td>$defaultName</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -112,7 +110,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, array $defaultProviders = [EntityFieldsMapping::class])
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a> $repository)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -123,7 +121,18 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_process">process</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_configure">configure</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_run">run</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -137,9 +146,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L24">line 24</a></div>
         <code>                    
-    <strong>__construct</strong>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, array $defaultProviders = [EntityFieldsMapping::class])
+    <strong>__construct</strong>(<a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a> $repository)
         </code>
     </h3>
     <div class="details">
@@ -151,13 +160,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$tagName</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$defaultProviders</td>
+                <td><a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a></td>
+                <td>$repository</td>
                 <td></td>
             </tr>
             </table>
@@ -170,10 +174,29 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_process">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L32">line 32</a></div>
+                    <h3 id="method_configure">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L31">line 31</a></div>
+        <code>            protected        
+    <strong>configure</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_run">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L38">line 38</a></div>
         <code>                    
-    <strong>process</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+    <strong>run</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
         </code>
     </h3>
     <div class="details">
@@ -185,8 +208,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
+                <td><abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></td>
+                <td>$input</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></td>
+                <td>$output</td>
                 <td></td>
             </tr>
             </table>

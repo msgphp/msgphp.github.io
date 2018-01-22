@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Validator\UniqueUsernameValidator | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Doctrine_DomainEntityRepositoryTrait" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Validator_UniqueUsernameValidator" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,41 +65,27 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">trait</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li>DomainEntityRepositoryTrait</li>
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra/Validator.html">Validator</a></li><li class="backslash">\</li><li>UniqueUsernameValidator</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DomainEntityRepositoryTrait
+            UniqueUsernameValidator
                 
         </h1>
     </div>
 
-    <p>    trait
-    <strong>DomainEntityRepositoryTrait</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainEntityRepositoryTrait.php">View source</a>)
+    <p>    class
+    <strong>UniqueUsernameValidator</strong>        extends <abbr title="Symfony\Component\Validator\ConstraintValidator">ConstraintValidator</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Validator/UniqueUsernameValidator.php">View source</a>)
 </p>
 
         
     
 
     
-            <h2>Traits</h2>
-
-        
-    <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-6">
-                                            <a href="../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
-                </div>
-            </div>
-            </div>
     
     
     
@@ -111,7 +97,18 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, array $fieldMapping = [])
+                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_validate">validate</a>($value, <abbr title="Symfony\Component\Validator\Constraint">Constraint</abbr> $constraint)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -125,9 +122,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainEntityRepositoryTrait.php#L24">line 24</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Validator/UniqueUsernameValidator.php#L19">line 19</a></div>
         <code>                    
-    <strong>__construct</strong>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, array $fieldMapping = [])
+    <strong>__construct</strong>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository)
         </code>
     </h3>
     <div class="details">
@@ -139,18 +136,42 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$class</td>
+                <td><a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a></td>
+                <td>$repository</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_validate">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Validator/UniqueUsernameValidator.php#L24">line 24</a></div>
+        <code>                    
+    <strong>validate</strong>($value, <abbr title="Symfony\Component\Validator\Constraint">Constraint</abbr> $constraint)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$value</td>
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr></td>
-                <td>$em</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$fieldMapping</td>
+                <td><abbr title="Symfony\Component\Validator\Constraint">Constraint</abbr></td>
+                <td>$constraint</td>
                 <td></td>
             </tr>
             </table>

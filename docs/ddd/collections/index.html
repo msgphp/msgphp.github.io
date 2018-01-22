@@ -330,6 +330,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#containskeykey-bool" title="containsKey($key): bool" class="md-nav__link">
+    containsKey($key): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#first" title="first()" class="md-nav__link">
     first()
   </a>
@@ -339,6 +346,13 @@
           <li class="md-nav__item">
   <a href="#last" title="last()" class="md-nav__link">
     last()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey" title="get($key)" class="md-nav__link">
+    get($key)
   </a>
   
 </li>
@@ -519,6 +533,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#containskeykey-bool" title="containsKey($key): bool" class="md-nav__link">
+    containsKey($key): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#first" title="first()" class="md-nav__link">
     first()
   </a>
@@ -528,6 +549,13 @@
           <li class="md-nav__item">
   <a href="#last" title="last()" class="md-nav__link">
     last()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey" title="get($key)" class="md-nav__link">
+    get($key)
   </a>
   
 </li>
@@ -637,8 +665,22 @@ together by a root entity.</p>
 
 
 <hr />
+<h3 id="containskeykey-bool"><code>containsKey($key): bool</code></h3>
+<p>Tells if a collection contains an element at the given key/index.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+
+<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
+</pre></div>
+
+
+<hr />
 <h3 id="first"><code>first()</code></h3>
-<p>Returns the first element value, or <code>false</code> if the collection is empty.</p>
+<p>Returns the first element, or <code>false</code> if the collection is empty.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
@@ -650,13 +692,25 @@ together by a root entity.</p>
 
 <hr />
 <h3 id="last"><code>last()</code></h3>
-<p>Returns the last element value, or <code>false</code> if the collection is empty.</p>
+<p>Returns the last element, or <code>false</code> if the collection is empty.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
 
 <span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">last</span><span class="p">();</span> <span class="c1">// int(3)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="getkey"><code>get($key)</code></h3>
+<p>Returns the element at the given key/index, or <code>null</code> if the collection is empty.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+
+<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// int(2)</span>
 </pre></div>
 
 
