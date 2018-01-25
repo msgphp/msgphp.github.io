@@ -29,20 +29,20 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.0">
     
     
       
-        <title>MsgPHP Documentation</title>
+        <title>Code conventions - MsgPHP Documentation</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.2a88008a.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.2a88008a.css">
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -52,7 +52,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="./style.css">
+      <link rel="stylesheet" href="../style.css">
     
     
   </head>
@@ -76,7 +76,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
+        <a href=".." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Code conventions
               </span>
             
           
@@ -208,6 +208,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -218,22 +230,58 @@
       
     
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
-      Home
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Code conventions
+      </label>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="code_conventions/" title="Code conventions" class="md-nav__link">
+    <a href="./" title="Code conventions" class="md-nav__link md-nav__link--active">
       Code conventions
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-principles" title="General principles" class="md-nav__link">
+    General principles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style" title="Code style" class="md-nav__link">
+    Code style
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
+    Static analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
+    Unit tests
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -262,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/identifiers/" title="Identifiers" class="md-nav__link">
+    <a href="../ddd/identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
     </a>
   </li>
@@ -274,7 +322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/identity_mapping/" title="Identity mapping" class="md-nav__link">
+    <a href="../ddd/identity_mapping/" title="Identity mapping" class="md-nav__link">
       Identity mapping
     </a>
   </li>
@@ -286,7 +334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/collections/" title="Collections" class="md-nav__link">
+    <a href="../ddd/collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
   </li>
@@ -317,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/object_factories/" title="Object factories" class="md-nav__link">
+    <a href="../ddd/object_factories/" title="Object factories" class="md-nav__link">
       Object factories
     </a>
   </li>
@@ -329,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/entity_factories/" title="Entity factories" class="md-nav__link">
+    <a href="../ddd/entity_factories/" title="Entity factories" class="md-nav__link">
       Entity factories
     </a>
   </li>
@@ -341,7 +389,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/static_factories/" title="Static factories" class="md-nav__link">
+    <a href="../ddd/static_factories/" title="Static factories" class="md-nav__link">
       Static factories
     </a>
   </li>
@@ -358,7 +406,7 @@
 
 
   <li class="md-nav__item">
-    <a href="ddd/repositories/" title="Repositories" class="md-nav__link">
+    <a href="../ddd/repositories/" title="Repositories" class="md-nav__link">
       Repositories
     </a>
   </li>
@@ -386,6 +434,41 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-principles" title="General principles" class="md-nav__link">
+    General principles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style" title="Code style" class="md-nav__link">
+    Code style
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
+    Static analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
+    Unit tests
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -396,18 +479,53 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/code_conventions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="msgphp-documentation">MsgPHP Documentation</h1>
-<blockquote>
-<p><a href="https://msgphp.github.io/">MsgPHP</a> is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.</p>
-</blockquote>
-<hr />
-<h1 id="news">News</h1>
+                <h1 id="code-conventions">Code conventions</h1>
+<p>A brief description of code conventions this project follows.</p>
+<h2 id="general-principles">General principles</h2>
 <ul>
-<li><strong><code>2018-01-25</code></strong> Added initial project <a href="code_conventions/">code conventions</a></li>
-<li><strong><code>2018-01-18</code></strong> Initial documentation setup. Work in progress as of today.</li>
+<li>No <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> violations, yet be pragmatic</li>
+<li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
+<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">LoD</a>)</li>
+<li>Favor latest stable PHP7 features</li>
+<li>Checks must pass (code style, static analysis &amp; unit tests)</li>
+<li>Add PHPDoc / comments if needed for clarification or static analysis</li>
+</ul>
+<h2 id="code-style">Code style</h2>
+<ul>
+<li>Follows PSR2 and Symfony style</li>
+<li><code>use</code> statements are declared in alpha-order</li>
+<li><code>use</code> statements for <code>MsgPhp\</code> namespace are grouped by deepest common namespace</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="c1">// wrong</span>
+<span class="k">use</span> <span class="nx">MsgPhp\SomeB</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\SomeA</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Other\SomeOtherB</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Other\Some\SomeOtherC</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Other\SomeOtherA</span><span class="p">;</span>
+
+<span class="c1">// right</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="p">{</span><span class="nx">SomeA</span><span class="p">,</span> <span class="nx">SomeB</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">Other\Some\SomeOtherC</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Other\SomeOtherA</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Other\SomeOtherB</span><span class="p">;</span>
+</pre></div>
+
+
+<h2 id="static-analysis">Static analysis</h2>
+<ul>
+<li>Follows PHPStan level max</li>
+<li>Exclude / ignore rules are discussed per case/topic</li>
+</ul>
+<h2 id="unit-tests">Unit tests</h2>
+<ul>
+<li>All of the above, <em>in general</em>, applies to unit tests as well</li>
 </ul>
                 
                   
@@ -427,14 +545,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
         
-          <a href="code_conventions/" title="Code conventions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../ddd/identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Code conventions
+                Identifiers
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -464,9 +596,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
       
     
     

@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\n\n\nNews\n\n\n\n\n2018-01-18\n Initial documentation setup. Work in progress as of today.", 
+            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\n\n\nNews\n\n\n\n\n2018-01-25\n Added initial project \ncode conventions\n\n\n2018-01-18\n Initial documentation setup. Work in progress as of today.", 
             "title": "Home"
         }, 
         {
@@ -12,8 +12,38 @@
         }, 
         {
             "location": "/#news", 
-            "text": "2018-01-18  Initial documentation setup. Work in progress as of today.", 
+            "text": "2018-01-25  Added initial project  code conventions  2018-01-18  Initial documentation setup. Work in progress as of today.", 
             "title": "News"
+        }, 
+        {
+            "location": "/code_conventions/", 
+            "text": "Code conventions\n\n\nA brief description of code conventions this project follows.\n\n\nGeneral principles\n\n\n\n\nNo \nSOLID\n violations, yet be pragmatic\n\n\nReduce \nlines of code\n where possible\n\n\nReduce coupling (\nLoD\n)\n\n\nFavor latest stable PHP7 features\n\n\nChecks must pass (code style, static analysis \n unit tests)\n\n\nAdd PHPDoc / comments if needed for clarification or static analysis\n\n\n\n\nCode style\n\n\n\n\nFollows PSR2 and Symfony style\n\n\nuse\n statements are declared in alpha-order\n\n\nuse\n statements for \nMsgPhp\\\n namespace are grouped by deepest common namespace\n\n\n\n\n?php\n\n\n\n// wrong\n\n\nuse\n \nMsgPhp\\SomeB\n;\n\n\nuse\n \nMsgPhp\\SomeA\n;\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\n\n// right\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nMsgPhp\\\n{\nSomeA\n,\n \nSomeB\n};\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\n\n\n\n\nStatic analysis\n\n\n\n\nFollows PHPStan level max\n\n\nExclude / ignore rules are discussed per case/topic\n\n\n\n\nUnit tests\n\n\n\n\nAll of the above, \nin general\n, applies to unit tests as well", 
+            "title": "Code conventions"
+        }, 
+        {
+            "location": "/code_conventions/#code-conventions", 
+            "text": "A brief description of code conventions this project follows.", 
+            "title": "Code conventions"
+        }, 
+        {
+            "location": "/code_conventions/#general-principles", 
+            "text": "No  SOLID  violations, yet be pragmatic  Reduce  lines of code  where possible  Reduce coupling ( LoD )  Favor latest stable PHP7 features  Checks must pass (code style, static analysis   unit tests)  Add PHPDoc / comments if needed for clarification or static analysis", 
+            "title": "General principles"
+        }, 
+        {
+            "location": "/code_conventions/#code-style", 
+            "text": "Follows PSR2 and Symfony style  use  statements are declared in alpha-order  use  statements for  MsgPhp\\  namespace are grouped by deepest common namespace   ?php  // wrong  use   MsgPhp\\SomeB ;  use   MsgPhp\\SomeA ;  use   MsgPhp\\Some\\SomeC ;  use   Other\\SomeOtherB ;  use   Other\\Some\\SomeOtherC ;  use   Other\\SomeOtherA ;  // right  use   MsgPhp\\Some\\SomeC ;  use   MsgPhp\\ { SomeA ,   SomeB };  use   Other\\Some\\SomeOtherC ;  use   Other\\SomeOtherA ;  use   Other\\SomeOtherB ;", 
+            "title": "Code style"
+        }, 
+        {
+            "location": "/code_conventions/#static-analysis", 
+            "text": "Follows PHPStan level max  Exclude / ignore rules are discussed per case/topic", 
+            "title": "Static analysis"
+        }, 
+        {
+            "location": "/code_conventions/#unit-tests", 
+            "text": "All of the above,  in general , applies to unit tests as well", 
+            "title": "Unit tests"
         }, 
         {
             "location": "/ddd/identifiers/", 
