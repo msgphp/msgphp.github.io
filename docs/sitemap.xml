@@ -57,4 +57,20 @@
         
     
 
+    
+        
+    <url>
+     <loc>/event-sourcing/domain-events/</loc>
+     <lastmod>2018-01-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/event-sourcing/domain-event-handlers/</loc>
+     <lastmod>2018-01-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
 </urlset>

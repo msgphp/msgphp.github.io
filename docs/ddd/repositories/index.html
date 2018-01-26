@@ -486,6 +486,54 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Event sourcing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Event sourcing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
+      Domain events
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
+      Domain event handlers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -613,9 +661,13 @@ differences per implementation.</p>
 <p>Note default (interface bound) repositories are provided per domain layer.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
-<li><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code> (In-memory persistence)</li>
-<li><code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code> (Doctrine persistence)<ul>
-<li>requires: <code>doctrine/orm</code></li>
+<li><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code><ul>
+<li>In-memory persistence</li>
+</ul>
+</li>
+<li><code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code><ul>
+<li>Doctrine persistence</li>
+<li>Requires <code>doctrine/orm</code></li>
 </ul>
 </li>
 </ul>

@@ -34,7 +34,7 @@
     
     
       
-        <title>Entities - MsgPHP Documentation</title>
+        <title>Domain event handlers - MsgPHP Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Entities
+                Domain event handlers
               </span>
             
           
@@ -232,12 +232,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Domain-driven-design
@@ -255,7 +253,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../identifiers/" title="Identifiers" class="md-nav__link">
+    <a href="../../ddd/identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
     </a>
   </li>
@@ -267,7 +265,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../identity-mapping/" title="Identity mapping" class="md-nav__link">
+    <a href="../../ddd/identity-mapping/" title="Identity mapping" class="md-nav__link">
       Identity mapping
     </a>
   </li>
@@ -279,7 +277,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../collections/" title="Collections" class="md-nav__link">
+    <a href="../../ddd/collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
   </li>
@@ -310,7 +308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/object/" title="Object factory" class="md-nav__link">
+    <a href="../../ddd/factory/object/" title="Object factory" class="md-nav__link">
       Object factory
     </a>
   </li>
@@ -322,7 +320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/entity/" title="Entity factory" class="md-nav__link">
+    <a href="../../ddd/factory/entity/" title="Entity factory" class="md-nav__link">
       Entity factory
     </a>
   </li>
@@ -334,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/static/" title="Static factory" class="md-nav__link">
+    <a href="../../ddd/factory/static/" title="Static factory" class="md-nav__link">
       Static factory
     </a>
   </li>
@@ -351,8 +349,58 @@
 
 
   <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
+    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
       Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
+      Entities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Event sourcing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Event sourcing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../domain-events/" title="Domain events" class="md-nav__link">
+      Domain events
     </a>
   </li>
 
@@ -372,11 +420,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Entities
+        Domain event handlers
       </label>
     
-    <a href="./" title="Entities" class="md-nav__link md-nav__link--active">
-      Entities
+    <a href="./" title="Domain event handlers" class="md-nav__link md-nav__link--active">
+      Domain event handlers
     </a>
     
       
@@ -390,30 +438,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-entity-fields" title="Common entity fields" class="md-nav__link">
-    Common entity fields
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#createdatfield" title="CreatedAtField" class="md-nav__link">
-    CreatedAtField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enabledfield" title="EnabledField" class="md-nav__link">
-    EnabledField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastupdatedatfield" title="LastUpdatedAtField" class="md-nav__link">
-    LastUpdatedAtField
+  <a href="#handleeventdomaineventinterface-event-void" title="handleEvent(DomainEventInterface $event): void" class="md-nav__link">
+    handleEvent(DomainEventInterface $event): void
   </a>
   
 </li>
@@ -424,29 +465,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-entity-features" title="Common entity features" class="md-nav__link">
-    Common entity features
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#canbeconfirmed" title="CanBeConfirmed" class="md-nav__link">
-    CanBeConfirmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canbeenabled" title="CanBeEnabled" class="md-nav__link">
-    CanBeEnabled
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -456,54 +477,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Event sourcing
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Event sourcing
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
-      Domain events
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
-      Domain event handlers
-    </a>
   </li>
 
         
@@ -533,30 +506,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-entity-fields" title="Common entity fields" class="md-nav__link">
-    Common entity fields
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#createdatfield" title="CreatedAtField" class="md-nav__link">
-    CreatedAtField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enabledfield" title="EnabledField" class="md-nav__link">
-    EnabledField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastupdatedatfield" title="LastUpdatedAtField" class="md-nav__link">
-    LastUpdatedAtField
+  <a href="#handleeventdomaineventinterface-event-void" title="handleEvent(DomainEventInterface $event): void" class="md-nav__link">
+    handleEvent(DomainEventInterface $event): void
   </a>
   
 </li>
@@ -567,29 +533,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-entity-features" title="Common entity features" class="md-nav__link">
-    Common entity features
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#canbeconfirmed" title="CanBeConfirmed" class="md-nav__link">
-    CanBeConfirmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canbeenabled" title="CanBeEnabled" class="md-nav__link">
-    CanBeEnabled
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -607,64 +553,53 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/entities.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/event-sourcing/domain-event-handlers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="entities">Entities</h1>
-<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
-design.</p>
-<p>To simplify the creation of entities the base domain layer provides common fields and features in the form of PHP
-traits. Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.</p>
-<p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entiy\Field\</code> and
-<code>MsgPhp\Domain\Entity\Features\</code>.</p>
-<h2 id="common-entity-fields">Common entity fields</h2>
-<h3 id="createdatfield"><code>CreatedAtField</code></h3>
-<p>A datetime value representing the entity was initially created at.</p>
+                <h1 id="domain-event-handlers">Domain event handlers</h1>
+<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle domain
+events. By convention a trait implementation is provided to map concrete events to specialized handling methods. </p>
+<h2 id="implementations">Implementations</h2>
 <ul>
-<li><code>getCreatedAt(): \DateTimeInterface</code><ul>
-<li>Required to be set initially</li>
+<li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>
+<li>Maps <code>&lt;Type&gt;DomainEvent</code> to <code>handle&lt;Type&gt;Event()</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="enabledfield"><code>EnabledField</code></h3>
-<p>A boolean value representing the entity should be considered enabled yes or no.</p>
-<ul>
-<li><code>isEnabled(): bool</code><ul>
-<li><code>false</code> by default</li>
-</ul>
-</li>
-</ul>
-<h3 id="lastupdatedatfield"><code>LastUpdatedAtField</code></h3>
-<p>A datetime value representing the entity was last updated at.</p>
-<ul>
-<li><code>getLastUpdatedAt(): \DateTimeInterface</code><ul>
-<li>Required to be set initially</li>
-</ul>
-</li>
-</ul>
-<h2 id="common-entity-features">Common entity features</h2>
-<h3 id="canbeconfirmed"><code>CanBeConfirmed</code></h3>
-<p>Provides ability to confirm an entity. When used an entity is considered initially unconfirmed.</p>
-<ul>
-<li><code>getConfirmationToken(): ?string</code><ul>
-<li>Required to be set initially</li>
-</ul>
-</li>
-<li><code>getConfirmedAt(): ?\DateTimeInterface</code> </li>
-<li><code>isConfirmed(): bool</code> </li>
-<li><code>confirm(): void</code> <ul>
-<li><code>confirmationToken</code> is unset</li>
-<li><code>confirmatedAt</code> is set to current datetime</li>
-</ul>
-</li>
-</ul>
-<h3 id="canbeenabled"><code>CanBeEnabled</code></h3>
-<p>Provides ability to toggle an entity availability state.</p>
-<ul>
-<li>Inherits from <code>EnabledField</code></li>
-<li><code>enable(): void</code></li>
-<li><code>disable(): void</code></li>
-</ul>
+<h2 id="api">API</h2>
+<h3 id="handleeventdomaineventinterface-event-void"><code>handleEvent(DomainEventInterface $event): void</code></h3>
+<p>Handles the given domain event for a known subject.</p>
+<h2 id="generic-example">Generic example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerTrait</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyDomainEvent</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$newValue</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">newValue</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nv">$value</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyDomainEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">));</span>
+</pre></div>
                 
                   
                 
@@ -683,7 +618,7 @@ traits. Entity fields can be compared to a read-operation, whereas entity featur
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../repositories/" title="Repositories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../domain-events/" title="Domain events" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -692,25 +627,11 @@ traits. Entity fields can be compared to a read-operation, whereas entity featur
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Repositories
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Domain events
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>

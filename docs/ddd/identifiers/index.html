@@ -458,6 +458,54 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Event sourcing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Event sourcing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
+      Domain events
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
+      Domain event handlers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -551,13 +599,17 @@
                 
                 
                 <h1 id="identifiers">Identifiers</h1>
-<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. It's used to identify domain
-objects, i.e. entities.</p>
+<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. Its purpose is to identify
+domain objects, e.g. entities.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
-<li><code>MsgPhp\Domain\DomainId</code> (generic scalar values)</li>
-<li><code>MsgPhp\Domain\Infra\Uuid\DomainId</code> (UUID values)<ul>
-<li>requires: <code>ramsey/uuid</code></li>
+<li><code>MsgPhp\Domain\DomainId</code><ul>
+<li>Generic scalar values</li>
+</ul>
+</li>
+<li><code>MsgPhp\Domain\Infra\Uuid\DomainId</code><ul>
+<li>UUID values</li>
+<li>Requires <code>ramsey/uuid</code></li>
 </ul>
 </li>
 </ul>
