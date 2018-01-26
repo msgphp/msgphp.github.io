@@ -29,20 +29,20 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.0">
     
     
       
-        <title>Code conventions - MsgPHP Documentation</title>
+        <title>Identity mapping - MsgPHP Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.2a88008a.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.2a88008a.css">
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -52,7 +52,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../style.css">
+      <link rel="stylesheet" href="../../style.css">
     
     
   </head>
@@ -76,7 +76,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
+        <a href="../.." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Code conventions
+                Identity mapping
               </span>
             
           
@@ -210,7 +210,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -220,68 +220,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Code conventions
-      </label>
-    
-    <a href="./" title="Code conventions" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../code-conventions/" title="Code conventions" class="md-nav__link">
       Code conventions
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general-principles" title="General principles" class="md-nav__link">
-    General principles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-style" title="Code style" class="md-nav__link">
-    Code style
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
-    Static analysis
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
-    Unit tests
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -289,10 +232,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Domain-driven-design
@@ -310,7 +255,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/identifiers/" title="Identifiers" class="md-nav__link">
+    <a href="../identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
     </a>
   </li>
@@ -320,11 +265,81 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ddd/identity_mapping/" title="Identity mapping" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Identity mapping
+      </label>
+    
+    <a href="./" title="Identity mapping" class="md-nav__link md-nav__link--active">
       Identity mapping
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
+    Doctrine example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -334,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/collections/" title="Collections" class="md-nav__link">
+    <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
   </li>
@@ -365,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/object_factories/" title="Object factories" class="md-nav__link">
-      Object factories
+    <a href="../factory/object/" title="Object factory" class="md-nav__link">
+      Object factory
     </a>
   </li>
 
@@ -377,8 +392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/entity_factories/" title="Entity factories" class="md-nav__link">
-      Entity factories
+    <a href="../factory/entity/" title="Entity factory" class="md-nav__link">
+      Entity factory
     </a>
   </li>
 
@@ -389,8 +404,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/static_factories/" title="Static factories" class="md-nav__link">
-      Static factories
+    <a href="../factory/static/" title="Static factory" class="md-nav__link">
+      Static factory
     </a>
   </li>
 
@@ -406,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ddd/repositories/" title="Repositories" class="md-nav__link">
+    <a href="../repositories/" title="Repositories" class="md-nav__link">
       Repositories
     </a>
   </li>
@@ -438,29 +453,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-principles" title="General principles" class="md-nav__link">
-    General principles
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-style" title="Code style" class="md-nav__link">
-    Code style
+  <a href="#api" title="API" class="md-nav__link">
+    API
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
-    Static analysis
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
-    Unit tests
+  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
+    Doctrine example
   </a>
   
 </li>
@@ -479,54 +507,55 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/code_conventions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identity-mapping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="code-conventions">Code conventions</h1>
-<p>A brief description of code conventions this project follows.</p>
-<h2 id="general-principles">General principles</h2>
+                <h1 id="identity-mapping">Identity mapping</h1>
+<p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about the
+identifier mappings for a known domain object.</p>
+<h2 id="implementations">Implementations</h2>
 <ul>
-<li>No <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> violations, yet be pragmatic</li>
-<li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
-<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">LoD</a>)</li>
-<li>Favor latest stable PHP7 features</li>
-<li>Checks must pass (code style, static analysis &amp; unit tests)</li>
-<li>Add PHPDoc / comments if needed for clarification or static analysis</li>
+<li><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code> (uses in-memory identity map)</li>
+<li><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code> (uses Doctrine identity map)<ul>
+<li>requires: <code>doctrine/orm</code></li>
 </ul>
-<h2 id="code-style">Code style</h2>
-<ul>
-<li>Follows PSR2 and Symfony style</li>
-<li><code>use</code> statements are declared in alpha-order</li>
-<li><code>use</code> statements for <code>MsgPhp\</code> namespace are grouped by deepest common namespace</li>
+</li>
 </ul>
+<h2 id="api">API</h2>
+<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
+<p>Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of
+these field values.</p>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
+<p>Returns the actual identity value for the given object. Indexed by identifier field names.</p>
+<h2 id="doctrine-example">Doctrine example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="c1">// wrong</span>
-<span class="k">use</span> <span class="nx">MsgPhp\SomeB</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\SomeA</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Other\SomeOtherB</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Other\Some\SomeOtherC</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Other\SomeOtherA</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
 
-<span class="c1">// right</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="p">{</span><span class="nx">SomeA</span><span class="p">,</span> <span class="nx">SomeB</span><span class="p">};</span>
-<span class="k">use</span> <span class="nx">Other\Some\SomeOtherC</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Other\SomeOtherA</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Other\SomeOtherB</span><span class="p">;</span>
+<span class="sd">/** @ORM\Entity() */</span>
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="nv">$identityMapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentifierFieldNames</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// [&#39;name&#39;, &#39;year&#39;]</span>
+<span class="nv">$identity</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentity</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&#39;name&#39; =&gt; ..., &#39;year&#39; =&gt; ...]</span>
 </pre></div>
-
-
-<h2 id="static-analysis">Static analysis</h2>
-<ul>
-<li>Follows PHPStan level max</li>
-<li>Exclude / ignore rules are discussed per case/topic</li>
-</ul>
-<h2 id="unit-tests">Unit tests</h2>
-<ul>
-<li>All of the above, <em>in general</em>, applies to unit tests as well</li>
-</ul>
                 
                   
                 
@@ -545,7 +574,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -554,19 +583,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Identifiers
               </span>
             </div>
           </a>
         
         
-          <a href="../ddd/identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Identifiers
+                Collections
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -596,9 +625,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../../assets/javascripts/application.ce2ab4bf.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
       
     
     

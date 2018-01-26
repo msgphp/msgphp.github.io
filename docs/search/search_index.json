@@ -16,32 +16,32 @@
             "title": "News"
         }, 
         {
-            "location": "/code_conventions/", 
+            "location": "/code-conventions/", 
             "text": "Code conventions\n\n\nA brief description of code conventions this project follows.\n\n\nGeneral principles\n\n\n\n\nNo \nSOLID\n violations, yet be pragmatic\n\n\nReduce \nlines of code\n where possible\n\n\nReduce coupling (\nLoD\n)\n\n\nFavor latest stable PHP7 features\n\n\nChecks must pass (code style, static analysis \n unit tests)\n\n\nAdd PHPDoc / comments if needed for clarification or static analysis\n\n\n\n\nCode style\n\n\n\n\nFollows PSR2 and Symfony style\n\n\nuse\n statements are declared in alpha-order\n\n\nuse\n statements for \nMsgPhp\\\n namespace are grouped by deepest common namespace\n\n\n\n\n?php\n\n\n\n// wrong\n\n\nuse\n \nMsgPhp\\SomeB\n;\n\n\nuse\n \nMsgPhp\\SomeA\n;\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\n\n// right\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nMsgPhp\\\n{\nSomeA\n,\n \nSomeB\n};\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\n\n\n\n\nStatic analysis\n\n\n\n\nFollows PHPStan level max\n\n\nExclude / ignore rules are discussed per case/topic\n\n\n\n\nUnit tests\n\n\n\n\nAll of the above, \nin general\n, applies to unit tests as well", 
             "title": "Code conventions"
         }, 
         {
-            "location": "/code_conventions/#code-conventions", 
+            "location": "/code-conventions/#code-conventions", 
             "text": "A brief description of code conventions this project follows.", 
             "title": "Code conventions"
         }, 
         {
-            "location": "/code_conventions/#general-principles", 
+            "location": "/code-conventions/#general-principles", 
             "text": "No  SOLID  violations, yet be pragmatic  Reduce  lines of code  where possible  Reduce coupling ( LoD )  Favor latest stable PHP7 features  Checks must pass (code style, static analysis   unit tests)  Add PHPDoc / comments if needed for clarification or static analysis", 
             "title": "General principles"
         }, 
         {
-            "location": "/code_conventions/#code-style", 
+            "location": "/code-conventions/#code-style", 
             "text": "Follows PSR2 and Symfony style  use  statements are declared in alpha-order  use  statements for  MsgPhp\\  namespace are grouped by deepest common namespace   ?php  // wrong  use   MsgPhp\\SomeB ;  use   MsgPhp\\SomeA ;  use   MsgPhp\\Some\\SomeC ;  use   Other\\SomeOtherB ;  use   Other\\Some\\SomeOtherC ;  use   Other\\SomeOtherA ;  // right  use   MsgPhp\\Some\\SomeC ;  use   MsgPhp\\ { SomeA ,   SomeB };  use   Other\\Some\\SomeOtherC ;  use   Other\\SomeOtherA ;  use   Other\\SomeOtherB ;", 
             "title": "Code style"
         }, 
         {
-            "location": "/code_conventions/#static-analysis", 
+            "location": "/code-conventions/#static-analysis", 
             "text": "Follows PHPStan level max  Exclude / ignore rules are discussed per case/topic", 
             "title": "Static analysis"
         }, 
         {
-            "location": "/code_conventions/#unit-tests", 
+            "location": "/code-conventions/#unit-tests", 
             "text": "All of the above,  in general , applies to unit tests as well", 
             "title": "Unit tests"
         }, 
@@ -91,37 +91,37 @@
             "title": "UUID example"
         }, 
         {
-            "location": "/ddd/identity_mapping/", 
+            "location": "/ddd/identity-mapping/", 
             "text": "Identity mapping\n\n\nAn identity mapping is a domain service and is bound to \nMsgPhp\\Domain\\DomainIdentityMappingInterface\n. It tells about the\nidentifier mappings for a known domain object.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n (uses in-memory identity map)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n (uses Doctrine identity map)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the (composite) identifier field names for the given class. Any instance should have an identity composed of\nthese field values.\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual identity value for the given object. Indexed by identifier field names.\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nname\n \n=\n \n...\n;\n\n\n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$identityMapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n$fields\n \n=\n \n$identityMapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n$identity\n \n=\n \n$identityMapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]", 
             "title": "Identity mapping"
         }, 
         {
-            "location": "/ddd/identity_mapping/#identity-mapping", 
+            "location": "/ddd/identity-mapping/#identity-mapping", 
             "text": "An identity mapping is a domain service and is bound to  MsgPhp\\Domain\\DomainIdentityMappingInterface . It tells about the\nidentifier mappings for a known domain object.", 
             "title": "Identity mapping"
         }, 
         {
-            "location": "/ddd/identity_mapping/#implementations", 
+            "location": "/ddd/identity-mapping/#implementations", 
             "text": "MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping  (uses in-memory identity map)  MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping  (uses Doctrine identity map)  requires:  doctrine/orm", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/identity_mapping/#api", 
+            "location": "/ddd/identity-mapping/#api", 
             "text": "", 
             "title": "API"
         }, 
         {
-            "location": "/ddd/identity_mapping/#getidentifierfieldnamesstring-class-array", 
+            "location": "/ddd/identity-mapping/#getidentifierfieldnamesstring-class-array", 
             "text": "Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of\nthese field values.", 
             "title": "getIdentifierFieldNames(string $class): array"
         }, 
         {
-            "location": "/ddd/identity_mapping/#getidentityobject-object-array", 
+            "location": "/ddd/identity-mapping/#getidentityobject-object-array", 
             "text": "Returns the actual identity value for the given object. Indexed by identifier field names.", 
             "title": "getIdentity(object $object): array"
         }, 
         {
-            "location": "/ddd/identity_mapping/#doctrine-example", 
+            "location": "/ddd/identity-mapping/#doctrine-example", 
             "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping ;  use   Doctrine\\ORM\\EntityManagerInterface ;  use   Doctrine\\ORM\\Mapping   as   ORM ;  /** @ORM\\Entity() */  class   MyEntity  { \n     /** @ORM\\Id @ORM\\Column(type= string ) */ \n     public   $name ; \n\n     /** @ORM\\Id @ORM\\Column(type= integer ) */ \n     public   $year ;  }  $entity   =   new   MyEntity ();  $entity - name   =   ... ;  $entity - year   =   ... ;  /** @var EntityManagerInterface $em */  $em   =   ... ;  $identityMapping   =   new   DomainIdentityMapping ( $em );  $fields   =   $identityMapping - getIdentifierFieldNames ( MyEntity :: class );   // [ name ,  year ]  $identity   =   $identityMapping - getIdentity ( $entity );   // [ name  =  ...,  year  =  ...]", 
             "title": "Doctrine example"
         }, 
@@ -201,137 +201,137 @@
             "title": "Doctrine example"
         }, 
         {
-            "location": "/ddd/object_factories/", 
-            "text": "Object factories\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. It's usage is to initialize\nany domain object based on a class name and context.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n\n\nHolds many object factories. It returns a domain object from the first supporting factory.\n\n\nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n\n\nDecorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses\nthe original provided class name.\n\n\nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n\n\nGeneric object factory. Initializes the given class name by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g. \n$myArgument\n) matches a\ncorresponding underscored context key (e.g. \n['my_argument' =\n 'value']\n). If the context key is numeric its value will\nbe provided to a corresponding argument at index N.\n\n\nAny sub class of \nMsgPhp\\Domain\\DomainIdInterface\n or \nMsgPhp\\Domain\\DomainCollectionInterface\n will be initialized\nfrom \n$class::fromValue()\n by default, otherwise initialization happens regulary (i.e. \nnew $class(...$args)\n).\n\n\nNested objects (e.g. \nMyObject $myArgument\n) might be provided as nested context (thus array). The current factory will\nbe used to initialize the object as argument value. Another (decorating) factory can be set using \n\nDomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory)\n.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nFactorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.\n\n\nChain example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n;\n\n\n\n$firstFactory\n \n=\n \n...\n;\n\n\n$secondFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nChainObjectFactory\n([\n$firstFactory\n,\n \n$secondFactory\n]);\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSomeObject\n::\nclass\n,\n \n[\nkey\n \n=\n \nvalue\n]);\n\n\n\n\n\n\nClass mapping example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n;\n\n\n\ninterface\n \nKnownInterface\n \n{\n \n}\n\n\nclass\n \nSubject\n \nimplements\n \nKnownInterface\n \n{\n \n}\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nClassMappingObjectFactory\n([\nKnownInterface\n::\nclass\n \n=\n \nSubject\n::\nclass\n],\n \n$realFactory\n);\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nKnownInterface\n::\nclass\n);\n\n\n\n\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n;\n\n\n\nclass\n \nSome\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nint\n \n$a\n,\n \n?\nint\n \n$b\n,\n \n?\nint\n \n$c\n)\n\n    \n{\n \n}\n\n\n}\n\n\n\nclass\n \nSubject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \nSome\n \n$some\n,\n \nSubject\n \n$otherSubject\n \n=\n \nnull\n)\n\n    \n{\n \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nDomainObjectFactory\n();\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSubject\n::\nclass\n,\n \n[\n\n    \nargument\n \n=\n  \nvalue\n,\n\n    \nsome\n \n=\n \n[\n1\n,\n \n2\n,\n \n3\n],\n\n    \nother_subject\n \n=\n \n[\n\n        \nargument\n \n=\n \nother_value\n,\n\n        \nsome\n \n=\n \n[\na\n \n=\n \n1\n],\n\n    \n],\n\n\n]);", 
-            "title": "Object factories"
+            "location": "/ddd/factory/object/", 
+            "text": "Object factory\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. It's usage is to initialize\nany domain object based on a class name and context.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n\n\nHolds many object factories. It returns a domain object from the first supporting factory.\n\n\nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n\n\nDecorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses\nthe original provided class name.\n\n\nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n\n\nGeneric object factory. Initializes the given class name by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g. \n$myArgument\n) matches a\ncorresponding underscored context key (e.g. \n['my_argument' =\n 'value']\n). If the context key is numeric its value will\nbe provided to a corresponding argument at index N.\n\n\nAny sub class of \nMsgPhp\\Domain\\DomainIdInterface\n or \nMsgPhp\\Domain\\DomainCollectionInterface\n will be initialized\nfrom \n$class::fromValue()\n by default, otherwise initialization happens regulary (i.e. \nnew $class(...$args)\n).\n\n\nNested objects (e.g. \nMyObject $myArgument\n) might be provided as nested context (thus array). The current factory will\nbe used to initialize the object as argument value. Another (decorating) factory can be set using \n\nDomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory)\n.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nFactorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.\n\n\nChain example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ChainObjectFactory\n;\n\n\n\n$firstFactory\n \n=\n \n...\n;\n\n\n$secondFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nChainObjectFactory\n([\n$firstFactory\n,\n \n$secondFactory\n]);\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSomeObject\n::\nclass\n,\n \n[\nkey\n \n=\n \nvalue\n]);\n\n\n\n\n\n\nClass mapping example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\ClassMappingObjectFactory\n;\n\n\n\ninterface\n \nKnownInterface\n \n{\n \n}\n\n\nclass\n \nSubject\n \nimplements\n \nKnownInterface\n \n{\n \n}\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nClassMappingObjectFactory\n([\nKnownInterface\n::\nclass\n \n=\n \nSubject\n::\nclass\n],\n \n$realFactory\n);\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nKnownInterface\n::\nclass\n);\n\n\n\n\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n;\n\n\n\nclass\n \nSome\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nint\n \n$a\n,\n \n?\nint\n \n$b\n,\n \n?\nint\n \n$c\n)\n\n    \n{\n \n}\n\n\n}\n\n\n\nclass\n \nSubject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \nSome\n \n$some\n,\n \nSubject\n \n$otherSubject\n \n=\n \nnull\n)\n\n    \n{\n \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nDomainObjectFactory\n();\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSubject\n::\nclass\n,\n \n[\n\n    \nargument\n \n=\n  \nvalue\n,\n\n    \nsome\n \n=\n \n[\n1\n,\n \n2\n,\n \n3\n],\n\n    \nother_subject\n \n=\n \n[\n\n        \nargument\n \n=\n \nother_value\n,\n\n        \nsome\n \n=\n \n[\na\n \n=\n \n1\n],\n\n    \n],\n\n\n]);", 
+            "title": "Object factory"
         }, 
         {
-            "location": "/ddd/object_factories/#object-factories", 
+            "location": "/ddd/factory/object/#object-factory", 
             "text": "A domain object factory is bound to  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface . It's usage is to initialize\nany domain object based on a class name and context.", 
-            "title": "Object factories"
+            "title": "Object factory"
         }, 
         {
-            "location": "/ddd/object_factories/#implementations", 
+            "location": "/ddd/factory/object/#implementations", 
             "text": "", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/object_factories/#msgphpdomainfactorychainobjectfactory", 
+            "location": "/ddd/factory/object/#msgphpdomainfactorychainobjectfactory", 
             "text": "Holds many object factories. It returns a domain object from the first supporting factory.", 
             "title": "MsgPhp\\Domain\\Factory\\ChainObjectFactory"
         }, 
         {
-            "location": "/ddd/object_factories/#msgphpdomainfactoryclassmappingobjectfactory", 
+            "location": "/ddd/factory/object/#msgphpdomainfactoryclassmappingobjectfactory", 
             "text": "Decorates any object factory. It resolves the actual class name to use from a provided mapping or, if unknown, it uses\nthe original provided class name.", 
             "title": "MsgPhp\\Domain\\Factory\\ClassMappingObjectFactory"
         }, 
         {
-            "location": "/ddd/object_factories/#msgphpdomainfactorydomainobjectfactory", 
+            "location": "/ddd/factory/object/#msgphpdomainfactorydomainobjectfactory", 
             "text": "Generic object factory. Initializes the given class name by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g.  $myArgument ) matches a\ncorresponding underscored context key (e.g.  ['my_argument' =  'value'] ). If the context key is numeric its value will\nbe provided to a corresponding argument at index N.  Any sub class of  MsgPhp\\Domain\\DomainIdInterface  or  MsgPhp\\Domain\\DomainCollectionInterface  will be initialized\nfrom  $class::fromValue()  by default, otherwise initialization happens regulary (i.e.  new $class(...$args) ).  Nested objects (e.g.  MyObject $myArgument ) might be provided as nested context (thus array). The current factory will\nbe used to initialize the object as argument value. Another (decorating) factory can be set using  DomainObjectFactory::setNestedFactory(DomainObjectFactoryInterface $factory) .", 
             "title": "MsgPhp\\Domain\\Factory\\DomainObjectFactory"
         }, 
         {
-            "location": "/ddd/object_factories/#api", 
+            "location": "/ddd/factory/object/#api", 
             "text": "", 
             "title": "API"
         }, 
         {
-            "location": "/ddd/object_factories/#createstring-class-array-context-object", 
+            "location": "/ddd/factory/object/#createstring-class-array-context-object", 
             "text": "Factorizes a new domain object by class name. Optionally a context can be provided for the factory to act upon.", 
             "title": "create(string $class, array $context = []): object"
         }, 
         {
-            "location": "/ddd/object_factories/#chain-example", 
+            "location": "/ddd/factory/object/#chain-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\ChainObjectFactory ;  $firstFactory   =   ... ;  $secondFactory   =   ... ;  $factory   =   new   ChainObjectFactory ([ $firstFactory ,   $secondFactory ]);  $object   =   $factory - create ( SomeObject :: class ,   [ key   =   value ]);", 
             "title": "Chain example"
         }, 
         {
-            "location": "/ddd/object_factories/#class-mapping-example", 
+            "location": "/ddd/factory/object/#class-mapping-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\ClassMappingObjectFactory ;  interface   KnownInterface   {   }  class   Subject   implements   KnownInterface   {   }  $realFactory   =   ... ;  $factory   =   new   ClassMappingObjectFactory ([ KnownInterface :: class   =   Subject :: class ],   $realFactory );  /** @var Subject $object */  $object   =   $factory - create ( KnownInterface :: class );", 
             "title": "Class mapping example"
         }, 
         {
-            "location": "/ddd/object_factories/#generic-example", 
+            "location": "/ddd/factory/object/#generic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\DomainObjectFactory ;  class   Some  { \n     public   function   __construct ( int   $a ,   ? int   $b ,   ? int   $c ) \n     {   }  }  class   Subject  { \n     public   function   __construct ( string   $argument ,   Some   $some ,   Subject   $otherSubject   =   null ) \n     {   }  }  $factory   =   new   DomainObjectFactory ();  /** @var Subject $object */  $object   =   $factory - create ( Subject :: class ,   [ \n     argument   =    value , \n     some   =   [ 1 ,   2 ,   3 ], \n     other_subject   =   [ \n         argument   =   other_value , \n         some   =   [ a   =   1 ], \n     ],  ]);", 
             "title": "Generic example"
         }, 
         {
-            "location": "/ddd/entity_factories/", 
-            "text": "Entity factories\n\n\nAn entity factory is a domain object factory and is bound to \nMsgPhp\\Domain\\Factory\\EntityFactoryInterface\n.\nBesides initializing the entity via \ncreate()\n it can also initialize an identifier using either \nidentify()\n or \n\nnextIdentifier()\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityFactory\n\n\nGeneric entity factory and decorates any object factory. Additionally it must be provided with the identifier class \nmapping.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nInherited from \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create()\n.\n\n\n\n\nidentify(string $class, $id): DomainIdInterface\n\n\nReturns an identifier for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\EntityFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nEntityFactory\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \nMyOtherEntity\n::\nclass\n \n=\n \nDomainUuid\n::\nclass\n,\n\n\n],\n \n$realFactory\n);\n\n\n\n/** @var DomainId $object */\n\n\n$entityId\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// true\n\n\n\n/** @var DomainUuid $object */\n\n\n$otherEntityId\n \n=\n \n$factory\n-\nidentify\n(\nMyOtherEntity\n::\nclass\n,\n \ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyOtherEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// false", 
-            "title": "Entity factories"
+            "location": "/ddd/factory/entity/", 
+            "text": "Entity factory\n\n\nAn entity factory is a domain object factory and is bound to \nMsgPhp\\Domain\\Factory\\EntityFactoryInterface\n.\nBesides initializing the entity via \ncreate()\n it can also initialize an identifier using either \nidentify()\n or \n\nnextIdentifier()\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityFactory\n\n\nGeneric entity factory and decorates any object factory. Additionally it must be provided with the identifier class \nmapping.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nInherited from \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create()\n.\n\n\n\n\nidentify(string $class, $id): DomainIdInterface\n\n\nReturns an identifier for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\EntityFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nEntityFactory\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \nMyOtherEntity\n::\nclass\n \n=\n \nDomainUuid\n::\nclass\n,\n\n\n],\n \n$realFactory\n);\n\n\n\n/** @var DomainId $object */\n\n\n$entityId\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// true\n\n\n\n/** @var DomainUuid $object */\n\n\n$otherEntityId\n \n=\n \n$factory\n-\nidentify\n(\nMyOtherEntity\n::\nclass\n,\n \ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyOtherEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// false", 
+            "title": "Entity factory"
         }, 
         {
-            "location": "/ddd/entity_factories/#entity-factories", 
+            "location": "/ddd/factory/entity/#entity-factory", 
             "text": "An entity factory is a domain object factory and is bound to  MsgPhp\\Domain\\Factory\\EntityFactoryInterface .\nBesides initializing the entity via  create()  it can also initialize an identifier using either  identify()  or  nextIdentifier() .", 
-            "title": "Entity factories"
+            "title": "Entity factory"
         }, 
         {
-            "location": "/ddd/entity_factories/#implementations", 
+            "location": "/ddd/factory/entity/#implementations", 
             "text": "", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/entity_factories/#msgphpdomainfactoryentityfactory", 
+            "location": "/ddd/factory/entity/#msgphpdomainfactoryentityfactory", 
             "text": "Generic entity factory and decorates any object factory. Additionally it must be provided with the identifier class \nmapping.", 
             "title": "MsgPhp\\Domain\\Factory\\EntityFactory"
         }, 
         {
-            "location": "/ddd/entity_factories/#api", 
+            "location": "/ddd/factory/entity/#api", 
             "text": "", 
             "title": "API"
         }, 
         {
-            "location": "/ddd/entity_factories/#createstring-class-array-context-object", 
+            "location": "/ddd/factory/entity/#createstring-class-array-context-object", 
             "text": "Inherited from  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create() .", 
             "title": "create(string $class, array $context = []): object"
         }, 
         {
-            "location": "/ddd/entity_factories/#identifystring-class-id-domainidinterface", 
+            "location": "/ddd/factory/entity/#identifystring-class-id-domainidinterface", 
             "text": "Returns an identifier for the given entity class from a known primitive value.", 
             "title": "identify(string $class, $id): DomainIdInterface"
         }, 
         {
-            "location": "/ddd/entity_factories/#nextidentifierstring-class-domainidinterface", 
+            "location": "/ddd/factory/entity/#nextidentifierstring-class-domainidinterface", 
             "text": "Returns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.", 
             "title": "nextIdentifier(string $class): DomainIdInterface"
         }, 
         {
-            "location": "/ddd/entity_factories/#generic-example", 
+            "location": "/ddd/factory/entity/#generic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\EntityFactory ;  use   MsgPhp\\Domain\\DomainId ;  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId   as   DomainUuid ;  $realFactory   =   ... ;  $factory   =   new   EntityFactory ([ \n     MyEntity :: class   =   DomainId :: class , \n     MyOtherEntity :: class   =   DomainUuid :: class ,  ],   $realFactory );  /** @var DomainId $object */  $entityId   =   $factory - identify ( MyEntity :: class ,   1 );  $factory - nextIdentifier ( MyEntity :: class ) - isEmpty ();   // true  /** @var DomainUuid $object */  $otherEntityId   =   $factory - identify ( MyOtherEntity :: class ,   cf3d2f85-6c86-44d1-8634-af51c91a9a74 );  $factory - nextIdentifier ( MyOtherEntity :: class ) - isEmpty ();   // false", 
             "title": "Generic example"
         }, 
         {
-            "location": "/ddd/static_factories/", 
-            "text": "Static factories\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. In general its\npurpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used\ninternally mainly.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\n\n\nDomain identifier factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainIdInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $uuid */\n\n\n$uuid\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nDomain collection factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainCollectionInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $doctrineCollection */\n\n\n$doctrineCollection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
-            "title": "Static factories"
+            "location": "/ddd/factory/static/", 
+            "text": "Static factory\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. In general its\npurpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used\ninternally mainly.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\n\n\nDomain identifier factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainIdInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $uuid */\n\n\n$uuid\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nDomain collection factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainCollectionInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $doctrineCollection */\n\n\n$doctrineCollection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
+            "title": "Static factory"
         }, 
         {
-            "location": "/ddd/static_factories/#static-factories", 
+            "location": "/ddd/factory/static/#static-factory", 
             "text": "A static factory is a utility class, it cannot be initialized as a new instance using  new ...(); . In general its\npurpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used\ninternally mainly.", 
-            "title": "Static factories"
+            "title": "Static factory"
         }, 
         {
-            "location": "/ddd/static_factories/#implementations", 
+            "location": "/ddd/factory/static/#implementations", 
             "text": "MsgPhp\\Domain\\Factory\\DomainIdFactory  MsgPhp\\Domain\\Factory\\DomainCollectionFactory", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/static_factories/#domain-identifier-factory", 
+            "location": "/ddd/factory/static/#domain-identifier-factory", 
             "text": "Factorizes a  MsgPhp\\Domain\\DomainIdInterface .", 
             "title": "Domain identifier factory"
         }, 
         {
-            "location": "/ddd/static_factories/#basic-example", 
+            "location": "/ddd/factory/static/#basic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\DomainIdFactory ;  use   MsgPhp\\Domain\\DomainId ;  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId   as   DomainUuid ;  /** @var DomainId $id */  $id   =   DomainIdFactory :: create ( 1 );  /** @var DomainUuid $uuid */  $uuid   =   DomainIdFactory :: create ( cf3d2f85-6c86-44d1-8634-af51c91a9a74 );", 
             "title": "Basic example"
         }, 
         {
-            "location": "/ddd/static_factories/#domain-collection-factory", 
+            "location": "/ddd/factory/static/#domain-collection-factory", 
             "text": "Factorizes a  MsgPhp\\Domain\\DomainCollectionInterface .", 
             "title": "Domain collection factory"
         }, 
         {
-            "location": "/ddd/static_factories/#basic-example_1", 
+            "location": "/ddd/factory/static/#basic-example_1", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\DomainCollectionFactory ;  use   MsgPhp\\Domain\\DomainCollection ;  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection   as   DoctrineDomainCollection ;  use   Doctrine\\Common\\Collections\\ArrayCollection ;  /** @var DomainCollection $collection */  $collection   =   DomainCollectionFactory :: create ([ 1 ,   2 ,   3 ]);  /** @var DoctrineDomainCollection $doctrineCollection */  $doctrineCollection   =   DomainCollectionFactory :: create ( new   ArrayCollection ([ 1 ,   2 ,   3 ]));", 
             "title": "Basic example"
         }, 

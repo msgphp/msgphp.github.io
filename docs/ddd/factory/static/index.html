@@ -29,20 +29,20 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.0">
     
     
       
-        <title>Identity mapping - MsgPHP Documentation</title>
+        <title>Static factory - MsgPHP Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.2a88008a.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.2a88008a.css">
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -52,7 +52,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../style.css">
+      <link rel="stylesheet" href="../../../style.css">
     
     
   </head>
@@ -76,7 +76,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
+        <a href="../../.." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Identity mapping
+                Static factory
               </span>
             
           
@@ -210,7 +210,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -222,7 +222,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../code_conventions/" title="Code conventions" class="md-nav__link">
+    <a href="../../../code-conventions/" title="Code conventions" class="md-nav__link">
       Code conventions
     </a>
   </li>
@@ -255,8 +255,77 @@
 
 
   <li class="md-nav__item">
-    <a href="../identifiers/" title="Identifiers" class="md-nav__link">
+    <a href="../../identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identity-mapping/" title="Identity mapping" class="md-nav__link">
+      Identity mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Factories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Factories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../object/" title="Object factory" class="md-nav__link">
+      Object factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../entity/" title="Entity factory" class="md-nav__link">
+      Entity factory
     </a>
   </li>
 
@@ -276,11 +345,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Identity mapping
+        Static factory
       </label>
     
-    <a href="./" title="Identity mapping" class="md-nav__link md-nav__link--active">
-      Identity mapping
+    <a href="./" title="Static factory" class="md-nav__link md-nav__link--active">
+      Static factory
     </a>
     
       
@@ -301,23 +370,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
+  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
+    Domain identifier factory
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
@@ -328,9 +390,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
+  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
+    Domain collection factory
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -343,73 +418,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections/" title="Collections" class="md-nav__link">
-      Collections
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
-    
-    <label class="md-nav__link" for="nav-3-4">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../object_factories/" title="Object factories" class="md-nav__link">
-      Object factories
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../entity_factories/" title="Entity factories" class="md-nav__link">
-      Entity factories
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../static_factories/" title="Static factories" class="md-nav__link">
-      Static factories
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -421,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
+    <a href="../../repositories/" title="Repositories" class="md-nav__link">
       Repositories
     </a>
   </li>
@@ -460,23 +468,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
+  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
+    Domain identifier factory
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
@@ -487,9 +488,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
+  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
+    Domain collection factory
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -507,54 +521,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identity_mapping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/factory/static.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identity-mapping">Identity mapping</h1>
-<p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about the
-identifier mappings for a known domain object.</p>
+                <h1 id="static-factory">Static factory</h1>
+<p>A static factory is a utility class, it cannot be initialized as a new instance using <code>new ...();</code>. In general its
+purpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used
+internally mainly.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
-<li><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code> (uses in-memory identity map)</li>
-<li><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code> (uses Doctrine identity map)<ul>
-<li>requires: <code>doctrine/orm</code></li>
+<li><code>MsgPhp\Domain\Factory\DomainIdFactory</code></li>
+<li><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></li>
 </ul>
-</li>
-</ul>
-<h2 id="api">API</h2>
-<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
-<p>Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of
-these field values.</p>
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
-<p>Returns the actual identity value for the given object. Indexed by identifier field names.</p>
-<h2 id="doctrine-example">Doctrine example</h2>
+<h2 id="domain-identifier-factory">Domain identifier factory</h2>
+<p>Factorizes a <code>MsgPhp\Domain\DomainIdInterface</code>.</p>
+<h3 id="basic-example">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainIdFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
 
-<span class="sd">/** @ORM\Entity() */</span>
-<span class="k">class</span> <span class="nc">MyEntity</span>
-<span class="p">{</span>
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+<span class="sd">/** @var DomainId $id */</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainIdFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="sd">/** @var DomainUuid $uuid */</span>
+<span class="nv">$uuid</span> <span class="o">=</span> <span class="nx">DomainIdFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+</pre></div>
 
-<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
-<span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<h2 id="domain-collection-factory">Domain collection factory</h2>
+<p>Factorizes a <code>MsgPhp\Domain\DomainCollectionInterface</code>.</p>
+<h3 id="basic-example_1">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$identityMapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainCollectionFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainCollection</span> <span class="k">as</span> <span class="nx">DoctrineDomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\Common\Collections\ArrayCollection</span><span class="p">;</span>
 
-<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentifierFieldNames</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// [&#39;name&#39;, &#39;year&#39;]</span>
-<span class="nv">$identity</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentity</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&#39;name&#39; =&gt; ..., &#39;year&#39; =&gt; ...]</span>
+<span class="sd">/** @var DomainCollection $collection */</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="sd">/** @var DoctrineDomainCollection $doctrineCollection */</span>
+<span class="nv">$doctrineCollection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
 </pre></div>
                 
                   
@@ -574,7 +584,7 @@ these field values.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../entity/" title="Entity factory" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -583,19 +593,19 @@ these field values.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Identifiers
+                Entity factory
               </span>
             </div>
           </a>
         
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../repositories/" title="Repositories" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Collections
+                Repositories
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -625,9 +635,9 @@ these field values.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../../../assets/javascripts/application.ce2ab4bf.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
     
     

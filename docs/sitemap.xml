@@ -4,15 +4,15 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/code_conventions/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <loc>/code-conventions/</loc>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/ddd/identifiers/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/ddd/identity_mapping/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <loc>/ddd/identity-mapping/</loc>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ddd/collections/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,7 +45,7 @@
         
     <url>
      <loc>/ddd/repositories/</loc>
-     <lastmod>2018-01-25</lastmod>
+     <lastmod>2018-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
