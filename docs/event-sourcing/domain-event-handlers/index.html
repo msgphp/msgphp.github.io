@@ -453,8 +453,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#handleeventdomaineventinterface-event-void" title="handleEvent(DomainEventInterface $event): void" class="md-nav__link">
-    handleEvent(DomainEventInterface $event): void
+  <a href="#handleeventdomaineventinterface-event-bool" title="handleEvent(DomainEventInterface $event): bool" class="md-nav__link">
+    handleEvent(DomainEventInterface $event): bool
   </a>
   
 </li>
@@ -521,8 +521,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#handleeventdomaineventinterface-event-void" title="handleEvent(DomainEventInterface $event): void" class="md-nav__link">
-    handleEvent(DomainEventInterface $event): void
+  <a href="#handleeventdomaineventinterface-event-bool" title="handleEvent(DomainEventInterface $event): bool" class="md-nav__link">
+    handleEvent(DomainEventInterface $event): bool
   </a>
   
 </li>
@@ -567,8 +567,9 @@ events. By convention a trait implementation is provided to map concrete events 
 </li>
 </ul>
 <h2 id="api">API</h2>
-<h3 id="handleeventdomaineventinterface-event-void"><code>handleEvent(DomainEventInterface $event): void</code></h3>
-<p>Handles the given domain event for a known subject.</p>
+<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
+<p>Handles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes
+or no.</p>
 <h2 id="generic-example">Generic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -579,7 +580,8 @@ events. By convention a trait implementation is provided to map concrete events 
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$newValue</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">newValue</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -590,15 +592,23 @@ events. By convention a trait implementation is provided to map concrete events 
 
     <span class="k">public</span> <span class="nv">$value</span><span class="p">;</span>
 
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyDomainEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyDomainEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">===</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
 
 <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">));</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
 </pre></div>
                 
                   

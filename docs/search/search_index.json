@@ -447,12 +447,12 @@
         }, 
         {
             "location": "/event-sourcing/domain-events/", 
-            "text": "Domain events\n\n\nA domain event is bound to \nMsgPhp\\Domain\\Event\\DomainEventInterface\n. Its purpose is to identify concrete domain events\nand represents something that happens, leading to an application state change.\n\n\nImplementations\n\n\nDomain events provided and handled by default \nentity features\n:\n\n\n\n\nMsgPhp\\Domain\\Event\\ConfirmDomainEvent\n\n\nMsgPhp\\Domain\\Event\\DisableDomainEvent\n\n\nMsgPhp\\Domain\\Event\\EnableDomainEvent", 
+            "text": "Domain events\n\n\nA domain event is bound to \nMsgPhp\\Domain\\Event\\DomainEventInterface\n. Its purpose is to identify concrete domain events\nand represent something that happens. When handled it might lead to an application state change.\n\n\nImplementations\n\n\nDomain events provided and handled by default \nentity features\n:\n\n\n\n\nMsgPhp\\Domain\\Event\\ConfirmDomainEvent\n\n\nMsgPhp\\Domain\\Event\\DisableDomainEvent\n\n\nMsgPhp\\Domain\\Event\\EnableDomainEvent", 
             "title": "Domain events"
         }, 
         {
             "location": "/event-sourcing/domain-events/#domain-events", 
-            "text": "A domain event is bound to  MsgPhp\\Domain\\Event\\DomainEventInterface . Its purpose is to identify concrete domain events\nand represents something that happens, leading to an application state change.", 
+            "text": "A domain event is bound to  MsgPhp\\Domain\\Event\\DomainEventInterface . Its purpose is to identify concrete domain events\nand represent something that happens. When handled it might lead to an application state change.", 
             "title": "Domain events"
         }, 
         {
@@ -462,7 +462,7 @@
         }, 
         {
             "location": "/event-sourcing/domain-event-handlers/", 
-            "text": "Domain event handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to handle domain\nevents. By convention a trait implementation is provided to map concrete events to specialized handling methods. \n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nMaps \nType\nDomainEvent\n to \nhandle\nType\nEvent()\n\n\n\n\n\n\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): void\n\n\nHandles the given domain event for a known subject.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n;\n\n\n\nclass\n \nMyDomainEvent\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n    \n}\n\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nvalue\n));", 
+            "text": "Domain event handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to handle domain\nevents. By convention a trait implementation is provided to map concrete events to specialized handling methods. \n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nMaps \nType\nDomainEvent\n to \nhandle\nType\nEvent()\n\n\n\n\n\n\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): bool\n\n\nHandles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes\nor no.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n;\n\n\n\nclass\n \nMyDomainEvent\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n\n    \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$this\n-\nvalue\n \n===\n \n$event\n-\nnewValue\n)\n \n{\n\n            \nreturn\n \nfalse\n;\n\n        \n}\n\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n\n        \nreturn\n \ntrue\n;\n\n    \n}\n\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\nif\n \n(\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nvalue\n)))\n \n{\n\n    \n// do something\n\n\n}", 
             "title": "Domain event handlers"
         }, 
         {
@@ -481,13 +481,13 @@
             "title": "API"
         }, 
         {
-            "location": "/event-sourcing/domain-event-handlers/#handleeventdomaineventinterface-event-void", 
-            "text": "Handles the given domain event for a known subject.", 
-            "title": "handleEvent(DomainEventInterface $event): void"
+            "location": "/event-sourcing/domain-event-handlers/#handleeventdomaineventinterface-event-bool", 
+            "text": "Handles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes\nor no.", 
+            "title": "handleEvent(DomainEventInterface $event): bool"
         }, 
         {
             "location": "/event-sourcing/domain-event-handlers/#generic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\Event\\DomainEventHandlerInterface ;  use   MsgPhp\\Domain\\Event\\DomainEventHandlerTrait ;  class   MyDomainEvent  { \n     public   $newValue ; \n\n     public   function   __construct ( $value )   { \n         $this - newValue   =   $value ; \n     }  }  class   MyEntity   implements   DomainEventHandlerInterface  { \n     use   DomainEventHandlerTrait ; \n\n     public   $value ; \n\n     private   function   handleMyEvent ( MyDomainEvent   $event ) :   void \n     { \n         $this - value   =   $event - newValue ; \n     }  }  $entity   =   new   MyEntity ();  $entity - handleEvent ( new   MyDomainEvent ( value ));", 
+            "text": "?php  use   MsgPhp\\Domain\\Event\\DomainEventHandlerInterface ;  use   MsgPhp\\Domain\\Event\\DomainEventHandlerTrait ;  class   MyDomainEvent  { \n     public   $newValue ; \n\n     public   function   __construct ( $value ) \n     { \n         $this - newValue   =   $value ; \n     }  }  class   MyEntity   implements   DomainEventHandlerInterface  { \n     use   DomainEventHandlerTrait ; \n\n     public   $value ; \n\n     private   function   handleMyEvent ( MyDomainEvent   $event ) :   bool \n     { \n         if   ( $this - value   ===   $event - newValue )   { \n             return   false ; \n         } \n\n         $this - value   =   $event - newValue ; \n\n         return   true ; \n     }  }  $entity   =   new   MyEntity ();  if   ( $entity - handleEvent ( new   MyDomainEvent ( value )))   { \n     // do something  }", 
             "title": "Generic example"
         }
     ]
