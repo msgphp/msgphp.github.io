@@ -49,6 +49,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/ddd/entities/</loc>
+     <lastmod>2018-01-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

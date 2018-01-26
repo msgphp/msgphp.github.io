@@ -337,12 +337,12 @@
         }, 
         {
             "location": "/ddd/repositories/", 
-            "text": "Repositories\n\n\nA repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n (In-memory persistence)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n (Doctrine persistence)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\n?php\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nnull\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nvalue\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \n[\none\n,\n \nof\n,\n \nthese\n]);\n\n\n\n\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
+            "text": "Repositories\n\n\nA repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.\n\n\nNote default (interface bound) repositories are provided per domain layer.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n (In-memory persistence)\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n (Doctrine persistence)\n\n\nrequires: \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\n?php\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nnull\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nvalue\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \n[\none\n,\n \nof\n,\n \nthese\n]);\n\n\n\n\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
             "title": "Repositories"
         }, 
         {
             "location": "/ddd/repositories/#repositories", 
-            "text": "A repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.", 
+            "text": "A repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.  Note default (interface bound) repositories are provided per domain layer.", 
             "title": "Repositories"
         }, 
         {
@@ -399,6 +399,51 @@
             "location": "/ddd/repositories/#generic-doctrine-repository-example", 
             "text": "?php  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait ;  use   Doctrine\\ORM\\EntityManagerInterface ;  class   MyGenericRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n     }  }  /** @var EntityManagerInterface $em */  $em   =   ... ;  $repository   =   new   MyGenericRepository ( MyEntity :: class ,   $em );   /** @var MyEntity $entity */  $entity   =   $repository - find ( 1 );", 
             "title": "Generic Doctrine repository example"
+        }, 
+        {
+            "location": "/ddd/entities/", 
+            "text": "Entities\n\n\nEntity objects are provided per domain layer and usually follow a \nPOPO\n\ndesign.\n\n\nTo simplify the creation of entities the base domain layer provides common fields and features in the form of PHP\ntraits. Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.\n\n\nThey are defined in a dedicated namespace for discovery, respectively \nMsgphp\\Domain\\Entiy\\Field\\\n and\n\nMsgPhp\\Domain\\Entity\\Features\\\n.\n\n\nCommon entity fields\n\n\nCreatedAtField\n\n\nA datetime value representing the entity was initially created at.\n\n\n\n\ngetCreatedAt(): \\DateTimeInterface\n\n\nRequired to be set initially\n\n\n\n\n\n\n\n\nEnabledField\n\n\nA boolean value representing the entity should be considered enabled yes or no.\n\n\n\n\nisEnabled(): bool\n\n\nfalse\n by default\n\n\n\n\n\n\n\n\nLastUpdatedAtField\n\n\nA datetime value representing the entity was last updated at.\n\n\n\n\ngetLastUpdatedAt(): \\DateTimeInterface\n\n\nRequired to be set initially\n\n\n\n\n\n\n\n\nCommon entity features\n\n\nCanBeConfirmed\n\n\nProvides ability to confirm an entity. When used an entity is considered initially unconfirmed.\n\n\n\n\ngetConfirmationToken(): ?string\n\n\nRequired to be set initially\n\n\n\n\n\n\ngetConfirmedAt(): ?\\DateTimeInterface\n \n\n\nisConfirmed(): bool\n \n\n\nconfirm(): void\n \n\n\nconfirmationToken\n is unset\n\n\nconfirmatedAt\n is set to current datetime\n\n\n\n\n\n\n\n\nCanBeEnabled\n\n\nProvides ability to toggle an entity availability state.\n\n\n\n\nInherits from \nEnabledField\n\n\nenable(): void\n\n\ndisable(): void", 
+            "title": "Entities"
+        }, 
+        {
+            "location": "/ddd/entities/#entities", 
+            "text": "Entity objects are provided per domain layer and usually follow a  POPO \ndesign.  To simplify the creation of entities the base domain layer provides common fields and features in the form of PHP\ntraits. Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.  They are defined in a dedicated namespace for discovery, respectively  Msgphp\\Domain\\Entiy\\Field\\  and MsgPhp\\Domain\\Entity\\Features\\ .", 
+            "title": "Entities"
+        }, 
+        {
+            "location": "/ddd/entities/#common-entity-fields", 
+            "text": "", 
+            "title": "Common entity fields"
+        }, 
+        {
+            "location": "/ddd/entities/#createdatfield", 
+            "text": "A datetime value representing the entity was initially created at.   getCreatedAt(): \\DateTimeInterface  Required to be set initially", 
+            "title": "CreatedAtField"
+        }, 
+        {
+            "location": "/ddd/entities/#enabledfield", 
+            "text": "A boolean value representing the entity should be considered enabled yes or no.   isEnabled(): bool  false  by default", 
+            "title": "EnabledField"
+        }, 
+        {
+            "location": "/ddd/entities/#lastupdatedatfield", 
+            "text": "A datetime value representing the entity was last updated at.   getLastUpdatedAt(): \\DateTimeInterface  Required to be set initially", 
+            "title": "LastUpdatedAtField"
+        }, 
+        {
+            "location": "/ddd/entities/#common-entity-features", 
+            "text": "", 
+            "title": "Common entity features"
+        }, 
+        {
+            "location": "/ddd/entities/#canbeconfirmed", 
+            "text": "Provides ability to confirm an entity. When used an entity is considered initially unconfirmed.   getConfirmationToken(): ?string  Required to be set initially    getConfirmedAt(): ?\\DateTimeInterface    isConfirmed(): bool    confirm(): void    confirmationToken  is unset  confirmatedAt  is set to current datetime", 
+            "title": "CanBeConfirmed"
+        }, 
+        {
+            "location": "/ddd/entities/#canbeenabled", 
+            "text": "Provides ability to toggle an entity availability state.   Inherits from  EnabledField  enable(): void  disable(): void", 
+            "title": "CanBeEnabled"
         }
     ]
 }
