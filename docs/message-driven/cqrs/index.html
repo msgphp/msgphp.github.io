@@ -624,22 +624,22 @@ design. Its purpose is to describe an action to be taken. For commands being mes
 <a href="../domain-message-bus/">message bus</a>.</p>
 <h2 id="command-handlers">Command handlers</h2>
 <p>The message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.
-Usually a command handlers is designed, but not limited, to handle one specific command message.</p>
+Usually a command handler is designed, but not limited, to handle one specific command message.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaincommandeventsourcingcommandhandlertrait"><code>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</code></h3>
-<p>Sources a <a href="../../event-sourcing/domain-events/">domain event</a> from a command message.</p>
+<p>Sources a domain event from a command message.</p>
 <ul>
 <li><code>doHandle(object $command, callable $onHandled = null): void</code><ul>
 <li>Invokes the domain event for the given command message</li>
-<li>If the domain event is handled <code>$onHandled</code> will be invoked (if given) receiving the handler as first argument</li>
+<li>If the domain event is handled <code>$onHandled</code> will be invoked (if given), receiving the handler as first argument</li>
 </ul>
 </li>
 <li><code>abstract getDomainEvent(object $command): DomainEventInterface</code><ul>
-<li>Get the <a href="../../event-sourcing/domain-events/">domain event</a> to be handled</li>
+<li>The <a href="../../event-sourcing/domain-events/">domain event</a> to be handled</li>
 </ul>
 </li>
 <li><code>abstract getDomainEventHandler(object $command): DomainEventHandlerInterface</code><ul>
-<li>Get the <a href="../../event-sourcing/domain-event-handlers/">domain event handler</a> to handle the domain event</li>
+<li>The <a href="../../event-sourcing/domain-event-handlers/">domain event handler</a> handling the domain event</li>
 </ul>
 </li>
 </ul>
@@ -673,7 +673,7 @@ Usually a command handlers is designed, but not limited, to handle one specific 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doHandle</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">MyEntity</span> <span class="nv">$entity</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-            <span class="c1">// do something, e.g. save entity using a repository</span>
+            <span class="c1">// do something</span>
         <span class="p">});</span>
     <span class="p">}</span>
 
@@ -684,7 +684,6 @@ Usually a command handlers is designed, but not limited, to handle one specific 
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEventHandler</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainEventHandlerInterface</span>
     <span class="p">{</span>
-        <span class="c1">// usually the command provides e.g. an entity identity to be looked up by a repository</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
