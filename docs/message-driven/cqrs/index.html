@@ -34,7 +34,7 @@
     
     
       
-        <title>Identity mapping - MsgPHP Documentation</title>
+        <title>CQRS - MsgPHP Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Identity mapping
+                CQRS
               </span>
             
           
@@ -232,12 +232,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Domain-driven-design
@@ -255,7 +253,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../identifiers/" title="Identifiers" class="md-nav__link">
+    <a href="../../ddd/identifiers/" title="Identifiers" class="md-nav__link">
       Identifiers
     </a>
   </li>
@@ -265,81 +263,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Identity mapping
-      </label>
-    
-    <a href="./" title="Identity mapping" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../ddd/identity-mapping/" title="Identity mapping" class="md-nav__link">
       Identity mapping
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -349,7 +277,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../collections/" title="Collections" class="md-nav__link">
+    <a href="../../ddd/collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
   </li>
@@ -380,7 +308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/object/" title="Object factory" class="md-nav__link">
+    <a href="../../ddd/factory/object/" title="Object factory" class="md-nav__link">
       Object factory
     </a>
   </li>
@@ -392,7 +320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/entity/" title="Entity factory" class="md-nav__link">
+    <a href="../../ddd/factory/entity/" title="Entity factory" class="md-nav__link">
       Entity factory
     </a>
   </li>
@@ -404,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/static/" title="Static factory" class="md-nav__link">
+    <a href="../../ddd/factory/static/" title="Static factory" class="md-nav__link">
       Static factory
     </a>
   </li>
@@ -421,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
+    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
       Repositories
     </a>
   </li>
@@ -433,7 +361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../entities/" title="Entities" class="md-nav__link">
+    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
       Entities
     </a>
   </li>
@@ -496,10 +424,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Message driven
@@ -517,7 +447,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/domain-message-bus/" title="Domain message bus" class="md-nav__link">
+    <a href="../domain-message-bus/" title="Domain message bus" class="md-nav__link">
       Domain message bus
     </a>
   </li>
@@ -527,11 +457,81 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../message-driven/cqrs/" title="CQRS" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        CQRS
+      </label>
+    
+    <a href="./" title="CQRS" class="md-nav__link md-nav__link--active">
       CQRS
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-handlers" title="Command handlers" class="md-nav__link">
+    Command handlers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaincommandeventsourcingcommandhandlertrait" title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait" class="md-nav__link">
+    MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-sourcing-example" title="Event sourcing example" class="md-nav__link">
+    Event sourcing example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -561,30 +561,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
+  <a href="#command-handlers" title="Command handlers" class="md-nav__link">
+    Command handlers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
+  <a href="#msgphpdomaincommandeventsourcingcommandhandlertrait" title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait" class="md-nav__link">
+    MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait
   </a>
   
 </li>
@@ -595,8 +588,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-sourcing-example" title="Event sourcing example" class="md-nav__link">
+    Event sourcing example
   </a>
   
 </li>
@@ -615,58 +615,96 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identity-mapping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/message-driven/cqrs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identity-mapping">Identity mapping</h1>
-<p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about
-the identifier mappings for a known domain object.</p>
+                <h1 id="command-query-responsibility-segregation">Command Query Responsibility Segregation</h1>
+<p>Commands are domain objects and provided per domain layer. They usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
+design. Its purpose is to describe an action to be taken. For commands being messages they can be dispatched using any
+<a href="../domain-message-bus/">message bus</a>.</p>
+<h2 id="command-handlers">Command handlers</h2>
+<p>The message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.
+Usually a command handlers is designed, but not limited, to handle one specific command message.</p>
 <h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomaincommandeventsourcingcommandhandlertrait"><code>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</code></h3>
+<p>Sources a <a href="../../event-sourcing/domain-events/">domain event</a> from a command message.</p>
 <ul>
-<li><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code><ul>
-<li>In-memory identity map</li>
+<li><code>doHandle(object $command, callable $onHandled = null): void</code><ul>
+<li>Invokes the domain event for the given command message</li>
+<li>If the domain event is handled <code>$onHandled</code> will be invoked (if given) receiving the handler as first argument</li>
 </ul>
 </li>
-<li><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code><ul>
-<li>Doctrine identity map</li>
-<li>Requires <code>doctrine/orm</code></li>
+<li><code>abstract getDomainEvent(object $command): DomainEventInterface</code><ul>
+<li>Get the <a href="../../event-sourcing/domain-events/">domain event</a> to be handled</li>
+</ul>
+</li>
+<li><code>abstract getDomainEventHandler(object $command): DomainEventHandlerInterface</code><ul>
+<li>Get the <a href="../../event-sourcing/domain-event-handlers/">domain event handler</a> to handle the domain event</li>
 </ul>
 </li>
 </ul>
-<h2 id="api">API</h2>
-<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
-<p>Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of
-these field values.</p>
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
-<p>Returns the actual identity value for the given object. Indexed by identifier field names.</p>
-<h2 id="doctrine-example">Doctrine example</h2>
+<h2 id="generic-example">Generic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-
-<span class="sd">/** @ORM\Entity() */</span>
-<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="k">class</span> <span class="nc">MyCommand</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyCommandHandler</span>
 <span class="p">{</span>
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
-
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// do something</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyCommand</span><span class="p">());</span>
+</pre></div>
 
-<span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
-<span class="nv">$identityMapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+<h2 id="event-sourcing-example">Event sourcing example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentifierFieldNames</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// [&#39;name&#39;, &#39;year&#39;]</span>
-<span class="nv">$identity</span> <span class="o">=</span> <span class="nv">$identityMapping</span><span class="o">-&gt;</span><span class="na">getIdentity</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&#39;name&#39; =&gt; ..., &#39;year&#39; =&gt; ...]</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</span><span class="p">;</span> 
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventInterface</span><span class="p">};</span> 
+
+<span class="k">class</span> <span class="nc">MyCommand</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyCommandHandler</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">EventSourcingCommandHandlerTrait</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doHandle</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">MyEntity</span> <span class="nv">$entity</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
+            <span class="c1">// do something, e.g. save entity using a repository</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEvent</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainEventInterface</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEventHandler</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainEventHandlerInterface</span>
+    <span class="p">{</span>
+        <span class="c1">// usually the command provides e.g. an entity identity to be looked up by a repository</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEventInterface</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleEvent</span><span class="p">(</span><span class="nx">DomainEventInterface</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span> <span class="nx">instanceof</span> <span class="nx">MyDomainEvent</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// do something</span>
+
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyCommand</span><span class="p">());</span>
 </pre></div>
                 
                   
@@ -686,7 +724,7 @@ these field values.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../domain-message-bus/" title="Domain message bus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -695,25 +733,11 @@ these field values.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Identifiers
+                Domain message bus
               </span>
             </div>
           </a>
         
-        
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Collections
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
