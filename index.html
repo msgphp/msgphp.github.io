@@ -6,19 +6,27 @@
         <meta name="author" content="The Community">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css" />
         <title>Message driven PHP</title>
     </head>
     <body>
-        <div class="container">
-            <div class="jumbotron m-3 p-4">
-                <h1>Message driven PHP</h1>
-                <p class="lead text-muted">Message based domain layers. Shipped with industry standard infrastructure.</p>
-                <hr class="my-4">
-                <p><abbr title="Message driven PHP">MsgPHP</abbr> is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.</p>
+        <header>
+            <nav class="navbar navbar-dark indigo">
+                <section class="container">
+                    <h1 class="navbar-brand m-0 h1">Message driven PHP</h1>
+                    <span class="navbar-text">Message based domain layers. Shipped with industry standard infrastructure.</span>
+                </section>
+            </nav>
+        </header>
+        <section class="container mb-2">
+            <div class="jumbotron p-5 mb-2">
+                <p class="lead"><abbr title="Message driven PHP">MsgPHP</abbr> is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.</p>
                 <ul class="list-unstyled">
+                    <li>⤷ A base <code>Domain</code> to rapidly built other domains</li>
                     <li>⤷ User management with the <code>User</code> domain</li>
                     <li>⤷ Entity attribute values with the <code>Eav</code> domain</li>
                 </ul>
+                <hr class="my-3">
                 <div class="text-center">
                     <div class="btn-group" role="group">
                         <a class="btn btn-primary" href="https://github.com/msgphp/msgphp" role="button"><img src="/assets/icons/code.svg" alt=""><span class="d-none d-sm-inline"> GitHub</span></a>
@@ -27,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <p class="small ml-4">P.S.: want to do the logo? <a href="https://github.com/ro0NL">Let me know</a>.</p>
-        </div>
+            <small>P.S.: want to do the logo? <a href="https://github.com/ro0NL">Let me know</a>.</small>
+        </section>
     </body>
 </html>
