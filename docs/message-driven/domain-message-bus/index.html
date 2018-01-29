@@ -320,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/factory/entity/" title="Entity factory" class="md-nav__link">
-      Entity factory
+    <a href="../../ddd/factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
+      Entity aware factory
     </a>
   </li>
 
@@ -515,6 +515,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../domain-message-dispatcher/" title="Domain message dispatcher" class="md-nav__link">
+      Domain message dispatcher
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../cqrs/" title="CQRS" class="md-nav__link">
       CQRS
     </a>
@@ -591,8 +603,8 @@
                 
                 
                 <h1 id="domain-message-bus">Domain message bus</h1>
-<p>A domain message bus is bound to <code>MsgPhp\Domain\DomainMessageBusInterface</code>. Its purpose is to dispatch any type of
-message object and helps you to use CQRS and event sourcing.</p>
+<p>A domain message bus is bound to <code>MsgPhp\Domain\Message\DomainMessageBusInterface</code>. Its purpose is to dispatch any type
+of message object and helps you to use <a href="../cqrs/">CQRS</a> and <a href="../../event-sourcing/domain-event-handlers/">event sourcing</a>.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Infra\SimpleBus\DomainMessageBus</code><ul>
@@ -636,13 +648,13 @@ message object and helps you to use CQRS and event sourcing.</p>
           </a>
         
         
-          <a href="../cqrs/" title="CQRS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../domain-message-dispatcher/" title="Domain message dispatcher" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                CQRS
+                Domain message dispatcher
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

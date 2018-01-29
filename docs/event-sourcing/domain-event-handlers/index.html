@@ -320,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/factory/entity/" title="Entity factory" class="md-nav__link">
-      Entity factory
+    <a href="../../ddd/factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
+      Entity aware factory
     </a>
   </li>
 
@@ -522,6 +522,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../message-driven/domain-message-dispatcher/" title="Domain message dispatcher" class="md-nav__link">
+      Domain message dispatcher
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../message-driven/cqrs/" title="CQRS" class="md-nav__link">
       CQRS
     </a>
@@ -605,8 +617,9 @@
                 
                 
                 <h1 id="domain-event-handlers">Domain event handlers</h1>
-<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle domain
-events. By convention a trait implementation is provided to map concrete events to specialized handling methods. </p>
+<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle
+<a href="../domain-events/">domain events</a>. By convention a trait implementation is provided to map concrete events to
+specialized handling methods.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>

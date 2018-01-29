@@ -99,6 +99,15 @@
                     
                 </div>
             </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../MsgPhp/Domain/Message/DomainMessageDispatchingTrait.html"><abbr title="MsgPhp\Domain\Message\DomainMessageDispatchingTrait">DomainMessageDispatchingTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
             </div>
     
     
@@ -106,17 +115,6 @@
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_doHandle">doHandle</a>($command, callable $onHandled = null)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../../../MsgPhp/Domain/Command/EventSourcingCommandHandlerTrait.html#method_doHandle"><abbr title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait">EventSourcingCommandHandlerTrait</abbr></a></small></div>
-            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
@@ -144,7 +142,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/Domain/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -168,42 +166,8 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_doHandle">
-        <div class="location">in <a href="../../../../MsgPhp/Domain/Command/EventSourcingCommandHandlerTrait.html#method_doHandle"><abbr title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait">EventSourcingCommandHandlerTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Command/EventSourcingCommandHandlerTrait.php#L17">line 17</a></div>
-        <code>            protected        
-    <strong>doHandle</strong>($command, callable $onHandled = null)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$command</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>callable</td>
-                <td>$onHandled</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_getDomainEvent">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L41">line 41</a></div>
         <code>            protected        
     <strong>getDomainEvent</strong>(<a href="../../../../MsgPhp/User/Command/DisableUserCommand.html"><abbr title="MsgPhp\User\Command\DisableUserCommand">DisableUserCommand</abbr></a> $command)
         </code>
@@ -232,7 +196,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getDomainEventHandler">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L47">line 47</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L46">line 46</a></div>
         <code>            protected        
     <strong>getDomainEventHandler</strong>(<a href="../../../../MsgPhp/User/Command/DisableUserCommand.html"><abbr title="MsgPhp\User\Command\DisableUserCommand">DisableUserCommand</abbr></a> $command)
         </code>
@@ -261,9 +225,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L27">line 27</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L26">line 26</a></div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../../MsgPhp/Domain/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory)
+    <strong>__construct</strong>(<a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository)
         </code>
     </h3>
     <div class="details">
@@ -275,18 +239,18 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../MsgPhp/Domain/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
+                <td><a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
+                <td>$factory</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
                 <td>$bus</td>
                 <td></td>
             </tr>
                     <tr>
                 <td><a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a></td>
                 <td>$repository</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><a href="../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
-                <td>$factory</td>
                 <td></td>
             </tr>
             </table>
@@ -300,7 +264,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___invoke">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L34">line 34</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/DisableUserHandler.php#L33">line 33</a></div>
         <code>                    
     <strong>__invoke</strong>(<a href="../../../../MsgPhp/User/Command/DisableUserCommand.html"><abbr title="MsgPhp\User\Command\DisableUserCommand">DisableUserCommand</abbr></a> $command)
         </code>

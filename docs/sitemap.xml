@@ -82,6 +82,12 @@
     </url>
         
     <url>
+     <loc>/message-driven/domain-message-dispatcher/</loc>
+     <lastmod>2018-01-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/message-driven/cqrs/</loc>
      <lastmod>2018-01-29</lastmod>
      <changefreq>daily</changefreq>

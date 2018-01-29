@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Message\DomainMessageDispatchingTrait | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Command_EventSourcingCommandHandlerTrait" data-root-path="../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Message_DomainMessageDispatchingTrait" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,20 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">trait</span></li>
-                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Command.html">Command</a></li><li class="backslash">\</li><li>EventSourcingCommandHandlerTrait</li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Message.html">Message</a></li><li class="backslash">\</li><li>DomainMessageDispatchingTrait</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            EventSourcingCommandHandlerTrait
+            DomainMessageDispatchingTrait
                 
         </h1>
     </div>
 
     <p>    trait
-    <strong>EventSourcingCommandHandlerTrait</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Command/EventSourcingCommandHandlerTrait.php">View source</a>)
+    <strong>DomainMessageDispatchingTrait</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Message/DomainMessageDispatchingTrait.php">View source</a>)
 </p>
 
         
@@ -97,18 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getDomainEvent">getDomainEvent</a>(object $command)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getDomainEventHandler">getDomainEventHandler</a>(object $command)
+                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -121,10 +110,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_getDomainEvent">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Command/EventSourcingCommandHandlerTrait.php#L34">line 34</a></div>
-        <code>    abstract        protected        
-    <strong>getDomainEvent</strong>(object $command)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Message/DomainMessageDispatchingTrait.php#L17">line 17</a></div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
         </code>
     </h3>
     <div class="details">
@@ -136,37 +125,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>object</td>
-                <td>$command</td>
+                <td><a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
+                <td>$factory</td>
                 <td></td>
             </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getDomainEventHandler">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Command/EventSourcingCommandHandlerTrait.php#L39">line 39</a></div>
-        <code>    abstract        protected        
-    <strong>getDomainEventHandler</strong>(object $command)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
                     <tr>
-                <td>object</td>
-                <td>$command</td>
+                <td><a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
+                <td>$bus</td>
                 <td></td>
             </tr>
             </table>

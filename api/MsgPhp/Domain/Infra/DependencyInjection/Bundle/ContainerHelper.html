@@ -229,7 +229,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_removeDisabledCommandMessages">removeDisabledCommandMessages</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $commands)
+                    <a href="#method_configureCommandMessages">configureCommandMessages</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $commands)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -240,7 +240,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerEventMessages">registerEventMessages</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $events)
+                    <a href="#method_configureEventMessages">configureEventMessages</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $events)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -696,10 +696,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_removeDisabledCommandMessages">
+                    <h3 id="method_configureCommandMessages">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ContainerHelper.php#L201">line 201</a></div>
         <code>        static            
-    <strong>removeDisabledCommandMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $commands)
+    <strong>configureCommandMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $commands)
         </code>
     </h3>
     <div class="details">
@@ -717,6 +717,11 @@
             </tr>
                     <tr>
                 <td>array</td>
+                <td>$classMapping</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
                 <td>$commands</td>
                 <td></td>
             </tr>
@@ -730,10 +735,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_registerEventMessages">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ContainerHelper.php#L218">line 218</a></div>
+                    <h3 id="method_configureEventMessages">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ContainerHelper.php#L227">line 227</a></div>
         <code>        static            
-    <strong>registerEventMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $events)
+    <strong>configureEventMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $events)
         </code>
     </h3>
     <div class="details">
@@ -747,6 +752,11 @@
                     <tr>
                 <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
                 <td>$container</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$classMapping</td>
                 <td></td>
             </tr>
                     <tr>

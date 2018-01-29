@@ -261,47 +261,47 @@
             "title": "Generic example"
         }, 
         {
-            "location": "/ddd/factory/entity/", 
-            "text": "Entity factory\n\n\nAn entity factory is a domain object factory and is bound to \nMsgPhp\\Domain\\Factory\\EntityFactoryInterface\n.\nBesides initializing the entity via \ncreate()\n it can also initialize an identifier using either \nidentify()\n or \n\nnextIdentifier()\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityFactory\n\n\nGeneric entity factory and decorates any object factory. Additionally it must be provided with the identifier class \nmapping.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nInherited from \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create()\n.\n\n\n\n\nidentify(string $class, $id): DomainIdInterface\n\n\nReturns an identifier for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\EntityFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nEntityFactory\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \nMyOtherEntity\n::\nclass\n \n=\n \nDomainUuid\n::\nclass\n,\n\n\n],\n \n$realFactory\n);\n\n\n\n/** @var DomainId $object */\n\n\n$entityId\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// true\n\n\n\n/** @var DomainUuid $object */\n\n\n$otherEntityId\n \n=\n \n$factory\n-\nidentify\n(\nMyOtherEntity\n::\nclass\n,\n \ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyOtherEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// false", 
-            "title": "Entity factory"
+            "location": "/ddd/factory/entity_aware/", 
+            "text": "Entity aware factory\n\n\nAn entity aware factory is a domain object factory and is bound to \nMsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface\n.\nBesides initializing any domain object via \ncreate()\n it can also initialize an entity identifier using either\n\nidentify()\n or \nnextIdentifier()\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactory\n\n\nGeneric entity factory and decorates any object factory. Additionally it must be provided with an entity to identifier\nclass mapping.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nInherited from \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create()\n.\n\n\n\n\nidentify(string $class, $id): DomainIdInterface\n\n\nReturns an identifier for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\EntityFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n$realFactory\n \n=\n \n...\n;\n\n\n\n$factory\n \n=\n \nnew\n \nEntityFactory\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \nMyOtherEntity\n::\nclass\n \n=\n \nDomainUuid\n::\nclass\n,\n\n\n],\n \n$realFactory\n);\n\n\n\n/** @var DomainId $object */\n\n\n$entityId\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// true\n\n\n\n/** @var DomainUuid $object */\n\n\n$otherEntityId\n \n=\n \n$factory\n-\nidentify\n(\nMyOtherEntity\n::\nclass\n,\n \ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n$factory\n-\nnextIdentifier\n(\nMyOtherEntity\n::\nclass\n)\n-\nisEmpty\n();\n \n// false", 
+            "title": "Entity aware factory"
         }, 
         {
-            "location": "/ddd/factory/entity/#entity-factory", 
-            "text": "An entity factory is a domain object factory and is bound to  MsgPhp\\Domain\\Factory\\EntityFactoryInterface .\nBesides initializing the entity via  create()  it can also initialize an identifier using either  identify()  or  nextIdentifier() .", 
-            "title": "Entity factory"
+            "location": "/ddd/factory/entity_aware/#entity-aware-factory", 
+            "text": "An entity aware factory is a domain object factory and is bound to  MsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface .\nBesides initializing any domain object via  create()  it can also initialize an entity identifier using either identify()  or  nextIdentifier() .", 
+            "title": "Entity aware factory"
         }, 
         {
-            "location": "/ddd/factory/entity/#implementations", 
+            "location": "/ddd/factory/entity_aware/#implementations", 
             "text": "", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/factory/entity/#msgphpdomainfactoryentityfactory", 
-            "text": "Generic entity factory and decorates any object factory. Additionally it must be provided with the identifier class \nmapping.", 
-            "title": "MsgPhp\\Domain\\Factory\\EntityFactory"
+            "location": "/ddd/factory/entity_aware/#msgphpdomainfactoryentityawarefactory", 
+            "text": "Generic entity factory and decorates any object factory. Additionally it must be provided with an entity to identifier\nclass mapping.", 
+            "title": "MsgPhp\\Domain\\Factory\\EntityAwareFactory"
         }, 
         {
-            "location": "/ddd/factory/entity/#api", 
+            "location": "/ddd/factory/entity_aware/#api", 
             "text": "", 
             "title": "API"
         }, 
         {
-            "location": "/ddd/factory/entity/#createstring-class-array-context-object", 
+            "location": "/ddd/factory/entity_aware/#createstring-class-array-context-object", 
             "text": "Inherited from  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create() .", 
             "title": "create(string $class, array $context = []): object"
         }, 
         {
-            "location": "/ddd/factory/entity/#identifystring-class-id-domainidinterface", 
+            "location": "/ddd/factory/entity_aware/#identifystring-class-id-domainidinterface", 
             "text": "Returns an identifier for the given entity class from a known primitive value.", 
             "title": "identify(string $class, $id): DomainIdInterface"
         }, 
         {
-            "location": "/ddd/factory/entity/#nextidentifierstring-class-domainidinterface", 
+            "location": "/ddd/factory/entity_aware/#nextidentifierstring-class-domainidinterface", 
             "text": "Returns the next identifier for the given entity class. Depending on the implementation its value might be considered\nempty if it's not capable to calculate one upfront.", 
             "title": "nextIdentifier(string $class): DomainIdInterface"
         }, 
         {
-            "location": "/ddd/factory/entity/#generic-example", 
+            "location": "/ddd/factory/entity_aware/#generic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Factory\\EntityFactory ;  use   MsgPhp\\Domain\\DomainId ;  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId   as   DomainUuid ;  $realFactory   =   ... ;  $factory   =   new   EntityFactory ([ \n     MyEntity :: class   =   DomainId :: class , \n     MyOtherEntity :: class   =   DomainUuid :: class ,  ],   $realFactory );  /** @var DomainId $object */  $entityId   =   $factory - identify ( MyEntity :: class ,   1 );  $factory - nextIdentifier ( MyEntity :: class ) - isEmpty ();   // true  /** @var DomainUuid $object */  $otherEntityId   =   $factory - identify ( MyOtherEntity :: class ,   cf3d2f85-6c86-44d1-8634-af51c91a9a74 );  $factory - nextIdentifier ( MyOtherEntity :: class ) - isEmpty ();   // false", 
             "title": "Generic example"
         }, 
@@ -462,12 +462,12 @@
         }, 
         {
             "location": "/event-sourcing/domain-event-handlers/", 
-            "text": "Domain event handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to handle domain\nevents. By convention a trait implementation is provided to map concrete events to specialized handling methods. \n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nMaps \nType\nDomainEvent\n to \nhandle\nType\nEvent()\n\n\n\n\n\n\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): bool\n\n\nHandles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes\nor no.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n;\n\n\n\nclass\n \nMyDomainEvent\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n\n    \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$this\n-\nvalue\n \n===\n \n$event\n-\nnewValue\n)\n \n{\n\n            \nreturn\n \nfalse\n;\n\n        \n}\n\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n\n        \nreturn\n \ntrue\n;\n\n    \n}\n\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\nif\n \n(\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nvalue\n)))\n \n{\n\n    \n// do something\n\n\n}", 
+            "text": "Domain event handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to handle\n\ndomain events\n. By convention a trait implementation is provided to map concrete events to\nspecialized handling methods.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nMaps \nType\nDomainEvent\n to \nhandle\nType\nEvent()\n\n\n\n\n\n\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): bool\n\n\nHandles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes\nor no.\n\n\nGeneric example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n;\n\n\n\nclass\n \nMyDomainEvent\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n\n    \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$this\n-\nvalue\n \n===\n \n$event\n-\nnewValue\n)\n \n{\n\n            \nreturn\n \nfalse\n;\n\n        \n}\n\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n\n        \nreturn\n \ntrue\n;\n\n    \n}\n\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\nif\n \n(\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nvalue\n)))\n \n{\n\n    \n// do something\n\n\n}", 
             "title": "Domain event handlers"
         }, 
         {
             "location": "/event-sourcing/domain-event-handlers/#domain-event-handlers", 
-            "text": "A domain event handler is bound to  MsgPhp\\Domain\\Event\\DomainEventHandlerInterface . Its purpose is to handle domain\nevents. By convention a trait implementation is provided to map concrete events to specialized handling methods.", 
+            "text": "A domain event handler is bound to  MsgPhp\\Domain\\Event\\DomainEventHandlerInterface . Its purpose is to handle domain events . By convention a trait implementation is provided to map concrete events to\nspecialized handling methods.", 
             "title": "Domain event handlers"
         }, 
         {
@@ -492,12 +492,12 @@
         }, 
         {
             "location": "/message-driven/domain-message-bus/", 
-            "text": "Domain message bus\n\n\nA domain message bus is bound to \nMsgPhp\\Domain\\DomainMessageBusInterface\n. Its purpose is to dispatch any type of\nmessage object and helps you to use CQRS and event sourcing.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\SimpleBus\\DomainMessageBus\n\n\nRequires \nsimple-bus/message-bus\n\n\n\n\n\n\n\n\nAPI\n\n\ndispatch(object $message): mixed\n\n\nDispatches the given message object. The bus can return a value coming from handlers, but is not required to do so.", 
+            "text": "Domain message bus\n\n\nA domain message bus is bound to \nMsgPhp\\Domain\\Message\\DomainMessageBusInterface\n. Its purpose is to dispatch any type\nof message object and helps you to use \nCQRS\n and \nevent sourcing\n.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\SimpleBus\\DomainMessageBus\n\n\nRequires \nsimple-bus/message-bus\n\n\n\n\n\n\n\n\nAPI\n\n\ndispatch(object $message): mixed\n\n\nDispatches the given message object. The bus can return a value coming from handlers, but is not required to do so.", 
             "title": "Domain message bus"
         }, 
         {
             "location": "/message-driven/domain-message-bus/#domain-message-bus", 
-            "text": "A domain message bus is bound to  MsgPhp\\Domain\\DomainMessageBusInterface . Its purpose is to dispatch any type of\nmessage object and helps you to use CQRS and event sourcing.", 
+            "text": "A domain message bus is bound to  MsgPhp\\Domain\\Message\\DomainMessageBusInterface . Its purpose is to dispatch any type\nof message object and helps you to use  CQRS  and  event sourcing .", 
             "title": "Domain message bus"
         }, 
         {
@@ -516,8 +516,33 @@
             "title": "dispatch(object $message): mixed"
         }, 
         {
+            "location": "/message-driven/domain-message-dispatcher/", 
+            "text": "Domain message dispatcher\n\n\nThe domain message dispatcher is a utility trait. Its purpose is to dispatch a message, factorized by a\n\nobject factory\n, using any \nmessage bus\n.\n\n\nAPI\n\n\n\n\nExposed \nprivate\n as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\n\n\ndispatch(string $class, array $context = []): mixed\n\n\nDispatches the given message object. The dispatcher can return a value coming from handlers, but is not required to do\nso.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Message\\DomainMessageDispatchingTrait\n;\n\n\n\nclass\n \nMyClass\n\n\n{\n\n    \nuse\n \nDomainMessageDispatchingTrait\n;\n\n\n    \npublic\n \nfunction\n \ndoSomething\n()\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\ndispatch\n(\nSomeMessage\n::\nclass\n,\n \n[\narg\n \n=\n \nvalue\n]);\n\n    \n}\n\n\n}", 
+            "title": "Domain message dispatcher"
+        }, 
+        {
+            "location": "/message-driven/domain-message-dispatcher/#domain-message-dispatcher", 
+            "text": "The domain message dispatcher is a utility trait. Its purpose is to dispatch a message, factorized by a object factory , using any  message bus .", 
+            "title": "Domain message dispatcher"
+        }, 
+        {
+            "location": "/message-driven/domain-message-dispatcher/#api", 
+            "text": "Exposed  private  as a trait. You can decide to  change method visibility \non a per case basis.", 
+            "title": "API"
+        }, 
+        {
+            "location": "/message-driven/domain-message-dispatcher/#dispatchstring-class-array-context-mixed", 
+            "text": "Dispatches the given message object. The dispatcher can return a value coming from handlers, but is not required to do\nso.", 
+            "title": "dispatch(string $class, array $context = []): mixed"
+        }, 
+        {
+            "location": "/message-driven/domain-message-dispatcher/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Message\\DomainMessageDispatchingTrait ;  class   MyClass  { \n     use   DomainMessageDispatchingTrait ; \n\n     public   function   doSomething () :   void \n     { \n         $this - dispatch ( SomeMessage :: class ,   [ arg   =   value ]); \n     }  }", 
+            "title": "Basic example"
+        }, 
+        {
             "location": "/message-driven/cqrs/", 
-            "text": "Command Query Responsibility Segregation\n\n\nCommands are domain objects and provided per domain layer. They usually follow a \nPOPO\n\ndesign. Its purpose is to describe an action to be taken. For commands being messages they can be dispatched using any\n\nmessage bus\n.\n\n\nCommand handlers\n\n\nThe message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.\nUsually a command handler is designed, but not limited, to handle one specific command message.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Command\\EventSourcingCommandHandlerTrait\n\n\nSources a domain event from a command message.\n\n\n\n\ndoHandle(object $command, callable $onHandled = null): void\n\n\nInvokes the domain event for the given command message\n\n\nIf the domain event is handled \n$onHandled\n will be invoked (if given), receiving the handler as first argument\n\n\n\n\n\n\nabstract getDomainEvent(object $command): DomainEventInterface\n\n\nThe \ndomain event\n to be handled\n\n\n\n\n\n\nabstract getDomainEventHandler(object $command): DomainEventHandlerInterface\n\n\nThe \ndomain event handler\n handling the domain event\n\n\n\n\n\n\n\n\nGeneric example\n\n\n?php\n\n\n\nclass\n \nMyCommand\n \n{\n \n}\n\n\nclass\n \nMyCommandHandler\n\n\n{\n\n    \npublic\n \nfunction\n \n__invoke\n(\nMyCommand\n \n$command\n)\n:\n \nvoid\n\n    \n{\n\n        \n// do something\n\n    \n}\n\n\n}\n\n\n\n$bus\n-\ndispatch\n(\nnew\n \nMyCommand\n());\n\n\n\n\n\n\nEvent sourcing example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Command\\EventSourcingCommandHandlerTrait\n;\n \n\nuse\n \nMsgPhp\\Domain\\Event\\\n{\nDomainEventHandlerInterface\n,\n \nDomainEventInterface\n};\n \n\n\nclass\n \nMyCommand\n \n{\n \n}\n\n\nclass\n \nMyCommandHandler\n\n\n{\n\n    \nuse\n \nEventSourcingCommandHandlerTrait\n;\n\n\n    \npublic\n \nfunction\n \n__invoke\n(\nMyCommand\n \n$command\n)\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\ndoHandle\n(\n$command\n,\n \nfunction\n \n(\nMyEntity\n \n$entity\n)\n:\n \nvoid\n \n{\n\n            \n// do something\n\n        \n});\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \ngetDomainEvent\n(\nMyCommand\n \n$command\n)\n:\n \nDomainEventInterface\n\n    \n{\n\n        \nreturn\n \nnew\n \nMyDomainEvent\n();\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \ngetDomainEventHandler\n(\nMyCommand\n \n$command\n)\n:\n \nDomainEventHandlerInterface\n\n    \n{\n\n        \nreturn\n \nnew\n \nMyEntity\n();\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyDomainEvent\n \nimplements\n \nDomainEventInterface\n \n{\n \n}\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \npublic\n \nfunction\n \nhandleEvent\n(\nDomainEventInterface\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$event\n \ninstanceof\n \nMyDomainEvent\n)\n \n{\n\n            \n// do something\n\n\n            \nreturn\n \ntrue\n;\n\n        \n}\n\n\n        \nreturn\n \nfalse\n;\n\n    \n}\n\n\n}\n\n\n\n$bus\n-\ndispatch\n(\nnew\n \nMyCommand\n());", 
+            "text": "Command Query Responsibility Segregation\n\n\nCommands are domain objects and provided per domain layer. They usually follow a \nPOPO\n\ndesign. Its purpose is to describe an action to be taken. For commands being messages they can be dispatched using any\n\nmessage bus\n.\n\n\nCommand handlers\n\n\nThe message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.\nUsually a command handler is designed, but not limited, to handle one specific command message.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Command\\EventSourcingCommandHandlerTrait\n\n\nHandles a command message by sourcing a domain event.\n\n\n\n\nhandle(object $command, callable $onHandled = null): void\n\n\nIf the domain event is handled \n$onHandled\n will be invoked (if given), receiving the handler as first argument\n\n\n\n\n\n\nabstract getDomainEvent(object $command): DomainEventInterface\n\n\nThe \ndomain event\n to be handled\n\n\n\n\n\n\nabstract getDomainEventHandler(object $command): DomainEventHandlerInterface\n\n\nThe \ndomain event handler\n handling the domain event\n\n\n\n\n\n\n\n\nGeneric example\n\n\n?php\n\n\n\nclass\n \nMyCommand\n \n{\n \n}\n\n\nclass\n \nMyCommandHandler\n\n\n{\n\n    \npublic\n \nfunction\n \n__invoke\n(\nMyCommand\n \n$command\n)\n:\n \nvoid\n\n    \n{\n\n        \n// do something\n\n    \n}\n\n\n}\n\n\n\n$bus\n-\ndispatch\n(\nnew\n \nMyCommand\n());\n\n\n\n\n\n\nEvent sourcing example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Command\\EventSourcingCommandHandlerTrait\n;\n \n\nuse\n \nMsgPhp\\Domain\\Event\\\n{\nDomainEventHandlerInterface\n,\n \nDomainEventInterface\n};\n \n\n\nclass\n \nMyCommand\n \n{\n \n}\n\n\nclass\n \nMyCommandHandler\n\n\n{\n\n    \nuse\n \nEventSourcingCommandHandlerTrait\n;\n\n\n    \npublic\n \nfunction\n \n__invoke\n(\nMyCommand\n \n$command\n)\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\ndoHandle\n(\n$command\n,\n \nfunction\n \n(\nMyEntity\n \n$entity\n)\n:\n \nvoid\n \n{\n\n            \n// do something\n\n        \n});\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \ngetDomainEvent\n(\nMyCommand\n \n$command\n)\n:\n \nDomainEventInterface\n\n    \n{\n\n        \nreturn\n \nnew\n \nMyDomainEvent\n();\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \ngetDomainEventHandler\n(\nMyCommand\n \n$command\n)\n:\n \nDomainEventHandlerInterface\n\n    \n{\n\n        \nreturn\n \nnew\n \nMyEntity\n();\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyDomainEvent\n \nimplements\n \nDomainEventInterface\n \n{\n \n}\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \npublic\n \nfunction\n \nhandleEvent\n(\nDomainEventInterface\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$event\n \ninstanceof\n \nMyDomainEvent\n)\n \n{\n\n            \n// do something\n\n\n            \nreturn\n \ntrue\n;\n\n        \n}\n\n\n        \nreturn\n \nfalse\n;\n\n    \n}\n\n\n}\n\n\n\n$bus\n-\ndispatch\n(\nnew\n \nMyCommand\n());", 
             "title": "CQRS"
         }, 
         {
@@ -537,7 +562,7 @@
         }, 
         {
             "location": "/message-driven/cqrs/#msgphpdomaincommandeventsourcingcommandhandlertrait", 
-            "text": "Sources a domain event from a command message.   doHandle(object $command, callable $onHandled = null): void  Invokes the domain event for the given command message  If the domain event is handled  $onHandled  will be invoked (if given), receiving the handler as first argument    abstract getDomainEvent(object $command): DomainEventInterface  The  domain event  to be handled    abstract getDomainEventHandler(object $command): DomainEventHandlerInterface  The  domain event handler  handling the domain event", 
+            "text": "Handles a command message by sourcing a domain event.   handle(object $command, callable $onHandled = null): void  If the domain event is handled  $onHandled  will be invoked (if given), receiving the handler as first argument    abstract getDomainEvent(object $command): DomainEventInterface  The  domain event  to be handled    abstract getDomainEventHandler(object $command): DomainEventHandlerInterface  The  domain event handler  handling the domain event", 
             "title": "MsgPhp\\Domain\\Command\\EventSourcingCommandHandlerTrait"
         }, 
         {

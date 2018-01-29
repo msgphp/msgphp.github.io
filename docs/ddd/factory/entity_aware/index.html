@@ -29,20 +29,20 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.0">
     
     
       
-        <title>Identifiers - MsgPHP Documentation</title>
+        <title>Entity aware factory - MsgPHP Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.2a88008a.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.2a88008a.css">
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -52,7 +52,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../style.css">
+      <link rel="stylesheet" href="../../../style.css">
     
     
   </head>
@@ -76,7 +76,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
+        <a href="../../.." title="MsgPHP Documentation" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Identifiers
+                Entity aware factory
               </span>
             
           
@@ -210,7 +210,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -222,7 +222,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../code-conventions/" title="Code conventions" class="md-nav__link">
+    <a href="../../../code-conventions/" title="Code conventions" class="md-nav__link">
       Code conventions
     </a>
   </li>
@@ -253,6 +253,75 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../identifiers/" title="Identifiers" class="md-nav__link">
+      Identifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../identity-mapping/" title="Identity mapping" class="md-nav__link">
+      Identity mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Factories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Factories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../object/" title="Object factory" class="md-nav__link">
+      Object factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -264,11 +333,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Identifiers
+        Entity aware factory
       </label>
     
-    <a href="./" title="Identifiers" class="md-nav__link md-nav__link--active">
-      Identifiers
+    <a href="./" title="Entity aware factory" class="md-nav__link md-nav__link--active">
+      Entity aware factory
     </a>
     
       
@@ -286,6 +355,19 @@
     Implementations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainfactoryentityawarefactory" title="MsgPhp\Domain\Factory\EntityAwareFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\EntityAwareFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -297,29 +379,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-fromvaluevalue-domainidinterface" title="static fromValue($value): DomainIdInterface" class="md-nav__link">
-    static fromValue($value): DomainIdInterface
+  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
+    create(string $class, array $context = []): object
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#isempty-bool" title="isEmpty(): bool" class="md-nav__link">
-    isEmpty(): bool
+  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $id): DomainIdInterface
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tostring-string-__tostring-string" title="toString(): string / __toString(): string" class="md-nav__link">
-    toString(): string / __toString(): string
+  <a href="#nextidentifierstring-class-domainidinterface" title="nextIdentifier(string $class): DomainIdInterface" class="md-nav__link">
+    nextIdentifier(string $class): DomainIdInterface
   </a>
   
 </li>
@@ -330,8 +405,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
   </a>
   
 </li>
@@ -351,74 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../identity-mapping/" title="Identity mapping" class="md-nav__link">
-      Identity mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections/" title="Collections" class="md-nav__link">
-      Collections
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
-    
-    <label class="md-nav__link" for="nav-3-4">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/object/" title="Object factory" class="md-nav__link">
-      Object factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
-      Entity aware factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/static/" title="Static factory" class="md-nav__link">
+    <a href="../static/" title="Static factory" class="md-nav__link">
       Static factory
     </a>
   </li>
@@ -435,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
+    <a href="../../repositories/" title="Repositories" class="md-nav__link">
       Repositories
     </a>
   </li>
@@ -447,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../entities/" title="Entities" class="md-nav__link">
+    <a href="../../entities/" title="Entities" class="md-nav__link">
       Entities
     </a>
   </li>
@@ -483,7 +491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
+    <a href="../../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
       Domain events
     </a>
   </li>
@@ -495,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
+    <a href="../../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
       Domain event handlers
     </a>
   </li>
@@ -531,7 +539,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/domain-message-bus/" title="Domain message bus" class="md-nav__link">
+    <a href="../../../message-driven/domain-message-bus/" title="Domain message bus" class="md-nav__link">
       Domain message bus
     </a>
   </li>
@@ -543,7 +551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/domain-message-dispatcher/" title="Domain message dispatcher" class="md-nav__link">
+    <a href="../../../message-driven/domain-message-dispatcher/" title="Domain message dispatcher" class="md-nav__link">
       Domain message dispatcher
     </a>
   </li>
@@ -555,7 +563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/cqrs/" title="CQRS" class="md-nav__link">
+    <a href="../../../message-driven/cqrs/" title="CQRS" class="md-nav__link">
       CQRS
     </a>
   </li>
@@ -591,6 +599,19 @@
     Implementations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainfactoryentityawarefactory" title="MsgPhp\Domain\Factory\EntityAwareFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\EntityAwareFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -602,29 +623,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-fromvaluevalue-domainidinterface" title="static fromValue($value): DomainIdInterface" class="md-nav__link">
-    static fromValue($value): DomainIdInterface
+  <a href="#createstring-class-array-context-object" title="create(string $class, array $context = []): object" class="md-nav__link">
+    create(string $class, array $context = []): object
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#isempty-bool" title="isEmpty(): bool" class="md-nav__link">
-    isEmpty(): bool
+  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $id): DomainIdInterface
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tostring-string-__tostring-string" title="toString(): string / __toString(): string" class="md-nav__link">
-    toString(): string / __toString(): string
+  <a href="#nextidentifierstring-class-domainidinterface" title="nextIdentifier(string $class): DomainIdInterface" class="md-nav__link">
+    nextIdentifier(string $class): DomainIdInterface
   </a>
   
 </li>
@@ -635,8 +649,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
+  <a href="#generic-example" title="Generic example" class="md-nav__link">
+    Generic example
   </a>
   
 </li>
@@ -655,91 +669,48 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identifiers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/factory/entity_aware.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identifiers">Identifiers</h1>
-<p>An identifier is a domain value object and is bound to <code>MsgPhp\Domain\DomainIdInterface</code>. Its purpose is to identify
-domain objects, e.g. entities.</p>
+                <h1 id="entity-aware-factory">Entity aware factory</h1>
+<p>An entity aware factory is a domain object factory and is bound to <code>MsgPhp\Domain\Factory\EntityAwareFactoryInterface</code>.
+Besides initializing any domain object via <code>create()</code> it can also initialize an entity identifier using either
+<code>identify()</code> or <code>nextIdentifier()</code>.</p>
 <h2 id="implementations">Implementations</h2>
-<ul>
-<li><code>MsgPhp\Domain\DomainId</code><ul>
-<li>Generic scalar values</li>
-</ul>
-</li>
-<li><code>MsgPhp\Domain\Infra\Uuid\DomainId</code><ul>
-<li>UUID values</li>
-<li>Requires <code>ramsey/uuid</code></li>
-</ul>
-</li>
-</ul>
+<h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code></h3>
+<p>Generic entity factory and decorates any object factory. Additionally it must be provided with an entity to identifier
+class mapping.</p>
 <h2 id="api">API</h2>
-<h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code></h3>
-<p>Factorizes a new identifier from a primitive value.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// not allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// allowed</span>
-</pre></div>
-
-
+<h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
+<p>Inherited from <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface::create()</code>.</p>
 <hr />
-<h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
-<p>Tells if an identifier value is considered empty. In general this is the case when an identifier is created from a
-primitive <code>null</code> value, and therefor enables to differ its string value from an explicit empty string value (<code>""</code>).</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// null</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// &quot;&quot;</span>
-</pre></div>
-
-
+<h3 id="identifystring-class-id-domainidinterface"><code>identify(string $class, $id): DomainIdInterface</code></h3>
+<p>Returns an identifier for the given entity class from a known primitive value.</p>
 <hr />
-<h3 id="equals-bool"><code>equals(): bool</code></h3>
-<p>Tells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the
-same identifier value is considered <strong>not</strong> equal when comparing e.g.:</p>
+<h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
+<p>Returns the next identifier for the given entity class. Depending on the implementation its value might be considered
+empty if it's not capable to calculate one upfront.</p>
+<h2 id="generic-example">Generic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\EntityFactory</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span> <span class="p">{</span> <span class="p">}</span>
+<span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
-<span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="nx">MyDomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false!</span>
-</pre></div>
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityFactory</span><span class="p">([</span>
+    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">],</span> <span class="nv">$realFactory</span><span class="p">);</span>
 
+<span class="sd">/** @var DomainId $object */</span>
+<span class="nv">$entityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentifier</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
 
-<hr />
-<h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code></h3>
-<p>Returns the string value of the identifier. If the the identifier is empty (see <code>isEmpty</code>) an empty string (<code>""</code>) 
-should be returned.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="k">echo</span> <span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span>
-<span class="k">echo</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
-</pre></div>
-
-
-<h2 id="uuid-example">UUID example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Ramsey\Uuid\Uuid</span><span class="p">;</span>
-
-<span class="nv">$uuid4</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
-<span class="nv">$uuid4Alt</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">));</span>
-<span class="nv">$uuid4Alt2</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid4</span><span class="p">());</span>
-<span class="nv">$newUuid4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$newUuid5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid5</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">NAMESPACE_URL</span><span class="p">,</span> <span class="s1">&#39;http://php.net/&#39;</span><span class="p">));</span>
+<span class="sd">/** @var DomainUuid $object */</span>
+<span class="nv">$otherEntityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentifier</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
 </pre></div>
                 
                   
@@ -759,7 +730,7 @@ should be returned.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../code-conventions/" title="Code conventions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../object/" title="Object factory" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -768,19 +739,19 @@ should be returned.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Code conventions
+                Object factory
               </span>
             </div>
           </a>
         
         
-          <a href="../identity-mapping/" title="Identity mapping" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../static/" title="Static factory" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Identity mapping
+                Static factory
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -810,9 +781,9 @@ should be returned.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.ce2ab4bf.js"></script>
+      <script src="../../../assets/javascripts/application.ce2ab4bf.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
     
     

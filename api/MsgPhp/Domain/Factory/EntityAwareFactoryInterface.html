@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Factory\EntityFactory | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Factory\EntityAwareFactoryInterface | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Factory_EntityFactory" data-root-path="../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Factory_EntityAwareFactoryInterface" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,22 +65,22 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Factory.html">Factory</a></li><li class="backslash">\</li><li>EntityFactory</li>
+                <li><span class="label label-default">interface</span></li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Factory.html">Factory</a></li><li class="backslash">\</li><li>EntityAwareFactoryInterface</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            EntityFactory
+            EntityAwareFactoryInterface
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>EntityFactory</strong>        implements
-        <a href="../../../MsgPhp/Domain/Factory/EntityFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityFactoryInterface">EntityFactoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityFactory.php">View source</a>)
+    <p>    interface
+    <strong>EntityAwareFactoryInterface</strong>        implements
+        <a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactoryInterface.php">View source</a>)
 </p>
 
         
@@ -95,17 +95,6 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(array $identifierMapping, <a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
                     object
                 </div>
                 <div class="col-md-8 type">
@@ -113,7 +102,7 @@
         
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html#method_create"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -144,42 +133,8 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityFactory.php#L18">line 18</a></div>
-        <code>                    
-    <strong>__construct</strong>(array $identifierMapping, <a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$identifierMapping</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
-                <td>$factory</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_create">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityFactory.php#L24">line 24</a></div>
+        <div class="location">in <a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html#method_create"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactoryInterface.php#L15">line 15</a></div>
         <code>                    object
     <strong>create</strong>(string $class, array $context = [])
         </code>
@@ -222,7 +177,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_identify">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityFactory.php#L29">line 29</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactoryInterface.php#L14">line 14</a></div>
         <code>                    
     <strong>identify</strong>(string $class, $id)
         </code>
@@ -256,7 +211,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_nextIdentifier">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityFactory.php#L40">line 40</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactoryInterface.php#L16">line 16</a></div>
         <code>                    
     <strong>nextIdentifier</strong>(string $class)
         </code>
