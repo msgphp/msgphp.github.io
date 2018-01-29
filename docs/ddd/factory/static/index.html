@@ -363,15 +363,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
-    Domain identifier factory
+  <a href="#msgphpdomainfactorydomainidfactory" title="MsgPhp\Domain\Factory\DomainIdFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\DomainIdFactory
   </a>
   
     <nav class="md-nav">
@@ -390,8 +383,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
-    Domain collection factory
+  <a href="#msgphpdomainfactorydomaincollectionfactory" title="MsgPhp\Domain\Factory\DomainCollectionFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\DomainCollectionFactory
   </a>
   
     <nav class="md-nav">
@@ -569,15 +562,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domain-identifier-factory" title="Domain identifier factory" class="md-nav__link">
-    Domain identifier factory
+  <a href="#msgphpdomainfactorydomainidfactory" title="MsgPhp\Domain\Factory\DomainIdFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\DomainIdFactory
   </a>
   
     <nav class="md-nav">
@@ -596,8 +582,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#domain-collection-factory" title="Domain collection factory" class="md-nav__link">
-    Domain collection factory
+  <a href="#msgphpdomainfactorydomaincollectionfactory" title="MsgPhp\Domain\Factory\DomainCollectionFactory" class="md-nav__link">
+    MsgPhp\Domain\Factory\DomainCollectionFactory
   </a>
   
     <nav class="md-nav">
@@ -633,16 +619,13 @@
                 
                 
                 <h1 id="static-factory">Static factory</h1>
-<p>A static factory is a utility class, it cannot be initialized as a new instance using <code>new ...();</code>. In general its
-purpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used
-internally mainly.</p>
-<h2 id="implementations">Implementations</h2>
+<p>A static factory is a utility class, it cannot be initialized as a new instance using <code>new ...();</code>. Its purpose is to
+factorize a known implementation for a given class.</p>
+<h2 id="msgphpdomainfactorydomainidfactory"><code>MsgPhp\Domain\Factory\DomainIdFactory</code></h2>
+<p>Factorize an <a href="../../identifiers/">identifier</a> from any primitive value.</p>
 <ul>
-<li><code>MsgPhp\Domain\Factory\DomainIdFactory</code></li>
-<li><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></li>
+<li><code>static create($value): DomainIdInterface</code></li>
 </ul>
-<h2 id="domain-identifier-factory">Domain identifier factory</h2>
-<p>Factorizes a <code>MsgPhp\Domain\DomainIdInterface</code>.</p>
 <h3 id="basic-example">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -658,8 +641,11 @@ internally mainly.</p>
 </pre></div>
 
 
-<h2 id="domain-collection-factory">Domain collection factory</h2>
-<p>Factorizes a <code>MsgPhp\Domain\DomainCollectionInterface</code>.</p>
+<h2 id="msgphpdomainfactorydomaincollectionfactory"><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></h2>
+<p>Factorizes a <a href="../../collections/">collection</a> from any primitive iterable value.</p>
+<ul>
+<li><code>static create(?iterable $value): DomainCollectionInterface</code></li>
+</ul>
 <h3 id="basic-example_1">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 

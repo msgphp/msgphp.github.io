@@ -307,23 +307,18 @@
         }, 
         {
             "location": "/ddd/factory/static/", 
-            "text": "Static factory\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. In general its\npurpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used\ninternally mainly.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\n\n\nDomain identifier factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainIdInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $uuid */\n\n\n$uuid\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nDomain collection factory\n\n\nFactorizes a \nMsgPhp\\Domain\\DomainCollectionInterface\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $doctrineCollection */\n\n\n$doctrineCollection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
+            "text": "Static factory\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. Its purpose is to\nfactorize a known implementation for a given class.\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nFactorize an \nidentifier\n from any primitive value.\n\n\n\n\nstatic create($value): DomainIdInterface\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $uuid */\n\n\n$uuid\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\nFactorizes a \ncollection\n from any primitive iterable value.\n\n\n\n\nstatic create(?iterable $value): DomainCollectionInterface\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $doctrineCollection */\n\n\n$doctrineCollection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));", 
             "title": "Static factory"
         }, 
         {
             "location": "/ddd/factory/static/#static-factory", 
-            "text": "A static factory is a utility class, it cannot be initialized as a new instance using  new ...(); . In general its\npurpose is to factorize a known implementation for a given interface. It's designed, but not limited, to be used\ninternally mainly.", 
+            "text": "A static factory is a utility class, it cannot be initialized as a new instance using  new ...(); . Its purpose is to\nfactorize a known implementation for a given class.", 
             "title": "Static factory"
         }, 
         {
-            "location": "/ddd/factory/static/#implementations", 
-            "text": "MsgPhp\\Domain\\Factory\\DomainIdFactory  MsgPhp\\Domain\\Factory\\DomainCollectionFactory", 
-            "title": "Implementations"
-        }, 
-        {
-            "location": "/ddd/factory/static/#domain-identifier-factory", 
-            "text": "Factorizes a  MsgPhp\\Domain\\DomainIdInterface .", 
-            "title": "Domain identifier factory"
+            "location": "/ddd/factory/static/#msgphpdomainfactorydomainidfactory", 
+            "text": "Factorize an  identifier  from any primitive value.   static create($value): DomainIdInterface", 
+            "title": "MsgPhp\\Domain\\Factory\\DomainIdFactory"
         }, 
         {
             "location": "/ddd/factory/static/#basic-example", 
@@ -331,9 +326,9 @@
             "title": "Basic example"
         }, 
         {
-            "location": "/ddd/factory/static/#domain-collection-factory", 
-            "text": "Factorizes a  MsgPhp\\Domain\\DomainCollectionInterface .", 
-            "title": "Domain collection factory"
+            "location": "/ddd/factory/static/#msgphpdomainfactorydomaincollectionfactory", 
+            "text": "Factorizes a  collection  from any primitive iterable value.   static create(?iterable $value): DomainCollectionInterface", 
+            "title": "MsgPhp\\Domain\\Factory\\DomainCollectionFactory"
         }, 
         {
             "location": "/ddd/factory/static/#basic-example_1", 
@@ -342,7 +337,7 @@
         }, 
         {
             "location": "/ddd/repositories/", 
-            "text": "Repositories\n\n\nA repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.\n\n\nNote default (interface bound) repositories are provided per domain layer.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n\n\nIn-memory persistence\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n\n\nDoctrine persistence\n\n\nRequires \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\nNote this API is exposed privately as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\n?php\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nnull\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nvalue\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \n[\none\n,\n \nof\n,\n \nthese\n]);\n\n\n\n\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
+            "text": "Repositories\n\n\nA repository is not interface bound by default. Instead you can leverage various trait objects to rapidly create one, \ndepending on the type of infrastructure needed. By design they follow the same API although there might be subtle\ndifferences per implementation.\n\n\nNote default (interface bound) repositories are provided per domain layer.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n\n\nIn-memory persistence\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n\n\nDoctrine persistence\n\n\nRequires \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\n\n\nExposed \nprivate\n as a trait. You can decide to \nchange method visibility\n\non a per case basis.\n\n\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available.\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields.\n\n\n?php\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nnull\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \nvalue\n]);\n\n\n$this\n-\ndoFindAllByFields\n([\nfield\n \n=\n \n[\none\n,\n \nof\n,\n \nthese\n]);\n\n\n\n\n\n\ndoFind($id, ...$idN): object\n\n\nFinds a single entity by its identity.\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields.\n\n\ndoExists($id, ...$idN): bool\n\n\nVerify if an entity exists by its identity.\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerify if an entity exists matching all specified fields.\n\n\ndoSave(object $entity): void\n\n\nPersist an entity in the identity map. The entity will be available on any subsequent query.\n\n\ndoDelete(object $entity): void\n\n\nRemove an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nGeneric Doctrine repository example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\n\nclass\n \nMyGenericRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$repository\n \n=\n \nnew\n \nMyGenericRepository\n(\nMyEntity\n::\nclass\n,\n \n$em\n);\n \n\n\n/** @var MyEntity $entity */\n\n\n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);", 
             "title": "Repositories"
         }, 
         {
@@ -357,7 +352,7 @@
         }, 
         {
             "location": "/ddd/repositories/#api", 
-            "text": "Note this API is exposed privately as a trait. You can decide to  change method visibility \non a per case basis.", 
+            "text": "Exposed  private  as a trait. You can decide to  change method visibility \non a per case basis.", 
             "title": "API"
         }, 
         {
