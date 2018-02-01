@@ -565,8 +565,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../message-driven/domain-message-dispatcher/" title="Domain message dispatcher" class="md-nav__link">
-      Domain message dispatcher
+    <a href="../../../message-driven/message-dispatcher/" title="Message dispatcher" class="md-nav__link">
+      Message dispatcher
     </a>
   </li>
 
@@ -713,7 +713,8 @@ the original provided class name.</p>
 <p>Generic object factory. Initializes the given class name by reading its constructor arguments. Argument values are
 resolved from the provided context. By convention a camel cased argument name (e.g. <code>$myArgument</code>) matches a
 corresponding underscored context key (e.g. <code>['my_argument' =&gt; 'value']</code>). If the context key is numeric its value will
-be provided to a corresponding argument at index N.</p>
+be provided to a corresponding argument at index N. In case an exact match exists (e.g. <code>['myArgument' =&gt; 'value']</code>) it
+will always be used instead.</p>
 <p>Any sub class of <code>MsgPhp\Domain\DomainIdInterface</code> or <code>MsgPhp\Domain\DomainCollectionInterface</code> will be initialized
 from <code>$class::fromValue()</code> by default, otherwise initialization happens regulary (i.e. <code>new $class(...$args)</code>).</p>
 <p>Nested objects (e.g. <code>MyObject $myArgument</code>) might be provided as nested context (thus array). The current factory will

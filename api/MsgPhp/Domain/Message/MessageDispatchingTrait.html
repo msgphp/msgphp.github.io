@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Command\DisableUserCommand | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Message\MessageDispatchingTrait | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Command_DisableUserCommand" data-root-path="../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Message_MessageDispatchingTrait" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,21 +65,21 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/User/Command.html">Command</a></li><li class="backslash">\</li><li>DisableUserCommand</li>
+                <li><span class="label label-default">trait</span></li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Message.html">Message</a></li><li class="backslash">\</li><li>MessageDispatchingTrait</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DisableUserCommand
+            MessageDispatchingTrait
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>DisableUserCommand</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/DisableUserCommand.php">View source</a>)
+    <p>    trait
+    <strong>MessageDispatchingTrait</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Message/MessageDispatchingTrait.php">View source</a>)
 </p>
 
         
@@ -88,19 +88,6 @@
     
     
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_userId">
-                                                                                
-                </td>
-                <td>$userId</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
@@ -110,7 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($userId)
+                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -124,9 +111,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/DisableUserCommand.php#L14">line 14</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Message/MessageDispatchingTrait.php#L17">line 17</a></div>
         <code>                    
-    <strong>__construct</strong>($userId)
+    <strong>__construct</strong>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
         </code>
     </h3>
     <div class="details">
@@ -138,8 +125,13 @@
 
                     <table class="table table-condensed">
                     <tr>
+                <td><a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
+                <td>$factory</td>
                 <td></td>
-                <td>$userId</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
+                <td>$bus</td>
                 <td></td>
             </tr>
             </table>

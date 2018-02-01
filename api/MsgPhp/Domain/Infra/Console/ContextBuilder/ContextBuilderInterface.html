@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Infra\Console\Command\SynchronizeUsernamesCommand | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextBuilderInterface | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Infra_Console_Command_SynchronizeUsernamesCommand" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Console_ContextBuilder_ContextBuilderInterface" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,21 +65,21 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console/Command.html">Command</a></li><li class="backslash">\</li><li>SynchronizeUsernamesCommand</li>
+                <li><span class="label label-default">interface</span></li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console/ContextBuilder.html">ContextBuilder</a></li><li class="backslash">\</li><li>ContextBuilderInterface</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            SynchronizeUsernamesCommand
+            ContextBuilderInterface
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>SynchronizeUsernamesCommand</strong>        extends <abbr title="Symfony\Component\Console\Command\Command">Command</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php">View source</a>)
+    <p>    interface
+    <strong>ContextBuilderInterface</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php">View source</a>)
 </p>
 
         
@@ -88,19 +88,6 @@
     
     
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_defaultName">
-                    static                    protected                                        
-                </td>
-                <td>$defaultName</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
@@ -110,7 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a> $repository)
+                    <a href="#method_configure">configure</a>(<abbr title="Symfony\Component\Console\Input\InputDefinition">InputDefinition</abbr> $definition)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -121,18 +108,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_configure">configure</a>()
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_execute">execute</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
+                    <a href="#method_getContext">getContext</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -145,10 +121,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L24">line 24</a></div>
+                    <h3 id="method_configure">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php#L16">line 16</a></div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a> $repository)
+    <strong>configure</strong>(<abbr title="Symfony\Component\Console\Input\InputDefinition">InputDefinition</abbr> $definition)
         </code>
     </h3>
     <div class="details">
@@ -160,8 +136,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/Repository/UsernameRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UsernameRepositoryInterface">UsernameRepositoryInterface</abbr></a></td>
-                <td>$repository</td>
+                <td><abbr title="Symfony\Component\Console\Input\InputDefinition">InputDefinition</abbr></td>
+                <td>$definition</td>
                 <td></td>
             </tr>
             </table>
@@ -174,29 +150,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_configure">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L31">line 31</a></div>
-        <code>            protected        
-    <strong>configure</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_execute">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/SynchronizeUsernamesCommand.php#L38">line 38</a></div>
-        <code>            protected        
-    <strong>execute</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
+                    <h3 id="method_getContext">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php#L18">line 18</a></div>
+        <code>                    
+    <strong>getContext</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
         </code>
     </h3>
     <div class="details">
@@ -213,8 +170,8 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></td>
-                <td>$output</td>
+                <td><abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr></td>
+                <td>$io</td>
                 <td></td>
             </tr>
             </table>
