@@ -623,7 +623,7 @@ specialized handling methods.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>
-<li>Maps <code>&lt;Type&gt;DomainEvent</code> to <code>handle&lt;Type&gt;Event()</code></li>
+<li>Maps events to <code>handle&lt;ClassName_Without_Event_Suffix&gt;Event()</code> methods</li>
 </ul>
 </li>
 </ul>
@@ -637,7 +637,7 @@ or no.</p>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerTrait</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyDomainEvent</span>
+<span class="k">class</span> <span class="nc">MyEvent</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$newValue</span><span class="p">;</span>
 
@@ -653,7 +653,7 @@ or no.</p>
 
     <span class="k">public</span> <span class="nv">$value</span><span class="p">;</span>
 
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyDomainEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">===</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
@@ -667,7 +667,7 @@ or no.</p>
 <span class="p">}</span>
 
 <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)))</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)))</span> <span class="p">{</span>
     <span class="c1">// do something</span>
 <span class="p">}</span>
 </pre></div>

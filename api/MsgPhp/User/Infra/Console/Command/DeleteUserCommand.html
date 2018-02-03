@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Infra\Doctrine\Event\UsernameListener | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Console\Command\DeleteUserCommand | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_Event_UsernameListener" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Console_Command_DeleteUserCommand" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,28 +66,55 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine/Event.html">Event</a></li><li class="backslash">\</li><li>UsernameListener</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Console/Command.html">Command</a></li><li class="backslash">\</li><li>DeleteUserCommand</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            UsernameListener
+            DeleteUserCommand
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>UsernameListener</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php">View source</a>)
+    <strong>DeleteUserCommand</strong>        extends <a href="../../../../../MsgPhp/User/Infra/Console/Command/UserCommand.html"><abbr title="MsgPhp\User\Infra\Console\Command\UserCommand">UserCommand</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/DeleteUserCommand.php">View source</a>)
 </p>
 
         
     
 
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../../MsgPhp/Domain/Message/MessageDispatchingTrait.html"><abbr title="MsgPhp\Domain\Message\MessageDispatchingTrait">MessageDispatchingTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_defaultName">
+                    static                    protected                                        
+                </td>
+                <td>$defaultName</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -97,7 +124,18 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(array $mapping)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../MsgPhp/Domain/Message/MessageDispatchingTrait.html#method___construct"><abbr title="MsgPhp\Domain\Message\MessageDispatchingTrait">MessageDispatchingTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_onMessageReceived">onMessageReceived</a>(object $message)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -108,7 +146,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_loadClassMetadata">loadClassMetadata</a>(<abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr> $event)
+                    <a href="#method_configure">configure</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -119,40 +157,18 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_add">add</a>($entity, <abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr> $event)
+                    <a href="#method_getUser">getUser</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
         
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../MsgPhp/User/Infra/Console/Command/UserCommand.html#method_getUser"><abbr title="MsgPhp\User\Infra\Console\Command\UserCommand">UserCommand</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_update">update</a>($entity, <abbr title="Doctrine\ORM\Event\PreUpdateEventArgs">PreUpdateEventArgs</abbr> $event)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_remove">remove</a>($entity, <abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr> $event)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_postFlush">postFlush</a>(<abbr title="Doctrine\ORM\Event\PostFlushEventArgs">PostFlushEventArgs</abbr> $event)
+                    <a href="#method_execute">execute</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -166,9 +182,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L22">line 22</a></div>
+        <div class="location">in <a href="../../../../../MsgPhp/Domain/Message/MessageDispatchingTrait.html#method___construct"><abbr title="MsgPhp\Domain\Message\MessageDispatchingTrait">MessageDispatchingTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Message/MessageDispatchingTrait.php#L17">line 17</a></div>
         <code>                    
-    <strong>__construct</strong>(array $mapping)
+    <strong>__construct</strong>(<a href="../../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus)
         </code>
     </h3>
     <div class="details">
@@ -180,8 +196,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>array</td>
-                <td>$mapping</td>
+                <td><a href="../../../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a></td>
+                <td>$factory</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
+                <td>$bus</td>
                 <td></td>
             </tr>
             </table>
@@ -194,10 +215,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_loadClassMetadata">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L27">line 27</a></div>
+                    <h3 id="method_onMessageReceived">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/DeleteUserCommand.php#L24">line 24</a></div>
         <code>                    
-    <strong>loadClassMetadata</strong>(<abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr> $event)
+    <strong>onMessageReceived</strong>(object $message)
         </code>
     </h3>
     <div class="details">
@@ -209,8 +230,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr></td>
-                <td>$event</td>
+                <td>object</td>
+                <td>$message</td>
                 <td></td>
             </tr>
             </table>
@@ -223,10 +244,29 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_add">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L41">line 41</a></div>
-        <code>                    
-    <strong>add</strong>($entity, <abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr> $event)
+                    <h3 id="method_configure">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/DeleteUserCommand.php#L31">line 31</a></div>
+        <code>            protected        
+    <strong>configure</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUser">
+        <div class="location">in <a href="../../../../../MsgPhp/User/Infra/Console/Command/UserCommand.html#method_getUser"><abbr title="MsgPhp\User\Infra\Console\Command\UserCommand">UserCommand</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/UserCommand.php#L51">line 51</a></div>
+        <code>            protected        
+    <strong>getUser</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
         </code>
     </h3>
     <div class="details">
@@ -238,13 +278,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>$entity</td>
+                <td><abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></td>
+                <td>$input</td>
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr></td>
-                <td>$event</td>
+                <td><abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr></td>
+                <td>$io</td>
                 <td></td>
             </tr>
             </table>
@@ -257,10 +297,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_update">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L53">line 53</a></div>
-        <code>                    
-    <strong>update</strong>($entity, <abbr title="Doctrine\ORM\Event\PreUpdateEventArgs">PreUpdateEventArgs</abbr> $event)
+                    <h3 id="method_execute">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/DeleteUserCommand.php#L38">line 38</a></div>
+        <code>            protected        
+    <strong>execute</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
         </code>
     </h3>
     <div class="details">
@@ -272,76 +312,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>$entity</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><abbr title="Doctrine\ORM\Event\PreUpdateEventArgs">PreUpdateEventArgs</abbr></td>
-                <td>$event</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_remove">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L71">line 71</a></div>
-        <code>                    
-    <strong>remove</strong>($entity, <abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr> $event)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$entity</td>
+                <td><abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></td>
+                <td>$input</td>
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Doctrine\ORM\Event\LifecycleEventArgs">LifecycleEventArgs</abbr></td>
-                <td>$event</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_postFlush">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Event/UsernameListener.php#L88">line 88</a></div>
-        <code>                    
-    <strong>postFlush</strong>(<abbr title="Doctrine\ORM\Event\PostFlushEventArgs">PostFlushEventArgs</abbr> $event)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Doctrine\ORM\Event\PostFlushEventArgs">PostFlushEventArgs</abbr></td>
-                <td>$event</td>
+                <td><abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></td>
+                <td>$output</td>
                 <td></td>
             </tr>
             </table>
