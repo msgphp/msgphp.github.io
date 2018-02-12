@@ -265,6 +265,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../ddd/identities/" title="Identities" class="md-nav__link">
+      Identities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ddd/identity-mapping/" title="Identity mapping" class="md-nav__link">
       Identity mapping
     </a>
@@ -290,13 +302,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-5">
       Factories
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-5">
         Factories
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -320,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
+    <a href="../../ddd/factory/entity-aware/" title="Entity aware factory" class="md-nav__link">
       Entity aware factory
     </a>
   </li>
@@ -397,8 +409,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
-      Domain events
+    <a href="../../event-sourcing/events/" title="Events" class="md-nav__link">
+      Events
     </a>
   </li>
 
@@ -409,8 +421,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
-      Domain event handlers
+    <a href="../../event-sourcing/event-handlers/" title="Event handlers" class="md-nav__link">
+      Event handlers
     </a>
   </li>
 
@@ -447,8 +459,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../domain-message-bus/" title="Domain message bus" class="md-nav__link">
-      Domain message bus
+    <a href="../message-bus/" title="Message bus" class="md-nav__link">
+      Message bus
     </a>
   </li>
 
@@ -633,7 +645,7 @@
                 <h1 id="command-query-responsibility-segregation">Command Query Responsibility Segregation</h1>
 <p>Commands are domain objects and provided per domain layer. They usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
 design. Its purpose is to describe an action to be taken. For commands being messages they can be dispatched using any
-<a href="../domain-message-bus/">message bus</a>.</p>
+<a href="../message-bus/">message bus</a>.</p>
 <h2 id="command-handlers">Command handlers</h2>
 <p>The message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.
 Usually a command handler is designed, but not limited, to handle one specific command message.</p>
@@ -646,11 +658,11 @@ Usually a command handler is designed, but not limited, to handle one specific c
 </ul>
 </li>
 <li><code>abstract getDomainEvent(object $command): DomainEventInterface</code><ul>
-<li>The <a href="../../event-sourcing/domain-events/">domain event</a> to be handled</li>
+<li>The <a href="../../event-sourcing/events/">domain event</a> to be handled</li>
 </ul>
 </li>
 <li><code>abstract getDomainEventHandler(object $command): DomainEventHandlerInterface</code><ul>
-<li>The <a href="../../event-sourcing/domain-event-handlers/">domain event handler</a> handling the domain event</li>
+<li>The <a href="../../event-sourcing/event-handlers/">domain event handler</a> handling the domain event</li>
 </ul>
 </li>
 </ul>

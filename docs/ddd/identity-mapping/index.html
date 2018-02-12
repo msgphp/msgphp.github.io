@@ -265,6 +265,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../identities/" title="Identities" class="md-nav__link">
+      Identities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -362,13 +374,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-5">
       Factories
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-5">
         Factories
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -392,7 +404,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
+    <a href="../factory/entity-aware/" title="Entity aware factory" class="md-nav__link">
       Entity aware factory
     </a>
   </li>
@@ -469,8 +481,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-events/" title="Domain events" class="md-nav__link">
-      Domain events
+    <a href="../../event-sourcing/events/" title="Events" class="md-nav__link">
+      Events
     </a>
   </li>
 
@@ -481,8 +493,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../event-sourcing/domain-event-handlers/" title="Domain event handlers" class="md-nav__link">
-      Domain event handlers
+    <a href="../../event-sourcing/event-handlers/" title="Event handlers" class="md-nav__link">
+      Event handlers
     </a>
   </li>
 
@@ -517,8 +529,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/domain-message-bus/" title="Domain message bus" class="md-nav__link">
-      Domain message bus
+    <a href="../../message-driven/message-bus/" title="Message bus" class="md-nav__link">
+      Message bus
     </a>
   </li>
 
@@ -632,25 +644,26 @@
                 
                 <h1 id="identity-mapping">Identity mapping</h1>
 <p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about
-the identifier mappings for a known domain object.</p>
+the identifier metadata for a known domain object.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code><ul>
-<li>In-memory identity map</li>
+<li>Based on in-memory identity map</li>
 </ul>
 </li>
 <li><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code><ul>
-<li>Doctrine identity map</li>
+<li>Based on Doctrine's identity map</li>
 <li>Requires <code>doctrine/orm</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="api">API</h2>
 <h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
-<p>Returns the (composite) identifier field names for the given class. Any instance should have an identity composed of
-these field values.</p>
+<p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed of these field values.</p>
+<hr />
 <h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
-<p>Returns the actual identity value for the given object. Indexed by identifier field names.</p>
+<p>Returns the actual identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding identifier field
+name.</p>
 <h2 id="doctrine-example">Doctrine example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -698,7 +711,7 @@ these field values.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../identities/" title="Identities" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -707,7 +720,7 @@ these field values.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Identifiers
+                Identities
               </span>
             </div>
           </a>

@@ -100,15 +100,6 @@
                     
                 </div>
             </div>
-                    <div class="row">
-                <div class="col-md-6">
-                                            <a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
-                </div>
-            </div>
             </div>
     
     
@@ -121,11 +112,11 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $class, <a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $fieldMapping = [])
+                    <a href="#method___construct">__construct</a>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../MsgPhp/Domain/Infra/Doctrine/DomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait">DomainEntityRepositoryTrait</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -190,9 +181,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../../../../MsgPhp/Domain/AbstractDomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\AbstractDomainEntityRepositoryTrait">AbstractDomainEntityRepositoryTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/AbstractDomainEntityRepositoryTrait.php#L18">line 18</a></div>
+        <div class="location">in <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/DomainEntityRepositoryTrait.html#method___construct"><abbr title="MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait">DomainEntityRepositoryTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainEntityRepositoryTrait.php#L24">line 24</a></div>
         <code>                    
-    <strong>__construct</strong>(string $class, <a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $fieldMapping = [])
+    <strong>__construct</strong>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
         </code>
     </h3>
     <div class="details">
@@ -209,13 +200,13 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><a href="../../../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a></td>
-                <td>$identityMapping</td>
+                <td><abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr></td>
+                <td>$em</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>array</td>
-                <td>$fieldMapping</td>
+                <td><a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a></td>
+                <td>$identityHelper</td>
                 <td></td>
             </tr>
             </table>

@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/code-conventions/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,25 @@
         
     <url>
      <loc>/ddd/identifiers/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ddd/identities/</loc>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ddd/identity-mapping/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ddd/collections/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,13 +51,13 @@
         
     <url>
      <loc>/ddd/repositories/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ddd/entities/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -60,14 +66,14 @@
     
         
     <url>
-     <loc>/event-sourcing/domain-events/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <loc>/event-sourcing/events/</loc>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/event-sourcing/domain-event-handlers/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <loc>/event-sourcing/event-handlers/</loc>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -76,20 +82,20 @@
     
         
     <url>
-     <loc>/message-driven/domain-message-bus/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <loc>/message-driven/message-bus/</loc>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/message-driven/message-dispatcher/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/message-driven/cqrs/</loc>
-     <lastmod>2018-02-03</lastmod>
+     <lastmod>2018-02-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

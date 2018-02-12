@@ -34,7 +34,7 @@
     
     
       
-        <title>Domain event handlers - MsgPHP Documentation</title>
+        <title>Message bus - MsgPHP Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Domain event handlers
+                Message bus
               </span>
             
           
@@ -265,6 +265,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../ddd/identities/" title="Identities" class="md-nav__link">
+      Identities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ddd/identity-mapping/" title="Identity mapping" class="md-nav__link">
       Identity mapping
     </a>
@@ -290,13 +302,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
     
-    <label class="md-nav__link" for="nav-3-4">
+    <label class="md-nav__link" for="nav-3-5">
       Factories
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
+      <label class="md-nav__title" for="nav-3-5">
         Factories
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -320,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/factory/entity_aware/" title="Entity aware factory" class="md-nav__link">
+    <a href="../../ddd/factory/entity-aware/" title="Entity aware factory" class="md-nav__link">
       Entity aware factory
     </a>
   </li>
@@ -376,12 +388,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Event sourcing
@@ -399,11 +409,49 @@
 
 
   <li class="md-nav__item">
-    <a href="../domain-events/" title="Domain events" class="md-nav__link">
-      Domain events
+    <a href="../../event-sourcing/events/" title="Events" class="md-nav__link">
+      Events
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../event-sourcing/event-handlers/" title="Event handlers" class="md-nav__link">
+      Event handlers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Message driven
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Message driven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -420,11 +468,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Domain event handlers
+        Message bus
       </label>
     
-    <a href="./" title="Domain event handlers" class="md-nav__link md-nav__link--active">
-      Domain event handlers
+    <a href="./" title="Message bus" class="md-nav__link md-nav__link--active">
+      Message bus
     </a>
     
       
@@ -453,21 +501,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#handleeventdomaineventinterface-event-bool" title="handleEvent(DomainEventInterface $event): bool" class="md-nav__link">
-    handleEvent(DomainEventInterface $event): bool
+  <a href="#dispatchobject-message-mixed" title="dispatch(object $message): mixed" class="md-nav__link">
+    dispatch(object $message): mixed
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
-  </a>
   
 </li>
       
@@ -480,49 +521,13 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Message driven
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Message driven
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/domain-message-bus/" title="Domain message bus" class="md-nav__link">
-      Domain message bus
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../message-driven/message-dispatcher/" title="Message dispatcher" class="md-nav__link">
+    <a href="../message-dispatcher/" title="Message dispatcher" class="md-nav__link">
       Message dispatcher
     </a>
   </li>
@@ -534,7 +539,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../message-driven/cqrs/" title="CQRS" class="md-nav__link">
+    <a href="../cqrs/" title="CQRS" class="md-nav__link">
       CQRS
     </a>
   </li>
@@ -581,21 +586,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#handleeventdomaineventinterface-event-bool" title="handleEvent(DomainEventInterface $event): bool" class="md-nav__link">
-    handleEvent(DomainEventInterface $event): bool
+  <a href="#dispatchobject-message-mixed" title="dispatch(object $message): mixed" class="md-nav__link">
+    dispatch(object $message): mixed
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
-  </a>
   
 </li>
       
@@ -613,64 +611,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/event-sourcing/domain-event-handlers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/message-driven/message-bus.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="domain-event-handlers">Domain event handlers</h1>
-<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle
-<a href="../domain-events/">domain events</a>. By convention a trait implementation is provided to map concrete events to
-specialized handling methods.</p>
+                <h1 id="message-bus">Message bus</h1>
+<p>A domain message bus is bound to <code>MsgPhp\Domain\Message\DomainMessageBusInterface</code>. Its purpose is to dispatch any type
+of message object and helps you to use <a href="../cqrs/">CQRS</a> and <a href="../../event-sourcing/event-handlers/">event sourcing</a>.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
-<li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>
-<li>Maps events to <code>handle&lt;ClassName_Without_Event_Suffix&gt;Event()</code> methods</li>
+<li><code>MsgPhp\Domain\Infra\SimpleBus\DomainMessageBus</code><ul>
+<li>Requires <code>simple-bus/message-bus</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="api">API</h2>
-<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
-<p>Handles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes
-or no.</p>
-<h2 id="generic-example">Generic example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerTrait</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">MyEvent</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$newValue</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">newValue</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
-<span class="p">{</span>
-    <span class="k">use</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="nv">$value</span><span class="p">;</span>
-
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyEvent</span><span class="p">(</span><span class="nx">MyEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">===</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">;</span>
-
-        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-
-<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)))</span> <span class="p">{</span>
-    <span class="c1">// do something</span>
-<span class="p">}</span>
-</pre></div>
+<h3 id="dispatchobject-message-mixed"><code>dispatch(object $message): mixed</code></h3>
+<p>Dispatches the given message object. The bus can return a value coming from handlers, but is not required to do so.</p>
                 
                   
                 
@@ -689,7 +645,7 @@ or no.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../domain-events/" title="Domain events" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../event-sourcing/event-handlers/" title="Event handlers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -698,19 +654,19 @@ or no.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Domain events
+                Event handlers
               </span>
             </div>
           </a>
         
         
-          <a href="../../message-driven/domain-message-bus/" title="Domain message bus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../message-dispatcher/" title="Message dispatcher" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Domain message bus
+                Message dispatcher
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
