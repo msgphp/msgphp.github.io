@@ -351,8 +351,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): ?array" class="md-nav__link">
+    getIdentity(object $object): ?array
   </a>
   
 </li>
@@ -670,8 +670,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): ?array" class="md-nav__link">
+    getIdentity(object $object): ?array
   </a>
   
 </li>
@@ -735,9 +735,9 @@ with all available identifier field names.</p>
 To get a valid identity the number of given identifies must exactly match the number of available identifier field
 names.</p>
 <hr />
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
-<p>Returns the actual identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding identifier field
-name. See also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): ?array</code></h3>
+<p>Returns the actual identifier values of <code>$object</code>, or <code>null</code> if the object has no identity set. Each identifier value is
+keyed by its corresponding identifier field name. See also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
                 
                   
                 

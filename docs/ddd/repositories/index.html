@@ -419,8 +419,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dofindid-idn-object" title="doFind($id, ...$idN): object" class="md-nav__link">
-    doFind($id, ...$idN): object
+  <a href="#dofindid-object" title="doFind($id): object" class="md-nav__link">
+    doFind($id): object
   </a>
   
 </li>
@@ -433,8 +433,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#doexistsid-idn-bool" title="doExists($id, ...$idN): bool" class="md-nav__link">
-    doExists($id, ...$idN): bool
+  <a href="#doexistsid-bool" title="doExists($id): bool" class="md-nav__link">
+    doExists($id): bool
   </a>
   
 </li>
@@ -656,8 +656,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dofindid-idn-object" title="doFind($id, ...$idN): object" class="md-nav__link">
-    doFind($id, ...$idN): object
+  <a href="#dofindid-object" title="doFind($id): object" class="md-nav__link">
+    doFind($id): object
   </a>
   
 </li>
@@ -670,8 +670,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#doexistsid-idn-bool" title="doExists($id, ...$idN): bool" class="md-nav__link">
-    doExists($id, ...$idN): bool
+  <a href="#doexistsid-bool" title="doExists($id): bool" class="md-nav__link">
+    doExists($id): bool
   </a>
   
 </li>
@@ -761,13 +761,13 @@ on a per case basis.</p>
 
 
 <hr />
-<h3 id="dofindid-idn-object"><code>doFind($id, ...$idN): object</code></h3>
+<h3 id="dofindid-object"><code>doFind($id): object</code></h3>
 <p>Finds a single entity by its identity.</p>
 <hr />
 <h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code></h3>
 <p>Finds the first entity matching all specified fields.</p>
 <hr />
-<h3 id="doexistsid-idn-bool"><code>doExists($id, ...$idN): bool</code></h3>
+<h3 id="doexistsid-bool"><code>doExists($id): bool</code></h3>
 <p>Verify if an entity exists by its identity.</p>
 <hr />
 <h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code></h3>
@@ -788,7 +788,6 @@ on a per case basis.</p>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">DomainEntityRepositoryTrait</span> <span class="p">{</span>
         <span class="nx">doFind</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">find</span><span class="p">;</span>
-        <span class="nx">doExists</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">exists</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 

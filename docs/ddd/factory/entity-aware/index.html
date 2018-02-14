@@ -398,15 +398,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#referencestring-class-id-idn-object" title="reference(string $class, $id, ...$idN): object" class="md-nav__link">
-    reference(string $class, $id, ...$idN): object
+  <a href="#referencestring-class-id-object" title="reference(string $class, $id): object" class="md-nav__link">
+    reference(string $class, $id): object
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
-    identify(string $class, $id): DomainIdInterface
+  <a href="#identifystring-class-value-domainidinterface" title="identify(string $class, $value): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $value): DomainIdInterface
   </a>
   
 </li>
@@ -656,15 +656,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#referencestring-class-id-idn-object" title="reference(string $class, $id, ...$idN): object" class="md-nav__link">
-    reference(string $class, $id, ...$idN): object
+  <a href="#referencestring-class-id-object" title="reference(string $class, $id): object" class="md-nav__link">
+    reference(string $class, $id): object
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#identifystring-class-id-domainidinterface" title="identify(string $class, $id): DomainIdInterface" class="md-nav__link">
-    identify(string $class, $id): DomainIdInterface
+  <a href="#identifystring-class-value-domainidinterface" title="identify(string $class, $value): DomainIdInterface" class="md-nav__link">
+    identify(string $class, $value): DomainIdInterface
   </a>
   
 </li>
@@ -724,11 +724,10 @@ class mapping.</p>
 <h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
 <p>Inherited from <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface::create()</code>.</p>
 <hr />
-<h3 id="referencestring-class-id-idn-object"><code>reference(string $class, $id, ...$idN): object</code></h3>
-<p>Returns a reference object for an existing entity by identity. Depending on the implementation the reference might be
-partially loaded. Meaning one can only safely rely on the entity identifier values being available.</p>
+<h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code></h3>
+<p>Returns a reference for a known existing entity object.</p>
 <hr />
-<h3 id="identifystring-class-id-domainidinterface"><code>identify(string $class, $id): DomainIdInterface</code></h3>
+<h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code></h3>
 <p>Returns an identifier for the given entity class from a known primitive value.</p>
 <hr />
 <h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
@@ -777,15 +776,17 @@ empty if it's not capable to calculate one upfront.</p>
 
 <span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="nv">$realFactory</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span>
-    <span class="k">function</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$identity</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nv">$class</span><span class="p">(</span><span class="o">...</span><span class="nv">$identity</span><span class="p">);</span>
-    <span class="p">},</span>
-<span class="p">]);</span>
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="nv">$realFactory</span><span class="p">,</span> <span class="p">[],</span> <span class="k">function</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">===</span> <span class="nv">$class</span> <span class="o">&amp;&amp;</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$id</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nv">$class</span><span class="p">(</span><span class="nv">$id</span><span class="p">[</span><span class="s1">&#39;idA&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$id</span><span class="p">[</span><span class="s1">&#39;idB&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nv">$class</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">});</span>
 
 <span class="sd">/** @var Some $object */</span>
 <span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">Some</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
-    <span class="s1">&#39;entity&#39;</span> <span class="o">=&gt;</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;id-a&#39;</span><span class="p">,</span> <span class="s1">&#39;id-b&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;entity&#39;</span> <span class="o">=&gt;</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;idA&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;idB&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">]),</span>
 <span class="p">]);</span>
 </pre></div>
                 

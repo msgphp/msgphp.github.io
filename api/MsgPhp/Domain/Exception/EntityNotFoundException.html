@@ -98,7 +98,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createForId">createForId</a>(string $entity, $id, ...$idN)
+                    <a href="#method_createForId">createForId</a>(string $class, $id)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -109,7 +109,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createForFields">createForFields</a>(string $entity, array $fields)
+                    <a href="#method_createForFields">createForFields</a>(string $class, array $fields)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -125,7 +125,7 @@
                     <h3 id="method_createForId">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Exception/EntityNotFoundException.php#L12">line 12</a></div>
         <code>        static            
-    <strong>createForId</strong>(string $entity, $id, ...$idN)
+    <strong>createForId</strong>(string $class, $id)
         </code>
     </h3>
     <div class="details">
@@ -138,17 +138,12 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$entity</td>
+                <td>$class</td>
                 <td></td>
             </tr>
                     <tr>
                 <td></td>
                 <td>$id</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>...$idN</td>
                 <td></td>
             </tr>
             </table>
@@ -162,9 +157,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_createForFields">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Exception/EntityNotFoundException.php#L22">line 22</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Exception/EntityNotFoundException.php#L17">line 17</a></div>
         <code>        static            
-    <strong>createForFields</strong>(string $entity, array $fields)
+    <strong>createForFields</strong>(string $class, array $fields)
         </code>
     </h3>
     <div class="details">
@@ -177,7 +172,7 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$entity</td>
+                <td>$class</td>
                 <td></td>
             </tr>
                     <tr>
