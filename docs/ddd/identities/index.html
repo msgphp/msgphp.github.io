@@ -337,22 +337,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#isidentitystring-class-array-value-bool" title="isIdentity(string $class, array $value): bool" class="md-nav__link">
-    isIdentity(string $class, array $value): bool
+  <a href="#isidentitystring-class-value-bool" title="isIdentity(string $class, $value): bool" class="md-nav__link">
+    isIdentity(string $class, $value): bool
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#toidentitystring-class-id-idn-array" title="toIdentity(string $class, $id, ...$idN): ?array" class="md-nav__link">
-    toIdentity(string $class, $id, ...$idN): ?array
+  <a href="#toidentitystring-class-value-array" title="toIdentity(string $class, $value): array" class="md-nav__link">
+    toIdentity(string $class, $value): array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): ?array" class="md-nav__link">
-    getIdentity(object $object): ?array
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
   </a>
   
 </li>
@@ -656,22 +656,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#isidentitystring-class-array-value-bool" title="isIdentity(string $class, array $value): bool" class="md-nav__link">
-    isIdentity(string $class, array $value): bool
+  <a href="#isidentitystring-class-value-bool" title="isIdentity(string $class, $value): bool" class="md-nav__link">
+    isIdentity(string $class, $value): bool
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#toidentitystring-class-id-idn-array" title="toIdentity(string $class, $id, ...$idN): ?array" class="md-nav__link">
-    toIdentity(string $class, $id, ...$idN): ?array
+  <a href="#toidentitystring-class-value-array" title="toIdentity(string $class, $value): array" class="md-nav__link">
+    toIdentity(string $class, $value): array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): ?array" class="md-nav__link">
-    getIdentity(object $object): ?array
+  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
+    getIdentity(object $object): array
   </a>
   
 </li>
@@ -699,8 +699,8 @@
                 
                 
                 <h1 id="identities">Identities</h1>
-<p>A domain identity is a composite value of individual identifier values. Its usage is to uniquely identify a domain
-object, and therefor qualifying it an entity object.</p>
+<p>A domain identity is a composite value of one or more individual identifier values, indexed by an identifier field name.
+Its usage is to uniquely identify a domain object, and therefor qualifying it an entity object.</p>
 <p>Identifier values can be of any type, e.g. a <a href="../identifiers/">domain identifier</a>, another (foreign) entity object, or
 any primitive value.</p>
 <p>To ease working with the <a href="../identity-mapping/">identity mapping</a> one can use a <code>MsgPhp\Domain\DomainIdentityHelper</code>
@@ -711,13 +711,13 @@ domain service.</p>
 object.</p>
 <hr />
 <h3 id="isemptyidentifiervalue-bool"><code>isEmptyIdentifier($value): bool</code></h3>
-<p>Tells if <code>$value</code> is an empty identifier value. It returns <code>true</code> if the specified value is either an empty
-<a href="../identifiers/">domain identifier</a> or an entity object without identity.</p>
+<p>Tells if <code>$value</code> is a known empty identifier value. It returns <code>true</code> if the specified value is either <code>null</code>, an empty
+<a href="../identifiers/">domain identifier</a> or an entity object without its identity set.</p>
 <hr />
 <h3 id="normalizeidentifiervalue"><code>normalizeIdentifier($value)</code></h3>
-<p>Returns the primitive identifier value of <code>$value</code>. Empty identifier values (see above) are normalized as <code>null</code>,
-otherwise a <a href="../identifiers/">domain identifier</a> is returns its string value whereas an entity object returns its
-identity value. All other types values are returned as is.</p>
+<p>Returns the primitive identifier value of <code>$value</code>. Empty identifier values (see <code>isEmptyIdentifier()</code>) are normalized
+as <code>null</code>, a <a href="../identifiers/">domain identifier</a> as string value and an entity object as normalized identity value.
+A value of any other type is returned as is.</p>
 <hr />
 <h3 id="getidentifiersobject-object-array"><code>getIdentifiers(object $object): array</code></h3>
 <p>Returns the actual identifier values of <code>$object</code>.</p>
@@ -726,18 +726,18 @@ identity value. All other types values are returned as is.</p>
 <p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed of these field values.
 See also <code>DomainIdentityMappingInterface::getIdentifierFieldNames()</code>.</p>
 <hr />
-<h3 id="isidentitystring-class-array-value-bool"><code>isIdentity(string $class, array $value): bool</code></h3>
-<p>Tells if <code>$value</code> is a valid identity for type <code>$class</code>. An identity value is considered valid if it's exactly indexed
-with all available identifier field names.</p>
+<h3 id="isidentitystring-class-value-bool"><code>isIdentity(string $class, $value): bool</code></h3>
+<p>Tells if <code>$value</code> is a valid identity for type <code>$class</code>. An identity value is considered valid if an entity object uses
+a single identifier value as identity and <code>$value</code> is a non empty identifier (see <code>isEmptyIdentifier()</code>).</p>
+<p>In case of one or more identifier values, given in the form of an array, its keys must exactly match the available
+identifier field names and its values must contain no empty identifiers.</p>
 <hr />
-<h3 id="toidentitystring-class-id-idn-array"><code>toIdentity(string $class, $id, ...$idN): ?array</code></h3>
-<p>Returns an identity value for <code>$classs</code> from individual identifier values, or <code>null</code> if the final identity is invalid.
-To get a valid identity the number of given identifies must exactly match the number of available identifier field
-names.</p>
+<h3 id="toidentitystring-class-value-array"><code>toIdentity(string $class, $value): array</code></h3>
+<p>Returns a composite identity value for <code>$class</code> from <code>$value</code>.</p>
 <hr />
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): ?array</code></h3>
-<p>Returns the actual identifier values of <code>$object</code>, or <code>null</code> if the object has no identity set. Each identifier value is
-keyed by its corresponding identifier field name. See also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
+<p>Returns the actual, non empty, identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding
+identifier field name. ee also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
                 
                   
                 

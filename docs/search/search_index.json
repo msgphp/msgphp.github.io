@@ -97,12 +97,12 @@
         }, 
         {
             "location": "/ddd/identities/", 
-            "text": "Identities\n\n\nA domain identity is a composite value of individual identifier values. Its usage is to uniquely identify a domain\nobject, and therefor qualifying it an entity object.\n\n\nIdentifier values can be of any type, e.g. a \ndomain identifier\n, another (foreign) entity object, or\nany primitive value.\n\n\nTo ease working with the \nidentity mapping\n one can use a \nMsgPhp\\Domain\\DomainIdentityHelper\n\ndomain service.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object or an entity\nobject.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is an empty identifier value. It returns \ntrue\n if the specified value is either an empty\n\ndomain identifier\n or an entity object without identity.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. Empty identifier values (see above) are normalized as \nnull\n,\notherwise a \ndomain identifier\n is returns its string value whereas an entity object returns its\nidentity value. All other types values are returned as is.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\nSee also \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, array $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity value is considered valid if it's exactly indexed\nwith all available identifier field names.\n\n\n\n\ntoIdentity(string $class, $id, ...$idN): ?array\n\n\nReturns an identity value for \n$classs\n from individual identifier values, or \nnull\n if the final identity is invalid.\nTo get a valid identity the number of given identifies must exactly match the number of available identifier field\nnames.\n\n\n\n\ngetIdentity(object $object): ?array\n\n\nReturns the actual identifier values of \n$object\n, or \nnull\n if the object has no identity set. Each identifier value is\nkeyed by its corresponding identifier field name. See also \nDomainIdentityMappingInterface::getIdentity()\n.", 
+            "text": "Identities\n\n\nA domain identity is a composite value of one or more individual identifier values, indexed by an identifier field name.\nIts usage is to uniquely identify a domain object, and therefor qualifying it an entity object.\n\n\nIdentifier values can be of any type, e.g. a \ndomain identifier\n, another (foreign) entity object, or\nany primitive value.\n\n\nTo ease working with the \nidentity mapping\n one can use a \nMsgPhp\\Domain\\DomainIdentityHelper\n\ndomain service.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object or an entity\nobject.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is a known empty identifier value. It returns \ntrue\n if the specified value is either \nnull\n, an empty\n\ndomain identifier\n or an entity object without its identity set.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. Empty identifier values (see \nisEmptyIdentifier()\n) are normalized\nas \nnull\n, a \ndomain identifier\n as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\nSee also \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity value is considered valid if an entity object uses\na single identifier value as identity and \n$value\n is a non empty identifier (see \nisEmptyIdentifier()\n).\n\n\nIn case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.\n\n\n\n\ntoIdentity(string $class, $value): array\n\n\nReturns a composite identity value for \n$class\n from \n$value\n.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name. ee also \nDomainIdentityMappingInterface::getIdentity()\n.", 
             "title": "Identities"
         }, 
         {
             "location": "/ddd/identities/#identities", 
-            "text": "A domain identity is a composite value of individual identifier values. Its usage is to uniquely identify a domain\nobject, and therefor qualifying it an entity object.  Identifier values can be of any type, e.g. a  domain identifier , another (foreign) entity object, or\nany primitive value.  To ease working with the  identity mapping  one can use a  MsgPhp\\Domain\\DomainIdentityHelper \ndomain service.", 
+            "text": "A domain identity is a composite value of one or more individual identifier values, indexed by an identifier field name.\nIts usage is to uniquely identify a domain object, and therefor qualifying it an entity object.  Identifier values can be of any type, e.g. a  domain identifier , another (foreign) entity object, or\nany primitive value.  To ease working with the  identity mapping  one can use a  MsgPhp\\Domain\\DomainIdentityHelper \ndomain service.", 
             "title": "Identities"
         }, 
         {
@@ -117,12 +117,12 @@
         }, 
         {
             "location": "/ddd/identities/#isemptyidentifiervalue-bool", 
-            "text": "Tells if  $value  is an empty identifier value. It returns  true  if the specified value is either an empty domain identifier  or an entity object without identity.", 
+            "text": "Tells if  $value  is a known empty identifier value. It returns  true  if the specified value is either  null , an empty domain identifier  or an entity object without its identity set.", 
             "title": "isEmptyIdentifier($value): bool"
         }, 
         {
             "location": "/ddd/identities/#normalizeidentifiervalue", 
-            "text": "Returns the primitive identifier value of  $value . Empty identifier values (see above) are normalized as  null ,\notherwise a  domain identifier  is returns its string value whereas an entity object returns its\nidentity value. All other types values are returned as is.", 
+            "text": "Returns the primitive identifier value of  $value . Empty identifier values (see  isEmptyIdentifier() ) are normalized\nas  null , a  domain identifier  as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.", 
             "title": "normalizeIdentifier($value)"
         }, 
         {
@@ -136,23 +136,23 @@
             "title": "getIdentifierFieldNames(string $class): array"
         }, 
         {
-            "location": "/ddd/identities/#isidentitystring-class-array-value-bool", 
-            "text": "Tells if  $value  is a valid identity for type  $class . An identity value is considered valid if it's exactly indexed\nwith all available identifier field names.", 
-            "title": "isIdentity(string $class, array $value): bool"
+            "location": "/ddd/identities/#isidentitystring-class-value-bool", 
+            "text": "Tells if  $value  is a valid identity for type  $class . An identity value is considered valid if an entity object uses\na single identifier value as identity and  $value  is a non empty identifier (see  isEmptyIdentifier() ).  In case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.", 
+            "title": "isIdentity(string $class, $value): bool"
         }, 
         {
-            "location": "/ddd/identities/#toidentitystring-class-id-idn-array", 
-            "text": "Returns an identity value for  $classs  from individual identifier values, or  null  if the final identity is invalid.\nTo get a valid identity the number of given identifies must exactly match the number of available identifier field\nnames.", 
-            "title": "toIdentity(string $class, $id, ...$idN): ?array"
+            "location": "/ddd/identities/#toidentitystring-class-value-array", 
+            "text": "Returns a composite identity value for  $class  from  $value .", 
+            "title": "toIdentity(string $class, $value): array"
         }, 
         {
             "location": "/ddd/identities/#getidentityobject-object-array", 
-            "text": "Returns the actual identifier values of  $object , or  null  if the object has no identity set. Each identifier value is\nkeyed by its corresponding identifier field name. See also  DomainIdentityMappingInterface::getIdentity() .", 
-            "title": "getIdentity(object $object): ?array"
+            "text": "Returns the actual, non empty, identifier values of  $object . Each identifier value is keyed by its corresponding\nidentifier field name. ee also  DomainIdentityMappingInterface::getIdentity() .", 
+            "title": "getIdentity(object $object): array"
         }, 
         {
             "location": "/ddd/identity-mapping/", 
-            "text": "Identity mapping\n\n\nAn identity mapping is a domain service and is bound to \nMsgPhp\\Domain\\DomainIdentityMappingInterface\n. It tells about\nthe identifier metadata for a known domain object.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n\n\nBased on in-memory identity map\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n\n\nBased on Doctrine's identity map\n\n\nRequires \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\n\n\n\n\ngetIdentity(object $object): ?array\n\n\nReturns the actual identifier values of \n$object\n, or \nnull\n if the object has no identity set. Each identifier value is\nkeyed by its corresponding identifier field name.\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nname\n \n=\n \n...\n;\n\n\n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$identityMapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n$fields\n \n=\n \n$identityMapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n$identity\n \n=\n \n$identityMapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]", 
+            "text": "Identity mapping\n\n\nAn identity mapping is a domain service and is bound to \nMsgPhp\\Domain\\DomainIdentityMappingInterface\n. It tells about\nthe identifier metadata for a known domain object.\n\n\nImplementations\n\n\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n\n\nBased on in-memory identity map\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n\n\nBased on Doctrine's identity map\n\n\nRequires \ndoctrine/orm\n\n\n\n\n\n\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name.\n\n\nDoctrine example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nname\n \n=\n \n...\n;\n\n\n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n\n$identityMapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n$fields\n \n=\n \n$identityMapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n$identity\n \n=\n \n$identityMapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]", 
             "title": "Identity mapping"
         }, 
         {
@@ -177,8 +177,8 @@
         }, 
         {
             "location": "/ddd/identity-mapping/#getidentityobject-object-array", 
-            "text": "Returns the actual identifier values of  $object , or  null  if the object has no identity set. Each identifier value is\nkeyed by its corresponding identifier field name.", 
-            "title": "getIdentity(object $object): ?array"
+            "text": "Returns the actual, non empty, identifier values of  $object . Each identifier value is keyed by its corresponding\nidentifier field name.", 
+            "title": "getIdentity(object $object): array"
         }, 
         {
             "location": "/ddd/identity-mapping/#doctrine-example", 
