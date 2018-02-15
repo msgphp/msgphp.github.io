@@ -116,7 +116,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createClassMappingNode">createClassMappingNode</a>(string $name, array $required = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+                    <a href="#method_createClassMappingNode">createClassMappingNode</a>(string $name, array $required = [], array $abstracts = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -163,9 +163,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_createClassMappingNode">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L25">line 25</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L26">line 26</a></div>
         <code>        static            
-    <strong>createClassMappingNode</strong>(string $name, array $required = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+    <strong>createClassMappingNode</strong>(string $name, array $required = [], array $abstracts = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
         </code>
     </h3>
     <div class="details">
@@ -184,6 +184,11 @@
                     <tr>
                 <td>array</td>
                 <td>$required</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$abstracts</td>
                 <td></td>
             </tr>
                     <tr>
@@ -222,7 +227,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_resolveResolveDataTypeMapping">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L54">line 54</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L77">line 77</a></div>
         <code>        static            
     <strong>resolveResolveDataTypeMapping</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $config)
         </code>
@@ -256,7 +261,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_resolveClassMapping">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L67">line 67</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L90">line 90</a></div>
         <code>        static            
     <strong>resolveClassMapping</strong>(array $dataTypeMap, array $dataTypeMapping, array $config)
         </code>
@@ -295,7 +300,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_resolveCommandMapping">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L103">line 103</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L126">line 126</a></div>
         <code>        static            
     <strong>resolveCommandMapping</strong>(array $classMapping, array $mapping, array $config)
         </code>
