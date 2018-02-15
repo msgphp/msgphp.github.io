@@ -777,9 +777,9 @@ bound together by a root entity.</p>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
 
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">null</span><span class="p">);</span> <span class="c1">// allowed; empty collection</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">(</span><span class="k">null</span><span class="p">);</span> <span class="c1">// not allowed</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span> <span class="c1">// allowed</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">null</span><span class="p">);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">new</span> <span class="nx">\ArrayIterator</span><span class="p">([]));</span>
 </pre></div>
 
 
