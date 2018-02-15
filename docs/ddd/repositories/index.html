@@ -753,13 +753,6 @@ on a per case basis.</p>
 <hr />
 <h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
 <p>Finds all entities matching all specified fields.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">]);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doFindAllByFields</span><span class="p">([</span><span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;these&#39;</span><span class="p">]);</span>
-</pre></div>
-
-
 <hr />
 <h3 id="dofindid-object"><code>doFind($id): object</code></h3>
 <p>Finds a single entity by its identity.</p>
@@ -797,7 +790,7 @@ on a per case basis.</p>
 <span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGenericRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span> 
 
 <span class="sd">/** @var MyEntity $entity */</span>
-<span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
                 
                   

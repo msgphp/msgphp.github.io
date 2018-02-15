@@ -685,10 +685,10 @@
                 <h1 id="entities">Entities</h1>
 <p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
 design.</p>
-<p>To simplify the creation of entities the base domain layer provides common fields and features in the form of PHP
-traits. Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.</p>
-<p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entiy\Field\</code> and
-<code>MsgPhp\Domain\Entity\Features\</code>.</p>
+<p>To simplify entity definitions common fields and features are provided in the form of PHP <a href="https://secure.php.net/manual/en/language.oop5.traits.php">traits</a>.
+Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.</p>
+<p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entity\Fields\</code> and
+<code>MsgPhp\Domain\Entity\Features\</code>. Additionally more specific fields and features can be provided per domain layer.</p>
 <h2 id="common-entity-fields">Common entity fields</h2>
 <h3 id="createdatfield"><code>CreatedAtField</code></h3>
 <p>A datetime value representing the entity was initially created at.</p>
@@ -699,7 +699,7 @@ traits. Entity fields can be compared to a read-operation, whereas entity featur
 </li>
 </ul>
 <h3 id="enabledfield"><code>EnabledField</code></h3>
-<p>A boolean value representing the entity should be considered enabled yes or no.</p>
+<p>A boolean value representing the entity its availability state.</p>
 <ul>
 <li><code>isEnabled(): bool</code><ul>
 <li><code>false</code> by default</li>
@@ -716,7 +716,7 @@ traits. Entity fields can be compared to a read-operation, whereas entity featur
 </ul>
 <h2 id="common-entity-features">Common entity features</h2>
 <h3 id="canbeconfirmed"><code>CanBeConfirmed</code></h3>
-<p>Provides ability to confirm an entity. When used an entity is considered initially unconfirmed.</p>
+<p>Provides ability to confirm an entity.</p>
 <ul>
 <li><code>getConfirmationToken(): ?string</code><ul>
 <li>Required to be set initially</li>
@@ -726,16 +726,17 @@ traits. Entity fields can be compared to a read-operation, whereas entity featur
 <li><code>isConfirmed(): bool</code> </li>
 <li><code>confirm(): void</code> <ul>
 <li><code>confirmationToken</code> is unset</li>
-<li><code>confirmatedAt</code> is set to current datetime</li>
+<li><code>confirmatedAt</code> is set to the current datetime</li>
 </ul>
 </li>
 </ul>
 <h3 id="canbeenabled"><code>CanBeEnabled</code></h3>
-<p>Provides ability to toggle an entity availability state.</p>
+<p>Provides ability to toggle an entity its availability state.</p>
 <ul>
 <li>Inherits from <code>EnabledField</code></li>
 <li><code>enable(): void</code></li>
-<li><code>disable(): void</code></li>
+<li><code>disable(): void</code>
+2</li>
 </ul>
                 
                   

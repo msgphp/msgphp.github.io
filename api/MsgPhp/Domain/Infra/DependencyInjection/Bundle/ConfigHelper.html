@@ -116,7 +116,7 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_createClassMappingNode">createClassMappingNode</a>(string $name, array $required = [], array $abstracts = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+                    <a href="#method_createClassMappingNode">createClassMappingNode</a>(string $name, array $required = [], array $abstracts = [], bool $valueIsClass = false, <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -165,7 +165,7 @@
                     <h3 id="method_createClassMappingNode">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Bundle/ConfigHelper.php#L26">line 26</a></div>
         <code>        static            
-    <strong>createClassMappingNode</strong>(string $name, array $required = [], array $abstracts = [], <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+    <strong>createClassMappingNode</strong>(string $name, array $required = [], array $abstracts = [], bool $valueIsClass = false, <a target="_blank" href="http://php.net/Closure">Closure</a> $normalizer = null, $defaultValue = null, string $prototype = &#039;scalar&#039;, <a target="_blank" href="http://php.net/Closure">Closure</a> $prototypeCallback = null, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
         </code>
     </h3>
     <div class="details">
@@ -189,6 +189,11 @@
                     <tr>
                 <td>array</td>
                 <td>$abstracts</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$valueIsClass</td>
                 <td></td>
             </tr>
                     <tr>

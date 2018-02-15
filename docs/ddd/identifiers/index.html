@@ -692,9 +692,8 @@ objects, i.e. entities.</p>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
 
-<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// not allowed</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// allowed</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
 </pre></div>
 
 
@@ -724,7 +723,9 @@ same identifier value is considered <strong>not</strong> equal when comparing e.
 
 <span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span> <span class="p">{</span> <span class="p">}</span>
 
-<span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="nx">MyDomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false!</span>
+<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
+<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">));</span> <span class="c1">// false</span>
+<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false</span>
 </pre></div>
 
 
@@ -744,14 +745,14 @@ should be returned.</p>
 <h2 id="uuid-example">UUID example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Ramsey\Uuid\Uuid</span><span class="p">;</span>
 
-<span class="nv">$uuid4</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
-<span class="nv">$uuid4Alt</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">));</span>
-<span class="nv">$uuid4Alt2</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid4</span><span class="p">());</span>
-<span class="nv">$newUuid4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$newUuid5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid5</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">NAMESPACE_URL</span><span class="p">,</span> <span class="s1">&#39;http://php.net/&#39;</span><span class="p">));</span>
+<span class="nv">$uuid4</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+<span class="nv">$uuid4Alt</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">));</span>
+<span class="nv">$uuid4Alt2</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid4</span><span class="p">());</span>
+<span class="nv">$newUuid4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainUuid</span><span class="p">();</span>
+<span class="nv">$newUuid5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainUuid</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid5</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">NAMESPACE_URL</span><span class="p">,</span> <span class="s1">&#39;http://php.net/&#39;</span><span class="p">));</span>
 </pre></div>
                 
                   
