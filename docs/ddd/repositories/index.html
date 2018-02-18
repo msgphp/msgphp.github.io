@@ -390,13 +390,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
     API
   </a>
@@ -462,6 +455,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
   
 </li>
       
@@ -606,6 +606,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
+      Symfony Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -625,13 +661,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
@@ -703,6 +732,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generic-doctrine-repository-example" title="Generic Doctrine repository example" class="md-nav__link">
     Generic Doctrine repository example
   </a>
@@ -731,6 +767,36 @@
 depending on the type of infrastructure needed. By design they follow the same API although there might be subtle
 differences per implementation.</p>
 <p>Note default (interface bound) repositories are provided per domain layer.</p>
+<h2 id="api">API</h2>
+<blockquote>
+<p>Exposed <code>private</code> as a trait. You can decide to <a href="https://secure.php.net/manual/en/language.oop5.traits.php#language.oop5.traits.visibility">change method visibility</a>
+on a per case basis.</p>
+</blockquote>
+<h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
+<p>Find all entities available.</p>
+<hr />
+<h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
+<p>Find all entities matching all specified fields. Supported field values should be <code>null</code>, <code>scalar</code>, <code>array</code> (one of)
+and <code>object</code> (foreign entity or <a href="../identifiers/">identifier</a>).</p>
+<hr />
+<h3 id="dofindid-object"><code>doFind($id): object</code></h3>
+<p>Find a single entity by its identity. Supported identity values should be <code>scalar</code>, <code>array</code> (composite <a href="../identities/">identity</a>)
+and <code>object</code> (foreign entity or <a href="../identifiers/">identifier</a>).</p>
+<hr />
+<h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code></h3>
+<p>Find the first entity matching all specified fields. See <code>doFindAllByFields()</code> for supported field values.</p>
+<hr />
+<h3 id="doexistsid-bool"><code>doExists($id): bool</code></h3>
+<p>Verify if an entity exists by its identity. See <code>doFind()</code> for supported identity values.</p>
+<hr />
+<h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code></h3>
+<p>Verify if an entity exists matching all specified fields. See <code>doFindAllByFields()</code> for supported field values.</p>
+<hr />
+<h3 id="dosaveobject-entity-void"><code>doSave(object $entity): void</code></h3>
+<p>Persist an entity in the identity map. The entity will be available on any subsequent query.</p>
+<hr />
+<h3 id="dodeleteobject-entity-void"><code>doDelete(object $entity): void</code></h3>
+<p>Remove an entity from the identity map. The entity will be unavailable on any subsequent query.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code><ul>
@@ -739,38 +805,10 @@ differences per implementation.</p>
 </li>
 <li><code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code><ul>
 <li>Doctrine persistence</li>
-<li>Requires <code>doctrine/orm</code></li>
+<li>Requires <a href="https://packagist.org/packages/doctrine/orm"><code>doctrine/orm</code></a></li>
 </ul>
 </li>
 </ul>
-<h2 id="api">API</h2>
-<blockquote>
-<p>Exposed <code>private</code> as a trait. You can decide to <a href="https://secure.php.net/manual/en/language.oop5.traits.php#language.oop5.traits.visibility">change method visibility</a>
-on a per case basis.</p>
-</blockquote>
-<h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
-<p>Finds all entities available.</p>
-<hr />
-<h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
-<p>Finds all entities matching all specified fields.</p>
-<hr />
-<h3 id="dofindid-object"><code>doFind($id): object</code></h3>
-<p>Finds a single entity by its identity.</p>
-<hr />
-<h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code></h3>
-<p>Finds the first entity matching all specified fields.</p>
-<hr />
-<h3 id="doexistsid-bool"><code>doExists($id): bool</code></h3>
-<p>Verify if an entity exists by its identity.</p>
-<hr />
-<h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code></h3>
-<p>Verify if an entity exists matching all specified fields.</p>
-<hr />
-<h3 id="dosaveobject-entity-void"><code>doSave(object $entity): void</code></h3>
-<p>Persist an entity in the identity map. The entity will be available on any subsequent query.</p>
-<hr />
-<h3 id="dodeleteobject-entity-void"><code>doDelete(object $entity): void</code></h3>
-<p>Remove an entity from the identity map. The entity will be unavailable on any subsequent query.</p>
 <h2 id="generic-doctrine-repository-example">Generic Doctrine repository example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 

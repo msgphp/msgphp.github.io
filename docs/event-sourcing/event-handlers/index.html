@@ -450,13 +450,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
     API
   </a>
@@ -477,8 +470,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
@@ -557,6 +557,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
+      Symfony Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -576,13 +612,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
@@ -605,8 +634,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generic-example" title="Generic example" class="md-nav__link">
-    Generic example
+  <a href="#implementations" title="Implementations" class="md-nav__link">
+    Implementations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
@@ -632,18 +668,19 @@
 <p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle
 <a href="../events/">domain events</a>. By convention a trait implementation is provided to map concrete events to corresponding
 handling methods.</p>
+<h2 id="api">API</h2>
+<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
+<p>Handles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled
+yes or no.</p>
 <h2 id="implementations">Implementations</h2>
 <ul>
 <li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>
-<li>Maps events to <code>handle&lt;ClassName_Without_Event_Suffix&gt;Event()</code> methods</li>
+<li>Maps events to <code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods</li>
+<li>Handles default <a href="../events/">events</a> out-of-the-box</li>
 </ul>
 </li>
 </ul>
-<h2 id="api">API</h2>
-<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
-<p>Handles the given domain event for a known subject. A boolean return value tells a domain event is actually handled yes
-or no.</p>
-<h2 id="generic-example">Generic example</h2>
+<h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerInterface</span><span class="p">;</span>

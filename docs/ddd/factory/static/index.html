@@ -387,19 +387,6 @@
     MsgPhp\Domain\Factory\DomainIdFactory
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -407,18 +394,19 @@
     MsgPhp\Domain\Factory\DomainCollectionFactory
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#identifier-factory-example" title="Identifier factory example" class="md-nav__link">
+    Identifier factory example
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#collection-factory-example" title="Collection factory example" class="md-nav__link">
+    Collection factory example
+  </a>
   
 </li>
         
@@ -578,6 +566,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
+      Symfony Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -611,19 +635,6 @@
     MsgPhp\Domain\Factory\DomainIdFactory
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -631,18 +642,19 @@
     MsgPhp\Domain\Factory\DomainCollectionFactory
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#identifier-factory-example" title="Identifier factory example" class="md-nav__link">
+    Identifier factory example
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#collection-factory-example" title="Collection factory example" class="md-nav__link">
+    Collection factory example
+  </a>
   
 </li>
         
@@ -677,7 +689,12 @@ factorize a known implementation for a given class.</p>
 <ul>
 <li><code>static create($value): DomainIdInterface</code></li>
 </ul>
-<h4 id="basic-example">Basic example</h4>
+<h3 id="msgphpdomainfactorydomaincollectionfactory"><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></h3>
+<p>Factorizes a <a href="../../collections/">collection</a> from any primitive iterable value.</p>
+<ul>
+<li><code>static create(?iterable $value): DomainCollectionInterface</code></li>
+</ul>
+<h3 id="identifier-factory-example">Identifier factory example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainIdFactory</span><span class="p">;</span>
@@ -692,12 +709,7 @@ factorize a known implementation for a given class.</p>
 </pre></div>
 
 
-<h3 id="msgphpdomainfactorydomaincollectionfactory"><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></h3>
-<p>Factorizes a <a href="../../collections/">collection</a> from any primitive iterable value.</p>
-<ul>
-<li><code>static create(?iterable $value): DomainCollectionInterface</code></li>
-</ul>
-<h4 id="basic-example_1">Basic example</h4>
+<h3 id="collection-factory-example">Collection factory example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainCollectionFactory</span><span class="p">;</span>

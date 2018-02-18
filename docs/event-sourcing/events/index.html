@@ -530,6 +530,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
+      Symfony Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -578,11 +614,20 @@
 <p>A domain event is bound to <code>MsgPhp\Domain\Event\DomainEventInterface</code>. Its purpose is to identify concrete domain events
 and represent something that happens. When handled it might lead to an application state change.</p>
 <h2 id="implementations">Implementations</h2>
-<p>Domain events provided and handled by default <a href="../../ddd/entities/">entity features</a>:</p>
+<p>Domain events provided and handled by default <a href="../../ddd/entities/#common-entity-features">entity features</a>:</p>
 <ul>
-<li><code>MsgPhp\Domain\Event\ConfirmEvent</code></li>
-<li><code>MsgPhp\Domain\Event\DisableEvent</code></li>
-<li><code>MsgPhp\Domain\Event\EnableEvent</code></li>
+<li><code>MsgPhp\Domain\Event\ConfirmEvent</code><ul>
+<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeConfirmed::handleConfirmEvent()</code></li>
+</ul>
+</li>
+<li><code>MsgPhp\Domain\Event\DisableEvent</code><ul>
+<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleDisableEvent()</code></li>
+</ul>
+</li>
+<li><code>MsgPhp\Domain\Event\EnableEvent</code><ul>
+<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleEnableEvent()</code></li>
+</ul>
+</li>
 </ul>
                 
                   
