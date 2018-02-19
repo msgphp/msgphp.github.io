@@ -731,7 +731,7 @@ objects, i.e. entities.</p>
 </ul>
 <hr />
 <h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code></h3>
-<p>Factorizes a new identifier from a primitive value.</p>
+<p>Factorizes a new identifier from its primitive value.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
@@ -744,7 +744,7 @@ objects, i.e. entities.</p>
 <hr />
 <h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
 <p>Tells if an identifier value is considered empty. In general this is the case when an identifier is created from a
-primitive <code>null</code> value, and therefor enables to differ its string value from an explicit empty string value (<code>""</code>).</p>
+primitive <code>null</code> value, and therefor enables to differ its string value (<code>""</code>) from an explicit empty string value.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
@@ -759,8 +759,8 @@ primitive <code>null</code> value, and therefor enables to differ its string val
 
 <hr />
 <h3 id="equals-bool"><code>equals(): bool</code></h3>
-<p>Tells if an identifier equals another identifier. Default implementations vary on type (including UUID). Meaning the
-same identifier value is considered <strong>not</strong> equal when comparing e.g.:</p>
+<p>Tells if an identifier equals another identifier. Default implementations vary on type. Meaning the same identifier
+value is considered <strong>not</strong> equal when comparing e.g.:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
@@ -768,7 +768,6 @@ same identifier value is considered <strong>not</strong> equal when comparing e.
 <span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span> <span class="p">{</span> <span class="p">}</span>
 
 <span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
-<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">));</span> <span class="c1">// false</span>
 <span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false</span>
 </pre></div>
 
