@@ -416,24 +416,23 @@
     MsgPhp\Domain\Factory\EntityAwareFactory
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
 </li>
         
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entity-reference-example" title="Entity reference example" class="md-nav__link">
-    Entity reference example
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -794,24 +793,23 @@
     MsgPhp\Domain\Factory\EntityAwareFactory
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
 </li>
         
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entity-reference-example" title="Entity reference example" class="md-nav__link">
-    Entity reference example
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -833,70 +831,67 @@
                 
                 
                 <h1 id="entity-aware-factory">Entity aware factory</h1>
-<p>An entity aware factory is a domain object factory, bound to <code>MsgPhp\Domain\Factory\EntityAwareFactoryInterface</code>.
-Besides initializing any domain object via <code>create()</code> it's also capable to initialize an entity identifier / reference
-object.</p>
+<p>An entity aware factory is an <a href="../object/">object factory</a> and additionally bound to
+<code>MsgPhp\Domain\Factory\EntityAwareFactoryInterface</code>. Its purpose is to factorize entity related objects.</p>
 <h2 id="api">API</h2>
 <h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
 <p>Inherited from <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface::create()</code>.</p>
 <hr />
 <h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code></h3>
-<p>Returns a reference for a known existing entity object.</p>
+<p>Factorize a reference object for a known existing entity object. The object must be of type <code>$class</code>. Any type of
+<a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
 <hr />
 <h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code></h3>
-<p>Returns an identifier for the given entity class from a known primitive value.</p>
+<p>Factorize an <a href="../../identifiers/">identifier</a> for the given entity class from a known primitive value.</p>
 <hr />
 <h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
-<p>Returns the next identifier for the given entity class. Depending on the implementation its value might be considered
-empty if it's not capable to calculate one upfront.</p>
+<p>Factorize the next <a href="../../identifiers/">identifier</a> for the given entity class. Depending on the implementation its value
+might be considered empty if it's not capable to calculate one upfront.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code></h3>
-<p>Generic entity factory and decorates any object factory. Additionally it must be provided with an entity to identifier
+<p>A generic entity factory. It decorates any object factory and additionally must be provided with an entity to identifier
 class mapping.</p>
-<h2 id="basic-example">Basic example</h2>
+<ul>
+<li><code>__construct(DomainObjectFactoryInterface $factory, array $identifierMapping, callable $referenceLoader = null)</code><ul>
+<li><code>$factory</code>: The decorated object factory</li>
+<li><code>$identifierMapping</code>: The identifier class mapping (<code>['EntityClass' =&gt; 'IdClass']</code>)</li>
+<li><code>$referenceLoader</code>: An optional reference loader. If <code>null</code> using <code>reference()</code> is not supported. The callable
+  receives the same arguments as given to <code>reference()</code>. It should return an instance of the received class name.</li>
+</ul>
+</li>
+</ul>
+<h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\EntityAwareFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">DomainObjectFactory</span><span class="p">,</span> <span class="nx">EntityAwareFactory</span><span class="p">};</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
 
-<span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="nv">$realFactory</span><span class="p">,</span> <span class="p">[</span>
-    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
-    <span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
-<span class="p">]);</span>
-
-<span class="sd">/** @var DomainId $entityId */</span>
-<span class="nv">$entityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentifier</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
-
-<span class="sd">/** @var DomainUuid $entityId */</span>
-<span class="nv">$entityId</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
-<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentifier</span><span class="p">(</span><span class="nx">MyOtherEntity</span><span class="o">::</span><span class="na">class</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
-</pre></div>
-
-
-<h2 id="entity-reference-example">Entity reference example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\EntityAwareFactory</span><span class="p">;</span>
+<span class="c1">// --- SETUP ---</span>
 
 <span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
-    <span class="p">{</span>
-    <span class="p">}</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span> <span class="p">[</span>
+    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">],</span> <span class="k">function</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nv">$class</span><span class="p">();</span>
+    <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
 
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="nv">$realFactory</span><span class="p">,</span> <span class="p">[],</span> <span class="k">function</span> <span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nv">$class</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$object</span><span class="p">;</span>
 <span class="p">});</span>
 
-<span class="sd">/** @var MyEntity $ref */</span>
-<span class="nv">$ref</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="c1">// --- USAGE ---</span>
+
+<span class="sd">/** @var MyEntity $entity */</span>
+<span class="nv">$ref</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DomainUuid</span><span class="p">());</span>
+
+<span class="sd">/** @var DomainUuid $id */</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">identify</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
+
+<span class="sd">/** @var DomainUuid $id */</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">nextIdentifier</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 </pre></div>
                 
                   
