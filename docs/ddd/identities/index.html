@@ -362,6 +362,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -616,10 +623,82 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Doctrine
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Doctrine
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
-      Symfony Console
+    <a href="../../infrastructure/doctrine-collections/" title="Collections" class="md-nav__link">
+      Collections
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/doctrine-orm/" title="ORM" class="md-nav__link">
+      ORM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Symfony
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Symfony
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-console/" title="Console" class="md-nav__link">
+      Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -717,6 +796,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -736,11 +822,11 @@
                 
                 <h1 id="identities">Identities</h1>
 <p>A domain identity is a composite value of one or more individual identifier values, indexed by an identifier field name.
-Its usage is to uniquely identify a domain object, and therefor qualifying it an entity object.</p>
-<p>Identifier values can be of any type, e.g. a <a href="../identifiers/">domain identifier</a>, another (foreign) entity object, or
-any primitive value.</p>
-<p>To ease working with the <a href="../identity-mapping/">identity mapping</a> one can use a <code>MsgPhp\Domain\DomainIdentityHelper</code>
-domain service.</p>
+Its usage is to uniquely identify a domain object, thus qualifying it an entity object.</p>
+<p>Identifier values can be of any type; a <a href="../identifiers/">domain identifier</a>, another (foreign) entity object, or any
+primitive value.</p>
+<p><code>MsgPhp\Domain\DomainIdentityHelper</code> is a domain a helper service. Its purpose is to ease working with the
+<a href="../identity-mapping/">identity mapping</a>.</p>
 <h2 id="api">API</h2>
 <h3 id="isidentifiervalue-bool"><code>isIdentifier($value): bool</code></h3>
 <p>Tells if <code>$value</code> is a known identifier value. This is either a <a href="../identifiers/">domain identifier</a> object or an entity
@@ -774,6 +860,59 @@ identifier field names and its values must contain no empty identifiers.</p>
 <h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
 <p>Returns the actual, non empty, identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding
 identifier field name. See also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
+<h2 id="basic-example">Basic example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\</span><span class="p">{</span><span class="nx">DomainId</span><span class="p">,</span> <span class="nx">DomainIdentityHelper</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyCompositeEntity</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+
+<span class="nv">$compositeEntity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntity</span><span class="p">();</span>
+<span class="nv">$compositeEntity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$compositeEntity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+<span class="nv">$helper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityHelper</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
+   <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+   <span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span>
+<span class="p">]));</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">());</span> <span class="c1">// null</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// &quot;1&quot;</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// &quot;1&quot;</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// &quot;1&quot;</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span> <span class="c1">// [&#39;car&#39; =&gt; ..., &#39;year&#39; =&gt; ....]</span>
+
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">getIdentifiers</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span> <span class="c1">// [&lt;car&gt;, &lt;year&gt;]</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">getIdentifiers</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&lt;id&gt;]</span>
+
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">]);</span> <span class="c1">// false</span>
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">]);</span> <span class="c1">// true</span>
+
+<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">toIdentity</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// [&#39;id&#39; =&gt; 1]</span>
+</pre></div>
                 
                   
                 

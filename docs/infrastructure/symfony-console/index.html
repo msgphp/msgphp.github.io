@@ -34,7 +34,7 @@
     
     
       
-        <title>Symfony Console - MsgPHP Documentation</title>
+        <title>Console - MsgPHP Documentation</title>
       
     
     
@@ -93,7 +93,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Symfony Console
+                Console
               </span>
             
           
@@ -517,6 +517,75 @@
           
           
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Doctrine
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Doctrine
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../doctrine-collections/" title="Collections" class="md-nav__link">
+      Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../doctrine-orm/" title="ORM" class="md-nav__link">
+      ORM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Symfony
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Symfony
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
   
 
 
@@ -528,11 +597,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Symfony Console
+        Console
       </label>
     
-    <a href="./" title="Symfony Console" class="md-nav__link md-nav__link--active">
-      Symfony Console
+    <a href="./" title="Console" class="md-nav__link md-nav__link--active">
+      Console
     </a>
     
       
@@ -603,20 +672,20 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#class-context-example" title="Class context example" class="md-nav__link">
-    Class context example
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -631,6 +700,11 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -717,20 +791,20 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#class-context-example" title="Class context example" class="md-nav__link">
-    Class context example
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -804,7 +878,7 @@ is given it will be asked interactively. If interaction is not possible an excep
 </ul>
 </li>
 </ul>
-<h3 id="class-context-example">Class context example</h3>
+<h5 id="basic-example">Basic example</h5>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Console\ContextBuilder\</span><span class="p">{</span><span class="nx">ClassContextBuilder</span><span class="p">,</span> <span class="nx">ContextElement</span><span class="p">,</span> <span class="nx">ContextElementProviderInterface</span><span class="p">};</span>
@@ -812,6 +886,8 @@ is given it will be asked interactively. If interaction is not possible an excep
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Input\InputInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Output\OutputInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Style\SymfonyStyle</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
 
 <span class="k">class</span> <span class="nc">MyClass</span>
 <span class="p">{</span>
@@ -849,7 +925,8 @@ is given it will be asked interactively. If interaction is not possible an excep
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">InputInterface</span> <span class="nv">$input</span><span class="p">,</span><span class="nx">OutputInterface</span> <span class="nv">$output</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span>
     <span class="p">{</span>
-        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="k">new</span> <span class="nx">SymfonyStyle</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$output</span><span class="p">));</span> <span class="c1">// [&#39;argument&#39; =&gt; &#39;VALUE&#39;]</span>
+        <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SymfonyStyle</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$output</span><span class="p">);</span>
+        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$io</span><span class="p">);</span> <span class="c1">// [&#39;argument&#39; =&gt; &#39;VALUE&#39;]</span>
         <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">(</span><span class="o">...</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$context</span><span class="p">));</span>
 
         <span class="c1">// do something</span>
@@ -857,6 +934,10 @@ is given it will be asked interactively. If interaction is not possible an excep
         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="c1">// $ bin/console my-command</span>
 </pre></div>
                 
                   
@@ -876,7 +957,7 @@ is given it will be asked interactively. If interaction is not possible an excep
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../message-driven/cqrs/" title="CQRS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../doctrine-orm/" title="ORM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -885,7 +966,7 @@ is given it will be asked interactively. If interaction is not possible an excep
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CQRS
+                ORM
               </span>
             </div>
           </a>

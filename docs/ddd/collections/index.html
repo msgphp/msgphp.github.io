@@ -412,12 +412,38 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaindomaincollection" title="MsgPhp\Domain\DomainCollection" class="md-nav__link">
+    MsgPhp\Domain\DomainCollection
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfradoctrinedomaincollection" title="MsgPhp\Domain\Infra\Doctrine\DomainCollection" class="md-nav__link">
+    MsgPhp\Domain\Infra\Doctrine\DomainCollection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -651,10 +677,82 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Doctrine
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Doctrine
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
-      Symfony Console
+    <a href="../../infrastructure/doctrine-collections/" title="Collections" class="md-nav__link">
+      Collections
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/doctrine-orm/" title="ORM" class="md-nav__link">
+      ORM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Symfony
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Symfony
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-console/" title="Console" class="md-nav__link">
+      Console
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -778,12 +876,38 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#doctrine-example" title="Doctrine example" class="md-nav__link">
-    Doctrine example
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaindomaincollection" title="MsgPhp\Domain\DomainCollection" class="md-nav__link">
+    MsgPhp\Domain\DomainCollection
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfradoctrinedomaincollection" title="MsgPhp\Domain\Infra\Doctrine\DomainCollection" class="md-nav__link">
+    MsgPhp\Domain\Infra\Doctrine\DomainCollection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -805,9 +929,8 @@
                 
                 
                 <h1 id="collections">Collections</h1>
-<p>A domain collection is bound to <code>MsgPhp\Domain\DomainCollectionInterface</code>. Its main purpose is is to aggregate objects
-bound together by a root entity.</p>
-<p>The technical implementation is generic and may hold any type of elements from any iterable value.</p>
+<p>A domain collection is bound to <code>MsgPhp\Domain\DomainCollectionInterface</code>. Its main purpose is to aggregate objects
+bound together by a root entity, however, technically it may hold any type of element values.</p>
 <h2 id="api">API</h2>
 <h3 id="extends">Extends</h3>
 <ul>
@@ -816,159 +939,90 @@ bound together by a root entity.</p>
 </ul>
 <hr />
 <h3 id="static-fromvalueiterable-value-domaincollectioninterface"><code>static fromValue(?iterable $value): DomainCollectionInterface</code></h3>
-<p>Factorizes a new collection from its primitive value.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">null</span><span class="p">);</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">new</span> <span class="nx">\ArrayIterator</span><span class="p">([]));</span>
-</pre></div>
-
-
+<p>Factorizes a new collection from its primitive value. Using <code>null</code> implies an empty collection.</p>
 <hr />
 <h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
 <p>Tells if a collection is considered empty, i.e. contains zero elements.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([]);</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
-</pre></div>
-
-
 <hr />
 <h3 id="containselement-bool"><code>contains($element): bool</code></h3>
 <p>Tells if a collection contains the given element. Comparison is done strictly.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="c1">// false</span>
-</pre></div>
-
-
 <hr />
 <h3 id="containskeykey-bool"><code>containsKey($key): bool</code></h3>
 <p>Tells if a collection contains an element at the given key/index.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// false</span>
-</pre></div>
-
-
 <hr />
 <h3 id="first"><code>first()</code></h3>
 <p>Returns the first element or <code>false</code> if the collection is empty.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span> <span class="c1">// int(1)</span>
-</pre></div>
-
-
 <hr />
 <h3 id="last"><code>last()</code></h3>
 <p>Returns the last element or <code>false</code> if the collection is empty.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">last</span><span class="p">();</span> <span class="c1">// int(3)</span>
-</pre></div>
-
-
 <hr />
 <h3 id="getkey"><code>get($key)</code></h3>
 <p>Returns the element at the given key/index or <code>null</code> if the collection is empty.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// int(2)</span>
-</pre></div>
-
-
 <hr />
 <h3 id="filtercallable-filter-domaincollectioninterface"><code>filter(callable $filter): DomainCollectionInterface</code></h3>
 <p>Returns a <strong>new</strong> collection containing only elements for which <code>$filter</code> returns <code>true</code>. Keys are preserved.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$twoOrHigher</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">int</span> <span class="nv">$element</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$element</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">});</span>
-</pre></div>
-
-
 <hr />
 <h3 id="sliceint-offset-int-limit-0-domaincollectioninterface"><code>slice(int $offset, int $limit = 0): DomainCollectionInterface</code></h3>
-<p>Returns a <strong>new</strong> collection containing a slice of elements. By default the slice has no limit, implied by integer <code>0</code>. Keys are preserved.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$onlyTwo</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nv">$twoAndThree</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</pre></div>
-
-
+<p>Returns a <strong>new</strong> collection containing a slice of elements. By default the slice has no limit, implied by integer <code>0</code>.
+Keys are preserved.</p>
 <hr />
 <h3 id="mapcallable-mapper-array"><code>map(callable $mapper): array</code></h3>
-<p>Returns a map with each collection element as returned by <code>$mapper</code>.</p>
+<p>Returns a map with each collection element as returned by <code>$mapper</code>.s</p>
+<h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomaindomaincollection"><code>MsgPhp\Domain\DomainCollection</code></h3>
+<p>A first class citizen domain collection. It leverages <code>iterable</code> as underlying data type. Lazy support is built-in for
+type <code>\Traversable</code>. Meaning the minimal no. of elements are traversed, i.e. until the first element in case of
+<code>isEmpty()</code>. Note type <code>\Generator</code> can only start traversing once.</p>
+<ul>
+<li><code>__construct(iterable $elements)</code><ul>
+<li><code>$elements</code>: The elements this collection contains</li>
+</ul>
+</li>
+</ul>
+<h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
 
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$timesTwo</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">int</span> <span class="nv">$element</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$element</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// --- SETUP ---</span>
+
+<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
+<span class="nb">count</span><span class="p">(</span><span class="nv">$collection</span><span class="p">);</span> <span class="c1">// int(7)</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">containsKey</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span> <span class="c1">// &quot;a&quot;</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">last</span><span class="p">();</span> <span class="c1">// int(3)</span>
+
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">);</span> <span class="c1">// &quot;a&quot;</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// int(1)</span>
+<span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">);</span> <span class="c1">// &quot;value&quot;</span>
+
+<span class="nv">$onlyInts</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">is_int</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
 <span class="p">});</span>
+
+<span class="nv">$firstTwoInts</span> <span class="o">=</span> <span class="nv">$onlyInts</span><span class="o">-&gt;</span><span class="na">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="nv">$firstTwoIntsPlussed</span> <span class="o">=</span> <span class="nv">$firstTwoInts</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">int</span> <span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">++</span><span class="nv">$value</span><span class="p">;</span>
+<span class="p">});</span> <span class="c1">// [2, 4]</span>
 </pre></div>
 
 
-<h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomaininfradoctrinedomaincollection"><code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code></h3>
+<p>Domain collection based on <em>Doctrine Collections</em>.</p>
 <ul>
-<li><code>MsgPhp\Domain\DomainCollection</code><ul>
-<li>Generic collection</li>
+<li><a href="../../infrastructure/doctrine-collections/#domain-collection">Read more</a></li>
 </ul>
-</li>
-<li><code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code><ul>
-<li>Doctrine collection</li>
-<li>Requires <a href="https://packagist.org/packages/doctrine/collections"><code>doctrine/collections</code></a></li>
-</ul>
-</li>
-</ul>
-<h2 id="doctrine-example">Doctrine example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainCollection</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\Common\Collections\ArrayCollection</span><span class="p">;</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
-<span class="nv">$collectionAlt</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
-<span class="nv">$collectionAlt2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
-</pre></div>
                 
                   
                 
