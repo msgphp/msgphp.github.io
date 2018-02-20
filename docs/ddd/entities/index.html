@@ -811,42 +811,30 @@ Entity fields can be compared to a read-operation, whereas entity features repre
 <code>MsgPhp\Domain\Entity\Features\</code>. Additionally more specific fields and features can be provided per domain layer.</p>
 <h2 id="common-entity-fields">Common entity fields</h2>
 <h3 id="createdatfield"><code>CreatedAtField</code></h3>
-<p>A datetime value representing the entity was initially created at.</p>
+<p>A datetime value representing an entity was initially created at. Requires <code>$createdAt</code> to be set initially.</p>
 <ul>
-<li><code>getCreatedAt(): \DateTimeInterface</code><ul>
-<li>Required to be set initially</li>
-</ul>
-</li>
+<li><code>getCreatedAt(): \DateTimeInterface</code></li>
 </ul>
 <h3 id="enabledfield"><code>EnabledField</code></h3>
-<p>A boolean value representing the entity its availability state.</p>
+<p>A boolean value representing an entity its availability state. Sets <code>$enabled</code> to <code>false</code> by default.</p>
 <ul>
-<li><code>isEnabled(): bool</code><ul>
-<li><code>false</code> by default</li>
-</ul>
-</li>
+<li><code>isEnabled(): bool</code></li>
 </ul>
 <h3 id="lastupdatedatfield"><code>LastUpdatedAtField</code></h3>
-<p>A datetime value representing the entity was last updated at.</p>
+<p>A datetime value representing an entity was last updated at. Requires <code>$lastUpdatedAt</code> to be set initially.</p>
 <ul>
-<li><code>getLastUpdatedAt(): \DateTimeInterface</code><ul>
-<li>Required to be set initially</li>
-</ul>
-</li>
+<li><code>getLastUpdatedAt(): \DateTimeInterface</code></li>
 </ul>
 <h2 id="common-entity-features">Common entity features</h2>
 <h3 id="canbeconfirmed"><code>CanBeConfirmed</code></h3>
-<p>Provides ability to confirm an entity.</p>
+<p>Provides ability to confirm an entity. Requires <code>$confirmationToken</code> to be set initially (usually a random token).</p>
 <ul>
-<li><code>getConfirmationToken(): ?string</code><ul>
-<li>Required to be set initially</li>
-</ul>
-</li>
+<li><code>getConfirmationToken(): ?string</code></li>
 <li><code>getConfirmedAt(): ?\DateTimeInterface</code> </li>
 <li><code>isConfirmed(): bool</code> </li>
 <li><code>confirm(): void</code> <ul>
-<li><code>confirmationToken</code> is unset</li>
-<li><code>confirmatedAt</code> is set to the current datetime</li>
+<li>Resets <code>$confirmationToken</code></li>
+<li>Sets <code>$confirmatedAt</code> to the current datetime</li>
 </ul>
 </li>
 </ul>
@@ -854,8 +842,14 @@ Entity fields can be compared to a read-operation, whereas entity features repre
 <p>Provides ability to toggle an entity its availability state.</p>
 <ul>
 <li>Inherits from <code>EnabledField</code></li>
-<li><code>enable(): void</code></li>
-<li><code>disable(): void</code></li>
+<li><code>enable(): void</code><ul>
+<li>Sets <code>$enabled</code> to <code>true</code></li>
+</ul>
+</li>
+<li><code>disable(): void</code><ul>
+<li>Sets <code>$enabled</code> to <code>false</code></li>
+</ul>
+</li>
 </ul>
                 
                   

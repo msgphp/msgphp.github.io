@@ -610,6 +610,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#domain-repository" title="Domain repository" class="md-nav__link">
+    Domain repository
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -705,6 +725,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#domain-repository" title="Domain repository" class="md-nav__link">
+    Domain repository
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -756,13 +796,69 @@
     <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nv">$compositeEntity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntity</span><span class="p">();</span>
-<span class="nv">$compositeEntity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$compositeEntity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="nv">$mapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+</pre></div>
+
+
+<h2 id="domain-repository">Domain repository</h2>
+<p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by
+<code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's entity manager, bound to
+<code>Doctrine\ORM\EntityManagerInterface</code>, as underlying persistence layer.</p>
+<ul>
+<li><code>__construct(string $class, EntityManagerInterface $em, DomainIdentityHelper $identityHelper = null)</code><ul>
+<li><code>$class</code>: The entity class this repository is tied to</li>
+<li><code>$em</code>: The entity manager to use</li>
+<li><code>$identityHelper</code>: Custom domain identity helper. By default it's resolved from the given entity manager.
+  <a href="../../ddd/identities/">Read more</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-example_1">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="sd">/** @ORM\Entity() */</span>
+<span class="k">class</span> <span class="nc">MyCompositeEntity</span>
+<span class="p">{</span>
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+
+    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">MyCompositeEntityRepository</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DomainEntityRepositoryTrait</span> <span class="p">{</span>
+        <span class="nx">doFind</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">find</span><span class="p">;</span>
+        <span class="nx">doExists</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">exists</span><span class="p">;</span>
+        <span class="nx">doSave</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">save</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntityRepository</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntity</span><span class="p">();</span>
+    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
+    <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
