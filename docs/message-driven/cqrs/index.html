@@ -588,15 +588,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../infrastructure/uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -638,13 +650,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -777,12 +789,15 @@ Usually a command handler is designed, but not limited, to handle one specific c
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">class</span> <span class="nc">MyCommand</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyCommand</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
 <span class="k">class</span> <span class="nc">MyCommandHandler</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="c1">// do something</span>
+        <span class="c1">// handle $command</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -796,7 +811,10 @@ Usually a command handler is designed, but not limited, to handle one specific c
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</span><span class="p">;</span> 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventInterface</span><span class="p">};</span> 
 
-<span class="k">class</span> <span class="nc">MyCommand</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyCommand</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
 <span class="k">class</span> <span class="nc">MyCommandHandler</span>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">EventSourcingCommandHandlerTrait</span><span class="p">;</span>
@@ -804,7 +822,7 @@ Usually a command handler is designed, but not limited, to handle one specific c
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">MyEntity</span> <span class="nv">$entity</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-            <span class="c1">// do something</span>
+            <span class="c1">// do something when $command is handled</span>
         <span class="p">});</span>
     <span class="p">}</span>
 
@@ -819,7 +837,10 @@ Usually a command handler is designed, but not limited, to handle one specific c
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEventInterface</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEventInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
 <span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">handleEvent</span><span class="p">(</span><span class="nx">DomainEventInterface</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
@@ -869,13 +890,13 @@ Usually a command handler is designed, but not limited, to handle one specific c
           </a>
         
         
-          <a href="../../infrastructure/doctrine-collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../infrastructure/uuid/" title="UUID" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Collections
+                UUID
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

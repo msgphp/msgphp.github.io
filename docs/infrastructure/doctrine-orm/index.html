@@ -517,18 +517,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -619,13 +631,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -718,7 +730,7 @@
 <h2 id="domain-identity-mapping">Domain identity mapping</h2>
 <p>A Doctrine tailored <a href="../../ddd/identity-mapping/">domain identity mapping</a> is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>. It uses Doctrine's entity manager, bound to
-<code>Doctrine\ORM\EntityManagerInterface</code>, directly.</p>
+<code>Doctrine\ORM\EntityManagerInterface</code>, as underlying mapping.</p>
 <ul>
 <li><code>__construct(EntityManagerInterface $em)</code><ul>
 <li><code>$em</code>: The entity manager to use</li>
@@ -750,9 +762,6 @@
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">persist</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span>
-<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">flush</span><span class="p">();</span>
-
 <span class="nv">$mapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
 </pre></div>
                 

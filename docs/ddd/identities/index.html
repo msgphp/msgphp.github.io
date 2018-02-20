@@ -623,15 +623,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../infrastructure/uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -673,13 +685,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -821,8 +833,8 @@
                 
                 
                 <h1 id="identities">Identities</h1>
-<p>A domain identity is a composite value of one or more individual identifier values, indexed by an identifier field name.
-Its usage is to uniquely identify a domain object, thus qualifying it an entity object.</p>
+<p>A domain identity is a composite value (<code>array</code>) of one or more individual identifier values, indexed by an identifier
+field name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.</p>
 <p>Identifier values can be of any type; a <a href="../identifiers/">domain identifier</a>, another (foreign) entity object, or any
 primitive value.</p>
 <p><code>MsgPhp\Domain\DomainIdentityHelper</code> is a domain a helper service. Its purpose is to ease working with the

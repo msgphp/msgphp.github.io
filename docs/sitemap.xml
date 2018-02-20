@@ -104,6 +104,12 @@
     
         
     <url>
+     <loc>/infrastructure/uuid/</loc>
+     <lastmod>2018-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>

@@ -517,18 +517,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -619,13 +631,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -733,6 +745,10 @@ It leverages type <code>Doctrine\Common\Collections\Collection</code> as underly
 <span class="c1">// --- SETUP ---</span>
 
 <span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
+
+<span class="c1">// static</span>
+
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 </pre></div>
                 
                   
@@ -752,7 +768,7 @@ It leverages type <code>Doctrine\Common\Collections\Collection</code> as underly
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../message-driven/cqrs/" title="CQRS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../uuid/" title="UUID" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -761,7 +777,7 @@ It leverages type <code>Doctrine\Common\Collections\Collection</code> as underly
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CQRS
+                UUID
               </span>
             </div>
           </a>

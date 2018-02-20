@@ -624,15 +624,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../../infrastructure/uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -674,13 +686,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -851,13 +863,15 @@ be used to initialize the object as argument value. Another (decorating) factory
 <span class="k">class</span> <span class="nc">Some</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
-    <span class="p">{</span> <span class="p">}</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">class</span> <span class="nc">Subject</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">Some</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span> <span class="p">}</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">();</span>
@@ -892,8 +906,13 @@ be used to initialize the object as argument value. Another (decorating) factory
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\ClassMappingObjectFactory</span><span class="p">;</span>
 
-<span class="k">interface</span> <span class="nx">KnownInterface</span> <span class="p">{</span> <span class="p">}</span>
-<span class="k">class</span> <span class="nc">Subject</span> <span class="k">implements</span> <span class="nx">KnownInterface</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">interface</span> <span class="nx">KnownInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Subject</span> <span class="k">implements</span> <span class="nx">KnownInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
 
 <span class="nv">$realFactory</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 

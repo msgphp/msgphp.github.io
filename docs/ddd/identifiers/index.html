@@ -311,8 +311,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
+  <a href="#equalsdomainidinterface-id-bool" title="equals(DomainIdInterface $id): bool" class="md-nav__link">
+    equals(DomainIdInterface $id): bool
   </a>
   
 </li>
@@ -334,12 +334,38 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaindomainid" title="MsgPhp\Domain\DomainId" class="md-nav__link">
+    MsgPhp\Domain\DomainId
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfrauuiddomainid" title="MsgPhp\Domain\Infra\Uuid\DomainId" class="md-nav__link">
+    MsgPhp\Domain\Infra\Uuid\DomainId
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -609,15 +635,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../infrastructure/uuid/" title="UUID" class="md-nav__link">
+      UUID
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
     
-    <label class="md-nav__link" for="nav-6-1">
+    <label class="md-nav__link" for="nav-6-2">
       Doctrine
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-1">
+      <label class="md-nav__title" for="nav-6-2">
         Doctrine
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -659,13 +697,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
     
-    <label class="md-nav__link" for="nav-6-2">
+    <label class="md-nav__link" for="nav-6-3">
       Symfony
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
+      <label class="md-nav__title" for="nav-6-3">
         Symfony
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -743,8 +781,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#equals-bool" title="equals(): bool" class="md-nav__link">
-    equals(): bool
+  <a href="#equalsdomainidinterface-id-bool" title="equals(DomainIdInterface $id): bool" class="md-nav__link">
+    equals(DomainIdInterface $id): bool
   </a>
   
 </li>
@@ -766,12 +804,38 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uuid-example" title="UUID example" class="md-nav__link">
-    UUID example
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaindomainid" title="MsgPhp\Domain\DomainId" class="md-nav__link">
+    MsgPhp\Domain\DomainId
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfrauuiddomainid" title="MsgPhp\Domain\Infra\Uuid\DomainId" class="md-nav__link">
+    MsgPhp\Domain\Infra\Uuid\DomainId
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -793,8 +857,8 @@
                 
                 
                 <h1 id="identifiers">Identifiers</h1>
-<p>A domain identifier is a value object and bound to <code>MsgPhp\Domain\DomainIdInterface</code>. Its purpose is to identify entity
-objects.</p>
+<p>A domain identifier is a value object and bound to <code>MsgPhp\Domain\DomainIdInterface</code>. Its purpose is to utilize a
+primitive identifier value.</p>
 <h2 id="api">API</h2>
 <h3 id="extends">Extends</h3>
 <ul>
@@ -803,84 +867,64 @@ objects.</p>
 </ul>
 <hr />
 <h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code></h3>
-<p>Factorizes a new identifier from its primitive value.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
-</pre></div>
-
-
+<p>Factorizes a new identifier from its primitive value. Using <code>null</code> might imply an empty identifier.</p>
 <hr />
 <h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
-<p>Tells if an identifier value is considered empty. In general this is the case when an identifier is created from a
-primitive <code>null</code> value, and therefor enables to differ its string value (<code>""</code>) from an explicit empty string value.</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// null</span>
-
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="nv">$value</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// &quot;&quot;</span>
-</pre></div>
-
-
+<p>Tells if an identifier value is considered empty, thus has no known primitive value.</p>
 <hr />
-<h3 id="equals-bool"><code>equals(): bool</code></h3>
-<p>Tells if an identifier equals another identifier. Default implementations vary on type. Meaning the same identifier
-value is considered <strong>not</strong> equal when comparing e.g.:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span> <span class="p">{</span> <span class="p">}</span>
-
-<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
-<span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false</span>
-</pre></div>
-
-
+<h3 id="equalsdomainidinterface-id-bool"><code>equals(DomainIdInterface $id): bool</code></h3>
+<p>Tells if an identifier equals another identifier.</p>
 <hr />
 <h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code></h3>
-<p>Returns the string value of the identifier. If the the identifier is empty (see <code>isEmpty</code>) an empty string (<code>""</code>) 
+<p>Returns the identifier its primitive string value. If the identifier is empty (see <code>isEmpty()</code>) an empty string (<code>""</code>) 
 should be returned.</p>
+<h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomaindomainid"><code>MsgPhp\Domain\DomainId</code></h3>
+<p>A first class citizen domain identifier. It leverages <code>string|null</code> as underlying data type.</p>
+<ul>
+<li><code>__construct(string $id = null)</code><ul>
+<li><code>$id</code>: The primitive identifier value. In case of <code>null</code> an empty identifier is implied.</li>
+</ul>
+</li>
+</ul>
+<h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
 
-<span class="k">echo</span> <span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span>
-<span class="k">echo</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+<span class="c1">// --- SETUP ---</span>
+
+<span class="k">class</span> <span class="nc">OtherDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="nv">$emptyId</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
+<span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
+
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="nv">$emptyId</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">());</span> <span class="c1">// false</span>
+<span class="nv">$id</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
+<span class="nv">$id</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">OtherDomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false due type varying</span>
+
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// &quot;&quot;</span>
+<span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// &quot;1&quot;</span>
+
+<span class="nv">$emptyStringId</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="nv">$emptyStringId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="nv">$emptyStringId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// &quot;&quot;</span>
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// null</span>
 </pre></div>
 
 
-<h2 id="implementations">Implementations</h2>
+<h3 id="msgphpdomaininfrauuiddomainid"><code>MsgPhp\Domain\Infra\Uuid\DomainId</code></h3>
+<p>Domain identifier based on UUID values.</p>
 <ul>
-<li><code>MsgPhp\Domain\DomainId</code><ul>
-<li>Generic scalar values</li>
+<li><a href="../../infrastructure/uuid/">Read more</a></li>
 </ul>
-</li>
-<li><code>MsgPhp\Domain\Infra\Uuid\DomainId</code><ul>
-<li>UUID values</li>
-<li>Requires <a href="https://packagist.org/packages/ramsey/uuid"><code>ramsey/uuid</code></a></li>
-</ul>
-</li>
-</ul>
-<h2 id="uuid-example">UUID example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Ramsey\Uuid\Uuid</span><span class="p">;</span>
-
-<span class="nv">$uuid4</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">);</span>
-<span class="nv">$uuid4Alt</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;cf3d2f85-6c86-44d1-8634-af51c91a9a74&#39;</span><span class="p">));</span>
-<span class="nv">$uuid4Alt2</span> <span class="o">=</span> <span class="nx">DomainUuid</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid4</span><span class="p">());</span>
-<span class="nv">$newUuid4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainUuid</span><span class="p">();</span>
-<span class="nv">$newUuid5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainUuid</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid5</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">NAMESPACE_URL</span><span class="p">,</span> <span class="s1">&#39;http://php.net/&#39;</span><span class="p">));</span>
-</pre></div>
                 
                   
                 
