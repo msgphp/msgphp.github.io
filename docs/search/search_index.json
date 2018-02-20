@@ -412,7 +412,7 @@
         }, 
         {
             "location": "/ddd/factory/static/", 
-            "text": "Static factory\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. Its purpose is to\nfactorize a known implementation for a given class.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nFactorizes an \nidentifier\n.\n\n\n\n\nstatic create($value): DomainIdInterface\n\n\n$value\n: Any (primitive) identifier value\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n// --- USAGE ---\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\nFactorizes a \ncollection\n.\n\n\n\n\nstatic create(?iterable $value): DomainCollectionInterface\n\n\n$value\n: Any (primitive) iterable value\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\n\n// --- USAGE ---\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);", 
+            "text": "Static factory\n\n\nA static factory is a utility class, it cannot be initialized as a new instance using \nnew ...();\n. Its purpose is to\nfactorize a known implementation for a given class.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\DomainIdFactory\n\n\nFactorizes an \nidentifier\n.\n\n\n\n\nstatic create($value): DomainIdInterface\n\n\n$value\n: Any (primitive) identifier value\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainIdFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\n\n// --- USAGE ---\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\n1\n);\n\n\n\n/** @var DomainUuid $id */\n\n\n$id\n \n=\n \nDomainIdFactory\n::\ncreate\n(\ncf3d2f85-6c86-44d1-8634-af51c91a9a74\n);\n\n\n\n\n\n\nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n\n\nFactorizes a \ncollection\n.\n\n\n\n\nstatic create(?iterable $value): DomainCollectionInterface\n\n\n$value\n: Any (primitive) iterable value or \nnull\n to imply an empty collection\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainCollectionFactory\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n \nas\n \nDoctrineDomainCollection\n;\n\n\n\n// --- USAGE ---\n\n\n\n/** @var DomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);\n\n\n\n/** @var DoctrineDomainCollection $collection */\n\n\n$collection\n \n=\n \nDomainCollectionFactory\n::\ncreate\n([\n1\n,\n \n2\n,\n \n3\n]);", 
             "title": "Static factory"
         }, 
         {
@@ -437,7 +437,7 @@
         }, 
         {
             "location": "/ddd/factory/static/#msgphpdomainfactorydomaincollectionfactory", 
-            "text": "Factorizes a  collection .   static create(?iterable $value): DomainCollectionInterface  $value : Any (primitive) iterable value", 
+            "text": "Factorizes a  collection .   static create(?iterable $value): DomainCollectionInterface  $value : Any (primitive) iterable value or  null  to imply an empty collection", 
             "title": "MsgPhp\\Domain\\Factory\\DomainCollectionFactory"
         }, 
         {
@@ -717,12 +717,12 @@
         }, 
         {
             "location": "/infrastructure/doctrine-collections/", 
-            "text": "Doctrine Collections\n\n\nAn overview of available infrastructural code when using \nDoctrine Collections\n.\n\n\n\n\nRequires \ndoctrine/collections\n\n\n\n\nDomain collection\n\n\nA Doctrine tailored \ndomain collection\n is provided by \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n.\nIt leverages type \nDoctrine\\Common\\Collections\\Collection\n as underlying data type.\n\n\n\n\n__construct(Collection $collection)\n\n\n$collection\n: The underlying collection\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n;\n\n\n\n// --- SETUP ---\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));\n\n\n\n// static\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n([\n1\n,\n \n2\n,\n \n3\n]);", 
+            "text": "Doctrine Collections\n\n\nAn overview of available infrastructural code when using Doctrine's \nCollections\n.\n\n\n\n\nRequires \ndoctrine/collections\n\n\n\n\nDomain collection\n\n\nA Doctrine tailored \ndomain collection\n is provided by \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n.\nIt leverages type \nDoctrine\\Common\\Collections\\Collection\n as underlying data type.\n\n\n\n\n__construct(Collection $collection)\n\n\n$collection\n: The underlying collection\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\Common\\Collections\\ArrayCollection\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n;\n\n\n\n// --- SETUP ---\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n(\nnew\n \nArrayCollection\n([\n1\n,\n \n2\n,\n \n3\n]));\n\n\n\n// static\n\n\n\n$collection\n \n=\n \nDomainCollection\n::\nfromValue\n([\n1\n,\n \n2\n,\n \n3\n]);", 
             "title": "Collections"
         }, 
         {
             "location": "/infrastructure/doctrine-collections/#doctrine-collections", 
-            "text": "An overview of available infrastructural code when using  Doctrine Collections .   Requires  doctrine/collections", 
+            "text": "An overview of available infrastructural code when using Doctrine's  Collections .   Requires  doctrine/collections", 
             "title": "Doctrine Collections"
         }, 
         {
@@ -736,13 +736,28 @@
             "title": "Basic example"
         }, 
         {
+            "location": "/infrastructure/doctrine-dbal/", 
+            "text": "Doctrine Database Abstraction Layer\n\n\nAn overview of available infrastructural code when using Doctrine's \nDatabase Abstraction Layer\n.\n\n\n\n\nRequires \ndoctrine/dbal\n\n\n\n\nDomain identifier type\n\n\nTODO", 
+            "title": "DBAL"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-dbal/#doctrine-database-abstraction-layer", 
+            "text": "An overview of available infrastructural code when using Doctrine's  Database Abstraction Layer .   Requires  doctrine/dbal", 
+            "title": "Doctrine Database Abstraction Layer"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-dbal/#domain-identifier-type", 
+            "text": "TODO", 
+            "title": "Domain identifier type"
+        }, 
+        {
             "location": "/infrastructure/doctrine-orm/", 
-            "text": "Doctrine Object Relational Mapper\n\n\nAn overview of available infrastructural code when using \nDoctrine Object Relational Mapper\n.\n\n\n\n\nRequires \ndoctrine/orm\n\n\n\n\nDomain identity mapping\n\n\nA Doctrine tailored \ndomain identity mapping\n is provided by\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n. It uses Doctrine's entity manager, bound to\n\nDoctrine\\ORM\\EntityManagerInterface\n, as underlying mapping.\n\n\n\n\n__construct(EntityManagerInterface $em)\n\n\n$em\n: The entity manager to use\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n$mapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n\n\n\nDomain repository\n\n\nA Doctrine tailored \nrepository trait\n is provided by\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n. It uses Doctrine's entity manager, bound to\n\nDoctrine\\ORM\\EntityManagerInterface\n, as underlying persistence layer.\n\n\n\n\n__construct(string $class, EntityManagerInterface $em, DomainIdentityHelper $identityHelper = null)\n\n\n$class\n: The entity class this repository is tied to\n\n\n$em\n: The entity manager to use\n\n\n$identityHelper\n: Custom domain identity helper. By default it's resolved from the given entity manager.\n  \nRead more\n.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n\nclass\n \nMyCompositeEntityRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n        \ndoSave\n \nas\n \npublic\n \nsave\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n$repository\n \n=\n \nnew\n \nMyCompositeEntityRepository\n(\nMyCompositeEntity\n::\nclass\n,\n \n$em\n);\n\n\n\n// --- USAGE ---\n\n\n\nif\n \n(\n$repository\n-\nexists\n(\n$id\n \n=\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]))\n \n{\n\n    \n$entity\n \n=\n \n$repository\n-\nfind\n(\n$id\n);\n\n\n}\n \nelse\n \n{\n\n    \n$entity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n    \n$entity\n-\nname\n \n=\n \n...\n;\n\n    \n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n    \n$repository\n-\nsave\n(\n$entity\n);\n\n\n}", 
+            "text": "Doctrine Object Relational Mapper\n\n\nAn overview of available infrastructural code when using Doctrine's \nObject Relational Mapper\n.\n\n\n\n\nRequires \ndoctrine/orm\n\n\n\n\nDomain identity mapping\n\n\nA Doctrine tailored \ndomain identity mapping\n is provided by\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n. It uses Doctrine's entity manager, bound to\n\nDoctrine\\ORM\\EntityManagerInterface\n, as underlying mapping.\n\n\n\n\n__construct(EntityManagerInterface $em)\n\n\n$em\n: The entity manager to use\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n$mapping\n \n=\n \nnew\n \nDomainIdentityMapping\n(\n$em\n);\n\n\n\n\n\n\nDomain repository\n\n\nA Doctrine tailored \nrepository trait\n is provided by\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n. It uses Doctrine's entity manager, bound to\n\nDoctrine\\ORM\\EntityManagerInterface\n, as underlying persistence layer.\n\n\n\n\n__construct(string $class, EntityManagerInterface $em, DomainIdentityHelper $identityHelper = null)\n\n\n$class\n: The entity class this repository is tied to\n\n\n$em\n: The entity manager to use\n\n\n$identityHelper\n: Custom domain identity helper. By default it's resolved from the given entity manager.\n  \nRead more\n.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\ORM\\EntityManagerInterface\n;\n\n\nuse\n \nDoctrine\\ORM\\Mapping\n \nas\n \nORM\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @ORM\\Entity() */\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \n/** @ORM\\Id @ORM\\Column(type=\nstring\n) */\n\n    \npublic\n \n$name\n;\n\n\n    \n/** @ORM\\Id @ORM\\Column(type=\ninteger\n) */\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n\nclass\n \nMyCompositeEntityRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n        \ndoSave\n \nas\n \npublic\n \nsave\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var EntityManagerInterface $em */\n\n\n$em\n \n=\n \n...\n;\n\n\n$repository\n \n=\n \nnew\n \nMyCompositeEntityRepository\n(\nMyCompositeEntity\n::\nclass\n,\n \n$em\n);\n\n\n\n// --- USAGE ---\n\n\n\nif\n \n(\n$repository\n-\nexists\n(\n$id\n \n=\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]))\n \n{\n\n    \n$entity\n \n=\n \n$repository\n-\nfind\n(\n$id\n);\n\n\n}\n \nelse\n \n{\n\n    \n$entity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n    \n$entity\n-\nname\n \n=\n \n...\n;\n\n    \n$entity\n-\nyear\n \n=\n \n...\n;\n\n\n    \n$repository\n-\nsave\n(\n$entity\n);\n\n\n}\n\n\n\n\n\n\nHydration\n\n\nTODO\n\n\nEntity reference loader\n\n\nTODO\n\n\nObject field mappings\n\n\nTODO", 
             "title": "ORM"
         }, 
         {
             "location": "/infrastructure/doctrine-orm/#doctrine-object-relational-mapper", 
-            "text": "An overview of available infrastructural code when using  Doctrine Object Relational Mapper .   Requires  doctrine/orm", 
+            "text": "An overview of available infrastructural code when using Doctrine's  Object Relational Mapper .   Requires  doctrine/orm", 
             "title": "Doctrine Object Relational Mapper"
         }, 
         {
@@ -764,6 +779,21 @@
             "location": "/infrastructure/doctrine-orm/#basic-example_1", 
             "text": "?php  use   Doctrine\\ORM\\EntityManagerInterface ;  use   Doctrine\\ORM\\Mapping   as   ORM ;  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait ;  // --- SETUP ---  /** @ORM\\Entity() */  class   MyCompositeEntity  { \n     /** @ORM\\Id @ORM\\Column(type= string ) */ \n     public   $name ; \n\n     /** @ORM\\Id @ORM\\Column(type= integer ) */ \n     public   $year ;  }  class   MyCompositeEntityRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n         doSave   as   public   save ; \n     }  }  /** @var EntityManagerInterface $em */  $em   =   ... ;  $repository   =   new   MyCompositeEntityRepository ( MyCompositeEntity :: class ,   $em );  // --- USAGE ---  if   ( $repository - exists ( $id   =   [ name   =   ... ,   year   =   ... ]))   { \n     $entity   =   $repository - find ( $id );  }   else   { \n     $entity   =   new   MyCompositeEntity (); \n     $entity - name   =   ... ; \n     $entity - year   =   ... ; \n\n     $repository - save ( $entity );  }", 
             "title": "Basic example"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-orm/#hydration", 
+            "text": "TODO", 
+            "title": "Hydration"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-orm/#entity-reference-loader", 
+            "text": "TODO", 
+            "title": "Entity reference loader"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-orm/#object-field-mappings", 
+            "text": "TODO", 
+            "title": "Object field mappings"
         }, 
         {
             "location": "/infrastructure/symfony-console/", 
@@ -814,6 +844,66 @@
             "location": "/infrastructure/symfony-console/#basic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Infra\\Console\\ContextBuilder\\ { ClassContextBuilder ,   ContextElement ,   ContextElementProviderInterface };  use   Symfony\\Component\\Console\\Command\\Command ;  use   Symfony\\Component\\Console\\Input\\InputInterface ;  use   Symfony\\Component\\Console\\Output\\OutputInterface ;  use   Symfony\\Component\\Console\\Style\\SymfonyStyle ;  // --- SETUP ---  class   MyClass  { \n     public   function   __construct ( string   $argument ) \n     { \n     }  }  class   MyContextElementProvider   implements   ContextElementProviderInterface  { \n     public   function   getElement ( string   $class ,   string   $method ,   string   $argument ) :   ? ContextElement \n     { \n         return   new   ContextElement ( strtoupper ( $argument )); \n     }  }  class   MyCommand   extends   Command  { \n     private   $contextBuilder ; \n\n     public   function   __construct () \n     { \n         $this - contextBuilder   =   new   ClassContextBuilder ( MyClass :: class ,   __construct ,   [ new   MyContextElementProvider ()]); \n\n         parent :: __construct (); \n     } \n\n     protected   function   configure () :   void \n     { \n        $this - setName ( my-command ); \n        $this - contextBuilder - configure ( $this - getDefinition ()); \n\n        // The CLI usage is now: \n        // bin/console my-command [argument] \n     } \n\n     protected   function   execute ( InputInterface   $input , OutputInterface   $output ) :   int \n     { \n         $io   =   new   SymfonyStyle ( $input ,   $output ); \n         $context   =   $this - contextBuilder - getContext ( $input ,   $io );   // [ argument  =   VALUE ] \n         $object   =   new   MyClass ( ... array_values ( $context )); \n\n         // do something \n\n         return   0 ; \n     }  }  // --- USAGE ---  // $ bin/console my-command", 
             "title": "Basic example"
+        }, 
+        {
+            "location": "/domain/architecture/", 
+            "text": "Domain layer architecture\n\n\nTODO", 
+            "title": "Architecture"
+        }, 
+        {
+            "location": "/domain/architecture/#domain-layer-architecture", 
+            "text": "TODO", 
+            "title": "Domain layer architecture"
+        }, 
+        {
+            "location": "/domain/user/", 
+            "text": "User domain layer\n\n\nTODO", 
+            "title": "User domain"
+        }, 
+        {
+            "location": "/domain/user/#user-domain-layer", 
+            "text": "TODO", 
+            "title": "User domain layer"
+        }, 
+        {
+            "location": "/domain/eav/", 
+            "text": "Entity-Attribute-Value domain layer\n\n\nTODO", 
+            "title": "EAV domain"
+        }, 
+        {
+            "location": "/domain/eav/#entity-attribute-value-domain-layer", 
+            "text": "TODO", 
+            "title": "Entity-Attribute-Value domain layer"
+        }, 
+        {
+            "location": "/symfony-bundle/architecture/", 
+            "text": "Bundle architecture\n\n\nTODO", 
+            "title": "Architecture"
+        }, 
+        {
+            "location": "/symfony-bundle/architecture/#bundle-architecture", 
+            "text": "TODO", 
+            "title": "Bundle architecture"
+        }, 
+        {
+            "location": "/symfony-bundle/user/", 
+            "text": "User bundle\n\n\nTODO", 
+            "title": "User bundle"
+        }, 
+        {
+            "location": "/symfony-bundle/user/#user-bundle", 
+            "text": "TODO", 
+            "title": "User bundle"
+        }, 
+        {
+            "location": "/symfony-bundle/eav/", 
+            "text": "Entity-Attribute-Value bundle\n\n\nTODO", 
+            "title": "EAV bundle"
+        }, 
+        {
+            "location": "/symfony-bundle/eav/#entity-attribute-value-bundle", 
+            "text": "TODO", 
+            "title": "Entity-Attribute-Value bundle"
         }
     ]
 }

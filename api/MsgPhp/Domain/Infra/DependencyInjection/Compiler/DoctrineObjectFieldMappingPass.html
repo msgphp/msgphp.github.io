@@ -112,7 +112,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, array $defaultProviders = [EntityFieldsMapping::class])
+                    <a href="#method___construct">__construct</a>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, string $listenerId = ObjectFieldMappingListener::class, array $defaultProviders = [EntityFieldsMapping::class])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -137,9 +137,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L27">line 27</a></div>
         <code>                    
-    <strong>__construct</strong>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, array $defaultProviders = [EntityFieldsMapping::class])
+    <strong>__construct</strong>(string $tagName = &#039;msgphp.doctrine.object_field_mapping&#039;, string $listenerId = ObjectFieldMappingListener::class, array $defaultProviders = [EntityFieldsMapping::class])
         </code>
     </h3>
     <div class="details">
@@ -153,6 +153,11 @@
                     <tr>
                 <td>string</td>
                 <td>$tagName</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$listenerId</td>
                 <td></td>
             </tr>
                     <tr>
@@ -171,7 +176,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_process">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L32">line 32</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L34">line 34</a></div>
         <code>                    
     <strong>process</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
         </code>
