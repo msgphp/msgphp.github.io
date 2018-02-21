@@ -1076,11 +1076,10 @@ as underlying persistence layer.</p>
 
 <h2 id="hydration">Hydration</h2>
 <p>When working with <a href="../../ddd/identifiers/">identifiers</a> and the corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
-a problem might occur when hydrating scalar values (e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>getScalarResult</code></a>);
+a problem might occur when hydrating scalar values, e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>getScalarResult()</code></a>;
 it would return instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
-value (due the <code>__toString</code> implementation). In case the underlying data type is e.g. <code>integer</code> we'll lose it.</p>
-<p>To overcome two hydration modes are available in order to hydrate the primitive identifier value instead, based on the
-true database type used.</p>
+value (due to <code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> we'll lose it.</p>
+<p>To overcome, two hydration modes are available in order to hydrate the primitive identifier value instead.</p>
 <h3 id="basic-example_2">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
