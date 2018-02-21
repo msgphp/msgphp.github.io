@@ -647,6 +647,19 @@
     Hydration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_2" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -654,12 +667,18 @@
     Entity reference loader
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#object-field-mappings" title="Object field mappings" class="md-nav__link">
-    Object field mappings
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_3" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -903,6 +922,19 @@
     Hydration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_2" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -910,12 +942,18 @@
     Entity reference loader
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#object-field-mappings" title="Object field mappings" class="md-nav__link">
-    Object field mappings
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example_3" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -943,8 +981,8 @@
 </ul>
 <h2 id="domain-identity-mapping">Domain identity mapping</h2>
 <p>A Doctrine tailored <a href="../../ddd/identity-mapping/">domain identity mapping</a> is provided by
-<code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>. It uses Doctrine's entity manager, bound to
-<code>Doctrine\ORM\EntityManagerInterface</code>, as underlying mapping.</p>
+<code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a>
+as underlying mapping.</p>
 <ul>
 <li><code>__construct(EntityManagerInterface $em)</code><ul>
 <li><code>$em</code>: The entity manager to use</li>
@@ -960,7 +998,7 @@
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity() */</span>
+<span class="sd">/** @ORM\Entity */</span>
 <span class="k">class</span> <span class="nc">MyCompositeEntity</span>
 <span class="p">{</span>
     <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
@@ -978,8 +1016,8 @@
 
 <h2 id="domain-repository">Domain repository</h2>
 <p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by
-<code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's entity manager, bound to
-<code>Doctrine\ORM\EntityManagerInterface</code>, as underlying persistence layer.</p>
+<code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a>
+as underlying persistence layer.</p>
 <ul>
 <li><code>__construct(string $class, EntityManagerInterface $em, DomainIdentityHelper $identityHelper = null)</code><ul>
 <li><code>$class</code>: The entity class this repository is tied to</li>
@@ -998,7 +1036,7 @@
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity() */</span>
+<span class="sd">/** @ORM\Entity */</span>
 <span class="k">class</span> <span class="nc">MyCompositeEntity</span>
 <span class="p">{</span>
     <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
@@ -1037,11 +1075,90 @@
 
 
 <h2 id="hydration">Hydration</h2>
-<p>TODO</p>
+<p>When working with <a href="../../ddd/identifiers/">identifiers</a> and the corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
+a problem might occur when hydrating scalar values (e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>getScalarResult</code></a>);
+it would return instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
+value (due the <code>__toString</code> implementation). In case the underlying data type is e.g. <code>integer</code> we'll lose it.</p>
+<p>To overcome two hydration modes are available in order to hydrate the primitive identifier value instead, based on the
+true database type used.</p>
+<h3 id="basic-example_2">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\DBAL\Types\Type</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdType</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\</span><span class="p">{</span><span class="nx">ScalarHydrator</span><span class="p">,</span> <span class="nx">SingleScalarHydrator</span><span class="p">}</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="sd">/** @ORM\Entity */</span>
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="sd">/** @var DomainId @ORM\Id @ORM\Column(type=&quot;msgphp_domain_id&quot;) */</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Type</span><span class="o">::</span><span class="na">addType</span><span class="p">(</span><span class="nx">DomainIdType</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">DomainIdType</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">createQuery</span><span class="p">(</span><span class="s1">&#39;SELECT entity.id FORM MyEntity entity&#39;</span><span class="p">);</span>
+
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getScalarResult</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span> <span class="c1">// &quot;1&quot;</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getResult</span><span class="p">(</span><span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span> <span class="c1">// int(1)</span>
+
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getSingleScalarResult</span><span class="p">();</span> <span class="c1">// &quot;1&quot;</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getSingleResult</span><span class="p">(</span><span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">);</span> <span class="c1">// int(1)</span>
+</pre></div>
+
+
 <h2 id="entity-reference-loader">Entity reference loader</h2>
-<p>TODO</p>
-<h2 id="object-field-mappings">Object field mappings</h2>
-<p>TODO</p>
+<p>A Doctrine tailored entity reference loader in the form of an invokable object is provided by
+<code>MsgPhp\Domain\Infra\Doctrine\EntityReferenceLoader</code>. Its main purpose is to be used as a callable <em>reference loader</em>
+when working with the generic <a href="../../ddd/factory/entity-aware/#msgphpdomainfactoryentityawarefactory">entity aware factory</a>
+in effort to get a lazy-loading reference object, managed by Doctrine. See also <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html#_getReference"><code>EntityManagerInterface::getReference()</code></a>.</p>
+<ul>
+<li><code>__construct(EntityManagerInterface $em, array $classMapping = [], DomainIdentityHelper $identityHelper = null)</code><ul>
+<li><code>$em</code>: The entity manager to use</li>
+<li><code>$classMapping</code>: An optional class mapping to use (<code>['SourceClass' =&gt; 'TargetClass']</code>)</li>
+<li><code>$identityHelper</code>: Custom domain identity helper. By default it's resolved from the given entity manager.
+  <a href="../../ddd/identities/">Read more</a>.</li>
+</ul>
+</li>
+<li><code>__invoke(string $class, $id): ?object</code></li>
+</ul>
+<h3 id="basic-example_3">Basic example</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\EntityReferenceLoader</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="sd">/** @ORM\Entity */</span>
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="sd">/** @ORM\Id */</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/** @var EntityManagerInterface $em */</span>
+<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityReferenceLoader</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="sd">/** @var MyEntity|null $ref */</span>
+<span class="nv">$ref</span> <span class="o">=</span> <span class="nv">$loader</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// no database hit</span>
+</pre></div>
                 
                   
                 

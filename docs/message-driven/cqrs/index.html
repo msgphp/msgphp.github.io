@@ -858,8 +858,8 @@ design. Its purpose is to describe an action to be taken. For commands being mes
 <a href="../message-bus/">message bus</a>.</p>
 <h2 id="event-sourcing-command-handler">Event-sourcing command handler</h2>
 <p>An event-sourcing command handler utility trait is provided by <code>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</code>.
-Its purpose is to ease the handling of command by messages by sourcing a <a href="../../event-sourcing/events/">domain event</a> to
-its <a href="../../event-sourcing/event-handlers/">event handler</a>.</p>
+Its purpose is to ease the handling of command messages by sourcing a <a href="../../event-sourcing/events/">domain event</a> to its
+<a href="../../event-sourcing/event-handlers/">event handler</a>.</p>
 <ul>
 <li><code>handle(object $command, callable $onHandled = null): void</code><ul>
 <li><code>$command</code>: The command message to be handled</li>
