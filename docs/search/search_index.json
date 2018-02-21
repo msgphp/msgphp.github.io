@@ -742,7 +742,7 @@
         }, 
         {
             "location": "/infrastructure/doctrine-dbal/", 
-            "text": "Doctrine Database Abstraction Layer\n\n\nAn overview of available infrastructural code when using Doctrine's \nDatabase Abstraction Layer\n.\n\n\n\n\nRequires \ndoctrine/dbal\n\n\n\n\nDomain identifier type\n\n\nTODO", 
+            "text": "Doctrine Database Abstraction Layer\n\n\nAn overview of available infrastructural code when using Doctrine's \nDatabase Abstraction Layer\n.\n\n\n\n\nRequires \ndoctrine/dbal\n\n\n\n\nDomain identifier type\n\n\nA translation between the database type and a \nidentifier\n type in PHP is provided by\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdType\n. Its purpose is to abstract the underlying data type of the identifier\nvalue.\n\n\nThe design is based on \nlate static binding\n,\ndue the design of the Doctrine type system itself. Besides extending from the default \nType\n\nimplementation it can be used as a base type for custom identifiers (which in turn require custom types).\n\n\n\n\nstatic setClass(string $class): void\n\n\n$class\n: A sub class of \nDomainIdInterface\n to use as PHP value. If not set the \ndefault identifier\n\n  object is used.\n\n\n\n\n\n\nstatic getClass(): string\n\n\nstatic setDataType(string $type): void\n\n\n$type\n: A doctrine type name to use as underlying data type. If not set it defaults to \nType::INTEGER\n.\n\n\n\n\n\n\nstatic getDataType(): string\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nDoctrine\\DBAL\\Types\\Type\n;\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdType\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyDomainId\n \nextends\n \nDomainId\n\n\n{\n\n\n}\n\n\n\nclass\n \nMyDomainIdType\n \nextends\n \nDomainIdType\n\n\n{\n\n    \npublic\n \nconst\n \nNAME\n \n=\n \nmy_domain_id\n;\n\n\n}\n\n\n\nType\n::\naddType\n(\nMyDomainId\n::\nNAME\n,\n \nMyDomainId\n::\nclass\n);\n\n\n\n// --- USAGE ---\n\n\n\nMyDomainIdType\n::\nsetClass\n(\nMyDomainId\n::\nclass\n);\n\n\nMyDomainIdType\n::\nsetDataType\n(\nType\n::\nGUID\n);\n\n\n\n\n\n\nTo leverage the tailored \nUUID identifier\n use a data type from\n\nramsey/uuid-doctrine\n instead.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n \nas\n \nDomainUuid\n;\n\n\nuse\n \nRamsey\\Uuid\\Doctrine\\UuidType\n;\n\n\n\nMyDomainIdType\n::\nsetClass\n(\nDomainUuid\n::\nclass\n);\n\n\nMyDomainIdType\n::\nsetDataType\n(\nUuidType\n::\nNAME\n);", 
             "title": "DBAL"
         }, 
         {
@@ -752,8 +752,13 @@
         }, 
         {
             "location": "/infrastructure/doctrine-dbal/#domain-identifier-type", 
-            "text": "TODO", 
+            "text": "A translation between the database type and a  identifier  type in PHP is provided by MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdType . Its purpose is to abstract the underlying data type of the identifier\nvalue.  The design is based on  late static binding ,\ndue the design of the Doctrine type system itself. Besides extending from the default  Type \nimplementation it can be used as a base type for custom identifiers (which in turn require custom types).   static setClass(string $class): void  $class : A sub class of  DomainIdInterface  to use as PHP value. If not set the  default identifier \n  object is used.    static getClass(): string  static setDataType(string $type): void  $type : A doctrine type name to use as underlying data type. If not set it defaults to  Type::INTEGER .    static getDataType(): string", 
             "title": "Domain identifier type"
+        }, 
+        {
+            "location": "/infrastructure/doctrine-dbal/#basic-example", 
+            "text": "?php  use   Doctrine\\DBAL\\Types\\Type ;  use   MsgPhp\\Domain\\DomainId ;  use   MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdType ;  // --- SETUP ---  class   MyDomainId   extends   DomainId  {  }  class   MyDomainIdType   extends   DomainIdType  { \n     public   const   NAME   =   my_domain_id ;  }  Type :: addType ( MyDomainId :: NAME ,   MyDomainId :: class );  // --- USAGE ---  MyDomainIdType :: setClass ( MyDomainId :: class );  MyDomainIdType :: setDataType ( Type :: GUID );   To leverage the tailored  UUID identifier  use a data type from ramsey/uuid-doctrine  instead.  ?php  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId   as   DomainUuid ;  use   Ramsey\\Uuid\\Doctrine\\UuidType ;  MyDomainIdType :: setClass ( DomainUuid :: class );  MyDomainIdType :: setDataType ( UuidType :: NAME );", 
+            "title": "Basic example"
         }, 
         {
             "location": "/infrastructure/doctrine-orm/", 
