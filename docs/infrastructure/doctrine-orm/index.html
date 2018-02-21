@@ -977,12 +977,12 @@
                 <h1 id="doctrine-object-relational-mapper">Doctrine Object Relational Mapper</h1>
 <p>An overview of available infrastructural code when using Doctrine's <a href="http://www.doctrine-project.org/projects/orm.html">Object Relational Mapper</a>.</p>
 <ul>
-<li>Requires <a href="https://packagist.org/packages/doctrine/orm"><code>doctrine/orm</code></a></li>
+<li>Requires <a href="https://packagist.org/packages/doctrine/orm">doctrine/orm</a></li>
 </ul>
 <h2 id="domain-identity-mapping">Domain identity mapping</h2>
 <p>A Doctrine tailored <a href="../../ddd/identity-mapping/">domain identity mapping</a> is provided by
-<code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a>
-as underlying mapping.</p>
+<code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a> as
+underlying mapping.</p>
 <ul>
 <li><code>__construct(EntityManagerInterface $em)</code><ul>
 <li><code>$em</code>: The entity manager to use</li>
@@ -1016,8 +1016,8 @@ as underlying mapping.</p>
 
 <h2 id="domain-repository">Domain repository</h2>
 <p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by
-<code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a>
-as underlying persistence layer.</p>
+<code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a> as
+underlying persistence layer.</p>
 <ul>
 <li><code>__construct(string $class, EntityManagerInterface $em, DomainIdentityHelper $identityHelper = null)</code><ul>
 <li><code>$class</code>: The entity class this repository is tied to</li>
@@ -1076,7 +1076,7 @@ as underlying persistence layer.</p>
 
 <h2 id="hydration">Hydration</h2>
 <p>When working with <a href="../../ddd/identifiers/">identifiers</a> and the corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
-a problem might occur when hydrating scalar values, e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>getScalarResult()</code></a>;
+a problem might occur when hydrating scalar values, e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>Query::getScalarResult()</code></a>;
 it would return instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
 value (due to <code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> we'll lose it.</p>
 <p>To overcome, two hydration modes are available in order to hydrate the primitive identifier value instead.</p>

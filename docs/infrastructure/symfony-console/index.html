@@ -977,7 +977,7 @@
                 <h1 id="symfony-console">Symfony Console</h1>
 <p>An overview of available infrastructural code when using <a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a>.</p>
 <ul>
-<li>Requires <a href="https://packagist.org/packages/symfony/console"><code>symfony/console</code></a></li>
+<li>Requires <a href="https://packagist.org/packages/symfony/console">symfony/console</a></li>
 </ul>
 <h2 id="context-builder">Context builder</h2>
 <p>A context builder is bound to <code>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextBuilderInterface</code>. Its purpose is to
@@ -991,8 +991,7 @@ context provided to an <a href="../../ddd/factory/object/">object factory</a>.</
 <p>Configure a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>.</p>
 <hr />
 <h4 id="getcontextinputinterface-input-styleinterface-io-array"><code>getContext(InputInterface $input, StyleInterface $io): array</code></h4>
-<p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a>
-and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.</p>
+<p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.</p>
 <h3 id="implementations">Implementations</h3>
 <h4 id="msgphpdomaininfraconsolecontextbuilderclasscontextbuilder"><code>MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder</code></h4>
 <p>Build a context value from any class method signature. It configures the CLI signature by mapping required class method
@@ -1017,8 +1016,7 @@ is given it will be asked interactively. If interaction is not possible an excep
 <p>Per-element configuration can be provided by implementing a <code>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextElementProviderInterface</code>.</p>
 <ul>
 <li><code>getElement(string $class, string $method, string $argument): ?ContextElement</code><ul>
-<li>Resolve a <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/Console/ContextBuilder/ContextElement.html"><code>ContextElement</code></a>
-  from a class/method/argument combination</li>
+<li>Resolve a <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/Console/ContextBuilder/ContextElement.html"><code>ContextElement</code></a> from a class/method/argument combination</li>
 </ul>
 </li>
 </ul>

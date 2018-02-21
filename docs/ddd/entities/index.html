@@ -935,10 +935,9 @@
                 
                 
                 <h1 id="entities">Entities</h1>
-<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
-design.</p>
-<p>To simplify entity definitions common fields and features are provided in the form of PHP <a href="https://secure.php.net/manual/en/language.oop5.traits.php">traits</a>.
-Entity fields can be compared to a read-operation, whereas entity features represent a write-operation.</p>
+<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a> design.</p>
+<p>To simplify entity definitions common fields and features are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>. Entity fields can be
+compared to a read-operation, whereas entity features represent a write-operation.</p>
 <p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entity\Fields\</code> and
 <code>MsgPhp\Domain\Entity\Features\</code>. Additionally more specific fields and features can be provided per domain layer.</p>
 <h2 id="common-entity-fields">Common entity fields</h2>
