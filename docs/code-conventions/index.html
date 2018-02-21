@@ -886,20 +886,21 @@
 <ul>
 <li>No <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> violations, yet be pragmatic</li>
 <li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
-<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">LoD</a>)</li>
+<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">law of demeter</a>)</li>
 <li>Favor latest stable PHP7 features</li>
 <li>Checks must pass (code style, static analysis &amp; unit tests)</li>
 <li>Add PHPDoc / comments if needed for clarification or static analysis</li>
 </ul>
 <h2 id="code-style">Code style</h2>
 <ul>
-<li>Follows PSR2 and Symfony style</li>
+<li>Follows <a href="https://www.php-fig.org/psr/psr-2/">PSR2</a> with <a href="https://symfony.com/doc/master/contributing/code/standards.html">Symfony style</a></li>
 <li><code>use</code> statements are declared in alpha-order</li>
 <li><code>use</code> statements for <code>MsgPhp\</code> namespace are grouped by deepest common namespace</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="c1">// wrong</span>
+
 <span class="k">use</span> <span class="nx">MsgPhp\SomeB</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\SomeA</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
@@ -908,6 +909,7 @@
 <span class="k">use</span> <span class="nx">Other\SomeOtherA</span><span class="p">;</span>
 
 <span class="c1">// right</span>
+
 <span class="k">use</span> <span class="nx">MsgPhp\Some\SomeC</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\</span><span class="p">{</span><span class="nx">SomeA</span><span class="p">,</span> <span class="nx">SomeB</span><span class="p">};</span>
 <span class="k">use</span> <span class="nx">Other\Some\SomeOtherC</span><span class="p">;</span>
@@ -918,7 +920,7 @@
 
 <h2 id="static-analysis">Static analysis</h2>
 <ul>
-<li>Follows PHPStan level max</li>
+<li>Follows <a href="https://github.com/phpstan/phpstan">PHPStan</a> level max</li>
 <li>Exclude / ignore rules are discussed per case/topic</li>
 </ul>
 <h2 id="php-7x-forward-compatibility">PHP 7.x forward compatibility</h2>

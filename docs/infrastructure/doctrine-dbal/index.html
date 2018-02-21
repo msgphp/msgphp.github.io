@@ -863,7 +863,7 @@
 <p>A translation between the database type and a <a href="../../ddd/identifiers/">identifier</a> type in PHP is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainIdType</code>. Its purpose is to abstract the underlying data type of the identifier
 value.</p>
-<p>The design is based on [late static bindings], due the design of the Doctrine type system itself. Besides extending from
+<p>The design is based on <a href="https://secure.php.net/manual/en/language.oop5.late-static-bindings.php">late static bindings</a>, due the design of the Doctrine type system itself. Besides extending from
 the default <a href="http://www.doctrine-project.org/api/dbal/2.5/class-Doctrine.DBAL.Types.Type.html"><code>Type</code></a> implementation it can be used as a base type for custom identifiers (which in turn require custom
 types).</p>
 <ul>
