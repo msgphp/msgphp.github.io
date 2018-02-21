@@ -510,43 +510,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-handlers" title="Command handlers" class="md-nav__link">
-    Command handlers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
+  <a href="#event-sourcing-command-handler" title="Event-sourcing command handler" class="md-nav__link">
+    Event-sourcing command handler
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaincommandeventsourcingcommandhandlertrait" title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait" class="md-nav__link">
-    MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-sourcing-example" title="Event sourcing example" class="md-nav__link">
-    Event sourcing example
-  </a>
   
 </li>
       
@@ -837,43 +816,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-handlers" title="Command handlers" class="md-nav__link">
-    Command handlers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
+  <a href="#event-sourcing-command-handler" title="Event-sourcing command handler" class="md-nav__link">
+    Event-sourcing command handler
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaincommandeventsourcingcommandhandlertrait" title="MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait" class="md-nav__link">
-    MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-sourcing-example" title="Event sourcing example" class="md-nav__link">
-    Event sourcing example
-  </a>
   
 </li>
       
@@ -898,50 +856,28 @@
 <p>Commands are domain objects and provided per domain layer. They usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a>
 design. Its purpose is to describe an action to be taken. For commands being messages they can be dispatched using any
 <a href="../message-bus/">message bus</a>.</p>
-<h2 id="command-handlers">Command handlers</h2>
-<p>The message bus resolves a command handler, which in turn handles the command. Thus performs the requested action.
-Usually a command handler is designed, but not limited, to handle one specific command message.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaincommandeventsourcingcommandhandlertrait"><code>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</code></h3>
-<p>Handles a command message by sourcing a domain event.</p>
+<h2 id="event-sourcing-command-handler">Event-sourcing command handler</h2>
+<p>An event-sourcing command handler utility trait is provided by <code>MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</code>.
+Its purpose is to ease the handling of command by messages by sourcing a <a href="../../event-sourcing/events/">domain event</a> to
+its <a href="../../event-sourcing/event-handlers/">event handler</a>.</p>
 <ul>
 <li><code>handle(object $command, callable $onHandled = null): void</code><ul>
-<li>If the domain event is handled <code>$onHandled</code> will be invoked (if given), receiving the handler as first argument</li>
+<li><code>$command</code>: The command message to be handled</li>
+<li><code>$onHandled</code>: Callable to be invoked in case the triggered domain event is handled. It receives the event handler
+  as first argument.</li>
 </ul>
 </li>
-<li><code>abstract getDomainEvent(object $command): DomainEventInterface</code><ul>
-<li>The <a href="../../event-sourcing/events/">domain event</a> to be handled</li>
+<li><code>abstract getDomainEvent(object $command): DomainEventInterface</code></li>
+<li><code>abstract getDomainEventHandler(object $command): DomainEventHandlerInterface</code></li>
 </ul>
-</li>
-<li><code>abstract getDomainEventHandler(object $command): DomainEventHandlerInterface</code><ul>
-<li>The <a href="../../event-sourcing/event-handlers/">domain event handler</a> handling the domain event</li>
-</ul>
-</li>
-</ul>
-<h2 id="basic-example">Basic example</h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">MyCommand</span>
-<span class="p">{</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyCommandHandler</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="c1">// handle $command</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyCommand</span><span class="p">());</span>
-</pre></div>
-
-
-<h2 id="event-sourcing-example">Event sourcing example</h2>
+<h3 id="basic-example">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Command\EventSourcingCommandHandlerTrait</span><span class="p">;</span> 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventInterface</span><span class="p">};</span> 
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventInterface</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Message\DomainMessageBusInterface</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
 
 <span class="k">class</span> <span class="nc">MyCommand</span>
 <span class="p">{</span>
@@ -986,6 +922,11 @@ Usually a command handler is designed, but not limited, to handle one specific c
         <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="sd">/** @var DomainMessageBusInterface $bus */</span>
+<span class="nv">$bus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
 <span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyCommand</span><span class="p">());</span>
 </pre></div>

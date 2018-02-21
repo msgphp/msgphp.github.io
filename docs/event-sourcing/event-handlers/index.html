@@ -474,12 +474,31 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventdomaineventhandlertrait" title="MsgPhp\Domain\Event\DomainEventHandlerTrait" class="md-nav__link">
+    MsgPhp\Domain\Event\DomainEventHandlerTrait
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-example" title="Basic example" class="md-nav__link">
     Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -854,12 +873,31 @@
     Implementations
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventdomaineventhandlertrait" title="MsgPhp\Domain\Event\DomainEventHandlerTrait" class="md-nav__link">
+    MsgPhp\Domain\Event\DomainEventHandlerTrait
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#basic-example" title="Basic example" class="md-nav__link">
     Basic example
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -881,26 +919,27 @@
                 
                 
                 <h1 id="event-handlers">Event handlers</h1>
-<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to handle
-<a href="../events/">domain events</a>. By convention a trait implementation is provided to map concrete events to corresponding
-handling methods.</p>
+<p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to implement the
+handling of <a href="../events/">domain events</a> within a certain context.</p>
+<p>Usually an entity implements it in order to mutate its own state (i.e. self-handling). It enforces the entity state to
+be valid by design as it encapsulates all write operations.</p>
+<p>In practice domain events can be recorded on trigger. It allows to re-play them at any point in time afterwards.
+Consider this a design choice to be made upfront, e.g. in case your entity design requires its history to be accessible.</p>
 <h2 id="api">API</h2>
 <h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
 <p>Handles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled
 yes or no.</p>
 <h2 id="implementations">Implementations</h2>
-<ul>
-<li><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><ul>
-<li>Maps events to <code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods</li>
-<li>Handles default <a href="../events/">events</a> out-of-the-box</li>
-</ul>
-</li>
-</ul>
-<h2 id="basic-example">Basic example</h2>
+<h3 id="msgphpdomaineventdomaineventhandlertrait"><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code></h3>
+<p>A utility trait implementing the event handler API. By convention it maps events to
+<code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods. It's designed to support default <a href="../events/#implementations">events</a>
+out-of-the-box.</p>
+<h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\DomainEventHandlerTrait</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">};</span>
+
+<span class="c1">// --- SETUP ---</span>
 
 <span class="k">class</span> <span class="nc">MyEvent</span>
 <span class="p">{</span>
@@ -931,8 +970,11 @@ yes or no.</p>
 
 <span class="p">}</span>
 
+<span class="c1">// --- USAGE ---</span>
+
 <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyEvent</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)))</span> <span class="p">{</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyEvent</span><span class="p">(</span><span class="s1">&#39;new value&#39;</span><span class="p">)))</span> <span class="p">{</span>
     <span class="c1">// do something</span>
 <span class="p">}</span>
 </pre></div>

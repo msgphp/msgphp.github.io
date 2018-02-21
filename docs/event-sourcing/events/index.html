@@ -442,6 +442,33 @@
     Implementations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventconfirmevent" title="MsgPhp\Domain\Event\ConfirmEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\ConfirmEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventdisableevent" title="MsgPhp\Domain\Event\DisableEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\DisableEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventenableevent" title="MsgPhp\Domain\Event\EnableEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\EnableEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -807,6 +834,33 @@
     Implementations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventconfirmevent" title="MsgPhp\Domain\Event\ConfirmEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\ConfirmEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventdisableevent" title="MsgPhp\Domain\Event\DisableEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\DisableEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaineventenableevent" title="MsgPhp\Domain\Event\EnableEvent" class="md-nav__link">
+    MsgPhp\Domain\Event\EnableEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -828,23 +882,15 @@
                 
                 <h1 id="events">Events</h1>
 <p>A domain event is bound to <code>MsgPhp\Domain\Event\DomainEventInterface</code>. Its purpose is to identify concrete domain events
-and represent something that happens. When handled it might lead to an application state change.</p>
+which represent something that happens. When handled it might lead to an application state change.</p>
 <h2 id="implementations">Implementations</h2>
 <p>Domain events provided and handled by default <a href="../../ddd/entities/#common-entity-features">entity features</a>:</p>
-<ul>
-<li><code>MsgPhp\Domain\Event\ConfirmEvent</code><ul>
-<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeConfirmed::handleConfirmEvent()</code></li>
-</ul>
-</li>
-<li><code>MsgPhp\Domain\Event\DisableEvent</code><ul>
-<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleDisableEvent()</code></li>
-</ul>
-</li>
-<li><code>MsgPhp\Domain\Event\EnableEvent</code><ul>
-<li>Handled by <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleEnableEvent()</code></li>
-</ul>
-</li>
-</ul>
+<h3 id="msgphpdomaineventconfirmevent"><code>MsgPhp\Domain\Event\ConfirmEvent</code></h3>
+<p>Triggers a confirmation. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeConfirmed::handleConfirmEvent()</code>.</p>
+<h3 id="msgphpdomaineventdisableevent"><code>MsgPhp\Domain\Event\DisableEvent</code></h3>
+<p>Triggers disabling availability. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleDisableEvent()</code>.</p>
+<h3 id="msgphpdomaineventenableevent"><code>MsgPhp\Domain\Event\EnableEvent</code></h3>
+<p>Triggers enabling availability. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleEnableEvent()</code>.</p>
                 
                   
                 
