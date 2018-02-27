@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/code-conventions/", 
-            "text": "Code conventions\n\n\nA brief description of code conventions this project follows.\n\n\nGeneral principles\n\n\n\n\nNo \nSOLID\n violations, yet be pragmatic\n\n\nReduce \nlines of code\n where possible\n\n\nReduce coupling (\nlaw of demeter\n)\n\n\nFavor latest stable PHP7 features\n\n\nChecks must pass (code style, static analysis \n unit tests)\n\n\nAdd PHPDoc / comments if needed for clarification or static analysis\n\n\n\n\nCode style\n\n\n\n\nFollows \nPSR2\n with \nSymfony style\n\n\nuse\n statements are declared in alpha-order\n\n\nuse\n statements for \nMsgPhp\\\n namespace are grouped by deepest common namespace\n\n\n\n\n?php\n\n\n\n// wrong\n\n\n\nuse\n \nMsgPhp\\SomeB\n;\n\n\nuse\n \nMsgPhp\\SomeA\n;\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\n\n// right\n\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nMsgPhp\\\n{\nSomeA\n,\n \nSomeB\n};\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\n\n\n\n\nStatic analysis\n\n\n\n\nFollows \nPHPStan\n level max\n\n\nExclude / ignore rules are discussed per case/topic\n\n\n\n\nPHP 7.x forward compatibility\n\n\n\n\nIntended object values are type hinted (\n@param object $value\n and \n@return object\n)\n\n\n\n\nUnit tests\n\n\n\n\nAll of the above, \nin general\n, applies to unit tests as well", 
+            "text": "Code conventions\n\n\nA brief description of code conventions this project follows.\n\n\nGeneral principles\n\n\n\n\nFollows \nSOLID\n principles\n\n\nReduce \nlines of code\n where possible\n\n\nReduce coupling (\nlaw of demeter\n)\n\n\nFavor latest stable PHP7 features\n\n\nChecks must pass (code style, static analysis \n unit tests)\n\n\n\n\nCode style\n\n\n\n\nFollows \nPSR2\n with \nSymfony style\n\n\nuse\n statements are declared in alpha-order\n\n\nuse\n statements for \nMsgPhp\\\n namespace are grouped by deepest common namespace\n\n\n\n\n?php\n\n\n\n// wrong\n\n\n\nuse\n \nMsgPhp\\SomeB\n;\n\n\nuse\n \nMsgPhp\\SomeA\n;\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\n\n// right\n\n\n\nuse\n \nMsgPhp\\Some\\SomeC\n;\n\n\nuse\n \nMsgPhp\\\n{\nSomeA\n,\n \nSomeB\n};\n\n\nuse\n \nOther\\Some\\SomeOtherC\n;\n\n\nuse\n \nOther\\SomeOtherA\n;\n\n\nuse\n \nOther\\SomeOtherB\n;\n\n\n\n\n\n\nStatic analysis\n\n\n\n\nFollows \nPHPStan\n level max\n\n\nExclude- and ignore-rules are discussed per case / topic\n\n\n\n\nPHPDoc\n\n\n\n\nAdd comments if needed for either clarification or static analysis (might result in e.g. partial \n@param\n annotations)\n\n\nInline \n@var\n annotations (\n/** @var Some $some*/\n)\n\n\nInterfaces must have a description with its purpose (at the class- as well as the method-level)\n\n\nNo usage of \n@inheritdoc\n\n\n\n\nPHP 7.2 forward compatibility\n\n\n\n\nIntended object values are type hinted (\n@param object $value\n and \n@return object\n)\n\n\n\n\nUnit tests\n\n\n\n\nAll of the above, \nin general\n, applies to unit tests as well", 
             "title": "Code conventions"
         }, 
         {
@@ -27,7 +27,7 @@
         }, 
         {
             "location": "/code-conventions/#general-principles", 
-            "text": "No  SOLID  violations, yet be pragmatic  Reduce  lines of code  where possible  Reduce coupling ( law of demeter )  Favor latest stable PHP7 features  Checks must pass (code style, static analysis   unit tests)  Add PHPDoc / comments if needed for clarification or static analysis", 
+            "text": "Follows  SOLID  principles  Reduce  lines of code  where possible  Reduce coupling ( law of demeter )  Favor latest stable PHP7 features  Checks must pass (code style, static analysis   unit tests)", 
             "title": "General principles"
         }, 
         {
@@ -37,13 +37,18 @@
         }, 
         {
             "location": "/code-conventions/#static-analysis", 
-            "text": "Follows  PHPStan  level max  Exclude / ignore rules are discussed per case/topic", 
+            "text": "Follows  PHPStan  level max  Exclude- and ignore-rules are discussed per case / topic", 
             "title": "Static analysis"
         }, 
         {
-            "location": "/code-conventions/#php-7x-forward-compatibility", 
+            "location": "/code-conventions/#phpdoc", 
+            "text": "Add comments if needed for either clarification or static analysis (might result in e.g. partial  @param  annotations)  Inline  @var  annotations ( /** @var Some $some*/ )  Interfaces must have a description with its purpose (at the class- as well as the method-level)  No usage of  @inheritdoc", 
+            "title": "PHPDoc"
+        }, 
+        {
+            "location": "/code-conventions/#php-72-forward-compatibility", 
             "text": "Intended object values are type hinted ( @param object $value  and  @return object )", 
-            "title": "PHP 7.x forward compatibility"
+            "title": "PHP 7.2 forward compatibility"
         }, 
         {
             "location": "/code-conventions/#unit-tests", 

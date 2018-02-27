@@ -278,8 +278,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-7x-forward-compatibility" title="PHP 7.x forward compatibility" class="md-nav__link">
-    PHP 7.x forward compatibility
+  <a href="#phpdoc" title="PHPDoc" class="md-nav__link">
+    PHPDoc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-72-forward-compatibility" title="PHP 7.2 forward compatibility" class="md-nav__link">
+    PHP 7.2 forward compatibility
   </a>
   
 </li>
@@ -858,8 +865,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-7x-forward-compatibility" title="PHP 7.x forward compatibility" class="md-nav__link">
-    PHP 7.x forward compatibility
+  <a href="#phpdoc" title="PHPDoc" class="md-nav__link">
+    PHPDoc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-72-forward-compatibility" title="PHP 7.2 forward compatibility" class="md-nav__link">
+    PHP 7.2 forward compatibility
   </a>
   
 </li>
@@ -892,12 +906,11 @@
 <p>A brief description of code conventions this project follows.</p>
 <h2 id="general-principles">General principles</h2>
 <ul>
-<li>No <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> violations, yet be pragmatic</li>
+<li>Follows <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> principles</li>
 <li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
 <li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">law of demeter</a>)</li>
 <li>Favor latest stable PHP7 features</li>
 <li>Checks must pass (code style, static analysis &amp; unit tests)</li>
-<li>Add PHPDoc / comments if needed for clarification or static analysis</li>
 </ul>
 <h2 id="code-style">Code style</h2>
 <ul>
@@ -929,9 +942,16 @@
 <h2 id="static-analysis">Static analysis</h2>
 <ul>
 <li>Follows <a href="https://github.com/phpstan/phpstan">PHPStan</a> level max</li>
-<li>Exclude / ignore rules are discussed per case/topic</li>
+<li>Exclude- and ignore-rules are discussed per case / topic</li>
 </ul>
-<h2 id="php-7x-forward-compatibility">PHP 7.x forward compatibility</h2>
+<h2 id="phpdoc">PHPDoc</h2>
+<ul>
+<li>Add comments if needed for either clarification or static analysis (might result in e.g. partial <code>@param</code> annotations)</li>
+<li>Inline <code>@var</code> annotations (<code>/** @var Some $some*/</code>)</li>
+<li>Interfaces must have a description with its purpose (at the class- as well as the method-level)</li>
+<li>No usage of <code>@inheritdoc</code></li>
+</ul>
+<h2 id="php-72-forward-compatibility">PHP 7.2 forward compatibility</h2>
 <ul>
 <li>Intended object values are type hinted (<code>@param object $value</code> and <code>@return object</code>)</li>
 </ul>
