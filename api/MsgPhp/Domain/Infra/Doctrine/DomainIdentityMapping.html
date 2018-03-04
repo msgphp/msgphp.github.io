@@ -98,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em)
+                    <a href="#method___construct">__construct</a>(<abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, array $classMapping = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -134,9 +134,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L19">line 19</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L20">line 20</a></div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em)
+    <strong>__construct</strong>(<abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, array $classMapping = [])
         </code>
     </h3>
     <div class="details">
@@ -152,6 +152,11 @@
                 <td>$em</td>
                 <td></td>
             </tr>
+                    <tr>
+                <td>array</td>
+                <td>$classMapping</td>
+                <td></td>
+            </tr>
             </table>
 
             
@@ -163,7 +168,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getIdentifierFieldNames">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L24">line 24</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L26">line 26</a></div>
         <code>                    string[]
     <strong>getIdentifierFieldNames</strong>(string $class)
         </code>
@@ -201,7 +206,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getIdentity">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L29">line 29</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/DomainIdentityMapping.php#L31">line 31</a></div>
         <code>                    
     <strong>getIdentity</strong>(object $object)
         </code>

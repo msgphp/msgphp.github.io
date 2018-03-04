@@ -967,6 +967,13 @@ identifier field name.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaininfrainmemorydomainidentitymapping"><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code></h3>
 <p>Identity mapping based on a known in-memory mapping.</p>
+<ul>
+<li><code>__construct(array $mapping, ObjectFieldAccessor $accessor = null)</code><ul>
+<li><code>$mapping</code>: The identity mapping to use</li>
+<li><code>$accessor</code>: Custom object field accessor. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/InMemory/ObjectFieldAccessor.html"><code>ObjectFieldAccessor</code></a>.</li>
+</ul>
+</li>
+</ul>
 <h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1008,7 +1015,7 @@ identifier field name.</p>
 
 
 <h3 id="msgphpdomaininfradoctrinedomainidentitymapping"><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code></h3>
-<p>Identity mapping based on Doctrine's identity map.</p>
+<p>A Doctrine tailored identity mapping.</p>
 <ul>
 <li><a href="../../infrastructure/doctrine-orm/#domain-identity-mapping">Read more</a></li>
 </ul>
