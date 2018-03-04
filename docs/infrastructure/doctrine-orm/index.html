@@ -1046,7 +1046,7 @@ underlying persistence layer.</p>
 <span class="c1">// --- SETUP ---</span>
 
 <span class="sd">/** @ORM\Entity */</span>
-<span class="k">class</span> <span class="nc">MyCompositeEntity</span>
+<span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
     <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
     <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
@@ -1056,25 +1056,27 @@ underlying persistence layer.</p>
 <span class="p">}</span>
 
 
-<span class="k">class</span> <span class="nc">MyCompositeEntityRepository</span>
+<span class="k">class</span> <span class="nc">MyEntityRepository</span>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">DomainEntityRepositoryTrait</span> <span class="p">{</span>
         <span class="nx">doFind</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">find</span><span class="p">;</span>
         <span class="nx">doExists</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">exists</span><span class="p">;</span>
         <span class="nx">doSave</span> <span class="k">as</span> <span class="k">public</span> <span class="nx">save</span><span class="p">;</span>
     <span class="p">}</span>
+
+    <span class="k">private</span> <span class="nv">$alias</span> <span class="o">=</span> <span class="s1">&#39;my_entity&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntityRepository</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span>
+<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntityRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">]))</span> <span class="p">{</span>
     <span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyCompositeEntity</span><span class="p">();</span>
+    <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
     <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
     <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
@@ -1130,7 +1132,10 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">BaseEntityAwareFactory</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">)),</span>
+    <span class="k">new</span> <span class="nx">BaseEntityAwareFactory</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span>
+        <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">)</span>
+    <span class="p">),</span>
     <span class="nv">$em</span>
 <span class="p">);</span>
 
@@ -1139,8 +1144,11 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
 <span class="sd">/** @var MyEntity $ref */</span>
 <span class="nv">$ref</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// no database hit</span>
 
-<span class="sd">/** @var MyOtherEntity $ref */</span>
-<span class="nv">$otherRef</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;discriminator&#39;</span> <span class="o">=&gt;</span> <span class="nx">MyEntity</span><span class="o">::</span><span class="na">TYPE_OTHER</span><span class="p">]);</span>
+<span class="sd">/** @var MyOtherEntity $otherRef */</span>
+<span class="nv">$otherRef</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;discriminator&#39;</span> <span class="o">=&gt;</span> <span class="nx">MyEntity</span><span class="o">::</span><span class="na">TYPE_OTHER</span>
+<span class="p">]);</span>
 
 <span class="sd">/** @var MyOtherEntity $otherEntity */</span>
 <span class="nv">$otherEntity</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
@@ -1178,8 +1186,10 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-<span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">();</span>
+
+<span class="nv">$config</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nv">$config</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">SingleScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 

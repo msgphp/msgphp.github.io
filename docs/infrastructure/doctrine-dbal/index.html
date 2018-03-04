@@ -871,18 +871,18 @@
 <p>A translation between the database type and a <a href="../../ddd/identifiers/">identifier</a> type in PHP is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainIdType</code>. Its purpose is to abstract the underlying data type of the identifier
 value.</p>
-<p>The design is based on <a href="https://secure.php.net/manual/en/language.oop5.late-static-bindings.php">late static bindings</a>, due the design of the Doctrine type system itself. Besides extending from
-the default <a href="http://www.doctrine-project.org/api/dbal/2.5/class-Doctrine.DBAL.Types.Type.html"><code>Type</code></a> implementation it can be used as a base type for custom identifiers (which in turn require custom
-types).</p>
+<p>The design is based on <a href="https://secure.php.net/manual/en/language.oop5.late-static-bindings.php">late static bindings</a>, due the design of the Doctrine type system itself. It extends from the
+default <a href="http://www.doctrine-project.org/api/dbal/2.5/class-Doctrine.DBAL.Types.Type.html"><code>Type</code></a> implementation and can be used either generic or as a base class for custom identifiers
+(which in turn require custom types).</p>
 <ul>
 <li><code>static setClass(string $class): void</code><ul>
 <li><code>$class</code>: A sub class of <code>DomainIdInterface</code> to use as PHP value. If not set the <a href="../../ddd/identifiers/#msgphpdomaindomainid">default identifier</a>
-  object is used.</li>
+  is used.</li>
 </ul>
 </li>
 <li><code>static getClass(): string</code></li>
 <li><code>static setDataType(string $type): void</code><ul>
-<li><code>$type</code>: A doctrine type name to use as underlying data type. If not set it defaults to <code>Type::INTEGER</code>.</li>
+<li><code>$type</code>: A doctrine type name to use as underlying data type. If not set <code>Type::INTEGER</code> is used.</li>
 </ul>
 </li>
 <li><code>static getDataType(): string</code></li>

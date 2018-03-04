@@ -1032,15 +1032,19 @@ as well as the entity to identifier class mapping.</p>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
-    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-<span class="p">]),</span> <span class="p">[</span>
-    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
-<span class="p">]);</span>
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
+        <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+    <span class="p">]),</span>
+    <span class="p">[</span>
+        <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="sd">/** @var MyEntity $entity */</span>
+<span class="sd">/** @var MyEntity $ref */</span>
 <span class="nv">$ref</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">reference</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span>
 
 <span class="sd">/** @var DomainId $id */</span>
