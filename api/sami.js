@@ -506,8 +506,7 @@ window.projectVersion = 'master';
             {"type": "Class", "fromName": "MsgPhp\\Eav", "fromLink": "MsgPhp/Eav.html", "link": "MsgPhp/Eav/AttributeValueIdInterface.html", "name": "MsgPhp\\Eav\\AttributeValueIdInterface", "doc": "&quot;&quot;"},
                     
             {"type": "Class", "fromName": "MsgPhp\\Eav\\Entity", "fromLink": "MsgPhp/Eav/Entity.html", "link": "MsgPhp/Eav/Entity/Attribute.html", "name": "MsgPhp\\Eav\\Entity\\Attribute", "doc": "&quot;&quot;"},
-                                                        {"type": "Method", "fromName": "MsgPhp\\Eav\\Entity\\Attribute", "fromLink": "MsgPhp/Eav/Entity/Attribute.html", "link": "MsgPhp/Eav/Entity/Attribute.html#method___construct", "name": "MsgPhp\\Eav\\Entity\\Attribute::__construct", "doc": "&quot;&quot;"},
-                    {"type": "Method", "fromName": "MsgPhp\\Eav\\Entity\\Attribute", "fromLink": "MsgPhp/Eav/Entity/Attribute.html", "link": "MsgPhp/Eav/Entity/Attribute.html#method_getId", "name": "MsgPhp\\Eav\\Entity\\Attribute::getId", "doc": "&quot;&quot;"},
+                                                        {"type": "Method", "fromName": "MsgPhp\\Eav\\Entity\\Attribute", "fromLink": "MsgPhp/Eav/Entity/Attribute.html", "link": "MsgPhp/Eav/Entity/Attribute.html#method_getId", "name": "MsgPhp\\Eav\\Entity\\Attribute::getId", "doc": "&quot;&quot;"},
             
             {"type": "Class", "fromName": "MsgPhp\\Eav\\Entity", "fromLink": "MsgPhp/Eav/Entity.html", "link": "MsgPhp/Eav/Entity/AttributeValue.html", "name": "MsgPhp\\Eav\\Entity\\AttributeValue", "doc": "&quot;&quot;"},
                                                         {"type": "Method", "fromName": "MsgPhp\\Eav\\Entity\\AttributeValue", "fromLink": "MsgPhp/Eav/Entity/AttributeValue.html", "link": "MsgPhp/Eav/Entity/AttributeValue.html#method___construct", "name": "MsgPhp\\Eav\\Entity\\AttributeValue::__construct", "doc": "&quot;&quot;"},
@@ -742,8 +741,7 @@ window.projectVersion = 'master';
                     {"type": "Method", "fromName": "MsgPhp\\User\\Entity\\Fields\\UserField", "fromLink": "MsgPhp/User/Entity/Fields/UserField.html", "link": "MsgPhp/User/Entity/Fields/UserField.html#method_getUserId", "name": "MsgPhp\\User\\Entity\\Fields\\UserField::getUserId", "doc": "&quot;&quot;"},
             
             {"type": "Class", "fromName": "MsgPhp\\User\\Entity", "fromLink": "MsgPhp/User/Entity.html", "link": "MsgPhp/User/Entity/User.html", "name": "MsgPhp\\User\\Entity\\User", "doc": "&quot;&quot;"},
-                                                        {"type": "Method", "fromName": "MsgPhp\\User\\Entity\\User", "fromLink": "MsgPhp/User/Entity/User.html", "link": "MsgPhp/User/Entity/User.html#method___construct", "name": "MsgPhp\\User\\Entity\\User::__construct", "doc": "&quot;&quot;"},
-                    {"type": "Method", "fromName": "MsgPhp\\User\\Entity\\User", "fromLink": "MsgPhp/User/Entity/User.html", "link": "MsgPhp/User/Entity/User.html#method_getId", "name": "MsgPhp\\User\\Entity\\User::getId", "doc": "&quot;&quot;"},
+                                                        {"type": "Method", "fromName": "MsgPhp\\User\\Entity\\User", "fromLink": "MsgPhp/User/Entity/User.html", "link": "MsgPhp/User/Entity/User.html#method_getId", "name": "MsgPhp\\User\\Entity\\User::getId", "doc": "&quot;&quot;"},
                     {"type": "Method", "fromName": "MsgPhp\\User\\Entity\\User", "fromLink": "MsgPhp/User/Entity/User.html", "link": "MsgPhp/User/Entity/User.html#method_getCredential", "name": "MsgPhp\\User\\Entity\\User::getCredential", "doc": "&quot;&quot;"},
             
             {"type": "Class", "fromName": "MsgPhp\\User\\Entity", "fromLink": "MsgPhp/User/Entity.html", "link": "MsgPhp/User/Entity/UserAttributeValue.html", "name": "MsgPhp\\User\\Entity\\UserAttributeValue", "doc": "&quot;&quot;"},

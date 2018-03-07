@@ -1002,20 +1002,9 @@ the identity mapping from its class metadata.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
-
-<span class="sd">/** @ORM\Entity */</span>
-<span class="k">class</span> <span class="nc">MyCompositeEntity</span>
-<span class="p">{</span>
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
-
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
-    <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
-<span class="p">}</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
