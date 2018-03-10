@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Event\Domain\RequestPasswordEvent | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Twig\GlobalVariables | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Event_Domain_RequestPasswordEvent" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Twig_GlobalVariables" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Event.html">Event</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Event/Domain.html">Domain</a></li><li class="backslash">\</li><li>RequestPasswordEvent</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra/Twig.html">Twig</a></li><li class="backslash">\</li><li>GlobalVariables</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            RequestPasswordEvent
+            GlobalVariables
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>RequestPasswordEvent</strong>        implements
-        <a href="../../../../MsgPhp/Domain/Event/DomainEventInterface.html"><abbr title="MsgPhp\Domain\Event\DomainEventInterface">DomainEventInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Event/Domain/RequestPasswordEvent.php">View source</a>)
+    <strong>GlobalVariables</strong>        implements
+        <abbr title="Symfony\Component\DependencyInjection\ServiceSubscriberInterface">ServiceSubscriberInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Twig/GlobalVariables.php">View source</a>)
 </p>
 
         
@@ -89,19 +89,6 @@
     
     
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_token">
-                                                                                
-                </td>
-                <td>$token</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
@@ -111,7 +98,40 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $token = null)
+                    <a href="#method___construct">__construct</a>(<abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr> $container)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUser">getUser</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUserId">getUserId</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSubscribedServices">getSubscribedServices</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -125,9 +145,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Event/Domain/RequestPasswordEvent.php#L16">line 16</a></div>
-        <code>final                    
-    <strong>__construct</strong>(string $token = null)
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Twig/GlobalVariables.php#L25">line 25</a></div>
+        <code>                    
+    <strong>__construct</strong>(<abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr> $container)
         </code>
     </h3>
     <div class="details">
@@ -139,12 +159,69 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$token</td>
+                <td><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></td>
+                <td>$container</td>
                 <td></td>
             </tr>
             </table>
 
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUser">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Twig/GlobalVariables.php#L30">line 30</a></div>
+        <code>                    
+    <strong>getUser</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUserId">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Twig/GlobalVariables.php#L37">line 37</a></div>
+        <code>                    
+    <strong>getUserId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSubscribedServices">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Twig/GlobalVariables.php#L57">line 57</a></div>
+        <code>        static            
+    <strong>getSubscribedServices</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
             
             
             

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Infra\Doctrine\Repository\UserSecondaryEmailRepository | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Doctrine\Repository\UserEmailRepository | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_Repository_UserSecondaryEmailRepository" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_Repository_UserEmailRepository" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine/Repository.html">Repository</a></li><li class="backslash">\</li><li>UserSecondaryEmailRepository</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine/Repository.html">Repository</a></li><li class="backslash">\</li><li>UserEmailRepository</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            UserSecondaryEmailRepository
+            UserEmailRepository
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>UserSecondaryEmailRepository</strong>        implements
-        <a href="../../../../../MsgPhp/User/Repository/UserSecondaryEmailRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserSecondaryEmailRepositoryInterface">UserSecondaryEmailRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php">View source</a>)
+    <strong>UserEmailRepository</strong>        implements
+        <a href="../../../../../MsgPhp/User/Repository/UserEmailRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserEmailRepositoryInterface">UserEmailRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php">View source</a>)
 </p>
 
         
@@ -120,7 +120,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a>[]
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_findAllByUserId">findAllByUserId</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
@@ -134,7 +134,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_find">find</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $email)
+                    <a href="#method_find">find</a>(string $email)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -145,7 +145,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findPendingPrimary">findPendingPrimary</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId)
+                    <a href="#method_exists">exists</a>(string $email)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -156,7 +156,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findByEmail">findByEmail</a>(string $email)
+                    <a href="#method_save">save</a>(<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a> $userEmail)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -167,40 +167,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findByConfirmationToken">findByConfirmationToken</a>(string $token)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_exists">exists</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $email)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_save">save</a>(<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a> $userSecondaryEmail)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_delete">delete</a>(<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a> $userSecondaryEmail)
+                    <a href="#method_delete">delete</a>(<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a> $userEmail)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -253,8 +220,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_findAllByUserId">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L25">line 25</a></div>
-        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a>[]
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php#L25">line 25</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a>[]
     <strong>findAllByUserId</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
         </code>
     </h3>
@@ -288,7 +255,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a>[]</td>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a>[]</td>
             <td></td>
         </tr>
     </table>
@@ -301,72 +268,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_find">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L30">line 30</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php#L30">line 30</a></div>
         <code>                    
-    <strong>find</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $email)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$email</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_findPendingPrimary">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L35">line 35</a></div>
-        <code>                    
-    <strong>findPendingPrimary</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_findByEmail">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L40">line 40</a></div>
-        <code>                    
-    <strong>findByEmail</strong>(string $email)
+    <strong>find</strong>(string $email)
         </code>
     </h3>
     <div class="details">
@@ -380,35 +284,6 @@
                     <tr>
                 <td>string</td>
                 <td>$email</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_findByConfirmationToken">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L45">line 45</a></div>
-        <code>                    
-    <strong>findByConfirmationToken</strong>(string $token)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$token</td>
                 <td></td>
             </tr>
             </table>
@@ -422,9 +297,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_exists">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L50">line 50</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php#L35">line 35</a></div>
         <code>                    
-    <strong>exists</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $email)
+    <strong>exists</strong>(string $email)
         </code>
     </h3>
     <div class="details">
@@ -435,11 +310,6 @@
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
                     <tr>
                 <td>string</td>
                 <td>$email</td>
@@ -456,9 +326,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_save">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L55">line 55</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php#L40">line 40</a></div>
         <code>                    
-    <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a> $userSecondaryEmail)
+    <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a> $userEmail)
         </code>
     </h3>
     <div class="details">
@@ -470,8 +340,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a></td>
-                <td>$userSecondaryEmail</td>
+                <td><a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a></td>
+                <td>$userEmail</td>
                 <td></td>
             </tr>
             </table>
@@ -485,9 +355,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_delete">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserSecondaryEmailRepository.php#L60">line 60</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserEmailRepository.php#L45">line 45</a></div>
         <code>                    
-    <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a> $userSecondaryEmail)
+    <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a> $userEmail)
         </code>
     </h3>
     <div class="details">
@@ -499,8 +369,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/Entity/UserSecondaryEmail.html"><abbr title="MsgPhp\User\Entity\UserSecondaryEmail">UserSecondaryEmail</abbr></a></td>
-                <td>$userSecondaryEmail</td>
+                <td><a href="../../../../../MsgPhp/User/Entity/UserEmail.html"><abbr title="MsgPhp\User\Entity\UserEmail">UserEmail</abbr></a></td>
+                <td>$userEmail</td>
                 <td></td>
             </tr>
             </table>

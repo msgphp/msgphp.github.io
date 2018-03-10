@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\DependencyInjection\BundleHelper | Message driven PHP - API</title>
+    <title>MsgPhp\User\Command\Handler\CreateUserEmailHandler | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_DependencyInjection_BundleHelper" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Command_Handler_CreateUserEmailHandler" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,26 +66,40 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li>BundleHelper</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Command.html">Command</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Command/Handler.html">Handler</a></li><li class="backslash">\</li><li>CreateUserEmailHandler</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            BundleHelper
+            CreateUserEmailHandler
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>BundleHelper</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php">View source</a>)
+    <strong>CreateUserEmailHandler</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/CreateUserEmailHandler.php">View source</a>)
 </p>
 
         
     
 
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../MsgPhp/Domain/Message/MessageDispatchingTrait.html"><abbr title="MsgPhp\Domain\Message\MessageDispatchingTrait">MessageDispatchingTrait</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+            </div>
     
     
     
@@ -94,10 +108,10 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_initDomain">initDomain</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory, <a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserEmailRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserEmailRepositoryInterface">UserEmailRepositoryInterface</abbr></a> $repository)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -105,10 +119,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_initDoctrineTypes">initDoctrineTypes</a>(<abbr title="Symfony\Component\DependencyInjection\Container">Container</abbr> $container)
+                    <a href="#method___invoke">__invoke</a>(<a href="../../../../MsgPhp/User/Command/CreateUserEmailCommand.html"><abbr title="MsgPhp\User\Command\CreateUserEmailCommand">CreateUserEmailCommand</abbr></a> $command)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -121,10 +135,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_initDomain">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php#L23">line 23</a></div>
-        <code>        static            
-    <strong>initDomain</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/CreateUserEmailHandler.php#L23">line 23</a></div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory, <a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../MsgPhp/User/Repository/UserEmailRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserEmailRepositoryInterface">UserEmailRepositoryInterface</abbr></a> $repository)
         </code>
     </h3>
     <div class="details">
@@ -136,8 +150,18 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
+                <td><a href="../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a></td>
+                <td>$factory</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a></td>
+                <td>$bus</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../MsgPhp/User/Repository/UserEmailRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserEmailRepositoryInterface">UserEmailRepositoryInterface</abbr></a></td>
+                <td>$repository</td>
                 <td></td>
             </tr>
             </table>
@@ -150,10 +174,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_initDoctrineTypes">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php#L67">line 67</a></div>
-        <code>        static            
-    <strong>initDoctrineTypes</strong>(<abbr title="Symfony\Component\DependencyInjection\Container">Container</abbr> $container)
+                    <h3 id="method___invoke">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Command/Handler/CreateUserEmailHandler.php#L30">line 30</a></div>
+        <code>                    
+    <strong>__invoke</strong>(<a href="../../../../MsgPhp/User/Command/CreateUserEmailCommand.html"><abbr title="MsgPhp\User\Command\CreateUserEmailCommand">CreateUserEmailCommand</abbr></a> $command)
         </code>
     </h3>
     <div class="details">
@@ -165,8 +189,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\Container">Container</abbr></td>
-                <td>$container</td>
+                <td><a href="../../../../MsgPhp/User/Command/CreateUserEmailCommand.html"><abbr title="MsgPhp\User\Command\CreateUserEmailCommand">CreateUserEmailCommand</abbr></a></td>
+                <td>$command</td>
                 <td></td>
             </tr>
             </table>
