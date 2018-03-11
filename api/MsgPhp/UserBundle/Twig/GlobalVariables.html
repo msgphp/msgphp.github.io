@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\EavBundle\DependencyInjection\Extension | Message driven PHP - API</title>
+    <title>MsgPhp\UserBundle\Twig\GlobalVariables | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_EavBundle_DependencyInjection_Extension" data-root-path="../../../">
+    <body id="class" data-name="class:MsgPhp_UserBundle_Twig_GlobalVariables" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/EavBundle.html">EavBundle</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/EavBundle/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li>Extension</li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/UserBundle.html">UserBundle</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/UserBundle/Twig.html">Twig</a></li><li class="backslash">\</li><li>GlobalVariables</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            Extension
+            GlobalVariables
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>Extension</strong>        extends <abbr title="Symfony\Component\DependencyInjection\Extension\Extension">Extension</abbr>        implements
-        <abbr title="Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface">PrependExtensionInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Extension.php">View source</a>)
+    <strong>GlobalVariables</strong>        implements
+        <abbr title="Symfony\Component\DependencyInjection\ServiceSubscriberInterface">ServiceSubscriberInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/UserBundle/Twig/GlobalVariables.php">View source</a>)
 </p>
 
         
@@ -88,18 +88,6 @@
 
     
     
-            <h2>Constants</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td>ALIAS</td>
-                <td class="last">
-                    <p><em></em></p>
-                    <p></p>
-                </td>
-            </tr>
-            </table>
-
     
     
             <h2>Methods</h2>
@@ -110,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getAlias">getAlias</a>()
+                    <a href="#method___construct">__construct</a>(<abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr> $container)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -121,7 +109,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getConfiguration">getConfiguration</a>(array $config, <abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_getUser">getUser</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -132,7 +120,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_load">load</a>(array $configs, <abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_getUserId">getUserId</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -140,10 +128,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_prepend">prepend</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_getSubscribedServices">getSubscribedServices</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -156,10 +144,39 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_getAlias">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Extension.php#L29">line 29</a></div>
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/UserBundle/Twig/GlobalVariables.php#L25">line 25</a></div>
         <code>                    
-    <strong>getAlias</strong>()
+    <strong>__construct</strong>(<abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr> $container)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Psr\Container\ContainerInterface">ContainerInterface</abbr></td>
+                <td>$container</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUser">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/UserBundle/Twig/GlobalVariables.php#L30">line 30</a></div>
+        <code>                    
+    <strong>getUser</strong>()
         </code>
     </h3>
     <div class="details">
@@ -175,10 +192,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getConfiguration">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Extension.php#L34">line 34</a></div>
+                    <h3 id="method_getUserId">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/UserBundle/Twig/GlobalVariables.php#L37">line 37</a></div>
         <code>                    
-    <strong>getConfiguration</strong>(array $config, <abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+    <strong>getUserId</strong>()
         </code>
     </h3>
     <div class="details">
@@ -186,21 +203,6 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$config</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
-                <td></td>
-            </tr>
-            </table>
-
             
             
             
@@ -209,10 +211,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_load">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Extension.php#L39">line 39</a></div>
-        <code>                    
-    <strong>load</strong>(array $configs, <abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <h3 id="method_getSubscribedServices">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/UserBundle/Twig/GlobalVariables.php#L57">line 57</a></div>
+        <code>        static            
+    <strong>getSubscribedServices</strong>()
         </code>
     </h3>
     <div class="details">
@@ -220,50 +222,6 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>array</td>
-                <td>$configs</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_prepend">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Extension.php#L54">line 54</a></div>
-        <code>                    
-    <strong>prepend</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
-                <td></td>
-            </tr>
-            </table>
-
             
             
             

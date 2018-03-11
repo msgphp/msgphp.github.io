@@ -712,12 +712,12 @@
         }, 
         {
             "location": "/infrastructure/uuid/", 
-            "text": "Universally Unique Identifier\n\n\nAn overview of available infrastructural code when working with \nUUID's\n.\n\n\n\n\nRequires \nramsey/uuid\n\n\n\n\nDomain identifier\n\n\nA UUID tailored \ndomain identifier\n is provided by \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n. It\nleverages type \nRamsey\\Uuid\\UuidInterface\n as underlying data type.\n\n\n\n\n__construct(UuidInterface $uuid = null)\n\n\n$uuid\n: The underlying UUID. In case of \nnull\n a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n// --- SETUP ---\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n \n// a new UUID version 4 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid1\n());\n \n// UUID version 1 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nfromString\n(\n00000000-0000-0000-0000-000000000000\n));\n \n// Nil UUID value\n\n\n\n// static\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n00000000-0000-0000-0000-000000000000\n);", 
+            "text": "Universally Unique Identifier\n\n\nAn overview of available infrastructural code when working with \nUUIDs\n.\n\n\n\n\nRequires \nramsey/uuid\n\n\n\n\nDomain identifier\n\n\nA UUID tailored \ndomain identifier\n is provided by \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n. It\nleverages type \nRamsey\\Uuid\\UuidInterface\n as underlying data type.\n\n\n\n\n__construct(UuidInterface $uuid = null)\n\n\n$uuid\n: The underlying UUID. In case of \nnull\n a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n// --- SETUP ---\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n \n// a new UUID version 4 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid1\n());\n \n// UUID version 1 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nfromString\n(\n00000000-0000-0000-0000-000000000000\n));\n \n// Nil UUID value\n\n\n\n// static\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n00000000-0000-0000-0000-000000000000\n);", 
             "title": "UUID"
         }, 
         {
             "location": "/infrastructure/uuid/#universally-unique-identifier", 
-            "text": "An overview of available infrastructural code when working with  UUID's .   Requires  ramsey/uuid", 
+            "text": "An overview of available infrastructural code when working with  UUIDs .   Requires  ramsey/uuid", 
             "title": "Universally Unique Identifier"
         }, 
         {

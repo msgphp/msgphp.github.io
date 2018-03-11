@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Infra\Doctrine\Repository\UserRoleRepository | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Doctrine\Repository\RoleRepository | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_Repository_UserRoleRepository" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_Repository_RoleRepository" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine/Repository.html">Repository</a></li><li class="backslash">\</li><li>UserRoleRepository</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/User/Infra/Doctrine/Repository.html">Repository</a></li><li class="backslash">\</li><li>RoleRepository</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            UserRoleRepository
+            RoleRepository
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>UserRoleRepository</strong>        implements
-        <a href="../../../../../MsgPhp/User/Repository/UserRoleRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRoleRepositoryInterface">UserRoleRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php">View source</a>)
+    <strong>RoleRepository</strong>        implements
+        <a href="../../../../../MsgPhp/User/Repository/RoleRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\RoleRepositoryInterface">RoleRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php">View source</a>)
 </p>
 
         
@@ -120,10 +120,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a>[]
+                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findAllByUserId">findAllByUserId</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
+                    <a href="#method_findAll">findAll</a>(int $offset = 0, int $limit = 0)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -134,7 +134,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_find">find</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $roleName)
+                    <a href="#method_find">find</a>(string $name)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -145,7 +145,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_exists">exists</a>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $roleName)
+                    <a href="#method_exists">exists</a>(string $name)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -156,7 +156,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_save">save</a>(<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a> $userRole)
+                    <a href="#method_save">save</a>(<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a> $role)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -167,7 +167,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_delete">delete</a>(<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a> $userRole)
+                    <a href="#method_delete">delete</a>(<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a> $role)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -219,10 +219,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_findAllByUserId">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php#L25">line 25</a></div>
-        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a>[]
-    <strong>findAllByUserId</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, int $offset = 0, int $limit = 0)
+                    <h3 id="method_findAll">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php#L24">line 24</a></div>
+        <code>                    <a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a>[]
+    <strong>findAll</strong>(int $offset = 0, int $limit = 0)
         </code>
     </h3>
     <div class="details">
@@ -233,11 +233,6 @@
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
                     <tr>
                 <td>int</td>
                 <td>$offset</td>
@@ -255,7 +250,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a>[]</td>
+            <td><a href="../../../../../MsgPhp/Domain/DomainCollectionInterface.html"><abbr title="MsgPhp\Domain\DomainCollectionInterface">DomainCollectionInterface</abbr></a>|<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a>[]</td>
             <td></td>
         </tr>
     </table>
@@ -268,9 +263,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_find">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php#L30">line 30</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php#L29">line 29</a></div>
         <code>                    
-    <strong>find</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $roleName)
+    <strong>find</strong>(string $name)
         </code>
     </h3>
     <div class="details">
@@ -282,13 +277,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
-                    <tr>
                 <td>string</td>
-                <td>$roleName</td>
+                <td>$name</td>
                 <td></td>
             </tr>
             </table>
@@ -302,9 +292,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_exists">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php#L35">line 35</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php#L34">line 34</a></div>
         <code>                    
-    <strong>exists</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $userId, string $roleName)
+    <strong>exists</strong>(string $name)
         </code>
     </h3>
     <div class="details">
@@ -316,13 +306,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a></td>
-                <td>$userId</td>
-                <td></td>
-            </tr>
-                    <tr>
                 <td>string</td>
-                <td>$roleName</td>
+                <td>$name</td>
                 <td></td>
             </tr>
             </table>
@@ -336,9 +321,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_save">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php#L40">line 40</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php#L39">line 39</a></div>
         <code>                    
-    <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a> $userRole)
+    <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a> $role)
         </code>
     </h3>
     <div class="details">
@@ -350,8 +335,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a></td>
-                <td>$userRole</td>
+                <td><a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a></td>
+                <td>$role</td>
                 <td></td>
             </tr>
             </table>
@@ -365,9 +350,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_delete">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRoleRepository.php#L45">line 45</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/RoleRepository.php#L44">line 44</a></div>
         <code>                    
-    <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a> $userRole)
+    <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a> $role)
         </code>
     </h3>
     <div class="details">
@@ -379,8 +364,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../../MsgPhp/User/Entity/UserRole.html"><abbr title="MsgPhp\User\Entity\UserRole">UserRole</abbr></a></td>
-                <td>$userRole</td>
+                <td><a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a></td>
+                <td>$role</td>
                 <td></td>
             </tr>
             </table>
