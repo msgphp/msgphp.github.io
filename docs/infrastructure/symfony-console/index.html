@@ -38,7 +38,7 @@
     
     
       
-        <title>Console - MsgPHP Documentation</title>
+        <title>Symfony Console - MsgPHP Documentation</title>
       
     
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Console
+                Symfony Console
               </span>
             
           
@@ -564,28 +564,9 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
-    
-    <label class="md-nav__link" for="nav-6-2">
-      Doctrine
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
-        Doctrine
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
-    <a href="../doctrine-collections/" title="Collections" class="md-nav__link">
-      Collections
+    <a href="../doctrine-collections/" title="Doctrine Collections" class="md-nav__link">
+      Doctrine Collections
     </a>
   </li>
 
@@ -596,8 +577,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../doctrine-dbal/" title="DBAL" class="md-nav__link">
-      DBAL
+    <a href="../doctrine-dbal/" title="Doctrine DBAL" class="md-nav__link">
+      Doctrine DBAL
     </a>
   </li>
 
@@ -608,37 +589,11 @@
 
 
   <li class="md-nav__item">
-    <a href="../doctrine-orm/" title="ORM" class="md-nav__link">
-      ORM
+    <a href="../doctrine-orm/" title="Doctrine ORM" class="md-nav__link">
+      Doctrine ORM
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3" checked>
-    
-    <label class="md-nav__link" for="nav-6-3">
-      Symfony
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
-        Symfony
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -655,11 +610,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Console
+        Symfony Console
       </label>
     
-    <a href="./" title="Console" class="md-nav__link md-nav__link--active">
-      Console
+    <a href="./" title="Symfony Console" class="md-nav__link md-nav__link--active">
+      Symfony Console
     </a>
     
       
@@ -760,11 +715,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1019,11 +969,7 @@
 </ul>
 <h2 id="context-builder">Context builder</h2>
 <p>A context builder is bound to <code>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextBuilderInterface</code>. Its purpose is to
-(interactively) built an arbitrary array value, i.e. the context, from a CLI command. Its value can be used as e.g. a
-context provided to an <a href="../../ddd/factory/object/">object factory</a>.</p>
-<ul>
-<li>Blog post: <a href="https://medium.com/@ro0NL/initializing-objects-with-cli-and-the-power-of-symfony-console-2a008d5611f">Initializing objects with CLI and the power of Symfony Console</a></li>
-</ul>
+(interactively) built an arbitrary array value (the context) from a CLI command.</p>
 <h3 id="api">API</h3>
 <h4 id="configureinputdefinition-definition-void"><code>configure(InputDefinition $definition): void</code></h4>
 <p>Configure a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>.</p>
@@ -1032,18 +978,21 @@ context provided to an <a href="../../ddd/factory/object/">object factory</a>.</
 <p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.</p>
 <h3 id="implementations">Implementations</h3>
 <h4 id="msgphpdomaininfraconsolecontextbuilderclasscontextbuilder"><code>MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder</code></h4>
-<p>Build a context value from any class method signature. It configures the CLI signature by mapping required class method
+<p>Builds a context based on any class method signature. It configures the CLI signature by mapping required class method
 arguments to command arguments, whereas optional ones are mapped to command options.</p>
-<p>By default any command argument / option will be optional. If the actual class method argument is required and no value
-is given it will be asked interactively. If interaction is not possible an exception will be thrown instead.</p>
+<div class="codehilite"><pre><span></span>bin/console <span class="nb">command</span> --optional-argument <span class="o">[</span>--<span class="o">]</span> required-argument
+</pre></div>
+
+
+<p>In both cases a value is optional, if the actual class method argument is required and no value is given it will be
+asked interactively. If interaction is not possible an exception will be thrown instead.</p>
 <ul>
 <li><code>__construct(string $class, string $method, iterable $elementProviders = [], array $classMapping = [], int $flags = 0)</code><ul>
 <li><code>$class / $method</code>: The class method to resolve</li>
 <li><code>$elementProviders</code>: Available context element providers (see <a href="#providing-context-elements">Providing context elements</a>)</li>
-<li><code>$classMapping</code>: Global class mapping which resolves <code>$class</code> or any nested class name from type info. Usually used
-  to map interfaces to concretes.</li>
+<li><code>$classMapping</code>: Global class mapping. Usually used to map abstracts to concretes.</li>
 <li><code>$flags</code>: A bit mask value to toggle various flags<ul>
-<li><code>ClassContextBuilder::ALWAYS_OPTIONAL</code>: Always map class method argument to command options</li>
+<li><code>ClassContextBuilder::ALWAYS_OPTIONAL</code>: Always map class method arguments to command options</li>
 <li><code>ClassContextBuilder::NO_DEFAULTS</code>: Leave out default values when calling <code>getContext()</code></li>
 </ul>
 </li>
@@ -1099,15 +1048,12 @@ is given it will be asked interactively. If interaction is not possible an excep
     <span class="p">{</span>
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;my-command&#39;</span><span class="p">);</span>
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">configure</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDefinition</span><span class="p">());</span>
-
-       <span class="c1">// The CLI usage is now:</span>
-       <span class="c1">// bin/console my-command [argument]</span>
     <span class="p">}</span>
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">InputInterface</span> <span class="nv">$input</span><span class="p">,</span><span class="nx">OutputInterface</span> <span class="nv">$output</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span>
     <span class="p">{</span>
         <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SymfonyStyle</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$output</span><span class="p">);</span>
-        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$io</span><span class="p">);</span> <span class="c1">// [&#39;argument&#39; =&gt; &#39;VALUE&#39;]</span>
+        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$io</span><span class="p">);</span>
         <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">(</span><span class="o">...</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$context</span><span class="p">));</span>
 
         <span class="c1">// do something</span>
@@ -1138,7 +1084,7 @@ is given it will be asked interactively. If interaction is not possible an excep
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../doctrine-orm/" title="ORM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../doctrine-orm/" title="Doctrine ORM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1147,7 +1093,7 @@ is given it will be asked interactively. If interaction is not possible an excep
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ORM
+                Doctrine ORM
               </span>
             </div>
           </a>

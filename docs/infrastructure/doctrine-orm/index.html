@@ -38,7 +38,7 @@
     
     
       
-        <title>ORM - MsgPHP Documentation</title>
+        <title>Doctrine ORM - MsgPHP Documentation</title>
       
     
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                ORM
+                Doctrine ORM
               </span>
             
           
@@ -563,31 +563,10 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
-    
-    <label class="md-nav__link" for="nav-6-2">
-      Doctrine
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
-        Doctrine
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
-    <a href="../doctrine-collections/" title="Collections" class="md-nav__link">
-      Collections
+    <a href="../doctrine-collections/" title="Doctrine Collections" class="md-nav__link">
+      Doctrine Collections
     </a>
   </li>
 
@@ -598,8 +577,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../doctrine-dbal/" title="DBAL" class="md-nav__link">
-      DBAL
+    <a href="../doctrine-dbal/" title="Doctrine DBAL" class="md-nav__link">
+      Doctrine DBAL
     </a>
   </li>
 
@@ -619,11 +598,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        ORM
+        Doctrine ORM
       </label>
     
-    <a href="./" title="ORM" class="md-nav__link md-nav__link--active">
-      ORM
+    <a href="./" title="Doctrine ORM" class="md-nav__link md-nav__link--active">
+      Doctrine ORM
     </a>
     
       
@@ -727,44 +706,15 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
-    
-    <label class="md-nav__link" for="nav-6-3">
-      Symfony
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-3">
-        Symfony
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../symfony-console/" title="Console" class="md-nav__link">
-      Console
+    <a href="../symfony-console/" title="Symfony Console" class="md-nav__link">
+      Symfony Console
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1024,7 +974,7 @@ the identity mapping from its class metadata.</p>
 <ul>
 <li><code>__construct(EntityManagerInterface $em, array $classMapping = [])</code><ul>
 <li><code>$em</code>: The entity manager to use</li>
-<li><code>$classMapping</code>: The class mapping (<code>['SourceType' =&gt; 'TargetType']</code>)</li>
+<li><code>$classMapping</code>: Global class mapping. Usually used to map abstracts to concretes.</li>
 </ul>
 </li>
 </ul>
@@ -1114,7 +1064,7 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
 <li><code>__construct(EntityAwareFactoryInterface $factory, EntityManagerInterface $em, array $classMapping = [])</code><ul>
 <li><code>$factory</code>: The decorated factory</li>
 <li><code>$em</code>: The entity manager to use</li>
-<li><code>$classMapping</code>: The class mapping (<code>['SourceType' =&gt; 'TargetType']</code>)</li>
+<li><code>$classMapping</code>: Global class mapping. Usually used to map abstracts to concretes.</li>
 </ul>
 </li>
 </ul>
@@ -1238,7 +1188,7 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../doctrine-dbal/" title="DBAL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../doctrine-dbal/" title="Doctrine DBAL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1247,19 +1197,19 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                DBAL
+                Doctrine DBAL
               </span>
             </div>
           </a>
         
         
-          <a href="../symfony-console/" title="Console" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../symfony-console/" title="Symfony Console" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Console
+                Symfony Console
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
