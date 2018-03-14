@@ -628,8 +628,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context-builder" title="Context builder" class="md-nav__link">
-    Context builder
+  <a href="#context-factory" title="Context factory" class="md-nav__link">
+    Context factory
   </a>
   
     <nav class="md-nav">
@@ -651,8 +651,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getcontextinputinterface-input-styleinterface-io-array" title="getContext(InputInterface $input, StyleInterface $io): array" class="md-nav__link">
-    getContext(InputInterface $input, StyleInterface $io): array
+  <a href="#getcontextinputinterface-input-styleinterface-io-array-values-array" title="getContext(InputInterface $input, StyleInterface $io, array $values = []): array" class="md-nav__link">
+    getContext(InputInterface $input, StyleInterface $io, array $values = []): array
   </a>
   
 </li>
@@ -671,16 +671,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraconsolecontextbuilderclasscontextbuilder" title="MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder" class="md-nav__link">
-    MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder
+  <a href="#msgphpdomaininfraconsolecontextclasscontextfactory" title="MsgPhp\Domain\Infra\Console\Context\ClassContextFactory" class="md-nav__link">
+    MsgPhp\Domain\Infra\Console\Context\ClassContextFactory
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#providing-context-elements" title="Providing context elements" class="md-nav__link">
-    Providing context elements
+  <a href="#customizing-context-elements" title="Customizing context elements" class="md-nav__link">
+    Customizing context elements
   </a>
   
 </li>
@@ -694,6 +694,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfraconsolecontextdoctrineentitycontextfactory" title="MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory" class="md-nav__link">
+    MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory
+  </a>
   
 </li>
         
@@ -864,8 +871,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context-builder" title="Context builder" class="md-nav__link">
-    Context builder
+  <a href="#context-factory" title="Context factory" class="md-nav__link">
+    Context factory
   </a>
   
     <nav class="md-nav">
@@ -887,8 +894,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getcontextinputinterface-input-styleinterface-io-array" title="getContext(InputInterface $input, StyleInterface $io): array" class="md-nav__link">
-    getContext(InputInterface $input, StyleInterface $io): array
+  <a href="#getcontextinputinterface-input-styleinterface-io-array-values-array" title="getContext(InputInterface $input, StyleInterface $io, array $values = []): array" class="md-nav__link">
+    getContext(InputInterface $input, StyleInterface $io, array $values = []): array
   </a>
   
 </li>
@@ -907,16 +914,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraconsolecontextbuilderclasscontextbuilder" title="MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder" class="md-nav__link">
-    MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder
+  <a href="#msgphpdomaininfraconsolecontextclasscontextfactory" title="MsgPhp\Domain\Infra\Console\Context\ClassContextFactory" class="md-nav__link">
+    MsgPhp\Domain\Infra\Console\Context\ClassContextFactory
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#providing-context-elements" title="Providing context elements" class="md-nav__link">
-    Providing context elements
+  <a href="#customizing-context-elements" title="Customizing context elements" class="md-nav__link">
+    Customizing context elements
   </a>
   
 </li>
@@ -930,6 +937,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomaininfraconsolecontextdoctrineentitycontextfactory" title="MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory" class="md-nav__link">
+    MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory
+  </a>
   
 </li>
         
@@ -967,19 +981,21 @@
 <ul>
 <li>Requires <a href="https://packagist.org/packages/symfony/console">symfony/console</a></li>
 </ul>
-<h2 id="context-builder">Context builder</h2>
-<p>A context builder is bound to <code>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextBuilderInterface</code>. Its purpose is to
-(interactively) built an arbitrary array value (the context) from a CLI command.</p>
+<h2 id="context-factory">Context factory</h2>
+<p>A context factory is bound to <code>MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface</code>. Its purpose is to leverage
+a CLI command in an effort to interactively built an arbitrary array value (the context).</p>
 <h3 id="api">API</h3>
 <h4 id="configureinputdefinition-definition-void"><code>configure(InputDefinition $definition): void</code></h4>
-<p>Configure a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>.</p>
+<p>Configure a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>. Should be called before using
+<code>getContext()</code>.</p>
 <hr />
-<h4 id="getcontextinputinterface-input-styleinterface-io-array"><code>getContext(InputInterface $input, StyleInterface $io): array</code></h4>
-<p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.</p>
+<h4 id="getcontextinputinterface-input-styleinterface-io-array-values-array"><code>getContext(InputInterface $input, StyleInterface $io, array $values = []): array</code></h4>
+<p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.
+Any element value provided by <code>$values</code> takes precedence and should be used as-is.</p>
 <h3 id="implementations">Implementations</h3>
-<h4 id="msgphpdomaininfraconsolecontextbuilderclasscontextbuilder"><code>MsgPhp\Domain\Infra\Console\ContextBuilder\ClassContextBuilder</code></h4>
-<p>Builds a context based on any class method signature. It configures the CLI signature by mapping required class method
-arguments to command arguments, whereas optional ones are mapped to command options.</p>
+<h4 id="msgphpdomaininfraconsolecontextclasscontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</code></h4>
+<p>Factorizes a context based on any class method signature. It configures the CLI signature by mapping required class
+method arguments to command arguments, whereas optional ones are mapped to command options.</p>
 <div class="codehilite"><pre><span></span>bin/console <span class="nb">command</span> --optional-argument <span class="o">[</span>--<span class="o">]</span> required-argument
 </pre></div>
 
@@ -987,30 +1003,34 @@ arguments to command arguments, whereas optional ones are mapped to command opti
 <p>In both cases a value is optional, if the actual class method argument is required and no value is given it will be
 asked interactively. If interaction is not possible an exception will be thrown instead.</p>
 <ul>
-<li><code>__construct(string $class, string $method, iterable $elementProviders = [], array $classMapping = [], int $flags = 0)</code><ul>
+<li><code>__construct(string $class, string $method, array $classMapping = [], int $flags = 0, ClassContextElementFactoryInterface $elementFactory = null)</code><ul>
 <li><code>$class / $method</code>: The class method to resolve</li>
-<li><code>$elementProviders</code>: Available context element providers (see <a href="#providing-context-elements">Providing context elements</a>)</li>
 <li><code>$classMapping</code>: Global class mapping. Usually used to map abstracts to concretes.</li>
 <li><code>$flags</code>: A bit mask value to toggle various flags<ul>
 <li><code>ClassContextBuilder::ALWAYS_OPTIONAL</code>: Always map class method arguments to command options</li>
 <li><code>ClassContextBuilder::NO_DEFAULTS</code>: Leave out default values when calling <code>getContext()</code></li>
+<li><code>ClassContextBuilder::REUSE_DEFINITION</code>: Reuse the original input definition for matching class method
+   arguments</li>
+</ul>
+</li>
+<li><code>$elementFactory</code>: A custom element factory to use. See also <a href="#customizing-context-elements">Customizing context elements</a>.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h5 id="providing-context-elements">Providing context elements</h5>
-<p>Per-element configuration can be provided by implementing a <code>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextElementProviderInterface</code>.</p>
+<h5 id="customizing-context-elements">Customizing context elements</h5>
+<p>Per-element configuration can be provided by implementing a <code>MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactoryInterface</code>.</p>
 <ul>
-<li><code>getElement(string $class, string $method, string $argument): ?ContextElement</code><ul>
-<li>Resolve a <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/Console/ContextBuilder/ContextElement.html"><code>ContextElement</code></a> from a class/method/argument combination</li>
+<li><code>getElement(string $class, string $method, string $argument): ContextElement</code><ul>
+<li>Get a custom <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/Console/ContextBuilder/ContextElement.html"><code>ContextElement</code></a> to apply to a specific class/method/argument pair</li>
 </ul>
 </li>
 </ul>
+<p>A default implementation is provided by <code>MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactory</code> which simply
+transforms argument names to human readable values so that <code>$argumentName</code> becomes <code>Argument Name</code>.</p>
 <h5 id="basic-example">Basic example</h5>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Console\ContextBuilder\</span><span class="p">{</span><span class="nx">ClassContextBuilder</span><span class="p">,</span> <span class="nx">ContextElement</span><span class="p">,</span> <span class="nx">ContextElementProviderInterface</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Command\Command</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Input\InputInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Console\Output\OutputInterface</span><span class="p">;</span>
@@ -1018,28 +1038,20 @@ asked interactively. If interaction is not possible an exception will be thrown 
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="k">class</span> <span class="nc">MyObject</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nv">$option</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyContextElementProvider</span> <span class="k">implements</span> <span class="nx">ContextElementProviderInterface</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getElement</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$method</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$argument</span><span class="p">)</span><span class="o">:</span> <span class="o">?</span><span class="nx">ContextElement</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">ContextElement</span><span class="p">(</span><span class="nb">strtoupper</span><span class="p">(</span><span class="nv">$argument</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">class</span> <span class="nc">MyCommand</span> <span class="k">extends</span> <span class="nx">Command</span>
 <span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$contextBuilder</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$contextFactory</span><span class="p">;</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassContextBuilder</span><span class="p">(</span><span class="nx">MyClass</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;__construct&#39;</span><span class="p">,</span> <span class="p">[</span><span class="k">new</span> <span class="nx">MyContextElementProvider</span><span class="p">()]);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassContextFactory</span><span class="p">(</span><span class="nx">MyObject</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;__construct&#39;</span><span class="p">);</span>
 
         <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
     <span class="p">}</span>
@@ -1047,14 +1059,14 @@ asked interactively. If interaction is not possible an exception will be thrown 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">configure</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;my-command&#39;</span><span class="p">);</span>
-       <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">configure</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDefinition</span><span class="p">());</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextFactory</span><span class="o">-&gt;</span><span class="na">configure</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDefinition</span><span class="p">());</span>
     <span class="p">}</span>
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">InputInterface</span> <span class="nv">$input</span><span class="p">,</span><span class="nx">OutputInterface</span> <span class="nv">$output</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span>
     <span class="p">{</span>
         <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SymfonyStyle</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$output</span><span class="p">);</span>
-        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextBuilder</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$io</span><span class="p">);</span>
-        <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">(</span><span class="o">...</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$context</span><span class="p">));</span>
+        <span class="nv">$context</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">contextFactory</span><span class="o">-&gt;</span><span class="na">getContext</span><span class="p">(</span><span class="nv">$input</span><span class="p">,</span> <span class="nv">$io</span><span class="p">);</span>
+        <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyObject</span><span class="p">(</span><span class="o">...</span><span class="nb">array_values</span><span class="p">(</span><span class="nv">$context</span><span class="p">));</span>
 
         <span class="c1">// do something</span>
 
@@ -1064,8 +1076,21 @@ asked interactively. If interaction is not possible an exception will be thrown 
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="c1">// $ bin/console my-command</span>
+<span class="c1">// $ bin/console my-command [--option=OPTION] [--] [&lt;argument&gt;]</span>
 </pre></div>
+
+
+<h4 id="msgphpdomaininfraconsolecontextdoctrineentitycontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory</code></h4>
+<p>A <a href="../doctrine-orm/">Doctrine</a> entity aware context factory. It decorates any context factory. Its purpose is to
+provide a discriminator value into the resulting context when working with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html">inheritance</a>.</p>
+<ul>
+<li><code>__construct(ContextFactoryInterface $factory, EntityManagerInterface $em, string $class)</code><ul>
+<li><code>$factory</code>: The decorated context factory</li>
+<li><code>$em</code>: The entity manager to use</li>
+<li><code>$class</code>: The entity class to use</li>
+</ul>
+</li>
+</ul>
                 
                   
                 

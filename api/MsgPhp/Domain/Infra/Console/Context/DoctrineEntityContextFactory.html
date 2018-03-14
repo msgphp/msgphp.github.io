@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextBuilderInterface | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Console_ContextBuilder_ContextBuilderInterface" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Console_Context_DoctrineEntityContextFactory" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -65,21 +65,22 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">interface</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console/ContextBuilder.html">ContextBuilder</a></li><li class="backslash">\</li><li>ContextBuilderInterface</li>
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console/Context.html">Context</a></li><li class="backslash">\</li><li>DoctrineEntityContextFactory</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ContextBuilderInterface
+            DoctrineEntityContextFactory
                 
         </h1>
     </div>
 
-    <p>    interface
-    <strong>ContextBuilderInterface</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php">View source</a>)
+    <p>    class
+    <strong>DoctrineEntityContextFactory</strong>        implements
+        <a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ContextFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface">ContextFactoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/DoctrineEntityContextFactory.php">View source</a>)
 </p>
 
         
@@ -92,6 +93,17 @@
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ContextFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface">ContextFactoryInterface</abbr></a> $factory, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, string $class)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
@@ -121,8 +133,47 @@
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/DoctrineEntityContextFactory.php#L25">line 25</a></div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ContextFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface">ContextFactoryInterface</abbr></a> $factory, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, string $class)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ContextFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface">ContextFactoryInterface</abbr></a></td>
+                <td>$factory</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr></td>
+                <td>$em</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_configure">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php#L16">line 16</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/DoctrineEntityContextFactory.php#L32">line 32</a></div>
         <code>                    
     <strong>configure</strong>(<abbr title="Symfony\Component\Console\Input\InputDefinition">InputDefinition</abbr> $definition)
         </code>
@@ -151,7 +202,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getContext">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextBuilderInterface.php#L18">line 18</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/DoctrineEntityContextFactory.php#L49">line 49</a></div>
         <code>                    
     <strong>getContext</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io, array $values = [])
         </code>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Console\ContextBuilder\ContextElement | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactory | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Console_ContextBuilder_ContextElement" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Console_Context_ClassContextElementFactory" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console/ContextBuilder.html">ContextBuilder</a></li><li class="backslash">\</li><li>ContextElement</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console.html">Console</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Console/Context.html">Context</a></li><li class="backslash">\</li><li>ClassContextElementFactory</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ContextElement
+            ClassContextElementFactory
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ContextElement</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextElement.php">View source</a>)
+    <strong>ClassContextElementFactory</strong>        implements
+        <a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ClassContextElementFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactoryInterface">ClassContextElementFactoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/ClassContextElementFactory.php">View source</a>)
 </p>
 
         
@@ -88,51 +89,6 @@
     
     
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_label">
-                                                                                
-                </td>
-                <td>$label</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_description">
-                                                                                
-                </td>
-                <td>$description</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_normalizer">
-                                                                                
-                </td>
-                <td>$normalizer</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_generator">
-                                                                                
-                </td>
-                <td>$generator</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_hidden">
-                                                                                
-                </td>
-                <td>$hidden</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
@@ -142,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $label, string $description = &#039;&#039;, callable $normalizer = null, callable $generator = null, bool $hidden = false)
+                    <a href="#method_getElement">getElement</a>(string $class, string $method, string $argument)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -155,10 +111,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/ContextBuilder/ContextElement.php#L18">line 18</a></div>
+                    <h3 id="method_getElement">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Console/Context/ClassContextElementFactory.php#L12">line 12</a></div>
         <code>                    
-    <strong>__construct</strong>(string $label, string $description = &#039;&#039;, callable $normalizer = null, callable $generator = null, bool $hidden = false)
+    <strong>getElement</strong>(string $class, string $method, string $argument)
         </code>
     </h3>
     <div class="details">
@@ -171,27 +127,17 @@
                     <table class="table table-condensed">
                     <tr>
                 <td>string</td>
-                <td>$label</td>
+                <td>$class</td>
                 <td></td>
             </tr>
                     <tr>
                 <td>string</td>
-                <td>$description</td>
+                <td>$method</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>callable</td>
-                <td>$normalizer</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>callable</td>
-                <td>$generator</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>bool</td>
-                <td>$hidden</td>
+                <td>string</td>
+                <td>$argument</td>
                 <td></td>
             </tr>
             </table>

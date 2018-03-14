@@ -174,6 +174,17 @@
                     static&nbsp;
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_registerConsoleClassContextFactory">registerConsoleClassContextFactory</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, int $flags = 0)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_configureIdentityMapping">configureIdentityMapping</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $identityMapping)
         
                                             <p class="no-description">No description</p>
@@ -502,8 +513,47 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_configureIdentityMapping">
+                    <h3 id="method_registerConsoleClassContextFactory">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L87">line 87</a></div>
+        <code>        static            
+    <strong>registerConsoleClassContextFactory</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, int $flags = 0)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
+                <td>$container</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$flags</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_configureIdentityMapping">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L103">line 103</a></div>
         <code>        static            
     <strong>configureIdentityMapping</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $identityMapping)
         </code>
@@ -542,7 +592,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureEntityFactory">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L101">line 101</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L117">line 117</a></div>
         <code>        static            
     <strong>configureEntityFactory</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $idClassMapping)
         </code>
@@ -581,7 +631,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureDoctrineTypes">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L120">line 120</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L136">line 136</a></div>
         <code>        static            
     <strong>configureDoctrineTypes</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $idTypeMapping, array $typeClassMapping)
         </code>
@@ -625,7 +675,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureDoctrineOrmMapping">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L169">line 169</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L185">line 185</a></div>
         <code>        static            
     <strong>configureDoctrineOrmMapping</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $mappingFiles, array $objectFieldMappings = [])
         </code>
@@ -664,7 +714,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureDoctrineOrmTargetEntities">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L187">line 187</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L203">line 203</a></div>
         <code>        static            
     <strong>configureDoctrineOrmTargetEntities</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping)
         </code>
@@ -698,7 +748,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureDoctrineOrmRepositories">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L200">line 200</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L216">line 216</a></div>
         <code>        static            
     <strong>configureDoctrineOrmRepositories</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $repositoryMapping)
         </code>
@@ -737,7 +787,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureCommandMessages">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L217">line 217</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L233">line 233</a></div>
         <code>        static            
     <strong>configureCommandMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $commands)
         </code>
@@ -776,7 +826,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configureEventMessages">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L243">line 243</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L259">line 259</a></div>
         <code>        static            
     <strong>configureEventMessages</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, array $classMapping, array $events)
         </code>
