@@ -98,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/User/Infra/Security/SecurityUserProvider.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUserProvider">SecurityUserProvider</abbr></a> $provider, <a href="../../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory, <a href="../../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a> $roleProvider = null)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/User/Infra/Security/SecurityUserProvider.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUserProvider">SecurityUserProvider</abbr></a> $provider, <a href="../../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -156,9 +156,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L28">line 28</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L25">line 25</a></div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../../../MsgPhp/User/Infra/Security/SecurityUserProvider.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUserProvider">SecurityUserProvider</abbr></a> $provider, <a href="../../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory, <a href="../../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a> $roleProvider = null)
+    <strong>__construct</strong>(<a href="../../../../../MsgPhp/User/Infra/Security/SecurityUserProvider.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUserProvider">SecurityUserProvider</abbr></a> $provider, <a href="../../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory)
         </code>
     </h3>
     <div class="details">
@@ -184,11 +184,6 @@
                 <td>$factory</td>
                 <td></td>
             </tr>
-                    <tr>
-                <td><a href="../../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a></td>
-                <td>$roleProvider</td>
-                <td></td>
-            </tr>
             </table>
 
             
@@ -200,7 +195,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_loadUserByUsernameAndPayload">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L36">line 36</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L32">line 32</a></div>
         <code>                    
     <strong>loadUserByUsernameAndPayload</strong>($username, array $payload)
         </code>
@@ -234,7 +229,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_loadUserByUsername">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L47">line 47</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L43">line 43</a></div>
         <code>                    
     <strong>loadUserByUsername</strong>($username)
         </code>
@@ -263,7 +258,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_refreshUser">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L52">line 52</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L48">line 48</a></div>
         <code>                    
     <strong>refreshUser</strong>(<abbr title="Symfony\Component\Security\Core\User\UserInterface">UserInterface</abbr> $user)
         </code>
@@ -292,7 +287,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_supportsClass">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/Jwt/SecurityUserProvider.php#L53">line 53</a></div>
         <code>                    
     <strong>supportsClass</strong>($class)
         </code>
