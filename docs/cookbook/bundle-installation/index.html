@@ -924,8 +924,8 @@ general <a href="https://symfony.com/doc/current/service_container/autowiring.ht
 infrastructural services are created automatically.</p>
 <h2 id="available-bundles">Available bundles</h2>
 <ul>
-<li><code>msgphp/eav-bundle</code>: Provides basic entity-attribute-value management</li>
-<li><code>msgphp/user-bundle</code>: Provides basic user management</li>
+<li><code>msgphp/eav-bundle</code>: Provides basic entity-attribute-value management (the EAV domain)</li>
+<li><code>msgphp/user-bundle</code>: Provides basic user management (the user domain)</li>
 </ul>
 <h2 id="installing-using-composer">Installing using <a href="https://getcomposer.org/">Composer</a></h2>
 <div class="codehilite"><pre><span></span>composer require msgphp/&lt;name&gt;-bundle
@@ -945,7 +945,7 @@ automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/
 </pre></div>
 
 
-<p>Depending on your personal preference you can also write the configuration in any other supported format. See
+<p>Depending on your personal preference you can also write the configuration in any other supported format. See the
 <a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo configuration</a> for a more advanced example.</p>
 <h3 id="class-mapping">Class mapping</h3>
 <p>Configures the bundle with a class mapping to to well which classes of yours should be used for a known class of ours.</p>
@@ -956,7 +956,7 @@ automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/
 
 
 <p>The class mapping applies when working with an <a href="../../ddd/factory/object/">object factory</a>.</p>
-<p>Depending on the bundle a specific class mapping entry might enable one of the bundle its features which are otherwise
+<p>Depending on the bundle a specific class mapping entry might enable one of the bundle its features which is otherwise
 disabled by default.</p>
 <h3 id="identifier-type-mapping">Identifier type mapping</h3>
 <p>Configures the bundle <a href="../../ddd/identifiers/">domain identifier</a> types. Each key must be a sub class of
@@ -968,10 +968,14 @@ disabled by default.</p>
 </pre></div>
 
 
-<p>By convention any <a href="http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html">Doctrine DBAL type</a> can be used. Additionally <code>uuid</code>, <code>uuid_binary</code> or <code>uuid_binary_ordered_time</code> are
-also detected.</p>
+<p>By convention any <a href="http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html">Doctrine DBAL type</a> can be used. Additionally the following UUID types are detected as well:</p>
+<ul>
+<li><code>uuid</code></li>
+<li><code>uuid_binary</code></li>
+<li><code>uuid_binary_ordered_time</code></li>
+</ul>
 <h3 id="default-identifier-type">Default identifier type</h3>
-<p>Configures a default identifier type name to use for all known identifiers provided by the bundle.</p>
+<p>Configures a default type name to use for all known domain identifiers provided by the bundle.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uuid</span>
 </pre></div>
@@ -992,7 +996,7 @@ can be explicitly enabled or disabled by command.</p>
 
 
 <h2 id="basic-configuration-example">Basic configuration example</h2>
-<p>Given a bundle provides the following identifiers:</p>
+<p>Given a bundle provides the following domain identifiers:</p>
 <ul>
 <li><code>MsgPhp\FooIdInterface</code></li>
 <li><code>MsgPhp\BarIdInterface</code></li>
@@ -1011,6 +1015,9 @@ can be explicitly enabled or disabled by command.</p>
         <span class="c1"># MsgPhp\FooIdInterface: MsgPhp\Domain\DomainId</span>
         <span class="c1"># MsgPhp\BazIdInterface: MsgPhp\Domain\Infra\Uuid\DomainId</span>
 </pre></div>
+
+
+<p>See also the <a href="../../reference/identifiers/">domain identifier reference</a>.</p>
                 
                   
                 
