@@ -759,6 +759,54 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/identifiers/" title="Domain identifiers" class="md-nav__link">
+      Domain identifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/doctrine-identifier-types/" title="Doctrine identifier types" class="md-nav__link">
+      Doctrine identifier types
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -930,13 +978,13 @@ underlying persistence layer.</p>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity */</span>
+<span class="sd">/** @ORM\Entity() */</span>
 <span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;string&quot;) */</span>
+    <span class="sd">/** @ORM\Id() @ORM\Column(type=&quot;string&quot;) */</span>
     <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
 
-    <span class="sd">/** @ORM\Id @ORM\Column(type=&quot;integer&quot;) */</span>
+    <span class="sd">/** @ORM\Id() @ORM\Column(type=&quot;integer&quot;) */</span>
     <span class="k">public</span> <span class="nv">$year</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -995,7 +1043,7 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
 <span class="c1">// --- SETUP ---</span>
 
 <span class="sd">/**</span>
-<span class="sd"> * @ORM\Entity</span>
+<span class="sd"> * @ORM\Entity()</span>
 <span class="sd"> * @ORM\InheritanceType(&quot;JOINED&quot;)</span>
 <span class="sd"> * @ORM\DiscriminatorColumn(name=&quot;discriminator&quot;, type=&quot;string&quot;)</span>
 <span class="sd"> * @ORM\DiscriminatorMap({&quot;self&quot; = &quot;MyEntity&quot;, &quot;other&quot; = &quot;MyOtherEntity&quot;})</span>
@@ -1005,7 +1053,7 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
     <span class="k">public</span> <span class="k">const</span> <span class="no">TYPE_SELF</span> <span class="o">=</span> <span class="s1">&#39;self&#39;</span><span class="p">;</span>
     <span class="k">public</span> <span class="k">const</span> <span class="no">TYPE_OTHER</span> <span class="o">=</span> <span class="s1">&#39;other&#39;</span><span class="p">;</span>
 
-    <span class="sd">/** @ORM\Id */</span>
+    <span class="sd">/** @ORM\Id() @ORM\Column(type=&quot;integer&quot;) */</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -1060,10 +1108,10 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity */</span>
+<span class="sd">/** @ORM\Entity() */</span>
 <span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
-    <span class="sd">/** @var DomainId @ORM\Id @ORM\Column(type=&quot;msgphp_domain_id&quot;) */</span>
+    <span class="sd">/** @var DomainId @ORM\Id() @ORM\Column(type=&quot;msgphp_domain_id&quot;) */</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">}</span>
 

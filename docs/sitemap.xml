@@ -145,4 +145,20 @@
         
     
 
+    
+        
+    <url>
+     <loc>/reference/identifiers/</loc>
+     <lastmod>2018-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/reference/doctrine-identifier-types/</loc>
+     <lastmod>2018-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
 </urlset>
