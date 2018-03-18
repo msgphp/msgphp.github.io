@@ -777,6 +777,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../reference/entities/" title="Domain entities" class="md-nav__link">
+      Domain entities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../reference/doctrine-identifier-types/" title="Doctrine identifier types" class="md-nav__link">
       Doctrine identifier types
     </a>
@@ -889,11 +901,12 @@
                 
                 
                 <h1 id="entities">Entities</h1>
-<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a> design.</p>
-<p>To simplify entity definitions common fields and features are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>. Entity fields can be
-compared to a read-operation, whereas entity features represent a write-operation.</p>
+<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a> design. To simplify its definition common
+fields and features are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>. Fields can be compared to a read-operation, whereas
+features represent a read/write-operation.</p>
 <p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entity\Fields\</code> and
 <code>MsgPhp\Domain\Entity\Features\</code>. Additionally more specific fields and features can be provided per domain layer.</p>
+<p>See also the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain.</p>
 <h2 id="common-entity-fields">Common entity fields</h2>
 <h3 id="createdatfield"><code>CreatedAtField</code></h3>
 <p>A datetime value representing an entity was initially created at. Requires <code>$createdAt</code> to be set initially.</p>
