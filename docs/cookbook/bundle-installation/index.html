@@ -38,7 +38,7 @@
     
     
       
-        <title>User domain - MsgPHP Documentation</title>
+        <title>Bundle installation - MsgPHP Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#user-domain-layer" tabindex="1" class="md-skip">
+      <a href="#bundle-installation" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                User domain
+                Bundle installation
               </span>
             
           
@@ -622,26 +622,14 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
-      Domain layers
+      Cookbook
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
-        Domain layers
+        Cookbook
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
         
           
           
@@ -657,82 +645,107 @@
       
     
     
-    <a href="./" title="User domain" class="md-nav__link md-nav__link--active">
-      User domain
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Bundle installation
+      </label>
+    
+    <a href="./" title="Bundle installation" class="md-nav__link md-nav__link--active">
+      Bundle installation
     </a>
     
-  </li>
-
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-bundles" title="Available bundles" class="md-nav__link">
+    Available bundles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-using-composer" title="Installing using Composer" class="md-nav__link">
+    Installing using Composer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../eav/" title="EAV domain" class="md-nav__link">
-      EAV domain
-    </a>
-  </li>
-
+          <li class="md-nav__item">
+  <a href="#with-symfony-flex" title="With Symfony Flex" class="md-nav__link">
+    With Symfony Flex
+  </a>
+  
+</li>
         
       </ul>
     </nav>
-  </li>
-
-    
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-mapping" title="Class mapping" class="md-nav__link">
+    Class mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifier-type-mapping" title="Identifier type mapping" class="md-nav__link">
+    Identifier type mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-identifier-type" title="Default identifier type" class="md-nav__link">
+    Default identifier type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" title="Commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration-example" title="Basic configuration example" class="md-nav__link">
+    Basic configuration example
+  </a>
+  
+</li>
       
       
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
+      
+      
+    </ul>
+  
+</nav>
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Symfony bundles
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Symfony bundles
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../symfony-bundle/architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../symfony-bundle/user/" title="User bundle" class="md-nav__link">
-      User bundle
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../symfony-bundle/eav/" title="EAV bundle" class="md-nav__link">
-      EAV bundle
-    </a>
   </li>
 
         
@@ -758,6 +771,90 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-bundles" title="Available bundles" class="md-nav__link">
+    Available bundles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-using-composer" title="Installing using Composer" class="md-nav__link">
+    Installing using Composer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-symfony-flex" title="With Symfony Flex" class="md-nav__link">
+    With Symfony Flex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-mapping" title="Class mapping" class="md-nav__link">
+    Class mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifier-type-mapping" title="Identifier type mapping" class="md-nav__link">
+    Identifier type mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-identifier-type" title="Default identifier type" class="md-nav__link">
+    Default identifier type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" title="Commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration-example" title="Basic configuration example" class="md-nav__link">
+    Basic configuration example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -768,11 +865,104 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/domain/user.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/bundle-installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="user-domain-layer">User domain layer</h1>
-<p>TODO</p>
+                <h1 id="bundle-installation">Bundle installation</h1>
+<p>The project bundles are tailored to the <a href="https://symfony.com/">Symfony Framework</a> and designed to be used standalone. Its main purpose is to
+provide the application with services, based on minimal configuration and to be used with <a href="https://symfony.com/doc/current/components/dependency_injection.html">dependency injection</a>. In
+general <a href="https://symfony.com/doc/current/service_container/autowiring.html">autowiring</a> is leveraged in an effort to favor convention over configuration where possible.</p>
+<p>Various services might be created depending on other enabled bundles. If a supported bundle is enabled its available
+infrastructural services are created automatically.</p>
+<h2 id="available-bundles">Available bundles</h2>
+<ul>
+<li><code>msgphp/eav-bundle</code>: Provides basic entity-attribute-value management</li>
+<li><code>msgphp/user-bundle</code>: Provides basic user management</li>
+</ul>
+<h2 id="installing-using-composer">Installing using <a href="https://getcomposer.org/">Composer</a></h2>
+<div class="codehilite"><pre><span></span>composer require msgphp/&lt;name&gt;-bundle
+</pre></div>
+
+
+<h3 id="with-symfony-flex">With Symfony Flex</h3>
+<p>When <a href="https://symfony.com/doc/current/setup/flex.html">Symfony Flex</a> is used to mange your Symfony application the minimal bundle configuration is created for you
+automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a>.</p>
+<h2 id="configuration">Configuration</h2>
+<p>By default a bundle provides the following minimal configuration:</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
+    <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+    <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
+</pre></div>
+
+
+<p>Depending on your personal preference you can also write the configuration in any other supported format. See
+<a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo configuration</a> for a more advanced example.</p>
+<h3 id="class-mapping">Class mapping</h3>
+<p>Configures the bundle with a class mapping to to well which classes of yours should be used for a known class of ours.</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeClass</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\SomeClass</span>
+</pre></div>
+
+
+<p>The class mapping applies when working with an <a href="../../ddd/factory/object/">object factory</a>.</p>
+<p>Depending on the bundle a specific class mapping entry might enable one of the bundle its features which are otherwise
+disabled by default.</p>
+<h3 id="identifier-type-mapping">Identifier type mapping</h3>
+<p>Configures the bundle <a href="../../ddd/identifiers/">domain identifier</a> types. Each key must be a sub class of
+<code>MsgPhp\Domain\DomainIdInterface</code> whereas each value must be a known type name.</p>
+<p>It ensures a default class mapping entry is added which maps the identifier to a <a href="../../ddd/identifiers/#implementations">concrete implementation</a>.</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomainIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">some_type_name</span>
+</pre></div>
+
+
+<p>By convention any <a href="http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html">Doctrine DBAL type</a> can be used. Additionally <code>uuid</code>, <code>uuid_binary</code> or <code>uuid_binary_ordered_time</code> are
+also detected.</p>
+<h3 id="default-identifier-type">Default identifier type</h3>
+<p>Configures a default identifier type name to use for all known identifiers provided by the bundle.</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uuid</span>
+</pre></div>
+
+
+<h3 id="commands">Commands</h3>
+<p>By default a command handler provided by the bundle might be enabled or disabled depending on an <a href="../../ddd/entities/#common-entity-features">entity feature</a>
+is being used yes or no.</p>
+<p>However, in case of a <a href="../../message-driven/cqrs/#event-sourcing-command-handler">event-sourcing command handler</a>
+the corresponding <a href="../../event-sourcing/events/">domain event</a> might be supported regardless. Depending on your own
+<a href="../../event-sourcing/event-handlers/">event handler</a> implementation. To keep leveraging default command handlers they
+can be explicitly enabled or disabled by command.</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeOtherCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+
+
+<h2 id="basic-configuration-example">Basic configuration example</h2>
+<p>Given a bundle provides the following identifiers:</p>
+<ul>
+<li><code>MsgPhp\FooIdInterface</code></li>
+<li><code>MsgPhp\BarIdInterface</code></li>
+<li><code>MsgPhp\BazIdInterface</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uuid</span>
+    <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\FooIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="c1"># implied:</span>
+        <span class="c1"># MsgPhp\BarIdInterface: uuid</span>
+        <span class="c1"># MsgPhp\BazIdInterface: uuid</span>
+    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\BarIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\MyBarUuid</span>
+        <span class="c1"># implied:</span>
+        <span class="c1"># MsgPhp\FooIdInterface: MsgPhp\Domain\DomainId</span>
+        <span class="c1"># MsgPhp\BazIdInterface: MsgPhp\Domain\Infra\Uuid</span>
+</pre></div>
                 
                   
                 
@@ -791,7 +981,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -800,25 +990,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Architecture
+                Symfony Console
               </span>
             </div>
           </a>
         
-        
-          <a href="../eav/" title="EAV domain" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                EAV domain
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
