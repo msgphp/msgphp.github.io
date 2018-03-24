@@ -283,22 +283,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-principles" title="General principles" class="md-nav__link">
-    General principles
+  <a href="#general-principles" title="General Principles" class="md-nav__link">
+    General Principles
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-style" title="Code style" class="md-nav__link">
-    Code style
+  <a href="#code-style-cs" title="Code Style (CS)" class="md-nav__link">
+    Code Style (CS)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
-    Static analysis
+  <a href="#static-analysis-sa" title="Static Analysis (SA)" class="md-nav__link">
+    Static Analysis (SA)
   </a>
   
 </li>
@@ -311,15 +311,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-72-forward-compatibility" title="PHP 7.2 forward compatibility" class="md-nav__link">
-    PHP 7.2 forward compatibility
+  <a href="#php-72-forward-compatibility" title="PHP 7.2 Forward Compatibility" class="md-nav__link">
+    PHP 7.2 Forward Compatibility
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
-    Unit tests
+  <a href="#unit-tests" title="Unit Tests" class="md-nav__link">
+    Unit Tests
   </a>
   
 </li>
@@ -932,22 +932,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-principles" title="General principles" class="md-nav__link">
-    General principles
+  <a href="#general-principles" title="General Principles" class="md-nav__link">
+    General Principles
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-style" title="Code style" class="md-nav__link">
-    Code style
+  <a href="#code-style-cs" title="Code Style (CS)" class="md-nav__link">
+    Code Style (CS)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#static-analysis" title="Static analysis" class="md-nav__link">
-    Static analysis
+  <a href="#static-analysis-sa" title="Static Analysis (SA)" class="md-nav__link">
+    Static Analysis (SA)
   </a>
   
 </li>
@@ -960,15 +960,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#php-72-forward-compatibility" title="PHP 7.2 forward compatibility" class="md-nav__link">
-    PHP 7.2 forward compatibility
+  <a href="#php-72-forward-compatibility" title="PHP 7.2 Forward Compatibility" class="md-nav__link">
+    PHP 7.2 Forward Compatibility
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unit-tests" title="Unit tests" class="md-nav__link">
-    Unit tests
+  <a href="#unit-tests" title="Unit Tests" class="md-nav__link">
+    Unit Tests
   </a>
   
 </li>
@@ -992,19 +992,19 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/code-conventions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="code-conventions">Code conventions</h1>
+                <h1 id="code-conventions">Code Conventions</h1>
 <p>A brief description of code conventions this project follows.</p>
-<h2 id="general-principles">General principles</h2>
+<h2 id="general-principles">General Principles</h2>
 <ul>
 <li>Follows <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> principles</li>
 <li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
-<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">law of demeter</a>)</li>
+<li>Reduce coupling (<a href="https://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a>)</li>
 <li>Favor latest stable PHP7 features</li>
 <li>Checks must pass (code style, static analysis &amp; unit tests)</li>
 </ul>
-<h2 id="code-style">Code style</h2>
+<h2 id="code-style-cs">Code Style (CS)</h2>
 <ul>
-<li>Follows <a href="https://www.php-fig.org/psr/psr-2/">PSR2</a> with <a href="https://symfony.com/doc/master/contributing/code/standards.html">Symfony style</a></li>
+<li>Follows <a href="https://www.php-fig.org/psr/psr-2/">PSR-2</a> with [Symfony Sstyle]</li>
 <li><code>use</code> statements are declared in alpha-order</li>
 <li><code>use</code> statements for <code>MsgPhp\</code> namespace are grouped by deepest common namespace</li>
 </ul>
@@ -1029,7 +1029,7 @@
 </pre></div>
 
 
-<h2 id="static-analysis">Static analysis</h2>
+<h2 id="static-analysis-sa">Static Analysis (SA)</h2>
 <ul>
 <li>Follows <a href="https://github.com/phpstan/phpstan">PHPStan</a> level max</li>
 <li>Exclude- and ignore-rules are discussed per case / topic</li>
@@ -1041,13 +1041,13 @@
 <li>Interfaces must have a description with its purpose (at the class- as well as the method-level)</li>
 <li>No usage of <code>@inheritdoc</code></li>
 </ul>
-<h2 id="php-72-forward-compatibility">PHP 7.2 forward compatibility</h2>
+<h2 id="php-72-forward-compatibility">PHP 7.2 Forward Compatibility</h2>
 <ul>
 <li>Intended object values are type hinted (<code>@param object $value</code> and <code>@return object</code>)</li>
 </ul>
-<h2 id="unit-tests">Unit tests</h2>
+<h2 id="unit-tests">Unit Tests</h2>
 <ul>
-<li>All of the above, <em>in general</em>, applies to unit tests as well</li>
+<li>All of the above, <em>in general</em>, apply to unit tests as well</li>
 </ul>
                 
                   
