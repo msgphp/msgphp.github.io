@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\n\n\nNews\n\n\n\n\n2018-03-18\n Added initial \ncookbook\n and \nreference\n chapters\n\n\n2018-02-18\n Added initial \ninfrastructure\n chapter\n\n\n2018-02-12\n Added \ndomain identities\n chapter\n\n\n2018-01-27\n Added initial \nmessage driven\n chapter\n\n\n2018-01-26\n Added initial \nevent sourcing\n chapter\n\n\n2018-01-25\n Added initial project \ncode conventions\n\n\n2018-01-18\n Initial documentation setup. Work in progress as of today.", 
+            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\n\n\nNews\n\n\n\n\n2018-03-24\n Added initial \nprojection\n chapter\n\n\n2018-03-18\n Added initial \ncookbook\n and \nreference\n chapters\n\n\n2018-02-18\n Added initial \ninfrastructure\n chapter\n\n\n2018-02-12\n Added \ndomain identities\n chapter\n\n\n2018-01-27\n Added initial \nmessage driven\n chapter\n\n\n2018-01-26\n Added initial \nevent sourcing\n chapter\n\n\n2018-01-25\n Added initial project \ncode conventions\n\n\n2018-01-18\n Initial documentation setup. Work in progress as of today.", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#news", 
-            "text": "2018-03-18  Added initial  cookbook  and  reference  chapters  2018-02-18  Added initial  infrastructure  chapter  2018-02-12  Added  domain identities  chapter  2018-01-27  Added initial  message driven  chapter  2018-01-26  Added initial  event sourcing  chapter  2018-01-25  Added initial project  code conventions  2018-01-18  Initial documentation setup. Work in progress as of today.", 
+            "text": "2018-03-24  Added initial  projection  chapter  2018-03-18  Added initial  cookbook  and  reference  chapters  2018-02-18  Added initial  infrastructure  chapter  2018-02-12  Added  domain identities  chapter  2018-01-27  Added initial  message driven  chapter  2018-01-26  Added initial  event sourcing  chapter  2018-01-25  Added initial project  code conventions  2018-01-18  Initial documentation setup. Work in progress as of today.", 
             "title": "News"
         }, 
         {
@@ -117,12 +117,12 @@
         }, 
         {
             "location": "/ddd/identities/", 
-            "text": "Identities\n\n\nA domain identity is a composite value (\narray\n) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.\n\n\nIdentifier values can be of any type; a \ndomain identifier\n, another (foreign) entity object, or any\nprimitive value.\n\n\nA single identifier value might represent an actual identity in case it's composed by a single identifier field.\n\n\nMsgPhp\\Domain\\DomainIdentityHelper\n is a domain a helper service. Its purpose is to ease working with the\n\nidentity mapping\n.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object or an entity\nobject.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is a known empty identifier value. It returns \ntrue\n if the specified value is either \nnull\n, an empty\n\ndomain identifier\n or an entity object without its identity set.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. Empty identifier values (see \nisEmptyIdentifier()\n) are normalized\nas \nnull\n, a \ndomain identifier\n as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\nSee also \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity value is considered valid if an entity object uses\na single identifier value as identity and \n$value\n is a non empty identifier (see \nisEmptyIdentifier()\n).\n\n\nIn case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.\n\n\n\n\ntoIdentity(string $class, $value): array\n\n\nReturns a composite identity value for \n$class\n from \n$value\n.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name. See also \nDomainIdentityMappingInterface::getIdentity()\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n   \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]));\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$helper\n-\nisIdentity\n(\n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$helper\n-\nisIdentity\n(\n$entity\n);\n \n// true\n\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n());\n \n// null\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n(\n1\n));\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n1\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$entity\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ....]\n\n\n\n$helper\n-\ngetIdentifiers\n(\n$entity\n);\n \n// [\nid\n]\n\n\n$helper\n-\ngetIdentifiers\n(\n$compositeEntity\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$helper\n-\nisIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// true\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n]);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]);\n \n// true\n\n\n\n$helper\n-\ntoIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// [\nid\n =\n 1]", 
+            "text": "Identities\n\n\nMsgPhp\\Domain\\DomainIdentityHelper\n is a utility domain service. Its purpose is to ease working with domain identities\nand the \nidentity mapping\n.\n\n\nA domain identity is a composite value (\narray\n) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.\n\n\nIdentifier values can be of any type; a \ndomain identifier\n, another (foreign) entity object, or any\nprimitive value.\n\n\nA single identifier value might represent an actual identity in case it's composed by a single identifier field.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object or an entity\nobject.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is a known empty identifier value. It returns \ntrue\n if the specified value is either \nnull\n, an empty\n\ndomain identifier\n or an entity object without its identity set.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. Empty identifier values (see \nisEmptyIdentifier()\n) are normalized\nas \nnull\n, a \ndomain identifier\n as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\nSee also \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity value is considered valid if an entity object uses\na single identifier value as identity and \n$value\n is a non empty identifier (see \nisEmptyIdentifier()\n).\n\n\nIn case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.\n\n\n\n\ntoIdentity(string $class, $value): array\n\n\nReturns a composite identity value for \n$class\n from \n$value\n.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name. See also \nDomainIdentityMappingInterface::getIdentity()\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n   \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]));\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$helper\n-\nisIdentity\n(\n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$helper\n-\nisIdentity\n(\n$entity\n);\n \n// true\n\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n());\n \n// null\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n(\n1\n));\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n1\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$entity\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ....]\n\n\n\n$helper\n-\ngetIdentifiers\n(\n$entity\n);\n \n// [\nid\n]\n\n\n$helper\n-\ngetIdentifiers\n(\n$compositeEntity\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$helper\n-\nisIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// true\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n]);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]);\n \n// true\n\n\n\n$helper\n-\ntoIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// [\nid\n =\n 1]", 
             "title": "Identities"
         }, 
         {
             "location": "/ddd/identities/#identities", 
-            "text": "A domain identity is a composite value ( array ) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.  Identifier values can be of any type; a  domain identifier , another (foreign) entity object, or any\nprimitive value.  A single identifier value might represent an actual identity in case it's composed by a single identifier field.  MsgPhp\\Domain\\DomainIdentityHelper  is a domain a helper service. Its purpose is to ease working with the identity mapping .", 
+            "text": "MsgPhp\\Domain\\DomainIdentityHelper  is a utility domain service. Its purpose is to ease working with domain identities\nand the  identity mapping .  A domain identity is a composite value ( array ) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.  Identifier values can be of any type; a  domain identifier , another (foreign) entity object, or any\nprimitive value.  A single identifier value might represent an actual identity in case it's composed by a single identifier field.", 
             "title": "Identities"
         }, 
         {
@@ -711,23 +711,243 @@
             "title": "Basic example"
         }, 
         {
-            "location": "/infrastructure/uuid/", 
-            "text": "Universally Unique Identifier\n\n\nAn overview of available infrastructural code when working with \nUUIDs\n.\n\n\n\n\nRequires \nramsey/uuid\n\n\n\n\nDomain identifier\n\n\nA UUID tailored \ndomain identifier\n is provided by \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n. It\nleverages type \nRamsey\\Uuid\\UuidInterface\n as underlying data type.\n\n\n\n\n__construct(UuidInterface $uuid = null)\n\n\n$uuid\n: The underlying UUID. In case of \nnull\n a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.\n\n\n\n\n\n\n\n\nSee also the \nreference\n page for all available UUID identifiers provided per domain.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n// --- SETUP ---\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n \n// a new UUID version 4 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid1\n());\n \n// UUID version 1 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nfromString\n(\n00000000-0000-0000-0000-000000000000\n));\n \n// Nil UUID value\n\n\n\n// static\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n00000000-0000-0000-0000-000000000000\n);", 
-            "title": "UUID"
+            "location": "/projection/models/", 
+            "text": "Projections\n\n\nA domain projection is a model object and bound to \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n. Its purpose is\nto convert raw model data (a document) into a projection, enabling to be stored separate.\n\n\nThe document is usually a transformation from a domain object (e.g. an entity) and therefor projections should be\nconsidered read-only and disposable, as they can be re-created / synchronized at any time from a source of truth.\n\n\nA practical use case for domain projections are APIs, where each API resource is a so called projection from a\ncorresponding entity. It enables decoupling and thus optimized API responses.\n\n\nFor integration with \nAPI Platform\n see also the \ndomain projection data provider\n.\n\n\nAPI\n\n\nstatic fromDocument(array $document): DomainProjectionInterface\n\n\nCreates a projection from raw document data.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \n$someField\n;\n\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n$projection\n \n=\n \nnew\n \nself\n();\n\n        \n$projection\n-\nsomeField\n \n=\n \n$document\n[\nsome_field\n]\n \n??\n \nnull\n;\n\n\n        \nreturn\n \n$projection\n;\n\n    \n}\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$projection\n \n=\n \nMyProjection\n::\nfromDocument\n([\n\n    \nsome_field\n \n=\n \nvalue\n,\n\n\n]);", 
+            "title": "Models"
         }, 
         {
-            "location": "/infrastructure/uuid/#universally-unique-identifier", 
-            "text": "An overview of available infrastructural code when working with  UUIDs .   Requires  ramsey/uuid", 
-            "title": "Universally Unique Identifier"
+            "location": "/projection/models/#projections", 
+            "text": "A domain projection is a model object and bound to  MsgPhp\\Domain\\Projection\\DomainProjectionInterface . Its purpose is\nto convert raw model data (a document) into a projection, enabling to be stored separate.  The document is usually a transformation from a domain object (e.g. an entity) and therefor projections should be\nconsidered read-only and disposable, as they can be re-created / synchronized at any time from a source of truth.  A practical use case for domain projections are APIs, where each API resource is a so called projection from a\ncorresponding entity. It enables decoupling and thus optimized API responses.  For integration with  API Platform  see also the  domain projection data provider .", 
+            "title": "Projections"
         }, 
         {
-            "location": "/infrastructure/uuid/#domain-identifier", 
-            "text": "A UUID tailored  domain identifier  is provided by  MsgPhp\\Domain\\Infra\\Uuid\\DomainId . It\nleverages type  Ramsey\\Uuid\\UuidInterface  as underlying data type.   __construct(UuidInterface $uuid = null)  $uuid : The underlying UUID. In case of  null  a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.     See also the  reference  page for all available UUID identifiers provided per domain.", 
-            "title": "Domain identifier"
+            "location": "/projection/models/#api", 
+            "text": "", 
+            "title": "API"
         }, 
         {
-            "location": "/infrastructure/uuid/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId ;  use   Ramsey\\Uuid\\Uuid ;  // --- SETUP ---  $id   =   new   DomainId ();   // a new UUID version 4 value  $id   =   new   DomainId ( Uuid :: uuid1 ());   // UUID version 1 value  $id   =   new   DomainId ( Uuid :: fromString ( 00000000-0000-0000-0000-000000000000 ));   // Nil UUID value  // static  $id   =   DomainId :: fromValue ( 00000000-0000-0000-0000-000000000000 );", 
+            "location": "/projection/models/#static-fromdocumentarray-document-domainprojectioninterface", 
+            "text": "Creates a projection from raw document data.", 
+            "title": "static fromDocument(array $document): DomainProjectionInterface"
+        }, 
+        {
+            "location": "/projection/models/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   $someField ; \n\n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         $projection   =   new   self (); \n         $projection - someField   =   $document [ some_field ]   ??   null ; \n\n         return   $projection ; \n     }  }  // --- USAGE ---  $projection   =   MyProjection :: fromDocument ([ \n     some_field   =   value ,  ]);", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/projection/documents/", 
+            "text": "Projection documents\n\n\nA projection document is a domain value object of type \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n. Its purpose\nis to hold a projection document its (meta)data and current state.\n\n\nAPI\n\n\nstatic create(string $type, string $id = null, array $body = []): DomainProjectionDocument\n\n\nCreates a projection document for a known projection type. In case \n$id\n is not given it implies an auto-generated\nvalue. A projection \n$type\n usually refers to a known \nprojection\n by class name.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n$document\n \n=\n \nDomainProjectionDocument\n::\ncreate\n(\nMyProjection\n::\nclass\n,\n \nnull\n,\n \n[\n\n    \nsome_field\n \n=\n \nvalue\n,\n\n\n]);", 
+            "title": "Documents"
+        }, 
+        {
+            "location": "/projection/documents/#projection-documents", 
+            "text": "A projection document is a domain value object of type  MsgPhp\\Domain\\Projection\\DomainProjectionDocument . Its purpose\nis to hold a projection document its (meta)data and current state.", 
+            "title": "Projection documents"
+        }, 
+        {
+            "location": "/projection/documents/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/projection/documents/#static-createstring-type-string-id-null-array-body-domainprojectiondocument", 
+            "text": "Creates a projection document for a known projection type. In case  $id  is not given it implies an auto-generated\nvalue. A projection  $type  usually refers to a known  projection  by class name.", 
+            "title": "static create(string $type, string $id = null, array $body = []): DomainProjectionDocument"
+        }, 
+        {
+            "location": "/projection/documents/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  $document   =   DomainProjectionDocument :: create ( MyProjection :: class ,   null ,   [ \n     some_field   =   value ,  ]);", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/projection/document-transformers/", 
+            "text": "Projection document transformers\n\n\nA projection document transformer is bound to \nMsgPhp\\Domain\\Projection\\DomainProjectionDocumentTransformerInterface\n.\nIts purpose is to transform domain objects into \nprojection documents\n.\n\n\nAPI\n\n\ntransform(object $object): DomainProjectionDocument\n\n\nTransforms the domain object into a projection document.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer\n\n\nA PSR container tailored projection document transformer.\n\n\n\n\nRead more", 
+            "title": "Document transformers"
+        }, 
+        {
+            "location": "/projection/document-transformers/#projection-document-transformers", 
+            "text": "A projection document transformer is bound to  MsgPhp\\Domain\\Projection\\DomainProjectionDocumentTransformerInterface .\nIts purpose is to transform domain objects into  projection documents .", 
+            "title": "Projection document transformers"
+        }, 
+        {
+            "location": "/projection/document-transformers/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/projection/document-transformers/#transformobject-object-domainprojectiondocument", 
+            "text": "Transforms the domain object into a projection document.", 
+            "title": "transform(object $object): DomainProjectionDocument"
+        }, 
+        {
+            "location": "/projection/document-transformers/#implementations", 
+            "text": "", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/projection/document-transformers/#msgphpdomaininfrapsrdomainprojectiondocumenttransformer", 
+            "text": "A PSR container tailored projection document transformer.   Read more", 
+            "title": "MsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer"
+        }, 
+        {
+            "location": "/projection/type-registry/", 
+            "text": "Projection type registry\n\n\nA projection type registry is bound to \nMsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface\n.\nIts purpose is to manage all available \nprojection\n type information.\n\n\nAPI\n\n\nall(): array\n\n\nReturns all available projection types for this registry.\n\n\n\n\ninitialize(): void\n\n\nInitializes the type registry. Usually needs to be called only once per environment, or after any type information has\nchanged.\n\n\n\n\ndestroy(): void\n\n\nDestroys the type registry and thus requires to be re-initialized after.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry\n\n\nAn Elasticsearch tailored projection type registry.\n\n\n\n\nRead more\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @var DomainProjectionTypeRegistryInterface $typeRegistry */\n\n\n$typeRegistry\n \n=\n \n...\n;\n\n\n\n// --- USAGE ---\n\n\n\n$typeRegistry\n-\ndestroy\n();\n\n\n$typeRegistry\n-\ninitialize\n();\n\n\n\necho\n \nInitialized types: \n.\nimplode\n(\n, \n,\n \n$typeRegistry\n-\nall\n());\n\n\n\n\n\n\nCommand Line Interface\n\n\nThe type registry can be initialized using the CLI when working with Symfony Console.\n\n\n\n\nRead more", 
+            "title": "Type registry"
+        }, 
+        {
+            "location": "/projection/type-registry/#projection-type-registry", 
+            "text": "A projection type registry is bound to  MsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface .\nIts purpose is to manage all available  projection  type information.", 
+            "title": "Projection type registry"
+        }, 
+        {
+            "location": "/projection/type-registry/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/projection/type-registry/#all-array", 
+            "text": "Returns all available projection types for this registry.", 
+            "title": "all(): array"
+        }, 
+        {
+            "location": "/projection/type-registry/#initialize-void", 
+            "text": "Initializes the type registry. Usually needs to be called only once per environment, or after any type information has\nchanged.", 
+            "title": "initialize(): void"
+        }, 
+        {
+            "location": "/projection/type-registry/#destroy-void", 
+            "text": "Destroys the type registry and thus requires to be re-initialized after.", 
+            "title": "destroy(): void"
+        }, 
+        {
+            "location": "/projection/type-registry/#implementations", 
+            "text": "", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/projection/type-registry/#msgphpdomaininfraelasticsearchdomainprojectiontyperegistry", 
+            "text": "An Elasticsearch tailored projection type registry.   Read more", 
+            "title": "MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry"
+        }, 
+        {
+            "location": "/projection/type-registry/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface ;  // --- SETUP ---  /** @var DomainProjectionTypeRegistryInterface $typeRegistry */  $typeRegistry   =   ... ;  // --- USAGE ---  $typeRegistry - destroy ();  $typeRegistry - initialize ();  echo   Initialized types:  . implode ( ,  ,   $typeRegistry - all ());", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/projection/type-registry/#command-line-interface", 
+            "text": "The type registry can be initialized using the CLI when working with Symfony Console.   Read more", 
+            "title": "Command Line Interface"
+        }, 
+        {
+            "location": "/projection/repositories/", 
+            "text": "Projection repositories\n\n\nA domain projection repository is bound to \nMsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface\n. Its purpose\nis to store and query \nprojection documents\n.\n\n\nAPI\n\n\nfindAll(string $type, int $offset = 0, int $limit = 0): iterable\n\n\nFind all \nprojections\n by type.\n\n\n\n\nfind(string $type, string $id): ?DomainProjectionInterface\n\n\nFind a single \nprojection\n by type and ID. In case its document cannot be found \nnull\n should be returned.\n\n\n\n\nclear(string $type): void\n\n\nDelete all projection documents by type.\n\n\n\n\nsave(DomainProjectionDocument $document): void\n\n\nSave a projection document. The document will be available on any subsequent query.\n\n\n\n\ndelete(DomainProjectionDocument $document): void\n\n\nDelete a projection document. The document will be unavailable on any subsequent query.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository\n\n\nAn Elasticsearch tailored projection repository.\n\n\n\n\nRead more\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n/** @var DomainProjectionRepositoryInterface $repository */\n\n\n$repository\n \n=\n \n...\n;\n\n\n\n// --- USAGE ---\n\n\n\n$id\n \n=\n \n...\n;\n\n\n$projection\n \n=\n \n$repository\n-\nfind\n(\nMyProjection\n::\nclass\n,\n \n$id\n);\n\n\n\nif\n \n(\nnull\n \n===\n \n$projection\n)\n \n{\n\n    \n$document\n \n=\n \nDomainProjectionDocument\n::\ncreate\n(\nMyProjection\n::\nclass\n,\n \n$id\n,\n \n[\n\n        \nsome_field\n \n=\n \nvalue\n,\n\n    \n]);\n\n    \n$repository\n-\nsave\n(\n$document\n);\n\n\n}", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/projection/repositories/#projection-repositories", 
+            "text": "A domain projection repository is bound to  MsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface . Its purpose\nis to store and query  projection documents .", 
+            "title": "Projection repositories"
+        }, 
+        {
+            "location": "/projection/repositories/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/projection/repositories/#findallstring-type-int-offset-0-int-limit-0-iterable", 
+            "text": "Find all  projections  by type.", 
+            "title": "findAll(string $type, int $offset = 0, int $limit = 0): iterable"
+        }, 
+        {
+            "location": "/projection/repositories/#findstring-type-string-id-domainprojectioninterface", 
+            "text": "Find a single  projection  by type and ID. In case its document cannot be found  null  should be returned.", 
+            "title": "find(string $type, string $id): ?DomainProjectionInterface"
+        }, 
+        {
+            "location": "/projection/repositories/#clearstring-type-void", 
+            "text": "Delete all projection documents by type.", 
+            "title": "clear(string $type): void"
+        }, 
+        {
+            "location": "/projection/repositories/#savedomainprojectiondocument-document-void", 
+            "text": "Save a projection document. The document will be available on any subsequent query.", 
+            "title": "save(DomainProjectionDocument $document): void"
+        }, 
+        {
+            "location": "/projection/repositories/#deletedomainprojectiondocument-document-void", 
+            "text": "Delete a projection document. The document will be unavailable on any subsequent query.", 
+            "title": "delete(DomainProjectionDocument $document): void"
+        }, 
+        {
+            "location": "/projection/repositories/#implementations", 
+            "text": "", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/projection/repositories/#msgphpdomaininfraelasticsearchdomainprojectionrepository", 
+            "text": "An Elasticsearch tailored projection repository.   Read more", 
+            "title": "MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository"
+        }, 
+        {
+            "location": "/projection/repositories/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  /** @var DomainProjectionRepositoryInterface $repository */  $repository   =   ... ;  // --- USAGE ---  $id   =   ... ;  $projection   =   $repository - find ( MyProjection :: class ,   $id );  if   ( null   ===   $projection )   { \n     $document   =   DomainProjectionDocument :: create ( MyProjection :: class ,   $id ,   [ \n         some_field   =   value , \n     ]); \n     $repository - save ( $document );  }", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/projection/synchronization/", 
+            "text": "Projection synchronization\n\n\nMsgPhp\\Domain\\Projection\\DomainProjectionSynchronization\n is a utility domain service. Its purpose is to ease\nsynchronizing provided \nprojections\n.\n\n\nSo called \nproviders\n actually provide domain objects, which are in turn transformed to \ndocuments\n using\nany \ntransformer\n. A document is then stored using any \nrepository\n.\n\n\nAPI\n\n\nsynchronize(): iterable\n\n\nYields a projection document for each provided domain object regarding its state. The actual document status can be\nread from \nProjectionDocument::$status\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocumentTransformerInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionSynchronization\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$id\n)\n\n    \n{\n\n        \n$this\n-\nid\n \n=\n \n$id\n;\n\n    \n}\n\n\n}\n\n\n\n/** @var DomainProjectionDocumentTransformerInterface $transformer */\n\n\n$transformer\n \n=\n \n...\n;\n\n\n/** @var DomainProjectionTypeRegistryInterface $typeRegistry */\n\n\n$typeRegistry\n \n=\n \n...\n;\n\n\n/** @var DomainProjectionRepositoryInterface $repository */\n\n\n$repository\n \n=\n \n...\n;\n\n\n$synchronization\n \n=\n \nnew\n \nDomainProjectionSynchronization\n(\n$typeRegistry\n,\n \n$repository\n,\n \n$transformer\n,\n \n[\n\n    \nfunction\n \n()\n:\n \niterable\n \n{\n\n        \nyield\n \nnew\n \nMyEntity\n(\n1\n);\n\n        \nyield\n \nnew\n \nMyEntity\n(\n2\n);\n\n    \n},\n\n\n]);\n\n\n\n// --- USAGE ---\n\n\n\nforeach\n \n(\n$synchronization\n-\nsynchronize\n()\n \nas\n \n$document\n)\n \n{\n\n    \nif\n \n(\nDomainProjectionDocument\n::\nSTATUS_VALID\n \n===\n \n$document\n-\nstatus\n)\n \n{\n\n        \necho\n \nSynchronized projection for \n.\nget_class\n(\n$document\n-\nsource\n)\n.\n with ID \n.\n$document\n-\nsource\n-\nid\n.\nPHP_EOL\n;\n\n        \ncontinue\n;\n\n    \n}\n\n\n    \necho\n \nInvalid projection for \n.\nget_class\n(\n$document\n-\nsource\n)\n.\n with ID \n.\n$document\n-\nsource\n-\nid\n.\nPHP_EOL\n;\n\n\n    \nif\n \n(\nnull\n \n!==\n \n$document\n-\nerror\n)\n \n{\n\n        \necho\n \nAn error occurred for \n.\nget_class\n(\n$document\n-\nsource\n)\n.\n with ID \n.\n$document\n-\nsource\n-\nid\n.\nPHP_EOL\n;\n\n        \necho\n \n$document\n-\nerror\n-\ngetMessage\n()\n.\n in \n.\n$document\n-\nerror\n-\ngetFile\n()\n.\n at \n.\n$document\n-\nerror\n-\ngetLine\n()\n.\nPHP_EOL\n;\n\n    \n}\n\n\n}\n\n\n\n\n\n\nCommand Line Interface\n\n\nA synchronization can be ran using the CLI when working with Symfony Console.\n\n\n\n\nRead more", 
+            "title": "Synchronization"
+        }, 
+        {
+            "location": "/projection/synchronization/#projection-synchronization", 
+            "text": "MsgPhp\\Domain\\Projection\\DomainProjectionSynchronization  is a utility domain service. Its purpose is to ease\nsynchronizing provided  projections .  So called  providers  actually provide domain objects, which are in turn transformed to  documents  using\nany  transformer . A document is then stored using any  repository .", 
+            "title": "Projection synchronization"
+        }, 
+        {
+            "location": "/projection/synchronization/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/projection/synchronization/#synchronize-iterable", 
+            "text": "Yields a projection document for each provided domain object regarding its state. The actual document status can be\nread from  ProjectionDocument::$status .", 
+            "title": "synchronize(): iterable"
+        }, 
+        {
+            "location": "/projection/synchronization/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocumentTransformerInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionRepositoryInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionSynchronization ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionTypeRegistryInterface ;  // --- SETUP ---  class   MyEntity  { \n     public   $id ; \n\n     public   function   __construct ( $id ) \n     { \n         $this - id   =   $id ; \n     }  }  /** @var DomainProjectionDocumentTransformerInterface $transformer */  $transformer   =   ... ;  /** @var DomainProjectionTypeRegistryInterface $typeRegistry */  $typeRegistry   =   ... ;  /** @var DomainProjectionRepositoryInterface $repository */  $repository   =   ... ;  $synchronization   =   new   DomainProjectionSynchronization ( $typeRegistry ,   $repository ,   $transformer ,   [ \n     function   () :   iterable   { \n         yield   new   MyEntity ( 1 ); \n         yield   new   MyEntity ( 2 ); \n     },  ]);  // --- USAGE ---  foreach   ( $synchronization - synchronize ()   as   $document )   { \n     if   ( DomainProjectionDocument :: STATUS_VALID   ===   $document - status )   { \n         echo   Synchronized projection for  . get_class ( $document - source ) .  with ID  . $document - source - id . PHP_EOL ; \n         continue ; \n     } \n\n     echo   Invalid projection for  . get_class ( $document - source ) .  with ID  . $document - source - id . PHP_EOL ; \n\n     if   ( null   !==   $document - error )   { \n         echo   An error occurred for  . get_class ( $document - source ) .  with ID  . $document - source - id . PHP_EOL ; \n         echo   $document - error - getMessage () .  in  . $document - error - getFile () .  at  . $document - error - getLine () . PHP_EOL ; \n     }  }", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/projection/synchronization/#command-line-interface", 
+            "text": "A synchronization can be ran using the CLI when working with Symfony Console.   Read more", 
+            "title": "Command Line Interface"
+        }, 
+        {
+            "location": "/infrastructure/api-platform/", 
+            "text": "API Platform\n\n\nAn overview of available infrastructural code when using \nAPI Platform\n.\n\n\n\n\nRequires \napi-platform/core\n\n\n\n\nDomain projection data provider\n\n\nWhen working with \nprojections\n an \nAPI Data Provider\n is provided by \nMsgPhp\\Domain\\Infra\\ApiPlatform\\DomainProjectionDataProvider\n.\nIt uses any \nprojection repository\n in an effort to provide API resources. \n\n\nMinimal configuration\n\n\nSee also \nAPI Platform Configuration\n.\n\n\napi_platform\n:\n\n    \nresource_class_directories\n:\n\n        \n-\n \n%kernel.project_dir%/src/Api/Projection\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nnamespace\n \nApp\\Api\\Projection\n;\n\n\n\nuse\n \nApiPlatform\\Core\\Annotation\\ApiProperty\n;\n\n\nuse\n \nApiPlatform\\Core\\Annotation\\ApiResource\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\n\n/**\n\n\n * @ApiResource(shortName=\nSome\n)\n\n\n */\n\n\nclass\n \nSomeProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \n/**\n\n\n     * @ApiProperty(identifier=true)\n\n\n     */\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n$projection\n \n=\n \nnew\n \nself\n();\n\n        \n$projection\n-\nid\n \n=\n \n$document\n[\nid\n]\n \n??\n \nnull\n;\n\n\n        \nreturn\n \n$projection\n;\n\n    \n}\n\n\n}", 
+            "title": "API Platform"
+        }, 
+        {
+            "location": "/infrastructure/api-platform/#api-platform", 
+            "text": "An overview of available infrastructural code when using  API Platform .   Requires  api-platform/core", 
+            "title": "API Platform"
+        }, 
+        {
+            "location": "/infrastructure/api-platform/#domain-projection-data-provider", 
+            "text": "When working with  projections  an  API Data Provider  is provided by  MsgPhp\\Domain\\Infra\\ApiPlatform\\DomainProjectionDataProvider .\nIt uses any  projection repository  in an effort to provide API resources.", 
+            "title": "Domain projection data provider"
+        }, 
+        {
+            "location": "/infrastructure/api-platform/#minimal-configuration", 
+            "text": "See also  API Platform Configuration .  api_platform : \n     resource_class_directories : \n         -   %kernel.project_dir%/src/Api/Projection", 
+            "title": "Minimal configuration"
+        }, 
+        {
+            "location": "/infrastructure/api-platform/#basic-example", 
+            "text": "?php  namespace   App\\Api\\Projection ;  use   ApiPlatform\\Core\\Annotation\\ApiProperty ;  use   ApiPlatform\\Core\\Annotation\\ApiResource ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  /**   * @ApiResource(shortName= Some )   */  class   SomeProjection   implements   DomainProjectionInterface  { \n     /**       * @ApiProperty(identifier=true)       */ \n     public   $id ; \n\n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         $projection   =   new   self (); \n         $projection - id   =   $document [ id ]   ??   null ; \n\n         return   $projection ; \n     }  }", 
             "title": "Basic example"
         }, 
         {
@@ -821,14 +1041,84 @@
             "title": "Basic example"
         }, 
         {
+            "location": "/infrastructure/elasticsearch/", 
+            "text": "Elasticsearch\n\n\nAn overview of available infrastructural code when using Elasticsearch's \nPHP Api\n.\n\n\n\n\nRequires \nelasticsearch/elasticsearch\n\n\n\n\nDomain projection type registry\n\n\nAn Elasticsearch tailored \ndomain projection type registry\n is provided by \nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry\n.\nIt works directly with any \nClient\n and a known configuration of type information.\n\n\n\n\n__construct(Client $client, string $index, array $mappings, array $settings = [], LoggerInterface $logger = null)\n\n\n$client\n: The Client to work with\n\n\n$index\n: The index to use\n\n\n$mappings\n / \n$settings\n: Index management information. \nRead more\n\n\n$logger\n: An optional \nPSR logger\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nElasticsearch\\Client\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n/** @var Client $client */\n\n\n$client\n \n=\n \n...\n;\n\n\n$typeRegistry\n \n=\n \nnew\n \nDomainProjectionTypeRegistry\n(\n$client\n,\n \nsome_index\n,\n \n[\n\n    \nMyProjection\n::\nclass\n \n=\n \n[\n\n        \nsome_field\n \n=\n \nnull\n,\n \n// defaults to [\ntype\n =\n \ntext\n]\n\n        \nother_field\n \n=\n \nsome\n,\n \n// defaults to [\ntype\n =\n \nsome\n]\n\n        \nother_field2\n \n=\n \n[\n\n            \n// ...\n\n        \n],\n\n    \n],\n\n\n]);\n\n\n\n\n\n\nDomain projection repository\n\n\nAn Elasticsearch tailored \ndomain projection repository\n is provided by \nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository\n.\nIt works directly with any \nClient\n.\n\n\n\n\n__construct(Client $client, string $index)\n\n\n$client\n: The Client to work with\n\n\n$index\n: The index to use\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nElasticsearch\\Client\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository\n;\n\n\n\n// --- SETUP ---\n\n\n\n/** @var Client $client */\n\n\n$client\n \n=\n \n...\n;\n\n\n$repository\n \n=\n \nnew\n \nDomainProjectionRepository\n(\n$client\n,\n \nsome_index\n);", 
+            "title": "Elasticsearch"
+        }, 
+        {
+            "location": "/infrastructure/elasticsearch/#elasticsearch", 
+            "text": "An overview of available infrastructural code when using Elasticsearch's  PHP Api .   Requires  elasticsearch/elasticsearch", 
+            "title": "Elasticsearch"
+        }, 
+        {
+            "location": "/infrastructure/elasticsearch/#domain-projection-type-registry", 
+            "text": "An Elasticsearch tailored  domain projection type registry  is provided by  MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry .\nIt works directly with any  Client  and a known configuration of type information.   __construct(Client $client, string $index, array $mappings, array $settings = [], LoggerInterface $logger = null)  $client : The Client to work with  $index : The index to use  $mappings  /  $settings : Index management information.  Read more  $logger : An optional  PSR logger", 
+            "title": "Domain projection type registry"
+        }, 
+        {
+            "location": "/infrastructure/elasticsearch/#basic-example", 
+            "text": "?php  use   Elasticsearch\\Client ;  use   MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionTypeRegistry ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  /** @var Client $client */  $client   =   ... ;  $typeRegistry   =   new   DomainProjectionTypeRegistry ( $client ,   some_index ,   [ \n     MyProjection :: class   =   [ \n         some_field   =   null ,   // defaults to [ type  =   text ] \n         other_field   =   some ,   // defaults to [ type  =   some ] \n         other_field2   =   [ \n             // ... \n         ], \n     ],  ]);", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/infrastructure/elasticsearch/#domain-projection-repository", 
+            "text": "An Elasticsearch tailored  domain projection repository  is provided by  MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository .\nIt works directly with any  Client .   __construct(Client $client, string $index)  $client : The Client to work with  $index : The index to use", 
+            "title": "Domain projection repository"
+        }, 
+        {
+            "location": "/infrastructure/elasticsearch/#basic-example_1", 
+            "text": "?php  use   Elasticsearch\\Client ;  use   MsgPhp\\Domain\\Infra\\Elasticsearch\\DomainProjectionRepository ;  // --- SETUP ---  /** @var Client $client */  $client   =   ... ;  $repository   =   new   DomainProjectionRepository ( $client ,   some_index );", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/infrastructure/psr-container/", 
+            "text": "PSR Container\n\n\nAn overview of available infrastructural code when using PSR \nContainers\n, also known as PSR-11.\n\n\n\n\nRequires \npsr/container\n\n\n\n\nDomain projection document transformer\n\n\nA PSR tailored \ndomain projection document transformer\n is provided by \nMsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer\n.\nIt decorates any \nContainerInterface\n and uses callable factories as container entries, identified by a\ndomain object class name.\n\n\n\n\n__construct(ContainerInterface $container)\n\n\n$container\n: The decorated container\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer\n;\n\n\nuse\n \nPsr\\Container\\ContainerInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n\n}\n\n\n\n/** @var ContainerInterface $container */\n\n\n$container\n \n=\n \n...\n;\n\n\n$transformer\n \n=\n \nnew\n \nDomainProjectionDocumentTransformer\n(\n$container\n);\n\n\n\n// --- USAGE ---\n\n\n\n$document\n \n=\n \n$transformer\n-\ntransform\n(\nnew\n \nMyEntity\n());\n\n\n\n\n\n\nManual container example\n\n\nIn practice you often get a \n$container\n from configuration, e.g. when working with Symfony's \nService Locators\n. This\nexample shows how to manually create a container using PHP7 anonymous classes.\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer\n;\n\n\nuse\n \nPsr\\Container\\ContainerInterface\n;\n\n\nuse\n \nPsr\\Container\\NotFoundExceptionInterface\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$someField\n;\n\n\n}\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n$container\n \n=\n \nnew\n \nclass\n()\n \nimplements\n \nContainerInterface\n \n{\n\n    \npublic\n \nfunction\n \nhas\n(\n$id\n)\n\n    \n{\n\n        \nreturn\n \nMyEntity\n::\nclass\n \n===\n \n$id\n;\n\n    \n}\n\n\n    \npublic\n \nfunction\n \nget\n(\n$id\n)\n\n    \n{\n\n        \nif\n \n(\n!\n$this\n-\nhas\n(\n$id\n))\n \n{\n\n            \nthrow\n \nnew\n \nclass\n(\nEntry not found\n)\n \nextends\n \n\\RuntimeException\n \nimplements\n \nNotFoundExceptionInterface\n \n{\n\n            \n};\n\n        \n}\n\n\n        \nreturn\n \nfunction\n \n(\nMyEntity\n \n$object\n)\n \n{\n\n            \n$document\n \n=\n \nDomainProjectionDocument\n::\ncreate\n(\nMyProjection\n::\nclass\n,\n \nnull\n,\n \n[\n\n                \nsome_field\n \n=\n \n$object\n-\nsomeField\n,\n\n            \n]);\n\n            \n$document\n-\nsource\n \n=\n \n$object\n;\n\n\n            \nreturn\n \n$document\n;\n\n        \n};\n\n    \n}\n\n\n};\n\n\n$transformer\n \n=\n \nnew\n \nDomainProjectionDocumentTransformer\n(\n$container\n);", 
+            "title": "PSR Container"
+        }, 
+        {
+            "location": "/infrastructure/psr-container/#psr-container", 
+            "text": "An overview of available infrastructural code when using PSR  Containers , also known as PSR-11.   Requires  psr/container", 
+            "title": "PSR Container"
+        }, 
+        {
+            "location": "/infrastructure/psr-container/#domain-projection-document-transformer", 
+            "text": "A PSR tailored  domain projection document transformer  is provided by  MsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer .\nIt decorates any  ContainerInterface  and uses callable factories as container entries, identified by a\ndomain object class name.   __construct(ContainerInterface $container)  $container : The decorated container", 
+            "title": "Domain projection document transformer"
+        }, 
+        {
+            "location": "/infrastructure/psr-container/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer ;  use   Psr\\Container\\ContainerInterface ;  // --- SETUP ---  class   MyEntity  {  }  /** @var ContainerInterface $container */  $container   =   ... ;  $transformer   =   new   DomainProjectionDocumentTransformer ( $container );  // --- USAGE ---  $document   =   $transformer - transform ( new   MyEntity ());", 
+            "title": "Basic example"
+        }, 
+        {
+            "location": "/infrastructure/psr-container/#manual-container-example", 
+            "text": "In practice you often get a  $container  from configuration, e.g. when working with Symfony's  Service Locators . This\nexample shows how to manually create a container using PHP7 anonymous classes.  ?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  use   MsgPhp\\Domain\\Infra\\Psr\\DomainProjectionDocumentTransformer ;  use   Psr\\Container\\ContainerInterface ;  use   Psr\\Container\\NotFoundExceptionInterface ;  // --- SETUP ---  class   MyEntity  { \n     public   $someField ;  }  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  $container   =   new   class ()   implements   ContainerInterface   { \n     public   function   has ( $id ) \n     { \n         return   MyEntity :: class   ===   $id ; \n     } \n\n     public   function   get ( $id ) \n     { \n         if   ( ! $this - has ( $id ))   { \n             throw   new   class ( Entry not found )   extends   \\RuntimeException   implements   NotFoundExceptionInterface   { \n             }; \n         } \n\n         return   function   ( MyEntity   $object )   { \n             $document   =   DomainProjectionDocument :: create ( MyProjection :: class ,   null ,   [ \n                 some_field   =   $object - someField , \n             ]); \n             $document - source   =   $object ; \n\n             return   $document ; \n         }; \n     }  };  $transformer   =   new   DomainProjectionDocumentTransformer ( $container );", 
+            "title": "Manual container example"
+        }, 
+        {
             "location": "/infrastructure/symfony-console/", 
-            "text": "Symfony Console\n\n\nAn overview of available infrastructural code when using \nSymfony Console\n.\n\n\n\n\nRequires \nsymfony/console\n\n\n\n\nContext factory\n\n\nA context factory is bound to \nMsgPhp\\Domain\\Infra\\Console\\Context\\ContextFactoryInterface\n. Its purpose is to leverage\na CLI command in an effort to interactively built an arbitrary array value (the context).\n\n\nAPI\n\n\nconfigure(InputDefinition $definition): void\n\n\nConfigure a command input definition. See also \nInputDefinition\n. Should be called before using\n\ngetContext()\n.\n\n\n\n\ngetContext(InputInterface $input, StyleInterface $io, array $values = []): array\n\n\nResolve the actual context from the console IO. See also \nInputInterface\n and \nStyleInterface\n.\nAny element value provided by \n$values\n takes precedence and should be used as-is.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextFactory\n\n\nFactorizes a context based on any class method signature. It configures the CLI signature by mapping required class\nmethod arguments to command arguments, whereas optional ones are mapped to command options.\n\n\nbin/console \ncommand\n --optional-argument \n[\n--\n]\n required-argument\n\n\n\n\n\nIn both cases a value is optional, if the actual class method argument is required and no value is given it will be\nasked interactively. If interaction is not possible an exception will be thrown instead.\n\n\n\n\n__construct(string $class, string $method, array $classMapping = [], int $flags = 0, ClassContextElementFactoryInterface $elementFactory = null)\n\n\n$class / $method\n: The class method to resolve\n\n\n$classMapping\n: Global class mapping. Usually used to map abstracts to concretes.\n\n\n$flags\n: A bit mask value to toggle various flags\n\n\nClassContextBuilder::ALWAYS_OPTIONAL\n: Always map class method arguments to command options\n\n\nClassContextBuilder::NO_DEFAULTS\n: Leave out default values when calling \ngetContext()\n\n\nClassContextBuilder::REUSE_DEFINITION\n: Reuse the original input definition for matching class method\n   arguments\n\n\n\n\n\n\n$elementFactory\n: A custom element factory to use. See also \nCustomizing context elements\n.\n\n\n\n\n\n\n\n\nCustomizing context elements\n\n\nPer-element configuration can be provided by implementing a \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextElementFactoryInterface\n.\n\n\n\n\ngetElement(string $class, string $method, string $argument): ContextElement\n\n\nGet a custom \nContextElement\n to apply to a specific class/method/argument pair\n\n\n\n\n\n\n\n\nA default implementation is provided by \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextElementFactory\n which simply\ntransforms argument names to human readable values so that \n$argumentName\n becomes \nArgument Name\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextFactory\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Command\\Command\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Input\\InputInterface\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Output\\OutputInterface\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Style\\SymfonyStyle\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyObject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \n$option\n \n=\n \nnull\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyCommand\n \nextends\n \nCommand\n\n\n{\n\n    \nprivate\n \n$contextFactory\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n()\n\n    \n{\n\n        \n$this\n-\ncontextFactory\n \n=\n \nnew\n \nClassContextFactory\n(\nMyObject\n::\nclass\n,\n \n__construct\n);\n\n\n        \nparent\n::\n__construct\n();\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \nconfigure\n()\n:\n \nvoid\n\n    \n{\n\n       \n$this\n-\nsetName\n(\nmy-command\n);\n\n       \n$this\n-\ncontextFactory\n-\nconfigure\n(\n$this\n-\ngetDefinition\n());\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \nexecute\n(\nInputInterface\n \n$input\n,\nOutputInterface\n \n$output\n)\n:\n \nint\n\n    \n{\n\n        \n$io\n \n=\n \nnew\n \nSymfonyStyle\n(\n$input\n,\n \n$output\n);\n\n        \n$context\n \n=\n \n$this\n-\ncontextFactory\n-\ngetContext\n(\n$input\n,\n \n$io\n);\n\n        \n$object\n \n=\n \nnew\n \nMyObject\n(\n...\narray_values\n(\n$context\n));\n\n\n        \n// do something\n\n\n        \nreturn\n \n0\n;\n\n    \n}\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n// $ bin/console my-command [--option=OPTION] [--] [\nargument\n]\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Console\\Context\\DoctrineEntityContextFactory\n\n\nA \nDoctrine\n entity aware context factory. It decorates any context factory. Its purpose is to\nprovide a discriminator value into the resulting context when working with \ninheritance\n.\n\n\n\n\n__construct(ContextFactoryInterface $factory, EntityManagerInterface $em, string $class)\n\n\n$factory\n: The decorated context factory\n\n\n$em\n: The entity manager to use\n\n\n$class\n: The entity class to use", 
+            "text": "Symfony Console\n\n\nAn overview of available infrastructural code when using \nSymfony Console\n.\n\n\n\n\nRequires \nsymfony/console\n\n\n\n\nCommands\n\n\nVarious standard \nconsole commands\n are provided depending on used domain infrastructure. They are defined in the\n\nMsgPhp\\Domain\\Infra\\Console\\Command\\\n namespace.\n\n\nInitializeDomainProjectionTypesCommand\n\n\nInitializes a \nprojection type registry\n.\n\n\nbin/console domain:projection:initialize-types \n[\n--force\n]\n\n\n\n\n\n\nSynchronizeDomainProjectionsCommand\n\n\nSynchronizes domain objects and their \nprojections\n using the \nprojection synchronization\n\nutility service.\n\n\nbin/console domain:projection:synchronize\n\n\n\n\n\nContext factory\n\n\nA context factory is bound to \nMsgPhp\\Domain\\Infra\\Console\\Context\\ContextFactoryInterface\n. Its purpose is to leverage\na CLI command in an effort to interactively built an arbitrary array value (the context).\n\n\nAPI\n\n\nconfigure(InputDefinition $definition): void\n\n\nConfigure a command input definition. See also \nInputDefinition\n. Should be called before using\n\ngetContext()\n.\n\n\n\n\ngetContext(InputInterface $input, StyleInterface $io, array $values = []): array\n\n\nResolve the actual context from the console IO. See also \nInputInterface\n and \nStyleInterface\n.\nAny element value provided by \n$values\n takes precedence and should be used as-is.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextFactory\n\n\nFactorizes a context based on any class method signature. It configures the CLI signature by mapping required class\nmethod arguments to command arguments, whereas optional ones are mapped to command options.\n\n\nbin/console \ncommand\n --optional-argument \n[\n--\n]\n required-argument\n\n\n\n\n\nIn both cases a value is optional, if the actual class method argument is required and no value is given it will be\nasked interactively. If interaction is not possible an exception will be thrown instead.\n\n\n\n\n__construct(string $class, string $method, array $classMapping = [], int $flags = 0, ClassContextElementFactoryInterface $elementFactory = null)\n\n\n$class / $method\n: The class method to resolve\n\n\n$classMapping\n: Global class mapping. Usually used to map abstracts to concretes.\n\n\n$flags\n: A bit mask value to toggle various flags\n\n\nClassContextBuilder::ALWAYS_OPTIONAL\n: Always map class method arguments to command options\n\n\nClassContextBuilder::NO_DEFAULTS\n: Leave out default values when calling \ngetContext()\n\n\nClassContextBuilder::REUSE_DEFINITION\n: Reuse the original input definition for matching class method\n   arguments\n\n\n\n\n\n\n$elementFactory\n: A custom element factory to use. See also \nCustomizing context elements\n.\n\n\n\n\n\n\n\n\nCustomizing context elements\n\n\nPer-element configuration can be provided by implementing a \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextElementFactoryInterface\n.\n\n\n\n\ngetElement(string $class, string $method, string $argument): ContextElement\n\n\nGet a custom \nContextElement\n to apply to a specific class/method/argument pair\n\n\n\n\n\n\n\n\nA default implementation is provided by \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextElementFactory\n which simply\ntransforms argument names to human readable values so that \n$argumentName\n becomes \nArgument Name\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Console\\Context\\ClassContextFactory\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Command\\Command\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Input\\InputInterface\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Output\\OutputInterface\n;\n\n\nuse\n \nSymfony\\Component\\Console\\Style\\SymfonyStyle\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyObject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \n$option\n \n=\n \nnull\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyCommand\n \nextends\n \nCommand\n\n\n{\n\n    \nprivate\n \n$contextFactory\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n()\n\n    \n{\n\n        \n$this\n-\ncontextFactory\n \n=\n \nnew\n \nClassContextFactory\n(\nMyObject\n::\nclass\n,\n \n__construct\n);\n\n\n        \nparent\n::\n__construct\n();\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \nconfigure\n()\n:\n \nvoid\n\n    \n{\n\n       \n$this\n-\nsetName\n(\nmy-command\n);\n\n       \n$this\n-\ncontextFactory\n-\nconfigure\n(\n$this\n-\ngetDefinition\n());\n\n    \n}\n\n\n    \nprotected\n \nfunction\n \nexecute\n(\nInputInterface\n \n$input\n,\nOutputInterface\n \n$output\n)\n:\n \nint\n\n    \n{\n\n        \n$io\n \n=\n \nnew\n \nSymfonyStyle\n(\n$input\n,\n \n$output\n);\n\n        \n$context\n \n=\n \n$this\n-\ncontextFactory\n-\ngetContext\n(\n$input\n,\n \n$io\n);\n\n        \n$object\n \n=\n \nnew\n \nMyObject\n(\n...\narray_values\n(\n$context\n));\n\n\n        \n// do something\n\n\n        \nreturn\n \n0\n;\n\n    \n}\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n// $ bin/console my-command [--option=OPTION] [--] [\nargument\n]\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Console\\Context\\DoctrineEntityContextFactory\n\n\nA \nDoctrine\n entity aware context factory. It decorates any context factory. Its purpose is to\nprovide a discriminator value into the resulting context when working with \ninheritance\n.\n\n\n\n\n__construct(ContextFactoryInterface $factory, EntityManagerInterface $em, string $class)\n\n\n$factory\n: The decorated context factory\n\n\n$em\n: The entity manager to use\n\n\n$class\n: The entity class to use", 
             "title": "Symfony Console"
         }, 
         {
             "location": "/infrastructure/symfony-console/#symfony-console", 
             "text": "An overview of available infrastructural code when using  Symfony Console .   Requires  symfony/console", 
             "title": "Symfony Console"
+        }, 
+        {
+            "location": "/infrastructure/symfony-console/#commands", 
+            "text": "Various standard  console commands  are provided depending on used domain infrastructure. They are defined in the MsgPhp\\Domain\\Infra\\Console\\Command\\  namespace.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/infrastructure/symfony-console/#initializedomainprojectiontypescommand", 
+            "text": "Initializes a  projection type registry .  bin/console domain:projection:initialize-types  [ --force ]", 
+            "title": "InitializeDomainProjectionTypesCommand"
+        }, 
+        {
+            "location": "/infrastructure/symfony-console/#synchronizedomainprojectionscommand", 
+            "text": "Synchronizes domain objects and their  projections  using the  projection synchronization \nutility service.  bin/console domain:projection:synchronize", 
+            "title": "SynchronizeDomainProjectionsCommand"
         }, 
         {
             "location": "/infrastructure/symfony-console/#context-factory", 
@@ -874,6 +1164,26 @@
             "location": "/infrastructure/symfony-console/#msgphpdomaininfraconsolecontextdoctrineentitycontextfactory", 
             "text": "A  Doctrine  entity aware context factory. It decorates any context factory. Its purpose is to\nprovide a discriminator value into the resulting context when working with  inheritance .   __construct(ContextFactoryInterface $factory, EntityManagerInterface $em, string $class)  $factory : The decorated context factory  $em : The entity manager to use  $class : The entity class to use", 
             "title": "MsgPhp\\Domain\\Infra\\Console\\Context\\DoctrineEntityContextFactory"
+        }, 
+        {
+            "location": "/infrastructure/uuid/", 
+            "text": "Universally Unique Identifier\n\n\nAn overview of available infrastructural code when working with \nUUIDs\n.\n\n\n\n\nRequires \nramsey/uuid\n\n\n\n\nDomain identifier\n\n\nA UUID tailored \ndomain identifier\n is provided by \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n. It\nleverages type \nRamsey\\Uuid\\UuidInterface\n as underlying data type.\n\n\n\n\n__construct(UuidInterface $uuid = null)\n\n\n$uuid\n: The underlying UUID. In case of \nnull\n a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.\n\n\n\n\n\n\n\n\nSee also the \nreference\n page for all available UUID identifiers provided per domain.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n;\n\n\nuse\n \nRamsey\\Uuid\\Uuid\n;\n\n\n\n// --- SETUP ---\n\n\n\n$id\n \n=\n \nnew\n \nDomainId\n();\n \n// a new UUID version 4 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nuuid1\n());\n \n// UUID version 1 value\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\nUuid\n::\nfromString\n(\n00000000-0000-0000-0000-000000000000\n));\n \n// Nil UUID value\n\n\n\n// static\n\n\n\n$id\n \n=\n \nDomainId\n::\nfromValue\n(\n00000000-0000-0000-0000-000000000000\n);", 
+            "title": "UUID"
+        }, 
+        {
+            "location": "/infrastructure/uuid/#universally-unique-identifier", 
+            "text": "An overview of available infrastructural code when working with  UUIDs .   Requires  ramsey/uuid", 
+            "title": "Universally Unique Identifier"
+        }, 
+        {
+            "location": "/infrastructure/uuid/#domain-identifier", 
+            "text": "A UUID tailored  domain identifier  is provided by  MsgPhp\\Domain\\Infra\\Uuid\\DomainId . It\nleverages type  Ramsey\\Uuid\\UuidInterface  as underlying data type.   __construct(UuidInterface $uuid = null)  $uuid : The underlying UUID. In case of  null  a UUID version 4 value is generated upfront. Meaning the\n  identifier will never be considered empty.     See also the  reference  page for all available UUID identifiers provided per domain.", 
+            "title": "Domain identifier"
+        }, 
+        {
+            "location": "/infrastructure/uuid/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\Uuid\\DomainId ;  use   Ramsey\\Uuid\\Uuid ;  // --- SETUP ---  $id   =   new   DomainId ();   // a new UUID version 4 value  $id   =   new   DomainId ( Uuid :: uuid1 ());   // UUID version 1 value  $id   =   new   DomainId ( Uuid :: fromString ( 00000000-0000-0000-0000-000000000000 ));   // Nil UUID value  // static  $id   =   DomainId :: fromValue ( 00000000-0000-0000-0000-000000000000 );", 
+            "title": "Basic example"
         }, 
         {
             "location": "/cookbook/bundle-installation/", 
@@ -957,7 +1267,7 @@
         }, 
         {
             "location": "/reference/entities/", 
-            "text": "Domain entities\n\n\nReference of available \nentities\n per domain.\n\n\nBase domain\n\n\nEntity fields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nEntity features\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nEAV domain\n\n\nEntity fields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributeValueField\n\n\n\n\nMapped super classes\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\n\nUser domain\n\n\nEntity fields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nEntity features\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\n\n\nCredentials\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential\n\n\n\n\nMapped super classes\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\nMsgPhp\\User\\Entity\\User\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\n\n\nEntities\n\n\n\n\nMsgPhp\\User\\Entity\\Username", 
+            "text": "Domain entities\n\n\nReference of available \nentities\n per domain.\n\n\nBase domain\n\n\nEntity fields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nEntity features\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nEAV domain\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\n\u2714\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\u2714\n\n\n\u2714\n\n\n\n\n\n\n\n\nEntity fields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributeValueField\n\n\n\n\nUser domain\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\n\u2714\n\n\n\u2717\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\User\n\n\n\u2714\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\n\u2714\n\n\n\u2717\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\n\u2714\n\n\n\u2717\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\u2717\n\n\n\u2717\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\n\u2714\n\n\n\u2717\n\n\n\n\n\n\n\n\nEntity fields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nEntity features\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\n\n\nCredential types\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
             "title": "Domain entities"
         }, 
         {
@@ -986,19 +1296,24 @@
             "title": "EAV domain"
         }, 
         {
+            "location": "/reference/entities/#entities", 
+            "text": "Class  Abstract  Required      MsgPhp\\Eav\\Entity\\Attribute  \u2714  \u2714    MsgPhp\\Eav\\Entity\\AttributeValue  \u2714  \u2714", 
+            "title": "Entities"
+        }, 
+        {
             "location": "/reference/entities/#entity-fields_1", 
             "text": "MsgPhp\\Eav\\Entity\\Fields\\AttributesField  MsgPhp\\Eav\\Entity\\Fields\\AttributeValueField", 
             "title": "Entity fields"
         }, 
         {
-            "location": "/reference/entities/#mapped-super-classes", 
-            "text": "MsgPhp\\Eav\\Entity\\Attribute  MsgPhp\\Eav\\Entity\\AttributeValue", 
-            "title": "Mapped super classes"
-        }, 
-        {
             "location": "/reference/entities/#user-domain", 
             "text": "", 
             "title": "User domain"
+        }, 
+        {
+            "location": "/reference/entities/#entities_1", 
+            "text": "Class  Abstract  Required      MsgPhp\\User\\Entity\\Role  \u2714  \u2717    MsgPhp\\User\\Entity\\User  \u2714  \u2714    MsgPhp\\User\\Entity\\UserAttributeValue  \u2714  \u2717    MsgPhp\\User\\Entity\\UserEmail  \u2714  \u2717    MsgPhp\\User\\Entity\\Username  \u2717  \u2717    MsgPhp\\User\\Entity\\UserRole  \u2714  \u2717", 
+            "title": "Entities"
         }, 
         {
             "location": "/reference/entities/#entity-fields_2", 
@@ -1011,19 +1326,9 @@
             "title": "Entity features"
         }, 
         {
-            "location": "/reference/entities/#credentials", 
+            "location": "/reference/entities/#credential-types", 
             "text": "MsgPhp\\User\\Entity\\Features\\EmailCredential  MsgPhp\\User\\Entity\\Features\\EmailPasswordCredential  MsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameCredential  MsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\TokenCredential", 
-            "title": "Credentials"
-        }, 
-        {
-            "location": "/reference/entities/#mapped-super-classes_1", 
-            "text": "MsgPhp\\User\\Entity\\Role  MsgPhp\\User\\Entity\\User  MsgPhp\\User\\Entity\\UserAttributeValue  MsgPhp\\User\\Entity\\UserEmail  MsgPhp\\User\\Entity\\UserRole", 
-            "title": "Mapped super classes"
-        }, 
-        {
-            "location": "/reference/entities/#entities", 
-            "text": "MsgPhp\\User\\Entity\\Username", 
-            "title": "Entities"
+            "title": "Credential types"
         }, 
         {
             "location": "/reference/doctrine-identifier-types/", 
