@@ -1164,11 +1164,11 @@ utility service.</p>
 a CLI command in an effort to interactively built an arbitrary array value (the context).</p>
 <h3 id="api">API</h3>
 <h4 id="configureinputdefinition-definition-void"><code>configure(InputDefinition $definition): void</code></h4>
-<p>Configure a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>. Should be called before using
+<p>Configures a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>. Should be called before using
 <code>getContext()</code>.</p>
 <hr />
 <h4 id="getcontextinputinterface-input-styleinterface-io-array-values-array"><code>getContext(InputInterface $input, StyleInterface $io, array $values = []): array</code></h4>
-<p>Resolve the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.
+<p>Resolves the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.
 Any element value provided by <code>$values</code> takes precedence and should be used as-is.</p>
 <h3 id="implementations">Implementations</h3>
 <h4 id="msgphpdomaininfraconsolecontextclasscontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</code></h4>

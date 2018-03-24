@@ -1065,19 +1065,19 @@
 is to store and query <a href="../documents/">projection documents</a>.</p>
 <h2 id="api">API</h2>
 <h3 id="findallstring-type-int-offset-0-int-limit-0-iterable"><code>findAll(string $type, int $offset = 0, int $limit = 0): iterable</code></h3>
-<p>Find all <a href="../models/">projections</a> by type.</p>
+<p>Finds all <a href="../models/">projections</a> by type.</p>
 <hr />
 <h3 id="findstring-type-string-id-domainprojectioninterface"><code>find(string $type, string $id): ?DomainProjectionInterface</code></h3>
-<p>Find a single <a href="../models/">projection</a> by type and ID. In case its document cannot be found <code>null</code> should be returned.</p>
+<p>Finds a single <a href="../models/">projection</a> by type and ID. In case its document cannot be found <code>null</code> should be returned.</p>
 <hr />
 <h3 id="clearstring-type-void"><code>clear(string $type): void</code></h3>
-<p>Delete all projection documents by type.</p>
+<p>Deletes all projection documents by type.</p>
 <hr />
 <h3 id="savedomainprojectiondocument-document-void"><code>save(DomainProjectionDocument $document): void</code></h3>
-<p>Save a projection document. The document will be available on any subsequent query.</p>
+<p>Saves a projection document. The document will be available on any subsequent query.</p>
 <hr />
 <h3 id="deletedomainprojectiondocument-document-void"><code>delete(DomainProjectionDocument $document): void</code></h3>
-<p>Delete a projection document. The document will be unavailable on any subsequent query.</p>
+<p>Deletes a projection document. The document will be unavailable on any subsequent query.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaininfraelasticsearchdomainprojectionrepository"><code>MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionRepository</code></h3>
 <p>An Elasticsearch tailored projection repository.</p>

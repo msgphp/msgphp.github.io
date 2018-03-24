@@ -1082,14 +1082,14 @@
 <p>Inherited from <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface::create()</code>.</p>
 <hr />
 <h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code></h3>
-<p>Factorize a reference object for a known existing entity object. The object must be of type <code>$class</code>. Any type of
-<a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
+<p>Returns a factorized reference object for a known existing entity object. The object must be of type <code>$class</code>. Any type
+of <a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
 <hr />
 <h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code></h3>
-<p>Factorize an <a href="../../identifiers/">identifier</a> for the given entity class from a known primitive value.</p>
+<p>Returns a factorized <a href="../../identifiers/">identifier</a> for the given entity class from a known primitive value.</p>
 <hr />
 <h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
-<p>Factorize the next <a href="../../identifiers/">identifier</a> for the given entity class. Depending on the implementation its value
+<p>Returns the nex <a href="../../identifiers/">identifier</a> for the given entity class. Depending on the implementation its value
 might be considered empty if it's not capable to calculate one upfront.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code></h3>
