@@ -91,20 +91,6 @@
 
             <table class="table table-condensed">
                     <tr>
-                <td>DATA_TYPE_KEY</td>
-                <td class="last">
-                    <p><em></em></p>
-                    <p></p>
-                </td>
-            </tr>
-                    <tr>
-                <td>DATA_ID_KEY</td>
-                <td class="last">
-                    <p><em></em></p>
-                    <p></p>
-                </td>
-            </tr>
-                    <tr>
                 <td>STATUS_UNKNOWN</td>
                 <td class="last">
                     <p><em></em></p>
@@ -147,14 +133,6 @@
                 <td></td>
             </tr>
                     <tr>
-                <td class="type" id="property_data">
-                                                                                array
-                </td>
-                <td>$data</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-                    <tr>
                 <td class="type" id="property_source">
                                                                                 object|null
                 </td>
@@ -178,10 +156,10 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_create">create</a>(string $type, string $id = null, array $body = [])
+                    <a href="#method___construct">__construct</a>(string $type = null, string $id = null, array $body = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -220,6 +198,17 @@
                                     </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toProjection">toProjection</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -227,10 +216,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_create">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L32">line 32</a></div>
-        <code>        static            
-    <strong>create</strong>(string $type, string $id = null, array $body = [])
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L30">line 30</a></div>
+        <code>                    
+    <strong>__construct</strong>(string $type = null, string $id = null, array $body = [])
         </code>
     </h3>
     <div class="details">
@@ -267,7 +256,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getType">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L37">line 37</a></div>
         <code>                    
     <strong>getType</strong>()
         </code>
@@ -286,7 +275,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getId">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L55">line 55</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L50">line 50</a></div>
         <code>                    
     <strong>getId</strong>()
         </code>
@@ -305,9 +294,28 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getBody">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L60">line 60</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L55">line 55</a></div>
         <code>                    
     <strong>getBody</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toProjection">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/DomainProjectionDocument.php#L60">line 60</a></div>
+        <code>                    
+    <strong>toProjection</strong>()
         </code>
     </h3>
     <div class="details">

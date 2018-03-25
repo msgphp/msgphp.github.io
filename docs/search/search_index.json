@@ -367,7 +367,7 @@
         }, 
         {
             "location": "/ddd/factory/entity-aware/", 
-            "text": "Entity Aware Factory\n\n\nAn entity aware factory is an \nobject factory\n and additionally bound to\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface\n. Its purpose is to factorize entity related objects.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nInherited from \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create()\n.\n\n\n\n\nreference(string $class, $id): object\n\n\nReturns a factorized reference object for a known existing entity object. The object must be of type \n$class\n. Any type\nof \nidentity\n value can be passed as \n$id\n.\n\n\n\n\nidentify(string $class, $value): DomainIdInterface\n\n\nReturns a factorized \nidentifier\n for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the nex \nidentifier\n for the given entity class. Depending on the implementation its value\nmight be considered empty if it's not capable to calculate one upfront.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactory\n\n\nA generic entity factory. It decorates any object factory and is based on a known \nidentity mapping\n\nas well as a known entity to identifier class mapping.\n\n\n\n\n__construct(DomainObjectFactoryInterface $factory, DomainIdentityMappingInterface $identityMapping, array $identifierMapping = [])\n\n\n$factory\n: The decorated object factory\n\n\n$identityMapping\n: The identity mapping\n\n\n$identifierMapping\n: The identifier class mapping (\n['EntityType' =\n 'IdType']\n)\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\\n{\nDomainObjectFactory\n,\n \nEntityAwareFactory\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$id\n)\n\n    \n{\n\n        \n$this\n-\nid\n \n=\n \n$id\n;\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nEntityAwareFactory\n(\n\n    \nnew\n \nDomainObjectFactory\n(),\n\n    \nnew\n \nDomainIdentityMapping\n([\n\n        \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \n]),\n\n    \n[\n\n        \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \n]\n\n\n);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var MyEntity $ref */\n\n\n$ref\n \n=\n \n$factory\n-\nreference\n(\nMyEntity\n::\nclass\n,\n \nnew\n \nDomainId\n(\n1\n));\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n);\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\EntityAwareFactory\n\n\nA Doctrine tailored entity aware factory.\n\n\n\n\nRead more", 
+            "text": "Entity Aware Factory\n\n\nAn entity aware factory is an \nobject factory\n and additionally bound to\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface\n. Its purpose is to factorize entity related objects.\n\n\nAPI\n\n\nExtends\n\n\n\n\nDomainObjectFactoryInterface\n\n\n\n\n\n\nreference(string $class, $id): object\n\n\nReturns a factorized reference object for a known existing entity object. The object must be of type \n$class\n. Any type\nof \nidentity\n value can be passed as \n$id\n.\n\n\n\n\nidentify(string $class, $value): DomainIdInterface\n\n\nReturns a factorized \nidentifier\n for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the nex \nidentifier\n for the given entity class. Depending on the implementation its value\nmight be considered empty if it's not capable to calculate one upfront.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactory\n\n\nA generic entity factory. It decorates any object factory and is based on a known \nidentity mapping\n\nas well as a known entity to identifier class mapping.\n\n\n\n\n__construct(DomainObjectFactoryInterface $factory, DomainIdentityMappingInterface $identityMapping, array $identifierMapping = [])\n\n\n$factory\n: The decorated object factory\n\n\n$identityMapping\n: The identity mapping\n\n\n$identifierMapping\n: The identifier class mapping (\n['EntityType' =\n 'IdType']\n)\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\\n{\nDomainObjectFactory\n,\n \nEntityAwareFactory\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$id\n)\n\n    \n{\n\n        \n$this\n-\nid\n \n=\n \n$id\n;\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nEntityAwareFactory\n(\n\n    \nnew\n \nDomainObjectFactory\n(),\n\n    \nnew\n \nDomainIdentityMapping\n([\n\n        \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \n]),\n\n    \n[\n\n        \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \n]\n\n\n);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var MyEntity $ref */\n\n\n$ref\n \n=\n \n$factory\n-\nreference\n(\nMyEntity\n::\nclass\n,\n \nnew\n \nDomainId\n(\n1\n));\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n);\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\EntityAwareFactory\n\n\nA Doctrine tailored entity aware factory.\n\n\n\n\nRead more", 
             "title": "Entity Aware Factory"
         }, 
         {
@@ -381,9 +381,9 @@
             "title": "API"
         }, 
         {
-            "location": "/ddd/factory/entity-aware/#createstring-class-array-context-object", 
-            "text": "Inherited from  MsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface::create() .", 
-            "title": "create(string $class, array $context = []): object"
+            "location": "/ddd/factory/entity-aware/#extends", 
+            "text": "DomainObjectFactoryInterface", 
+            "title": "Extends"
         }, 
         {
             "location": "/ddd/factory/entity-aware/#referencestring-class-id-object", 
@@ -737,12 +737,12 @@
         }, 
         {
             "location": "/projection/documents/", 
-            "text": "Projection Documents\n\n\nA projection document is a domain value object of type \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n. Its purpose\nis to hold a projection document its (meta)data and current state.\n\n\nAPI\n\n\nstatic create(string $type, string $id = null, array $body = []): DomainProjectionDocument\n\n\nCreates a projection document for a known projection type. In case \n$id\n is not given it implies an auto-generated\nvalue. A projection \n$type\n usually refers to a known \nprojection\n by class name.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n$document\n \n=\n \nDomainProjectionDocument\n::\ncreate\n(\nMyProjection\n::\nclass\n,\n \nnull\n,\n \n[\n\n    \nsome_field\n \n=\n \nvalue\n,\n\n\n]);", 
+            "text": "Projection Documents\n\n\nA projection document is a domain value object of type \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n. Its purpose\nis to hold a projection document its data and current state.\n\n\nAPI\n\n\nProperties\n\n\n\n\nint $status\n: The current document status. See also \ndefault statuses\n.\n\n\n?\\Exception $error\n: An occurred error, if any\n\n\n?object $source\n: The origin object source, if any\n\n\n\n\n\n\ngetType(): string\n\n\nGets the projection type. Always must refer to a \nprojection\n class name.\n\n\n\n\ngetId(): ?string\n\n\nGets the document ID, if any. Otherwise an auto-generated value is implied.\n\n\n\n\ngetBody(): array\n\n\nGets the document body.\n\n\n\n\ntoProjection(): DomainProjectionInterface\n\n\nTransforms the document into its projection model.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionInterface\n;\n\n\nuse\n \nMsgPhp\\Domain\\Projection\\DomainProjectionDocument\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyProjection\n \nimplements\n \nDomainProjectionInterface\n\n\n{\n\n    \npublic\n \nstatic\n \nfunction\n \nfromDocument\n(\narray\n \n$document\n)\n:\n \nDomainProjectionInterface\n\n    \n{\n\n        \n// ...\n\n    \n}\n\n\n}\n\n\n\n$document\n \n=\n \nnew\n \nDomainProjectionDocument\n(\nMyProjection\n::\nclass\n,\n \nnull\n,\n \n[\n\n    \nsome_field\n \n=\n \nvalue\n,\n\n\n]);\n\n\n\n/** @var MyProjection $projection */\n\n\n$projection\n \n=\n \n$document\n-\ntoProjection\n();", 
             "title": "Documents"
         }, 
         {
             "location": "/projection/documents/#projection-documents", 
-            "text": "A projection document is a domain value object of type  MsgPhp\\Domain\\Projection\\DomainProjectionDocument . Its purpose\nis to hold a projection document its (meta)data and current state.", 
+            "text": "A projection document is a domain value object of type  MsgPhp\\Domain\\Projection\\DomainProjectionDocument . Its purpose\nis to hold a projection document its data and current state.", 
             "title": "Projection Documents"
         }, 
         {
@@ -751,13 +751,33 @@
             "title": "API"
         }, 
         {
-            "location": "/projection/documents/#static-createstring-type-string-id-null-array-body-domainprojectiondocument", 
-            "text": "Creates a projection document for a known projection type. In case  $id  is not given it implies an auto-generated\nvalue. A projection  $type  usually refers to a known  projection  by class name.", 
-            "title": "static create(string $type, string $id = null, array $body = []): DomainProjectionDocument"
+            "location": "/projection/documents/#properties", 
+            "text": "int $status : The current document status. See also  default statuses .  ?\\Exception $error : An occurred error, if any  ?object $source : The origin object source, if any", 
+            "title": "Properties"
+        }, 
+        {
+            "location": "/projection/documents/#gettype-string", 
+            "text": "Gets the projection type. Always must refer to a  projection  class name.", 
+            "title": "getType(): string"
+        }, 
+        {
+            "location": "/projection/documents/#getid-string", 
+            "text": "Gets the document ID, if any. Otherwise an auto-generated value is implied.", 
+            "title": "getId(): ?string"
+        }, 
+        {
+            "location": "/projection/documents/#getbody-array", 
+            "text": "Gets the document body.", 
+            "title": "getBody(): array"
+        }, 
+        {
+            "location": "/projection/documents/#toprojection-domainprojectioninterface", 
+            "text": "Transforms the document into its projection model.", 
+            "title": "toProjection(): DomainProjectionInterface"
         }, 
         {
             "location": "/projection/documents/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  $document   =   DomainProjectionDocument :: create ( MyProjection :: class ,   null ,   [ \n     some_field   =   value ,  ]);", 
+            "text": "?php  use   MsgPhp\\Domain\\Projection\\DomainProjectionInterface ;  use   MsgPhp\\Domain\\Projection\\DomainProjectionDocument ;  // --- SETUP ---  class   MyProjection   implements   DomainProjectionInterface  { \n     public   static   function   fromDocument ( array   $document ) :   DomainProjectionInterface \n     { \n         // ... \n     }  }  $document   =   new   DomainProjectionDocument ( MyProjection :: class ,   null ,   [ \n     some_field   =   value ,  ]);  /** @var MyProjection $projection */  $projection   =   $document - toProjection ();", 
             "title": "Basic example"
         }, 
         {

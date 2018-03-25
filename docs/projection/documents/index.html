@@ -600,8 +600,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-createstring-type-string-id-null-array-body-domainprojectiondocument" title="static create(string $type, string $id = null, array $body = []): DomainProjectionDocument" class="md-nav__link">
-    static create(string $type, string $id = null, array $body = []): DomainProjectionDocument
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettype-string" title="getType(): string" class="md-nav__link">
+    getType(): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getid-string" title="getId(): ?string" class="md-nav__link">
+    getId(): ?string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbody-array" title="getBody(): array" class="md-nav__link">
+    getBody(): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toprojection-domainprojectioninterface" title="toProjection(): DomainProjectionInterface" class="md-nav__link">
+    toProjection(): DomainProjectionInterface
   </a>
   
 </li>
@@ -927,8 +955,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-createstring-type-string-id-null-array-body-domainprojectiondocument" title="static create(string $type, string $id = null, array $body = []): DomainProjectionDocument" class="md-nav__link">
-    static create(string $type, string $id = null, array $body = []): DomainProjectionDocument
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettype-string" title="getType(): string" class="md-nav__link">
+    getType(): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getid-string" title="getId(): ?string" class="md-nav__link">
+    getId(): ?string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbody-array" title="getBody(): array" class="md-nav__link">
+    getBody(): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toprojection-domainprojectioninterface" title="toProjection(): DomainProjectionInterface" class="md-nav__link">
+    toProjection(): DomainProjectionInterface
   </a>
   
 </li>
@@ -966,11 +1022,26 @@
                 
                 <h1 id="projection-documents">Projection Documents</h1>
 <p>A projection document is a domain value object of type <code>MsgPhp\Domain\Projection\DomainProjectionDocument</code>. Its purpose
-is to hold a projection document its (meta)data and current state.</p>
+is to hold a projection document its data and current state.</p>
 <h2 id="api">API</h2>
-<h3 id="static-createstring-type-string-id-null-array-body-domainprojectiondocument"><code>static create(string $type, string $id = null, array $body = []): DomainProjectionDocument</code></h3>
-<p>Creates a projection document for a known projection type. In case <code>$id</code> is not given it implies an auto-generated
-value. A projection <code>$type</code> usually refers to a known <a href="../models/">projection</a> by class name.</p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><code>int $status</code>: The current document status. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/DomainProjectionDocument.html#page-content">default statuses</a>.</li>
+<li><code>?\Exception $error</code>: An occurred error, if any</li>
+<li><code>?object $source</code>: The origin object source, if any</li>
+</ul>
+<hr />
+<h3 id="gettype-string"><code>getType(): string</code></h3>
+<p>Gets the projection type. Always must refer to a <a href="../models/">projection</a> class name.</p>
+<hr />
+<h3 id="getid-string"><code>getId(): ?string</code></h3>
+<p>Gets the document ID, if any. Otherwise an auto-generated value is implied.</p>
+<hr />
+<h3 id="getbody-array"><code>getBody(): array</code></h3>
+<p>Gets the document body.</p>
+<hr />
+<h3 id="toprojection-domainprojectioninterface"><code>toProjection(): DomainProjectionInterface</code></h3>
+<p>Transforms the document into its projection model.</p>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -987,9 +1058,12 @@ value. A projection <code>$type</code> usually refers to a known <a href="../mod
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$document</span> <span class="o">=</span> <span class="nx">DomainProjectionDocument</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">[</span>
+<span class="nv">$document</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainProjectionDocument</span><span class="p">(</span><span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
 <span class="p">]);</span>
+
+<span class="sd">/** @var MyProjection $projection */</span>
+<span class="nv">$projection</span> <span class="o">=</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">toProjection</span><span class="p">();</span>
 </pre></div>
                 
                   
