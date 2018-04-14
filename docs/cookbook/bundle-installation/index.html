@@ -803,8 +803,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-using-composer" title="Installing using Composer" class="md-nav__link">
-    Installing using Composer
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
   </a>
   
     <nav class="md-nav">
@@ -878,6 +878,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuring-doctrine-orm/" title="Configuring Doctrine ORM" class="md-nav__link">
+      Configuring Doctrine ORM
+    </a>
   </li>
 
         
@@ -974,8 +986,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-using-composer" title="Installing using Composer" class="md-nav__link">
-    Installing using Composer
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
   </a>
   
     <nav class="md-nav">
@@ -1068,10 +1080,10 @@ general <a href="https://symfony.com/doc/current/service_container/autowiring.ht
 infrastructural services are created automatically.</p>
 <h2 id="available-bundles">Available bundles</h2>
 <ul>
-<li><code>msgphp/eav-bundle</code>: Provides basic entity-attribute-value management (the EAV domain)</li>
-<li><code>msgphp/user-bundle</code>: Provides basic user management (the user domain)</li>
+<li><code>msgphp/eav-bundle</code>: Provides basic entity-attribute-value management (the <code>Eav</code> domain)</li>
+<li><code>msgphp/user-bundle</code>: Provides basic user management (the <code>User</code> domain)</li>
 </ul>
-<h2 id="installing-using-composer">Installing using <a href="https://getcomposer.org/">Composer</a></h2>
+<h2 id="installation">Installation</h2>
 <div class="codehilite"><pre><span></span>composer require msgphp/&lt;name&gt;-bundle
 </pre></div>
 
@@ -1081,7 +1093,9 @@ infrastructural services are created automatically.</p>
 automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a>.</p>
 <h2 id="configuration">Configuration</h2>
 <p>By default a bundle provides the following minimal configuration:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_&lt;name&gt;.yaml</span>
+
+<span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
     <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
     <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
@@ -1195,13 +1209,13 @@ can be explicitly enabled or disabled by command.</p>
           </a>
         
         
-          <a href="../../reference/identifiers/" title="Domain Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuring-doctrine-orm/" title="Configuring Doctrine ORM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Domain Identifiers
+                Configuring Doctrine ORM
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

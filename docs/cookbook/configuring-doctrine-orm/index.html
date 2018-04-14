@@ -38,7 +38,7 @@
     
     
       
-        <title>Doctrine Identifier Types - MsgPHP Documentation</title>
+        <title>Configuring Doctrine ORM - MsgPHP Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#doctrine-identifier-types" tabindex="1" class="md-skip">
+      <a href="#configuring-doctrine-orm" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Doctrine Identifier Types
+                Configuring Doctrine ORM
               </span>
             
           
@@ -746,10 +746,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Cookbook
@@ -767,70 +769,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cookbook/bundle-installation/" title="Bundle Installation" class="md-nav__link">
+    <a href="../bundle-installation/" title="Bundle Installation" class="md-nav__link">
       Bundle Installation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cookbook/configuring-doctrine-orm/" title="Configuring Doctrine ORM" class="md-nav__link">
-      Configuring Doctrine ORM
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
-    
-    <label class="md-nav__link" for="nav-9">
-      Reference
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Reference
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../identifiers/" title="Domain Identifiers" class="md-nav__link">
-      Domain Identifiers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../entities/" title="Domain Entities" class="md-nav__link">
-      Domain Entities
     </a>
   </li>
 
@@ -849,10 +789,147 @@
       
     
     
-    <a href="./" title="Doctrine Identifier Types" class="md-nav__link md-nav__link--active">
-      Doctrine Identifier Types
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Configuring Doctrine ORM
+      </label>
+    
+    <a href="./" title="Configuring Doctrine ORM" class="md-nav__link md-nav__link--active">
+      Configuring Doctrine ORM
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-entities" title="Mapping Entities" class="md-nav__link">
+    Mapping Entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-identifiers" title="Mapping Identifiers" class="md-nav__link">
+    Mapping Identifiers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#without-nullability" title="Without Nullability" class="md-nav__link">
+    Without Nullability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-automatic-hydration" title="Without Automatic Hydration" class="md-nav__link">
+    Without Automatic Hydration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup" title="Database Setup" class="md-nav__link">
+    Database Setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/identifiers/" title="Domain Identifiers" class="md-nav__link">
+      Domain Identifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/entities/" title="Domain Entities" class="md-nav__link">
+      Domain Entities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
+      Doctrine Identifier Types
+    </a>
   </li>
 
         
@@ -878,6 +955,70 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-entities" title="Mapping Entities" class="md-nav__link">
+    Mapping Entities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-identifiers" title="Mapping Identifiers" class="md-nav__link">
+    Mapping Identifiers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#without-nullability" title="Without Nullability" class="md-nav__link">
+    Without Nullability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-automatic-hydration" title="Without Automatic Hydration" class="md-nav__link">
+    Without Automatic Hydration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-setup" title="Database Setup" class="md-nav__link">
+    Database Setup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -888,38 +1029,183 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/reference/doctrine-identifier-types.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/configuring-doctrine-orm.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="doctrine-identifier-types">Doctrine Identifier Types</h1>
-<p>Reference of available <a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Doctrine identifier types</a> across all
-domains.</p>
-<table>
-<thead>
-<tr>
-<th>Type name</th>
-<th>Type class</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>msgphp_domain_id</code></td>
-<td><code>MsgPhp\Domain\Infra\Doctrine\Type\DomainIdType</code></td>
-</tr>
-<tr>
-<td><code>msgphp_attribute_id</code></td>
-<td><code>MsgPhp\Eav\Infra\Doctrine\Type\AttributeIdType</code></td>
-</tr>
-<tr>
-<td><code>msgphp_attribute_value_id</code></td>
-<td><code>MsgPhp\Eav\Infra\Doctrine\Type\AttributeValueIdType</code></td>
-</tr>
-<tr>
-<td><code>msgphp_user_id</code></td>
-<td><code>MsgPhp\User\Infra\Doctrine\Type\UserIdType</code></td>
-</tr>
-</tbody>
-</table>
+                <h1 id="configuring-doctrine-orm">Configuring Doctrine ORM</h1>
+<p>After a <a href="../bundle-installation/">bundle</a> is installed we can configure <a href="../../infrastructure/doctrine-orm/">Doctrine ORM</a>.</p>
+<h2 id="installation">Installation</h2>
+<div class="codehilite"><pre><span></span>composer install doctrine/orm doctrine/doctrine-bundle
+
+<span class="c1"># using Symfony Flex</span>
+composer install orm
+</pre></div>
+
+
+<h2 id="configuration">Configuration</h2>
+<p>See the Doctrine Bundle <a href="https://github.com/symfony/recipes/blob/master/doctrine/doctrine-bundle/1.6/config/packages/doctrine.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/doctrine.yaml</code>.</p>
+<p>Although the examples use annotation based mappings, you are not required to do so. <a href="../doctrine-bundle-mapping-type">Read more</a>.</p>
+<p><em>The configuration is added automatically when using Symfony Flex.</em></p>
+<h2 id="mapping-entities">Mapping Entities</h2>
+<p>A MsgPHP bundle provides base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
+defined by your application:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\SomeDomain\Entity\SomeEntity</span> <span class="k">as</span> <span class="nx">BaseSomeEntity</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @ORM\Entity()</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Let MsgPHP know about your entity:</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\Entity\SomeEntity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\Entity\SomeEntity</span>
+</pre></div>
+
+
+<p>See also the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain.</p>
+<p>When using a default entity <em>field-</em> or <em>feature-trait</em> its ORM mapping is configured automatically. You can override it
+on a per-property basis.</p>
+<p><em>The required entities of a MsgPHP bundle are automatically created, including ORM mapping and configuration, when using
+Symfony Flex.</em></p>
+<h2 id="mapping-identifiers">Mapping Identifiers</h2>
+<p>When an entity object is identified using a <a href="../../ddd/identifiers/">domain identifier</a> we must configure it accordingly.
+<a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Read more</a>.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var SomeIdInterface|null</span>
+<span class="sd">     * @ORM\Id()</span>
+<span class="sd">     * @ORM\GeneratedValue()</span>
+<span class="sd">     * @ORM\Column(type=&quot;msghp_some_id&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>See also the <a href="../../reference/doctrine-identifier-types/">reference</a> page for all available identifier types provided per
+domain.</p>
+<p>Note when using an identifier that is able to calculate a value upfront the <code>@ORM\GeneratedValue()</code> is not necessary.</p>
+<p>In case a custom implementation is used it should be configured accordingly:</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\SomeId</span>
+    <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bigint</span>
+</pre></div>
+
+
+<p>See also the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain.</p>
+<h3 id="without-nullability">Without Nullability</h3>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="c1">// ...</span>
+
+<span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\...</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">SomeIdInterface</span> <span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span><span class="o">:</span> <span class="nx">SomeIdInterface</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Or coupled with a known identifier class:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\SomeDomain\SomeId</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeId</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="without-automatic-hydration">Without Automatic Hydration</h3>
+<p>To hydrate the primitive identifier value instead of a value object, the type can be configured regularly. Without
+nullability it requires to couple with a known identifier class. <a href="../../infrastructure/doctrine-orm/#hydration">Read more</a>.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="c1">// ...</span>
+
+<span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Id()</span>
+<span class="sd">     * @ORM\GeneratedValue()</span>
+<span class="sd">     * @ORM\Column(type=&quot;integer&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">SomeIdInterface</span> <span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span><span class="o">:</span> <span class="nx">SomeIdInterface</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">SomeId</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="database-setup">Database Setup</h2>
+<p>Configure the database URL:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># .env</span>
+
+<span class="c1"># sqlite</span>
+<span class="nv">DATABASE_URL</span><span class="o">=</span>sqlite:///%kernel.project_dir%/var/db.sqlite
+
+<span class="c1"># mysql / mariadb</span>
+<span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">&quot;mysql://user:pass@host:3306/db_name?charset=utf8mb4&amp;serverVersion=5.7&quot;</span>
+</pre></div>
+
+
+<p>Create the database schema:</p>
+<div class="codehilite"><pre><span></span>bin/console doctrine:database:create
+bin/console doctrine:schema:update --force
+</pre></div>
                 
                   
                 
@@ -940,7 +1226,7 @@ domains.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../entities/" title="Domain Entities" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../bundle-installation/" title="Bundle Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -949,11 +1235,25 @@ domains.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Domain Entities
+                Bundle Installation
               </span>
             </div>
           </a>
         
+        
+          <a href="../../reference/identifiers/" title="Domain Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Domain Identifiers
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

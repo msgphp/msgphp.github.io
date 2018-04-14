@@ -201,6 +201,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/cookbook/configuring-doctrine-orm/</loc>
+     <lastmod>2018-04-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

@@ -826,6 +826,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-doctrine-orm/" title="Configuring Doctrine ORM" class="md-nav__link">
+      Configuring Doctrine ORM
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -956,7 +968,7 @@
 <li>Requires <a href="https://packagist.org/packages/doctrine/dbal">doctrine/dbal</a></li>
 </ul>
 <h2 id="domain-identifier-type">Domain Identifier Type</h2>
-<p>A translation between the database type and a <a href="../../ddd/identifiers/">identifier</a> type in PHP is provided by
+<p>A translation between the database type and a <a href="../../ddd/identifiers/">domain identifier</a> type in PHP is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainIdType</code>. Its purpose is to abstract the underlying data type of the identifier
 value.</p>
 <p>The design is based on <a href="https://secure.php.net/manual/en/language.oop5.late-static-bindings.php">late static bindings</a>, due the design of the Doctrine type system itself. It extends from the
