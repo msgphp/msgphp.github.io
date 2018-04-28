@@ -835,8 +835,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../infrastructure/simple-bus/" title="SimpleBus" class="md-nav__link">
+      SimpleBus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
       Symfony Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../infrastructure/symfony-messenger/" title="Symfony Messenger" class="md-nav__link">
+      Symfony Messenger
     </a>
   </li>
 
@@ -1100,14 +1124,14 @@
 of <a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
 <hr />
 <h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code></h3>
-<p>Returns a factorized <a href="../../identifiers/">identifier</a> for the given entity class from a known primitive value.</p>
+<p>Returns a factorized <a href="../../identifiers/">domain identifier</a> for the given entity class from a known primitive value.</p>
 <hr />
 <h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
-<p>Returns the nex <a href="../../identifiers/">identifier</a> for the given entity class. Depending on the implementation its value
-might be considered empty if it's not capable to calculate one upfront.</p>
+<p>Returns the next <a href="../../identifiers/">domain identifier</a> for the given entity class. Depending on the implementation its
+value might be considered empty if it's not capable to calculate one upfront.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code></h3>
-<p>A generic entity factory. It decorates any object factory and is based on a known <a href="../../identity-mapping/">identity mapping</a>
+<p>A generic entity factory. It decorates any object factory and uses the <a href="../../identity-mapping/">domain identity mapping</a>
 as well as a known entity to identifier class mapping.</p>
 <ul>
 <li><code>__construct(DomainObjectFactoryInterface $factory, DomainIdentityMappingInterface $identityMapping, array $identifierMapping = [])</code><ul>

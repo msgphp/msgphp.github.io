@@ -719,8 +719,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../../infrastructure/simple-bus/" title="SimpleBus" class="md-nav__link">
+      SimpleBus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
       Symfony Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/symfony-messenger/" title="Symfony Messenger" class="md-nav__link">
+      Symfony Messenger
     </a>
   </li>
 
@@ -1044,7 +1068,7 @@ composer install orm
 
 <h2 id="configuration">Configuration</h2>
 <p>See the Doctrine Bundle <a href="https://github.com/symfony/recipes/blob/master/doctrine/doctrine-bundle/1.6/config/packages/doctrine.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/doctrine.yaml</code>.</p>
-<p>Although the examples use annotation based mappings, you are not required to do so. <a href="../doctrine-bundle-mapping-type">Read more</a>.</p>
+<p>Although the examples use annotation based mappings, you are not required to do so. <a href="https://symfony.com/doc/master/bundles/DoctrineBundle/configuration.html#mapping-configuration">Read more</a>.</p>
 <p><em>The configuration is added automatically when using Symfony Flex.</em></p>
 <h2 id="mapping-entities">Mapping Entities</h2>
 <p>A MsgPHP bundle provides base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
@@ -1162,8 +1186,8 @@ domain.</p>
 
 
 <h3 id="without-automatic-hydration">Without Automatic Hydration</h3>
-<p>To hydrate the primitive identifier value instead of a value object, the type can be configured regularly. Without
-nullability it requires to couple with a known identifier class. <a href="../../infrastructure/doctrine-orm/#hydration">Read more</a>.</p>
+<p>To hydrate the primitive identifier value instead of a value object, the type can be configured regularly. It requires
+to couple with a known identifier class. <a href="../../infrastructure/doctrine-orm/#hydration">Read more</a>.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="c1">// ...</span>
@@ -1171,6 +1195,7 @@ nullability it requires to couple with a known identifier class. <a href="../../
 <span class="k">class</span> <span class="nc">SomeEntity</span> <span class="k">extends</span> <span class="nx">BaseSomeEntity</span>
 <span class="p">{</span>
     <span class="sd">/**</span>
+<span class="sd">     * @var int|null</span>
 <span class="sd">     * @ORM\Id()</span>
 <span class="sd">     * @ORM\GeneratedValue()</span>
 <span class="sd">     * @ORM\Column(type=&quot;integer&quot;)</span>

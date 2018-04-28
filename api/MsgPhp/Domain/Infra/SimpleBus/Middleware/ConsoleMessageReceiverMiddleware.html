@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\DependencyInjection\BundleHelper | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\SimpleBus\Middleware\ConsoleMessageReceiverMiddleware | Message driven PHP - API</title>
 
-            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
-        <script src="../../../../js/jquery-1.11.1.min.js"></script>
-        <script src="../../../../js/bootstrap.min.js"></script>
-        <script src="../../../../js/typeahead.min.js"></script>
-        <script src="../../../../sami.js"></script>
+            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
+        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../sami.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -19,14 +19,14 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_DependencyInjection_BundleHelper" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_SimpleBus_Middleware_ConsoleMessageReceiverMiddleware" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                 <script>
             $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
         </script>
-        <form id="search-form" action="../../../../search.html" method="GET">
+        <form id="search-form" action="../../../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -48,16 +48,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../../index.html">Message driven PHP - API</a>
+                <a class="navbar-brand" href="../../../../../index.html">Message driven PHP - API</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
-                    <li><a href="../../../../classes.html">Classes</a></li>
-                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
-                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
-                    <li><a href="../../../../traits.html">Traits</a></li>
-                    <li><a href="../../../../doc-index.html">Index</a></li>
-                    <li><a href="../../../../search.html">Search</a></li>
+                    <li><a href="../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../search.html">Search</a></li>
                 </ul>
             </div>
         </div>
@@ -66,20 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li>BundleHelper</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/SimpleBus.html">SimpleBus</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/SimpleBus/Middleware.html">Middleware</a></li><li class="backslash">\</li><li>ConsoleMessageReceiverMiddleware</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            BundleHelper
+            ConsoleMessageReceiverMiddleware
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>BundleHelper</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php">View source</a>)
+    <strong>ConsoleMessageReceiverMiddleware</strong>        implements
+        <abbr title="SimpleBus\Message\Bus\Middleware\MessageBusMiddleware">MessageBusMiddleware</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/SimpleBus/Middleware/ConsoleMessageReceiverMiddleware.php">View source</a>)
 </p>
 
         
@@ -94,10 +95,10 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_initDomain">initDomain</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../../MsgPhp/Domain/Infra/Console/MessageReceiver.html"><abbr title="MsgPhp\Domain\Infra\Console\MessageReceiver">MessageReceiver</abbr></a> $receiver)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -105,10 +106,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_boot">boot</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container)
+                    <a href="#method_handle">handle</a>($message, callable $next)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -121,10 +122,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_initDomain">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php#L27">line 27</a></div>
-        <code>        static            
-    <strong>initDomain</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/SimpleBus/Middleware/ConsoleMessageReceiverMiddleware.php#L17">line 17</a></div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../../../MsgPhp/Domain/Infra/Console/MessageReceiver.html"><abbr title="MsgPhp\Domain\Infra\Console\MessageReceiver">MessageReceiver</abbr></a> $receiver)
         </code>
     </h3>
     <div class="details">
@@ -136,8 +137,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
+                <td><a href="../../../../../MsgPhp/Domain/Infra/Console/MessageReceiver.html"><abbr title="MsgPhp\Domain\Infra\Console\MessageReceiver">MessageReceiver</abbr></a></td>
+                <td>$receiver</td>
                 <td></td>
             </tr>
             </table>
@@ -150,10 +151,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_boot">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/BundleHelper.php#L41">line 41</a></div>
-        <code>        static            
-    <strong>boot</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container)
+                    <h3 id="method_handle">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/SimpleBus/Middleware/ConsoleMessageReceiverMiddleware.php#L22">line 22</a></div>
+        <code>                    
+    <strong>handle</strong>($message, callable $next)
         </code>
     </h3>
     <div class="details">
@@ -165,8 +166,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr></td>
-                <td>$container</td>
+                <td></td>
+                <td>$message</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>callable</td>
+                <td>$next</td>
                 <td></td>
             </tr>
             </table>

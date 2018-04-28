@@ -38,7 +38,7 @@
     
     
       
-        <title>API Platform - MsgPHP Documentation</title>
+        <title>Symfony Messenger - MsgPHP Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#api-platform" tabindex="1" class="md-skip">
+      <a href="#symfony-messenger" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                API Platform
+                Symfony Messenger
               </span>
             
           
@@ -647,69 +647,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        API Platform
-      </label>
-    
-    <a href="./" title="API Platform" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../api-platform/" title="API Platform" class="md-nav__link">
       API Platform
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#domain-projection-data-provider" title="Domain Projection Data Provider" class="md-nav__link">
-    Domain Projection Data Provider
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimal-configuration" title="Minimal configuration" class="md-nav__link">
-    Minimal configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -801,11 +743,62 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../symfony-messenger/" title="Symfony Messenger" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Symfony Messenger
+      </label>
+    
+    <a href="./" title="Symfony Messenger" class="md-nav__link md-nav__link--active">
       Symfony Messenger
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domain-message-bus" title="Domain Message Bus" class="md-nav__link">
+    Domain Message Bus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -955,19 +948,12 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#domain-projection-data-provider" title="Domain Projection Data Provider" class="md-nav__link">
-    Domain Projection Data Provider
+  <a href="#domain-message-bus" title="Domain Message Bus" class="md-nav__link">
+    Domain Message Bus
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimal-configuration" title="Minimal configuration" class="md-nav__link">
-    Minimal configuration
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#basic-example" title="Basic example" class="md-nav__link">
@@ -997,52 +983,38 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/infrastructure/api-platform.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/infrastructure/symfony-messenger.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="api-platform">API Platform</h1>
-<p>An overview of available infrastructural code when using <a href="https://api-platform.com/">API Platform</a>.</p>
+                <h1 id="symfony-messenger">Symfony Messenger</h1>
+<p>An overview of available infrastructural code when using <a href="https://symfony.com/doc/current/components/messenger.html">Symfony Messenger</a>.</p>
 <ul>
-<li>Requires <a href="https://packagist.org/packages/api-platform/core">api-platform/core</a></li>
+<li>Requires <a href="https://packagist.org/packages/symfony/messenger">symfony/messenger</a></li>
 </ul>
-<h2 id="domain-projection-data-provider">Domain Projection Data Provider</h2>
-<p>When working with <a href="../../projection/models/">projections</a> an <a href="https://api-platform.com/docs/core/data-providers">API Data Provider</a> is provided by <code>MsgPhp\Domain\Infra\ApiPlatform\DomainProjectionDataProvider</code>.
-It uses any <a href="../../projection/repositories/">projection repository</a> in an effort to provide API resources. </p>
-<h3 id="minimal-configuration">Minimal configuration</h3>
-<p>See also <a href="https://api-platform.com/docs/core/configuration">API Platform Configuration</a>.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">api_platform</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">resource_class_directories</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">-</span> <span class="s">&#39;%kernel.project_dir%/src/Api/Projection&#39;</span>
-</pre></div>
-
-
+<h2 id="domain-message-bus">Domain Message Bus</h2>
+<p>A Symfony Messenger tailored <a href="../../message-driven/message-bus/">domain message bus</a> is provided by <code>MsgPhp\Domain\Infra\Messenger\DomainMessageBus</code>.
+It decorates any <code>Symfony\Component\Messenger\MessageBusInterface</code> type.</p>
+<ul>
+<li><code>__construct(MessageBusInterface $bus)</code><ul>
+<li><code>$bus</code>: The decorated bus</li>
+</ul>
+</li>
+</ul>
 <h3 id="basic-example">Basic example</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">App\Api\Projection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Messenger\DomainMessageBus</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Messenger\MessageBusInterface</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">ApiPlatform\Core\Annotation\ApiProperty</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">ApiPlatform\Core\Annotation\ApiResource</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
+<span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/**</span>
-<span class="sd"> * @ApiResource(shortName=&quot;Some&quot;)</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">SomeProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @ApiProperty(identifier=true)</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="sd">/** @var MessageBusInterface $bus */</span>
+<span class="nv">$bus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$domainBus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainMessageBus</span><span class="p">(</span><span class="nv">$bus</span><span class="p">);</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
-    <span class="p">{</span>
-        <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">self</span><span class="p">();</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
+<span class="c1">// --- USAGE ---</span>
 
-        <span class="k">return</span> <span class="nv">$projection</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$domainBus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">SomeMessage</span><span class="p">());</span>
 </pre></div>
                 
                   
@@ -1064,7 +1036,7 @@ It uses any <a href="../../projection/repositories/">projection repository</a> i
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../projection/synchronization/" title="Synchronization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../symfony-console/" title="Symfony Console" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1073,19 +1045,19 @@ It uses any <a href="../../projection/repositories/">projection repository</a> i
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Synchronization
+                Symfony Console
               </span>
             </div>
           </a>
         
         
-          <a href="../doctrine-collections/" title="Doctrine Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../uuid/" title="UUID" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Doctrine Collections
+                UUID
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
