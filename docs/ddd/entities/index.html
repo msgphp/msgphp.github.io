@@ -496,6 +496,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
+  </a>
+  
+</li>
+      
       
       
       
@@ -1049,6 +1056,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
+  </a>
+  
+</li>
+      
       
       
       
@@ -1117,6 +1131,34 @@ features represent a read/write-operation.</p>
 </ul>
 </li>
 </ul>
+<h2 id="basic-example">Basic Example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Entity\Fields\CreatedAtField</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Entity\Features\CanBeEnabled</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">CreatedAtField</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">CanBeEnabled</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createdAt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\DateTimeImmutable</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$createdAt</span> <span class="o">=</span> <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">getCreatedAt</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">isEnabled</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">enable</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 

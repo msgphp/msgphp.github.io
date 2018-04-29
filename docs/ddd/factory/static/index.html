@@ -1055,11 +1055,10 @@
                 
                 
                 <h1 id="static-factory">Static Factory</h1>
-<p>A static factory is a utility class, it cannot be initialized as a new instance using <code>new ...();</code>. Its purpose is to
-factorize a known implementation for a given class.</p>
+<p>A static factory is a utility class. Its purpose is to ease factorizing some known implementation in a static way.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomainfactorydomainidfactory"><code>MsgPhp\Domain\Factory\DomainIdFactory</code></h3>
-<p>Factorizes an <a href="../../identifiers/">identifier</a>.</p>
+<p>Factorizes an <a href="../../identifiers/">domain identifier</a>.</p>
 <ul>
 <li><code>static create($value): DomainIdInterface</code><ul>
 <li><code>$value</code>: Any (primitive) identifier value</li>
@@ -1084,16 +1083,17 @@ factorize a known implementation for a given class.</p>
 
 
 <h3 id="msgphpdomainfactorydomaincollectionfactory"><code>MsgPhp\Domain\Factory\DomainCollectionFactory</code></h3>
-<p>Factorizes a <a href="../../collections/">collection</a>.</p>
+<p>Factorizes a <a href="../../collections/">domain collection</a>.</p>
 <ul>
 <li><code>static create(?iterable $value): DomainCollectionInterface</code><ul>
-<li><code>$value</code>: Any (primitive) iterable value or <code>null</code> to imply an empty collection</li>
+<li><code>$value</code>: Any iterable value or <code>null</code> to imply an empty collection</li>
 </ul>
 </li>
 </ul>
 <h4 id="basic-example_1">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
+<span class="k">use</span> <span class="nx">Doctrine\Common\Collections\ArrayCollection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainCollectionFactory</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainCollection</span> <span class="k">as</span> <span class="nx">DoctrineDomainCollection</span><span class="p">;</span>
@@ -1104,7 +1104,7 @@ factorize a known implementation for a given class.</p>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 
 <span class="sd">/** @var DoctrineDomainCollection $collection */</span>
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
 </pre></div>
                 
                   
