@@ -873,9 +873,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Doctrine Identifier Types
+      </label>
+    
     <a href="./" title="Doctrine Identifier Types" class="md-nav__link md-nav__link--active">
       Doctrine Identifier Types
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpdomain" title="msgphp/domain" class="md-nav__link">
+    msgphp/domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpeav" title="msgphp/eav" class="md-nav__link">
+    msgphp/eav
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpuser" title="msgphp/user" class="md-nav__link">
+    msgphp/user
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -902,6 +945,36 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpdomain" title="msgphp/domain" class="md-nav__link">
+    msgphp/domain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpeav" title="msgphp/eav" class="md-nav__link">
+    msgphp/eav
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msgphpuser" title="msgphp/user" class="md-nav__link">
+    msgphp/user
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -916,10 +989,26 @@
                 
                 
                 <h1 id="doctrine-identifier-types">Doctrine Identifier Types</h1>
-<p>Reference of available <a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Doctrine identifier types</a> across all
-domains.</p>
+<p>Reference of available <a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Doctrine identifier types</a> per
+domain.</p>
 <!--ref-start:doctrine-identifier-types-->
 
+<h2 id="msgphpdomain"><code>msgphp/domain</code></h2>
+<table>
+<thead>
+<tr>
+<th>Type name</th>
+<th>Type class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msgphp_domain_id</code></td>
+<td><code>MsgPhp\Domain\Infra\Doctrine\DomainIdType</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="msgphpeav"><code>msgphp/eav</code></h2>
 <table>
 <thead>
 <tr>
@@ -936,20 +1025,24 @@ domains.</p>
 <td><code>msgphp_attribute_value_id</code></td>
 <td><code>MsgPhp\Eav\Infra\Doctrine\Type\AttributeValueIdType</code></td>
 </tr>
+</tbody>
+</table>
+<h2 id="msgphpuser"><code>msgphp/user</code></h2>
+<table>
+<thead>
 <tr>
-<td><code>msgphp_domain_id</code></td>
-<td><code>MsgPhp\Domain\Infra\Doctrine\DomainIdType</code></td>
+<th>Type name</th>
+<th>Type class</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td><code>msgphp_user_id</code></td>
 <td><code>MsgPhp\User\Infra\Doctrine\Type\UserIdType</code></td>
 </tr>
-<tr>
-<td><!--ref-end:doctrine-identifier-types--></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<!--ref-end:doctrine-identifier-types-->
                 
                   
                 
