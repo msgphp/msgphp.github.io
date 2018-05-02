@@ -1387,7 +1387,7 @@
         }, 
         {
             "location": "/reference/entities/", 
-            "text": "Domain Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nEntity Features\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\u2714\n\n\n\n\n\n\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributeValueField\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nEntity Features\n\n\n\n\nNo features available\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\User\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\u2717\n\n\n\n\n\n\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nEntity Features\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\AbstractCredential\n\n\nMsgPhp\\User\\Entity\\Features\\AbstractPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\AbstractSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
+            "text": "Domain Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nEntity Features\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\u2714\n\n\n\n\n\n\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nEntity Features\n\n\n\n\nMsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\User\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\u2717\n\n\n\n\n\n\n\n\nEntity Fields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nEntity Features\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
             "title": "Domain Entities"
         }, 
         {
@@ -1422,12 +1422,12 @@
         }, 
         {
             "location": "/reference/entities/#entity-fields_1", 
-            "text": "MsgPhp\\Eav\\Entity\\Fields\\AttributeValueField  MsgPhp\\Eav\\Entity\\Fields\\AttributesField", 
+            "text": "MsgPhp\\Eav\\Entity\\Fields\\AttributesField", 
             "title": "Entity Fields"
         }, 
         {
             "location": "/reference/entities/#entity-features_1", 
-            "text": "No features available", 
+            "text": "MsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue", 
             "title": "Entity Features"
         }, 
         {
@@ -1447,7 +1447,7 @@
         }, 
         {
             "location": "/reference/entities/#entity-features_2", 
-            "text": "MsgPhp\\User\\Entity\\Features\\AbstractCredential  MsgPhp\\User\\Entity\\Features\\AbstractPasswordCredential  MsgPhp\\User\\Entity\\Features\\AbstractSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\EmailCredential  MsgPhp\\User\\Entity\\Features\\EmailPasswordCredential  MsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameCredential  MsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\ResettablePassword  MsgPhp\\User\\Entity\\Features\\TokenCredential", 
+            "text": "MsgPhp\\User\\Entity\\Features\\EmailCredential  MsgPhp\\User\\Entity\\Features\\EmailPasswordCredential  MsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameCredential  MsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential  MsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential  MsgPhp\\User\\Entity\\Features\\ResettablePassword  MsgPhp\\User\\Entity\\Features\\TokenCredential", 
             "title": "Entity Features"
         }, 
         {
