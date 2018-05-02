@@ -831,19 +831,6 @@
     Installation
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-symfony-flex" title="With Symfony Flex" class="md-nav__link">
-    With Symfony Flex
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1014,19 +1001,6 @@
     Installation
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-symfony-flex" title="With Symfony Flex" class="md-nav__link">
-    With Symfony Flex
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1112,9 +1086,11 @@ enable a specific domain layer within an application.</p>
 </pre></div>
 
 
-<h3 id="with-symfony-flex">With Symfony Flex</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>When <a href="https://symfony.com/doc/current/setup/flex.html">Symfony Flex</a> is used to mange your Symfony application the minimal bundle configuration is created for you
-automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a>.</p>
+automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a></p>
+</div>
 <h2 id="configuration">Configuration</h2>
 <p>By default a bundle provides the following minimal configuration:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_&lt;name&gt;.yaml</span>
@@ -1127,8 +1103,11 @@ automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/
 </pre></div>
 
 
-<p>Depending on your personal preference you can also write the configuration in any other supported format. See the
-<a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo configuration</a> for a more advanced example.</p>
+<p>Depending on your personal preference you can also write the configuration in any other supported format.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See the <a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo configuration</a> for a more advanced example</p>
+</div>
 <h3 id="class_mapping"><code>class_mapping</code></h3>
 <p>Configures the bundle with a class mapping to tell which classes of yours should be used for a known class of ours.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
@@ -1150,7 +1129,10 @@ disabled by default.</p>
 </pre></div>
 
 
-<p>See also the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain</p>
+</div>
 <p>By convention any <a href="http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/types.html">Doctrine DBAL type</a> can be used for a type name. Additionally the following UUID types are detected
 as well:</p>
 <ul>

@@ -1007,7 +1007,10 @@ to convert raw model data (a document) into a projection, enabling to be stored 
 considered read-only and disposable, as they can be re-created / synchronized at any time from a source of truth.</p>
 <p>A practical use case for domain projections are APIs, where each API resource is a so called projection from a
 corresponding entity. It enables decoupling and thus optimized API responses.</p>
-<p>For integration with <a href="https://api-platform.com/">API Platform</a> see also the <a href="../../infrastructure/api-platform/#domain-projection-data-provider">domain projection data provider</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For integration with <a href="https://api-platform.com/">API Platform</a> see the <a href="../../infrastructure/api-platform/#domain-projection-data-provider">domain projection data provider</a></p>
+</div>
 <h2 id="api">API</h2>
 <h3 id="static-fromdocumentarray-document-domainprojectioninterface"><code>static fromDocument(array $document): DomainProjectionInterface</code></h3>
 <p>Creates a projection from raw document data.</p>

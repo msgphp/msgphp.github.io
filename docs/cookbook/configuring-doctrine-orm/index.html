@@ -1069,7 +1069,10 @@ composer install orm
 <h2 id="configuration">Configuration</h2>
 <p>See the Doctrine Bundle <a href="https://github.com/symfony/recipes/blob/master/doctrine/doctrine-bundle/1.6/config/packages/doctrine.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/doctrine.yaml</code>.</p>
 <p>Although the examples use annotation based mappings, you are not required to do so. <a href="https://symfony.com/doc/master/bundles/DoctrineBundle/configuration.html#mapping-configuration">Read more</a>.</p>
-<p><em>The configuration is added automatically when using Symfony Flex.</em></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The configuration is automatically added when using Symfony Flex</p>
+</div>
 <h2 id="mapping-entities">Mapping Entities</h2>
 <p>A MsgPHP bundle provides base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
 defined by your application:</p>
@@ -1098,11 +1101,19 @@ defined by your application:</p>
 </pre></div>
 
 
-<p>See also the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain.</p>
-<p>When using a default entity <em>field-</em> or <em>feature-trait</em> its ORM mapping is configured automatically. You can override it
-on a per-property basis.</p>
-<p><em>The required entities of a MsgPHP bundle are automatically created, including ORM mapping and configuration, when using
-Symfony Flex.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When using a default entity <em>field-</em> or <em>feature-trait</em> a default ORM mapping is configured automatically</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When using Symfony Flex the required entities of a MsgPHP bundle are automatically created, including ORM mapping
+and configuration</p>
+</div>
 <h2 id="mapping-identifiers">Mapping Identifiers</h2>
 <p>When an entity object is identified using a <a href="../../ddd/identifiers/">domain identifier</a> we must configure it accordingly.
 <a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Read more</a>.</p>
@@ -1125,8 +1136,11 @@ Symfony Flex.</em></p>
 </pre></div>
 
 
-<p>See also the <a href="../../reference/doctrine-identifier-types/">reference</a> page for all available identifier types provided per
-domain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/doctrine-identifier-types/">reference</a> page for all available identifier types provided per
+domain</p>
+</div>
 <p>Note when using an identifier that is able to calculate a value upfront the <code>@ORM\GeneratedValue()</code> is not necessary.</p>
 <p>In case a custom implementation is used it should be configured accordingly:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
@@ -1138,7 +1152,10 @@ domain.</p>
 </pre></div>
 
 
-<p>See also the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain</p>
+</div>
 <h3 id="without-nullability">Without Nullability</h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
