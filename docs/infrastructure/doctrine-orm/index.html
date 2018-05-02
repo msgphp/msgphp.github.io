@@ -772,8 +772,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hydration" title="Hydration" class="md-nav__link">
-    Hydration
+  <a href="#domain-identifier-hydration" title="Domain Identifier Hydration" class="md-nav__link">
+    Domain Identifier Hydration
   </a>
   
     <nav class="md-nav">
@@ -1068,8 +1068,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hydration" title="Hydration" class="md-nav__link">
-    Hydration
+  <a href="#domain-identifier-hydration" title="Domain Identifier Hydration" class="md-nav__link">
+    Domain Identifier Hydration
   </a>
   
     <nav class="md-nav">
@@ -1137,7 +1137,7 @@ the identity mapping from its class metadata.</p>
 
 
 <h2 id="domain-repository">Domain Repository</h2>
-<p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by
+<p>A Doctrine tailored <a href="../../ddd/repositories/">domain repository trait</a> is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>. It uses Doctrine's <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityManagerInterface.html"><code>EntityManagerInterface</code></a> as
 underlying persistence layer.</p>
 <ul>
@@ -1270,8 +1270,8 @@ with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/r
 </pre></div>
 
 
-<h2 id="hydration">Hydration</h2>
-<p>When working with <a href="../../ddd/identifiers/">identifiers</a> and the corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
+<h2 id="domain-identifier-hydration">Domain Identifier Hydration</h2>
+<p>When working with <a href="../../ddd/identifiers/">domain identifiers</a> and its corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
 a problem might occur when hydrating scalar values, e.g. using <a href="http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.AbstractQuery.html#_getScalarResult"><code>Query::getScalarResult()</code></a>;
 it would return instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
 value (due to <code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> we'll lose it.</p>
