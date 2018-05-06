@@ -624,22 +624,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaininfrapsrdomainprojectiondocumenttransformer" title="MsgPhp\Domain\Infra\Psr\DomainProjectionDocumentTransformer" class="md-nav__link">
-    MsgPhp\Domain\Infra\Psr\DomainProjectionDocumentTransformer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -770,18 +757,6 @@
   <li class="md-nav__item">
     <a href="../../infrastructure/elasticsearch/" title="Elasticsearch" class="md-nav__link">
       Elasticsearch
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/psr-container/" title="PSR Container" class="md-nav__link">
-      PSR Container
     </a>
   </li>
 
@@ -988,22 +963,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementations" title="Implementations" class="md-nav__link">
-    Implementations
+  <a href="#basic-example" title="Basic example" class="md-nav__link">
+    Basic example
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaininfrapsrdomainprojectiondocumenttransformer" title="MsgPhp\Domain\Infra\Psr\DomainProjectionDocumentTransformer" class="md-nav__link">
-    MsgPhp\Domain\Infra\Psr\DomainProjectionDocumentTransformer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1032,12 +994,64 @@ Its purpose is to transform domain objects into <a href="../documents/">projecti
 <h2 id="api">API</h2>
 <h3 id="transformobject-object-domainprojectiondocument"><code>transform(object $object): DomainProjectionDocument</code></h3>
 <p>Transforms the domain object into a projection document.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaininfrapsrdomainprojectiondocumenttransformer"><code>MsgPhp\Domain\Infra\Psr\DomainProjectionDocumentTransformer</code></h3>
-<p>A PSR container tailored projection document transformer.</p>
-<ul>
-<li><a href="../../infrastructure/psr-container/#domain-projection-document-transformer">Read more</a></li>
-</ul>
+<h2 id="basic-example">Basic example</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocumentTransformerInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
+    <span class="p">{</span>
+        <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
+        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
+        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$projection</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyTransformer</span> <span class="k">implements</span> <span class="nx">DomainProjectionDocumentTransformerInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">transform</span><span class="p">(</span><span class="nv">$object</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionDocument</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$object</span> <span class="nx">instanceof</span> <span class="nx">MyEntity</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">DomainProjectionDocument</span><span class="p">(</span><span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span> <span class="p">[</span>
+                <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span>
+                <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">someField</span><span class="p">,</span>
+            <span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\LogicException</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$transformer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyTransformer</span><span class="p">();</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$document</span> <span class="o">=</span> <span class="nv">$transformer</span><span class="o">-&gt;</span><span class="na">transform</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
+<span class="nv">$projection</span> <span class="o">=</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">toProjection</span><span class="p">();</span>
+</pre></div>
                 
                   
                 

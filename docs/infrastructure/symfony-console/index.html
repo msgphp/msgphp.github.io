@@ -709,18 +709,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../psr-container/" title="PSR Container" class="md-nav__link">
-      PSR Container
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../simple-bus/" title="SimpleBus" class="md-nav__link">
       SimpleBus
     </a>
@@ -1180,18 +1168,18 @@
 <li>Requires <a href="https://packagist.org/packages/symfony/console">symfony/console</a></li>
 </ul>
 <h2 id="commands">Commands</h2>
-<p>Various standard <a href="https://symfony.com/doc/current/console.html">console commands</a> are provided depending on used domain infrastructure. They are defined in the
-<code>MsgPhp\Domain\Infra\Console\Command\</code> namespace.</p>
+<p>Various standard <a href="https://symfony.com/doc/current/console.html">console commands</a> are available and can be used depending on implemented domain infrastructure. They
+are defined in the <code>MsgPhp\Domain\Infra\Console\Command\</code> namespace.</p>
 <h3 id="initializedomainprojectiontypescommand"><code>InitializeDomainProjectionTypesCommand</code></h3>
-<p>Initializes a <a href="../../projection/type-registry/">projection type registry</a>.</p>
-<div class="codehilite"><pre><span></span>bin/console domain:projection:initialize-types <span class="o">[</span>--force<span class="o">]</span>
+<p>Initializes the <a href="../../projection/type-registry/">projection type registry</a>.</p>
+<div class="codehilite"><pre><span></span>bin/console projection:initialize-types <span class="o">[</span>--force<span class="o">]</span>
 </pre></div>
 
 
 <h3 id="synchronizedomainprojectionscommand"><code>SynchronizeDomainProjectionsCommand</code></h3>
 <p>Synchronizes domain objects and their <a href="../../projection/models/">projections</a> using the <a href="../../projection/synchronization/">projection synchronization</a>
 utility service.</p>
-<div class="codehilite"><pre><span></span>bin/console domain:projection:synchronize
+<div class="codehilite"><pre><span></span>bin/console projection:synchronize
 </pre></div>
 
 

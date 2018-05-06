@@ -795,18 +795,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure/psr-container/" title="PSR Container" class="md-nav__link">
-      PSR Container
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../infrastructure/simple-bus/" title="SimpleBus" class="md-nav__link">
       SimpleBus
     </a>
@@ -1063,7 +1051,7 @@ is to hold a projection document its data and current state.</p>
 <h3 id="properties">Properties</h3>
 <ul>
 <li><code>int $status</code>: The current document status. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/DomainProjectionDocument.html#page-content">default statuses</a>.</li>
-<li><code>?\Exception $error</code>: An occurred error, if any</li>
+<li><code>?\Throwable $error</code>: An occurred error, if any</li>
 <li><code>?object $source</code>: The origin object source, if any</li>
 </ul>
 <hr />
@@ -1081,8 +1069,8 @@ is to hold a projection document its data and current state.</p>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 

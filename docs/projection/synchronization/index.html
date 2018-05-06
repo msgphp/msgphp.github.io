@@ -774,18 +774,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure/psr-container/" title="PSR Container" class="md-nav__link">
-      PSR Container
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../infrastructure/simple-bus/" title="SimpleBus" class="md-nav__link">
       SimpleBus
     </a>
@@ -1027,6 +1015,7 @@ read from <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/DomainP
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocumentProvider</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocumentTransformerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionRepositoryInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionSynchronization</span><span class="p">;</span>
@@ -1044,23 +1033,24 @@ read from <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/DomainP
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="sd">/** @var DomainProjectionDocumentTransformerInterface $transformer */</span>
-<span class="nv">$transformer</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="sd">/** @var DomainProjectionTypeRegistryInterface $typeRegistry */</span>
 <span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="sd">/** @var DomainProjectionRepositoryInterface $repository */</span>
 <span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$synchronization</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainProjectionSynchronization</span><span class="p">(</span><span class="nv">$typeRegistry</span><span class="p">,</span> <span class="nv">$repository</span><span class="p">,</span> <span class="nv">$transformer</span><span class="p">,</span> <span class="p">[</span>
+<span class="sd">/** @var DomainProjectionDocumentTransformerInterface $transformer */</span>
+<span class="nv">$transformer</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainProjectionDocumentProvider</span><span class="p">(</span><span class="nv">$transformer</span><span class="p">,</span> <span class="p">[</span>
     <span class="k">function</span> <span class="p">()</span><span class="o">:</span> <span class="nx">iterable</span> <span class="p">{</span>
         <span class="k">yield</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="k">yield</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
     <span class="p">},</span>
 <span class="p">]);</span>
+<span class="nv">$synchronization</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainProjectionSynchronization</span><span class="p">(</span><span class="nv">$typeRegistry</span><span class="p">,</span> <span class="nv">$repository</span><span class="p">,</span> <span class="nv">$provider</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$synchronization</span><span class="o">-&gt;</span><span class="na">synchronize</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$document</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">DomainProjectionDocument</span><span class="o">::</span><span class="na">STATUS_VALID</span> <span class="o">===</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">DomainProjectionDocument</span><span class="o">::</span><span class="na">STATUS_SYNCHRONIZED</span> <span class="o">===</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">status</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="s1">&#39;Synchronized projection for &#39;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; with ID &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="o">-&gt;</span><span class="na">id</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
         <span class="k">continue</span><span class="p">;</span>
     <span class="p">}</span>
