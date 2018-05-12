@@ -993,6 +993,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../reference/repositories/" title="Domain Repositories" class="md-nav__link">
+      Domain Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
       Doctrine Identifier Types
     </a>
@@ -1155,6 +1167,10 @@
                 <h1 id="repositories">Repositories</h1>
 <p>A domain repository is not interface bound by default. Instead you can leverage a utility trait, tied to specific
 infrastructure (e.g. Doctrine), to rapidly create one. This page describes the API provided by default <a href="#implementations">implementations</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/repositories/">reference</a> page for all available repositories provided per domain</p>
+</div>
 <h2 id="api">API</h2>
 <h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code></h3>
 <p>Finds all entities available. An unlimited collection is implied by <code>$limit</code> set to zero.</p>

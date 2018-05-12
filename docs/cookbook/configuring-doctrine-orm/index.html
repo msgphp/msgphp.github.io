@@ -953,6 +953,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../reference/repositories/" title="Domain Repositories" class="md-nav__link">
+      Domain Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
       Doctrine Identifier Types
     </a>
@@ -1111,19 +1123,17 @@ defined by your application:</p>
 
 <p>Let MsgPHP know about your entity:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
-    <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\Entity\SomeEntity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\Entity\SomeEntity</span>
+
+    <span class="c1"># ...</span>
 </pre></div>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>When using a default entity <em>field-</em> or <em>feature-trait</em> a default ORM mapping is configured automatically</p>
+<p>See the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain. When using a
+entity field / feature trait its default ORM mapping is configured automatically.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1168,11 +1178,12 @@ necessary</p>
 <h3 id="custom-identifiers">Custom Identifiers</h3>
 <p>In case a custom implementation is used it should be configured accordingly:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
-    <span class="c1"># ...</span>
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\SomeId</span>
     <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bigint</span>
+
+    <span class="c1"># ...</span>
 </pre></div>
 
 
@@ -1279,9 +1290,9 @@ bin/console doctrine:schema:update --force
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="c1"># ...</span>
-
     <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_entity_manager&#39;</span>
+
+    <span class="c1"># ...</span>
 </pre></div>
                 
                   

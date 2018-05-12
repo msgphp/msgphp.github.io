@@ -946,6 +946,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../reference/repositories/" title="Domain Repositories" class="md-nav__link">
+      Domain Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
       Doctrine Identifier Types
     </a>
@@ -1080,22 +1092,7 @@ enable a specific domain layer within an application.</p>
 automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a></p>
 </div>
 <h2 id="configuration">Configuration</h2>
-<p>By default a bundle provides the following minimal configuration:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_&lt;name&gt;.yaml</span>
-
-<span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span> <span class="c1"># e.g. &quot;msgphp_user&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
-    <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
-    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
-    <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[]</span>
-</pre></div>
-
-
-<p>Depending on your personal preference you can also write the configuration in any other supported format.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>See the <a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo configuration</a> for a more advanced example</p>
-</div>
+<p>A bundle provides the following configuration nodes by default:</p>
 <h3 id="class_mapping"><code>class_mapping</code></h3>
 <p>Configures the bundle with a class mapping to tell which classes of yours should be used for a known class of ours.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
@@ -1129,9 +1126,9 @@ as well:</p>
 <li><code>uuid_binary_ordered_time</code></li>
 </ul>
 <h3 id="default_id_type"><code>default_id_type</code></h3>
-<p>Configures a default type name to use for all known domain identifiers provided by the bundle.</p>
+<p>Configures a default type name to use for all known domain identifiers provided by the bundle. See also <a href="#id_type_mapping"><code>id_type_mapping</code></a>.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uuid</span>
+    <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
 </pre></div>
 
 
@@ -1144,31 +1141,37 @@ the corresponding <a href="../../event-sourcing/events/">domain event</a> might 
 can be explicitly enabled or disabled by command.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeOtherCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\Command\SomeCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\Command\SomeOtherCommand</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 
 
 <h2 id="basic-configuration-example">Basic Configuration Example</h2>
 <p>Given a bundle provides the following domain identifiers:</p>
 <ul>
-<li><code>MsgPhp\FooIdInterface</code></li>
-<li><code>MsgPhp\BarIdInterface</code></li>
-<li><code>MsgPhp\BazIdInterface</code></li>
+<li><code>MsgPhp\SomeDomain\FooIdInterface</code></li>
+<li><code>MsgPhp\SomeDomain\BarIdInterface</code></li>
+<li><code>MsgPhp\SomeDomain\BazIdInterface</code></li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">uuid</span>
     <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\FooIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\FooIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
         <span class="c1"># implied:</span>
-        <span class="c1"># MsgPhp\BarIdInterface: uuid</span>
-        <span class="c1"># MsgPhp\BazIdInterface: uuid</span>
+        <span class="c1"># MsgPhp\SomeDomain\BarIdInterface: uuid</span>
+        <span class="c1"># MsgPhp\SomeDomain\BazIdInterface: uuid</span>
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\BarIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\MyBarUuid</span>
+        <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\BarIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\MyBarUuid</span>
         <span class="c1"># implied:</span>
-        <span class="c1"># MsgPhp\FooIdInterface: MsgPhp\Domain\DomainId</span>
-        <span class="c1"># MsgPhp\BazIdInterface: MsgPhp\Domain\Infra\Uuid\DomainId</span>
+        <span class="c1"># MsgPhp\SomeDomain\FooIdInterface: MsgPhp\SomeDomain\FooId</span>
+        <span class="c1"># MsgPhp\SomeDomain\BazIdInterface: MsgPhp\SomeDomain\Infra\Uuid\BazId</span>
 </pre></div>
+
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See also the <a href="https://github.com/msgphp/symfony-demo-app/blob/master/config/packages/msgphp.php">demo application configuration</a></p>
+</div>
                 
                   
                 
