@@ -112,7 +112,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, string $usernameField = null, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
+                    <a href="#method___construct">__construct</a>(string $class, string|null $usernameField, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -205,7 +205,7 @@
                     <h3 id="method___construct">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L30">line 30</a></div>
         <code>                    
-    <strong>__construct</strong>(string $class, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, string $usernameField = null, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
+    <strong>__construct</strong>(string $class, string|null $usernameField, <abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr> $em, <a href="../../../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper = null)
         </code>
     </h3>
     <div class="details">
@@ -222,13 +222,13 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr></td>
-                <td>$em</td>
+                <td>string|null</td>
+                <td>$usernameField</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>string</td>
-                <td>$usernameField</td>
+                <td><abbr title="Doctrine\ORM\EntityManagerInterface">EntityManagerInterface</abbr></td>
+                <td>$em</td>
                 <td></td>
             </tr>
                     <tr>
@@ -348,7 +348,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_exists">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L70">line 70</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L65">line 65</a></div>
         <code>                    
     <strong>exists</strong>(<a href="../../../../../MsgPhp/User/UserIdInterface.html"><abbr title="MsgPhp\User\UserIdInterface">UserIdInterface</abbr></a> $id)
         </code>
@@ -377,7 +377,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_usernameExists">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L75">line 75</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L70">line 70</a></div>
         <code>                    
     <strong>usernameExists</strong>(string $username)
         </code>
@@ -406,7 +406,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_save">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L88">line 88</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L83">line 83</a></div>
         <code>                    
     <strong>save</strong>(<a href="../../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user)
         </code>
@@ -435,7 +435,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_delete">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L93">line 93</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/Repository/UserRepository.php#L88">line 88</a></div>
         <code>                    
     <strong>delete</strong>(<a href="../../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user)
         </code>

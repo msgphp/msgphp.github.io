@@ -881,6 +881,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#changing-the-entity-manager" title="Changing The Entity Manager" class="md-nav__link">
+    Changing The Entity Manager
+  </a>
+  
+</li>
+      
       
       
       
@@ -1035,6 +1042,13 @@
         <li class="md-nav__item">
   <a href="#database-setup" title="Database Setup" class="md-nav__link">
     Database Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-entity-manager" title="Changing The Entity Manager" class="md-nav__link">
+    Changing The Entity Manager
   </a>
   
 </li>
@@ -1257,6 +1271,17 @@ to couple with a known identifier class.</p>
 <p>Create the database schema:</p>
 <div class="codehilite"><pre><span></span>bin/console doctrine:database:create
 bin/console doctrine:schema:update --force
+</pre></div>
+
+
+<h2 id="changing-the-entity-manager">Changing The Entity Manager</h2>
+<p>To change the default entity manager used by MsgPHP, override its alias service:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
+
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_entity_manager&#39;</span>
 </pre></div>
                 
                   

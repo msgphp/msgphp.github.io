@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\EavBundle\DependencyInjection\Compiler\CleanupPass | Message driven PHP - API</title>
+    <title>MsgPhp\User\Infra\Doctrine\ObjectFieldMappings | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_EavBundle_DependencyInjection_Compiler_CleanupPass" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_User_Infra_Doctrine_ObjectFieldMappings" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/EavBundle.html">EavBundle</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/EavBundle/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/EavBundle/DependencyInjection/Compiler.html">Compiler</a></li><li class="backslash">\</li><li>CleanupPass</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/User/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li>ObjectFieldMappings</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            CleanupPass
+            ObjectFieldMappings
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>CleanupPass</strong>        implements
-        <abbr title="Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface">CompilerPassInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Compiler/CleanupPass.php">View source</a>)
+    <strong>ObjectFieldMappings</strong>        implements
+        <a href="../../../../MsgPhp/Domain/Infra/Doctrine/ObjectFieldMappingsProviderInterface.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\ObjectFieldMappingsProviderInterface">ObjectFieldMappingsProviderInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/ObjectFieldMappings.php">View source</a>)
 </p>
 
         
@@ -88,6 +88,18 @@
 
     
     
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>CREDENTIALS</td>
+                <td class="last">
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
     
     
             <h2>Methods</h2>
@@ -95,10 +107,10 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    static&nbsp;
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_process">process</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_provideObjectFieldMappings">provideObjectFieldMappings</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -111,10 +123,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_process">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/EavBundle/DependencyInjection/Compiler/CleanupPass.php#L19">line 19</a></div>
-        <code>                    
-    <strong>process</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <h3 id="method_provideObjectFieldMappings">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Doctrine/ObjectFieldMappings.php#L27">line 27</a></div>
+        <code>        static            
+    <strong>provideObjectFieldMappings</strong>()
         </code>
     </h3>
     <div class="details">
@@ -122,16 +134,6 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
-                <td></td>
-            </tr>
-            </table>
-
             
             
             
