@@ -1040,6 +1040,24 @@ Its purpose is to ease the handling of command messages by sourcing a <a href=".
 <span class="p">{</span>
 <span class="p">}</span>
 
+<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEventInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleEvent</span><span class="p">(</span><span class="nx">DomainEventInterface</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span> <span class="nx">instanceof</span> <span class="nx">MyDomainEvent</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// do something</span>
+
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
 <span class="k">class</span> <span class="nc">MyCommandHandler</span>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">EventSourcingCommandHandlerTrait</span><span class="p">;</span>
@@ -1059,24 +1077,6 @@ Its purpose is to ease the handling of command messages by sourcing a <a href=".
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEventHandler</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainEventHandlerInterface</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEventInterface</span>
-<span class="p">{</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">handleEvent</span><span class="p">(</span><span class="nx">DomainEventInterface</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$event</span> <span class="nx">instanceof</span> <span class="nx">MyDomainEvent</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// do something</span>
-
-            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
