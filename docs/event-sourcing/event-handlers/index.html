@@ -395,8 +395,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
+      Entities
     </a>
   </li>
 
@@ -407,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
-      Entities
+    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
+      Repositories
     </a>
   </li>
 
@@ -913,8 +913,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/identifiers/" title="Domain Identifiers" class="md-nav__link">
-      Domain Identifiers
+    <a href="../../reference/identifiers/" title="Identifiers" class="md-nav__link">
+      Identifiers
     </a>
   </li>
 
@@ -925,8 +925,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/entities/" title="Domain Entities" class="md-nav__link">
-      Domain Entities
+    <a href="../../reference/entities/" title="Entities" class="md-nav__link">
+      Entities
     </a>
   </li>
 
@@ -937,8 +937,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/repositories/" title="Domain Repositories" class="md-nav__link">
-      Domain Repositories
+    <a href="../../reference/repositories/" title="Repositories" class="md-nav__link">
+      Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/messages/" title="Messages" class="md-nav__link">
+      Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/domain-events/" title="Domain Events" class="md-nav__link">
+      Domain Events
     </a>
   </li>
 
@@ -1057,8 +1081,9 @@
 handling of <a href="../events/">domain events</a> within a certain context.</p>
 <p>Usually an entity implements it in order to mutate its own state (i.e. self-handling). It enforces the entity state to
 be valid by design as it encapsulates all write operations.</p>
-<p>In practice domain events can be recorded on trigger. It allows to re-play them at any point in time afterwards.
-Consider this a design choice to be made upfront, e.g. in case your entity design requires its history to be accessible.</p>
+<p>In practice domain events can be recorded on trigger, or privately within the implementation. It allows to re-play them
+at any point in time afterwards. Consider this a design choice to be made upfront, e.g. in case your entity design
+requires its history to be accessible.</p>
 <h2 id="api">API</h2>
 <h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
 <p>Handles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled
@@ -1066,8 +1091,7 @@ yes or no.</p>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaineventdomaineventhandlertrait"><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code></h3>
 <p>A utility trait implementing the event handler API. By convention it maps events to
-<code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods. It's designed to support default <a href="../events/#implementations">events</a>
-out-of-the-box.</p>
+<code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods.</p>
 <h4 id="basic-example">Basic example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 

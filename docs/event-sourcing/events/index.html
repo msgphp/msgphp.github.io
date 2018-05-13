@@ -395,8 +395,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
+      Entities
     </a>
   </li>
 
@@ -407,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ddd/entities/" title="Entities" class="md-nav__link">
-      Entities
+    <a href="../../ddd/repositories/" title="Repositories" class="md-nav__link">
+      Repositories
     </a>
   </li>
 
@@ -894,8 +894,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/identifiers/" title="Domain Identifiers" class="md-nav__link">
-      Domain Identifiers
+    <a href="../../reference/identifiers/" title="Identifiers" class="md-nav__link">
+      Identifiers
     </a>
   </li>
 
@@ -906,8 +906,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/entities/" title="Domain Entities" class="md-nav__link">
-      Domain Entities
+    <a href="../../reference/entities/" title="Entities" class="md-nav__link">
+      Entities
     </a>
   </li>
 
@@ -918,8 +918,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/repositories/" title="Domain Repositories" class="md-nav__link">
-      Domain Repositories
+    <a href="../../reference/repositories/" title="Repositories" class="md-nav__link">
+      Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/messages/" title="Messages" class="md-nav__link">
+      Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/domain-events/" title="Domain Events" class="md-nav__link">
+      Domain Events
     </a>
   </li>
 
@@ -1015,8 +1039,12 @@
                 
                 
                 <h1 id="events">Events</h1>
-<p>A domain event is bound to <code>MsgPhp\Domain\Event\DomainEventInterface</code>. Its purpose is to identify concrete domain events
-which represent something that happens. When handled it might lead to an application state change.</p>
+<p>A domain event is bound to <code>MsgPhp\Domain\Event\DomainEventInterface</code>. Its purpose is to represent any action that can
+ <em>happen</em> regarding the domain. When handled it might lead to an application state change.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/domain-events/">reference</a> page for all available events provided per domain</p>
+</div>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaineventconfirmevent"><code>MsgPhp\Domain\Event\ConfirmEvent</code></h3>
 <p>Triggers a confirmation. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeConfirmed::handleConfirmEvent()</code>.</p>
@@ -1044,7 +1072,7 @@ which represent something that happens. When handled it might lead to an applica
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../ddd/entities/" title="Entities" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../ddd/repositories/" title="Repositories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1053,7 +1081,7 @@ which represent something that happens. When handled it might lead to an applica
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Entities
+                Repositories
               </span>
             </div>
           </a>

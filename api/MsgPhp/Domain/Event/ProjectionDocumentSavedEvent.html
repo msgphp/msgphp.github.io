@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\DependencyInjection\Compiler\ResolveDomainPass | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Event\ProjectionDocumentSavedEvent | Message driven PHP - API</title>
 
-            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
-        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
-        <script src="../../../../../js/bootstrap.min.js"></script>
-        <script src="../../../../../js/typeahead.min.js"></script>
-        <script src="../../../../../sami.js"></script>
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -19,14 +19,14 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_DependencyInjection_Compiler_ResolveDomainPass" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Event_ProjectionDocumentSavedEvent" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                 <script>
             $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
         </script>
-        <form id="search-form" action="../../../../../search.html" method="GET">
+        <form id="search-form" action="../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -48,16 +48,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../../../index.html">Message driven PHP - API</a>
+                <a class="navbar-brand" href="../../../index.html">Message driven PHP - API</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
-                    <li><a href="../../../../../classes.html">Classes</a></li>
-                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
-                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
-                    <li><a href="../../../../../traits.html">Traits</a></li>
-                    <li><a href="../../../../../doc-index.html">Index</a></li>
-                    <li><a href="../../../../../search.html">Search</a></li>
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
                 </ul>
             </div>
         </div>
@@ -66,21 +66,20 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection/Compiler.html">Compiler</a></li><li class="backslash">\</li><li>ResolveDomainPass</li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Event.html">Event</a></li><li class="backslash">\</li><li>ProjectionDocumentSavedEvent</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ResolveDomainPass
+            ProjectionDocumentSavedEvent
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ResolveDomainPass</strong>        implements
-        <abbr title="Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface">CompilerPassInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/ResolveDomainPass.php">View source</a>)
+    <strong>ProjectionDocumentSavedEvent</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Event/ProjectionDocumentSavedEvent.php">View source</a>)
 </p>
 
         
@@ -89,6 +88,19 @@
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_document">
+                                                                                
+                </td>
+                <td>$document</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -98,7 +110,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_process">process</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -111,10 +123,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_process">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/ResolveDomainPass.php#L19">line 19</a></div>
-        <code>                    
-    <strong>process</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Event/ProjectionDocumentSavedEvent.php#L16">line 16</a></div>
+        <code>final                    
+    <strong>__construct</strong>(<a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
         </code>
     </h3>
     <div class="details">
@@ -126,8 +138,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
+                <td><a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a></td>
+                <td>$document</td>
                 <td></td>
             </tr>
             </table>
