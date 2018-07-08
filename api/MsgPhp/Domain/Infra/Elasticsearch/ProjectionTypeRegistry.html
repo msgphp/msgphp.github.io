@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Elasticsearch_DomainProjectionTypeRegistry" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Elasticsearch_ProjectionTypeRegistry" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Elasticsearch.html">Elasticsearch</a></li><li class="backslash">\</li><li>DomainProjectionTypeRegistry</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Elasticsearch.html">Elasticsearch</a></li><li class="backslash">\</li><li>ProjectionTypeRegistry</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DomainProjectionTypeRegistry
+            ProjectionTypeRegistry
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>DomainProjectionTypeRegistry</strong>        implements
-        <a href="../../../../MsgPhp/Domain/Projection/DomainProjectionTypeRegistryInterface.html"><abbr title="MsgPhp\Domain\Projection\DomainProjectionTypeRegistryInterface">DomainProjectionTypeRegistryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionTypeRegistry.php">View source</a>)
+    <strong>ProjectionTypeRegistry</strong>        implements
+        <a href="../../../../MsgPhp/Domain/Projection/ProjectionTypeRegistryInterface.html"><abbr title="MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface">ProjectionTypeRegistryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionTypeRegistry.php">View source</a>)
 </p>
 
         
@@ -118,7 +118,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string[]
+                    array
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_all">all</a>()
@@ -129,7 +129,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_initialize">initialize</a>()
@@ -140,7 +140,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_destroy">destroy</a>()
@@ -157,7 +157,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionTypeRegistry.php#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionTypeRegistry.php#L26">line 26</a></div>
         <code>                    
     <strong>__construct</strong>(<abbr title="Elasticsearch\Client">Client</abbr> $client, string $index, array $mappings, array $settings = [], <abbr title="Psr\Log\LoggerInterface">LoggerInterface</abbr> $logger = null)
         </code>
@@ -206,8 +206,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_all">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionTypeRegistry.php#L38">line 38</a></div>
-        <code>                    string[]
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionTypeRegistry.php#L38">line 38</a></div>
+        <code>                    array
     <strong>all</strong>()
         </code>
     </h3>
@@ -221,7 +221,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>string[]</td>
+            <td>array</td>
             <td></td>
         </tr>
     </table>
@@ -234,8 +234,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_initialize">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionTypeRegistry.php#L43">line 43</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionTypeRegistry.php#L43">line 43</a></div>
+        <code>                    void
     <strong>initialize</strong>()
         </code>
     </h3>
@@ -245,6 +245,15 @@
 
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -253,8 +262,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_destroy">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionTypeRegistry.php#L58">line 58</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionTypeRegistry.php#L58">line 58</a></div>
+        <code>                    void
     <strong>destroy</strong>()
         </code>
     </h3>
@@ -264,6 +273,15 @@
 
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>

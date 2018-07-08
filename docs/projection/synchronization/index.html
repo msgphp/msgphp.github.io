@@ -864,6 +864,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1047,12 +1059,7 @@
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocumentTransformerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionRepositoryInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionTypeRegistryInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionSynchronization</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentProvider</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionDocumentProvider</span><span class="p">,</span> <span class="nx">ProjectionDocumentTransformerInterface</span><span class="p">,</span> <span class="nx">ProjectionRepositoryInterface</span><span class="p">,</span> <span class="nx">ProjectionSynchronization</span><span class="p">,</span> <span class="nx">ProjectionTypeRegistryInterface</span><span class="p">};</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1066,11 +1073,11 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="sd">/** @var DomainProjectionTypeRegistryInterface $typeRegistry */</span>
+<span class="sd">/** @var ProjectionTypeRegistryInterface $typeRegistry */</span>
 <span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="sd">/** @var DomainProjectionRepositoryInterface $repository */</span>
+<span class="sd">/** @var ProjectionRepositoryInterface $repository */</span>
 <span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="sd">/** @var DomainProjectionDocumentTransformerInterface $transformer */</span>
+<span class="sd">/** @var ProjectionDocumentTransformerInterface $transformer */</span>
 <span class="nv">$transformer</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="nv">$provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionDocumentProvider</span><span class="p">(</span><span class="nv">$transformer</span><span class="p">,</span> <span class="p">[</span>
     <span class="k">function</span> <span class="p">()</span><span class="o">:</span> <span class="nx">iterable</span> <span class="p">{</span>
@@ -1101,7 +1108,7 @@
 <h2 id="command-line-interface">Command Line Interface</h2>
 <p>A synchronization can be ran using the CLI when working with Symfony Console.</p>
 <ul>
-<li><a href="../../infrastructure/symfony-console/#synchronizedomainprojectionscommand">Read more</a></li>
+<li><a href="../../infrastructure/symfony-console/#synchronizeprojectionscommand">Read more</a></li>
 </ul>
                 
                   

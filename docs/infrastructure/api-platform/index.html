@@ -676,8 +676,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#domain-projection-data-provider" title="Domain Projection Data Provider" class="md-nav__link">
-    Domain Projection Data Provider
+  <a href="#projection-data-provider" title="Projection Data Provider" class="md-nav__link">
+    Projection Data Provider
   </a>
   
     <nav class="md-nav">
@@ -857,6 +857,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -979,8 +991,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#domain-projection-data-provider" title="Domain Projection Data Provider" class="md-nav__link">
-    Domain Projection Data Provider
+  <a href="#projection-data-provider" title="Projection Data Provider" class="md-nav__link">
+    Projection Data Provider
   </a>
   
     <nav class="md-nav">
@@ -1029,8 +1041,8 @@
 <ul>
 <li>Requires <a href="https://packagist.org/packages/api-platform/core">api-platform/core</a></li>
 </ul>
-<h2 id="domain-projection-data-provider">Domain Projection Data Provider</h2>
-<p>When working with <a href="../../projection/models/">projections</a> an <a href="https://api-platform.com/docs/core/data-providers">API Data Provider</a> is provided by <code>MsgPhp\Domain\Infra\ApiPlatform\DomainProjectionDataProvider</code>.
+<h2 id="projection-data-provider">Projection Data Provider</h2>
+<p>When working with <a href="../../projection/models/">projections</a> an <a href="https://api-platform.com/docs/core/data-providers">API Data Provider</a> is provided by <code>MsgPhp\Domain\Infra\ApiPlatform\ProjectionDataProvider</code>.
 It uses any <a href="../../projection/repositories/">projection repository</a> in an effort to provide API resources. </p>
 <h3 id="minimal-configuration">Minimal configuration</h3>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">api_platform</span><span class="p p-Indicator">:</span>
@@ -1040,7 +1052,7 @@ It uses any <a href="../../projection/repositories/">projection repository</a> i
     <span class="c1"># ...</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Infra\ApiPlatform\DomainProjectionDataProvider</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Infra\ApiPlatform\ProjectionDataProvider</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">api_platform.collection_data_provider</span><span class="p p-Indicator">]</span>
         <span class="l l-Scalar l-Scalar-Plain">autowire</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
@@ -1059,19 +1071,19 @@ It uses any <a href="../../projection/repositories/">projection repository</a> i
 
 <span class="k">use</span> <span class="nx">ApiPlatform\Core\Annotation\ApiProperty</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">ApiPlatform\Core\Annotation\ApiResource</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionInterface</span><span class="p">;</span>
 
 <span class="sd">/**</span>
 <span class="sd"> * @ApiResource(shortName=&quot;Some&quot;)</span>
 <span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">SomeProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
+<span class="k">class</span> <span class="nc">SomeProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
 <span class="p">{</span>
     <span class="sd">/**</span>
 <span class="sd">     * @ApiProperty(identifier=true)</span>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
     <span class="p">{</span>
         <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">self</span><span class="p">();</span>
         <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>

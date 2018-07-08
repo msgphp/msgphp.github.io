@@ -628,8 +628,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#toprojection-domainprojectioninterface" title="toProjection(): DomainProjectionInterface" class="md-nav__link">
-    toProjection(): DomainProjectionInterface
+  <a href="#toprojection-projectioninterface" title="toProjection(): ProjectionInterface" class="md-nav__link">
+    toProjection(): ProjectionInterface
   </a>
   
 </li>
@@ -885,6 +885,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1043,8 +1055,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#toprojection-domainprojectioninterface" title="toProjection(): DomainProjectionInterface" class="md-nav__link">
-    toProjection(): DomainProjectionInterface
+  <a href="#toprojection-projectioninterface" title="toProjection(): ProjectionInterface" class="md-nav__link">
+    toProjection(): ProjectionInterface
   </a>
   
 </li>
@@ -1100,19 +1112,18 @@ projection document its data and current state.</p>
 <h3 id="getbody-array"><code>getBody(): array</code></h3>
 <p>Gets the document data.</p>
 <hr />
-<h3 id="toprojection-domainprojectioninterface"><code>toProjection(): DomainProjectionInterface</code></h3>
+<h3 id="toprojection-projectioninterface"><code>toProjection(): ProjectionInterface</code></h3>
 <p>Transforms the document into its projection model.</p>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionInterface</span><span class="p">};</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>

@@ -881,13 +881,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#changing-the-entity-manager" title="Changing The Entity Manager" class="md-nav__link">
-    Changing The Entity Manager
-  </a>
-  
-</li>
-      
       
       
       
@@ -896,6 +889,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
   </li>
 
         
@@ -1082,13 +1087,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#changing-the-entity-manager" title="Changing The Entity Manager" class="md-nav__link">
-    Changing The Entity Manager
-  </a>
-  
-</li>
-      
       
       
       
@@ -1113,7 +1111,7 @@
 <h2 id="installation">Installation</h2>
 <div class="codehilite"><pre><span></span>composer install doctrine/orm doctrine/doctrine-bundle
 
-<span class="c1"># using Symfony Flex</span>
+<span class="c1"># with Symfony Flex</span>
 composer install orm
 </pre></div>
 
@@ -1123,8 +1121,19 @@ composer install orm
 <p>Although the examples use annotation based mappings, you are not required to do so. <a href="https://symfony.com/doc/master/bundles/DoctrineBundle/configuration.html#mapping-configuration">Read more</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The configuration is automatically added when using Symfony Flex</p>
+<p>The configuration is automatically added with Symfony Flex</p>
 </div>
+<p>By default MsgPHP uses the <code>doctrine.orm.entity_manager</code> service. You can override its alias service to use any other
+entity manager:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
+
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_other_entity_manager&#39;</span>
+
+    <span class="c1"># ...</span>
+</pre></div>
+
+
 <h2 id="mapping-entities">Mapping Entities</h2>
 <p>A MsgPHP bundle provides base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
 defined by your application:</p>
@@ -1161,7 +1170,7 @@ entity field / feature trait its default ORM mapping is configured automatically
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>When using Symfony Flex the required entities of a MsgPHP bundle are automatically created, including ORM mapping
+<p>With Symfony Flex the required entities of a MsgPHP bundle are automatically created, including ORM mapping
 and configuration</p>
 </div>
 <h2 id="mapping-identifiers">Mapping Identifiers</h2>
@@ -1307,17 +1316,6 @@ to couple with a known identifier class.</p>
 <div class="codehilite"><pre><span></span>bin/console doctrine:database:create
 bin/console doctrine:schema:update --force
 </pre></div>
-
-
-<h2 id="changing-the-entity-manager">Changing The Entity Manager</h2>
-<p>To change the default entity manager used by MsgPHP, override its alias service:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
-
-<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_entity_manager&#39;</span>
-
-    <span class="c1"># ...</span>
-</pre></div>
                 
                   
                 
@@ -1353,13 +1351,13 @@ bin/console doctrine:schema:update --force
           </a>
         
         
-          <a href="../../reference/identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuring-a-message-bus/" title="Configuring A Message Bus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Identifiers
+                Configuring A Message Bus
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

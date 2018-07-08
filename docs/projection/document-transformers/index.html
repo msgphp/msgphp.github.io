@@ -857,6 +857,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1025,17 +1037,15 @@
                 
                 
                 <h1 id="projection-document-transformers">Projection Document Transformers</h1>
-<p>A projection document transformer is bound to <code>MsgPhp\Domain\Projection\DomainProjectionDocumentTransformerInterface</code>.
-Its purpose is to transform domain objects into <a href="../documents/">projection documents</a>.</p>
+<p>A projection document transformer is bound to <code>MsgPhp\Domain\Projection\ProjectionDocumentTransformerInterface</code>. Its
+purpose is to transform arbitrary objects into <a href="../documents/">projection documents</a>.</p>
 <h2 id="api">API</h2>
 <h3 id="transformobject-object-projectiondocument"><code>transform(object $object): ProjectionDocument</code></h3>
 <p>Transforms the domain object into a projection document.</p>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionDocumentTransformerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionDocumentTransformerInterface</span><span class="p">,</span> <span class="nx">ProjectionInterface</span><span class="p">};</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1050,12 +1060,12 @@ Its purpose is to transform domain objects into <a href="../documents/">projecti
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
     <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
     <span class="p">{</span>
         <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
         <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
@@ -1065,7 +1075,7 @@ Its purpose is to transform domain objects into <a href="../documents/">projecti
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">MyTransformer</span> <span class="k">implements</span> <span class="nx">DomainProjectionDocumentTransformerInterface</span>
+<span class="k">class</span> <span class="nc">MyTransformer</span> <span class="k">implements</span> <span class="nx">ProjectionDocumentTransformerInterface</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">transform</span><span class="p">(</span><span class="nv">$object</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionDocument</span>
     <span class="p">{</span>

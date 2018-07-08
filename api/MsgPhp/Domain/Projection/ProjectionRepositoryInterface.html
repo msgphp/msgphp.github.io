@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionRepository | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Projection\ProjectionRepositoryInterface | Message driven PHP - API</title>
 
-            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
-        <script src="../../../../js/jquery-1.11.1.min.js"></script>
-        <script src="../../../../js/bootstrap.min.js"></script>
-        <script src="../../../../js/typeahead.min.js"></script>
-        <script src="../../../../sami.js"></script>
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
         <meta name="MobileOptimized" content="width">
         <meta name="HandheldFriendly" content="true">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -19,14 +19,14 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Elasticsearch_DomainProjectionRepository" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Projection_ProjectionRepositoryInterface" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
                 <script>
             $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
         </script>
-        <form id="search-form" action="../../../../search.html" method="GET">
+        <form id="search-form" action="../../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -48,16 +48,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../../index.html">Message driven PHP - API</a>
+                <a class="navbar-brand" href="../../../index.html">Message driven PHP - API</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
-                    <li><a href="../../../../classes.html">Classes</a></li>
-                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
-                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
-                    <li><a href="../../../../traits.html">Traits</a></li>
-                    <li><a href="../../../../doc-index.html">Index</a></li>
-                    <li><a href="../../../../search.html">Search</a></li>
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
                 </ul>
             </div>
         </div>
@@ -65,22 +65,21 @@
 
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Elasticsearch.html">Elasticsearch</a></li><li class="backslash">\</li><li>DomainProjectionRepository</li>
+                <li><span class="label label-default">interface</span></li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Projection.html">Projection</a></li><li class="backslash">\</li><li>ProjectionRepositoryInterface</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DomainProjectionRepository
+            ProjectionRepositoryInterface
                 
         </h1>
     </div>
 
-    <p>    class
-    <strong>DomainProjectionRepository</strong>        implements
-        <a href="../../../../MsgPhp/Domain/Projection/DomainProjectionRepositoryInterface.html"><abbr title="MsgPhp\Domain\Projection\DomainProjectionRepositoryInterface">DomainProjectionRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php">View source</a>)
+    <p>    interface
+    <strong>ProjectionRepositoryInterface</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php">View source</a>)
 </p>
 
         
@@ -95,18 +94,7 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Elasticsearch\Client">Client</abbr> $client, string $index)
-        
-                                            <p class="no-description">No description</p>
-                                    </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a>[]
+                    <abbr title="MsgPhp\Domain\Projection\iterable">iterable</abbr>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_findAll">findAll</a>(string $type, int $offset = 0, int $limit = 0)
@@ -117,7 +105,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    <abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_find">find</a>(string $type, string $id)
@@ -128,7 +116,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_clear">clear</a>(string $type)
@@ -139,10 +127,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_save">save</a>(<a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
+                    <a href="#method_save">save</a>(<a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -150,7 +138,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_delete">delete</a>(string $type, string $id)
@@ -166,43 +154,9 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L19">line 19</a></div>
-        <code>                    
-    <strong>__construct</strong>(<abbr title="Elasticsearch\Client">Client</abbr> $client, string $index)
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><abbr title="Elasticsearch\Client">Client</abbr></td>
-                <td>$client</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$index</td>
-                <td></td>
-            </tr>
-            </table>
-
-            
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_findAll">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L28">line 28</a></div>
-        <code>                    <a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a>[]
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php#L15">line 15</a></div>
+        <code>                    <abbr title="MsgPhp\Domain\Projection\iterable">iterable</abbr>
     <strong>findAll</strong>(string $type, int $offset = 0, int $limit = 0)
         </code>
     </h3>
@@ -236,7 +190,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a>[]</td>
+            <td><abbr title="MsgPhp\Domain\Projection\iterable">iterable</abbr></td>
             <td></td>
         </tr>
     </table>
@@ -249,8 +203,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_find">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L50">line 50</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php#L17">line 17</a></div>
+        <code>                    <abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null
     <strong>find</strong>(string $type, string $id)
         </code>
     </h3>
@@ -275,6 +229,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -283,8 +246,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_clear">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L65">line 65</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php#L19">line 19</a></div>
+        <code>                    void
     <strong>clear</strong>(string $type)
         </code>
     </h3>
@@ -304,6 +267,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -312,9 +284,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_save">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L76">line 76</a></div>
-        <code>                    
-    <strong>save</strong>(<a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php#L21">line 21</a></div>
+        <code>                    void
+    <strong>save</strong>(<a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
         </code>
     </h3>
     <div class="details">
@@ -326,13 +298,22 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a></td>
+                <td><a href="../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a></td>
                 <td>$document</td>
                 <td></td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -341,8 +322,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_delete">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/DomainProjectionRepository.php#L86">line 86</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Projection/ProjectionRepositoryInterface.php#L23">line 23</a></div>
+        <code>                    void
     <strong>delete</strong>(string $type, string $id)
         </code>
     </h3>
@@ -367,6 +348,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>

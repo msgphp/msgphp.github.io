@@ -424,67 +424,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entity-fields" title="Entity Fields" class="md-nav__link">
-    Entity Fields
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#createdatfield" title="CreatedAtField" class="md-nav__link">
-    CreatedAtField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enabledfield" title="EnabledField" class="md-nav__link">
-    EnabledField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastupdatedatfield" title="LastUpdatedAtField" class="md-nav__link">
-    LastUpdatedAtField
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entity-features" title="Entity Features" class="md-nav__link">
-    Entity Features
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#canbeconfirmed" title="CanBeConfirmed" class="md-nav__link">
-    CanBeConfirmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canbeenabled" title="CanBeEnabled" class="md-nav__link">
-    CanBeEnabled
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
@@ -898,6 +837,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1020,67 +971,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entity-fields" title="Entity Fields" class="md-nav__link">
-    Entity Fields
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#createdatfield" title="CreatedAtField" class="md-nav__link">
-    CreatedAtField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enabledfield" title="EnabledField" class="md-nav__link">
-    EnabledField
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lastupdatedatfield" title="LastUpdatedAtField" class="md-nav__link">
-    LastUpdatedAtField
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entity-features" title="Entity Features" class="md-nav__link">
-    Entity Features
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#canbeconfirmed" title="CanBeConfirmed" class="md-nav__link">
-    CanBeConfirmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#canbeenabled" title="CanBeEnabled" class="md-nav__link">
-    CanBeEnabled
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
@@ -1116,48 +1006,6 @@ features represent a read/write-operation.</p>
 <p class="admonition-title">Note</p>
 <p>See the <a href="../../reference/entities/">reference</a> page for all available entities provided per domain</p>
 </div>
-<h2 id="entity-fields">Entity Fields</h2>
-<h3 id="createdatfield"><code>CreatedAtField</code></h3>
-<p>A datetime value representing an entity was initially created at. Requires <code>$createdAt</code> to be set initially.</p>
-<ul>
-<li><code>getCreatedAt(): \DateTimeInterface</code></li>
-</ul>
-<h3 id="enabledfield"><code>EnabledField</code></h3>
-<p>A boolean value representing an entity its availability state. Sets <code>$enabled</code> to <code>false</code> by default.</p>
-<ul>
-<li><code>isEnabled(): bool</code></li>
-</ul>
-<h3 id="lastupdatedatfield"><code>LastUpdatedAtField</code></h3>
-<p>A datetime value representing an entity was last updated at. Requires <code>$lastUpdatedAt</code> to be set initially.</p>
-<ul>
-<li><code>getLastUpdatedAt(): \DateTimeInterface</code></li>
-</ul>
-<h2 id="entity-features">Entity Features</h2>
-<h3 id="canbeconfirmed"><code>CanBeConfirmed</code></h3>
-<p>Provides ability to confirm an entity. Requires <code>$confirmationToken</code> to be set initially (usually a random token).</p>
-<ul>
-<li><code>getConfirmationToken(): ?string</code></li>
-<li><code>getConfirmedAt(): ?\DateTimeInterface</code> </li>
-<li><code>isConfirmed(): bool</code> </li>
-<li><code>confirm(): void</code> <ul>
-<li>Resets <code>$confirmationToken</code></li>
-<li>Sets <code>$confirmatedAt</code> to the current datetime</li>
-</ul>
-</li>
-</ul>
-<h3 id="canbeenabled"><code>CanBeEnabled</code></h3>
-<p>Provides ability to toggle an entity its availability state.</p>
-<ul>
-<li>Inherits from <code>EnabledField</code></li>
-<li><code>enable(): void</code><ul>
-<li>Sets <code>$enabled</code> to <code>true</code></li>
-</ul>
-</li>
-<li><code>disable(): void</code><ul>
-<li>Sets <code>$enabled</code> to <code>false</code></li>
-</ul>
-</li>
-</ul>
 <h2 id="basic-example">Basic Example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 

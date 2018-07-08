@@ -588,8 +588,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-fromdocumentarray-document-domainprojectioninterface" title="static fromDocument(array $document): DomainProjectionInterface" class="md-nav__link">
-    static fromDocument(array $document): DomainProjectionInterface
+  <a href="#static-fromdocumentarray-document-projectioninterface" title="static fromDocument(array $document): ProjectionInterface" class="md-nav__link">
+    static fromDocument(array $document): ProjectionInterface
   </a>
   
 </li>
@@ -857,6 +857,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -987,8 +999,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static-fromdocumentarray-document-domainprojectioninterface" title="static fromDocument(array $document): DomainProjectionInterface" class="md-nav__link">
-    static fromDocument(array $document): DomainProjectionInterface
+  <a href="#static-fromdocumentarray-document-projectioninterface" title="static fromDocument(array $document): ProjectionInterface" class="md-nav__link">
+    static fromDocument(array $document): ProjectionInterface
   </a>
   
 </li>
@@ -1025,31 +1037,31 @@
                 
                 
                 <h1 id="projections">Projections</h1>
-<p>A domain projection is a model object and bound to <code>MsgPhp\Domain\Projection\DomainProjectionInterface</code>. Its purpose is
-to convert raw model data (a document) into a projection.</p>
+<p>A projection is a model object and bound to <code>MsgPhp\Domain\Projection\ProjectionInterface</code>. Its purpose is to
+convert raw model data (a document) into a projection.</p>
 <p>The document is usually a transformation from a domain object (e.g. an entity) and therefor projections should be
 considered read-only and disposable, as they can be re-created / synchronized at any time from a source of truth.</p>
 <p>A practical use case for projections are APIs, where each API resource is a so called projection from a corresponding
 entity. It enables decoupling and thus optimized API responses.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>For integration with <a href="https://api-platform.com/">API Platform</a> see the <a href="../../infrastructure/api-platform/#domain-projection-data-provider">domain projection data provider</a></p>
+<p>For integration with <a href="https://api-platform.com/">API Platform</a> see the <a href="../../infrastructure/api-platform/#projection-data-provider">projection data provider</a></p>
 </div>
 <h2 id="api">API</h2>
-<h3 id="static-fromdocumentarray-document-domainprojectioninterface"><code>static fromDocument(array $document): DomainProjectionInterface</code></h3>
+<h3 id="static-fromdocumentarray-document-projectioninterface"><code>static fromDocument(array $document): ProjectionInterface</code></h3>
 <p>Creates a projection from raw document data.</p>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionInterface</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">DomainProjectionInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
     <span class="p">{</span>
         <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
         <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>

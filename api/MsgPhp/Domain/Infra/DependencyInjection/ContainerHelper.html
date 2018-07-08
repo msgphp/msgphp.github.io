@@ -94,7 +94,7 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;bool
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_hasBundle">hasBundle</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container, string $class)
@@ -105,7 +105,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;array
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getBundles">getBundles</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container)
@@ -116,7 +116,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;<a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getClassReflection">getClassReflection</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string|null $class)
@@ -127,7 +127,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_removeId">removeId</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $id)
@@ -138,7 +138,7 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;void
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_removeIf">removeIf</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, bool $condition, array $ids)
@@ -149,10 +149,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;<abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_registerAnonymous">registerAnonymous</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, bool $child = false)
+                    <a href="#method_registerAnonymous">registerAnonymous</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, bool $child = false, string $id = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -160,10 +160,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    static&nbsp;void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_tagMessageHandler">tagMessageHandler</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, <abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr> $handler, array $handles)
+                    <a href="#method_tagCommandHandler">tagCommandHandler</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $handlerId, array $handles, string $busId)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -178,7 +178,7 @@
                     <div class="method-item">
                     <h3 id="method_hasBundle">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L22">line 22</a></div>
-        <code>        static            
+        <code>        static            bool
     <strong>hasBundle</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container, string $class)
         </code>
     </h3>
@@ -203,6 +203,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -212,7 +221,7 @@
                     <div class="method-item">
                     <h3 id="method_getBundles">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L27">line 27</a></div>
-        <code>        static            
+        <code>        static            array
     <strong>getBundles</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerInterface">ContainerInterface</abbr> $container)
         </code>
     </h3>
@@ -232,6 +241,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -241,7 +259,7 @@
                     <div class="method-item">
                     <h3 id="method_getClassReflection">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L32">line 32</a></div>
-        <code>        static            
+        <code>        static            <a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a>
     <strong>getClassReflection</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string|null $class)
         </code>
     </h3>
@@ -266,6 +284,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a target="_blank" href="http://php.net/ReflectionClass">ReflectionClass</a></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -275,7 +302,7 @@
                     <div class="method-item">
                     <h3 id="method_removeId">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L41">line 41</a></div>
-        <code>        static            
+        <code>        static            void
     <strong>removeId</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $id)
         </code>
     </h3>
@@ -300,6 +327,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -309,7 +345,7 @@
                     <div class="method-item">
                     <h3 id="method_removeIf">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L53">line 53</a></div>
-        <code>        static            
+        <code>        static            void
     <strong>removeIf</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, bool $condition, array $ids)
         </code>
     </h3>
@@ -339,6 +375,15 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -348,8 +393,8 @@
                     <div class="method-item">
                     <h3 id="method_registerAnonymous">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L64">line 64</a></div>
-        <code>        static            
-    <strong>registerAnonymous</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, bool $child = false)
+        <code>        static            <abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr>
+    <strong>registerAnonymous</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $class, bool $child = false, string $id = null)
         </code>
     </h3>
     <div class="details">
@@ -375,9 +420,23 @@
                 <td>$child</td>
                 <td></td>
             </tr>
+                    <tr>
+                <td>string</td>
+                <td>$id</td>
+                <td></td>
+            </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -385,10 +444,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_tagMessageHandler">
+                    <h3 id="method_tagCommandHandler">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/ContainerHelper.php#L72">line 72</a></div>
-        <code>        static            
-    <strong>tagMessageHandler</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, <abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr> $handler, array $handles)
+        <code>        static            void
+    <strong>tagCommandHandler</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container, string $handlerId, array $handles, string $busId)
         </code>
     </h3>
     <div class="details">
@@ -405,8 +464,8 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\Definition">Definition</abbr></td>
-                <td>$handler</td>
+                <td>string</td>
+                <td>$handlerId</td>
                 <td></td>
             </tr>
                     <tr>
@@ -414,9 +473,23 @@
                 <td>$handles</td>
                 <td></td>
             </tr>
+                    <tr>
+                <td>string</td>
+                <td>$busId</td>
+                <td></td>
+            </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>

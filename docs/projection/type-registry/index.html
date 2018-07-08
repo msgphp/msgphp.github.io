@@ -658,8 +658,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchdomainprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry
+  <a href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
+    MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry
   </a>
   
 </li>
@@ -898,6 +898,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
+      Configuring A Message Bus
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1062,8 +1074,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchdomainprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry
+  <a href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
+    MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry
   </a>
   
 </li>
@@ -1107,8 +1119,8 @@
                 
                 
                 <h1 id="projection-type-registry">Projection Type Registry</h1>
-<p>A projection type registry is bound to <code>MsgPhp\Domain\Projection\DomainProjectionTypeRegistryInterface</code>.
-Its purpose is to manage all available <a href="../models/">projection</a> type information.</p>
+<p>A projection type registry is bound to <code>MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</code>. Its purpose is to
+manage all available <a href="../models/">projection</a> type information.</p>
 <h2 id="api">API</h2>
 <h3 id="all-string"><code>all(): string[]</code></h3>
 <p>Returns all available projection types for this registry.</p>
@@ -1120,19 +1132,19 @@ changed.</p>
 <h3 id="destroy-void"><code>destroy(): void</code></h3>
 <p>Destroys the type registry and thus requires to be re-initialized after.</p>
 <h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaininfraelasticsearchdomainprojectiontyperegistry"><code>MsgPhp\Domain\Infra\Elasticsearch\DomainProjectionTypeRegistry</code></h3>
+<h3 id="msgphpdomaininfraelasticsearchprojectiontyperegistry"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</code></h3>
 <p>An Elasticsearch tailored projection type registry.</p>
 <ul>
-<li><a href="../../infrastructure/elasticsearch/#domain-projection-type-registry">Read more</a></li>
+<li><a href="../../infrastructure/elasticsearch/#projection-type-registry">Read more</a></li>
 </ul>
 <h2 id="basic-example">Basic example</h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\DomainProjectionTypeRegistryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @var DomainProjectionTypeRegistryInterface $typeRegistry */</span>
+<span class="sd">/** @var ProjectionTypeRegistryInterface $typeRegistry */</span>
 <span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
 <span class="c1">// --- USAGE ---</span>
@@ -1147,7 +1159,7 @@ changed.</p>
 <h2 id="command-line-interface">Command Line Interface</h2>
 <p>The type registry can be initialized using the CLI when working with Symfony Console.</p>
 <ul>
-<li><a href="../../infrastructure/symfony-console/#initializedomainprojectiontypescommand">Read more</a></li>
+<li><a href="../../infrastructure/symfony-console/#initializeprojectiontypescommand">Read more</a></li>
 </ul>
                 
                   
