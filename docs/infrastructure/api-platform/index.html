@@ -1046,17 +1046,17 @@
 It uses any <a href="../../projection/repositories/">projection repository</a> in an effort to provide API resources. </p>
 <h3 id="minimal-configuration">Minimal configuration</h3>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">api_platform</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
     <span class="l l-Scalar l-Scalar-Plain">resource_class_directories</span><span class="p p-Indicator">:</span>
         <span class="p p-Indicator">-</span> <span class="s">&#39;%kernel.project_dir%/src/Api/Projection&#39;</span>
 
-    <span class="c1"># ...</span>
-
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ..</span>
+<span class="l l-Scalar l-Scalar-Plain">.</span>
     <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Infra\ApiPlatform\ProjectionDataProvider</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">tags</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">api_platform.collection_data_provider</span><span class="p p-Indicator">]</span>
         <span class="l l-Scalar l-Scalar-Plain">autowire</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-
-    <span class="c1"># ...</span>
 </pre></div>
 
 

@@ -1146,10 +1146,10 @@ to use any other bus:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
     <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.command_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@command_bus&#39;</span>
     <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.event_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@event_bus&#39;</span>
-
-    <span class="c1"># ...</span>
 </pre></div>
 
 
@@ -1178,10 +1178,10 @@ services to use any other bus:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
     <span class="l l-Scalar l-Scalar-Plain">msgphp.simple_bus.command_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@simple_bus.command_bus&#39;</span>
     <span class="l l-Scalar l-Scalar-Plain">msgphp.simple_bus.event_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@simple_bus.event_bus&#39;</span>
-
-    <span class="c1"># ...</span>
 </pre></div>
 
 
@@ -1190,9 +1190,9 @@ services to use any other bus:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Message\DomainMessageBusInterface</span><span class="p p-Indicator">:</span> <span class="s">&#39;@my_bus&#39;</span>
-
     <span class="c1"># ...</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Message\DomainMessageBusInterface</span><span class="p p-Indicator">:</span> <span class="s">&#39;@my_bus&#39;</span>
 </pre></div>
 
 

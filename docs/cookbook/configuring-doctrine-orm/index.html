@@ -1128,9 +1128,9 @@ entity manager:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_other_entity_manager&#39;</span>
-
     <span class="c1"># ...</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">msgphp.doctrine.entity_manager</span><span class="p p-Indicator">:</span> <span class="s">&#39;@doctrine.orm.some_other_entity_manager&#39;</span>
 </pre></div>
 
 
@@ -1156,10 +1156,10 @@ defined by your application:</p>
 
 <p>Let MsgPHP know about your entity:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\Entity\SomeEntity</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\Entity\SomeEntity</span>
-
-    <span class="c1"># ...</span>
 </pre></div>
 
 
@@ -1211,12 +1211,12 @@ necessary</p>
 <h3 id="custom-identifiers">Custom Identifiers</h3>
 <p>In case a custom implementation is used it should be configured accordingly:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">App\SomeId</span>
     <span class="l l-Scalar l-Scalar-Plain">id_type_mapping</span><span class="p p-Indicator">:</span>
         <span class="l l-Scalar l-Scalar-Plain">MsgPhp\SomeDomain\SomeIdInterface</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bigint</span>
-
-    <span class="c1"># ...</span>
 </pre></div>
 
 
