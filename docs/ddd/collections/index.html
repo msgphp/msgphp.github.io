@@ -442,6 +442,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pagination-api" title="Pagination API" class="md-nav__link">
+    Pagination API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extends_1" title="Extends" class="md-nav__link">
+    Extends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoffset-float" title="getOffset(): float" class="md-nav__link">
+    getOffset(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimit-float" title="getLimit(): float" class="md-nav__link">
+    getLimit(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentpage-float" title="getCurrentPage(): float" class="md-nav__link">
+    getCurrentPage(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpage-float" title="getLastPage(): float" class="md-nav__link">
+    getLastPage(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettotalcount-float" title="getTotalCount(): float" class="md-nav__link">
+    getTotalCount(): float
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#implementations" title="Implementations" class="md-nav__link">
     Implementations
   </a>
@@ -458,14 +513,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainpaginateddomaincollection" title="MsgPhp\Domain\PaginatedDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\PaginatedDomainCollection
+  </a>
   
 </li>
         
@@ -1184,6 +1246,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pagination-api" title="Pagination API" class="md-nav__link">
+    Pagination API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extends_1" title="Extends" class="md-nav__link">
+    Extends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getoffset-float" title="getOffset(): float" class="md-nav__link">
+    getOffset(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlimit-float" title="getLimit(): float" class="md-nav__link">
+    getLimit(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentpage-float" title="getCurrentPage(): float" class="md-nav__link">
+    getCurrentPage(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastpage-float" title="getLastPage(): float" class="md-nav__link">
+    getLastPage(): float
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettotalcount-float" title="getTotalCount(): float" class="md-nav__link">
+    getTotalCount(): float
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#implementations" title="Implementations" class="md-nav__link">
     Implementations
   </a>
@@ -1200,14 +1317,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msgphpdomainpaginateddomaincollection" title="MsgPhp\Domain\PaginatedDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\PaginatedDomainCollection
+  </a>
   
 </li>
         
@@ -1282,6 +1406,32 @@ Keys are preserved.</p>
 <hr />
 <h3 id="mapcallable-mapper-array"><code>map(callable $mapper): array</code></h3>
 <p>Returns a map with each collection element as returned by <code>$mapper</code>.</p>
+<h2 id="pagination-api">Pagination API</h2>
+<p>A collection that is part of a paginated result set is bound to <code>MsgPhp\Domain\PaginatedDomainCollectionInterface</code>. Its
+purpose is to expose the current pagination.</p>
+<h3 id="extends_1">Extends</h3>
+<ul>
+<li><a href="#collections"><code>DomainCollectionInterface</code></a></li>
+</ul>
+<hr />
+<h3 id="getoffset-float"><code>getOffset(): float</code></h3>
+<p>Get the current page offset.</p>
+<hr />
+<h3 id="getlimit-float"><code>getLimit(): float</code></h3>
+<p>Get the current page limit (e.g. items per page).</p>
+<hr />
+<h3 id="getcurrentpage-float"><code>getCurrentPage(): float</code></h3>
+<p>Get the current page number.</p>
+<hr />
+<h3 id="getlastpage-float"><code>getLastPage(): float</code></h3>
+<p>Get the last page number.</p>
+<hr />
+<h3 id="gettotalcount-float"><code>getTotalCount(): float</code></h3>
+<p>Get the total no. of items in the full result set.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>count()</code> should return the no. of items on the current page</p>
+</div>
 <h2 id="implementations">Implementations</h2>
 <h3 id="msgphpdomaindomaincollection"><code>MsgPhp\Domain\DomainCollection</code></h3>
 <p>A first class citizen domain collection. It leverages <code>iterable</code> as underlying data type. Lazy support is built-in for
@@ -1293,7 +1443,7 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic example</h4>
+<h4 id="basic-example">Basic Example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
@@ -1332,6 +1482,14 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 </pre></div>
 
 
+<h3 id="msgphpdomainpaginateddomaincollection"><code>MsgPhp\Domain\PaginatedDomainCollection</code></h3>
+<p>A first class citizen paginated domain collection to transform any collection into a paginated collection.</p>
+<ul>
+<li><code>__construct(iterable $elements, float $offset = .0, float $limit = .0, float $count = null, float $totalCount = null)</code><ul>
+<li><code>$elements</code>: The elements this collection contains</li>
+</ul>
+</li>
+</ul>
 <h3 id="msgphpdomaininfradoctrinedomaincollection"><code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code></h3>
 <p>A Doctrine tailored domain collection.</p>
 <ul>

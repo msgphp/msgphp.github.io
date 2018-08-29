@@ -445,8 +445,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
+    Basic Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewindable-generator-example" title="Rewindable Generator Example" class="md-nav__link">
+    Rewindable Generator Example
   </a>
   
 </li>
@@ -1055,8 +1062,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
+  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
+    Basic Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewindable-generator-example" title="Rewindable Generator Example" class="md-nav__link">
+    Rewindable Generator Example
   </a>
   
 </li>
@@ -1125,8 +1139,12 @@
 <li><code>$value</code>: Any iterable value or <code>null</code> to imply an empty collection</li>
 </ul>
 </li>
+<li><code>static createFromCallable(callable $value): DomainCollectionInterface</code><ul>
+<li><code>$value</code>: A callable returning any iterable value</li>
 </ul>
-<h4 id="basic-example_1">Basic example</h4>
+</li>
+</ul>
+<h4 id="basic-example_1">Basic Example</h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\Common\Collections\ArrayCollection</span><span class="p">;</span>
@@ -1141,6 +1159,25 @@
 
 <span class="sd">/** @var DoctrineDomainCollection $collection */</span>
 <span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
+</pre></div>
+
+
+<h4 id="rewindable-generator-example">Rewindable Generator Example</h4>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainCollectionFactory</span><span class="p">;</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="sd">/** @var DomainCollection $collection */</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollectionFactory</span><span class="o">::</span><span class="na">createFromCallable</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span><span class="o">:</span> <span class="nx">iterable</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">yield</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nv">$count</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$collection</span><span class="p">);</span> <span class="c1">// int(2)</span>
+<span class="nv">$array</span> <span class="o">=</span> <span class="nb">iterator_to_array</span><span class="p">(</span><span class="nv">$collection</span><span class="p">);</span> <span class="c1">// [1, 2]</span>
 </pre></div>
                 
                   

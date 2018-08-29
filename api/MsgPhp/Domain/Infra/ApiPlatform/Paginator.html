@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\ApiPlatform\Paginator | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Elasticsearch_ProjectionRepository" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_ApiPlatform_Paginator" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Elasticsearch.html">Elasticsearch</a></li><li class="backslash">\</li><li>ProjectionRepository</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/ApiPlatform.html">ApiPlatform</a></li><li class="backslash">\</li><li>Paginator</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ProjectionRepository
+            Paginator
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ProjectionRepository</strong>        implements
-        <a href="../../../../MsgPhp/Domain/Projection/ProjectionRepositoryInterface.html"><abbr title="MsgPhp\Domain\Projection\ProjectionRepositoryInterface">ProjectionRepositoryInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php">View source</a>)
+    <strong>Paginator</strong>        implements
+        <a target="_blank" href="http://php.net/IteratorAggregate">IteratorAggregate</a>, <abbr title="ApiPlatform\Core\DataProvider\PaginatorInterface">PaginatorInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php">View source</a>)
 </p>
 
         
@@ -98,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="Elasticsearch\Client">Client</abbr> $client, string $index)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a> $collection)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -106,10 +106,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a>
+                    <a target="_blank" href="http://php.net/Traversable">Traversable</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findAll">findAll</a>(string $type, int $offset = 0, int $limit = 0)
+                    <a href="#method_getIterator">getIterator</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -117,10 +117,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null
+                    int
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_find">find</a>(string $type, string $id)
+                    <a href="#method_count">count</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -128,10 +128,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    float
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_clear">clear</a>(string $type)
+                    <a href="#method_getLastPage">getLastPage</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -139,10 +139,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    float
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_save">save</a>(<a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
+                    <a href="#method_getTotalItems">getTotalItems</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -150,10 +150,21 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    float
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_delete">delete</a>(string $type, string $id)
+                    <a href="#method_getCurrentPage">getCurrentPage</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getItemsPerPage">getItemsPerPage</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -167,9 +178,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L20">line 20</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L17">line 17</a></div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="Elasticsearch\Client">Client</abbr> $client, string $index)
+    <strong>__construct</strong>(<a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a> $collection)
         </code>
     </h3>
     <div class="details">
@@ -181,13 +192,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Elasticsearch\Client">Client</abbr></td>
-                <td>$client</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$index</td>
+                <td><a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a></td>
+                <td>$collection</td>
                 <td></td>
             </tr>
             </table>
@@ -200,10 +206,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_findAll">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L29">line 29</a></div>
-        <code>                    <a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a>
-    <strong>findAll</strong>(string $type, int $offset = 0, int $limit = 0)
+                    <h3 id="method_getIterator">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L22">line 22</a></div>
+        <code>                    <a target="_blank" href="http://php.net/Traversable">Traversable</a>
+    <strong>getIterator</strong>()
         </code>
     </h3>
     <div class="details">
@@ -211,32 +217,12 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$type</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>int</td>
-                <td>$offset</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>int</td>
-                <td>$limit</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../../../MsgPhp/Domain/PaginatedDomainCollectionInterface.html"><abbr title="MsgPhp\Domain\PaginatedDomainCollectionInterface">PaginatedDomainCollectionInterface</abbr></a></td>
+            <td><a target="_blank" href="http://php.net/Traversable">Traversable</a></td>
             <td></td>
         </tr>
     </table>
@@ -248,10 +234,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_find">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L56">line 56</a></div>
-        <code>                    <abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null
-    <strong>find</strong>(string $type, string $id)
+                    <h3 id="method_count">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L27">line 27</a></div>
+        <code>                    int
+    <strong>count</strong>()
         </code>
     </h3>
     <div class="details">
@@ -259,27 +245,12 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$type</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$id</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="MsgPhp\Domain\Projection\MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr>|null</td>
+            <td>int</td>
             <td></td>
         </tr>
     </table>
@@ -291,10 +262,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_clear">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L71">line 71</a></div>
-        <code>                    void
-    <strong>clear</strong>(string $type)
+                    <h3 id="method_getLastPage">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L32">line 32</a></div>
+        <code>                    float
+    <strong>getLastPage</strong>()
         </code>
     </h3>
     <div class="details">
@@ -302,22 +273,12 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$type</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td>float</td>
             <td></td>
         </tr>
     </table>
@@ -329,10 +290,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_save">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L82">line 82</a></div>
-        <code>                    void
-    <strong>save</strong>(<a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a> $document)
+                    <h3 id="method_getTotalItems">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L37">line 37</a></div>
+        <code>                    float
+    <strong>getTotalItems</strong>()
         </code>
     </h3>
     <div class="details">
@@ -340,22 +301,12 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../MsgPhp/Domain/Projection/ProjectionDocument.html"><abbr title="MsgPhp\Domain\Projection\ProjectionDocument">ProjectionDocument</abbr></a></td>
-                <td>$document</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td>float</td>
             <td></td>
         </tr>
     </table>
@@ -367,10 +318,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_delete">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Elasticsearch/ProjectionRepository.php#L92">line 92</a></div>
-        <code>                    void
-    <strong>delete</strong>(string $type, string $id)
+                    <h3 id="method_getCurrentPage">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L42">line 42</a></div>
+        <code>                    float
+    <strong>getCurrentPage</strong>()
         </code>
     </h3>
     <div class="details">
@@ -378,27 +329,40 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$type</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$id</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getItemsPerPage">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/ApiPlatform/Paginator.php#L47">line 47</a></div>
+        <code>                    float
+    <strong>getItemsPerPage</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
             <td></td>
         </tr>
     </table>

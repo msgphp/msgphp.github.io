@@ -94,6 +94,17 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
+                    static&nbsp;string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getChecksum">getChecksum</a>($value)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     
                 </div>
                 <div class="col-md-8 type">
@@ -149,10 +160,21 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getChecksum">getChecksum</a>()
+                    <a href="#method_changeValue">changeValue</a>($value)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_prepareChecksumValue">prepareChecksumValue</a>($value)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -163,7 +185,7 @@
                     void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_changeValue">changeValue</a>($value)
+                    <a href="#method_doClearValue">doClearValue</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -198,8 +220,46 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
+                    <h3 id="method_getChecksum">
         <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L24">line 24</a></div>
+        <code>        static            string
+    <strong>getChecksum</strong>($value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L29">line 29</a></div>
         <code>                    
     <strong>__construct</strong>(<a href="../../../MsgPhp/Eav/Entity/Attribute.html"><abbr title="MsgPhp\Eav\Entity\Attribute">Attribute</abbr></a> $attribute, $value)
         </code>
@@ -233,7 +293,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getId">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L31">line 31</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L36">line 36</a></div>
         <code>    abstract                <a href="../../../MsgPhp/Eav/AttributeValueIdInterface.html"><abbr title="MsgPhp\Eav\AttributeValueIdInterface">AttributeValueIdInterface</abbr></a>
     <strong>getId</strong>()
         </code>
@@ -261,7 +321,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAttribute">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L33">line 33</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L38">line 38</a></div>
         <code>                    <a href="../../../MsgPhp/Eav/Entity/Attribute.html"><abbr title="MsgPhp\Eav\Entity\Attribute">Attribute</abbr></a>
     <strong>getAttribute</strong>()
         </code>
@@ -289,7 +349,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAttributeId">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L38">line 38</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L43">line 43</a></div>
         <code>                    <a href="../../../MsgPhp/Eav/AttributeIdInterface.html"><abbr title="MsgPhp\Eav\AttributeIdInterface">AttributeIdInterface</abbr></a>
     <strong>getAttributeId</strong>()
         </code>
@@ -317,8 +377,8 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getValue">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L43">line 43</a></div>
-        <code>                    
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L48">line 48</a></div>
+        <code>final                    
     <strong>getValue</strong>()
         </code>
     </h3>
@@ -335,37 +395,9 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getChecksum">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L56">line 56</a></div>
-        <code>                    string
-    <strong>getChecksum</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>string</td>
-            <td></td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
                     <h3 id="method_changeValue">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L61">line 61</a></div>
-        <code>                    void
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L65">line 65</a></div>
+        <code>final                    void
     <strong>changeValue</strong>($value)
         </code>
     </h3>
@@ -401,8 +433,65 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_prepareChecksumValue">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L78">line 78</a></div>
+        <code>        static    protected        
+    <strong>prepareChecksumValue</strong>($value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_doClearValue">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L83">line 83</a></div>
+        <code>            protected        void
+    <strong>doClearValue</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>void</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_doSetValue">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L75">line 75</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L88">line 88</a></div>
         <code>            protected        void
     <strong>doSetValue</strong>($value)
         </code>
@@ -440,7 +529,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_doGetValue">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L92">line 92</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Entity/AttributeValue.php#L105">line 105</a></div>
         <code>            protected        
     <strong>doGetValue</strong>()
         </code>
