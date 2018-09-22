@@ -1432,7 +1432,7 @@
         }, 
         {
             "location": "/reference/entities/", 
-            "text": "Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nFields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\u2714\n\n\n\n\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\n\n\n\n\nClass\n\n\nAbstract\n\n\n\n\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\User\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\n\u2714\n\n\n\n\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\u2717\n\n\n\n\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
+            "text": "Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nFields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\nMsgPhp\\User\\Entity\\User\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
             "title": "Entities"
         }, 
         {
@@ -1462,7 +1462,7 @@
         }, 
         {
             "location": "/reference/entities/#entities_1", 
-            "text": "Class  Abstract      MsgPhp\\Eav\\Entity\\Attribute  \u2714    MsgPhp\\Eav\\Entity\\AttributeValue  \u2714", 
+            "text": "MsgPhp\\Eav\\Entity\\Attribute  MsgPhp\\Eav\\Entity\\AttributeValue", 
             "title": "Entities"
         }, 
         {
@@ -1482,7 +1482,7 @@
         }, 
         {
             "location": "/reference/entities/#entities_2", 
-            "text": "Class  Abstract      MsgPhp\\User\\Entity\\Role  \u2714    MsgPhp\\User\\Entity\\User  \u2714    MsgPhp\\User\\Entity\\UserAttributeValue  \u2714    MsgPhp\\User\\Entity\\UserEmail  \u2714    MsgPhp\\User\\Entity\\UserRole  \u2714    MsgPhp\\User\\Entity\\Username  \u2717", 
+            "text": "MsgPhp\\User\\Entity\\Role  MsgPhp\\User\\Entity\\User  MsgPhp\\User\\Entity\\UserAttributeValue  MsgPhp\\User\\Entity\\UserEmail  MsgPhp\\User\\Entity\\UserRole  MsgPhp\\User\\Entity\\Username", 
             "title": "Entities"
         }, 
         {
