@@ -88,18 +88,6 @@
 
     
     
-            <h2>Constants</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td>DEFAULT_ROLE</td>
-                <td class="last">
-                    <p><em></em></p>
-                    <p></p>
-                </td>
-            </tr>
-            </table>
-
     
     
             <h2>Methods</h2>
@@ -110,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a> $rolesProvider = null)
+                    <a href="#method___construct">__construct</a>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/User/Role/RoleProviderInterface.html"><abbr title="MsgPhp\User\Role\RoleProviderInterface">RoleProviderInterface</abbr></a> $roleProvider = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -154,7 +142,7 @@
                     <a href="../../../../MsgPhp/User/Infra/Security/SecurityUser.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUser">SecurityUser</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_fromUser">fromUser</a>(<a href="../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user)
+                    <a href="#method_fromUser">fromUser</a>(<a href="../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user, string $originUsername = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -168,9 +156,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L25">line 25</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L24">line 24</a></div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a> $rolesProvider = null)
+    <strong>__construct</strong>(<a href="../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $repository, <a href="../../../../MsgPhp/User/Role/RoleProviderInterface.html"><abbr title="MsgPhp\User\Role\RoleProviderInterface">RoleProviderInterface</abbr></a> $roleProvider = null)
         </code>
     </h3>
     <div class="details">
@@ -187,8 +175,8 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><a href="../../../../MsgPhp/User/Infra/Security/UserRolesProviderInterface.html"><abbr title="MsgPhp\User\Infra\Security\UserRolesProviderInterface">UserRolesProviderInterface</abbr></a></td>
-                <td>$rolesProvider</td>
+                <td><a href="../../../../MsgPhp/User/Role/RoleProviderInterface.html"><abbr title="MsgPhp\User\Role\RoleProviderInterface">RoleProviderInterface</abbr></a></td>
+                <td>$roleProvider</td>
                 <td></td>
             </tr>
             </table>
@@ -202,7 +190,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_loadUserByUsername">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L31">line 31</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L30">line 30</a></div>
         <code>                    <abbr title="Symfony\Component\Security\Core\User\UserInterface">UserInterface</abbr>
     <strong>loadUserByUsername</strong>($username)
         </code>
@@ -240,7 +228,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_refreshUser">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L41">line 41</a></div>
         <code>                    <abbr title="Symfony\Component\Security\Core\User\UserInterface">UserInterface</abbr>
     <strong>refreshUser</strong>(<abbr title="Symfony\Component\Security\Core\User\UserInterface">UserInterface</abbr> $user)
         </code>
@@ -278,7 +266,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_supportsClass">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L58">line 58</a></div>
         <code>                    bool
     <strong>supportsClass</strong>($class)
         </code>
@@ -316,9 +304,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_fromUser">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L62">line 62</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Security/SecurityUserProvider.php#L63">line 63</a></div>
         <code>                    <a href="../../../../MsgPhp/User/Infra/Security/SecurityUser.html"><abbr title="MsgPhp\User\Infra\Security\SecurityUser">SecurityUser</abbr></a>
-    <strong>fromUser</strong>(<a href="../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user)
+    <strong>fromUser</strong>(<a href="../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a> $user, string $originUsername = null)
         </code>
     </h3>
     <div class="details">
@@ -332,6 +320,11 @@
                     <tr>
                 <td><a href="../../../../MsgPhp/User/Entity/User.html"><abbr title="MsgPhp\User\Entity\User">User</abbr></a></td>
                 <td>$user</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$originUsername</td>
                 <td></td>
             </tr>
             </table>
