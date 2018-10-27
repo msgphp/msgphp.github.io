@@ -652,7 +652,7 @@
         }, 
         {
             "location": "/message-driven/message-bus/", 
-            "text": "Message Bus\n\n\nA domain message bus is bound to \nMsgPhp\\Domain\\Message\\DomainMessageBusInterface\n. Its purpose is to dispatch any type\nof message object and helps you to use \nCQRS\n and \nevent sourcing\n.\n\n\n\n\nNote\n\n\nSee the \nreference\n page for all available messages provided per domain\n\n\n\n\nAPI\n\n\ndispatch(object $message): mixed\n\n\nDispatches the given message object. The bus can return a value coming from handlers, but is not required to do so.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Messenger\\DomainMessageBus\n\n\nA Symfony Messenger tailored domain message bus.\n\n\n\n\nRead more\n\n\n\n\nMsgPhp\\Domain\\Infra\\SimpleBus\\DomainMessageBus\n\n\nA SimpleBus tailored domain message bus.\n\n\n\n\nRead more", 
+            "text": "Message Bus\n\n\nA domain message bus is bound to \nMsgPhp\\Domain\\Message\\DomainMessageBusInterface\n. Its purpose is to dispatch any type\nof message object and helps you to use \nCQRS\n and \nevent sourcing\n.\n\n\n\n\nNote\n\n\nSee the \nreference\n page for all available messages provided per domain\n\n\n\n\nAPI\n\n\ndispatch(object $message): void\n\n\nDispatches the given message object.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\Messenger\\DomainMessageBus\n\n\nA Symfony Messenger tailored domain message bus.\n\n\n\n\nRead more\n\n\n\n\nMsgPhp\\Domain\\Infra\\SimpleBus\\DomainMessageBus\n\n\nA SimpleBus tailored domain message bus.\n\n\n\n\nRead more", 
             "title": "Message Bus"
         }, 
         {
@@ -666,9 +666,9 @@
             "title": "API"
         }, 
         {
-            "location": "/message-driven/message-bus/#dispatchobject-message-mixed", 
-            "text": "Dispatches the given message object. The bus can return a value coming from handlers, but is not required to do so.", 
-            "title": "dispatch(object $message): mixed"
+            "location": "/message-driven/message-bus/#dispatchobject-message-void", 
+            "text": "Dispatches the given message object.", 
+            "title": "dispatch(object $message): void"
         }, 
         {
             "location": "/message-driven/message-bus/#implementations", 
@@ -687,7 +687,7 @@
         }, 
         {
             "location": "/message-driven/message-dispatcher/", 
-            "text": "Message Dispatcher\n\n\nThe domain message dispatcher is a utility trait. Its purpose is to dispatch a factorized message object using a\n\nobject factory\n and a \nmessage bus\n.\n\n\nAPI\n\n\ndispatch(string $class, array $context = []): mixed\n\n\nDispatches a message object factorized from \n$class\n and \n$context\n. The dispatcher can return a value coming from\nhandlers, but is not required to do so.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Message\\MessageDispatchingTrait\n;\n\n\n\nclass\n \nMyMessage\n\n\n{\n\n    \npublic\n \n$argument\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n)\n\n    \n{\n\n        \n$this\n-\nargument\n \n=\n \n$argument\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyClass\n\n\n{\n\n    \nuse\n \nMessageDispatchingTrait\n;\n\n\n    \npublic\n \nfunction\n \ndoSomething\n()\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\ndispatch\n(\nMyMessage\n::\nclass\n,\n \n[\nargument\n \n=\n \nvalue\n]);\n\n    \n}\n\n\n}", 
+            "text": "Message Dispatcher\n\n\nThe domain message dispatcher is a utility trait. Its purpose is to dispatch a factorized message object using a\n\nobject factory\n and a \nmessage bus\n.\n\n\nAPI\n\n\ndispatch(string $class, array $context = []): void\n\n\nDispatches a message object factorized from \n$class\n and \n$context\n.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Message\\MessageDispatchingTrait\n;\n\n\n\nclass\n \nMyMessage\n\n\n{\n\n    \npublic\n \n$argument\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n)\n\n    \n{\n\n        \n$this\n-\nargument\n \n=\n \n$argument\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyClass\n\n\n{\n\n    \nuse\n \nMessageDispatchingTrait\n;\n\n\n    \npublic\n \nfunction\n \ndoSomething\n()\n:\n \nvoid\n\n    \n{\n\n        \n$this\n-\ndispatch\n(\nMyMessage\n::\nclass\n,\n \n[\nargument\n \n=\n \nvalue\n]);\n\n    \n}\n\n\n}", 
             "title": "Message Dispatcher"
         }, 
         {
@@ -701,9 +701,9 @@
             "title": "API"
         }, 
         {
-            "location": "/message-driven/message-dispatcher/#dispatchstring-class-array-context-mixed", 
-            "text": "Dispatches a message object factorized from  $class  and  $context . The dispatcher can return a value coming from\nhandlers, but is not required to do so.", 
-            "title": "dispatch(string $class, array $context = []): mixed"
+            "location": "/message-driven/message-dispatcher/#dispatchstring-class-array-context-void", 
+            "text": "Dispatches a message object factorized from  $class  and  $context .", 
+            "title": "dispatch(string $class, array $context = []): void"
         }, 
         {
             "location": "/message-driven/message-dispatcher/#basic-example", 

@@ -106,10 +106,10 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    <abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_handle">handle</a>($message, callable $next)
+                    <a href="#method_handle">handle</a>(<abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr> $envelope, <abbr title="Symfony\Component\Messenger\Middleware\StackInterface">StackInterface</abbr> $stack)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -123,7 +123,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Messenger/Middleware/ConsoleMessageReceiverMiddleware.php#L17">line 17</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Messenger/Middleware/ConsoleMessageReceiverMiddleware.php#L19">line 19</a></div>
         <code>                    
     <strong>__construct</strong>(<a href="../../../../../MsgPhp/Domain/Infra/Console/MessageReceiver.html"><abbr title="MsgPhp\Domain\Infra\Console\MessageReceiver">MessageReceiver</abbr></a> $receiver)
         </code>
@@ -152,9 +152,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_handle">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Messenger/Middleware/ConsoleMessageReceiverMiddleware.php#L22">line 22</a></div>
-        <code>                    
-    <strong>handle</strong>($message, callable $next)
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Messenger/Middleware/ConsoleMessageReceiverMiddleware.php#L24">line 24</a></div>
+        <code>                    <abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr>
+    <strong>handle</strong>(<abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr> $envelope, <abbr title="Symfony\Component\Messenger\Middleware\StackInterface">StackInterface</abbr> $stack)
         </code>
     </h3>
     <div class="details">
@@ -166,18 +166,27 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
-                <td>$message</td>
+                <td><abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr></td>
+                <td>$envelope</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>callable</td>
-                <td>$next</td>
+                <td><abbr title="Symfony\Component\Messenger\Middleware\StackInterface">StackInterface</abbr></td>
+                <td>$stack</td>
                 <td></td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Symfony\Component\Messenger\Envelope">Envelope</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
