@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Eav\Infra\Doctrine\ObjectFieldMappings | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Doctrine\MappingConfig | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Eav_Infra_Doctrine_ObjectFieldMappings" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Doctrine_MappingConfig" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,21 +66,20 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Eav.html">Eav</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Eav/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Eav/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li>ObjectFieldMappings</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li>MappingConfig</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ObjectFieldMappings
+            MappingConfig
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ObjectFieldMappings</strong>        implements
-        <a href="../../../../MsgPhp/Domain/Infra/Doctrine/ObjectFieldMappingsProviderInterface.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\ObjectFieldMappingsProviderInterface">ObjectFieldMappingsProviderInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Infra/Doctrine/ObjectFieldMappings.php">View source</a>)
+    <strong>MappingConfig</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/MappingConfig.php">View source</a>)
 </p>
 
         
@@ -88,20 +87,71 @@
 
     
     
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>DEFAULT_KEY_MAX_LENGTH</td>
+                <td class="last">
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_mappingFiles">
+                                                                                string[]
+                </td>
+                <td>$mappingFiles</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_mappingDir">
+                                                                                string|null
+                </td>
+                <td>$mappingDir</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_keyMaxLength">
+                                                                                int
+                </td>
+                <td>$keyMaxLength</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<abbr title="MsgPhp\Domain\Infra\Doctrine\iterable">iterable</abbr>
+                    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_provideObjectFieldMappings">provideObjectFieldMappings</a>(<a href="../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $config)
+                    <a href="#method___construct">__construct</a>(array $mappingFiles, array $mappingConfig = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_interpolate">interpolate</a>(string $contents)
+        
+                                            <p>Replaces config values in template and returns it.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -111,10 +161,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_provideObjectFieldMappings">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Eav/Infra/Doctrine/ObjectFieldMappings.php#L17">line 17</a></div>
-        <code>        static            <abbr title="MsgPhp\Domain\Infra\Doctrine\iterable">iterable</abbr>
-    <strong>provideObjectFieldMappings</strong>(<a href="../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $config)
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/MappingConfig.php#L23">line 23</a></div>
+        <code>                    
+    <strong>__construct</strong>(array $mappingFiles, array $mappingConfig = [])
         </code>
     </h3>
     <div class="details">
@@ -126,8 +176,44 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a></td>
-                <td>$config</td>
+                <td>array</td>
+                <td>$mappingFiles</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$mappingConfig</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_interpolate">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/MappingConfig.php#L38">line 38</a></div>
+        <code>                    string
+    <strong>interpolate</strong>(string $contents)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Replaces config values in template and returns it.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$contents</td>
                 <td></td>
             </tr>
             </table>
@@ -137,7 +223,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="MsgPhp\Domain\Infra\Doctrine\iterable">iterable</abbr></td>
+            <td>string</td>
             <td></td>
         </tr>
     </table>
