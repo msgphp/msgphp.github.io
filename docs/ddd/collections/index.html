@@ -430,8 +430,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mapcallable-mapper-array" title="map(callable $mapper): array" class="md-nav__link">
-    map(callable $mapper): array
+  <a href="#mapcallable-mapper-domaincollectioninterface" title="map(callable $mapper): DomainCollectionInterface" class="md-nav__link">
+    map(callable $mapper): DomainCollectionInterface
   </a>
   
 </li>
@@ -1234,8 +1234,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mapcallable-mapper-array" title="map(callable $mapper): array" class="md-nav__link">
-    map(callable $mapper): array
+  <a href="#mapcallable-mapper-domaincollectioninterface" title="map(callable $mapper): DomainCollectionInterface" class="md-nav__link">
+    map(callable $mapper): DomainCollectionInterface
   </a>
   
 </li>
@@ -1404,8 +1404,9 @@ a primitive iterable value. It may hold any type of element values.</p>
 <p>Returns a <strong>new</strong> collection containing a slice of elements. By default the slice has no limit, implied by integer <code>0</code>.
 Keys are preserved.</p>
 <hr />
-<h3 id="mapcallable-mapper-array"><code>map(callable $mapper): array</code></h3>
-<p>Returns a map with each collection element as returned by <code>$mapper</code>.</p>
+<h3 id="mapcallable-mapper-domaincollectioninterface"><code>map(callable $mapper): DomainCollectionInterface</code></h3>
+<p>Returns a <strong>new</strong> collection containing each collection element as returned by <code>$mapper</code>.
+Keys are preserved.</p>
 <h2 id="pagination-api">Pagination API</h2>
 <p>A collection that is part of a paginated result set is bound to <code>MsgPhp\Domain\PaginatedDomainCollectionInterface</code>. Its
 purpose is to expose the current pagination.</p>

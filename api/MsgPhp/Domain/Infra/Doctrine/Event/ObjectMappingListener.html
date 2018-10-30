@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\DependencyInjection\Compiler\DoctrineObjectFieldMappingPass | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Doctrine\Event\ObjectMappingListener | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_DependencyInjection_Compiler_DoctrineObjectFieldMappingPass" data-root-path="../../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Doctrine_Event_ObjectMappingListener" data-root-path="../../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,41 +66,26 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection.html">DependencyInjection</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/DependencyInjection/Compiler.html">Compiler</a></li><li class="backslash">\</li><li>DoctrineObjectFieldMappingPass</li>
+                        <li><a href="../../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Doctrine.html">Doctrine</a></li><li class="backslash">\</li><li><a href="../../../../../MsgPhp/Domain/Infra/Doctrine/Event.html">Event</a></li><li class="backslash">\</li><li>ObjectMappingListener</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            DoctrineObjectFieldMappingPass
+            ObjectMappingListener
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>DoctrineObjectFieldMappingPass</strong>        implements
-        <abbr title="Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface">CompilerPassInterface</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php">View source</a>)
+    <strong>ObjectMappingListener</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php">View source</a>)
 </p>
 
         
     
 
     
-            <h2>Traits</h2>
-
-        
-    <div class="container-fluid underlined">
-                    <div class="row">
-                <div class="col-md-6">
-                                            <abbr title="Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait">PriorityTaggedServiceTrait</abbr>
-                                            
-                </div>
-                <div class="col-md-6">
-                    
-                </div>
-            </div>
-            </div>
     
     
     
@@ -112,7 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $tagName = &#039;msgphp.doctrine.object_field_mappings&#039;, string $listenerId = ObjectFieldMappingListener::class)
+                    <a href="#method___construct">__construct</a>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -123,7 +108,7 @@
                     void
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_process">process</a>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+                    <a href="#method_loadClassMetadata">loadClassMetadata</a>(<abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr> $event)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -137,9 +122,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L27">line 27</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L30">line 30</a></div>
         <code>                    
-    <strong>__construct</strong>(string $tagName = &#039;msgphp.doctrine.object_field_mappings&#039;, string $listenerId = ObjectFieldMappingListener::class)
+    <strong>__construct</strong>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig)
         </code>
     </h3>
     <div class="details">
@@ -151,13 +136,13 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$tagName</td>
+                <td><abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr></td>
+                <td>$providers</td>
                 <td></td>
             </tr>
                     <tr>
-                <td>string</td>
-                <td>$listenerId</td>
+                <td><a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a></td>
+                <td>$mappingConfig</td>
                 <td></td>
             </tr>
             </table>
@@ -170,10 +155,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_process">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/DependencyInjection/Compiler/DoctrineObjectFieldMappingPass.php#L33">line 33</a></div>
+                    <h3 id="method_loadClassMetadata">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L36">line 36</a></div>
         <code>                    void
-    <strong>process</strong>(<abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr> $container)
+    <strong>loadClassMetadata</strong>(<abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr> $event)
         </code>
     </h3>
     <div class="details">
@@ -185,8 +170,8 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><abbr title="Symfony\Component\DependencyInjection\ContainerBuilder">ContainerBuilder</abbr></td>
-                <td>$container</td>
+                <td><abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr></td>
+                <td>$event</td>
                 <td></td>
             </tr>
             </table>
