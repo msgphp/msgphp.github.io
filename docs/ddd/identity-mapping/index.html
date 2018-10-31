@@ -1116,18 +1116,18 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identity-mapping.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identity-mapping">Identity Mapping</h1>
+                <h1 id="identity-mapping">Identity Mapping<a class="headerlink" href="#identity-mapping" title="Permanent link">&para;</a></h1>
 <p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about
 the identifier metadata for a known domain object.</p>
-<h2 id="api">API</h2>
-<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code><a class="headerlink" href="#getidentifierfieldnamesstring-class-array" title="Permanent link">&para;</a></h3>
 <p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed of these field values.</p>
 <hr />
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code><a class="headerlink" href="#getidentityobject-object-array" title="Permanent link">&para;</a></h3>
 <p>Returns the actual, non empty, identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding
 identifier field name.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaininfrainmemorydomainidentitymapping"><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaininfrainmemorydomainidentitymapping"><code>MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</code><a class="headerlink" href="#msgphpdomaininfrainmemorydomainidentitymapping" title="Permanent link">&para;</a></h3>
 <p>Identity mapping based on a known in-memory mapping.</p>
 <ul>
 <li><code>__construct(array $mapping, ObjectFieldAccessor $accessor = null)</code><ul>
@@ -1136,7 +1136,7 @@ identifier field name.</p>
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic Example</h4>
+<h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</span><span class="p">;</span>
@@ -1176,7 +1176,7 @@ identifier field name.</p>
 </pre></div>
 
 
-<h3 id="msgphpdomaininfradoctrinedomainidentitymapping"><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code></h3>
+<h3 id="msgphpdomaininfradoctrinedomainidentitymapping"><code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code><a class="headerlink" href="#msgphpdomaininfradoctrinedomainidentitymapping" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored identity mapping.</p>
 <ul>
 <li><a href="../../infrastructure/doctrine-orm/#domain-identity-mapping">Read more</a></li>

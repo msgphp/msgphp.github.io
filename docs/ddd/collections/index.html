@@ -1366,75 +1366,75 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/collections.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="collections">Collections</h1>
+                <h1 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h1>
 <p>A domain collection is a <a href="https://secure.php.net/traversable">traversable</a> and bound to <code>MsgPhp\Domain\DomainCollectionInterface</code>. Its purpose is to utilize
 a primitive iterable value. It may hold any type of element values.</p>
-<h2 id="api">API</h2>
-<h3 id="extends">Extends</h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="extends">Extends<a class="headerlink" href="#extends" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://secure.php.net/countable"><code>\Countable</code></a></li>
 <li><a href="https://secure.php.net/iteratoraggregate"><code>\IteratorAggregate</code></a></li>
 </ul>
 <hr />
-<h3 id="static-fromvalueiterable-value-domaincollectioninterface"><code>static fromValue(?iterable $value): DomainCollectionInterface</code></h3>
+<h3 id="static-fromvalueiterable-value-domaincollectioninterface"><code>static fromValue(?iterable $value): DomainCollectionInterface</code><a class="headerlink" href="#static-fromvalueiterable-value-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized collection from any primitive iterable. Using <code>null</code> implies an empty collection.</p>
 <hr />
-<h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
+<h3 id="isempty-bool"><code>isEmpty(): bool</code><a class="headerlink" href="#isempty-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if a collection is considered empty, i.e. contains zero elements.</p>
 <hr />
-<h3 id="containselement-bool"><code>contains($element): bool</code></h3>
+<h3 id="containselement-bool"><code>contains($element): bool</code><a class="headerlink" href="#containselement-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if a collection contains the given element. Comparison is done strictly.</p>
 <hr />
-<h3 id="containskeykey-bool"><code>containsKey($key): bool</code></h3>
+<h3 id="containskeykey-bool"><code>containsKey($key): bool</code><a class="headerlink" href="#containskeykey-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if a collection contains an element at the given key/index.</p>
 <hr />
-<h3 id="first"><code>first()</code></h3>
+<h3 id="first"><code>first()</code><a class="headerlink" href="#first" title="Permanent link">&para;</a></h3>
 <p>Returns the first element or <code>false</code> if the collection is empty.</p>
 <hr />
-<h3 id="last"><code>last()</code></h3>
+<h3 id="last"><code>last()</code><a class="headerlink" href="#last" title="Permanent link">&para;</a></h3>
 <p>Returns the last element or <code>false</code> if the collection is empty.</p>
 <hr />
-<h3 id="getkey"><code>get($key)</code></h3>
+<h3 id="getkey"><code>get($key)</code><a class="headerlink" href="#getkey" title="Permanent link">&para;</a></h3>
 <p>Returns the element at the given key/index or <code>null</code> if the collection is empty.</p>
 <hr />
-<h3 id="filtercallable-filter-domaincollectioninterface"><code>filter(callable $filter): DomainCollectionInterface</code></h3>
+<h3 id="filtercallable-filter-domaincollectioninterface"><code>filter(callable $filter): DomainCollectionInterface</code><a class="headerlink" href="#filtercallable-filter-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Returns a <strong>new</strong> collection containing only elements for which <code>$filter</code> returns <code>true</code>. Keys are preserved.</p>
 <hr />
-<h3 id="sliceint-offset-int-limit-0-domaincollectioninterface"><code>slice(int $offset, int $limit = 0): DomainCollectionInterface</code></h3>
+<h3 id="sliceint-offset-int-limit-0-domaincollectioninterface"><code>slice(int $offset, int $limit = 0): DomainCollectionInterface</code><a class="headerlink" href="#sliceint-offset-int-limit-0-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Returns a <strong>new</strong> collection containing a slice of elements. By default the slice has no limit, implied by integer <code>0</code>.
 Keys are preserved.</p>
 <hr />
-<h3 id="mapcallable-mapper-domaincollectioninterface"><code>map(callable $mapper): DomainCollectionInterface</code></h3>
+<h3 id="mapcallable-mapper-domaincollectioninterface"><code>map(callable $mapper): DomainCollectionInterface</code><a class="headerlink" href="#mapcallable-mapper-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Returns a <strong>new</strong> collection containing each collection element as returned by <code>$mapper</code>.
 Keys are preserved.</p>
-<h2 id="pagination-api">Pagination API</h2>
+<h2 id="pagination-api">Pagination API<a class="headerlink" href="#pagination-api" title="Permanent link">&para;</a></h2>
 <p>A collection that is part of a paginated result set is bound to <code>MsgPhp\Domain\PaginatedDomainCollectionInterface</code>. Its
 purpose is to expose the current pagination.</p>
-<h3 id="extends_1">Extends</h3>
+<h3 id="extends_1">Extends<a class="headerlink" href="#extends_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="#collections"><code>DomainCollectionInterface</code></a></li>
 </ul>
 <hr />
-<h3 id="getoffset-float"><code>getOffset(): float</code></h3>
+<h3 id="getoffset-float"><code>getOffset(): float</code><a class="headerlink" href="#getoffset-float" title="Permanent link">&para;</a></h3>
 <p>Get the current page offset.</p>
 <hr />
-<h3 id="getlimit-float"><code>getLimit(): float</code></h3>
+<h3 id="getlimit-float"><code>getLimit(): float</code><a class="headerlink" href="#getlimit-float" title="Permanent link">&para;</a></h3>
 <p>Get the current page limit (e.g. items per page).</p>
 <hr />
-<h3 id="getcurrentpage-float"><code>getCurrentPage(): float</code></h3>
+<h3 id="getcurrentpage-float"><code>getCurrentPage(): float</code><a class="headerlink" href="#getcurrentpage-float" title="Permanent link">&para;</a></h3>
 <p>Get the current page number.</p>
 <hr />
-<h3 id="getlastpage-float"><code>getLastPage(): float</code></h3>
+<h3 id="getlastpage-float"><code>getLastPage(): float</code><a class="headerlink" href="#getlastpage-float" title="Permanent link">&para;</a></h3>
 <p>Get the last page number.</p>
 <hr />
-<h3 id="gettotalcount-float"><code>getTotalCount(): float</code></h3>
+<h3 id="gettotalcount-float"><code>getTotalCount(): float</code><a class="headerlink" href="#gettotalcount-float" title="Permanent link">&para;</a></h3>
 <p>Get the total no. of items in the full result set.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>count()</code> should return the no. of items on the current page</p>
 </div>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaindomaincollection"><code>MsgPhp\Domain\DomainCollection</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaindomaincollection"><code>MsgPhp\Domain\DomainCollection</code><a class="headerlink" href="#msgphpdomaindomaincollection" title="Permanent link">&para;</a></h3>
 <p>A first class citizen domain collection. It leverages <code>iterable</code> as underlying data type. Lazy support is built-in for
 type <code>\Traversable</code>. Meaning the minimal no. of elements are traversed, i.e. until the first element in case of
 <code>isEmpty()</code>. Note type <code>\Generator</code> can only start traversing once.</p>
@@ -1444,7 +1444,7 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic Example</h4>
+<h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
@@ -1483,7 +1483,7 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 </pre></div>
 
 
-<h3 id="msgphpdomainpaginateddomaincollection"><code>MsgPhp\Domain\PaginatedDomainCollection</code></h3>
+<h3 id="msgphpdomainpaginateddomaincollection"><code>MsgPhp\Domain\PaginatedDomainCollection</code><a class="headerlink" href="#msgphpdomainpaginateddomaincollection" title="Permanent link">&para;</a></h3>
 <p>A first class citizen paginated domain collection to transform any collection into a paginated collection.</p>
 <ul>
 <li><code>__construct(iterable $elements, float $offset = .0, float $limit = .0, float $count = null, float $totalCount = null)</code><ul>
@@ -1491,7 +1491,7 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 </ul>
 </li>
 </ul>
-<h3 id="msgphpdomaininfradoctrinedomaincollection"><code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code></h3>
+<h3 id="msgphpdomaininfradoctrinedomaincollection"><code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code><a class="headerlink" href="#msgphpdomaininfradoctrinedomaincollection" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored domain collection.</p>
 <ul>
 <li><a href="../../infrastructure/doctrine-collections/#domain-collection">Read more</a></li>

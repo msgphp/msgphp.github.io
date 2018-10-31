@@ -1132,31 +1132,31 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/projection/repositories.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="projection-repositories">Projection Repositories</h1>
+                <h1 id="projection-repositories">Projection Repositories<a class="headerlink" href="#projection-repositories" title="Permanent link">&para;</a></h1>
 <p>A projection repository is bound to <code>MsgPhp\Domain\Projection\ProjectionRepositoryInterface</code>. Its purpose is to store
 and query <a href="../documents/">projection documents</a>.</p>
-<h2 id="api">API</h2>
-<h3 id="findallstring-type-int-offset-0-int-limit-0-projectiondocument"><code>findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="findallstring-type-int-offset-0-int-limit-0-projectiondocument"><code>findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]</code><a class="headerlink" href="#findallstring-type-int-offset-0-int-limit-0-projectiondocument" title="Permanent link">&para;</a></h3>
 <p>Finds all projection documents by type.</p>
 <hr />
-<h3 id="findstring-type-string-id-projectiondocument"><code>find(string $type, string $id): ?ProjectionDocument</code></h3>
+<h3 id="findstring-type-string-id-projectiondocument"><code>find(string $type, string $id): ?ProjectionDocument</code><a class="headerlink" href="#findstring-type-string-id-projectiondocument" title="Permanent link">&para;</a></h3>
 <p>Finds a single projection document by type and ID. In case its document cannot be found <code>null</code> should be returned.</p>
 <hr />
-<h3 id="clearstring-type-void"><code>clear(string $type): void</code></h3>
+<h3 id="clearstring-type-void"><code>clear(string $type): void</code><a class="headerlink" href="#clearstring-type-void" title="Permanent link">&para;</a></h3>
 <p>Deletes all projection documents by type.</p>
 <hr />
-<h3 id="saveprojectiondocument-document-void"><code>save(ProjectionDocument $document): void</code></h3>
+<h3 id="saveprojectiondocument-document-void"><code>save(ProjectionDocument $document): void</code><a class="headerlink" href="#saveprojectiondocument-document-void" title="Permanent link">&para;</a></h3>
 <p>Saves a projection document. The document will be available on any subsequent query.</p>
 <hr />
-<h3 id="deletestring-type-string-id-void"><code>delete(string $type, string $id): void</code></h3>
+<h3 id="deletestring-type-string-id-void"><code>delete(string $type, string $id): void</code><a class="headerlink" href="#deletestring-type-string-id-void" title="Permanent link">&para;</a></h3>
 <p>Deletes a projection document by type and ID. The document will be unavailable on any subsequent query.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaininfraelasticsearchprojectionrepository"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaininfraelasticsearchprojectionrepository"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository</code><a class="headerlink" href="#msgphpdomaininfraelasticsearchprojectionrepository" title="Permanent link">&para;</a></h3>
 <p>An Elasticsearch tailored projection repository.</p>
 <ul>
 <li><a href="../../infrastructure/elasticsearch/#projection-repository">Read more</a></li>
 </ul>
-<h2 id="basic-example">Basic example</h2>
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionInterface</span><span class="p">,</span> <span class="nx">ProjectionRepositoryInterface</span><span class="p">};</span>

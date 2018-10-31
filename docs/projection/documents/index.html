@@ -1092,29 +1092,29 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/projection/documents.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="projection-documents">Projection Documents</h1>
+                <h1 id="projection-documents">Projection Documents<a class="headerlink" href="#projection-documents" title="Permanent link">&para;</a></h1>
 <p>A projection document is a value object of type <code>MsgPhp\Domain\Projection\ProjectionDocument</code>. Its purpose is to hold a
 projection document its data and current state.</p>
-<h2 id="api">API</h2>
-<h3 id="properties">Properties</h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>int $status</code>: The current document status. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/ProjectionDocument.html#page-content">default statuses</a>.</li>
 <li><code>?\Throwable $error</code>: An occurred error, if any</li>
 <li><code>?object $source</code>: The source object, if any</li>
 </ul>
 <hr />
-<h3 id="gettype-string"><code>getType(): string</code></h3>
+<h3 id="gettype-string"><code>getType(): string</code><a class="headerlink" href="#gettype-string" title="Permanent link">&para;</a></h3>
 <p>Gets the projection type and refers to a <a href="../models/">projection</a> class name.</p>
 <hr />
-<h3 id="getid-string"><code>getId(): ?string</code></h3>
+<h3 id="getid-string"><code>getId(): ?string</code><a class="headerlink" href="#getid-string" title="Permanent link">&para;</a></h3>
 <p>Gets the document ID, if any. Otherwise an auto-generated value is implied.</p>
 <hr />
-<h3 id="getbody-array"><code>getBody(): array</code></h3>
+<h3 id="getbody-array"><code>getBody(): array</code><a class="headerlink" href="#getbody-array" title="Permanent link">&para;</a></h3>
 <p>Gets the document data.</p>
 <hr />
-<h3 id="toprojection-projectioninterface"><code>toProjection(): ProjectionInterface</code></h3>
+<h3 id="toprojection-projectioninterface"><code>toProjection(): ProjectionInterface</code><a class="headerlink" href="#toprojection-projectioninterface" title="Permanent link">&para;</a></h3>
 <p>Transforms the document into its projection model.</p>
-<h2 id="basic-example">Basic example</h2>
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionInterface</span><span class="p">};</span>

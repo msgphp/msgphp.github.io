@@ -1106,10 +1106,10 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/bundle-installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="bundle-installation">Bundle Installation</h1>
+                <h1 id="bundle-installation">Bundle Installation<a class="headerlink" href="#bundle-installation" title="Permanent link">&para;</a></h1>
 <p>The project bundles are tailored to the <a href="https://symfony.com/">Symfony Framework</a> and designed to be used standalone. Its main purpose is to
 enable a specific domain layer within an application.</p>
-<h2 id="available-bundles">Available Bundles</h2>
+<h2 id="available-bundles">Available Bundles<a class="headerlink" href="#available-bundles" title="Permanent link">&para;</a></h2>
 <!--ref-start:available-bundles-->
 
 <ul>
@@ -1117,7 +1117,7 @@ enable a specific domain layer within an application.</p>
 <li><code>msgphp/user-bundle</code>: Basic user management (the <code>User</code> domain)
 <!--ref-end:available-bundles--></li>
 </ul>
-<h2 id="installation">Installation</h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer require msgphp/&lt;name&gt;-bundle
 </pre></div>
 
@@ -1127,9 +1127,9 @@ enable a specific domain layer within an application.</p>
 <p>When <a href="https://symfony.com/doc/current/setup/flex.html">Symfony Flex</a> is used to mange your Symfony application the minimal bundle configuration is created for you
 automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/master/msgphp">MsgPHP recipes</a></p>
 </div>
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>A bundle provides the following configuration nodes by default:</p>
-<h3 id="class_mapping"><code>class_mapping</code></h3>
+<h3 id="class_mapping"><code>class_mapping</code><a class="headerlink" href="#class_mapping" title="Permanent link">&para;</a></h3>
 <p>Configures the bundle with a class mapping to tell which classes of yours should be used for a known class of ours.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">class_mapping</span><span class="p p-Indicator">:</span>
@@ -1140,7 +1140,7 @@ automatically based on <a href="https://github.com/symfony/recipes-contrib/tree/
 <p>The class mapping applies when working with an <a href="../../ddd/factory/object/">object factory</a>.</p>
 <p>Depending on the bundle a specific class mapping entry might enable one of the bundle its features which is otherwise
 disabled by default.</p>
-<h3 id="id_type_mapping"><code>id_type_mapping</code></h3>
+<h3 id="id_type_mapping"><code>id_type_mapping</code><a class="headerlink" href="#id_type_mapping" title="Permanent link">&para;</a></h3>
 <p>Configures the bundle <a href="../../ddd/identifiers/">domain identifier</a> types. Each key must be a sub class of
 <code>MsgPhp\Domain\DomainIdInterface</code> whereas each value must be a known type name.</p>
 <p>It ensures a default class mapping entry is added which maps the identifier to a <a href="../../ddd/identifiers/#implementations">concrete implementation</a>.</p>
@@ -1161,14 +1161,14 @@ as well:</p>
 <li><code>uuid_binary</code></li>
 <li><code>uuid_binary_ordered_time</code></li>
 </ul>
-<h3 id="default_id_type"><code>default_id_type</code></h3>
+<h3 id="default_id_type"><code>default_id_type</code><a class="headerlink" href="#default_id_type" title="Permanent link">&para;</a></h3>
 <p>Configures a default type name to use for all known domain identifiers provided by the bundle. See also <a href="#id_type_mapping"><code>id_type_mapping</code></a>.</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">default_id_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
 </pre></div>
 
 
-<h3 id="commands"><code>commands</code></h3>
+<h3 id="commands"><code>commands</code><a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
 <p>By default a command handler provided by the bundle might be enabled or disabled depending on an <a href="../../ddd/entities/#common-entity-features">entity feature</a>
 is being used yes or no.</p>
 <p>However, in case of a <a href="../../message-driven/cqrs/#event-sourcing-command-handler">event-sourcing command handler</a>
@@ -1182,7 +1182,7 @@ can be explicitly enabled or disabled by command.</p>
 </pre></div>
 
 
-<h2 id="basic-configuration-example">Basic Configuration Example</h2>
+<h2 id="basic-configuration-example">Basic Configuration Example<a class="headerlink" href="#basic-configuration-example" title="Permanent link">&para;</a></h2>
 <p>Given a bundle provides the following domain identifiers:</p>
 <ul>
 <li><code>MsgPhp\SomeDomain\FooIdInterface</code></li>

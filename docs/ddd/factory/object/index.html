@@ -1170,14 +1170,14 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/factory/object.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="object-factory">Object Factory</h1>
+                <h1 id="object-factory">Object Factory<a class="headerlink" href="#object-factory" title="Permanent link">&para;</a></h1>
 <p>A domain object factory is bound to <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface</code>. Its purpose is to initialize
 any domain object based on a given class name and context.</p>
-<h2 id="api">API</h2>
-<h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code><a class="headerlink" href="#createstring-class-array-context-object" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomainfactorydomainobjectfactory"><code>MsgPhp\Domain\Factory\DomainObjectFactory</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomainfactorydomainobjectfactory"><code>MsgPhp\Domain\Factory\DomainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorydomainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A generic object factory. It initializes the given class by reading its constructor arguments. Argument values are
 resolved from the provided context. By convention a camel cased argument name (e.g. <code>$myArgument</code>) matches a
 corresponding underscored context key (i.e. <code>'my_argument'</code>), note however, an exact match (i.e. <code>'myArgument'</code>) has
@@ -1191,7 +1191,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic example</h4>
+<h4 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span><span class="p">;</span>
@@ -1228,7 +1228,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 </pre></div>
 
 
-<h3 id="msgphpdomainfactorychainobjectfactory"><code>MsgPhp\Domain\Factory\ChainObjectFactory</code></h3>
+<h3 id="msgphpdomainfactorychainobjectfactory"><code>MsgPhp\Domain\Factory\ChainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorychainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A chain object factory. It holds many object factories and returns a domain object from the first supporting factory.</p>
 <ul>
 <li><code>__construct(iterable $factories)</code><ul>
@@ -1236,7 +1236,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 </ul>
 </li>
 </ul>
-<h4 id="basic-example_1">Basic example</h4>
+<h4 id="basic-example_1">Basic example<a class="headerlink" href="#basic-example_1" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">ChainObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactoryInterface</span><span class="p">};</span>
@@ -1255,7 +1255,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 </pre></div>
 
 
-<h3 id="msgphpdomainfactoryclassmappingobjectfactory"><code>MsgPhp\Domain\Factory\ClassMappingObjectFactory</code></h3>
+<h3 id="msgphpdomainfactoryclassmappingobjectfactory"><code>MsgPhp\Domain\Factory\ClassMappingObjectFactory</code><a class="headerlink" href="#msgphpdomainfactoryclassmappingobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A class mapping object factory. It decorates any object factory and resolves the actual class name from a provided
 mapping. It's usually used to map abstracts to concretes. In case the class is not mapped it will be used as is.</p>
 <ul>
@@ -1265,7 +1265,7 @@ mapping. It's usually used to map abstracts to concretes. In case the class is n
 </ul>
 </li>
 </ul>
-<h4 id="basic-example_2">Basic example</h4>
+<h4 id="basic-example_2">Basic example<a class="headerlink" href="#basic-example_2" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">ClassMappingObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactory</span><span class="p">};</span>

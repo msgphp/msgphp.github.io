@@ -1064,9 +1064,9 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/code-conventions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="code-conventions">Code Conventions</h1>
+                <h1 id="code-conventions">Code Conventions<a class="headerlink" href="#code-conventions" title="Permanent link">&para;</a></h1>
 <p>A brief description of code conventions this project follows.</p>
-<h2 id="general-principles">General Principles</h2>
+<h2 id="general-principles">General Principles<a class="headerlink" href="#general-principles" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Follows <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a> principles</li>
 <li>Reduce <a href="https://en.wikipedia.org/wiki/Source_lines_of_code">lines of code</a> where possible</li>
@@ -1074,7 +1074,7 @@
 <li>Favor latest stable PHP7 features</li>
 <li>Checks must pass (code style, static analysis &amp; unit tests)</li>
 </ul>
-<h2 id="code-style-cs">Code Style (CS)</h2>
+<h2 id="code-style-cs">Code Style (CS)<a class="headerlink" href="#code-style-cs" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Follows <a href="https://www.php-fig.org/psr/psr-2/">PSR-2</a> with <a href="https://symfony.com/doc/master/contributing/code/standards.html">Symfony Style</a></li>
 <li><code>use</code> statements are declared in alpha-order</li>
@@ -1101,23 +1101,23 @@
 </pre></div>
 
 
-<h2 id="static-analysis-sa">Static Analysis (SA)</h2>
+<h2 id="static-analysis-sa">Static Analysis (SA)<a class="headerlink" href="#static-analysis-sa" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Follows <a href="https://github.com/phpstan/phpstan">PHPStan</a> level max</li>
 <li>Exclude- and ignore-rules are discussed per case / topic</li>
 </ul>
-<h2 id="phpdoc">PHPDoc</h2>
+<h2 id="phpdoc">PHPDoc<a class="headerlink" href="#phpdoc" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Add comments if needed for either clarification or static analysis (might result in e.g. partial <code>@param</code> annotations)</li>
 <li>Inline <code>@var</code> annotations (<code>/** @var Some $some*/</code>)</li>
 <li>Interfaces must have a description with its purpose (at the class- as well as the method-level)</li>
 <li>No usage of <code>@inheritdoc</code></li>
 </ul>
-<h2 id="php-72-forward-compatibility">PHP 7.2 Forward Compatibility</h2>
+<h2 id="php-72-forward-compatibility">PHP 7.2 Forward Compatibility<a class="headerlink" href="#php-72-forward-compatibility" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Intended object values are type hinted (<code>@param object $value</code> and <code>@return object</code>)</li>
 </ul>
-<h2 id="unit-tests">Unit Tests</h2>
+<h2 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h2>
 <ul>
 <li>All of the above, <em>in general</em>, apply to unit tests as well</li>
 </ul>

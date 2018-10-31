@@ -1118,26 +1118,26 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/projection/type-registry.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="projection-type-registry">Projection Type Registry</h1>
+                <h1 id="projection-type-registry">Projection Type Registry<a class="headerlink" href="#projection-type-registry" title="Permanent link">&para;</a></h1>
 <p>A projection type registry is bound to <code>MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</code>. Its purpose is to
 manage all available <a href="../models/">projection</a> type information.</p>
-<h2 id="api">API</h2>
-<h3 id="all-string"><code>all(): string[]</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="all-string"><code>all(): string[]</code><a class="headerlink" href="#all-string" title="Permanent link">&para;</a></h3>
 <p>Returns all available projection types for this registry.</p>
 <hr />
-<h3 id="initialize-void"><code>initialize(): void</code></h3>
+<h3 id="initialize-void"><code>initialize(): void</code><a class="headerlink" href="#initialize-void" title="Permanent link">&para;</a></h3>
 <p>Initializes the type registry. Usually needs to be called only once per environment, or after any type information has
 changed.</p>
 <hr />
-<h3 id="destroy-void"><code>destroy(): void</code></h3>
+<h3 id="destroy-void"><code>destroy(): void</code><a class="headerlink" href="#destroy-void" title="Permanent link">&para;</a></h3>
 <p>Destroys the type registry and thus requires to be re-initialized after.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaininfraelasticsearchprojectiontyperegistry"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaininfraelasticsearchprojectiontyperegistry"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</code><a class="headerlink" href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="Permanent link">&para;</a></h3>
 <p>An Elasticsearch tailored projection type registry.</p>
 <ul>
 <li><a href="../../infrastructure/elasticsearch/#projection-type-registry">Read more</a></li>
 </ul>
-<h2 id="basic-example">Basic example</h2>
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</span><span class="p">;</span>
@@ -1156,7 +1156,7 @@ changed.</p>
 </pre></div>
 
 
-<h2 id="command-line-interface">Command Line Interface</h2>
+<h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
 <p>The type registry can be initialized using the CLI when working with Symfony Console.</p>
 <ul>
 <li><a href="../../infrastructure/symfony-console/#initializeprojectiontypescommand">Read more</a></li>

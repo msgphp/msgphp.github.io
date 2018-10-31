@@ -1210,40 +1210,40 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/infrastructure/symfony-console.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="symfony-console">Symfony Console</h1>
+                <h1 id="symfony-console">Symfony Console<a class="headerlink" href="#symfony-console" title="Permanent link">&para;</a></h1>
 <p>An overview of available infrastructural code when using <a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a>.</p>
 <ul>
 <li>Requires <a href="https://packagist.org/packages/symfony/console">symfony/console</a></li>
 </ul>
-<h2 id="commands">Commands</h2>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <p>Various standard <a href="https://symfony.com/doc/current/console.html">console commands</a> are available and can be used depending on implemented domain infrastructure. They
 are defined in the <code>MsgPhp\Domain\Infra\Console\Command\</code> namespace.</p>
-<h3 id="initializeprojectiontypescommand"><code>InitializeProjectionTypesCommand</code></h3>
+<h3 id="initializeprojectiontypescommand"><code>InitializeProjectionTypesCommand</code><a class="headerlink" href="#initializeprojectiontypescommand" title="Permanent link">&para;</a></h3>
 <p>Initializes the <a href="../../projection/type-registry/">projection type registry</a>.</p>
 <div class="codehilite"><pre><span></span>bin/console projection:initialize-types <span class="o">[</span>--force<span class="o">]</span>
 </pre></div>
 
 
-<h3 id="synchronizeprojectionscommand"><code>SynchronizeProjectionsCommand</code></h3>
+<h3 id="synchronizeprojectionscommand"><code>SynchronizeProjectionsCommand</code><a class="headerlink" href="#synchronizeprojectionscommand" title="Permanent link">&para;</a></h3>
 <p>Synchronizes domain objects and their <a href="../../projection/models/">projections</a> using the <a href="../../projection/synchronization/">projection synchronization</a>
 utility service.</p>
 <div class="codehilite"><pre><span></span>bin/console projection:synchronize
 </pre></div>
 
 
-<h2 id="context-factory">Context Factory</h2>
+<h2 id="context-factory">Context Factory<a class="headerlink" href="#context-factory" title="Permanent link">&para;</a></h2>
 <p>A context factory is bound to <code>MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface</code>. Its purpose is to leverage
 a CLI command in an effort to interactively built an arbitrary array value (the context).</p>
-<h3 id="api">API</h3>
-<h4 id="configureinputdefinition-definition-void"><code>configure(InputDefinition $definition): void</code></h4>
+<h3 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<h4 id="configureinputdefinition-definition-void"><code>configure(InputDefinition $definition): void</code><a class="headerlink" href="#configureinputdefinition-definition-void" title="Permanent link">&para;</a></h4>
 <p>Configures a command input definition. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputDefinition.html"><code>InputDefinition</code></a>. Should be called before using
 <code>getContext()</code>.</p>
 <hr />
-<h4 id="getcontextinputinterface-input-styleinterface-io-array-values-array"><code>getContext(InputInterface $input, StyleInterface $io, array $values = []): array</code></h4>
+<h4 id="getcontextinputinterface-input-styleinterface-io-array-values-array"><code>getContext(InputInterface $input, StyleInterface $io, array $values = []): array</code><a class="headerlink" href="#getcontextinputinterface-input-styleinterface-io-array-values-array" title="Permanent link">&para;</a></h4>
 <p>Resolves the actual context from the console IO. See also <a href="https://api.symfony.com/master/Symfony/Component/Console/Input/InputInterface.html"><code>InputInterface</code></a> and <a href="https://api.symfony.com/master/Symfony/Component/Console/Style/StyleInterface.html"><code>StyleInterface</code></a>.
 Any element value provided by <code>$values</code> takes precedence and should be used as-is.</p>
-<h3 id="implementations">Implementations</h3>
-<h4 id="msgphpdomaininfraconsolecontextclasscontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</code></h4>
+<h3 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h3>
+<h4 id="msgphpdomaininfraconsolecontextclasscontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</code><a class="headerlink" href="#msgphpdomaininfraconsolecontextclasscontextfactory" title="Permanent link">&para;</a></h4>
 <p>Factorizes a context based on any class method signature. It configures the CLI signature by mapping required class
 method arguments to command arguments, whereas optional ones are mapped to command options.</p>
 <div class="codehilite"><pre><span></span>bin/console <span class="nb">command</span> --optional-argument <span class="o">[</span>--<span class="o">]</span> required-argument
@@ -1267,7 +1267,7 @@ asked interactively. If interaction is not possible an exception will be thrown 
 </ul>
 </li>
 </ul>
-<h5 id="customizing-context-elements">Customizing context elements</h5>
+<h5 id="customizing-context-elements">Customizing context elements<a class="headerlink" href="#customizing-context-elements" title="Permanent link">&para;</a></h5>
 <p>Per-element configuration can be provided by implementing a <code>MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactoryInterface</code>.</p>
 <ul>
 <li><code>getElement(string $class, string $method, string $argument): ContextElement</code><ul>
@@ -1277,7 +1277,7 @@ asked interactively. If interaction is not possible an exception will be thrown 
 </ul>
 <p>A default implementation is provided by <code>MsgPhp\Domain\Infra\Console\Context\ClassContextElementFactory</code> which simply
 transforms argument names to human readable values so that <code>$argumentName</code> becomes <code>Argument Name</code>.</p>
-<h5 id="basic-example">Basic example</h5>
+<h5 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h5>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Console\Context\ClassContextFactory</span><span class="p">;</span>
@@ -1330,7 +1330,7 @@ transforms argument names to human readable values so that <code>$argumentName</
 </pre></div>
 
 
-<h4 id="msgphpdomaininfraconsolecontextdoctrineentitycontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory</code></h4>
+<h4 id="msgphpdomaininfraconsolecontextdoctrineentitycontextfactory"><code>MsgPhp\Domain\Infra\Console\Context\DoctrineEntityContextFactory</code><a class="headerlink" href="#msgphpdomaininfraconsolecontextdoctrineentitycontextfactory" title="Permanent link">&para;</a></h4>
 <p>A <a href="../doctrine-orm/">Doctrine</a> entity aware context factory. It decorates any context factory. Its purpose is to
 provide a discriminator value into the resulting context when working with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html">inheritance</a>.</p>
 <ul>

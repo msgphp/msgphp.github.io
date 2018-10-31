@@ -1088,7 +1088,7 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/event-sourcing/event-handlers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="event-handlers">Event Handlers</h1>
+                <h1 id="event-handlers">Event Handlers<a class="headerlink" href="#event-handlers" title="Permanent link">&para;</a></h1>
 <p>A domain event handler is bound to <code>MsgPhp\Domain\Event\DomainEventHandlerInterface</code>. Its purpose is to implement the
 handling of <a href="../events/">domain events</a> within a certain context.</p>
 <p>Usually an entity implements it in order to mutate its own state (i.e. self-handling). It enforces the entity state to
@@ -1096,15 +1096,15 @@ be valid by design as it encapsulates all write operations.</p>
 <p>In practice domain events can be recorded on trigger, or privately within the implementation. It allows to re-play them
 at any point in time afterwards. Consider this a design choice to be made upfront, e.g. in case your entity design
 requires its history to be accessible.</p>
-<h2 id="api">API</h2>
-<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="handleeventdomaineventinterface-event-bool"><code>handleEvent(DomainEventInterface $event): bool</code><a class="headerlink" href="#handleeventdomaineventinterface-event-bool" title="Permanent link">&para;</a></h3>
 <p>Handles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled
 yes or no.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaineventdomaineventhandlertrait"><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaineventdomaineventhandlertrait"><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><a class="headerlink" href="#msgphpdomaineventdomaineventhandlertrait" title="Permanent link">&para;</a></h3>
 <p>A utility trait implementing the event handler API. By convention it maps events to
 <code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods.</p>
-<h4 id="basic-example">Basic example</h4>
+<h4 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">,</span> <span class="nx">DomainEventInterface</span><span class="p">};</span>

@@ -1104,11 +1104,11 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/configuring-a-message-bus.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="configuring-a-message-bus">Configuring A Message Bus</h1>
+                <h1 id="configuring-a-message-bus">Configuring A Message Bus<a class="headerlink" href="#configuring-a-message-bus" title="Permanent link">&para;</a></h1>
 <p>To be able to dispatch the default <a href="../../reference/messages/">messages</a> a <a href="../../message-driven/message-bus/">message bus</a>
 must be configured.</p>
-<h2 id="using-symfony-messenger">Using <a href="../../infrastructure/symfony-messenger/">Symfony Messenger</a></h2>
-<h3 id="installation">Installation</h3>
+<h2 id="using-symfony-messenger">Using <a href="../../infrastructure/symfony-messenger/">Symfony Messenger</a><a class="headerlink" href="#using-symfony-messenger" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>composer install symfony/messenger
 
 <span class="c1"># with Symfony Flex</span>
@@ -1116,7 +1116,7 @@ composer install messenger
 </pre></div>
 
 
-<h3 id="configuration">Configuration</h3>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p>See the Messenger <a href="https://github.com/symfony/recipes/blob/master/symfony/messenger/4.1/config/packages/messenger.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/messenger.yaml</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1153,13 +1153,13 @@ to use any other bus:</p>
 </pre></div>
 
 
-<h2 id="using-simplebus">Using <a href="../../infrastructure/simple-bus/">SimpleBus</a></h2>
-<h3 id="installation_1">Installation</h3>
+<h2 id="using-simplebus">Using <a href="../../infrastructure/simple-bus/">SimpleBus</a><a class="headerlink" href="#using-simplebus" title="Permanent link">&para;</a></h2>
+<h3 id="installation_1">Installation<a class="headerlink" href="#installation_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>composer install simple-bus/symfony-bridge
 </pre></div>
 
 
-<h3 id="configuration_1">Configuration</h3>
+<h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h3>
 <p>Enable the bundles:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1185,7 +1185,7 @@ services to use any other bus:</p>
 </pre></div>
 
 
-<h2 id="using-a-custom-bus">Using A Custom Bus</h2>
+<h2 id="using-a-custom-bus">Using A Custom Bus<a class="headerlink" href="#using-a-custom-bus" title="Permanent link">&para;</a></h2>
 <p>To use a custom <a href="../../message-driven/message-bus/">message bus</a> implementation you can override its main alias service:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 

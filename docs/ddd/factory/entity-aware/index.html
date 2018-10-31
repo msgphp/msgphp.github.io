@@ -1146,27 +1146,27 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/factory/entity-aware.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="entity-aware-factory">Entity Aware Factory</h1>
+                <h1 id="entity-aware-factory">Entity Aware Factory<a class="headerlink" href="#entity-aware-factory" title="Permanent link">&para;</a></h1>
 <p>An entity aware factory is an <a href="../object/">object factory</a> and additionally bound to
 <code>MsgPhp\Domain\Factory\EntityAwareFactoryInterface</code>. Its purpose is to factorize entity related objects.</p>
-<h2 id="api">API</h2>
-<h3 id="extends">Extends</h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="extends">Extends<a class="headerlink" href="#extends" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../object/"><code>DomainObjectFactoryInterface</code></a></li>
 </ul>
 <hr />
-<h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code></h3>
+<h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code><a class="headerlink" href="#referencestring-class-id-object" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized reference object for a known existing entity object. The object must be of type <code>$class</code>. Any type
 of <a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
 <hr />
-<h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code></h3>
+<h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code><a class="headerlink" href="#identifystring-class-value-domainidinterface" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized <a href="../../identifiers/">domain identifier</a> for the given entity class from a known primitive value.</p>
 <hr />
-<h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code></h3>
+<h3 id="nextidentifierstring-class-domainidinterface"><code>nextIdentifier(string $class): DomainIdInterface</code><a class="headerlink" href="#nextidentifierstring-class-domainidinterface" title="Permanent link">&para;</a></h3>
 <p>Returns the next <a href="../../identifiers/">domain identifier</a> for the given entity class. Depending on the implementation its
 value might be considered empty if it's not capable to calculate one upfront.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code><a class="headerlink" href="#msgphpdomainfactoryentityawarefactory" title="Permanent link">&para;</a></h3>
 <p>A generic entity factory. It decorates any object factory and uses the <a href="../../identity-mapping/">domain identity mapping</a>
 as well as a known entity to identifier class mapping.</p>
 <ul>
@@ -1177,7 +1177,7 @@ as well as a known entity to identifier class mapping.</p>
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic example</h4>
+<h4 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
@@ -1219,7 +1219,7 @@ as well as a known entity to identifier class mapping.</p>
 </pre></div>
 
 
-<h3 id="msgphpdomaininfradoctrineentityawarefactory"><code>MsgPhp\Domain\Infra\Doctrine\EntityAwareFactory</code></h3>
+<h3 id="msgphpdomaininfradoctrineentityawarefactory"><code>MsgPhp\Domain\Infra\Doctrine\EntityAwareFactory</code><a class="headerlink" href="#msgphpdomaininfradoctrineentityawarefactory" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored entity aware factory.</p>
 <ul>
 <li><a href="../../../infrastructure/doctrine-orm/#entity-aware-factory">Read more</a></li>

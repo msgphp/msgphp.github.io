@@ -1134,7 +1134,7 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identities.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identities">Identities</h1>
+                <h1 id="identities">Identities<a class="headerlink" href="#identities" title="Permanent link">&para;</a></h1>
 <p><code>MsgPhp\Domain\DomainIdentityHelper</code> is a utility domain service. Its purpose is to ease working with domain identities
 and the <a href="../identity-mapping/">identity mapping</a>.</p>
 <p>A domain identity is a composite value (<code>array</code>) of one or more individual identifier values, indexed by an identifier
@@ -1142,40 +1142,40 @@ field name. Its usage is to uniquely identify a domain object, thus qualifying i
 <p>Identifier values can be of any type; a <a href="../identifiers/">domain identifier</a>, another (foreign) entity object, or any
 primitive value.</p>
 <p>A single identifier value might represent an identity in case the identity is composed from a single identifier field.</p>
-<h2 id="api">API</h2>
-<h3 id="isidentifiervalue-bool"><code>isIdentifier($value): bool</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="isidentifiervalue-bool"><code>isIdentifier($value): bool</code><a class="headerlink" href="#isidentifiervalue-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if <code>$value</code> is a known identifier value. This is either a <a href="../identifiers/">domain identifier</a> object or an entity
 object.</p>
 <hr />
-<h3 id="isemptyidentifiervalue-bool"><code>isEmptyIdentifier($value): bool</code></h3>
+<h3 id="isemptyidentifiervalue-bool"><code>isEmptyIdentifier($value): bool</code><a class="headerlink" href="#isemptyidentifiervalue-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if <code>$value</code> is a known empty identifier value. It returns <code>true</code> if the specified value is either <code>null</code>, an empty
 <a href="../identifiers/">domain identifier</a> or an entity object without its identity set.</p>
 <hr />
-<h3 id="normalizeidentifiervalue"><code>normalizeIdentifier($value)</code></h3>
+<h3 id="normalizeidentifiervalue"><code>normalizeIdentifier($value)</code><a class="headerlink" href="#normalizeidentifiervalue" title="Permanent link">&para;</a></h3>
 <p>Returns the primitive identifier value of <code>$value</code>. Empty identifier values (see <code>isEmptyIdentifier()</code>) are normalized
 as <code>null</code>, a <a href="../identifiers/">domain identifier</a> as string value and an entity object as normalized identity value.
 A value of any other type is returned as is.</p>
 <hr />
-<h3 id="getidentifiersobject-object-array"><code>getIdentifiers(object $object): array</code></h3>
+<h3 id="getidentifiersobject-object-array"><code>getIdentifiers(object $object): array</code><a class="headerlink" href="#getidentifiersobject-object-array" title="Permanent link">&para;</a></h3>
 <p>Returns the actual identifier values of <code>$object</code>.</p>
 <hr />
-<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code></h3>
+<h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code><a class="headerlink" href="#getidentifierfieldnamesstring-class-array" title="Permanent link">&para;</a></h3>
 <p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed of these field values.
 See also <code>DomainIdentityMappingInterface::getIdentifierFieldNames()</code>.</p>
 <hr />
-<h3 id="isidentitystring-class-value-bool"><code>isIdentity(string $class, $value): bool</code></h3>
+<h3 id="isidentitystring-class-value-bool"><code>isIdentity(string $class, $value): bool</code><a class="headerlink" href="#isidentitystring-class-value-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if <code>$value</code> is a valid identity for type <code>$class</code>. An identity value is considered valid if an entity object uses
 a single identifier value as identity and <code>$value</code> is a non empty identifier (see <code>isEmptyIdentifier()</code>).</p>
 <p>In case of one or more identifier values, given in the form of an array, its keys must exactly match the available
 identifier field names and its values must contain no empty identifiers.</p>
 <hr />
-<h3 id="toidentitystring-class-value-array"><code>toIdentity(string $class, $value): array</code></h3>
+<h3 id="toidentitystring-class-value-array"><code>toIdentity(string $class, $value): array</code><a class="headerlink" href="#toidentitystring-class-value-array" title="Permanent link">&para;</a></h3>
 <p>Returns a composite identity value for <code>$class</code> from <code>$value</code>.</p>
 <hr />
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code></h3>
+<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code><a class="headerlink" href="#getidentityobject-object-array" title="Permanent link">&para;</a></h3>
 <p>Returns the actual, non empty, identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding
 identifier field name. See also <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
-<h2 id="basic-example">Basic Example</h2>
+<h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\</span><span class="p">{</span><span class="nx">DomainId</span><span class="p">,</span> <span class="nx">DomainIdentityHelper</span><span class="p">};</span>

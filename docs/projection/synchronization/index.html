@@ -1050,13 +1050,13 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/projection/synchronization.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="projection-synchronization">Projection Synchronization</h1>
+                <h1 id="projection-synchronization">Projection Synchronization<a class="headerlink" href="#projection-synchronization" title="Permanent link">&para;</a></h1>
 <p><code>MsgPhp\Domain\Projection\ProjectionSynchronization</code> is a utility domain service. Its purpose is to ease synchronizing
 <a href="../documents/">projection documents</a> from source objects.</p>
-<h2 id="api">API</h2>
-<h3 id="synchronize-iterable"><code>synchronize(): iterable</code></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="synchronize-iterable"><code>synchronize(): iterable</code><a class="headerlink" href="#synchronize-iterable" title="Permanent link">&para;</a></h3>
 <p>Yields all projection documents attempted to be synchronized. The actual document status can be read from <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/ProjectionDocument.html#property_status"><code>ProjectionDocument::$status</code></a>.</p>
-<h2 id="basic-example">Basic example</h2>
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\</span><span class="p">{</span><span class="nx">ProjectionDocument</span><span class="p">,</span> <span class="nx">ProjectionDocumentProvider</span><span class="p">,</span> <span class="nx">ProjectionDocumentTransformerInterface</span><span class="p">,</span> <span class="nx">ProjectionRepositoryInterface</span><span class="p">,</span> <span class="nx">ProjectionSynchronization</span><span class="p">,</span> <span class="nx">ProjectionTypeRegistryInterface</span><span class="p">};</span>
@@ -1105,7 +1105,7 @@
 </pre></div>
 
 
-<h2 id="command-line-interface">Command Line Interface</h2>
+<h2 id="command-line-interface">Command Line Interface<a class="headerlink" href="#command-line-interface" title="Permanent link">&para;</a></h2>
 <p>A synchronization can be ran using the CLI when working with Symfony Console.</p>
 <ul>
 <li><a href="../../infrastructure/symfony-console/#synchronizeprojectionscommand">Read more</a></li>

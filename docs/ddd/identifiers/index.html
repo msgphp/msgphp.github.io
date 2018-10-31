@@ -1158,34 +1158,34 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/ddd/identifiers.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="identifiers">Identifiers</h1>
+                <h1 id="identifiers">Identifiers<a class="headerlink" href="#identifiers" title="Permanent link">&para;</a></h1>
 <p>A domain identifier is a <a href="https://secure.php.net/manual/en/language.oop5.magic.php#object.tostring">string-able</a> value object and bound to <code>MsgPhp\Domain\DomainIdInterface</code>. Its purpose is to
 utilize a primitive identifier value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See the <a href="../../reference/identifiers/">reference</a> page for all available identifiers provided per domain</p>
 </div>
-<h2 id="api">API</h2>
-<h3 id="extends">Extends</h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="extends">Extends<a class="headerlink" href="#extends" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://secure.php.net/serializable"><code>\Serializable</code></a></li>
 <li><a href="https://secure.php.net/jsonserializable"><code>\JsonSerializable</code></a></li>
 </ul>
 <hr />
-<h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code></h3>
+<h3 id="static-fromvaluevalue-domainidinterface"><code>static fromValue($value): DomainIdInterface</code><a class="headerlink" href="#static-fromvaluevalue-domainidinterface" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized identifier from any primitive value. Using <code>null</code> might imply an empty identifier.</p>
 <hr />
-<h3 id="isempty-bool"><code>isEmpty(): bool</code></h3>
+<h3 id="isempty-bool"><code>isEmpty(): bool</code><a class="headerlink" href="#isempty-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if an identifier value is considered empty, thus has no known primitive value.</p>
 <hr />
-<h3 id="equalsdomainidinterface-id-bool"><code>equals(DomainIdInterface $id): bool</code></h3>
+<h3 id="equalsdomainidinterface-id-bool"><code>equals(DomainIdInterface $id): bool</code><a class="headerlink" href="#equalsdomainidinterface-id-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if an identifier equals another identifier.</p>
 <hr />
-<h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code></h3>
+<h3 id="tostring-string-__tostring-string"><code>toString(): string</code> / <code>__toString(): string</code><a class="headerlink" href="#tostring-string-__tostring-string" title="Permanent link">&para;</a></h3>
 <p>Returns the identifier its primitive string value. If the identifier is empty (see <code>isEmpty()</code>) an empty string (<code>""</code>) 
 should be returned.</p>
-<h2 id="implementations">Implementations</h2>
-<h3 id="msgphpdomaindomainid"><code>MsgPhp\Domain\DomainId</code></h3>
+<h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
+<h3 id="msgphpdomaindomainid"><code>MsgPhp\Domain\DomainId</code><a class="headerlink" href="#msgphpdomaindomainid" title="Permanent link">&para;</a></h3>
 <p>A first class citizen domain identifier. It leverages <code>string|null</code> as underlying data type.</p>
 <ul>
 <li><code>__construct(string $id = null)</code><ul>
@@ -1193,7 +1193,7 @@ should be returned.</p>
 </ul>
 </li>
 </ul>
-<h4 id="basic-example">Basic Example</h4>
+<h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
@@ -1226,7 +1226,7 @@ should be returned.</p>
 </pre></div>
 
 
-<h3 id="msgphpdomaininfrauuiddomainid"><code>MsgPhp\Domain\Infra\Uuid\DomainId</code></h3>
+<h3 id="msgphpdomaininfrauuiddomainid"><code>MsgPhp\Domain\Infra\Uuid\DomainId</code><a class="headerlink" href="#msgphpdomaininfrauuiddomainid" title="Permanent link">&para;</a></h3>
 <p>A UUID tailored domain identifier.</p>
 <ul>
 <li><a href="../../infrastructure/uuid/#domain-identifier">Read more</a></li>

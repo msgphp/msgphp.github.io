@@ -1106,9 +1106,9 @@
                   <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/configuring-doctrine-orm.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="configuring-doctrine-orm">Configuring Doctrine ORM</h1>
+                <h1 id="configuring-doctrine-orm">Configuring Doctrine ORM<a class="headerlink" href="#configuring-doctrine-orm" title="Permanent link">&para;</a></h1>
 <p>After a <a href="../bundle-installation/">bundle</a> is installed we can configure <a href="../../infrastructure/doctrine-orm/">Doctrine ORM</a>.</p>
-<h2 id="installation">Installation</h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer install doctrine/orm doctrine/doctrine-bundle
 
 <span class="c1"># with Symfony Flex</span>
@@ -1116,7 +1116,7 @@ composer install orm
 </pre></div>
 
 
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>See the Doctrine Bundle <a href="https://github.com/symfony/recipes/blob/master/doctrine/doctrine-bundle/1.6/config/packages/doctrine.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/doctrine.yaml</code>.</p>
 <p>Although the examples use annotation based mappings, you are not required to do so. <a href="https://symfony.com/doc/master/bundles/DoctrineBundle/configuration.html#mapping-configuration">Read more</a>.</p>
 <div class="admonition info">
@@ -1134,7 +1134,7 @@ entity manager:</p>
 </pre></div>
 
 
-<h2 id="mapping-entities">Mapping Entities</h2>
+<h2 id="mapping-entities">Mapping Entities<a class="headerlink" href="#mapping-entities" title="Permanent link">&para;</a></h2>
 <p>A MsgPHP bundle provides base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
 defined by your application:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -1173,7 +1173,7 @@ entity field / feature trait its default ORM mapping is configured automatically
 <p>With Symfony Flex the required entities of a MsgPHP bundle are automatically created, including ORM mapping
 and configuration</p>
 </div>
-<h2 id="mapping-identifiers">Mapping Identifiers</h2>
+<h2 id="mapping-identifiers">Mapping Identifiers<a class="headerlink" href="#mapping-identifiers" title="Permanent link">&para;</a></h2>
 <p>When an entity object is identified using a <a href="../../ddd/identifiers/">domain identifier</a> we must configure it accordingly:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1208,7 +1208,7 @@ necessary</p>
 <p class="admonition-title">Info</p>
 <p><a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Read more</a> about the Doctrine domain identifier type</p>
 </div>
-<h3 id="custom-identifiers">Custom Identifiers</h3>
+<h3 id="custom-identifiers">Custom Identifiers<a class="headerlink" href="#custom-identifiers" title="Permanent link">&para;</a></h3>
 <p>In case a custom implementation is used it should be configured accordingly:</p>
 <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">msgphp_&lt;name&gt;</span><span class="p p-Indicator">:</span>
     <span class="c1"># ...</span>
@@ -1220,7 +1220,7 @@ necessary</p>
 </pre></div>
 
 
-<h3 id="without-nullability">Without Nullability</h3>
+<h3 id="without-nullability">Without Nullability<a class="headerlink" href="#without-nullability" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="c1">// ...</span>
@@ -1266,7 +1266,7 @@ necessary</p>
 </pre></div>
 
 
-<h3 id="without-automatic-hydration">Without Automatic Hydration</h3>
+<h3 id="without-automatic-hydration">Without Automatic Hydration<a class="headerlink" href="#without-automatic-hydration" title="Permanent link">&para;</a></h3>
 <p>To hydrate the primitive identifier value instead of a value object, the type can be configured regularly. It requires
 to couple with a known identifier class.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -1300,7 +1300,7 @@ to couple with a known identifier class.</p>
 <p class="admonition-title">Info</p>
 <p><a href="../../infrastructure/doctrine-orm/#domain-identifier-hydration">Read more</a> about Doctrine identifier hydration</p>
 </div>
-<h2 id="database-setup">Database Setup</h2>
+<h2 id="database-setup">Database Setup<a class="headerlink" href="#database-setup" title="Permanent link">&para;</a></h2>
 <p>Configure the database URL:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># .env</span>
 
