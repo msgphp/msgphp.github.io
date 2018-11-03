@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\User\Event\UserAttributeValueDeletedEvent | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Exception\UnknownCollectionElementException | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_User_Event_UserAttributeValueDeletedEvent" data-root-path="../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Exception_UnknownCollectionElementException" data-root-path="../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,21 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/User.html">User</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/User/Event.html">Event</a></li><li class="backslash">\</li><li>UserAttributeValueDeletedEvent</li>
+                        <li><a href="../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../MsgPhp/Domain/Exception.html">Exception</a></li><li class="backslash">\</li><li>UnknownCollectionElementException</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            UserAttributeValueDeletedEvent
+            UnknownCollectionElementException
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>UserAttributeValueDeletedEvent</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/UserEav/Event/UserAttributeValueDeletedEvent.php">View source</a>)
+    <strong>UnknownCollectionElementException</strong>        extends <a target="_blank" href="http://php.net/OutOfBoundsException">OutOfBoundsException</a>        implements
+        <a href="../../../MsgPhp/Domain/Exception/DomainExceptionInterface.html"><abbr title="MsgPhp\Domain\Exception\DomainExceptionInterface">DomainExceptionInterface</abbr></a>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Exception/UnknownCollectionElementException.php">View source</a>)
 </p>
 
         
@@ -88,29 +89,16 @@
     
     
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_userAttributeValue">
-                                                                                
-                </td>
-                <td>$userAttributeValue</td>
-                <td class="last"></td>
-                <td></td>
-            </tr>
-            </table>
-
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    static&nbsp;<a href="../../../MsgPhp/Domain/Exception/UnknownCollectionElementException.html"><abbr title="MsgPhp\Domain\Exception\UnknownCollectionElementException">UnknownCollectionElementException</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+                    <a href="#method_createForKey">createForKey</a>(string|int $key)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -123,10 +111,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/UserEav/Event/UserAttributeValueDeletedEvent.php#L16">line 16</a></div>
-        <code>final                    
-    <strong>__construct</strong>(<a href="../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a> $userAttributeValue)
+                    <h3 id="method_createForKey">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Exception/UnknownCollectionElementException.php#L15">line 15</a></div>
+        <code>        static            <a href="../../../MsgPhp/Domain/Exception/UnknownCollectionElementException.html"><abbr title="MsgPhp\Domain\Exception\UnknownCollectionElementException">UnknownCollectionElementException</abbr></a>
+    <strong>createForKey</strong>(string|int $key)
         </code>
     </h3>
     <div class="details">
@@ -138,13 +126,22 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../MsgPhp/User/Entity/UserAttributeValue.html"><abbr title="MsgPhp\User\Entity\UserAttributeValue">UserAttributeValue</abbr></a></td>
-                <td>$userAttributeValue</td>
+                <td>string|int</td>
+                <td>$key</td>
                 <td></td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../MsgPhp/Domain/Exception/UnknownCollectionElementException.html"><abbr title="MsgPhp\Domain\Exception\UnknownCollectionElementException">UnknownCollectionElementException</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>

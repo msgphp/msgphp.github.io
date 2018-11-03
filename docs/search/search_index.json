@@ -217,7 +217,7 @@
         }, 
         {
             "location": "/ddd/collections/", 
-            "text": "Collections\n\n\nA domain collection is a \ntraversable\n and bound to \nMsgPhp\\Domain\\DomainCollectionInterface\n. Its purpose is to utilize\na primitive iterable value. It may hold any type of element values.\n\n\nAPI\n\n\nExtends\n\n\n\n\n\\Countable\n\n\n\\IteratorAggregate\n\n\n\n\n\n\nstatic fromValue(?iterable $value): DomainCollectionInterface\n\n\nReturns a factorized collection from any primitive iterable. Using \nnull\n implies an empty collection.\n\n\n\n\nisEmpty(): bool\n\n\nTells if a collection is considered empty, i.e. contains zero elements.\n\n\n\n\ncontains($element): bool\n\n\nTells if a collection contains the given element. Comparison is done strictly.\n\n\n\n\ncontainsKey($key): bool\n\n\nTells if a collection contains an element at the given key/index.\n\n\n\n\nfirst()\n\n\nReturns the first element or \nfalse\n if the collection is empty.\n\n\n\n\nlast()\n\n\nReturns the last element or \nfalse\n if the collection is empty.\n\n\n\n\nget($key)\n\n\nReturns the element at the given key/index or \nnull\n if the collection is empty.\n\n\n\n\nfilter(callable $filter): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing only elements for which \n$filter\n returns \ntrue\n. Keys are preserved.\n\n\n\n\nslice(int $offset, int $limit = 0): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing a slice of elements. By default the slice has no limit, implied by integer \n0\n.\nKeys are preserved.\n\n\n\n\nmap(callable $mapper): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing each collection element as returned by \n$mapper\n.\nKeys are preserved.\n\n\nPagination API\n\n\nA collection that is part of a paginated result set is bound to \nMsgPhp\\Domain\\PaginatedDomainCollectionInterface\n. Its\npurpose is to expose the current pagination.\n\n\nExtends\n\n\n\n\nDomainCollectionInterface\n\n\n\n\n\n\ngetOffset(): float\n\n\nGet the current page offset.\n\n\n\n\ngetLimit(): float\n\n\nGet the current page limit (e.g. items per page).\n\n\n\n\ngetCurrentPage(): float\n\n\nGet the current page number.\n\n\n\n\ngetLastPage(): float\n\n\nGet the last page number.\n\n\n\n\ngetTotalCount(): float\n\n\nGet the total no. of items in the full result set.\n\n\n\n\nNote\n\n\ncount()\n should return the no. of items on the current page\n\n\n\n\nImplementations\n\n\nMsgPhp\\Domain\\DomainCollection\n\n\nA first class citizen domain collection. It leverages \niterable\n as underlying data type. Lazy support is built-in for\ntype \n\\Traversable\n. Meaning the minimal no. of elements are traversed, i.e. until the first element in case of\n\nisEmpty()\n. Note type \n\\Generator\n can only start traversing once.\n\n\n\n\n__construct(iterable $elements)\n\n\n$elements\n: The elements this collection contains\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n// --- SETUP ---\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\na\n,\n \nb\n,\n \nc\n,\n \n1\n,\n \n2\n,\n \n3\n,\n \nkey\n \n=\n \nvalue\n]);\n\n\n\n// --- USAGE ---\n\n\n\n$collection\n-\nisEmpty\n();\n \n// false\n\n\ncount\n(\n$collection\n);\n \n// int(7)\n\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// true\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// false\n\n\n\n$collection\n-\ncontainsKey\n(\n0\n);\n \n// true\n\n\n$collection\n-\ncontainsKey\n(\n0\n);\n \n// true\n\n\n\n$collection\n-\nfirst\n();\n \n// \na\n\n\n$collection\n-\nlast\n();\n \n// int(3)\n\n\n\n$collection\n-\nget\n(\n0\n);\n \n// \na\n\n\n$collection\n-\nget\n(\n3\n);\n \n// int(1)\n\n\n$collection\n-\nget\n(\nkey\n);\n \n// \nvalue\n\n\n\n$onlyInts\n \n=\n \n$collection\n-\nfilter\n(\nfunction\n \n(\n$value\n)\n:\n \nbool\n \n{\n\n    \nreturn\n \nis_int\n(\n$value\n);\n\n\n});\n\n\n\n$firstTwoInts\n \n=\n \n$onlyInts\n-\nslice\n(\n0\n,\n \n2\n);\n\n\n\n$firstTwoIntsPlussed\n \n=\n \n$firstTwoInts\n-\nmap\n(\nfunction\n \n(\nint\n \n$value\n)\n:\n \nint\n \n{\n\n    \nreturn\n \n++\n$value\n;\n\n\n});\n \n// [2, 4]\n\n\n\n\n\n\nMsgPhp\\Domain\\PaginatedDomainCollection\n\n\nA first class citizen paginated domain collection to transform any collection into a paginated collection.\n\n\n\n\n__construct(iterable $elements, float $offset = .0, float $limit = .0, float $count = null, float $totalCount = null)\n\n\n$elements\n: The elements this collection contains\n\n\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n\n\nA Doctrine tailored domain collection.\n\n\n\n\nRead more", 
+            "text": "Collections\n\n\nA domain collection is a \ntraversable\n and bound to \nMsgPhp\\Domain\\DomainCollectionInterface\n. Its purpose is to utilize\na primitive iterable value. It may hold any type of element values.\n\n\nAPI\n\n\nExtends\n\n\n\n\n\\Countable\n\n\n\\IteratorAggregate\n\n\n\n\n\n\nstatic fromValue(?iterable $value): DomainCollectionInterface\n\n\nReturns a factorized collection from any primitive iterable. Using \nnull\n implies an empty collection.\n\n\n\n\nisEmpty(): bool\n\n\nTells if a collection is considered empty, i.e. contains zero elements.\n\n\n\n\ncontains($element): bool\n\n\nTells if a collection contains the given element. Comparison is done strictly.\n\n\n\n\ncontainsKey($key): bool\n\n\nTells if a collection contains an element at the given key.\n\n\n\n\nfirst(): mixed\n\n\nReturns the first element from a collection.\n\n\n\n\nlast(): mixed\n\n\nReturns the last element from a collection.\n\n\n\n\nget($key): mixed\n\n\nReturns the element at the given key from a collection.\n\n\n\n\nfilter(callable $filter): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing only elements for which \n$filter\n returns \ntrue\n. Keys are preserved.\n\n\n\n\nslice(int $offset, int $limit = 0): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing a slice of elements. By default the slice has no limit, implied by integer \n0\n.\nKeys are preserved.\n\n\n\n\nmap(callable $mapper): DomainCollectionInterface\n\n\nReturns a \nnew\n collection containing each collection element as returned by \n$mapper\n. Keys are preserved.\n\n\nPagination API\n\n\nA collection that is part of a paginated result set is bound to \nMsgPhp\\Domain\\PaginatedDomainCollectionInterface\n. Its\npurpose is to expose the current pagination.\n\n\nExtends\n\n\n\n\nDomainCollectionInterface\n\n\n\n\n\n\ngetOffset(): float\n\n\nGet the current page offset.\n\n\n\n\ngetLimit(): float\n\n\nGet the current page limit (e.g. items per page).\n\n\n\n\ngetCurrentPage(): float\n\n\nGet the current page number.\n\n\n\n\ngetLastPage(): float\n\n\nGet the last page number.\n\n\n\n\ngetTotalCount(): float\n\n\nGet the total no. of items in the full result set.\n\n\n\n\nNote\n\n\ncount()\n should return the no. of items on the current page\n\n\n\n\nImplementations\n\n\nMsgPhp\\Domain\\DomainCollection\n\n\nA first class citizen domain collection. It leverages \niterable\n as underlying data type. Lazy support is built-in for\ntype \n\\Traversable\n. Meaning the minimal no. of elements are traversed, i.e. until the first element in case of\n\nisEmpty()\n. Note type \n\\Generator\n can only start traversing once.\n\n\n\n\n__construct(iterable $elements)\n\n\n$elements\n: The elements this collection contains\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainCollection\n;\n\n\n\n// --- SETUP ---\n\n\n\n$collection\n \n=\n \nnew\n \nDomainCollection\n([\na\n,\n \nb\n,\n \nc\n,\n \n1\n,\n \n2\n,\n \n3\n,\n \nkey\n \n=\n \nvalue\n]);\n\n\n\n// --- USAGE ---\n\n\n\n$collection\n-\nisEmpty\n();\n \n// false\n\n\ncount\n(\n$collection\n);\n \n// int(7)\n\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// true\n\n\n$collection\n-\ncontains\n(\n2\n);\n \n// false\n\n\n\n$collection\n-\ncontainsKey\n(\n0\n);\n \n// true\n\n\n$collection\n-\ncontainsKey\n(\n0\n);\n \n// true\n\n\n\n$collection\n-\nfirst\n();\n \n// \na\n\n\n$collection\n-\nlast\n();\n \n// int(3)\n\n\n\n$collection\n-\nget\n(\n0\n);\n \n// \na\n\n\n$collection\n-\nget\n(\n3\n);\n \n// int(1)\n\n\n$collection\n-\nget\n(\nkey\n);\n \n// \nvalue\n\n\n\n$onlyInts\n \n=\n \n$collection\n-\nfilter\n(\nfunction\n \n(\n$value\n)\n:\n \nbool\n \n{\n\n    \nreturn\n \nis_int\n(\n$value\n);\n\n\n});\n\n\n\n$firstTwoInts\n \n=\n \n$onlyInts\n-\nslice\n(\n0\n,\n \n2\n);\n\n\n\n$firstTwoIntsPlussed\n \n=\n \n$firstTwoInts\n-\nmap\n(\nfunction\n \n(\nint\n \n$value\n)\n:\n \nint\n \n{\n\n    \nreturn\n \n++\n$value\n;\n\n\n});\n\n\n\n\n\n\nMsgPhp\\Domain\\PaginatedDomainCollection\n\n\nA first class citizen paginated domain collection to transform any collection into a paginated collection.\n\n\n\n\n__construct(iterable $elements, float $offset = .0, float $limit = .0, float $count = null, float $totalCount = null)\n\n\n$elements\n: The elements this collection contains\n\n\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection\n\n\nA Doctrine tailored domain collection.\n\n\n\n\nRead more", 
             "title": "Collections"
         }, 
         {
@@ -252,23 +252,23 @@
         }, 
         {
             "location": "/ddd/collections/#containskeykey-bool", 
-            "text": "Tells if a collection contains an element at the given key/index.", 
+            "text": "Tells if a collection contains an element at the given key.", 
             "title": "containsKey($key): bool"
         }, 
         {
-            "location": "/ddd/collections/#first", 
-            "text": "Returns the first element or  false  if the collection is empty.", 
-            "title": "first()"
+            "location": "/ddd/collections/#first-mixed", 
+            "text": "Returns the first element from a collection.", 
+            "title": "first(): mixed"
         }, 
         {
-            "location": "/ddd/collections/#last", 
-            "text": "Returns the last element or  false  if the collection is empty.", 
-            "title": "last()"
+            "location": "/ddd/collections/#last-mixed", 
+            "text": "Returns the last element from a collection.", 
+            "title": "last(): mixed"
         }, 
         {
-            "location": "/ddd/collections/#getkey", 
-            "text": "Returns the element at the given key/index or  null  if the collection is empty.", 
-            "title": "get($key)"
+            "location": "/ddd/collections/#getkey-mixed", 
+            "text": "Returns the element at the given key from a collection.", 
+            "title": "get($key): mixed"
         }, 
         {
             "location": "/ddd/collections/#filtercallable-filter-domaincollectioninterface", 
@@ -282,7 +282,7 @@
         }, 
         {
             "location": "/ddd/collections/#mapcallable-mapper-domaincollectioninterface", 
-            "text": "Returns a  new  collection containing each collection element as returned by  $mapper .\nKeys are preserved.", 
+            "text": "Returns a  new  collection containing each collection element as returned by  $mapper . Keys are preserved.", 
             "title": "map(callable $mapper): DomainCollectionInterface"
         }, 
         {
@@ -332,7 +332,7 @@
         }, 
         {
             "location": "/ddd/collections/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\DomainCollection ;  // --- SETUP ---  $collection   =   new   DomainCollection ([ a ,   b ,   c ,   1 ,   2 ,   3 ,   key   =   value ]);  // --- USAGE ---  $collection - isEmpty ();   // false  count ( $collection );   // int(7)  $collection - contains ( 2 );   // true  $collection - contains ( 2 );   // false  $collection - containsKey ( 0 );   // true  $collection - containsKey ( 0 );   // true  $collection - first ();   //  a  $collection - last ();   // int(3)  $collection - get ( 0 );   //  a  $collection - get ( 3 );   // int(1)  $collection - get ( key );   //  value  $onlyInts   =   $collection - filter ( function   ( $value ) :   bool   { \n     return   is_int ( $value );  });  $firstTwoInts   =   $onlyInts - slice ( 0 ,   2 );  $firstTwoIntsPlussed   =   $firstTwoInts - map ( function   ( int   $value ) :   int   { \n     return   ++ $value ;  });   // [2, 4]", 
+            "text": "?php  use   MsgPhp\\Domain\\DomainCollection ;  // --- SETUP ---  $collection   =   new   DomainCollection ([ a ,   b ,   c ,   1 ,   2 ,   3 ,   key   =   value ]);  // --- USAGE ---  $collection - isEmpty ();   // false  count ( $collection );   // int(7)  $collection - contains ( 2 );   // true  $collection - contains ( 2 );   // false  $collection - containsKey ( 0 );   // true  $collection - containsKey ( 0 );   // true  $collection - first ();   //  a  $collection - last ();   // int(3)  $collection - get ( 0 );   //  a  $collection - get ( 3 );   // int(1)  $collection - get ( key );   //  value  $onlyInts   =   $collection - filter ( function   ( $value ) :   bool   { \n     return   is_int ( $value );  });  $firstTwoInts   =   $onlyInts - slice ( 0 ,   2 );  $firstTwoIntsPlussed   =   $firstTwoInts - map ( function   ( int   $value ) :   int   { \n     return   ++ $value ;  });", 
             "title": "Basic Example"
         }, 
         {
@@ -1432,7 +1432,7 @@
         }, 
         {
             "location": "/reference/entities/", 
-            "text": "Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nFields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\nMsgPhp\\User\\Entity\\User\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential", 
+            "text": "Entities\n\n\nReference of available \nentities\n per domain.\n\n\n\n\n\nmsgphp/domain\n\n\nFields\n\n\n\n\nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\EnabledField\n\n\nMsgPhp\\Domain\\Entity\\Fields\\LastUpdatedAtField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed\n\n\nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n\n\n\n\nmsgphp/eav\n\n\nEntities\n\n\n\n\nMsgPhp\\Eav\\Entity\\Attribute\n\n\nMsgPhp\\Eav\\Entity\\AttributeValue\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\Eav\\Entity\\Fields\\AttributesField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\Eav\\Entity\\Features\\EntityAttributeValue\n\n\n\n\nmsgphp/user\n\n\nEntities\n\n\n\n\nMsgPhp\\User\\Entity\\Role\n\n\nMsgPhp\\User\\Entity\\User\n\n\nMsgPhp\\User\\Entity\\UserEmail\n\n\nMsgPhp\\User\\Entity\\UserRole\n\n\nMsgPhp\\User\\Entity\\Username\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\EmailsField\n\n\nMsgPhp\\User\\Entity\\Fields\\RoleField\n\n\nMsgPhp\\User\\Entity\\Fields\\RolesField\n\n\nMsgPhp\\User\\Entity\\Fields\\UserField\n\n\n\n\nFeatures\n\n\n\n\nMsgPhp\\User\\Entity\\Features\\EmailCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\EmailSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknamePasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\NicknameSaltedPasswordCredential\n\n\nMsgPhp\\User\\Entity\\Features\\ResettablePassword\n\n\nMsgPhp\\User\\Entity\\Features\\TokenCredential\n\n\n\n\nmsgphp/user-eav\n\n\nEntities\n\n\n\n\nMsgPhp\\User\\Entity\\UserAttributeValue\n\n\n\n\nFields\n\n\n\n\nMsgPhp\\User\\Entity\\Fields\\AttributeValuesField\n\n\n\n\nFeatures\n\n\n\n\nNo features available", 
             "title": "Entities"
         }, 
         {
@@ -1482,12 +1482,12 @@
         }, 
         {
             "location": "/reference/entities/#entities_2", 
-            "text": "MsgPhp\\User\\Entity\\Role  MsgPhp\\User\\Entity\\User  MsgPhp\\User\\Entity\\UserAttributeValue  MsgPhp\\User\\Entity\\UserEmail  MsgPhp\\User\\Entity\\UserRole  MsgPhp\\User\\Entity\\Username", 
+            "text": "MsgPhp\\User\\Entity\\Role  MsgPhp\\User\\Entity\\User  MsgPhp\\User\\Entity\\UserEmail  MsgPhp\\User\\Entity\\UserRole  MsgPhp\\User\\Entity\\Username", 
             "title": "Entities"
         }, 
         {
             "location": "/reference/entities/#fields_2", 
-            "text": "MsgPhp\\User\\Entity\\Fields\\AttributeValuesField  MsgPhp\\User\\Entity\\Fields\\EmailsField  MsgPhp\\User\\Entity\\Fields\\RoleField  MsgPhp\\User\\Entity\\Fields\\RolesField  MsgPhp\\User\\Entity\\Fields\\UserField", 
+            "text": "MsgPhp\\User\\Entity\\Fields\\EmailsField  MsgPhp\\User\\Entity\\Fields\\RoleField  MsgPhp\\User\\Entity\\Fields\\RolesField  MsgPhp\\User\\Entity\\Fields\\UserField", 
             "title": "Fields"
         }, 
         {
@@ -1496,8 +1496,28 @@
             "title": "Features"
         }, 
         {
+            "location": "/reference/entities/#msgphpuser-eav", 
+            "text": "", 
+            "title": "msgphp/user-eav"
+        }, 
+        {
+            "location": "/reference/entities/#entities_3", 
+            "text": "MsgPhp\\User\\Entity\\UserAttributeValue", 
+            "title": "Entities"
+        }, 
+        {
+            "location": "/reference/entities/#fields_3", 
+            "text": "MsgPhp\\User\\Entity\\Fields\\AttributeValuesField", 
+            "title": "Fields"
+        }, 
+        {
+            "location": "/reference/entities/#features_3", 
+            "text": "No features available", 
+            "title": "Features"
+        }, 
+        {
             "location": "/reference/repositories/", 
-            "text": "Repositories\n\n\nReference of available \nrepositories\n per domain.\n\n\n\n\n\nmsgphp/eav\n\n\n\n\nMsgPhp\\Eav\\Repository\\AttributeRepositoryInterface\n\n\n\n\nmsgphp/user\n\n\n\n\nMsgPhp\\User\\Repository\\RoleRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserAttributeValueRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserEmailRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserRoleRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UsernameRepositoryInterface", 
+            "text": "Repositories\n\n\nReference of available \nrepositories\n per domain.\n\n\n\n\n\nmsgphp/eav\n\n\n\n\nMsgPhp\\Eav\\Repository\\AttributeRepositoryInterface\n\n\n\n\nmsgphp/user\n\n\n\n\nMsgPhp\\User\\Repository\\RoleRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserEmailRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UserRoleRepositoryInterface\n\n\nMsgPhp\\User\\Repository\\UsernameRepositoryInterface\n\n\n\n\nmsgphp/user-eav\n\n\n\n\nMsgPhp\\User\\Repository\\UserAttributeValueRepositoryInterface", 
             "title": "Repositories"
         }, 
         {
@@ -1512,12 +1532,17 @@
         }, 
         {
             "location": "/reference/repositories/#msgphpuser", 
-            "text": "MsgPhp\\User\\Repository\\RoleRepositoryInterface  MsgPhp\\User\\Repository\\UserAttributeValueRepositoryInterface  MsgPhp\\User\\Repository\\UserEmailRepositoryInterface  MsgPhp\\User\\Repository\\UserRepositoryInterface  MsgPhp\\User\\Repository\\UserRoleRepositoryInterface  MsgPhp\\User\\Repository\\UsernameRepositoryInterface", 
+            "text": "MsgPhp\\User\\Repository\\RoleRepositoryInterface  MsgPhp\\User\\Repository\\UserEmailRepositoryInterface  MsgPhp\\User\\Repository\\UserRepositoryInterface  MsgPhp\\User\\Repository\\UserRoleRepositoryInterface  MsgPhp\\User\\Repository\\UsernameRepositoryInterface", 
             "title": "msgphp/user"
         }, 
         {
+            "location": "/reference/repositories/#msgphpuser-eav", 
+            "text": "MsgPhp\\User\\Repository\\UserAttributeValueRepositoryInterface", 
+            "title": "msgphp/user-eav"
+        }, 
+        {
             "location": "/reference/messages/", 
-            "text": "Messages\n\n\nReference of available messages per domain that can be dispatched using a \nmessage bus\n.\n\n\n\n\n\nmsgphp/domain\n\n\nCommands\n\n\n\n\nMsgPhp\\Domain\\Command\\DeleteProjectionDocumentCommand\n\n\nMsgPhp\\Domain\\Command\\SaveProjectionDocumentCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\Domain\\Event\\ProjectionDocumentDeletedEvent\n\n\nMsgPhp\\Domain\\Event\\ProjectionDocumentSavedEvent\n\n\n\n\nmsgphp/eav\n\n\nCommands\n\n\n\n\nMsgPhp\\Eav\\Command\\CreateAttributeCommand\n\n\nMsgPhp\\Eav\\Command\\DeleteAttributeCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\Eav\\Event\\AttributeCreatedEvent\n\n\nMsgPhp\\Eav\\Event\\AttributeDeletedEvent\n\n\n\n\nmsgphp/user\n\n\nCommands\n\n\n\n\nMsgPhp\\User\\Command\\AddUserAttributeValueCommand\n\n\nMsgPhp\\User\\Command\\AddUserEmailCommand\n\n\nMsgPhp\\User\\Command\\AddUserRoleCommand\n\n\nMsgPhp\\User\\Command\\ChangeUserAttributeValueCommand\n\n\nMsgPhp\\User\\Command\\ChangeUserCredentialCommand\n\n\nMsgPhp\\User\\Command\\ConfirmUserCommand\n\n\nMsgPhp\\User\\Command\\ConfirmUserEmailCommand\n\n\nMsgPhp\\User\\Command\\CreateRoleCommand\n\n\nMsgPhp\\User\\Command\\CreateUserCommand\n\n\nMsgPhp\\User\\Command\\DeleteRoleCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserAttributeValueCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserEmailCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserRoleCommand\n\n\nMsgPhp\\User\\Command\\DisableUserCommand\n\n\nMsgPhp\\User\\Command\\EnableUserCommand\n\n\nMsgPhp\\User\\Command\\RequestUserPasswordCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\User\\Event\\RoleCreatedEvent\n\n\nMsgPhp\\User\\Event\\RoleDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserAttributeValueAddedEvent\n\n\nMsgPhp\\User\\Event\\UserAttributeValueChangedEvent\n\n\nMsgPhp\\User\\Event\\UserAttributeValueDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserConfirmedEvent\n\n\nMsgPhp\\User\\Event\\UserCreatedEvent\n\n\nMsgPhp\\User\\Event\\UserCredentialChangedEvent\n\n\nMsgPhp\\User\\Event\\UserDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserDisabledEvent\n\n\nMsgPhp\\User\\Event\\UserEmailAddedEvent\n\n\nMsgPhp\\User\\Event\\UserEmailConfirmedEvent\n\n\nMsgPhp\\User\\Event\\UserEmailDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserEnabledEvent\n\n\nMsgPhp\\User\\Event\\UserPasswordRequestedEvent\n\n\nMsgPhp\\User\\Event\\UserRoleAddedEvent\n\n\nMsgPhp\\User\\Event\\UserRoleDeletedEvent", 
+            "text": "Messages\n\n\nReference of available messages per domain that can be dispatched using a \nmessage bus\n.\n\n\n\n\n\nmsgphp/domain\n\n\nCommands\n\n\n\n\nMsgPhp\\Domain\\Command\\DeleteProjectionDocumentCommand\n\n\nMsgPhp\\Domain\\Command\\SaveProjectionDocumentCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\Domain\\Event\\ProjectionDocumentDeletedEvent\n\n\nMsgPhp\\Domain\\Event\\ProjectionDocumentSavedEvent\n\n\n\n\nmsgphp/eav\n\n\nCommands\n\n\n\n\nMsgPhp\\Eav\\Command\\CreateAttributeCommand\n\n\nMsgPhp\\Eav\\Command\\DeleteAttributeCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\Eav\\Event\\AttributeCreatedEvent\n\n\nMsgPhp\\Eav\\Event\\AttributeDeletedEvent\n\n\n\n\nmsgphp/user\n\n\nCommands\n\n\n\n\nMsgPhp\\User\\Command\\AddUserEmailCommand\n\n\nMsgPhp\\User\\Command\\AddUserRoleCommand\n\n\nMsgPhp\\User\\Command\\ChangeUserCredentialCommand\n\n\nMsgPhp\\User\\Command\\ConfirmUserCommand\n\n\nMsgPhp\\User\\Command\\ConfirmUserEmailCommand\n\n\nMsgPhp\\User\\Command\\CreateRoleCommand\n\n\nMsgPhp\\User\\Command\\CreateUserCommand\n\n\nMsgPhp\\User\\Command\\DeleteRoleCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserEmailCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserRoleCommand\n\n\nMsgPhp\\User\\Command\\DisableUserCommand\n\n\nMsgPhp\\User\\Command\\EnableUserCommand\n\n\nMsgPhp\\User\\Command\\RequestUserPasswordCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\User\\Event\\RoleCreatedEvent\n\n\nMsgPhp\\User\\Event\\RoleDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserConfirmedEvent\n\n\nMsgPhp\\User\\Event\\UserCreatedEvent\n\n\nMsgPhp\\User\\Event\\UserCredentialChangedEvent\n\n\nMsgPhp\\User\\Event\\UserDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserDisabledEvent\n\n\nMsgPhp\\User\\Event\\UserEmailAddedEvent\n\n\nMsgPhp\\User\\Event\\UserEmailConfirmedEvent\n\n\nMsgPhp\\User\\Event\\UserEmailDeletedEvent\n\n\nMsgPhp\\User\\Event\\UserEnabledEvent\n\n\nMsgPhp\\User\\Event\\UserPasswordRequestedEvent\n\n\nMsgPhp\\User\\Event\\UserRoleAddedEvent\n\n\nMsgPhp\\User\\Event\\UserRoleDeletedEvent\n\n\n\n\nmsgphp/user-eav\n\n\nCommands\n\n\n\n\nMsgPhp\\User\\Command\\AddUserAttributeValueCommand\n\n\nMsgPhp\\User\\Command\\ChangeUserAttributeValueCommand\n\n\nMsgPhp\\User\\Command\\DeleteUserAttributeValueCommand\n\n\n\n\nEvents\n\n\n\n\nMsgPhp\\User\\Event\\UserAttributeValueAddedEvent\n\n\nMsgPhp\\User\\Event\\UserAttributeValueChangedEvent\n\n\nMsgPhp\\User\\Event\\UserAttributeValueDeletedEvent", 
             "title": "Messages"
         }, 
         {
@@ -1562,12 +1587,27 @@
         }, 
         {
             "location": "/reference/messages/#commands_2", 
-            "text": "MsgPhp\\User\\Command\\AddUserAttributeValueCommand  MsgPhp\\User\\Command\\AddUserEmailCommand  MsgPhp\\User\\Command\\AddUserRoleCommand  MsgPhp\\User\\Command\\ChangeUserAttributeValueCommand  MsgPhp\\User\\Command\\ChangeUserCredentialCommand  MsgPhp\\User\\Command\\ConfirmUserCommand  MsgPhp\\User\\Command\\ConfirmUserEmailCommand  MsgPhp\\User\\Command\\CreateRoleCommand  MsgPhp\\User\\Command\\CreateUserCommand  MsgPhp\\User\\Command\\DeleteRoleCommand  MsgPhp\\User\\Command\\DeleteUserAttributeValueCommand  MsgPhp\\User\\Command\\DeleteUserCommand  MsgPhp\\User\\Command\\DeleteUserEmailCommand  MsgPhp\\User\\Command\\DeleteUserRoleCommand  MsgPhp\\User\\Command\\DisableUserCommand  MsgPhp\\User\\Command\\EnableUserCommand  MsgPhp\\User\\Command\\RequestUserPasswordCommand", 
+            "text": "MsgPhp\\User\\Command\\AddUserEmailCommand  MsgPhp\\User\\Command\\AddUserRoleCommand  MsgPhp\\User\\Command\\ChangeUserCredentialCommand  MsgPhp\\User\\Command\\ConfirmUserCommand  MsgPhp\\User\\Command\\ConfirmUserEmailCommand  MsgPhp\\User\\Command\\CreateRoleCommand  MsgPhp\\User\\Command\\CreateUserCommand  MsgPhp\\User\\Command\\DeleteRoleCommand  MsgPhp\\User\\Command\\DeleteUserCommand  MsgPhp\\User\\Command\\DeleteUserEmailCommand  MsgPhp\\User\\Command\\DeleteUserRoleCommand  MsgPhp\\User\\Command\\DisableUserCommand  MsgPhp\\User\\Command\\EnableUserCommand  MsgPhp\\User\\Command\\RequestUserPasswordCommand", 
             "title": "Commands"
         }, 
         {
             "location": "/reference/messages/#events_2", 
-            "text": "MsgPhp\\User\\Event\\RoleCreatedEvent  MsgPhp\\User\\Event\\RoleDeletedEvent  MsgPhp\\User\\Event\\UserAttributeValueAddedEvent  MsgPhp\\User\\Event\\UserAttributeValueChangedEvent  MsgPhp\\User\\Event\\UserAttributeValueDeletedEvent  MsgPhp\\User\\Event\\UserConfirmedEvent  MsgPhp\\User\\Event\\UserCreatedEvent  MsgPhp\\User\\Event\\UserCredentialChangedEvent  MsgPhp\\User\\Event\\UserDeletedEvent  MsgPhp\\User\\Event\\UserDisabledEvent  MsgPhp\\User\\Event\\UserEmailAddedEvent  MsgPhp\\User\\Event\\UserEmailConfirmedEvent  MsgPhp\\User\\Event\\UserEmailDeletedEvent  MsgPhp\\User\\Event\\UserEnabledEvent  MsgPhp\\User\\Event\\UserPasswordRequestedEvent  MsgPhp\\User\\Event\\UserRoleAddedEvent  MsgPhp\\User\\Event\\UserRoleDeletedEvent", 
+            "text": "MsgPhp\\User\\Event\\RoleCreatedEvent  MsgPhp\\User\\Event\\RoleDeletedEvent  MsgPhp\\User\\Event\\UserConfirmedEvent  MsgPhp\\User\\Event\\UserCreatedEvent  MsgPhp\\User\\Event\\UserCredentialChangedEvent  MsgPhp\\User\\Event\\UserDeletedEvent  MsgPhp\\User\\Event\\UserDisabledEvent  MsgPhp\\User\\Event\\UserEmailAddedEvent  MsgPhp\\User\\Event\\UserEmailConfirmedEvent  MsgPhp\\User\\Event\\UserEmailDeletedEvent  MsgPhp\\User\\Event\\UserEnabledEvent  MsgPhp\\User\\Event\\UserPasswordRequestedEvent  MsgPhp\\User\\Event\\UserRoleAddedEvent  MsgPhp\\User\\Event\\UserRoleDeletedEvent", 
+            "title": "Events"
+        }, 
+        {
+            "location": "/reference/messages/#msgphpuser-eav", 
+            "text": "", 
+            "title": "msgphp/user-eav"
+        }, 
+        {
+            "location": "/reference/messages/#commands_3", 
+            "text": "MsgPhp\\User\\Command\\AddUserAttributeValueCommand  MsgPhp\\User\\Command\\ChangeUserAttributeValueCommand  MsgPhp\\User\\Command\\DeleteUserAttributeValueCommand", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/reference/messages/#events_3", 
+            "text": "MsgPhp\\User\\Event\\UserAttributeValueAddedEvent  MsgPhp\\User\\Event\\UserAttributeValueChangedEvent  MsgPhp\\User\\Event\\UserAttributeValueDeletedEvent", 
             "title": "Events"
         }, 
         {

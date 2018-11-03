@@ -395,22 +395,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#first" title="first()" class="md-nav__link">
-    first()
+  <a href="#first-mixed" title="first(): mixed" class="md-nav__link">
+    first(): mixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#last" title="last()" class="md-nav__link">
-    last()
+  <a href="#last-mixed" title="last(): mixed" class="md-nav__link">
+    last(): mixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getkey" title="get($key)" class="md-nav__link">
-    get($key)
+  <a href="#getkey-mixed" title="get($key): mixed" class="md-nav__link">
+    get($key): mixed
   </a>
   
 </li>
@@ -1199,22 +1199,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#first" title="first()" class="md-nav__link">
-    first()
+  <a href="#first-mixed" title="first(): mixed" class="md-nav__link">
+    first(): mixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#last" title="last()" class="md-nav__link">
-    last()
+  <a href="#last-mixed" title="last(): mixed" class="md-nav__link">
+    last(): mixed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getkey" title="get($key)" class="md-nav__link">
-    get($key)
+  <a href="#getkey-mixed" title="get($key): mixed" class="md-nav__link">
+    get($key): mixed
   </a>
   
 </li>
@@ -1386,16 +1386,16 @@ a primitive iterable value. It may hold any type of element values.</p>
 <p>Tells if a collection contains the given element. Comparison is done strictly.</p>
 <hr />
 <h3 id="containskeykey-bool"><code>containsKey($key): bool</code><a class="headerlink" href="#containskeykey-bool" title="Permanent link">&para;</a></h3>
-<p>Tells if a collection contains an element at the given key/index.</p>
+<p>Tells if a collection contains an element at the given key.</p>
 <hr />
-<h3 id="first"><code>first()</code><a class="headerlink" href="#first" title="Permanent link">&para;</a></h3>
-<p>Returns the first element or <code>false</code> if the collection is empty.</p>
+<h3 id="first-mixed"><code>first(): mixed</code><a class="headerlink" href="#first-mixed" title="Permanent link">&para;</a></h3>
+<p>Returns the first element from a collection.</p>
 <hr />
-<h3 id="last"><code>last()</code><a class="headerlink" href="#last" title="Permanent link">&para;</a></h3>
-<p>Returns the last element or <code>false</code> if the collection is empty.</p>
+<h3 id="last-mixed"><code>last(): mixed</code><a class="headerlink" href="#last-mixed" title="Permanent link">&para;</a></h3>
+<p>Returns the last element from a collection.</p>
 <hr />
-<h3 id="getkey"><code>get($key)</code><a class="headerlink" href="#getkey" title="Permanent link">&para;</a></h3>
-<p>Returns the element at the given key/index or <code>null</code> if the collection is empty.</p>
+<h3 id="getkey-mixed"><code>get($key): mixed</code><a class="headerlink" href="#getkey-mixed" title="Permanent link">&para;</a></h3>
+<p>Returns the element at the given key from a collection.</p>
 <hr />
 <h3 id="filtercallable-filter-domaincollectioninterface"><code>filter(callable $filter): DomainCollectionInterface</code><a class="headerlink" href="#filtercallable-filter-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Returns a <strong>new</strong> collection containing only elements for which <code>$filter</code> returns <code>true</code>. Keys are preserved.</p>
@@ -1405,8 +1405,7 @@ a primitive iterable value. It may hold any type of element values.</p>
 Keys are preserved.</p>
 <hr />
 <h3 id="mapcallable-mapper-domaincollectioninterface"><code>map(callable $mapper): DomainCollectionInterface</code><a class="headerlink" href="#mapcallable-mapper-domaincollectioninterface" title="Permanent link">&para;</a></h3>
-<p>Returns a <strong>new</strong> collection containing each collection element as returned by <code>$mapper</code>.
-Keys are preserved.</p>
+<p>Returns a <strong>new</strong> collection containing each collection element as returned by <code>$mapper</code>. Keys are preserved.</p>
 <h2 id="pagination-api">Pagination API<a class="headerlink" href="#pagination-api" title="Permanent link">&para;</a></h2>
 <p>A collection that is part of a paginated result set is bound to <code>MsgPhp\Domain\PaginatedDomainCollectionInterface</code>. Its
 purpose is to expose the current pagination.</p>
@@ -1479,7 +1478,7 @@ type <code>\Traversable</code>. Meaning the minimal no. of elements are traverse
 
 <span class="nv">$firstTwoIntsPlussed</span> <span class="o">=</span> <span class="nv">$firstTwoInts</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">int</span> <span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="o">++</span><span class="nv">$value</span><span class="p">;</span>
-<span class="p">});</span> <span class="c1">// [2, 4]</span>
+<span class="p">});</span>
 </pre></div>
 
 
