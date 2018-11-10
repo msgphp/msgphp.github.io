@@ -97,7 +97,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig)
+                    <a href="#method___construct">__construct</a>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig, array $classMapping = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -122,9 +122,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L30">line 30</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L31">line 31</a></div>
         <code>                    
-    <strong>__construct</strong>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig)
+    <strong>__construct</strong>(<abbr title="MsgPhp\Domain\Infra\Doctrine\Event\iterable">iterable</abbr> $providers, <a href="../../../../../MsgPhp/Domain/Infra/Doctrine/MappingConfig.html"><abbr title="MsgPhp\Domain\Infra\Doctrine\MappingConfig">MappingConfig</abbr></a> $mappingConfig, array $classMapping = [])
         </code>
     </h3>
     <div class="details">
@@ -145,6 +145,11 @@
                 <td>$mappingConfig</td>
                 <td></td>
             </tr>
+                    <tr>
+                <td>array</td>
+                <td>$classMapping</td>
+                <td></td>
+            </tr>
             </table>
 
             
@@ -156,7 +161,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_loadClassMetadata">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L36">line 36</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Doctrine/Event/ObjectMappingListener.php#L38">line 38</a></div>
         <code>                    void
     <strong>loadClassMetadata</strong>(<abbr title="Doctrine\ORM\Event\LoadClassMetadataEventArgs">LoadClassMetadataEventArgs</abbr> $event)
         </code>
