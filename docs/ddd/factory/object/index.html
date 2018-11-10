@@ -399,6 +399,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getclassstring-class-array-context-string" title="getClass(string $class, array $context = []): string" class="md-nav__link">
+    getClass(string $class, array $context = []): string
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -422,46 +429,6 @@
         
           <li class="md-nav__item">
   <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorychainobjectfactory" title="MsgPhp\Domain\Factory\ChainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ChainObjectFactory
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactoryclassmappingobjectfactory" title="MsgPhp\Domain\Factory\ClassMappingObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ClassMappingObjectFactory
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example_2" title="Basic example" class="md-nav__link">
     Basic example
   </a>
   
@@ -1073,6 +1040,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getclassstring-class-array-context-string" title="getClass(string $class, array $context = []): string" class="md-nav__link">
+    getClass(string $class, array $context = []): string
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1096,46 +1070,6 @@
         
           <li class="md-nav__item">
   <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactorychainobjectfactory" title="MsgPhp\Domain\Factory\ChainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ChainObjectFactory
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomainfactoryclassmappingobjectfactory" title="MsgPhp\Domain\Factory\ClassMappingObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Factory\ClassMappingObjectFactory
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example_2" title="Basic example" class="md-nav__link">
     Basic example
   </a>
   
@@ -1176,6 +1110,8 @@ any domain object based on a given class name and context.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code><a class="headerlink" href="#createstring-class-array-context-object" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.</p>
+<h3 id="getclassstring-class-array-context-string"><code>getClass(string $class, array $context = []): string</code><a class="headerlink" href="#getclassstring-class-array-context-string" title="Permanent link">&para;</a></h3>
+<p>Returns the actual class name the factory will create and equalizes <code>get_class($factory-&gt;create($class, $context))</code>.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomainfactorydomainobjectfactory"><code>MsgPhp\Domain\Factory\DomainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorydomainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A generic object factory. It initializes the given class by reading its constructor arguments. Argument values are
@@ -1184,9 +1120,11 @@ corresponding underscored context key (i.e. <code>'my_argument'</code>), note ho
 higher precedence. In case the context key is numeric its value will be provided to a corresponding argument at index N.</p>
 <p>Any sub class of <code>MsgPhp\Domain\DomainIdInterface</code> or <code>MsgPhp\Domain\DomainCollectionInterface</code> will be initialized
 using <code>$class::fromValue()</code> by default, otherwise initialization happens regularly (i.e. <code>new $class(...$arguments)</code>).</p>
+<p>A class mapping can be provided and is usually used to map abstracts to concretes.</p>
 <p>Nested objects (e.g. <code>MyObject $myArgument</code>) can be provided as nested context (thus nested array).</p>
 <ul>
 <li><code>setNestedFactory(?DomainObjectFactoryInterface $factory): void</code><ul>
+<li><code>$classMapping</code>: The class mapping (<code>['SourceType' =&gt; 'TargetType']</code>)`</li>
 <li><code>$factory</code>: The optional factory to use for nested objects. If not set the current factory will be used instead.</li>
 </ul>
 </li>
@@ -1198,7 +1136,11 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">Some</span>
+<span class="k">interface</span> <span class="nx">KnownInterface</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Some</span> <span class="k">implements</span> <span class="nx">KnownInterface</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1207,14 +1149,20 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 
 <span class="k">class</span> <span class="nc">Subject</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">Some</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">KnownInterface</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">();</span>
+<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">([</span>
+    <span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">Some</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">]);</span>
 
 <span class="c1">// --- USAGE ---</span>
+
+<span class="sd">/** @var Some $object */</span>
+<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">getClass</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// &quot;Some&quot;</span>
 
 <span class="sd">/** @var Subject $object */</span>
 <span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">Subject</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
@@ -1225,70 +1173,6 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
         <span class="s1">&#39;some&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">],</span>
     <span class="p">],</span>
 <span class="p">]);</span>
-</pre></div>
-
-
-<h3 id="msgphpdomainfactorychainobjectfactory"><code>MsgPhp\Domain\Factory\ChainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorychainobjectfactory" title="Permanent link">&para;</a></h3>
-<p>A chain object factory. It holds many object factories and returns a domain object from the first supporting factory.</p>
-<ul>
-<li><code>__construct(iterable $factories)</code><ul>
-<li><code>$factories</code>: Available object factories</li>
-</ul>
-</li>
-</ul>
-<h4 id="basic-example_1">Basic example<a class="headerlink" href="#basic-example_1" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">ChainObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactoryInterface</span><span class="p">};</span>
-
-<span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyFactory</span> <span class="k">implements</span> <span class="nx">DomainObjectFactoryInterface</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$class</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$context</span> <span class="o">=</span> <span class="p">[])</span>
-    <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChainObjectFactory</span><span class="p">([</span><span class="k">new</span> <span class="nx">MyFactory</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">()]);</span>
-</pre></div>
-
-
-<h3 id="msgphpdomainfactoryclassmappingobjectfactory"><code>MsgPhp\Domain\Factory\ClassMappingObjectFactory</code><a class="headerlink" href="#msgphpdomainfactoryclassmappingobjectfactory" title="Permanent link">&para;</a></h3>
-<p>A class mapping object factory. It decorates any object factory and resolves the actual class name from a provided
-mapping. It's usually used to map abstracts to concretes. In case the class is not mapped it will be used as is.</p>
-<ul>
-<li><code>__construct(DomainObjectFactoryInterface $factory, array $mapping)</code><ul>
-<li><code>$factory</code>: The decorated object factory</li>
-<li><code>$mapping</code>: The class mapping (<code>['SourceType' =&gt; 'TargetType']</code>)</li>
-</ul>
-</li>
-</ul>
-<h4 id="basic-example_2">Basic example<a class="headerlink" href="#basic-example_2" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">ClassMappingObjectFactory</span><span class="p">,</span> <span class="nx">DomainObjectFactory</span><span class="p">};</span>
-
-<span class="c1">// --- SETUP ---</span>
-
-<span class="k">interface</span> <span class="nx">KnownInterface</span>
-<span class="p">{</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">Subject</span> <span class="k">implements</span> <span class="nx">KnownInterface</span>
-<span class="p">{</span>
-<span class="p">}</span>
-
-<span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassMappingObjectFactory</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span>
-    <span class="p">[</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">Subject</span><span class="o">::</span><span class="na">class</span><span class="p">]</span>
-<span class="p">);</span>
-
-<span class="c1">// --- USAGE ---</span>
-
-<span class="sd">/** @var Subject $object */</span>
-<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 </pre></div>
                 
                   

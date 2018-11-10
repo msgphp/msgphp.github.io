@@ -98,7 +98,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $identifierMapping = [])
+                    <a href="#method___construct">__construct</a>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper, array $identifierMapping = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -110,6 +110,17 @@
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_create">create</a>(string $class, array $context = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getClass">getClass</a>(string $class, array $context = [])
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -156,9 +167,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L19">line 19</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L21">line 21</a></div>
         <code>                    
-    <strong>__construct</strong>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a> $identityMapping, array $identifierMapping = [])
+    <strong>__construct</strong>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a> $factory, <a href="../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a> $identityHelper, array $identifierMapping = [])
         </code>
     </h3>
     <div class="details">
@@ -175,8 +186,8 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><a href="../../../MsgPhp/Domain/DomainIdentityMappingInterface.html"><abbr title="MsgPhp\Domain\DomainIdentityMappingInterface">DomainIdentityMappingInterface</abbr></a></td>
-                <td>$identityMapping</td>
+                <td><a href="../../../MsgPhp/Domain/DomainIdentityHelper.html"><abbr title="MsgPhp\Domain\DomainIdentityHelper">DomainIdentityHelper</abbr></a></td>
+                <td>$identityHelper</td>
                 <td></td>
             </tr>
                     <tr>
@@ -195,7 +206,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_create">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L28">line 28</a></div>
         <code>                    object
     <strong>create</strong>(string $class, array $context = [])
         </code>
@@ -237,8 +248,51 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getClass">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L33">line 33</a></div>
+        <code>                    string
+    <strong>getClass</strong>(string $class, array $context = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_reference">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L31">line 31</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L38">line 38</a></div>
         <code>                    object
     <strong>reference</strong>(string $class, $id)
         </code>
@@ -281,7 +335,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_identify">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L42">line 42</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L67">line 67</a></div>
         <code>                    <a href="../../../MsgPhp/Domain/DomainIdInterface.html"><abbr title="MsgPhp\Domain\DomainIdInterface">DomainIdInterface</abbr></a>
     <strong>identify</strong>(string $class, $value)
         </code>
@@ -324,7 +378,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_nextIdentifier">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L57">line 57</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/EntityAwareFactory.php#L82">line 82</a></div>
         <code>                    <a href="../../../MsgPhp/Domain/DomainIdInterface.html"><abbr title="MsgPhp\Domain\DomainIdInterface">DomainIdInterface</abbr></a>
     <strong>nextIdentifier</strong>(string $class)
         </code>

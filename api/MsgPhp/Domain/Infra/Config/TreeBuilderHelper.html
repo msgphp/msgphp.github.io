@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>MsgPhp\Domain\Infra\Config\TreeBuilder | Message driven PHP - API</title>
+    <title>MsgPhp\Domain\Infra\Config\TreeBuilderHelper | Message driven PHP - API</title>
 
             <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:MsgPhp_Domain_Infra_Config_TreeBuilder" data-root-path="../../../../">
+    <body id="class" data-name="class:MsgPhp_Domain_Infra_Config_TreeBuilderHelper" data-root-path="../../../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,20 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Config.html">Config</a></li><li class="backslash">\</li><li>TreeBuilder</li>
+                        <li><a href="../../../../MsgPhp.html">MsgPhp</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain.html">Domain</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra.html">Infra</a></li><li class="backslash">\</li><li><a href="../../../../MsgPhp/Domain/Infra/Config.html">Config</a></li><li class="backslash">\</li><li>TreeBuilderHelper</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            TreeBuilder
+            TreeBuilderHelper
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>TreeBuilder</strong>        extends <abbr title="Symfony\Component\Config\Definition\Builder\TreeBuilder">TreeBuilder</abbr>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Config/TreeBuilder.php">View source</a>)
+    <strong>TreeBuilderHelper</strong>        (<a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Config/TreeBuilderHelper.php">View source</a>)
 </p>
 
         
@@ -94,10 +94,10 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition">ArrayNodeDefinition</abbr>
+                    static&nbsp;<abbr title="Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition">ArrayNodeDefinition</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_rootArray">rootArray</a>(string $name, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+                    <a href="#method_root">root</a>(string $name, $treeBuilder = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -110,10 +110,10 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_rootArray">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Config/TreeBuilder.php#L16">line 16</a></div>
-        <code>                    <abbr title="Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition">ArrayNodeDefinition</abbr>
-    <strong>rootArray</strong>(string $name, <abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr> $builder = null)
+                    <h3 id="method_root">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Infra/Config/TreeBuilderHelper.php#L15">line 15</a></div>
+        <code>        static            <abbr title="Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition">ArrayNodeDefinition</abbr>
+    <strong>root</strong>(string $name, $treeBuilder = null)
         </code>
     </h3>
     <div class="details">
@@ -130,8 +130,8 @@
                 <td></td>
             </tr>
                     <tr>
-                <td><abbr title="Symfony\Component\Config\Definition\Builder\NodeBuilder">NodeBuilder</abbr></td>
-                <td>$builder</td>
+                <td></td>
+                <td>$treeBuilder</td>
                 <td></td>
             </tr>
             </table>

@@ -1167,12 +1167,11 @@ of <a href="../../identities/">identity</a> value can be passed as <code>$id</co
 value might be considered empty if it's not capable to calculate one upfront.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomainfactoryentityawarefactory"><code>MsgPhp\Domain\Factory\EntityAwareFactory</code><a class="headerlink" href="#msgphpdomainfactoryentityawarefactory" title="Permanent link">&para;</a></h3>
-<p>A generic entity factory. It decorates any object factory and uses the <a href="../../identity-mapping/">domain identity mapping</a>
-as well as a known entity to identifier class mapping.</p>
+<p>A generic entity factory.</p>
 <ul>
-<li><code>__construct(DomainObjectFactoryInterface $factory, DomainIdentityMappingInterface $identityMapping, array $identifierMapping = [])</code><ul>
-<li><code>$factory</code>: The decorated object factory</li>
-<li><code>$identityMapping</code>: The identity mapping</li>
+<li><code>__construct(DomainObjectFactoryInterface $factory, DomainIdentityHelper $identityHelper, array $identifierMapping = [])</code><ul>
+<li><code>$factory</code>: The decorated <a href="../object/">object factory</a></li>
+<li><code>$identityHelper</code>: The <a href="../../identities/">identity helper</a></li>
 <li><code>$identifierMapping</code>: The identifier class mapping (<code>['EntityType' =&gt; 'IdType']</code>)</li>
 </ul>
 </li>
@@ -1180,7 +1179,7 @@ as well as a known entity to identifier class mapping.</p>
 <h4 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\</span><span class="p">{</span><span class="nx">DomainId</span><span class="p">,</span> <span class="nx">DomainIdentityHelper</span><span class="p">};</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\</span><span class="p">{</span><span class="nx">DomainObjectFactory</span><span class="p">,</span> <span class="nx">EntityAwareFactory</span><span class="p">};</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\InMemory\DomainIdentityMapping</span><span class="p">;</span>
 
@@ -1198,9 +1197,9 @@ as well as a known entity to identifier class mapping.</p>
 
 <span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityAwareFactory</span><span class="p">(</span>
     <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(),</span>
-    <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
+    <span class="k">new</span> <span class="nx">DomainIdentityHelper</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
         <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-    <span class="p">]),</span>
+    <span class="p">])),</span>
     <span class="p">[</span>
         <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
     <span class="p">]</span>
@@ -1219,6 +1218,10 @@ as well as a known entity to identifier class mapping.</p>
 </pre></div>
 
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>EntityAwareFactory::reference()</code> requires <a href="https://packagist.org/packages/symfony/var-exporter">symfony/var-exporter</a></p>
+</div>
 <h3 id="msgphpdomaininfradoctrineentityawarefactory"><code>MsgPhp\Domain\Infra\Doctrine\EntityAwareFactory</code><a class="headerlink" href="#msgphpdomaininfradoctrineentityawarefactory" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored entity aware factory.</p>
 <ul>

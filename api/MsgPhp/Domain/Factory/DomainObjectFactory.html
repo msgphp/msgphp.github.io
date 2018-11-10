@@ -95,6 +95,17 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $classMapping = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     void
                 </div>
                 <div class="col-md-8 type">
@@ -115,6 +126,17 @@
                                     </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getClass">getClass</a>(string $class, array $context = [])
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -122,8 +144,37 @@
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L18">line 18</a></div>
+        <code>                    
+    <strong>__construct</strong>(array $classMapping = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$classMapping</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_setNestedFactory">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L17">line 17</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L23">line 23</a></div>
         <code>                    void
     <strong>setNestedFactory</strong>(<a href="../../../MsgPhp/Domain/Factory/DomainObjectFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\DomainObjectFactoryInterface">DomainObjectFactoryInterface</abbr></a>|null $factory)
         </code>
@@ -161,7 +212,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_create">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L22">line 22</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L28">line 28</a></div>
         <code>                    object
     <strong>create</strong>(string $class, array $context = [])
         </code>
@@ -192,6 +243,49 @@
                     <table class="table table-condensed">
         <tr>
             <td>object</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getClass">
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/Domain/Factory/DomainObjectFactory.php#L43">line 43</a></div>
+        <code>                    string
+    <strong>getClass</strong>(string $class, array $context = [])
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$class</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$context</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
             <td></td>
         </tr>
     </table>
