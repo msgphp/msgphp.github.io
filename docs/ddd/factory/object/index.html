@@ -1123,9 +1123,12 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
 <p>A class mapping can be provided and is usually used to map abstracts to concretes.</p>
 <p>Nested objects (e.g. <code>MyObject $myArgument</code>) can be provided as nested context (thus nested array).</p>
 <ul>
-<li><code>setNestedFactory(?DomainObjectFactoryInterface $factory): void</code><ul>
+<li><code>__construct(array $classMapping = [])</code><ul>
 <li><code>$classMapping</code>: The class mapping (<code>['SourceType' =&gt; 'TargetType']</code>)`</li>
-<li><code>$factory</code>: The optional factory to use for nested objects. If not set the current factory will be used instead.</li>
+</ul>
+</li>
+<li><code>setNestedFactory(?DomainObjectFactoryInterface $factory): void</code><ul>
+<li><code>$factory</code>: The factory for nested objects. If not set the current factory will be used instead.</li>
 </ul>
 </li>
 </ul>
