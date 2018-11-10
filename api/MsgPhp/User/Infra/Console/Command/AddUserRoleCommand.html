@@ -177,7 +177,7 @@
                     <a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getRole">getRole</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
+                    <a href="#method_getRole">getRole</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io, $name = null)
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -202,7 +202,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L29">line 29</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L31">line 31</a></div>
         <code>                    
     <strong>__construct</strong>(<a href="../../../../../MsgPhp/Domain/Factory/EntityAwareFactoryInterface.html"><abbr title="MsgPhp\Domain\Factory\EntityAwareFactoryInterface">EntityAwareFactoryInterface</abbr></a> $factory, <a href="../../../../../MsgPhp/Domain/Message/DomainMessageBusInterface.html"><abbr title="MsgPhp\Domain\Message\DomainMessageBusInterface">DomainMessageBusInterface</abbr></a> $bus, <a href="../../../../../MsgPhp/User/Repository/UserRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\UserRepositoryInterface">UserRepositoryInterface</abbr></a> $userRepository, <a href="../../../../../MsgPhp/User/Repository/RoleRepositoryInterface.html"><abbr title="MsgPhp\User\Repository\RoleRepositoryInterface">RoleRepositoryInterface</abbr></a> $roleRepository, <a href="../../../../../MsgPhp/Domain/Infra/Console/Context/ContextFactoryInterface.html"><abbr title="MsgPhp\Domain\Infra\Console\Context\ContextFactoryInterface">ContextFactoryInterface</abbr></a> $contextFactory)
         </code>
@@ -251,7 +251,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_onMessageReceived">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L36">line 36</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L38">line 38</a></div>
         <code>                    void
     <strong>onMessageReceived</strong>(object $message)
         </code>
@@ -289,7 +289,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_configure">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L43">line 43</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L48">line 48</a></div>
         <code>            protected        void
     <strong>configure</strong>()
         </code>
@@ -362,7 +362,7 @@
                     <h3 id="method_getRole">
         <div class="location">in <a href="../../../../../MsgPhp/User/Infra/Console/Command/RoleAwareTrait.html#method_getRole"><abbr title="MsgPhp\User\Infra\Console\Command\RoleAwareTrait">RoleAwareTrait</abbr></a> at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/RoleAwareTrait.php#L20">line 20</a></div>
         <code>            protected        <a href="../../../../../MsgPhp/User/Entity/Role.html"><abbr title="MsgPhp\User\Entity\Role">Role</abbr></a>
-    <strong>getRole</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io)
+    <strong>getRole</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr> $io, $name = null)
         </code>
     </h3>
     <div class="details">
@@ -381,6 +381,11 @@
                     <tr>
                 <td><abbr title="Symfony\Component\Console\Style\StyleInterface">StyleInterface</abbr></td>
                 <td>$io</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$name</td>
                 <td></td>
             </tr>
             </table>
@@ -403,7 +408,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_execute">
-        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L51">line 51</a></div>
+        <div class="location">at         <a href="https://github.com/msgphp/msgphp/blob/master/src/User/Infra/Console/Command/AddUserRoleCommand.php#L56">line 56</a></div>
         <code>            protected        int
     <strong>execute</strong>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)
         </code>
