@@ -1202,11 +1202,8 @@
                 
                 <h1 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h1>
 <p>A domain repository is not interface bound by default. Instead you can leverage a utility trait, tied to specific
-infrastructure (e.g. Doctrine), to rapidly create one. This page describes the API provided by default <a href="#implementations">implementations</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the <a href="../../reference/repositories/">reference</a> page for all available repositories provided per domain</p>
-</div>
+infrastructure (e.g. <a href="../../infrastructure/doctrine-orm/">Doctrine ORM</a>), to rapidly create one. This page describes the
+API provided by default <a href="#implementations">implementations</a>.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code><a class="headerlink" href="#dofindallint-offset-0-int-limit-0-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Finds all entities available. An unlimited collection is implied by <code>$limit</code> set to zero.</p>
