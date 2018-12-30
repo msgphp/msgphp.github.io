@@ -571,38 +571,8 @@
             "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait"
         }, 
         {
-            "location": "/event-sourcing/events/", 
-            "text": "Events\n\n\nA domain event is bound to \nMsgPhp\\Domain\\Event\\DomainEventInterface\n. Its purpose is to represent any action that can\n \nhappen\n regarding the domain. When handled it might lead to an application state change.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Event\\ConfirmEvent\n\n\nTriggers a confirmation. Handled by default with \nMsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed::handleConfirmEvent()\n.\n\n\nMsgPhp\\Domain\\Event\\DisableEvent\n\n\nTriggers disabling availability. Handled by default with \nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled::handleDisableEvent()\n.\n\n\nMsgPhp\\Domain\\Event\\EnableEvent\n\n\nTriggers enabling availability. Handled by default with \nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled::handleEnableEvent()\n.", 
-            "title": "Events"
-        }, 
-        {
-            "location": "/event-sourcing/events/#events", 
-            "text": "A domain event is bound to  MsgPhp\\Domain\\Event\\DomainEventInterface . Its purpose is to represent any action that can\n  happen  regarding the domain. When handled it might lead to an application state change.", 
-            "title": "Events"
-        }, 
-        {
-            "location": "/event-sourcing/events/#implementations", 
-            "text": "", 
-            "title": "Implementations"
-        }, 
-        {
-            "location": "/event-sourcing/events/#msgphpdomaineventconfirmevent", 
-            "text": "Triggers a confirmation. Handled by default with  MsgPhp\\Domain\\Entity\\Features\\CanBeConfirmed::handleConfirmEvent() .", 
-            "title": "MsgPhp\\Domain\\Event\\ConfirmEvent"
-        }, 
-        {
-            "location": "/event-sourcing/events/#msgphpdomaineventdisableevent", 
-            "text": "Triggers disabling availability. Handled by default with  MsgPhp\\Domain\\Entity\\Features\\CanBeEnabled::handleDisableEvent() .", 
-            "title": "MsgPhp\\Domain\\Event\\DisableEvent"
-        }, 
-        {
-            "location": "/event-sourcing/events/#msgphpdomaineventenableevent", 
-            "text": "Triggers enabling availability. Handled by default with  MsgPhp\\Domain\\Entity\\Features\\CanBeEnabled::handleEnableEvent() .", 
-            "title": "MsgPhp\\Domain\\Event\\EnableEvent"
-        }, 
-        {
             "location": "/event-sourcing/event-handlers/", 
-            "text": "Event Handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to implement the\nhandling of \ndomain events\n within a certain context.\n\n\nUsually an entity implements it in order to mutate its own state (i.e. self-handling). It enforces the entity state to\nbe valid by design as it encapsulates all write operations.\n\n\nIn practice domain events can be recorded on trigger, or privately within the implementation. It allows to re-play them\nat any point in time afterwards. Consider this a design choice to be made upfront, e.g. in case your entity design\nrequires its history to be accessible.\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): bool\n\n\nHandles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled\nyes or no.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nA utility trait implementing the event handler API. By convention it maps events to\n\nhandle\nEvent_Class_Name_Without_Event_Suffix\nEvent()\n methods.\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\\n{\nDomainEventHandlerInterface\n,\n \nDomainEventHandlerTrait\n,\n \nDomainEventInterface\n};\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyDomainEvent\n \nimplements\n \nDomainEventInterface\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n\n    \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyDomainEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$this\n-\nvalue\n \n===\n \n$event\n-\nnewValue\n)\n \n{\n\n            \nreturn\n \nfalse\n;\n\n        \n}\n\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n\n        \nreturn\n \ntrue\n;\n\n    \n}\n\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n\nif\n \n(\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nnew value\n)))\n \n{\n\n    \n// do something\n\n\n}", 
+            "text": "Event Handlers\n\n\nA domain event handler is bound to \nMsgPhp\\Domain\\Event\\DomainEventHandlerInterface\n. Its purpose is to implement the\nhandling of \ndomain events\n within a certain context.\n\n\nUsually an entity implements it in order to mutate its own state (i.e. self-handling). It enforces the entity state to\nbe valid by design as it encapsulates all write operations.\n\n\nIn practice domain events can be recorded on trigger, or privately within the implementation. It allows to re-play them\nat any point in time afterwards. Consider this a design choice to be made upfront, e.g. in case your entity design\nrequires its history to be accessible.\n\n\nAPI\n\n\nhandleEvent(DomainEventInterface $event): bool\n\n\nHandles the given domain event for a known subject. A boolean return value tells if the domain event is actually handled\nyes or no.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Event\\DomainEventHandlerTrait\n\n\nA utility trait implementing the event handler API. By convention it maps events to\n\nhandle\nEvent_Class_Name_Without_Event_Suffix\nEvent()\n methods.\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Event\\\n{\nDomainEventHandlerInterface\n,\n \nDomainEventHandlerTrait\n,\n \nDomainEventInterface\n};\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyDomainEvent\n \nimplements\n \nDomainEventInterface\n\n\n{\n\n    \npublic\n \n$newValue\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$value\n)\n\n    \n{\n\n        \n$this\n-\nnewValue\n \n=\n \n$value\n;\n\n    \n}\n\n\n}\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n    \npublic\n \n$value\n;\n\n\n    \nprivate\n \nfunction\n \nhandleMyDomainEvent\n(\nMyDomainEvent\n \n$event\n)\n:\n \nbool\n\n    \n{\n\n        \nif\n \n(\n$this\n-\nvalue\n \n===\n \n$event\n-\nnewValue\n)\n \n{\n\n            \nreturn\n \nfalse\n;\n\n        \n}\n\n\n        \n$this\n-\nvalue\n \n=\n \n$event\n-\nnewValue\n;\n\n\n        \nreturn\n \ntrue\n;\n\n    \n}\n\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n\nif\n \n(\n$entity\n-\nhandleEvent\n(\nnew\n \nMyDomainEvent\n(\nnew value\n)))\n \n{\n\n    \n// do something\n\n\n}", 
             "title": "Event Handlers"
         }, 
         {
@@ -633,7 +603,32 @@
         {
             "location": "/event-sourcing/event-handlers/#basic-example", 
             "text": "?php  use   MsgPhp\\Domain\\Event\\ { DomainEventHandlerInterface ,   DomainEventHandlerTrait ,   DomainEventInterface };  // --- SETUP ---  class   MyDomainEvent   implements   DomainEventInterface  { \n     public   $newValue ; \n\n     public   function   __construct ( $value ) \n     { \n         $this - newValue   =   $value ; \n     }  }  class   MyEntity   implements   DomainEventHandlerInterface  { \n     use   DomainEventHandlerTrait ; \n\n     public   $value ; \n\n     private   function   handleMyDomainEvent ( MyDomainEvent   $event ) :   bool \n     { \n         if   ( $this - value   ===   $event - newValue )   { \n             return   false ; \n         } \n\n         $this - value   =   $event - newValue ; \n\n         return   true ; \n     }  }  // --- USAGE ---  $entity   =   new   MyEntity ();  if   ( $entity - handleEvent ( new   MyDomainEvent ( new value )))   { \n     // do something  }", 
-            "title": "Basic example"
+            "title": "Basic Example"
+        }, 
+        {
+            "location": "/event-sourcing/events/", 
+            "text": "Events\n\n\nA domain event is bound to \nMsgPhp\\Domain\\Event\\DomainEventInterface\n. Its purpose is to represent any action that can\n \nhappen\n regarding the domain. When handled it might lead to an application state change.\n\n\nAPI\n\n\n\n\nNote\n\n\nThis is a marker interface and has no API\n\n\n\n\nImplementations\n\n\n\n\nNote\n\n\nSee the \nreference\n page for all available domain events\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n;\n\n\nuse\n \nMsgPhp\\Domain\\Event\\\n{\nDomainEventHandlerInterface\n,\n \nDomainEventHandlerTrait\n,\n \nEnableEvent\n};\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n \nimplements\n \nDomainEventHandlerInterface\n\n\n{\n\n    \nuse\n \nCanBeEnabled\n;\n\n    \nuse\n \nDomainEventHandlerTrait\n;\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nisEnabled\n();\n \n// false\n\n\n$entity\n-\nhandleEvent\n(\nnew\n \nEnableEvent\n());\n \n// true\n\n\n$entity\n-\nhandleEvent\n(\nnew\n \nEnableEvent\n());\n \n// false\n\n\n$entity\n-\nisEnabled\n();\n \n// true\n\n\n\n\n\n\n\n\nNote\n\n\nBecause \nCanBeEnabled\n defines \nhandleEnableEvent(EnableEvent $event)\n it's detected in \nDomainEventHandlerTrait::handleEvent()\n\nby convention", 
+            "title": "Events"
+        }, 
+        {
+            "location": "/event-sourcing/events/#events", 
+            "text": "A domain event is bound to  MsgPhp\\Domain\\Event\\DomainEventInterface . Its purpose is to represent any action that can\n  happen  regarding the domain. When handled it might lead to an application state change.", 
+            "title": "Events"
+        }, 
+        {
+            "location": "/event-sourcing/events/#api", 
+            "text": "Note  This is a marker interface and has no API", 
+            "title": "API"
+        }, 
+        {
+            "location": "/event-sourcing/events/#implementations", 
+            "text": "Note  See the  reference  page for all available domain events", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/event-sourcing/events/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Entity\\Features\\CanBeEnabled ;  use   MsgPhp\\Domain\\Event\\ { DomainEventHandlerInterface ,   DomainEventHandlerTrait ,   EnableEvent };  // --- SETUP ---  class   MyEntity   implements   DomainEventHandlerInterface  { \n     use   CanBeEnabled ; \n     use   DomainEventHandlerTrait ;  }  // --- USAGE ---  $entity   =   new   MyEntity ();  $entity - isEnabled ();   // false  $entity - handleEvent ( new   EnableEvent ());   // true  $entity - handleEvent ( new   EnableEvent ());   // false  $entity - isEnabled ();   // true    Note  Because  CanBeEnabled  defines  handleEnableEvent(EnableEvent $event)  it's detected in  DomainEventHandlerTrait::handleEvent() \nby convention", 
+            "title": "Basic Example"
         }, 
         {
             "location": "/message-driven/message-bus/", 

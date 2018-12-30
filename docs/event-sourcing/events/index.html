@@ -443,6 +443,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../event-handlers/" title="Event Handlers" class="md-nav__link">
+      Event Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -472,36 +484,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#implementations" title="Implementations" class="md-nav__link">
     Implementations
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventconfirmevent" title="MsgPhp\Domain\Event\ConfirmEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\ConfirmEvent
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventdisableevent" title="MsgPhp\Domain\Event\DisableEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\DisableEvent
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventenableevent" title="MsgPhp\Domain\Event\EnableEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\EnableEvent
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -513,18 +512,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../event-handlers/" title="Event Handlers" class="md-nav__link">
-      Event Handlers
-    </a>
   </li>
 
         
@@ -998,36 +985,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#implementations" title="Implementations" class="md-nav__link">
     Implementations
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventconfirmevent" title="MsgPhp\Domain\Event\ConfirmEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\ConfirmEvent
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventdisableevent" title="MsgPhp\Domain\Event\DisableEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\DisableEvent
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msgphpdomaineventenableevent" title="MsgPhp\Domain\Event\EnableEvent" class="md-nav__link">
-    MsgPhp\Domain\Event\EnableEvent
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1053,13 +1027,45 @@
                 <h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
 <p>A domain event is bound to <code>MsgPhp\Domain\Event\DomainEventInterface</code>. Its purpose is to represent any action that can
  <em>happen</em> regarding the domain. When handled it might lead to an application state change.</p>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a marker interface and has no API</p>
+</div>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
-<h3 id="msgphpdomaineventconfirmevent"><code>MsgPhp\Domain\Event\ConfirmEvent</code><a class="headerlink" href="#msgphpdomaineventconfirmevent" title="Permanent link">&para;</a></h3>
-<p>Triggers a confirmation. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeConfirmed::handleConfirmEvent()</code>.</p>
-<h3 id="msgphpdomaineventdisableevent"><code>MsgPhp\Domain\Event\DisableEvent</code><a class="headerlink" href="#msgphpdomaineventdisableevent" title="Permanent link">&para;</a></h3>
-<p>Triggers disabling availability. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleDisableEvent()</code>.</p>
-<h3 id="msgphpdomaineventenableevent"><code>MsgPhp\Domain\Event\EnableEvent</code><a class="headerlink" href="#msgphpdomaineventenableevent" title="Permanent link">&para;</a></h3>
-<p>Triggers enabling availability. Handled by default with <code>MsgPhp\Domain\Entity\Features\CanBeEnabled::handleEnableEvent()</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a href="../../reference/domain-events/#msgphpdomain">reference</a> page for all available domain events</p>
+</div>
+<h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Entity\Features\CanBeEnabled</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Event\</span><span class="p">{</span><span class="nx">DomainEventHandlerInterface</span><span class="p">,</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">,</span> <span class="nx">EnableEvent</span><span class="p">};</span>
+
+<span class="c1">// --- SETUP ---</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">implements</span> <span class="nx">DomainEventHandlerInterface</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">CanBeEnabled</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">DomainEventHandlerTrait</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// --- USAGE ---</span>
+
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">isEnabled</span><span class="p">();</span> <span class="c1">// false</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">EnableEvent</span><span class="p">());</span> <span class="c1">// true</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">EnableEvent</span><span class="p">());</span> <span class="c1">// false</span>
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">isEnabled</span><span class="p">();</span> <span class="c1">// true</span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because <code>CanBeEnabled</code> defines <code>handleEnableEvent(EnableEvent $event)</code> it's detected in <code>DomainEventHandlerTrait::handleEvent()</code>
+by convention</p>
+</div>
                 
                   
                 
@@ -1080,7 +1086,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../ddd/repositories/" title="Repositories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../event-handlers/" title="Event Handlers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1089,19 +1095,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Repositories
+                Event Handlers
               </span>
             </div>
           </a>
         
         
-          <a href="../event-handlers/" title="Event Handlers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../message-driven/message-bus/" title="Message Bus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Event Handlers
+                Message Bus
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
