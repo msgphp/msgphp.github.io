@@ -301,93 +301,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../identities/" title="Identities" class="md-nav__link">
-      Identities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../identity-mapping/" title="Identity Mapping" class="md-nav__link">
-      Identity Mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
-      Object Factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
-      Entity Aware Factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/static/" title="Static Factory" class="md-nav__link">
-      Static Factory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -552,6 +468,90 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Factories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Factories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
+      Object Factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
+      Entity Aware Factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/static/" title="Static Factory" class="md-nav__link">
+      Static Factory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../identity-mapping/" title="Identity Mapping" class="md-nav__link">
+      Identity Mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../identity-helper/" title="Identity Helper" class="md-nav__link">
+      Identity Helper
+    </a>
   </li>
 
         
@@ -1201,30 +1201,30 @@
                 
                 
                 <h1 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h1>
-<p>A domain repository is not interface bound by default. Instead you can leverage a utility trait, tied to specific
-infrastructure (e.g. <a href="../../infrastructure/doctrine-orm/">Doctrine ORM</a>), to rapidly create one. This page describes the
-API provided by default <a href="#implementations">implementations</a>.</p>
+<p>A domain repository is tied to specific <a href="../entities/">domain entities</a>. To define a repository for them you can
+leverage a utility trait tied to specific infrastructure (e.g. <a href="../../infrastructure/doctrine-orm/">Doctrine ORM</a>).</p>
+<p>This page describes the API provided by default <a href="#implementations">implementations</a>.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="dofindallint-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface</code><a class="headerlink" href="#dofindallint-offset-0-int-limit-0-domaincollectioninterface" title="Permanent link">&para;</a></h3>
 <p>Finds all entities available. An unlimited collection is implied by <code>$limit</code> set to zero.</p>
 <hr />
 <h3 id="dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface"><code>doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface</code><a class="headerlink" href="#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface" title="Permanent link">&para;</a></h3>
-<p>Finds all entities matching all specified fields. Supported field values should be <code>null</code>, <code>scalar</code>, <code>array</code> (one of a
-known literal list) and <code>object</code> (foreign entity or an <a href="../identifiers/">identifier</a>). An unlimited collection is implied
-by <code>$limit</code> set to zero.</p>
+<p>Finds all entities matching the specified fields. Supported field values should be <code>null</code>, <code>scalar</code>, <code>scalar[]</code> (i.e. 
+one of) and <code>object</code> (i.e. another entity or its <a href="../identifiers/">identifier</a>). An unlimited collection is implied by
+<code>$limit</code> set to zero.</p>
 <hr />
 <h3 id="dofindid-object"><code>doFind($id): object</code><a class="headerlink" href="#dofindid-object" title="Permanent link">&para;</a></h3>
-<p>Finds a single entity by its identity. Supported identity values should be <code>scalar</code>, <code>array</code> (composite <a href="../identities/">identity</a>)
-and <code>object</code> (foreign entity or an <a href="../identifiers/">identifier</a>).</p>
+<p>Finds a single entity by its identity. Supported identity values should be <code>scalar</code>, <code>array</code> (for composite identifiers), 
+and <code>object</code> (i.e. another entity or its <a href="../identifiers/">identifier</a>).</p>
 <hr />
 <h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code><a class="headerlink" href="#dofindbyfieldsarray-fields-object" title="Permanent link">&para;</a></h3>
-<p>Finds the first entity matching all specified fields. See <code>doFindAllByFields()</code> for supported field values.</p>
+<p>Finds the first entity matching the specified fields. See <code>doFindAllByFields()</code> for supported field values.</p>
 <hr />
 <h3 id="doexistsid-bool"><code>doExists($id): bool</code><a class="headerlink" href="#doexistsid-bool" title="Permanent link">&para;</a></h3>
 <p>Verifies if an entity exists by its identity. See <code>doFind()</code> for supported identity values.</p>
 <hr />
 <h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code><a class="headerlink" href="#doexistsbyfieldsarray-fields-bool" title="Permanent link">&para;</a></h3>
-<p>Verifies if an entity matching all specified fields exists. See <code>doFindAllByFields()</code> for supported field values.</p>
+<p>Verifies if an entity matching the specified fields exists. See <code>doFindAllByFields()</code> for supported field values.</p>
 <hr />
 <h3 id="dosaveobject-entity-void"><code>doSave(object $entity): void</code><a class="headerlink" href="#dosaveobject-entity-void" title="Permanent link">&para;</a></h3>
 <p>Persists an entity into the identity map. The entity will be available on any subsequent query.</p>
@@ -1237,7 +1237,7 @@ and <code>object</code> (foreign entity or an <a href="../identifiers/">identifi
 <ul>
 <li><code>__construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)</code><ul>
 <li><code>$class</code>: The entity class this repository is tied to</li>
-<li><code>$identityHelper</code>: The domain identity helper. <a href="../identities/">Read more</a>.</li>
+<li><code>$identityHelper</code>: The domain identity helper. <a href="../identity-helper/">Read more</a>.</li>
 <li><code>$memory</code>: Custom memory layer. By default the same global pool is used. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/InMemory/GlobalObjectMemory.html"><code>GlobalObjectMemory</code></a>.</li>
 <li><code>$accessor</code>: Custom object field accessor. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/InMemory/ObjectFieldAccessor.html"><code>ObjectFieldAccessor</code></a>.</li>
 </ul>
@@ -1324,13 +1324,13 @@ and <code>object</code> (foreign entity or an <a href="../identifiers/">identifi
           </a>
         
         
-          <a href="../../event-sourcing/event-handlers/" title="Event Handlers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../factory/object/" title="Object Factory" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Event Handlers
+                Object Factory
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

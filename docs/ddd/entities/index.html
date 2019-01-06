@@ -301,32 +301,70 @@
 
 
   <li class="md-nav__item">
-    <a href="../identities/" title="Identities" class="md-nav__link">
-      Identities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../identity-mapping/" title="Identity Mapping" class="md-nav__link">
-      Identity Mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../collections/" title="Collections" class="md-nav__link">
       Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Entities
+      </label>
+    
+    <a href="./" title="Entities" class="md-nav__link md-nav__link--active">
+      Entities
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
+    Basic Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" title="Repositories" class="md-nav__link">
+      Repositories
     </a>
   </li>
 
@@ -395,49 +433,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Entities
-      </label>
-    
-    <a href="./" title="Entities" class="md-nav__link md-nav__link--active">
-      Entities
+  <li class="md-nav__item">
+    <a href="../identity-mapping/" title="Identity Mapping" class="md-nav__link">
+      Identity Mapping
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic Example" class="md-nav__link">
-    Basic Example
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -447,8 +447,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../identity-helper/" title="Identity Helper" class="md-nav__link">
+      Identity Helper
     </a>
   </li>
 
@@ -997,11 +997,14 @@
                 
                 
                 <h1 id="entities">Entities<a class="headerlink" href="#entities" title="Permanent link">&para;</a></h1>
-<p>Entity objects are provided per domain layer and usually follow a <a href="https://stackoverflow.com/questions/41188002/what-does-the-term-plain-old-php-object-popo-exactly-mean">POPO</a> design. To simplify its definition common
-fields and features are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>. Fields can be compared to a read-operation, whereas
-features represent a read/write-operation.</p>
-<p>They are defined in a dedicated namespace for discovery, respectively <code>Msgphp\Domain\Entity\Fields\</code> and
-<code>MsgPhp\Domain\Entity\Features\</code>.</p>
+<p>Domain entities are "<a href="https://en.wikipedia.org/wiki/Plain_vanilla">vanilla</a> PHP objects" owned by the user. To simplify its definition common <em>fields</em> and <em>features</em>
+are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>.</p>
+<p>Fields can be compared to a read-operation, whereas features represent a read/write-operation. They can be discovered
+in the following namespaces:</p>
+<ul>
+<li><code>Msgphp\Domain\Entity\Fields\</code></li>
+<li><code>MsgPhp\Domain\Entity\Features\</code></li>
+</ul>
 <h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1034,7 +1037,7 @@ features represent a read/write-operation.</p>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the <a href="../../reference/entities/#msgphpdomain">reference</a> page for all available entity fields and features</p>
+<p>See the <a href="../../reference/entities/#msgphpdomain">reference</a> page for all available fields and features</p>
 </div>
                 
                   
@@ -1056,7 +1059,7 @@ features represent a read/write-operation.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../factory/static/" title="Static Factory" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1065,7 +1068,7 @@ features represent a read/write-operation.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Static Factory
+                Collections
               </span>
             </div>
           </a>

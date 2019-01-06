@@ -301,9 +301,93 @@
 
 
   <li class="md-nav__item">
-    <a href="../identities/" title="Identities" class="md-nav__link">
-      Identities
+    <a href="../collections/" title="Collections" class="md-nav__link">
+      Collections
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../entities/" title="Entities" class="md-nav__link">
+      Entities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repositories/" title="Repositories" class="md-nav__link">
+      Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Factories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Factories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
+      Object Factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
+      Entity Aware Factory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../factory/static/" title="Static Factory" class="md-nav__link">
+      Static Factory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -423,92 +507,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../collections/" title="Collections" class="md-nav__link">
-      Collections
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
-      Object Factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
-      Entity Aware Factory
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/static/" title="Static Factory" class="md-nav__link">
-      Static Factory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../entities/" title="Entities" class="md-nav__link">
-      Entities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../identity-helper/" title="Identity Helper" class="md-nav__link">
+      Identity Helper
     </a>
   </li>
 
@@ -1117,11 +1117,11 @@
                 
                 
                 <h1 id="identity-mapping">Identity Mapping<a class="headerlink" href="#identity-mapping" title="Permanent link">&para;</a></h1>
-<p>An identity mapping is a domain service and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. It tells about
-the identifier metadata for a known domain object.</p>
+<p>The domain identity mapping is a service object and is bound to <code>MsgPhp\Domain\DomainIdentityMappingInterface</code>. Its
+purpose is to expose identifier metadata for a known domain entity.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code><a class="headerlink" href="#getidentifierfieldnamesstring-class-array" title="Permanent link">&para;</a></h3>
-<p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed of these field values.</p>
+<p>Returns the identifier field names for <code>$class</code>. Any instance should have an identity composed from these fields.</p>
 <hr />
 <h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code><a class="headerlink" href="#getidentityobject-object-array" title="Permanent link">&para;</a></h3>
 <p>Returns the actual, non empty, identifier values of <code>$object</code>. Each identifier value is keyed by its corresponding
@@ -1201,7 +1201,7 @@ identifier field name.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../identities/" title="Identities" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../factory/static/" title="Static Factory" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1210,19 +1210,19 @@ identifier field name.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Identities
+                Static Factory
               </span>
             </div>
           </a>
         
         
-          <a href="../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../identity-helper/" title="Identity Helper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Collections
+                Identity Helper
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

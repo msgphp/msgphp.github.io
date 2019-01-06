@@ -301,32 +301,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../identities/" title="Identities" class="md-nav__link">
-      Identities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../identity-mapping/" title="Identity Mapping" class="md-nav__link">
-      Identity Mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../collections/" title="Collections" class="md-nav__link">
       Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../entities/" title="Entities" class="md-nav__link">
+      Entities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../repositories/" title="Repositories" class="md-nav__link">
+      Repositories
     </a>
   </li>
 
@@ -511,8 +511,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../entities/" title="Entities" class="md-nav__link">
-      Entities
+    <a href="../../identity-mapping/" title="Identity Mapping" class="md-nav__link">
+      Identity Mapping
     </a>
   </li>
 
@@ -523,8 +523,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../../identity-helper/" title="Identity Helper" class="md-nav__link">
+      Identity Helper
     </a>
   </li>
 
@@ -1156,8 +1156,8 @@
 </ul>
 <hr />
 <h3 id="referencestring-class-id-object"><code>reference(string $class, $id): object</code><a class="headerlink" href="#referencestring-class-id-object" title="Permanent link">&para;</a></h3>
-<p>Returns a factorized reference object for a known existing entity object. The object must be of type <code>$class</code>. Any type
-of <a href="../../identities/">identity</a> value can be passed as <code>$id</code>.</p>
+<p>Returns a factorized reference object of type <code>$class</code> for an entity known to exist. Supported identity values are
+<code>scalar</code>, <code>array</code> (for composite identifiers), and <code>object</code> (i.e. another entity or its <a href="../../identifiers/">identifier</a>). </p>
 <hr />
 <h3 id="identifystring-class-value-domainidinterface"><code>identify(string $class, $value): DomainIdInterface</code><a class="headerlink" href="#identifystring-class-value-domainidinterface" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized <a href="../../identifiers/">domain identifier</a> for the given entity class from a known primitive value.</p>
@@ -1171,7 +1171,7 @@ value might be considered empty if it's not capable to calculate one upfront.</p
 <ul>
 <li><code>__construct(DomainObjectFactoryInterface $factory, DomainIdentityHelper $identityHelper, array $identifierMapping = [])</code><ul>
 <li><code>$factory</code>: The decorated <a href="../object/">object factory</a></li>
-<li><code>$identityHelper</code>: The <a href="../../identities/">identity helper</a></li>
+<li><code>$identityHelper</code>: The <a href="../../identity-helper/">identity helper</a></li>
 <li><code>$identifierMapping</code>: The identifier class mapping (<code>['EntityType' =&gt; 'IdType']</code>)</li>
 </ul>
 </li>

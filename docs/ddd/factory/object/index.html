@@ -301,32 +301,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../identities/" title="Identities" class="md-nav__link">
-      Identities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../identity-mapping/" title="Identity Mapping" class="md-nav__link">
-      Identity Mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../collections/" title="Collections" class="md-nav__link">
       Collections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../entities/" title="Entities" class="md-nav__link">
+      Entities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../repositories/" title="Repositories" class="md-nav__link">
+      Repositories
     </a>
   </li>
 
@@ -490,8 +490,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../entities/" title="Entities" class="md-nav__link">
-      Entities
+    <a href="../../identity-mapping/" title="Identity Mapping" class="md-nav__link">
+      Identity Mapping
     </a>
   </li>
 
@@ -502,8 +502,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repositories/" title="Repositories" class="md-nav__link">
-      Repositories
+    <a href="../../identity-helper/" title="Identity Helper" class="md-nav__link">
+      Identity Helper
     </a>
   </li>
 
@@ -1111,7 +1111,7 @@ any domain object based on a given class name and context.</p>
 <h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code><a class="headerlink" href="#createstring-class-array-context-object" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.</p>
 <h3 id="getclassstring-class-array-context-string"><code>getClass(string $class, array $context = []): string</code><a class="headerlink" href="#getclassstring-class-array-context-string" title="Permanent link">&para;</a></h3>
-<p>Returns the actual class name the factory will create and equalizes <code>get_class($factory-&gt;create($class, $context))</code>.</p>
+<p>Returns the actual class name the factory will create and equals <code>get_class($factory-&gt;create($class, $context))</code>.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomainfactorydomainobjectfactory"><code>MsgPhp\Domain\Factory\DomainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorydomainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A generic object factory. It initializes the given class by reading its constructor arguments. Argument values are
@@ -1197,7 +1197,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../collections/" title="Collections" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../repositories/" title="Repositories" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1206,7 +1206,7 @@ using <code>$class::fromValue()</code> by default, otherwise initialization happ
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Collections
+                Repositories
               </span>
             </div>
           </a>

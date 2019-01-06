@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.", 
+            "text": "MsgPHP Documentation\n\n\n\n\nMsgPHP\n is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.\n\n\n\n\nSymfony Bundles\n\n\n\n\n\n\n\nmsgphp/eav-bundle\n: Basic entity-attribute-value management (the \nEAV\n domain)\n\n\nmsgphp/user-bundle\n: Basic user management (the \nUser\n domain)", 
             "title": "Home"
         }, 
         {
             "location": "/#msgphp-documentation", 
             "text": "MsgPHP  is a project that aims to provide (common) message based domain layers for your application. It has a low development time overhead and avoids being overly opinionated.", 
             "title": "MsgPHP Documentation"
+        }, 
+        {
+            "location": "/#symfony-bundles", 
+            "text": "msgphp/eav-bundle : Basic entity-attribute-value management (the  EAV  domain)  msgphp/user-bundle : Basic user management (the  User  domain)", 
+            "title": "Symfony Bundles"
         }, 
         {
             "location": "/code-conventions/", 
@@ -52,12 +57,12 @@
         }, 
         {
             "location": "/ddd/identifiers/", 
-            "text": "Identifiers\n\n\nA domain identifier is a \nstring-able\n value object and bound to \nMsgPhp\\Domain\\DomainIdInterface\n. Its purpose is to\nutilize a primitive identifier value.\n\n\nAPI\n\n\nExtends\n\n\n\n\n\\Serializable\n\n\n\\JsonSerializable\n\n\n\n\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nReturns a factorized identifier from any primitive value. Using \nnull\n might imply an empty identifier.\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty, thus has no known primitive value.\n\n\n\n\nequals(DomainIdInterface $id): bool\n\n\nTells if an identifier equals another identifier.\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the identifier its primitive string value. If the identifier is empty (see \nisEmpty()\n) an empty string (\n\"\"\n) \nshould be returned.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\DomainId\n\n\nA first class citizen domain identifier. It leverages \nstring|null\n as underlying data type.\n\n\n\n\n__construct(string $id = null)\n\n\n$id\n: The primitive identifier value. In case of \nnull\n an empty identifier is implied.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nOtherDomainId\n \nextends\n \nDomainId\n\n\n{\n\n\n}\n\n\n\n$emptyId\n \n=\n \nnew\n \nDomainId\n();\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n// --- USAGE ---\n\n\n\n$emptyId\n-\nisEmpty\n();\n \n// true\n\n\n$id\n-\nisEmpty\n();\n \n// false\n\n\n\n$emptyId\n-\nequals\n(\n$emptyId\n);\n \n// true\n\n\n$emptyId\n-\nequals\n(\nnew\n \nDomainId\n());\n \n// false\n\n\n$id\n-\nequals\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$id\n-\nequals\n(\nnew\n \nOtherDomainId\n(\n1\n));\n \n// false due type varying\n\n\n\n$emptyId\n-\ntoString\n();\n \n// \n\n\n(\nstring\n)\n \n$id\n;\n \n// \n1\n\n\n\n$emptyStringId\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$emptyStringId\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n$emptyStringId\n-\ntoString\n();\n \n// \n\n\n$emptyId\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n$emptyId\n-\ntoString\n();\n \n// null\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n\n\nA UUID tailored domain identifier.\n\n\n\n\nRead more", 
+            "text": "Identifiers\n\n\nA domain identifier is a value object and bound to \nMsgPhp\\Domain\\DomainIdInterface\n. Its purpose is to utilize a\nprimitive identifier value, usually used to identity an entity with.\n\n\nAPI\n\n\nExtends\n\n\n\n\n\\Serializable\n\n\n\\JsonSerializable\n\n\n\n\n\n\nstatic fromValue($value): DomainIdInterface\n\n\nReturns a factorized identifier from any primitive value. Using \nnull\n might imply an empty identifier.\n\n\n\n\nisEmpty(): bool\n\n\nTells if an identifier value is considered empty, thus has no known primitive value.\n\n\n\n\nequals(DomainIdInterface $id): bool\n\n\nTells if an identifier strictly equals another identifier.\n\n\n\n\ntoString(): string\n / \n__toString(): string\n\n\nReturns the identifier its primitive string value. If the identifier is empty (see \nisEmpty()\n) an empty string should\nbe returned.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\DomainId\n\n\nA first class citizen domain identifier.\n\n\n\n\n__construct(string $id = null)\n\n\n$id\n: The primitive identifier value. In case of \nnull\n an empty identifier is implied.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainId\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nOtherDomainId\n \nextends\n \nDomainId\n\n\n{\n\n\n}\n\n\n\n$emptyId\n \n=\n \nnew\n \nDomainId\n();\n\n\n$id\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n// --- USAGE ---\n\n\n\n$emptyId\n-\nisEmpty\n();\n \n// true\n\n\n$id\n-\nisEmpty\n();\n \n// false\n\n\n\n$emptyId\n-\nequals\n(\n$emptyId\n);\n \n// true\n\n\n$emptyId\n-\nequals\n(\nnew\n \nDomainId\n());\n \n// false\n\n\n$id\n-\nequals\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$id\n-\nequals\n(\nnew\n \nOtherDomainId\n(\n1\n));\n \n// false due type varying\n\n\n\n$emptyId\n-\ntoString\n();\n \n// \n\n\n(\nstring\n)\n \n$id\n;\n \n// \n1\n\n\n\n$emptyStringId\n \n=\n \nnew\n \nDomainId\n(\n);\n\n\n$emptyStringId\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n$emptyStringId\n-\ntoString\n();\n \n// \n\n\n$emptyId\n-\nisEmpty\n()\n \n?\n \nnull\n \n:\n \n$emptyId\n-\ntoString\n();\n \n// null\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Uuid\\DomainId\n\n\nA UUID tailored domain identifier.\n\n\n\n\nRead more", 
             "title": "Identifiers"
         }, 
         {
             "location": "/ddd/identifiers/#identifiers", 
-            "text": "A domain identifier is a  string-able  value object and bound to  MsgPhp\\Domain\\DomainIdInterface . Its purpose is to\nutilize a primitive identifier value.", 
+            "text": "A domain identifier is a value object and bound to  MsgPhp\\Domain\\DomainIdInterface . Its purpose is to utilize a\nprimitive identifier value, usually used to identity an entity with.", 
             "title": "Identifiers"
         }, 
         {
@@ -82,12 +87,12 @@
         }, 
         {
             "location": "/ddd/identifiers/#equalsdomainidinterface-id-bool", 
-            "text": "Tells if an identifier equals another identifier.", 
+            "text": "Tells if an identifier strictly equals another identifier.", 
             "title": "equals(DomainIdInterface $id): bool"
         }, 
         {
             "location": "/ddd/identifiers/#tostring-string-__tostring-string", 
-            "text": "Returns the identifier its primitive string value. If the identifier is empty (see  isEmpty() ) an empty string ( \"\" ) \nshould be returned.", 
+            "text": "Returns the identifier its primitive string value. If the identifier is empty (see  isEmpty() ) an empty string should\nbe returned.", 
             "title": "toString(): string / __toString(): string"
         }, 
         {
@@ -97,7 +102,7 @@
         }, 
         {
             "location": "/ddd/identifiers/#msgphpdomaindomainid", 
-            "text": "A first class citizen domain identifier. It leverages  string|null  as underlying data type.   __construct(string $id = null)  $id : The primitive identifier value. In case of  null  an empty identifier is implied.", 
+            "text": "A first class citizen domain identifier.   __construct(string $id = null)  $id : The primitive identifier value. In case of  null  an empty identifier is implied.", 
             "title": "MsgPhp\\Domain\\DomainId"
         }, 
         {
@@ -109,111 +114,6 @@
             "location": "/ddd/identifiers/#msgphpdomaininfrauuiddomainid", 
             "text": "A UUID tailored domain identifier.   Read more", 
             "title": "MsgPhp\\Domain\\Infra\\Uuid\\DomainId"
-        }, 
-        {
-            "location": "/ddd/identities/", 
-            "text": "Identities\n\n\nMsgPhp\\Domain\\DomainIdentityHelper\n is a utility domain service. Its purpose is to ease working with domain identities\nand the \nidentity mapping\n.\n\n\nA domain identity is a composite value (\narray\n) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.\n\n\nIdentifier values can be of any type; a \ndomain identifier\n, another (foreign) entity object, or any\nprimitive value.\n\n\nA single identifier value might represent an identity in case the identity is composed from a single identifier field.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object or an entity\nobject.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is a known empty identifier value. It returns \ntrue\n if the specified value is either \nnull\n, an empty\n\ndomain identifier\n or an entity object without its identity set.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. Empty identifier values (see \nisEmptyIdentifier()\n) are normalized\nas \nnull\n, a \ndomain identifier\n as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\nSee also \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity value is considered valid if an entity object uses\na single identifier value as identity and \n$value\n is a non empty identifier (see \nisEmptyIdentifier()\n).\n\n\nIn case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.\n\n\n\n\ntoIdentity(string $class, $value): array\n\n\nReturns a composite identity value for \n$class\n from \n$value\n.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name. See also \nDomainIdentityMappingInterface::getIdentity()\n.\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n   \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]));\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$helper\n-\nisIdentity\n(\n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$helper\n-\nisIdentity\n(\n$entity\n);\n \n// true\n\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n());\n \n// null\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n(\n1\n));\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n1\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$entity\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ....]\n\n\n\n$helper\n-\ngetIdentifiers\n(\n$entity\n);\n \n// [\nid\n]\n\n\n$helper\n-\ngetIdentifiers\n(\n$compositeEntity\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$helper\n-\nisIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// true\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n]);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]);\n \n// true\n\n\n\n$helper\n-\ntoIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// [\nid\n =\n 1]", 
-            "title": "Identities"
-        }, 
-        {
-            "location": "/ddd/identities/#identities", 
-            "text": "MsgPhp\\Domain\\DomainIdentityHelper  is a utility domain service. Its purpose is to ease working with domain identities\nand the  identity mapping .  A domain identity is a composite value ( array ) of one or more individual identifier values, indexed by an identifier\nfield name. Its usage is to uniquely identify a domain object, thus qualifying it an entity object.  Identifier values can be of any type; a  domain identifier , another (foreign) entity object, or any\nprimitive value.  A single identifier value might represent an identity in case the identity is composed from a single identifier field.", 
-            "title": "Identities"
-        }, 
-        {
-            "location": "/ddd/identities/#api", 
-            "text": "", 
-            "title": "API"
-        }, 
-        {
-            "location": "/ddd/identities/#isidentifiervalue-bool", 
-            "text": "Tells if  $value  is a known identifier value. This is either a  domain identifier  object or an entity\nobject.", 
-            "title": "isIdentifier($value): bool"
-        }, 
-        {
-            "location": "/ddd/identities/#isemptyidentifiervalue-bool", 
-            "text": "Tells if  $value  is a known empty identifier value. It returns  true  if the specified value is either  null , an empty domain identifier  or an entity object without its identity set.", 
-            "title": "isEmptyIdentifier($value): bool"
-        }, 
-        {
-            "location": "/ddd/identities/#normalizeidentifiervalue", 
-            "text": "Returns the primitive identifier value of  $value . Empty identifier values (see  isEmptyIdentifier() ) are normalized\nas  null , a  domain identifier  as string value and an entity object as normalized identity value.\nA value of any other type is returned as is.", 
-            "title": "normalizeIdentifier($value)"
-        }, 
-        {
-            "location": "/ddd/identities/#getidentifiersobject-object-array", 
-            "text": "Returns the actual identifier values of  $object .", 
-            "title": "getIdentifiers(object $object): array"
-        }, 
-        {
-            "location": "/ddd/identities/#getidentifierfieldnamesstring-class-array", 
-            "text": "Returns the identifier field names for  $class . Any instance should have an identity composed of these field values.\nSee also  DomainIdentityMappingInterface::getIdentifierFieldNames() .", 
-            "title": "getIdentifierFieldNames(string $class): array"
-        }, 
-        {
-            "location": "/ddd/identities/#isidentitystring-class-value-bool", 
-            "text": "Tells if  $value  is a valid identity for type  $class . An identity value is considered valid if an entity object uses\na single identifier value as identity and  $value  is a non empty identifier (see  isEmptyIdentifier() ).  In case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.", 
-            "title": "isIdentity(string $class, $value): bool"
-        }, 
-        {
-            "location": "/ddd/identities/#toidentitystring-class-value-array", 
-            "text": "Returns a composite identity value for  $class  from  $value .", 
-            "title": "toIdentity(string $class, $value): array"
-        }, 
-        {
-            "location": "/ddd/identities/#getidentityobject-object-array", 
-            "text": "Returns the actual, non empty, identifier values of  $object . Each identifier value is keyed by its corresponding\nidentifier field name. See also  DomainIdentityMappingInterface::getIdentity() .", 
-            "title": "getIdentity(object $object): array"
-        }, 
-        {
-            "location": "/ddd/identities/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\ { DomainId ,   DomainIdentityHelper };  use   MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping ;  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyCompositeEntity  { \n     public   $name ; \n     public   $year ;  }  $helper   =   new   DomainIdentityHelper ( new   DomainIdentityMapping ([ \n    MyEntity :: class   =   id , \n    MyCompositeEntity :: class   =   [ name ,   year ],  ]));  // --- USAGE ---  $entity   =   new   MyEntity ();  $entity - id   =   new   DomainId ( 1 );  $compositeEntity   =   new   MyCompositeEntity ();  $compositeEntity - name   =   ... ;  $compositeEntity - year   =   ... ;  $helper - isIdentity ( 1 );   // false  $helper - isIdentity ( new   DomainId ( 1 ));   // true  $helper - isIdentity ( $entity );   // true  $helper - normalizeIdentifier ( new   DomainId ());   // null  $helper - normalizeIdentifier ( new   DomainId ( 1 ));   //  1  $helper - normalizeIdentifier ( 1 );   //  1  $helper - normalizeIdentifier ( $entity );   //  1  $helper - normalizeIdentifier ( $compositeEntity );   // [ name  =  ...,  year  =  ....]  $helper - getIdentifiers ( $entity );   // [ id ]  $helper - getIdentifiers ( $compositeEntity );   // [ name ,  year ]  $helper - isIdentity ( MyEntity :: class ,   1 );   // true  $helper - isIdentity ( MyCompositeEntity :: class ,   1 );   // false  $helper - isIdentity ( MyCompositeEntity :: class ,   [ name   =   ... ]);   // false  $helper - isIdentity ( MyCompositeEntity :: class ,   [ name   =   ... ,   year   =   ... ]);   // true  $helper - toIdentity ( MyEntity :: class ,   1 );   // [ id  =  1]", 
-            "title": "Basic Example"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/", 
-            "text": "Identity Mapping\n\n\nAn identity mapping is a domain service and is bound to \nMsgPhp\\Domain\\DomainIdentityMappingInterface\n. It tells about\nthe identifier metadata for a known domain object.\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed of these field values.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n\n\nIdentity mapping based on a known in-memory mapping.\n\n\n\n\n__construct(array $mapping, ObjectFieldAccessor $accessor = null)\n\n\n$mapping\n: The identity mapping to use\n\n\n$accessor\n: Custom object field accessor. See also \nObjectFieldAccessor\n.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$mapping\n \n=\n \nnew\n \nDomainIdentityMapping\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]);\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \n...\n;\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$mapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nid\n]\n\n\n$mapping\n-\ngetIdentifierFieldNames\n(\nMyCompositeEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$mapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nid\n =\n ...]\n\n\n$mapping\n-\ngetIdentity\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n\n\nA Doctrine tailored identity mapping.\n\n\n\n\nRead more", 
-            "title": "Identity Mapping"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#identity-mapping", 
-            "text": "An identity mapping is a domain service and is bound to  MsgPhp\\Domain\\DomainIdentityMappingInterface . It tells about\nthe identifier metadata for a known domain object.", 
-            "title": "Identity Mapping"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#api", 
-            "text": "", 
-            "title": "API"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#getidentifierfieldnamesstring-class-array", 
-            "text": "Returns the identifier field names for  $class . Any instance should have an identity composed of these field values.", 
-            "title": "getIdentifierFieldNames(string $class): array"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#getidentityobject-object-array", 
-            "text": "Returns the actual, non empty, identifier values of  $object . Each identifier value is keyed by its corresponding\nidentifier field name.", 
-            "title": "getIdentity(object $object): array"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#implementations", 
-            "text": "", 
-            "title": "Implementations"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#msgphpdomaininfrainmemorydomainidentitymapping", 
-            "text": "Identity mapping based on a known in-memory mapping.   __construct(array $mapping, ObjectFieldAccessor $accessor = null)  $mapping : The identity mapping to use  $accessor : Custom object field accessor. See also  ObjectFieldAccessor .", 
-            "title": "MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping ;  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyCompositeEntity  { \n     public   $name ; \n     public   $year ;  }  $mapping   =   new   DomainIdentityMapping ([ \n     MyEntity :: class   =   id , \n     MyCompositeEntity :: class   =   [ name ,   year ],  ]);  // --- USAGE ---  $entity   =   new   MyEntity ();  $entity - id   =   ... ;  $compositeEntity   =   new   MyCompositeEntity ();  $compositeEntity - name   =   ... ;  $compositeEntity - year   =   ... ;  $mapping - getIdentifierFieldNames ( MyEntity :: class );   // [ id ]  $mapping - getIdentifierFieldNames ( MyCompositeEntity :: class );   // [ name ,  year ]  $mapping - getIdentity ( $entity );   // [ id  =  ...]  $mapping - getIdentity ( $compositeEntity );   // [ name  =  ...,  year  =  ...]", 
-            "title": "Basic Example"
-        }, 
-        {
-            "location": "/ddd/identity-mapping/#msgphpdomaininfradoctrinedomainidentitymapping", 
-            "text": "A Doctrine tailored identity mapping.   Read more", 
-            "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping"
         }, 
         {
             "location": "/ddd/collections/", 
@@ -346,8 +246,98 @@
             "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainCollection"
         }, 
         {
+            "location": "/ddd/entities/", 
+            "text": "Entities\n\n\nDomain entities are \"\nvanilla\n PHP objects\" owned by the user. To simplify its definition common \nfields\n and \nfeatures\n\nare provided in the form of PHP \ntraits\n.\n\n\nFields can be compared to a read-operation, whereas features represent a read/write-operation. They can be discovered\nin the following namespaces:\n\n\n\n\nMsgphp\\Domain\\Entity\\Fields\\\n\n\nMsgPhp\\Domain\\Entity\\Features\\\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n;\n\n\nuse\n \nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \nuse\n \nCreatedAtField\n;\n\n    \nuse\n \nCanBeEnabled\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n()\n\n    \n{\n\n        \n$this\n-\ncreatedAt\n \n=\n \nnew\n \n\\DateTimeImmutable\n();\n\n    \n}\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$createdAt\n \n=\n \n$entity\n-\ngetCreatedAt\n();\n\n\n\nif\n \n(\n!\n$entity\n-\nisEnabled\n())\n \n{\n\n    \n$entity\n-\nenable\n();\n\n\n}\n\n\n\n\n\n\n\n\nNote\n\n\nSee the \nreference\n page for all available fields and features", 
+            "title": "Entities"
+        }, 
+        {
+            "location": "/ddd/entities/#entities", 
+            "text": "Domain entities are \" vanilla  PHP objects\" owned by the user. To simplify its definition common  fields  and  features \nare provided in the form of PHP  traits .  Fields can be compared to a read-operation, whereas features represent a read/write-operation. They can be discovered\nin the following namespaces:   Msgphp\\Domain\\Entity\\Fields\\  MsgPhp\\Domain\\Entity\\Features\\", 
+            "title": "Entities"
+        }, 
+        {
+            "location": "/ddd/entities/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Entity\\Fields\\CreatedAtField ;  use   MsgPhp\\Domain\\Entity\\Features\\CanBeEnabled ;  // --- SETUP ---  class   MyEntity  { \n     use   CreatedAtField ; \n     use   CanBeEnabled ; \n\n     public   function   __construct () \n     { \n         $this - createdAt   =   new   \\DateTimeImmutable (); \n     }  }  // --- USAGE ---  $entity   =   new   MyEntity ();  $createdAt   =   $entity - getCreatedAt ();  if   ( ! $entity - isEnabled ())   { \n     $entity - enable ();  }    Note  See the  reference  page for all available fields and features", 
+            "title": "Basic Example"
+        }, 
+        {
+            "location": "/ddd/repositories/", 
+            "text": "Repositories\n\n\nA domain repository is tied to specific \ndomain entities\n. To define a repository for them you can\nleverage a utility trait tied to specific infrastructure (e.g. \nDoctrine ORM\n).\n\n\nThis page describes the API provided by default \nimplementations\n.\n\n\nAPI\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available. An unlimited collection is implied by \n$limit\n set to zero.\n\n\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching the specified fields. Supported field values should be \nnull\n, \nscalar\n, \nscalar[]\n (i.e. \none of) and \nobject\n (i.e. another entity or its \nidentifier\n). An unlimited collection is implied by\n\n$limit\n set to zero.\n\n\n\n\ndoFind($id): object\n\n\nFinds a single entity by its identity. Supported identity values should be \nscalar\n, \narray\n (for composite identifiers), \nand \nobject\n (i.e. another entity or its \nidentifier\n).\n\n\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching the specified fields. See \ndoFindAllByFields()\n for supported field values.\n\n\n\n\ndoExists($id): bool\n\n\nVerifies if an entity exists by its identity. See \ndoFind()\n for supported identity values.\n\n\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerifies if an entity matching the specified fields exists. See \ndoFindAllByFields()\n for supported field values.\n\n\n\n\ndoSave(object $entity): void\n\n\nPersists an entity into the identity map. The entity will be available on any subsequent query.\n\n\n\n\ndoDelete(object $entity): void\n\n\nRemoves an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n\n\nRepository trait based on in-memory persistence.\n\n\n\n\n__construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)\n\n\n$class\n: The entity class this repository is tied to\n\n\n$identityHelper\n: The domain identity helper. \nRead more\n.\n\n\n$memory\n: Custom memory layer. By default the same global pool is used. See also \nGlobalObjectMemory\n.\n\n\n$accessor\n: Custom object field accessor. See also \nObjectFieldAccessor\n.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainIdentityHelper\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\\n{\nDomainIdentityMapping\n,\n \nDomainEntityRepositoryTrait\n};\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyEntityRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n        \ndoSave\n \nas\n \npublic\n \nsave\n;\n\n    \n}\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n\n]));\n\n\n\n$repository\n \n=\n \nnew\n \nMyEntityRepository\n(\nMyEntity\n::\nclass\n,\n \n$helper\n);\n\n\n\n// --- USAGE ---\n\n\n\nif\n \n(\n$repository\n-\nexists\n(\n1\n))\n \n{\n\n    \n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);\n\n\n}\n \nelse\n \n{\n\n    \n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n    \n$entity\n-\nid\n \n=\n \n1\n;\n\n\n    \n$repository\n-\nsave\n(\n$entity\n);\n\n\n}\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n\n\nA Doctrine tailored repository trait.\n\n\n\n\nRead more", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/ddd/repositories/#repositories", 
+            "text": "A domain repository is tied to specific  domain entities . To define a repository for them you can\nleverage a utility trait tied to specific infrastructure (e.g.  Doctrine ORM ).  This page describes the API provided by default  implementations .", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/ddd/repositories/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindallint-offset-0-int-limit-0-domaincollectioninterface", 
+            "text": "Finds all entities available. An unlimited collection is implied by  $limit  set to zero.", 
+            "title": "doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface", 
+            "text": "Finds all entities matching the specified fields. Supported field values should be  null ,  scalar ,  scalar[]  (i.e. \none of) and  object  (i.e. another entity or its  identifier ). An unlimited collection is implied by $limit  set to zero.", 
+            "title": "doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindid-object", 
+            "text": "Finds a single entity by its identity. Supported identity values should be  scalar ,  array  (for composite identifiers), \nand  object  (i.e. another entity or its  identifier ).", 
+            "title": "doFind($id): object"
+        }, 
+        {
+            "location": "/ddd/repositories/#dofindbyfieldsarray-fields-object", 
+            "text": "Finds the first entity matching the specified fields. See  doFindAllByFields()  for supported field values.", 
+            "title": "doFindByFields(array $fields): object"
+        }, 
+        {
+            "location": "/ddd/repositories/#doexistsid-bool", 
+            "text": "Verifies if an entity exists by its identity. See  doFind()  for supported identity values.", 
+            "title": "doExists($id): bool"
+        }, 
+        {
+            "location": "/ddd/repositories/#doexistsbyfieldsarray-fields-bool", 
+            "text": "Verifies if an entity matching the specified fields exists. See  doFindAllByFields()  for supported field values.", 
+            "title": "doExistsByFields(array $fields): bool"
+        }, 
+        {
+            "location": "/ddd/repositories/#dosaveobject-entity-void", 
+            "text": "Persists an entity into the identity map. The entity will be available on any subsequent query.", 
+            "title": "doSave(object $entity): void"
+        }, 
+        {
+            "location": "/ddd/repositories/#dodeleteobject-entity-void", 
+            "text": "Removes an entity from the identity map. The entity will be unavailable on any subsequent query.", 
+            "title": "doDelete(object $entity): void"
+        }, 
+        {
+            "location": "/ddd/repositories/#implementations", 
+            "text": "", 
+            "title": "Implementations"
+        }, 
+        {
+            "location": "/ddd/repositories/#msgphpdomaininfrainmemorydomainentityrepositorytrait", 
+            "text": "Repository trait based on in-memory persistence.   __construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)  $class : The entity class this repository is tied to  $identityHelper : The domain identity helper.  Read more .  $memory : Custom memory layer. By default the same global pool is used. See also  GlobalObjectMemory .  $accessor : Custom object field accessor. See also  ObjectFieldAccessor .", 
+            "title": "MsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait"
+        }, 
+        {
+            "location": "/ddd/repositories/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\DomainIdentityHelper ;  use   MsgPhp\\Domain\\Infra\\InMemory\\ { DomainIdentityMapping ,   DomainEntityRepositoryTrait };  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyEntityRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n         doSave   as   public   save ; \n     }  }  $helper   =   new   DomainIdentityHelper ( new   DomainIdentityMapping ([ \n    MyEntity :: class   =   id ,  ]));  $repository   =   new   MyEntityRepository ( MyEntity :: class ,   $helper );  // --- USAGE ---  if   ( $repository - exists ( 1 ))   { \n     $entity   =   $repository - find ( 1 );  }   else   { \n     $entity   =   new   MyEntity (); \n     $entity - id   =   1 ; \n\n     $repository - save ( $entity );  }", 
+            "title": "Basic Example"
+        }, 
+        {
+            "location": "/ddd/repositories/#msgphpdomaininfradoctrinedomainentityrepositorytrait", 
+            "text": "A Doctrine tailored repository trait.   Read more", 
+            "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait"
+        }, 
+        {
             "location": "/ddd/factory/object/", 
-            "text": "Object Factory\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. Its purpose is to initialize\nany domain object based on a given class name and context.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nReturns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.\n\n\ngetClass(string $class, array $context = []): string\n\n\nReturns the actual class name the factory will create and equalizes \nget_class($factory-\ncreate($class, $context))\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n\n\nA generic object factory. It initializes the given class by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g. \n$myArgument\n) matches a\ncorresponding underscored context key (i.e. \n'my_argument'\n), note however, an exact match (i.e. \n'myArgument'\n) has\nhigher precedence. In case the context key is numeric its value will be provided to a corresponding argument at index N.\n\n\nAny sub class of \nMsgPhp\\Domain\\DomainIdInterface\n or \nMsgPhp\\Domain\\DomainCollectionInterface\n will be initialized\nusing \n$class::fromValue()\n by default, otherwise initialization happens regularly (i.e. \nnew $class(...$arguments)\n).\n\n\nA class mapping can be provided and is usually used to map abstracts to concretes.\n\n\nNested objects (e.g. \nMyObject $myArgument\n) can be provided as nested context (thus nested array).\n\n\n\n\n__construct(array $classMapping = [])\n\n\n$classMapping\n: The class mapping (\n['SourceType' =\n 'TargetType']\n)`\n\n\n\n\n\n\nsetNestedFactory(?DomainObjectFactoryInterface $factory): void\n\n\n$factory\n: The factory for nested objects. If not set the current factory will be used instead.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n;\n\n\n\n// --- SETUP ---\n\n\n\ninterface\n \nKnownInterface\n\n\n{\n\n\n}\n\n\n\nclass\n \nSome\n \nimplements\n \nKnownInterface\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nint\n \n$a\n,\n \n?\nint\n \n$b\n,\n \n?\nint\n \n$c\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\nclass\n \nSubject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \nKnownInterface\n \n$some\n,\n \nSubject\n \n$otherSubject\n \n=\n \nnull\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nDomainObjectFactory\n([\n\n    \nKnownInterface\n::\nclass\n \n=\n \nSome\n::\nclass\n,\n\n\n]);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var Some $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nKnownInterface\n::\nclass\n,\n \n[\na\n \n=\n \n1\n]);\n\n\n$factory\n-\ngetClass\n(\nKnownInterface\n::\nclass\n);\n \n// \nSome\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSubject\n::\nclass\n,\n \n[\n\n    \nargument\n \n=\n  \nvalue\n,\n\n    \nsome\n \n=\n \n[\n1\n,\n \n2\n,\n \n3\n],\n\n    \nother_subject\n \n=\n \n[\n\n        \nargument\n \n=\n \nother_value\n,\n\n        \nsome\n \n=\n \n[\na\n \n=\n \n1\n],\n\n    \n],\n\n\n]);", 
+            "text": "Object Factory\n\n\nA domain object factory is bound to \nMsgPhp\\Domain\\Factory\\DomainObjectFactoryInterface\n. Its purpose is to initialize\nany domain object based on a given class name and context.\n\n\nAPI\n\n\ncreate(string $class, array $context = []): object\n\n\nReturns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.\n\n\ngetClass(string $class, array $context = []): string\n\n\nReturns the actual class name the factory will create and equals \nget_class($factory-\ncreate($class, $context))\n.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n\n\nA generic object factory. It initializes the given class by reading its constructor arguments. Argument values are\nresolved from the provided context. By convention a camel cased argument name (e.g. \n$myArgument\n) matches a\ncorresponding underscored context key (i.e. \n'my_argument'\n), note however, an exact match (i.e. \n'myArgument'\n) has\nhigher precedence. In case the context key is numeric its value will be provided to a corresponding argument at index N.\n\n\nAny sub class of \nMsgPhp\\Domain\\DomainIdInterface\n or \nMsgPhp\\Domain\\DomainCollectionInterface\n will be initialized\nusing \n$class::fromValue()\n by default, otherwise initialization happens regularly (i.e. \nnew $class(...$arguments)\n).\n\n\nA class mapping can be provided and is usually used to map abstracts to concretes.\n\n\nNested objects (e.g. \nMyObject $myArgument\n) can be provided as nested context (thus nested array).\n\n\n\n\n__construct(array $classMapping = [])\n\n\n$classMapping\n: The class mapping (\n['SourceType' =\n 'TargetType']\n)`\n\n\n\n\n\n\nsetNestedFactory(?DomainObjectFactoryInterface $factory): void\n\n\n$factory\n: The factory for nested objects. If not set the current factory will be used instead.\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\DomainObjectFactory\n;\n\n\n\n// --- SETUP ---\n\n\n\ninterface\n \nKnownInterface\n\n\n{\n\n\n}\n\n\n\nclass\n \nSome\n \nimplements\n \nKnownInterface\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nint\n \n$a\n,\n \n?\nint\n \n$b\n,\n \n?\nint\n \n$c\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\nclass\n \nSubject\n\n\n{\n\n    \npublic\n \nfunction\n \n__construct\n(\nstring\n \n$argument\n,\n \nKnownInterface\n \n$some\n,\n \nSubject\n \n$otherSubject\n \n=\n \nnull\n)\n\n    \n{\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nDomainObjectFactory\n([\n\n    \nKnownInterface\n::\nclass\n \n=\n \nSome\n::\nclass\n,\n\n\n]);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var Some $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nKnownInterface\n::\nclass\n,\n \n[\na\n \n=\n \n1\n]);\n\n\n$factory\n-\ngetClass\n(\nKnownInterface\n::\nclass\n);\n \n// \nSome\n\n\n\n/** @var Subject $object */\n\n\n$object\n \n=\n \n$factory\n-\ncreate\n(\nSubject\n::\nclass\n,\n \n[\n\n    \nargument\n \n=\n  \nvalue\n,\n\n    \nsome\n \n=\n \n[\n1\n,\n \n2\n,\n \n3\n],\n\n    \nother_subject\n \n=\n \n[\n\n        \nargument\n \n=\n \nother_value\n,\n\n        \nsome\n \n=\n \n[\na\n \n=\n \n1\n],\n\n    \n],\n\n\n]);", 
             "title": "Object Factory"
         }, 
         {
@@ -367,7 +357,7 @@
         }, 
         {
             "location": "/ddd/factory/object/#getclassstring-class-array-context-string", 
-            "text": "Returns the actual class name the factory will create and equalizes  get_class($factory- create($class, $context)) .", 
+            "text": "Returns the actual class name the factory will create and equals  get_class($factory- create($class, $context)) .", 
             "title": "getClass(string $class, array $context = []): string"
         }, 
         {
@@ -387,7 +377,7 @@
         }, 
         {
             "location": "/ddd/factory/entity-aware/", 
-            "text": "Entity Aware Factory\n\n\nAn entity aware factory is an \nobject factory\n and additionally bound to\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface\n. Its purpose is to factorize entity related objects.\n\n\nAPI\n\n\nExtends\n\n\n\n\nDomainObjectFactoryInterface\n\n\n\n\n\n\nreference(string $class, $id): object\n\n\nReturns a factorized reference object for a known existing entity object. The object must be of type \n$class\n. Any type\nof \nidentity\n value can be passed as \n$id\n.\n\n\n\n\nidentify(string $class, $value): DomainIdInterface\n\n\nReturns a factorized \ndomain identifier\n for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next \ndomain identifier\n for the given entity class. Depending on the implementation its\nvalue might be considered empty if it's not capable to calculate one upfront.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactory\n\n\nA generic entity factory.\n\n\n\n\n__construct(DomainObjectFactoryInterface $factory, DomainIdentityHelper $identityHelper, array $identifierMapping = [])\n\n\n$factory\n: The decorated \nobject factory\n\n\n$identityHelper\n: The \nidentity helper\n\n\n$identifierMapping\n: The identifier class mapping (\n['EntityType' =\n 'IdType']\n)\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\\n{\nDomainObjectFactory\n,\n \nEntityAwareFactory\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$id\n)\n\n    \n{\n\n        \n$this\n-\nid\n \n=\n \n$id\n;\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nEntityAwareFactory\n(\n\n    \nnew\n \nDomainObjectFactory\n(),\n\n    \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n        \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \n])),\n\n    \n[\n\n        \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \n]\n\n\n);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var MyEntity $ref */\n\n\n$ref\n \n=\n \n$factory\n-\nreference\n(\nMyEntity\n::\nclass\n,\n \nnew\n \nDomainId\n(\n1\n));\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n);\n\n\n\n\n\n\n\n\nNote\n\n\nEntityAwareFactory::reference()\n requires \nsymfony/var-exporter\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\EntityAwareFactory\n\n\nA Doctrine tailored entity aware factory.\n\n\n\n\nRead more", 
+            "text": "Entity Aware Factory\n\n\nAn entity aware factory is an \nobject factory\n and additionally bound to\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactoryInterface\n. Its purpose is to factorize entity related objects.\n\n\nAPI\n\n\nExtends\n\n\n\n\nDomainObjectFactoryInterface\n\n\n\n\n\n\nreference(string $class, $id): object\n\n\nReturns a factorized reference object of type \n$class\n for an entity known to exist. Supported identity values are\n\nscalar\n, \narray\n (for composite identifiers), and \nobject\n (i.e. another entity or its \nidentifier\n). \n\n\n\n\nidentify(string $class, $value): DomainIdInterface\n\n\nReturns a factorized \ndomain identifier\n for the given entity class from a known primitive value.\n\n\n\n\nnextIdentifier(string $class): DomainIdInterface\n\n\nReturns the next \ndomain identifier\n for the given entity class. Depending on the implementation its\nvalue might be considered empty if it's not capable to calculate one upfront.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Factory\\EntityAwareFactory\n\n\nA generic entity factory.\n\n\n\n\n__construct(DomainObjectFactoryInterface $factory, DomainIdentityHelper $identityHelper, array $identifierMapping = [])\n\n\n$factory\n: The decorated \nobject factory\n\n\n$identityHelper\n: The \nidentity helper\n\n\n$identifierMapping\n: The identifier class mapping (\n['EntityType' =\n 'IdType']\n)\n\n\n\n\n\n\n\n\nBasic example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Factory\\\n{\nDomainObjectFactory\n,\n \nEntityAwareFactory\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n(\n$id\n)\n\n    \n{\n\n        \n$this\n-\nid\n \n=\n \n$id\n;\n\n    \n}\n\n\n}\n\n\n\n$factory\n \n=\n \nnew\n \nEntityAwareFactory\n(\n\n    \nnew\n \nDomainObjectFactory\n(),\n\n    \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n        \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \n])),\n\n    \n[\n\n        \nMyEntity\n::\nclass\n \n=\n \nDomainId\n::\nclass\n,\n\n    \n]\n\n\n);\n\n\n\n// --- USAGE ---\n\n\n\n/** @var MyEntity $ref */\n\n\n$ref\n \n=\n \n$factory\n-\nreference\n(\nMyEntity\n::\nclass\n,\n \nnew\n \nDomainId\n(\n1\n));\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nidentify\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n\n\n\n/** @var DomainId $id */\n\n\n$id\n \n=\n \n$factory\n-\nnextIdentifier\n(\nMyEntity\n::\nclass\n);\n\n\n\n\n\n\n\n\nNote\n\n\nEntityAwareFactory::reference()\n requires \nsymfony/var-exporter\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\EntityAwareFactory\n\n\nA Doctrine tailored entity aware factory.\n\n\n\n\nRead more", 
             "title": "Entity Aware Factory"
         }, 
         {
@@ -407,7 +397,7 @@
         }, 
         {
             "location": "/ddd/factory/entity-aware/#referencestring-class-id-object", 
-            "text": "Returns a factorized reference object for a known existing entity object. The object must be of type  $class . Any type\nof  identity  value can be passed as  $id .", 
+            "text": "Returns a factorized reference object of type  $class  for an entity known to exist. Supported identity values are scalar ,  array  (for composite identifiers), and  object  (i.e. another entity or its  identifier ).", 
             "title": "reference(string $class, $id): object"
         }, 
         {
@@ -481,94 +471,109 @@
             "title": "Rewindable Generator Example"
         }, 
         {
-            "location": "/ddd/entities/", 
-            "text": "Entities\n\n\nEntity objects are provided per domain layer and usually follow a \nPOPO\n design. To simplify its definition common\nfields and features are provided in the form of PHP \ntraits\n. Fields can be compared to a read-operation, whereas\nfeatures represent a read/write-operation.\n\n\nThey are defined in a dedicated namespace for discovery, respectively \nMsgphp\\Domain\\Entity\\Fields\\\n and\n\nMsgPhp\\Domain\\Entity\\Features\\\n.\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Entity\\Fields\\CreatedAtField\n;\n\n\nuse\n \nMsgPhp\\Domain\\Entity\\Features\\CanBeEnabled\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \nuse\n \nCreatedAtField\n;\n\n    \nuse\n \nCanBeEnabled\n;\n\n\n    \npublic\n \nfunction\n \n__construct\n()\n\n    \n{\n\n        \n$this\n-\ncreatedAt\n \n=\n \nnew\n \n\\DateTimeImmutable\n();\n\n    \n}\n\n\n}\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$createdAt\n \n=\n \n$entity\n-\ngetCreatedAt\n();\n\n\n\nif\n \n(\n!\n$entity\n-\nisEnabled\n())\n \n{\n\n    \n$entity\n-\nenable\n();\n\n\n}\n\n\n\n\n\n\n\n\nNote\n\n\nSee the \nreference\n page for all available entity fields and features", 
-            "title": "Entities"
+            "location": "/ddd/identity-mapping/", 
+            "text": "Identity Mapping\n\n\nThe domain identity mapping is a service object and is bound to \nMsgPhp\\Domain\\DomainIdentityMappingInterface\n. Its\npurpose is to expose identifier metadata for a known domain entity.\n\n\nAPI\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nReturns the identifier field names for \n$class\n. Any instance should have an identity composed from these fields.\n\n\n\n\ngetIdentity(object $object): array\n\n\nReturns the actual, non empty, identifier values of \n$object\n. Each identifier value is keyed by its corresponding\nidentifier field name.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n\n\nIdentity mapping based on a known in-memory mapping.\n\n\n\n\n__construct(array $mapping, ObjectFieldAccessor $accessor = null)\n\n\n$mapping\n: The identity mapping to use\n\n\n$accessor\n: Custom object field accessor. See also \nObjectFieldAccessor\n.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$mapping\n \n=\n \nnew\n \nDomainIdentityMapping\n([\n\n    \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n    \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]);\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \n...\n;\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$mapping\n-\ngetIdentifierFieldNames\n(\nMyEntity\n::\nclass\n);\n \n// [\nid\n]\n\n\n$mapping\n-\ngetIdentifierFieldNames\n(\nMyCompositeEntity\n::\nclass\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$mapping\n-\ngetIdentity\n(\n$entity\n);\n \n// [\nid\n =\n ...]\n\n\n$mapping\n-\ngetIdentity\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ...]\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping\n\n\nA Doctrine tailored identity mapping.\n\n\n\n\nRead more", 
+            "title": "Identity Mapping"
         }, 
         {
-            "location": "/ddd/entities/#entities", 
-            "text": "Entity objects are provided per domain layer and usually follow a  POPO  design. To simplify its definition common\nfields and features are provided in the form of PHP  traits . Fields can be compared to a read-operation, whereas\nfeatures represent a read/write-operation.  They are defined in a dedicated namespace for discovery, respectively  Msgphp\\Domain\\Entity\\Fields\\  and MsgPhp\\Domain\\Entity\\Features\\ .", 
-            "title": "Entities"
+            "location": "/ddd/identity-mapping/#identity-mapping", 
+            "text": "The domain identity mapping is a service object and is bound to  MsgPhp\\Domain\\DomainIdentityMappingInterface . Its\npurpose is to expose identifier metadata for a known domain entity.", 
+            "title": "Identity Mapping"
         }, 
         {
-            "location": "/ddd/entities/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\Entity\\Fields\\CreatedAtField ;  use   MsgPhp\\Domain\\Entity\\Features\\CanBeEnabled ;  // --- SETUP ---  class   MyEntity  { \n     use   CreatedAtField ; \n     use   CanBeEnabled ; \n\n     public   function   __construct () \n     { \n         $this - createdAt   =   new   \\DateTimeImmutable (); \n     }  }  // --- USAGE ---  $entity   =   new   MyEntity ();  $createdAt   =   $entity - getCreatedAt ();  if   ( ! $entity - isEnabled ())   { \n     $entity - enable ();  }    Note  See the  reference  page for all available entity fields and features", 
-            "title": "Basic Example"
-        }, 
-        {
-            "location": "/ddd/repositories/", 
-            "text": "Repositories\n\n\nA domain repository is not interface bound by default. Instead you can leverage a utility trait, tied to specific\ninfrastructure (e.g. \nDoctrine ORM\n), to rapidly create one. This page describes the\nAPI provided by default \nimplementations\n.\n\n\nAPI\n\n\ndoFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities available. An unlimited collection is implied by \n$limit\n set to zero.\n\n\n\n\ndoFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface\n\n\nFinds all entities matching all specified fields. Supported field values should be \nnull\n, \nscalar\n, \narray\n (one of a\nknown literal list) and \nobject\n (foreign entity or an \nidentifier\n). An unlimited collection is implied\nby \n$limit\n set to zero.\n\n\n\n\ndoFind($id): object\n\n\nFinds a single entity by its identity. Supported identity values should be \nscalar\n, \narray\n (composite \nidentity\n)\nand \nobject\n (foreign entity or an \nidentifier\n).\n\n\n\n\ndoFindByFields(array $fields): object\n\n\nFinds the first entity matching all specified fields. See \ndoFindAllByFields()\n for supported field values.\n\n\n\n\ndoExists($id): bool\n\n\nVerifies if an entity exists by its identity. See \ndoFind()\n for supported identity values.\n\n\n\n\ndoExistsByFields(array $fields): bool\n\n\nVerifies if an entity matching all specified fields exists. See \ndoFindAllByFields()\n for supported field values.\n\n\n\n\ndoSave(object $entity): void\n\n\nPersists an entity into the identity map. The entity will be available on any subsequent query.\n\n\n\n\ndoDelete(object $entity): void\n\n\nRemoves an entity from the identity map. The entity will be unavailable on any subsequent query.\n\n\nImplementations\n\n\nMsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait\n\n\nRepository trait based on in-memory persistence.\n\n\n\n\n__construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)\n\n\n$class\n: The entity class this repository is tied to\n\n\n$identityHelper\n: The domain identity helper. \nRead more\n.\n\n\n$memory\n: Custom memory layer. By default the same global pool is used. See also \nGlobalObjectMemory\n.\n\n\n$accessor\n: Custom object field accessor. See also \nObjectFieldAccessor\n.\n\n\n\n\n\n\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\DomainIdentityHelper\n;\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\\n{\nDomainIdentityMapping\n,\n \nDomainEntityRepositoryTrait\n};\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyEntityRepository\n\n\n{\n\n    \nuse\n \nDomainEntityRepositoryTrait\n \n{\n\n        \ndoFind\n \nas\n \npublic\n \nfind\n;\n\n        \ndoExists\n \nas\n \npublic\n \nexists\n;\n\n        \ndoSave\n \nas\n \npublic\n \nsave\n;\n\n    \n}\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n\n]));\n\n\n\n$repository\n \n=\n \nnew\n \nMyEntityRepository\n(\nMyEntity\n::\nclass\n,\n \n$helper\n);\n\n\n\n// --- USAGE ---\n\n\n\nif\n \n(\n$repository\n-\nexists\n(\n1\n))\n \n{\n\n    \n$entity\n \n=\n \n$repository\n-\nfind\n(\n1\n);\n\n\n}\n \nelse\n \n{\n\n    \n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n    \n$entity\n-\nid\n \n=\n \n1\n;\n\n\n    \n$repository\n-\nsave\n(\n$entity\n);\n\n\n}\n\n\n\n\n\n\nMsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait\n\n\nA Doctrine tailored repository trait.\n\n\n\n\nRead more", 
-            "title": "Repositories"
-        }, 
-        {
-            "location": "/ddd/repositories/#repositories", 
-            "text": "A domain repository is not interface bound by default. Instead you can leverage a utility trait, tied to specific\ninfrastructure (e.g.  Doctrine ORM ), to rapidly create one. This page describes the\nAPI provided by default  implementations .", 
-            "title": "Repositories"
-        }, 
-        {
-            "location": "/ddd/repositories/#api", 
+            "location": "/ddd/identity-mapping/#api", 
             "text": "", 
             "title": "API"
         }, 
         {
-            "location": "/ddd/repositories/#dofindallint-offset-0-int-limit-0-domaincollectioninterface", 
-            "text": "Finds all entities available. An unlimited collection is implied by  $limit  set to zero.", 
-            "title": "doFindAll(int $offset = 0, int $limit = 0): DomainCollectionInterface"
+            "location": "/ddd/identity-mapping/#getidentifierfieldnamesstring-class-array", 
+            "text": "Returns the identifier field names for  $class . Any instance should have an identity composed from these fields.", 
+            "title": "getIdentifierFieldNames(string $class): array"
         }, 
         {
-            "location": "/ddd/repositories/#dofindallbyfieldsarray-fields-int-offset-0-int-limit-0-domaincollectioninterface", 
-            "text": "Finds all entities matching all specified fields. Supported field values should be  null ,  scalar ,  array  (one of a\nknown literal list) and  object  (foreign entity or an  identifier ). An unlimited collection is implied\nby  $limit  set to zero.", 
-            "title": "doFindAllByFields(array $fields, int $offset = 0, int $limit = 0): DomainCollectionInterface"
+            "location": "/ddd/identity-mapping/#getidentityobject-object-array", 
+            "text": "Returns the actual, non empty, identifier values of  $object . Each identifier value is keyed by its corresponding\nidentifier field name.", 
+            "title": "getIdentity(object $object): array"
         }, 
         {
-            "location": "/ddd/repositories/#dofindid-object", 
-            "text": "Finds a single entity by its identity. Supported identity values should be  scalar ,  array  (composite  identity )\nand  object  (foreign entity or an  identifier ).", 
-            "title": "doFind($id): object"
-        }, 
-        {
-            "location": "/ddd/repositories/#dofindbyfieldsarray-fields-object", 
-            "text": "Finds the first entity matching all specified fields. See  doFindAllByFields()  for supported field values.", 
-            "title": "doFindByFields(array $fields): object"
-        }, 
-        {
-            "location": "/ddd/repositories/#doexistsid-bool", 
-            "text": "Verifies if an entity exists by its identity. See  doFind()  for supported identity values.", 
-            "title": "doExists($id): bool"
-        }, 
-        {
-            "location": "/ddd/repositories/#doexistsbyfieldsarray-fields-bool", 
-            "text": "Verifies if an entity matching all specified fields exists. See  doFindAllByFields()  for supported field values.", 
-            "title": "doExistsByFields(array $fields): bool"
-        }, 
-        {
-            "location": "/ddd/repositories/#dosaveobject-entity-void", 
-            "text": "Persists an entity into the identity map. The entity will be available on any subsequent query.", 
-            "title": "doSave(object $entity): void"
-        }, 
-        {
-            "location": "/ddd/repositories/#dodeleteobject-entity-void", 
-            "text": "Removes an entity from the identity map. The entity will be unavailable on any subsequent query.", 
-            "title": "doDelete(object $entity): void"
-        }, 
-        {
-            "location": "/ddd/repositories/#implementations", 
+            "location": "/ddd/identity-mapping/#implementations", 
             "text": "", 
             "title": "Implementations"
         }, 
         {
-            "location": "/ddd/repositories/#msgphpdomaininfrainmemorydomainentityrepositorytrait", 
-            "text": "Repository trait based on in-memory persistence.   __construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)  $class : The entity class this repository is tied to  $identityHelper : The domain identity helper.  Read more .  $memory : Custom memory layer. By default the same global pool is used. See also  GlobalObjectMemory .  $accessor : Custom object field accessor. See also  ObjectFieldAccessor .", 
-            "title": "MsgPhp\\Domain\\Infra\\InMemory\\DomainEntityRepositoryTrait"
+            "location": "/ddd/identity-mapping/#msgphpdomaininfrainmemorydomainidentitymapping", 
+            "text": "Identity mapping based on a known in-memory mapping.   __construct(array $mapping, ObjectFieldAccessor $accessor = null)  $mapping : The identity mapping to use  $accessor : Custom object field accessor. See also  ObjectFieldAccessor .", 
+            "title": "MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping"
         }, 
         {
-            "location": "/ddd/repositories/#basic-example", 
-            "text": "?php  use   MsgPhp\\Domain\\DomainIdentityHelper ;  use   MsgPhp\\Domain\\Infra\\InMemory\\ { DomainIdentityMapping ,   DomainEntityRepositoryTrait };  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyEntityRepository  { \n     use   DomainEntityRepositoryTrait   { \n         doFind   as   public   find ; \n         doExists   as   public   exists ; \n         doSave   as   public   save ; \n     }  }  $helper   =   new   DomainIdentityHelper ( new   DomainIdentityMapping ([ \n    MyEntity :: class   =   id ,  ]));  $repository   =   new   MyEntityRepository ( MyEntity :: class ,   $helper );  // --- USAGE ---  if   ( $repository - exists ( 1 ))   { \n     $entity   =   $repository - find ( 1 );  }   else   { \n     $entity   =   new   MyEntity (); \n     $entity - id   =   1 ; \n\n     $repository - save ( $entity );  }", 
+            "location": "/ddd/identity-mapping/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping ;  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyCompositeEntity  { \n     public   $name ; \n     public   $year ;  }  $mapping   =   new   DomainIdentityMapping ([ \n     MyEntity :: class   =   id , \n     MyCompositeEntity :: class   =   [ name ,   year ],  ]);  // --- USAGE ---  $entity   =   new   MyEntity ();  $entity - id   =   ... ;  $compositeEntity   =   new   MyCompositeEntity ();  $compositeEntity - name   =   ... ;  $compositeEntity - year   =   ... ;  $mapping - getIdentifierFieldNames ( MyEntity :: class );   // [ id ]  $mapping - getIdentifierFieldNames ( MyCompositeEntity :: class );   // [ name ,  year ]  $mapping - getIdentity ( $entity );   // [ id  =  ...]  $mapping - getIdentity ( $compositeEntity );   // [ name  =  ...,  year  =  ...]", 
             "title": "Basic Example"
         }, 
         {
-            "location": "/ddd/repositories/#msgphpdomaininfradoctrinedomainentityrepositorytrait", 
-            "text": "A Doctrine tailored repository trait.   Read more", 
-            "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainEntityRepositoryTrait"
+            "location": "/ddd/identity-mapping/#msgphpdomaininfradoctrinedomainidentitymapping", 
+            "text": "A Doctrine tailored identity mapping.   Read more", 
+            "title": "MsgPhp\\Domain\\Infra\\Doctrine\\DomainIdentityMapping"
+        }, 
+        {
+            "location": "/ddd/identity-helper/", 
+            "text": "Identity Helper\n\n\nMsgPhp\\Domain\\DomainIdentityHelper\n is a utility domain service. Its purpose is to ease working with domain identities\nand the \nidentity mapping\n.\n\n\nA domain identity is a composite value (\narray\n) holding one or more individual identifier values, indexed by an\nidentifier field name. Its purpose is to uniquely identify a domain entity.\n\n\nIdentifier values can be of any type; a \ndomain identifier\n, another (foreign) domain entity, or any\nprimitive scalar.\n\n\nA single identifier value might represent an identity in case the identity is not a composite.\n\n\nAPI\n\n\nisIdentifier($value): bool\n\n\nTells if \n$value\n is a known identifier value. This is either a \ndomain identifier\n object, or another\ndomain entity.\n\n\n\n\nisEmptyIdentifier($value): bool\n\n\nTells if \n$value\n is a known empty identifier value. It returns \ntrue\n if the specified value is either \nnull\n, an \n\nempty\n \ndomain identifier\n, or another domain entity without its identity set.\n\n\n\n\nnormalizeIdentifier($value)\n\n\nReturns the primitive identifier value of \n$value\n. An empty identifier (see \nisEmptyIdentifier()\n) is normalized to\n\nnull\n, a \ndomain identifier\n to \nstring\n, and another domain entity to its normalized identity (\nscalar|array\n).\nAny other type of value is preserved.\n\n\n\n\ngetIdentifiers(object $object): array\n\n\nReturns the actual identifier values of \n$object\n.\n\n\n\n\ngetIdentifierFieldNames(string $class): array\n\n\nSee \nDomainIdentityMappingInterface::getIdentifierFieldNames()\n.\n\n\n\n\nisIdentity(string $class, $value): bool\n\n\nTells if \n$value\n is a valid identity for type \n$class\n. An identity is considered valid if the entity class uses\na single identifier value as identity and \n$value\n is a non empty identifier (see \nisEmptyIdentifier()\n).\n\n\nIn case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.\n\n\n\n\ntoIdentity(string $class, $value): array\n\n\nReturns a composite identity value for \n$class\n from \n$value\n.\n\n\n\n\ngetIdentity(object $object): array\n\n\nSee \nDomainIdentityMappingInterface::getIdentity()\n.\n\n\nBasic Example\n\n\n?php\n\n\n\nuse\n \nMsgPhp\\Domain\\\n{\nDomainId\n,\n \nDomainIdentityHelper\n};\n\n\nuse\n \nMsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping\n;\n\n\n\n// --- SETUP ---\n\n\n\nclass\n \nMyEntity\n\n\n{\n\n    \npublic\n \n$id\n;\n\n\n}\n\n\n\nclass\n \nMyCompositeEntity\n\n\n{\n\n    \npublic\n \n$name\n;\n\n    \npublic\n \n$year\n;\n\n\n}\n\n\n\n$helper\n \n=\n \nnew\n \nDomainIdentityHelper\n(\nnew\n \nDomainIdentityMapping\n([\n\n   \nMyEntity\n::\nclass\n \n=\n \nid\n,\n\n   \nMyCompositeEntity\n::\nclass\n \n=\n \n[\nname\n,\n \nyear\n],\n\n\n]));\n\n\n\n// --- USAGE ---\n\n\n\n$entity\n \n=\n \nnew\n \nMyEntity\n();\n\n\n$entity\n-\nid\n \n=\n \nnew\n \nDomainId\n(\n1\n);\n\n\n\n$compositeEntity\n \n=\n \nnew\n \nMyCompositeEntity\n();\n\n\n$compositeEntity\n-\nname\n \n=\n \n...\n;\n\n\n$compositeEntity\n-\nyear\n \n=\n \n...\n;\n\n\n\n$helper\n-\nisIdentity\n(\n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nnew\n \nDomainId\n(\n1\n));\n \n// true\n\n\n$helper\n-\nisIdentity\n(\n$entity\n);\n \n// true\n\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n());\n \n// null\n\n\n$helper\n-\nnormalizeIdentifier\n(\nnew\n \nDomainId\n(\n1\n));\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n1\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$entity\n);\n \n// \n1\n\n\n$helper\n-\nnormalizeIdentifier\n(\n$compositeEntity\n);\n \n// [\nname\n =\n ..., \nyear\n =\n ....]\n\n\n\n$helper\n-\ngetIdentifiers\n(\n$entity\n);\n \n// [\nid\n]\n\n\n$helper\n-\ngetIdentifiers\n(\n$compositeEntity\n);\n \n// [\nname\n, \nyear\n]\n\n\n\n$helper\n-\nisIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// true\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n1\n);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n]);\n \n// false\n\n\n$helper\n-\nisIdentity\n(\nMyCompositeEntity\n::\nclass\n,\n \n[\nname\n \n=\n \n...\n,\n \nyear\n \n=\n \n...\n]);\n \n// true\n\n\n\n$helper\n-\ntoIdentity\n(\nMyEntity\n::\nclass\n,\n \n1\n);\n \n// [\nid\n =\n 1]", 
+            "title": "Identity Helper"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#identity-helper", 
+            "text": "MsgPhp\\Domain\\DomainIdentityHelper  is a utility domain service. Its purpose is to ease working with domain identities\nand the  identity mapping .  A domain identity is a composite value ( array ) holding one or more individual identifier values, indexed by an\nidentifier field name. Its purpose is to uniquely identify a domain entity.  Identifier values can be of any type; a  domain identifier , another (foreign) domain entity, or any\nprimitive scalar.  A single identifier value might represent an identity in case the identity is not a composite.", 
+            "title": "Identity Helper"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#api", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#isidentifiervalue-bool", 
+            "text": "Tells if  $value  is a known identifier value. This is either a  domain identifier  object, or another\ndomain entity.", 
+            "title": "isIdentifier($value): bool"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#isemptyidentifiervalue-bool", 
+            "text": "Tells if  $value  is a known empty identifier value. It returns  true  if the specified value is either  null , an  empty   domain identifier , or another domain entity without its identity set.", 
+            "title": "isEmptyIdentifier($value): bool"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#normalizeidentifiervalue", 
+            "text": "Returns the primitive identifier value of  $value . An empty identifier (see  isEmptyIdentifier() ) is normalized to null , a  domain identifier  to  string , and another domain entity to its normalized identity ( scalar|array ).\nAny other type of value is preserved.", 
+            "title": "normalizeIdentifier($value)"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#getidentifiersobject-object-array", 
+            "text": "Returns the actual identifier values of  $object .", 
+            "title": "getIdentifiers(object $object): array"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#getidentifierfieldnamesstring-class-array", 
+            "text": "See  DomainIdentityMappingInterface::getIdentifierFieldNames() .", 
+            "title": "getIdentifierFieldNames(string $class): array"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#isidentitystring-class-value-bool", 
+            "text": "Tells if  $value  is a valid identity for type  $class . An identity is considered valid if the entity class uses\na single identifier value as identity and  $value  is a non empty identifier (see  isEmptyIdentifier() ).  In case of one or more identifier values, given in the form of an array, its keys must exactly match the available\nidentifier field names and its values must contain no empty identifiers.", 
+            "title": "isIdentity(string $class, $value): bool"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#toidentitystring-class-value-array", 
+            "text": "Returns a composite identity value for  $class  from  $value .", 
+            "title": "toIdentity(string $class, $value): array"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#getidentityobject-object-array", 
+            "text": "See  DomainIdentityMappingInterface::getIdentity() .", 
+            "title": "getIdentity(object $object): array"
+        }, 
+        {
+            "location": "/ddd/identity-helper/#basic-example", 
+            "text": "?php  use   MsgPhp\\Domain\\ { DomainId ,   DomainIdentityHelper };  use   MsgPhp\\Domain\\Infra\\InMemory\\DomainIdentityMapping ;  // --- SETUP ---  class   MyEntity  { \n     public   $id ;  }  class   MyCompositeEntity  { \n     public   $name ; \n     public   $year ;  }  $helper   =   new   DomainIdentityHelper ( new   DomainIdentityMapping ([ \n    MyEntity :: class   =   id , \n    MyCompositeEntity :: class   =   [ name ,   year ],  ]));  // --- USAGE ---  $entity   =   new   MyEntity ();  $entity - id   =   new   DomainId ( 1 );  $compositeEntity   =   new   MyCompositeEntity ();  $compositeEntity - name   =   ... ;  $compositeEntity - year   =   ... ;  $helper - isIdentity ( 1 );   // false  $helper - isIdentity ( new   DomainId ( 1 ));   // true  $helper - isIdentity ( $entity );   // true  $helper - normalizeIdentifier ( new   DomainId ());   // null  $helper - normalizeIdentifier ( new   DomainId ( 1 ));   //  1  $helper - normalizeIdentifier ( 1 );   //  1  $helper - normalizeIdentifier ( $entity );   //  1  $helper - normalizeIdentifier ( $compositeEntity );   // [ name  =  ...,  year  =  ....]  $helper - getIdentifiers ( $entity );   // [ id ]  $helper - getIdentifiers ( $compositeEntity );   // [ name ,  year ]  $helper - isIdentity ( MyEntity :: class ,   1 );   // true  $helper - isIdentity ( MyCompositeEntity :: class ,   1 );   // false  $helper - isIdentity ( MyCompositeEntity :: class ,   [ name   =   ... ]);   // false  $helper - isIdentity ( MyCompositeEntity :: class ,   [ name   =   ... ,   year   =   ... ]);   // true  $helper - toIdentity ( MyEntity :: class ,   1 );   // [ id  =  1]", 
+            "title": "Basic Example"
         }, 
         {
             "location": "/event-sourcing/event-handlers/", 
