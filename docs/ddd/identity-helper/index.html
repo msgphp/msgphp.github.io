@@ -465,15 +465,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentifiersobject-object-array" title="getIdentifiers(object $object): array" class="md-nav__link">
-    getIdentifiers(object $object): array
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
+  <a href="#getidentifiersobject-object-array" title="getIdentifiers(object $object): array" class="md-nav__link">
+    getIdentifiers(object $object): array
   </a>
   
 </li>
@@ -488,13 +488,6 @@
           <li class="md-nav__item">
   <a href="#toidentitystring-class-value-array" title="toIdentity(string $class, $value): array" class="md-nav__link">
     toIdentity(string $class, $value): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
   </a>
   
 </li>
@@ -1069,15 +1062,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentifiersobject-object-array" title="getIdentifiers(object $object): array" class="md-nav__link">
-    getIdentifiers(object $object): array
+  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
+    getIdentifierFieldNames(string $class): array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#getidentifierfieldnamesstring-class-array" title="getIdentifierFieldNames(string $class): array" class="md-nav__link">
-    getIdentifierFieldNames(string $class): array
+  <a href="#getidentifiersobject-object-array" title="getIdentifiers(object $object): array" class="md-nav__link">
+    getIdentifiers(object $object): array
   </a>
   
 </li>
@@ -1092,13 +1085,6 @@
           <li class="md-nav__item">
   <a href="#toidentitystring-class-value-array" title="toIdentity(string $class, $value): array" class="md-nav__link">
     toIdentity(string $class, $value): array
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getidentityobject-object-array" title="getIdentity(object $object): array" class="md-nav__link">
-    getIdentity(object $object): array
   </a>
   
 </li>
@@ -1156,11 +1142,11 @@ domain entity.</p>
 <code>null</code>, a <a href="../identifiers/">domain identifier</a> to <code>string</code>, and another domain entity to its normalized identity (<code>scalar|array</code>).
 Any other type of value is preserved.</p>
 <hr />
-<h3 id="getidentifiersobject-object-array"><code>getIdentifiers(object $object): array</code><a class="headerlink" href="#getidentifiersobject-object-array" title="Permanent link">&para;</a></h3>
-<p>Returns the actual identifier values of <code>$object</code>.</p>
-<hr />
 <h3 id="getidentifierfieldnamesstring-class-array"><code>getIdentifierFieldNames(string $class): array</code><a class="headerlink" href="#getidentifierfieldnamesstring-class-array" title="Permanent link">&para;</a></h3>
 <p>See <code>DomainIdentityMappingInterface::getIdentifierFieldNames()</code>.</p>
+<hr />
+<h3 id="getidentifiersobject-object-array"><code>getIdentifiers(object $object): array</code><a class="headerlink" href="#getidentifiersobject-object-array" title="Permanent link">&para;</a></h3>
+<p>See <code>DomainIdentityMappingInterface::getIdentifiers()</code>.</p>
 <hr />
 <h3 id="isidentitystring-class-value-bool"><code>isIdentity(string $class, $value): bool</code><a class="headerlink" href="#isidentitystring-class-value-bool" title="Permanent link">&para;</a></h3>
 <p>Tells if <code>$value</code> is a valid identity for type <code>$class</code>. An identity is considered valid if the entity class uses
@@ -1170,9 +1156,6 @@ identifier field names and its values must contain no empty identifiers.</p>
 <hr />
 <h3 id="toidentitystring-class-value-array"><code>toIdentity(string $class, $value): array</code><a class="headerlink" href="#toidentitystring-class-value-array" title="Permanent link">&para;</a></h3>
 <p>Returns a composite identity value for <code>$class</code> from <code>$value</code>.</p>
-<hr />
-<h3 id="getidentityobject-object-array"><code>getIdentity(object $object): array</code><a class="headerlink" href="#getidentityobject-object-array" title="Permanent link">&para;</a></h3>
-<p>See <code>DomainIdentityMappingInterface::getIdentity()</code>.</p>
 <h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1215,9 +1198,6 @@ identifier field names and its values must contain no empty identifiers.</p>
 <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span> <span class="c1">// &quot;1&quot;</span>
 <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// &quot;1&quot;</span>
 <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">normalizeIdentifier</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span> <span class="c1">// [&#39;name&#39; =&gt; ..., &#39;year&#39; =&gt; ....]</span>
-
-<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">getIdentifiers</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span> <span class="c1">// [&lt;id&gt;]</span>
-<span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">getIdentifiers</span><span class="p">(</span><span class="nv">$compositeEntity</span><span class="p">);</span> <span class="c1">// [&lt;name&gt;, &lt;year&gt;]</span>
 
 <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
 <span class="nv">$helper</span><span class="o">-&gt;</span><span class="na">isIdentity</span><span class="p">(</span><span class="nx">MyCompositeEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// false</span>
