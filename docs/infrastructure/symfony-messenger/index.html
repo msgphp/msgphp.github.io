@@ -709,18 +709,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../simple-bus/" title="SimpleBus" class="md-nav__link">
-      SimpleBus
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../symfony-console/" title="Symfony Console" class="md-nav__link">
       Symfony Console
     </a>
@@ -856,8 +844,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cookbook/configuring-a-message-bus/" title="Configuring A Message Bus" class="md-nav__link">
-      Configuring A Message Bus
+    <a href="../../cookbook/configuring-symfony-messenger/" title="Configuring Symfony Messenger" class="md-nav__link">
+      Configuring Symfony Messenger
     </a>
   </li>
 
@@ -1028,14 +1016,7 @@
 <li>Requires <a href="https://packagist.org/packages/symfony/messenger">symfony/messenger</a></li>
 </ul>
 <h2 id="domain-message-bus">Domain Message Bus<a class="headerlink" href="#domain-message-bus" title="Permanent link">&para;</a></h2>
-<p>A Symfony Messenger tailored <a href="../../message-driven/message-bus/">domain message bus</a> is provided by <code>MsgPhp\Domain\Infra\Messenger\DomainMessageBus</code>.
-It decorates any <code>Symfony\Component\Messenger\MessageBusInterface</code> type.</p>
-<ul>
-<li><code>__construct(MessageBusInterface $bus)</code><ul>
-<li><code>$bus</code>: The decorated bus</li>
-</ul>
-</li>
-</ul>
+<p>A Symfony Messenger tailored <a href="../../message-driven/message-bus/">domain message bus</a> is provided by <code>MsgPhp\Domain\Infra\Messenger\DomainMessageBus</code>.</p>
 <h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1044,13 +1025,26 @@ It decorates any <code>Symfony\Component\Messenger\MessageBusInterface</code> ty
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @var MessageBusInterface $bus */</span>
-<span class="nv">$bus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$domainBus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainMessageBus</span><span class="p">(</span><span class="nv">$bus</span><span class="p">);</span>
+<span class="k">class</span> <span class="nc">CommandMessage</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">EventMessage</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="sd">/** @var MessageBusInterface $commandBus */</span>
+<span class="nv">$commandBus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="sd">/** @var MessageBusInterface $commandBus */</span>
+<span class="nv">$eventBus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+<span class="nv">$eventClasses</span> <span class="o">=</span> <span class="p">[</span><span class="nx">EventMessage</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
+
+<span class="nv">$domainBus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainMessageBus</span><span class="p">(</span><span class="nv">$commandBus</span><span class="p">,</span> <span class="nv">$eventBus</span><span class="p">,</span> <span class="nv">$eventClasses</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$domainBus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">SomeMessage</span><span class="p">());</span>
+<span class="nv">$domainBus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CommandMessage</span><span class="p">());</span>
+<span class="nv">$domainBus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">EventMessage</span><span class="p">());</span>
 </pre></div>
                 
                   

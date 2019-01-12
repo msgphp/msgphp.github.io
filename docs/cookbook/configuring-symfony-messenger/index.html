@@ -38,7 +38,7 @@
     
     
       
-        <title>Configuring A Message Bus - MsgPHP Documentation</title>
+        <title>Configuring Symfony Messenger - MsgPHP Documentation</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#configuring-a-message-bus" tabindex="1" class="md-skip">
+      <a href="#configuring-symfony-messenger" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 MsgPHP Documentation
               </span>
               <span class="md-header-nav__topic">
-                Configuring A Message Bus
+                Configuring Symfony Messenger
               </span>
             
           
@@ -707,18 +707,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../infrastructure/simple-bus/" title="SimpleBus" class="md-nav__link">
-      SimpleBus
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../infrastructure/symfony-console/" title="Symfony Console" class="md-nav__link">
       Symfony Console
     </a>
@@ -814,11 +802,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Configuring A Message Bus
+        Configuring Symfony Messenger
       </label>
     
-    <a href="./" title="Configuring A Message Bus" class="md-nav__link md-nav__link--active">
-      Configuring A Message Bus
+    <a href="./" title="Configuring Symfony Messenger" class="md-nav__link md-nav__link--active">
+      Configuring Symfony Messenger
     </a>
     
       
@@ -832,63 +820,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-symfony-messenger" title="Using Symfony Messenger" class="md-nav__link">
-    Using Symfony Messenger
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#using-simplebus" title="Using SimpleBus" class="md-nav__link">
-    Using SimpleBus
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation_1" title="Installation" class="md-nav__link">
-    Installation
+  <a href="#configure-a-command-and-event-bus" title="Configure a Command and Event Bus" class="md-nav__link">
+    Configure a Command and Event Bus
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration_1" title="Configuration" class="md-nav__link">
-    Configuration
+  <a href="#enable-the-command-and-event-bus" title="Enable the Command and Event Bus" class="md-nav__link">
+    Enable the Command and Event Bus
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-custom-bus" title="Using A Custom Bus" class="md-nav__link">
-    Using A Custom Bus
-  </a>
   
 </li>
       
@@ -1025,63 +986,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-symfony-messenger" title="Using Symfony Messenger" class="md-nav__link">
-    Using Symfony Messenger
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#using-simplebus" title="Using SimpleBus" class="md-nav__link">
-    Using SimpleBus
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation_1" title="Installation" class="md-nav__link">
-    Installation
+  <a href="#configure-a-command-and-event-bus" title="Configure a Command and Event Bus" class="md-nav__link">
+    Configure a Command and Event Bus
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration_1" title="Configuration" class="md-nav__link">
-    Configuration
+  <a href="#enable-the-command-and-event-bus" title="Enable the Command and Event Bus" class="md-nav__link">
+    Enable the Command and Event Bus
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-custom-bus" title="Using A Custom Bus" class="md-nav__link">
-    Using A Custom Bus
-  </a>
   
 </li>
       
@@ -1101,14 +1035,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/configuring-a-message-bus.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/msgphp/msgphp/blob/master/docs/cookbook/configuring-symfony-messenger.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="configuring-a-message-bus">Configuring A Message Bus<a class="headerlink" href="#configuring-a-message-bus" title="Permanent link">&para;</a></h1>
-<p>To be able to dispatch the default <a href="../../reference/messages/">messages</a> a <a href="../../message-driven/message-bus/">message bus</a>
-must be configured.</p>
-<h2 id="using-symfony-messenger">Using <a href="../../infrastructure/symfony-messenger/">Symfony Messenger</a><a class="headerlink" href="#using-symfony-messenger" title="Permanent link">&para;</a></h2>
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+                <h1 id="configuring-symfony-messenger">Configuring Symfony Messenger<a class="headerlink" href="#configuring-symfony-messenger" title="Permanent link">&para;</a></h1>
+<p>To be able to dispatch any MsgPHP message a <a href="../../message-driven/message-bus/">domain message bus</a> must be configured.</p>
+<p>In this article is explained how to setup <a href="../../infrastructure/symfony-messenger/">Symfony Messenger infrastructure</a> 
+within a Symfony application.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer install symfony/messenger
 
 <span class="c1"># with Symfony Flex</span>
@@ -1116,13 +1050,13 @@ composer install messenger
 </pre></div>
 
 
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
-<p>See the Messenger <a href="https://github.com/symfony/recipes/blob/master/symfony/messenger/4.1/config/packages/messenger.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/messenger.yaml</code>.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>See the <a href="https://github.com/symfony/recipes/blob/master/symfony/messenger/4.1/config/packages/messenger.yaml">recipe configuration</a> for the minimal configuration to put in <code>config/packages/messenger.yaml</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The configuration is automatically added with Symfony Flex</p>
 </div>
-<p>Configure a command- and event bus:</p>
+<h3 id="configure-a-command-and-event-bus">Configure a Command and Event Bus<a class="headerlink" href="#configure-a-command-and-event-bus" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># config/packages/messenger.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">framework</span><span class="p p-Indicator">:</span>
@@ -1141,8 +1075,11 @@ composer install messenger
 </pre></div>
 
 
-<p>By default MsgPHP uses the bus configured under <code>framework.messenger.default_bus</code>. You can override its alias services
-to use any other bus:</p>
+<p>By adding the <code>msgphp.messenger.console_message_receiver</code> middleware MsgPHP console commands are able to receive back a
+dispatched message. This is recommended to provide better output in CLI.</p>
+<h3 id="enable-the-command-and-event-bus">Enable the Command and Event Bus<a class="headerlink" href="#enable-the-command-and-event-bus" title="Permanent link">&para;</a></h3>
+<p>MsgPHP uses the bus configured with <code>framework.messenger.default_bus</code> for both command and event messages by default. To
+use your custom buses instead configure the bus aliases:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
 
 <span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
@@ -1151,55 +1088,6 @@ to use any other bus:</p>
     <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.command_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@command_bus&#39;</span>
     <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.event_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@event_bus&#39;</span>
 </pre></div>
-
-
-<h2 id="using-simplebus">Using <a href="../../infrastructure/simple-bus/">SimpleBus</a><a class="headerlink" href="#using-simplebus" title="Permanent link">&para;</a></h2>
-<h3 id="installation_1">Installation<a class="headerlink" href="#installation_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>composer install simple-bus/symfony-bridge
-</pre></div>
-
-
-<h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h3>
-<p>Enable the bundles:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="c1">// config/bundles.php</span>
-
-<span class="k">return</span> <span class="p">[</span>
-    <span class="c1">// ...</span>
-    <span class="nx">SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">],</span>
-    <span class="nx">SimpleBus\SymfonyBridge\SimpleBusEventBusBundle</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">],</span>
-<span class="p">];</span>
-</pre></div>
-
-
-<p>By default MsgPHP uses the <code>simple_bus.command_bus</code> and <code>simple_bus.event_bus</code> services. You can override its alias 
-services to use any other bus:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
-
-<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="c1"># ...</span>
-
-    <span class="l l-Scalar l-Scalar-Plain">msgphp.simple_bus.command_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@simple_bus.command_bus&#39;</span>
-    <span class="l l-Scalar l-Scalar-Plain">msgphp.simple_bus.event_bus</span><span class="p p-Indicator">:</span> <span class="s">&#39;@simple_bus.event_bus&#39;</span>
-</pre></div>
-
-
-<h2 id="using-a-custom-bus">Using A Custom Bus<a class="headerlink" href="#using-a-custom-bus" title="Permanent link">&para;</a></h2>
-<p>To use a custom <a href="../../message-driven/message-bus/">message bus</a> implementation you can override its main alias service:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
-
-<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
-    <span class="c1"># ...</span>
-
-    <span class="l l-Scalar l-Scalar-Plain">MsgPhp\Domain\Message\DomainMessageBusInterface</span><span class="p p-Indicator">:</span> <span class="s">&#39;@my_bus&#39;</span>
-</pre></div>
-
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The implementation must be capable to dispatch both command- and event messages</p>
-</div>
                 
                   
                 
