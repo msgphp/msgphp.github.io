@@ -336,46 +336,10 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
-    <a href="../../ddd/factory/object/" title="Object Factory" class="md-nav__link">
+    <a href="../../ddd/object-factory/" title="Object Factory" class="md-nav__link">
       Object Factory
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ddd/factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
-      Entity Aware Factory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1006,14 +970,7 @@
 <li>Requires <a href="https://packagist.org/packages/doctrine/collections">doctrine/collections</a></li>
 </ul>
 <h2 id="domain-collection">Domain Collection<a class="headerlink" href="#domain-collection" title="Permanent link">&para;</a></h2>
-<p>A Doctrine tailored <a href="../../ddd/collections/">domain collection</a> is provided by <code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code>.
-It decorates any <code>Doctrine\Common\Collections\Collection</code> type.</p>
-<ul>
-<li><code>__construct(Collection $collection)</code><ul>
-<li><code>$collection</code>: The decorated collection</li>
-</ul>
-</li>
-</ul>
+<p>A Doctrine tailored <a href="../../ddd/collections/">domain collection</a> is provided by <code>MsgPhp\Domain\Infra\Doctrine\DomainCollection</code>.</p>
 <h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1023,10 +980,6 @@ It decorates any <code>Doctrine\Common\Collections\Collection</code> type.</p>
 <span class="c1">// --- SETUP ---</span>
 
 <span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">(</span><span class="k">new</span> <span class="nx">ArrayCollection</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]));</span>
-
-<span class="c1">// static</span>
-
-<span class="nv">$collection</span> <span class="o">=</span> <span class="nx">DomainCollection</span><span class="o">::</span><span class="na">fromValue</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 </pre></div>
                 
                   

@@ -457,46 +457,10 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
-    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
+    <a href="../object-factory/" title="Object Factory" class="md-nav__link">
       Object Factory
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
-      Entity Aware Factory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1161,12 +1125,6 @@ be returned.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomaindomainid"><code>MsgPhp\Domain\DomainId</code><a class="headerlink" href="#msgphpdomaindomainid" title="Permanent link">&para;</a></h3>
 <p>A first class citizen domain identifier.</p>
-<ul>
-<li><code>__construct(string $id = null)</code><ul>
-<li><code>$id</code>: The primitive identifier value. In case of <code>null</code> an empty identifier is implied.</li>
-</ul>
-</li>
-</ul>
 <h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1174,29 +1132,19 @@ be returned.</p>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">OtherDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span>
-<span class="p">{</span>
-<span class="p">}</span>
-
-<span class="nv">$emptyId</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
 <span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="nv">$emptyId</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span>
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
 <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// true</span>
 
-<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="nv">$emptyId</span><span class="p">);</span> <span class="c1">// true</span>
-<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">());</span> <span class="c1">// false</span>
 <span class="nv">$id</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// true</span>
-<span class="nv">$id</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">OtherDomainId</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">));</span> <span class="c1">// false due type varying</span>
+<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">equals</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainId</span><span class="p">());</span> <span class="c1">// false</span>
 
+<span class="nv">$id</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// &quot;1&quot;</span>
 <span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// &quot;&quot;</span>
-<span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="c1">// &quot;1&quot;</span>
-
-<span class="nv">$emptyStringId</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-<span class="nv">$emptyStringId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="nv">$emptyStringId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// &quot;&quot;</span>
-<span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="k">null</span> <span class="o">:</span> <span class="nv">$emptyId</span><span class="o">-&gt;</span><span class="na">toString</span><span class="p">();</span> <span class="c1">// null</span>
 </pre></div>
 
 

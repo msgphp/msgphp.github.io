@@ -478,46 +478,10 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Factories
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Factories
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
-    <a href="../factory/object/" title="Object Factory" class="md-nav__link">
+    <a href="../object-factory/" title="Object Factory" class="md-nav__link">
       Object Factory
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../factory/entity-aware/" title="Entity Aware Factory" class="md-nav__link">
-      Entity Aware Factory
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1212,15 +1176,6 @@ and <code>object</code> (i.e. another entity or its <a href="../identifiers/">id
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomaininfrainmemorydomainentityrepositorytrait"><code>MsgPhp\Domain\Infra\InMemory\DomainEntityRepositoryTrait</code><a class="headerlink" href="#msgphpdomaininfrainmemorydomainentityrepositorytrait" title="Permanent link">&para;</a></h3>
 <p>Repository trait based on in-memory persistence.</p>
-<ul>
-<li><code>__construct(string $class, DomainIdentityHelper $identityHelper, GlobalObjectMemory $memory = null, ObjectFieldAccessor $accessor = null)</code><ul>
-<li><code>$class</code>: The entity class this repository is tied to</li>
-<li><code>$identityHelper</code>: The domain identity helper. <a href="../identity-helper/">Read more</a>.</li>
-<li><code>$memory</code>: Custom memory layer. By default the same global pool is used. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/InMemory/GlobalObjectMemory.html"><code>GlobalObjectMemory</code></a>.</li>
-<li><code>$accessor</code>: Custom object field accessor. See also <a href="https://msgphp.github.io/api/MsgPhp/Domain/Infra/InMemory/ObjectFieldAccessor.html"><code>ObjectFieldAccessor</code></a>.</li>
-</ul>
-</li>
-</ul>
 <h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -1243,11 +1198,9 @@ and <code>object</code> (i.e. another entity or its <a href="../identifiers/">id
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nv">$helper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityHelper</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
-   <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-<span class="p">]));</span>
-
-<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntityRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$helper</span><span class="p">);</span>
+<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntityRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">new</span> <span class="nx">DomainIdentityHelper</span><span class="p">(</span><span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">([</span>
+    <span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<span class="p">])));</span>
 
 <span class="c1">// --- USAGE ---</span>
 
@@ -1302,7 +1255,7 @@ and <code>object</code> (i.e. another entity or its <a href="../identifiers/">id
           </a>
         
         
-          <a href="../factory/object/" title="Object Factory" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../object-factory/" title="Object Factory" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
