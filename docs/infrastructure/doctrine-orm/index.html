@@ -343,30 +343,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ddd/identity-mapping/" title="Identity Mapping" class="md-nav__link">
-      Identity Mapping
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ddd/identity-helper/" title="Identity Helper" class="md-nav__link">
-      Identity Helper
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -666,26 +642,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#domain-identity-mapping" title="Domain Identity Mapping" class="md-nav__link">
-    Domain Identity Mapping
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" title="Basic Example" class="md-nav__link">
-    Basic Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#domain-repository" title="Domain Repository" class="md-nav__link">
     Domain Repository
   </a>
@@ -694,7 +650,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -714,7 +670,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_2" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -734,7 +690,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_3" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example_2" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -986,26 +942,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#domain-identity-mapping" title="Domain Identity Mapping" class="md-nav__link">
-    Domain Identity Mapping
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-example" title="Basic Example" class="md-nav__link">
-    Basic Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#domain-repository" title="Domain Repository" class="md-nav__link">
     Domain Repository
   </a>
@@ -1014,7 +950,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -1034,7 +970,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_2" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example_1" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -1054,7 +990,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-example_3" title="Basic Example" class="md-nav__link">
+  <a href="#basic-example_2" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
   
@@ -1089,25 +1025,9 @@
 <ul>
 <li>Requires <a href="https://packagist.org/packages/doctrine/orm">doctrine/orm</a></li>
 </ul>
-<h2 id="domain-identity-mapping">Domain Identity Mapping<a class="headerlink" href="#domain-identity-mapping" title="Permanent link">&para;</a></h2>
-<p>A Doctrine tailored <a href="../../ddd/identity-mapping/">identity mapping</a> is provided by <code>MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</code>.</p>
-<h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdentityMapping</span><span class="p">;</span>
-
-<span class="c1">// --- SETUP ---</span>
-
-<span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$mapping</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainIdentityMapping</span><span class="p">(</span><span class="nv">$em</span><span class="p">);</span>
-</pre></div>
-
-
 <h2 id="domain-repository">Domain Repository<a class="headerlink" href="#domain-repository" title="Permanent link">&para;</a></h2>
 <p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by <code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>.</p>
-<h3 id="basic-example_1">Basic Example<a class="headerlink" href="#basic-example_1" title="Permanent link">&para;</a></h3>
+<h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
@@ -1158,7 +1078,7 @@
 <p>A Doctrine tailored <a href="../../ddd/object-factory/">object factory</a> is provided by
 <code>MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory</code>.</p>
 <p>When working with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html">ORM inheritance</a> the discriminator field can be provided to factorize a specific entity type.</p>
-<h3 id="basic-example_2">Basic Example<a class="headerlink" href="#basic-example_2" title="Permanent link">&para;</a></h3>
+<h3 id="basic-example_1">Basic Example<a class="headerlink" href="#basic-example_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
@@ -1207,7 +1127,7 @@ a problem can occur when hydrating scalar values, e.g. with <code>Query::getScal
 <p>It would use instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
 value (due to <code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> it will be lost.</p>
 <p>To overcome, two hydration modes are available to hydrate the primitive identifier value instead.</p>
-<h3 id="basic-example_3">Basic Example<a class="headerlink" href="#basic-example_3" title="Permanent link">&para;</a></h3>
+<h3 id="basic-example_2">Basic Example<a class="headerlink" href="#basic-example_2" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\DBAL\Types\Type</span><span class="p">;</span>
