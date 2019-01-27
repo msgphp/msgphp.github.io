@@ -278,9 +278,45 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      User Bundle
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        User Bundle
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../bundle-installation/" title="Bundle Installation" class="md-nav__link">
-      Bundle Installation
+    <a href="../user-bundle/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuring-symfony-messenger/" title="Configuring Symfony Messenger" class="md-nav__link">
+      Configuring Symfony Messenger
     </a>
   </li>
 
@@ -351,47 +387,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#mapping-entities" title="Mapping Entities" class="md-nav__link">
-    Mapping Entities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mapping-identifiers" title="Mapping Identifiers" class="md-nav__link">
-    Mapping Identifiers
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#custom-identifiers" title="Custom Identifiers" class="md-nav__link">
-    Custom Identifiers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disable-identifier-nullability" title="Disable Identifier Nullability" class="md-nav__link">
-    Disable Identifier Nullability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disable-automatic-identifier-hydration" title="Disable Automatic Identifier Hydration" class="md-nav__link">
-    Disable Automatic Identifier Hydration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -400,18 +395,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../configuring-symfony-messenger/" title="Configuring Symfony Messenger" class="md-nav__link">
-      Configuring Symfony Messenger
-    </a>
   </li>
 
         
@@ -882,47 +865,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#mapping-entities" title="Mapping Entities" class="md-nav__link">
-    Mapping Entities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mapping-identifiers" title="Mapping Identifiers" class="md-nav__link">
-    Mapping Identifiers
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#custom-identifiers" title="Custom Identifiers" class="md-nav__link">
-    Custom Identifiers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disable-identifier-nullability" title="Disable Identifier Nullability" class="md-nav__link">
-    Disable Identifier Nullability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disable-automatic-identifier-hydration" title="Disable Automatic Identifier Hydration" class="md-nav__link">
-    Disable Automatic Identifier Hydration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -974,6 +916,7 @@ composer install orm
 
 <p>Create the database:</p>
 <div class="codehilite"><pre><span></span>bin/console doctrine:database:create
+bin/console doctrine:schema:update
 </pre></div>
 
 
@@ -987,161 +930,6 @@ configure the entity manager alias service:</p>
 
     <span class="nt">msgphp.doctrine.entity_manager</span><span class="p">:</span> <span class="s">&#39;@doctrine.orm.other_entity_manager&#39;</span>
 </pre></div>
-
-
-<h2 id="mapping-entities">Mapping Entities<a class="headerlink" href="#mapping-entities" title="Permanent link">&para;</a></h2>
-<p>A MsgPHP bundle provides its base entity models in the form of <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses">mapped superclasses</a>. An actual entity object must be
-defined by your application:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\Entity\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span> <span class="k">as</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="sd">/**</span>
-<span class="sd"> * @ORM\Entity()</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="err">&lt;</span><span class="nc">SomeEntity</span><span class="o">&gt;</span> <span class="k">extends</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span>
-<span class="p">{</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>Let MsgPHP know about your entity:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_&lt;domain-name&gt;.yaml</span>
-
-<span class="nt">msgphp_&lt;domain-name&gt;</span><span class="p">:</span> <span class="c1"># e.g. msgphp_user</span>
-    <span class="nt">class_mapping</span><span class="p">:</span>
-        <span class="nt">MsgPhp\&lt;DomainName&gt;\Entity\&lt;SomeEntity&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">App\Entity\&lt;SomeEntity&gt;</span>
-</pre></div>
-
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>With Symfony Flex the required entities of a MsgPHP bundle are automatically created and configured</p>
-</div>
-<h2 id="mapping-identifiers">Mapping Identifiers<a class="headerlink" href="#mapping-identifiers" title="Permanent link">&para;</a></h2>
-<p>When an entity object is identified using a <a href="../../ddd/identifiers/">domain identifier</a> we must configure it accordingly:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\Entity\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span> <span class="k">as</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">IdInterface</span><span class="p">;</span>
-
-<span class="sd">/**</span>
-<span class="sd"> * @ORM\Entity()</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="err">&lt;</span><span class="nc">SomeEntity</span><span class="o">&gt;</span> <span class="k">extends</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var &lt;SomeEntity&gt;IdInterface|null</span>
-<span class="sd">     * @ORM\Id()</span>
-<span class="sd">     * @ORM\GeneratedValue()</span>
-<span class="sd">     * @ORM\Column(type=&quot;msghp_some_entity_id&quot;)</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When using an identifier that is able to calculate a value upfront (e.g. UUIDs) the <code>@ORM\GeneratedValue()</code> is not
-necessary</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><a href="../../infrastructure/doctrine-dbal/#domain-identifier-type">Read more</a> about the Doctrine domain identifier type</p>
-</div>
-<h3 id="custom-identifiers">Custom Identifiers<a class="headerlink" href="#custom-identifiers" title="Permanent link">&para;</a></h3>
-<p>In case a custom implementation is used it should be configured accordingly:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_&lt;domain-name&gt;.yaml</span>
-
-<span class="nt">msgphp_&lt;domain-name&gt;</span><span class="p">:</span> <span class="c1"># e.g. msgphp_user</span>
-    <span class="nt">class_mapping</span><span class="p">:</span>
-        <span class="nt">MsgPhp\&lt;DomainName&gt;\&lt;SomeEntity&gt;IdInterface</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">App\&lt;SomeEntity&gt;Id</span>
-    <span class="nt">id_type_mapping</span><span class="p">:</span>
-        <span class="nt">MsgPhp\&lt;DomainName&gt;\&lt;SomeEntity&gt;IdInterface</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bigint</span>
-</pre></div>
-
-
-<h3 id="disable-identifier-nullability">Disable Identifier Nullability<a class="headerlink" href="#disable-identifier-nullability" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\Entity\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span> <span class="k">as</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">IdInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">Id</span><span class="p">;</span>
-
-<span class="sd">/**</span>
-<span class="sd"> * @ORM\Entity()</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="err">&lt;</span><span class="nc">SomeEntity</span><span class="o">&gt;</span> <span class="k">extends</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var &lt;SomeEntity&gt;IdInterface</span>
-<span class="sd">     * @ORM\Id()</span>
-<span class="sd">     * @ORM\GeneratedValue()</span>
-<span class="sd">     * @ORM\Column(type=&quot;msghp_some_entity_id&quot;)</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">IdInterface</span> <span class="nv">$id</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// alternatively (coupled)</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="k">new</span> <span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">Id</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h3 id="disable-automatic-identifier-hydration">Disable Automatic Identifier Hydration<a class="headerlink" href="#disable-automatic-identifier-hydration" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\Entity\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span> <span class="k">as</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">IdInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\</span><span class="o">&lt;</span><span class="nx">DomainName</span><span class="o">&gt;</span><span class="nx">\</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">Id</span><span class="p">;</span>
-
-<span class="sd">/**</span>
-<span class="sd"> * @ORM\Entity()</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="err">&lt;</span><span class="nc">SomeEntity</span><span class="o">&gt;</span> <span class="k">extends</span> <span class="nx">Base</span><span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @var int|null</span>
-<span class="sd">     * @ORM\Id()</span>
-<span class="sd">     * @ORM\GeneratedValue()</span>
-<span class="sd">     * @ORM\Column(type=&quot;integer&quot;)</span>
-<span class="sd">     */</span>
-    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">IdInterface</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">SomeEntity</span><span class="o">&gt;</span><span class="nx">Id</span><span class="o">::</span><span class="na">fromValue</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><a href="../../infrastructure/doctrine-orm/#domain-identifier-hydration">Read more</a> about Doctrine identifier hydration</p>
-</div>
                 
                   
                 
@@ -1162,7 +950,7 @@ necessary</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../bundle-installation/" title="Bundle Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../configuring-symfony-messenger/" title="Configuring Symfony Messenger" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1171,19 +959,19 @@ necessary</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Bundle Installation
+                Configuring Symfony Messenger
               </span>
             </div>
           </a>
         
         
-          <a href="../configuring-symfony-messenger/" title="Configuring Symfony Messenger" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../ddd/identifiers/" title="Identifiers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Configuring Symfony Messenger
+                Identifiers
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
