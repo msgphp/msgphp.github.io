@@ -348,6 +348,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#override-mapping-configuration" title="Override Mapping Configuration" class="md-nav__link">
+    Override Mapping Configuration
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -868,6 +875,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#override-mapping-configuration" title="Override Mapping Configuration" class="md-nav__link">
+    Override Mapping Configuration
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1001,10 +1015,24 @@ enables decoupling between your entity and its identifier. To disable it, use:</
 </pre></div>
 
 
+<h3 id="override-mapping-configuration">Override Mapping Configuration<a class="headerlink" href="#override-mapping-configuration" title="Permanent link">&para;</a></h3>
+<p>If for some reason the default mapping needs to be customized, create the file <code>config/msgphp/doctrine/User.Entity.User.orm.xml</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;doctrine-mapping&gt;</span>
+    <span class="nt">&lt;mapped-superclass</span> <span class="na">name=</span><span class="s">&quot;MsgPhp\User\Entity\User&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- ... --&gt;</span>    
+    <span class="nt">&lt;/mapped-superclass&gt;</span>
+<span class="nt">&lt;/doctrine-mapping&gt;</span>
+</pre></div>
+
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See <a href="https://github.com/msgphp/user/tree/master/Infra/Doctrine/Resources/dist-mapping">default mapping files</a></p>
+</div>
 <h2 id="configure-the-user-identity">Configure the User Identity<a class="headerlink" href="#configure-the-user-identity" title="Permanent link">&para;</a></h2>
 <p>The user is identified by a built-in <a href="../../../ddd/identifiers/">domain identifier</a> of type <code>MsgPhp\User\UserIdInterface</code>.</p>
-<p>The default data type is <code>integer</code> and uses the first-class <code>MsgPhp\User\UserId</code> implementation.</p>
-<p>Optionally change the data type and implementation being used by MsgPHP:</p>
+<p>The default data type is considered <code>integer</code> using a default implementation of type: <code>MsgPhp\User\UserId</code>.</p>
+<p>Optionally change the data type and implementation used by MsgPHP:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># config/packages/msgphp_user.yaml</span>
 
 <span class="nt">msgphp_user</span><span class="p">:</span>
@@ -1024,7 +1052,7 @@ enables decoupling between your entity and its identifier. To disable it, use:</
 </pre></div>
 
 
-<p>This changes the default implementation to <code>MsgPhp\User\Infra\Uuid\UserId</code>, a sub class of the default <a href="../../../infrastructure/uuid/#domain-identifier">UUID domain identifier</a>.</p>
+<p>This changes the default implementation used by MsgPHP to <code>MsgPhp\User\Infra\Uuid\UserId</code>, a sub class of the default <a href="../../../infrastructure/uuid/#domain-identifier">UUID domain identifier</a>.</p>
                 
                   
                 

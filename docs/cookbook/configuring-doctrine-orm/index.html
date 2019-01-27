@@ -387,6 +387,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#overriding-mapping-configuration" title="Overriding Mapping Configuration" class="md-nav__link">
+    Overriding Mapping Configuration
+  </a>
+  
+</li>
+      
       
       
       
@@ -865,6 +872,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#overriding-mapping-configuration" title="Overriding Mapping Configuration" class="md-nav__link">
+    Overriding Mapping Configuration
+  </a>
+  
+</li>
+      
       
       
       
@@ -929,6 +943,26 @@ configure the entity manager alias service:</p>
     <span class="c1"># ...</span>
 
     <span class="nt">msgphp.doctrine.entity_manager</span><span class="p">:</span> <span class="s">&#39;@doctrine.orm.other_entity_manager&#39;</span>
+</pre></div>
+
+
+<h2 id="overriding-mapping-configuration">Overriding Mapping Configuration<a class="headerlink" href="#overriding-mapping-configuration" title="Permanent link">&para;</a></h2>
+<p>Use a fixed max key length:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
+
+<span class="nt">parameters</span><span class="p">:</span>
+    <span class="nt">msgphp.doctrine.mapping_config</span><span class="p">:</span>
+        <span class="nt">key_max_length</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">191</span>
+</pre></div>
+
+
+<p>By default MsgPHPs built-in mapping files can be overridden by putting a modified version in <code>%kernel.project_dir%/config/msgphp/doctrine</code>.
+To specify a different location, use:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># config/services.yaml</span>
+
+<span class="nt">parameters</span><span class="p">:</span>
+    <span class="nt">msgphp.doctrine.mapping_config</span><span class="p">:</span>
+        <span class="nt">mapping_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/some/path</span>
 </pre></div>
                 
                   
