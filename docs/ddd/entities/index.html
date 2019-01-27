@@ -342,6 +342,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#entity-fields" title="Entity Fields" class="md-nav__link">
+    Entity Fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity-features" title="Entity Features" class="md-nav__link">
+    Entity Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
   </a>
@@ -772,102 +786,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Reference
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Reference
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/identifiers/" title="Identifiers" class="md-nav__link">
-      Identifiers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/entities/" title="Entities" class="md-nav__link">
-      Entities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/repositories/" title="Repositories" class="md-nav__link">
-      Repositories
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/messages/" title="Messages" class="md-nav__link">
-      Messages
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/domain-events/" title="Domain Events" class="md-nav__link">
-      Domain Events
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
-      Doctrine Identifier Types
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -887,6 +805,20 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-fields" title="Entity Fields" class="md-nav__link">
+    Entity Fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity-features" title="Entity Features" class="md-nav__link">
+    Entity Features
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#basic-example" title="Basic Example" class="md-nav__link">
@@ -917,11 +849,18 @@
                 <h1 id="entities">Entities<a class="headerlink" href="#entities" title="Permanent link">&para;</a></h1>
 <p>Domain entities are "<a href="https://en.wikipedia.org/wiki/Plain_vanilla">vanilla</a> PHP objects" owned by the user. To simplify its definition common <em>fields</em> and <em>features</em>
 are provided in the form of PHP <a href="https://secure.php.net/traits">traits</a>.</p>
-<p>Fields can be compared to a read-operation, whereas features represent a read/write-operation. They can be discovered
-in the following namespaces:</p>
+<h2 id="entity-fields">Entity Fields<a class="headerlink" href="#entity-fields" title="Permanent link">&para;</a></h2>
+<p>Use entity fields to provide <em>read operations</em> for common entity fields. Built-in fields are:</p>
 <ul>
-<li><code>Msgphp\Domain\Entity\Fields\</code></li>
-<li><code>MsgPhp\Domain\Entity\Features\</code></li>
+<li><code>Msgphp\Domain\Entity\Fields\CreatedAtField</code></li>
+<li><code>Msgphp\Domain\Entity\Fields\EnabledField</code></li>
+<li><code>Msgphp\Domain\Entity\Fields\LastUpdatedAtField</code></li>
+</ul>
+<h2 id="entity-features">Entity Features<a class="headerlink" href="#entity-features" title="Permanent link">&para;</a></h2>
+<p>Use entity features to provide <em>write operations</em> for common entity fields. Built-in features are:</p>
+<ul>
+<li><code>MsgPhp\Domain\Entity\Features\CanBeConfirmed</code></li>
+<li><code>MsgPhp\Domain\Entity\Features\CanBeEnabled</code></li>
 </ul>
 <h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -951,12 +890,6 @@ in the following namespaces:</p>
     <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">enable</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the <a href="../../reference/entities/#msgphpdomain">reference</a> page for all available fields and features</p>
-</div>
                 
                   
                 

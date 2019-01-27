@@ -786,102 +786,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Reference
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Reference
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/identifiers/" title="Identifiers" class="md-nav__link">
-      Identifiers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/entities/" title="Entities" class="md-nav__link">
-      Entities
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/repositories/" title="Repositories" class="md-nav__link">
-      Repositories
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/messages/" title="Messages" class="md-nav__link">
-      Messages
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/domain-events/" title="Domain Events" class="md-nav__link">
-      Domain Events
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../reference/doctrine-identifier-types/" title="Doctrine Identifier Types" class="md-nav__link">
-      Doctrine Identifier Types
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -948,13 +852,14 @@
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a marker interface and has no API</p>
+<p>This is a marker interface and has no default API</p>
 </div>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the <a href="../../reference/domain-events/#msgphpdomain">reference</a> page for all available domain events</p>
-</div>
+<ul>
+<li><code>MsgPhp\Domain\Event\ConfirmEvent</code></li>
+<li><code>MsgPhp\Domain\Event\DisableEvent</code></li>
+<li><code>MsgPhp\Domain\Event\EnableEvent</code></li>
+</ul>
 <h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
