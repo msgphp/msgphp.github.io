@@ -877,18 +877,24 @@
 <li>Requires <a href="https://packagist.org/packages/ramsey/uuid">ramsey/uuid</a></li>
 </ul>
 <h2 id="domain-identifier">Domain Identifier<a class="headerlink" href="#domain-identifier" title="Permanent link">&para;</a></h2>
-<p>A UUID tailored <a href="../../ddd/identifiers/">domain identifier</a> is provided by <code>MsgPhp\Domain\Infra\Uuid\DomainId</code>.</p>
+<p>A UUID tailored <a href="../../ddd/identifiers/">domain identifier</a> trait is provided by <code>MsgPhp\Domain\Infra\Uuid\DomainIdTrait</code>.</p>
 <h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainIdInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainIdTrait</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Ramsey\Uuid\Uuid</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">();</span> <span class="c1">// a new UUID version 4 value</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid1</span><span class="p">());</span>
-<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainId</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;00000000-0000-0000-0000-000000000000&#39;</span><span class="p">));</span> 
+<span class="k">final</span> <span class="k">class</span> <span class="nc">MyDomainUuid</span> <span class="k">implements</span> <span class="nx">DomainIdInterface</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DomainIdTrait</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyDomainUuid</span><span class="p">();</span> <span class="c1">// a new UUID version 4 value</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyDomainUuid</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">uuid1</span><span class="p">());</span>
+<span class="nv">$id</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyDomainUuid</span><span class="p">(</span><span class="nx">Uuid</span><span class="o">::</span><span class="na">fromString</span><span class="p">(</span><span class="s1">&#39;00000000-0000-0000-0000-000000000000&#39;</span><span class="p">));</span> 
 </pre></div>
                 
                   
