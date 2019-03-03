@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Doctrine ORM
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Doctrine ORM
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -967,7 +959,9 @@
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity() */</span>
+<span class="sd">/**</span>
+<span class="sd"> * @ORM\Entity()</span>
+<span class="sd"> */</span>
 <span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
     <span class="sd">/** @ORM\Id() @ORM\Column(type=&quot;string&quot;) */</span>
@@ -1015,7 +1009,7 @@
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span> <span class="k">as</span> <span class="nx">BaseDomainObjectFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\</span><span class="p">{</span><span class="nx">DomainIdentityMapping</span><span class="p">,</span> <span class="nx">DomainObjectFactory</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1034,7 +1028,9 @@
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="sd">/** @ORM\Entity */</span>
+<span class="sd">/**</span>
+<span class="sd"> * @ORM\Entity()</span>
+<span class="sd"> */</span>
 <span class="k">class</span> <span class="nc">MyOtherEntity</span> <span class="k">extends</span> <span class="nx">MyEntity</span>
 <span class="p">{</span>
 <span class="p">}</span>
@@ -1064,22 +1060,26 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
 <span class="k">use</span> <span class="nx">Doctrine\DBAL\Types\Type</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdType</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\</span><span class="p">{</span><span class="nx">ScalarHydrator</span><span class="p">,</span> <span class="nx">SingleScalarHydrator</span><span class="p">};</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\ScalarHydrator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\SingleScalarHydrator</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @ORM\Entity() */</span>
+<span class="sd">/**</span>
+<span class="sd"> * @ORM\Entity()</span>
+<span class="sd"> */</span>
 <span class="k">class</span> <span class="nc">MyEntity</span>
 <span class="p">{</span>
-    <span class="sd">/** @var DomainId @ORM\Id() @ORM\Column(type=&quot;msgphp_domain_id&quot;) */</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var MyDomainId|null</span>
+<span class="sd">     * @ORM\Id() @ORM\Column(type=&quot;my_domain_id&quot;)</span>
+<span class="sd">     */</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">DomainIdType</span><span class="o">::</span><span class="na">setClass</span><span class="p">(</span><span class="nx">DomainId</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
-<span class="nx">DomainIdType</span><span class="o">::</span><span class="na">setDataType</span><span class="p">(</span><span class="nx">Type</span><span class="o">::</span><span class="na">INTEGER</span><span class="p">);</span>
-<span class="nx">Type</span><span class="o">::</span><span class="na">addType</span><span class="p">(</span><span class="nx">DomainIdType</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">DomainIdType</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">setClass</span><span class="p">(</span><span class="nx">MyDomainId</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">setDataType</span><span class="p">(</span><span class="nx">Type</span><span class="o">::</span><span class="na">INTEGER</span><span class="p">);</span>
+<span class="nx">Type</span><span class="o">::</span><span class="na">addType</span><span class="p">(</span><span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
 <span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
@@ -1161,15 +1161,13 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

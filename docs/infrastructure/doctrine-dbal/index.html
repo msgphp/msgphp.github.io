@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Doctrine DBAL
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Doctrine DBAL
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -883,20 +875,14 @@
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\DBAL\Types\Type</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainId</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainIdType</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyDomainId</span> <span class="k">extends</span> <span class="nx">DomainId</span>
-<span class="p">{</span>
-<span class="p">}</span>
 
 <span class="k">class</span> <span class="nc">MyDomainIdType</span> <span class="k">extends</span> <span class="nx">DomainIdType</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">const</span> <span class="no">NAME</span> <span class="o">=</span> <span class="s1">&#39;my_domain_id&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-
 
 <span class="c1">// --- USAGE ---</span>
 
@@ -907,14 +893,13 @@
 </pre></div>
 
 
-<p>To leverage the tailored <a href="../uuid/#domain-identifier">UUID identifier</a> use a data type from
-<a href="https://packagist.org/packages/ramsey/uuid-doctrine">ramsey/uuid-doctrine</a> instead.</p>
+<p>To leverage a tailored <a href="../uuid/#domain-identifier">UUID identifier</a> use one of the UUID data types
+provided by <a href="https://packagist.org/packages/ramsey/uuid-doctrine">ramsey/uuid-doctrine</a>.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Uuid\DomainId</span> <span class="k">as</span> <span class="nx">DomainUuid</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Ramsey\Uuid\Doctrine\UuidType</span><span class="p">;</span>
 
-<span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">setClass</span><span class="p">(</span><span class="nx">DomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">setClass</span><span class="p">(</span><span class="nx">MyDomainUuid</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 <span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">setDataType</span><span class="p">(</span><span class="nx">UuidType</span><span class="o">::</span><span class="na">NAME</span><span class="p">);</span>
 </pre></div>
                 
@@ -980,15 +965,13 @@
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
