@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Elasticsearch
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Elasticsearch
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -931,7 +923,7 @@
 <li>Requires <a href="https://packagist.org/packages/elasticsearch/elasticsearch">elasticsearch/elasticsearch</a></li>
 </ul>
 <h2 id="projection-type-registry">Projection Type Registry<a class="headerlink" href="#projection-type-registry" title="Permanent link">&para;</a></h2>
-<p>An Elasticsearch tailored <a href="../../projection/type-registry/">projection type registry</a> is provided by <code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</code>.
+<p>An Elasticsearch tailored <a href="../../projection/type-registry/">projection type registry</a> is provided by <code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</code>.
 It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/ElasticsearchPHP_Endpoints.html#Elasticsearch_Client"><code>Client</code></a> and a known configuration of type information.</p>
 <ul>
 <li><code>__construct(Client $client, string $index, array $mappings, array $settings = [], LoggerInterface $logger = null)</code><ul>
@@ -946,17 +938,17 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Elasticsearch\Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
     <span class="k">public</span> <span class="nv">$otherField</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
     <span class="p">{</span>
         <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
         <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
@@ -983,17 +975,17 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Elasticsearch\Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Elasticsearch\DocumentMappingProviderInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\DocumentMappingProvider</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span><span class="p">,</span> <span class="nx">DocumentMappingProviderInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span><span class="p">,</span> <span class="nx">DocumentMappingProvider</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
@@ -1018,7 +1010,7 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 
 
 <h2 id="projection-repository">Projection Repository<a class="headerlink" href="#projection-repository" title="Permanent link">&para;</a></h2>
-<p>An Elasticsearch tailored <a href="../../projection/repositories/">projection repository</a> is provided by <code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository</code>.
+<p>An Elasticsearch tailored <a href="../../projection/repositories/">projection repository</a> is provided by <code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository</code>.
 It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/ElasticsearchPHP_Endpoints.html#Elasticsearch_Client"><code>Client</code></a>.</p>
 <ul>
 <li><code>__construct(Client $client, string $index)</code><ul>
@@ -1031,7 +1023,7 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Elasticsearch\Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1102,15 +1094,13 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Object Factory
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Object Factory
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -515,8 +507,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfradoctrinedomainobjectfactory" title="MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory
+  <a href="#msgphpdomaininfrastructuredoctrinedomainobjectfactory" title="MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory
   </a>
   
 </li>
@@ -949,8 +941,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfradoctrinedomainobjectfactory" title="MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory" class="md-nav__link">
-    MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory
+  <a href="#msgphpdomaininfrastructuredoctrinedomainobjectfactory" title="MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory
   </a>
   
 </li>
@@ -980,8 +972,8 @@
                 
                 
                 <h1 id="object-factory">Object Factory<a class="headerlink" href="#object-factory" title="Permanent link">&para;</a></h1>
-<p>A domain object factory is bound to <code>MsgPhp\Domain\Factory\DomainObjectFactoryInterface</code>. Its purpose is to initialize
-any domain object based on a given class name and context.</p>
+<p>A domain object factory is bound to <code>MsgPhp\Domain\Factory\DomainObjectFactory</code>. Its purpose is to initialize any domain
+object based on a given class name and context.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="createstring-class-array-context-object"><code>create(string $class, array $context = []): object</code><a class="headerlink" href="#createstring-class-array-context-object" title="Permanent link">&para;</a></h3>
 <p>Returns a factorized domain object by class name. Optionally a context can be provided for the factory to act upon.</p>
@@ -999,8 +991,7 @@ upon.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomainfactorygenericdomainobjectfactory"><code>MsgPhp\Domain\Factory\GenericDomainObjectFactory</code><a class="headerlink" href="#msgphpdomainfactorygenericdomainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A generic object factory. It initializes a class by reading its <a href="https://secure.php.net/manual/en/language.oop5.decon.php#language.oop5.decon.constructor">constructor</a> arguments. If the class is a sub class
-of <code>MsgPhp\Domain\DomainIdInterface</code> or <code>MsgPhp\Domain\DomainCollectionInterface</code> its static <code>fromValue</code> constructor
-will be used instead.</p>
+of <code>MsgPhp\Domain\DomainId</code> or <code>MsgPhp\Domain\DomainCollection</code> its static <code>fromValue</code> constructor will be used instead.</p>
 <p>Context elements mapped by argument name will be used as argument value. In case of a type-hinted object argument a
 nested context may be provided to initialize the object with.</p>
 <p>To map interfaces and abstract classes to concrete classes a global class mapping can be provided.</p>
@@ -1011,11 +1002,11 @@ nested context may be provided to initialize the object with.</p>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">interface</span> <span class="nx">KnownInterface</span>
+<span class="k">interface</span> <span class="nx">Known</span>
 <span class="p">{</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">Some</span> <span class="k">implements</span> <span class="nx">KnownInterface</span>
+<span class="k">class</span> <span class="nc">Some</span> <span class="k">implements</span> <span class="nx">Known</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="o">?</span><span class="nx">int</span> <span class="nv">$c</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1024,13 +1015,13 @@ nested context may be provided to initialize the object with.</p>
 
 <span class="k">class</span> <span class="nc">Subject</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">KnownInterface</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$argument</span><span class="p">,</span> <span class="nx">Known</span> <span class="nv">$some</span><span class="p">,</span> <span class="nx">Subject</span> <span class="nv">$otherSubject</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GenericDomainObjectFactory</span><span class="p">([</span>
-    <span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">Some</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="nx">Known</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="nx">Some</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
 <span class="p">]);</span>
 
 <span class="c1">// Optionally set the factory to use for nested objects, or use the current factory by default.</span>
@@ -1039,8 +1030,8 @@ nested context may be provided to initialize the object with.</p>
 <span class="c1">// --- USAGE ---</span>
 
 <span class="sd">/** @var Some $object */</span>
-<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">]);</span>
-<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">getClass</span><span class="p">(</span><span class="nx">KnownInterface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// &quot;Some&quot;</span>
+<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">Known</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">getClass</span><span class="p">(</span><span class="nx">Known</span><span class="o">::</span><span class="na">class</span><span class="p">);</span> <span class="c1">// &quot;Some&quot;</span>
 
 <span class="sd">/** @var Subject $object */</span>
 <span class="nv">$object</span> <span class="o">=</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">Subject</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span>
@@ -1061,7 +1052,7 @@ nested context may be provided to initialize the object with.</p>
 <p class="admonition-title">Note</p>
 <p><code>GenericDomainObjectFactory::reference()</code> requires <a href="https://packagist.org/packages/symfony/var-exporter">symfony/var-exporter</a></p>
 </div>
-<h3 id="msgphpdomaininfradoctrinedomainobjectfactory"><code>MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory</code><a class="headerlink" href="#msgphpdomaininfradoctrinedomainobjectfactory" title="Permanent link">&para;</a></h3>
+<h3 id="msgphpdomaininfrastructuredoctrinedomainobjectfactory"><code>MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory</code><a class="headerlink" href="#msgphpdomaininfrastructuredoctrinedomainobjectfactory" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored object factory.</p>
 <ul>
 <li><a href="../../infrastructure/doctrine-orm/#domain-object-factory">Read more</a></li>
@@ -1129,15 +1120,13 @@ nested context may be provided to initialize the object with.</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

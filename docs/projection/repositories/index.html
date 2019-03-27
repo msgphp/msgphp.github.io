@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Repositories
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Repositories
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -701,8 +693,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchprojectionrepository" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository
+  <a href="#msgphpdomaininfrastructureelasticsearchprojectionrepository" title="MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository
   </a>
   
 </li>
@@ -944,8 +936,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchprojectionrepository" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository
+  <a href="#msgphpdomaininfrastructureelasticsearchprojectionrepository" title="MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository
   </a>
   
 </li>
@@ -982,8 +974,8 @@
                 
                 
                 <h1 id="projection-repositories">Projection Repositories<a class="headerlink" href="#projection-repositories" title="Permanent link">&para;</a></h1>
-<p>A projection repository is bound to <code>MsgPhp\Domain\Projection\ProjectionRepositoryInterface</code>. Its purpose is to store
-and query <a href="../documents/">projection documents</a>.</p>
+<p>A projection repository is bound to <code>MsgPhp\Domain\Projection\ProjectionRepository</code>. Its purpose is to store and query
+<a href="../documents/">projection documents</a>.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="findallstring-type-int-offset-0-int-limit-0-projectiondocument"><code>findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]</code><a class="headerlink" href="#findallstring-type-int-offset-0-int-limit-0-projectiondocument" title="Permanent link">&para;</a></h3>
 <p>Finds all projection documents by type.</p>
@@ -1000,7 +992,7 @@ and query <a href="../documents/">projection documents</a>.</p>
 <h3 id="deletestring-type-string-id-void"><code>delete(string $type, string $id): void</code><a class="headerlink" href="#deletestring-type-string-id-void" title="Permanent link">&para;</a></h3>
 <p>Deletes a projection document by type and ID. The document will be unavailable on any subsequent query.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
-<h3 id="msgphpdomaininfraelasticsearchprojectionrepository"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionRepository</code><a class="headerlink" href="#msgphpdomaininfraelasticsearchprojectionrepository" title="Permanent link">&para;</a></h3>
+<h3 id="msgphpdomaininfrastructureelasticsearchprojectionrepository"><code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository</code><a class="headerlink" href="#msgphpdomaininfrastructureelasticsearchprojectionrepository" title="Permanent link">&para;</a></h3>
 <p>An Elasticsearch tailored projection repository.</p>
 <ul>
 <li><a href="../../infrastructure/elasticsearch/#projection-repository">Read more</a></li>
@@ -1008,21 +1000,21 @@ and query <a href="../documents/">projection documents</a>.</p>
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepositoryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">ProjectionInterface</span>
+<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">ProjectionInterface</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="sd">/** @var ProjectionRepositoryInterface $repository */</span>
+<span class="sd">/** @var ProjectionRepository $repository */</span>
 <span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
 <span class="c1">// --- USAGE ---</span>
@@ -1100,15 +1092,13 @@ and query <a href="../documents/">projection documents</a>.</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Type Registry
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Type Registry
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -675,8 +667,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry
+  <a href="#msgphpdomaininfrastructureelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry
   </a>
   
 </li>
@@ -923,8 +915,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
-    MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry
+  <a href="#msgphpdomaininfrastructureelasticsearchprojectiontyperegistry" title="MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry" class="md-nav__link">
+    MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry
   </a>
   
 </li>
@@ -968,8 +960,8 @@
                 
                 
                 <h1 id="projection-type-registry">Projection Type Registry<a class="headerlink" href="#projection-type-registry" title="Permanent link">&para;</a></h1>
-<p>A projection type registry is bound to <code>MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</code>. Its purpose is to
-manage all available <a href="../models/">projection</a> type information.</p>
+<p>A projection type registry is bound to <code>MsgPhp\Domain\Projection\ProjectionTypeRegistry</code>. Its purpose is to manage all
+available <a href="../models/">projection</a> type information.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="all-string"><code>all(): string[]</code><a class="headerlink" href="#all-string" title="Permanent link">&para;</a></h3>
 <p>Returns all available projection types for this registry.</p>
@@ -981,7 +973,7 @@ changed.</p>
 <h3 id="destroy-void"><code>destroy(): void</code><a class="headerlink" href="#destroy-void" title="Permanent link">&para;</a></h3>
 <p>Destroys the type registry and thus requires to be re-initialized after.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
-<h3 id="msgphpdomaininfraelasticsearchprojectiontyperegistry"><code>MsgPhp\Domain\Infra\Elasticsearch\ProjectionTypeRegistry</code><a class="headerlink" href="#msgphpdomaininfraelasticsearchprojectiontyperegistry" title="Permanent link">&para;</a></h3>
+<h3 id="msgphpdomaininfrastructureelasticsearchprojectiontyperegistry"><code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</code><a class="headerlink" href="#msgphpdomaininfrastructureelasticsearchprojectiontyperegistry" title="Permanent link">&para;</a></h3>
 <p>An Elasticsearch tailored projection type registry.</p>
 <ul>
 <li><a href="../../infrastructure/elasticsearch/#projection-type-registry">Read more</a></li>
@@ -989,11 +981,11 @@ changed.</p>
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionTypeRegistryInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionTypeRegistry</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="sd">/** @var ProjectionTypeRegistryInterface $typeRegistry */</span>
+<span class="sd">/** @var ProjectionTypeRegistry $typeRegistry */</span>
 <span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 
 <span class="c1">// --- USAGE ---</span>
@@ -1073,15 +1065,13 @@ changed.</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

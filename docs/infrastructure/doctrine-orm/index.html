@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Doctrine ORM
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Doctrine ORM
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -957,13 +949,13 @@
 <li>Requires <a href="https://packagist.org/packages/doctrine/orm">doctrine/orm</a></li>
 </ul>
 <h2 id="domain-repository">Domain Repository<a class="headerlink" href="#domain-repository" title="Permanent link">&para;</a></h2>
-<p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by <code>MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</code>.</p>
+<p>A Doctrine tailored <a href="../../ddd/repositories/">repository trait</a> is provided by <code>MsgPhp\Domain\Infrastructure\Doctrine\DomainEntityRepositoryTrait</code>.</p>
 <h3 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainEntityRepositoryTrait</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Doctrine\DomainEntityRepositoryTrait</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1009,7 +1001,7 @@
 
 <h2 id="domain-object-factory">Domain Object Factory<a class="headerlink" href="#domain-object-factory" title="Permanent link">&para;</a></h2>
 <p>A Doctrine tailored <a href="../../ddd/object-factory/">object factory</a> is provided by
-<code>MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory</code>.</p>
+<code>MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory</code>.</p>
 <p>When working with <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html">ORM inheritance</a> the discriminator field can be provided to factorize a specific entity type.</p>
 <h3 id="basic-example_1">Basic Example<a class="headerlink" href="#basic-example_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -1017,7 +1009,7 @@
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span> <span class="k">as</span> <span class="nx">BaseDomainObjectFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\DomainObjectFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Doctrine\DomainObjectFactory</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1059,8 +1051,8 @@
 <h2 id="domain-identifier-hydration">Domain Identifier Hydration<a class="headerlink" href="#domain-identifier-hydration" title="Permanent link">&para;</a></h2>
 <p>When working with <a href="../../ddd/identifiers/">domain identifiers</a> and its corresponding <a href="../doctrine-dbal/#domain-identifier-type">type</a>
 a problem can occur when hydrating scalar values, e.g. with <code>Query::getScalarResult()</code>.</p>
-<p>It would use instances of <code>MsgPhp\Domain\DomainIdInterface</code> that can only be casted to string as its (true) scalar
-value (due to <code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> it will be lost.</p>
+<p>It would use instances of <code>MsgPhp\Domain\DomainId</code> that can only be casted to string as its (true) scalar value (due to
+<code>__toString()</code>). In case the underlying data type is e.g. <code>integer</code> it will be lost.</p>
 <p>To overcome, two hydration modes are available to hydrate the primitive identifier value instead.</p>
 <h3 id="basic-example_2">Basic Example<a class="headerlink" href="#basic-example_2" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -1068,8 +1060,8 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
 <span class="k">use</span> <span class="nx">Doctrine\DBAL\Types\Type</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\EntityManagerInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\ScalarHydrator</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infra\Doctrine\Hydration\SingleScalarHydrator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Doctrine\Hydration\ScalarHydrator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Doctrine\Hydration\SingleScalarHydrator</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
@@ -1169,15 +1161,13 @@ value (due to <code>__toString()</code>). In case the underlying data type is e.
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -127,22 +127,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                MsgPHP Documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Creating a User
-              </span>
-            
+            <span class="md-header-nav__topic">
+              MsgPHP Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Creating a User
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -165,7 +162,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -176,20 +172,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -225,20 +219,18 @@
 
   
 
-
-  <a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/msgphp/msgphp/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -848,29 +840,29 @@
                 
                 
                 <h1 id="creating-a-user">Creating a User<a class="headerlink" href="#creating-a-user" title="Permanent link">&para;</a></h1>
-<p>Users can be created by dispatching the <code>CreateUserCommand</code> message with a data array that contains values for the <code>User</code>
+<p>Users can be created by dispatching the <code>CreateUser</code> message with a data array that contains values for the <code>User</code>
 constructor arguments.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUserCommand</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUser</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Messenger\MessageBusInterface</span><span class="p">;</span>
 
 <span class="sd">/** @var MessageBusInterface $bus */</span>
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUserCommand</span><span class="p">([]));</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUser</span><span class="p">([]));</span>
 </pre></div>
 
 
-<p>The handler will automatically add an <code>id</code> element to the data array holding an instance of <code>MsgPhp\User\UserIdInterface</code>.
+<p>The handler will automatically add an <code>id</code> element to the data array holding an instance of <code>MsgPhp\User\UserId</code>.
 Alternatively it can be passed upfront:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\User\UserId</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUserCommand</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\ScalarUserId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUser</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Messenger\MessageBusInterface</span><span class="p">;</span>
 
 <span class="sd">/** @var MessageBusInterface $bus */</span>
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUserCommand</span><span class="p">([</span>
-    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">UserId</span><span class="p">(),</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUser</span><span class="p">([</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">ScalarUserId</span><span class="p">(),</span>
 <span class="p">]));</span>
 </pre></div>
 
@@ -878,15 +870,15 @@ Alternatively it can be passed upfront:</p>
 <p>To programmatically factorize an <a href="../../../ddd/identifiers/">identifier</a>, use the <a href="../../../ddd/object-factory/">object factory</a>:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactoryInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\User\UserIdInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUserCommand</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\Factory\DomainObjectFactory</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\UserId</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUser</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Messenger\MessageBusInterface</span><span class="p">;</span>
 
-<span class="sd">/** @var DomainObjectFactoryInterface $factory */</span>
+<span class="sd">/** @var DomainObjectFactory $factory */</span>
 <span class="sd">/** @var MessageBusInterface $bus */</span>
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUserCommand</span><span class="p">([</span>
-    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">UserIdInterface</span><span class="o">::</span><span class="na">class</span><span class="p">),</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUser</span><span class="p">([</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">UserId</span><span class="o">::</span><span class="na">class</span><span class="p">),</span>
 <span class="p">]));</span>
 </pre></div>
 
@@ -906,7 +898,7 @@ Alternatively it can be passed upfront:</p>
     <span class="k">private</span> <span class="nv">$requiredField</span><span class="p">;</span>
     <span class="k">private</span> <span class="nv">$optionalField</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">UserIdInterface</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$requiredField</span><span class="p">,</span> <span class="nv">$optionalField</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">UserId</span> <span class="nv">$id</span><span class="p">,</span> <span class="nv">$requiredField</span><span class="p">,</span> <span class="nv">$optionalField</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">requiredField</span> <span class="o">=</span> <span class="nv">$requiredField</span><span class="p">;</span>
@@ -921,17 +913,17 @@ Alternatively it can be passed upfront:</p>
 <p>Specify the fields during dispatch:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUserCommand</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\User\Command\CreateUser</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Messenger\MessageBusInterface</span><span class="p">;</span>
 
 <span class="sd">/** @var MessageBusInterface $bus */</span>
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUserCommand</span><span class="p">([</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUser</span><span class="p">([</span>
     <span class="s1">&#39;requiredField&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
 <span class="p">]));</span>
 
 <span class="c1">// alternatively:</span>
 
-<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUserCommand</span><span class="p">([</span>
+<span class="nv">$bus</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="k">new</span> <span class="nx">CreateUser</span><span class="p">([</span>
     <span class="s1">&#39;requiredField&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
     <span class="s1">&#39;optionalField&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
 <span class="p">]));</span>
@@ -999,15 +991,13 @@ Alternatively it can be passed upfront:</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
