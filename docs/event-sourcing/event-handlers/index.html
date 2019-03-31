@@ -353,11 +353,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Domain-Driven-Design
+      Domain Driven Design
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Domain-Driven-Design
+        Domain Driven Design
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -439,11 +439,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Event-Sourcing
+      Event Sourcing
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Event-Sourcing
+        Event Sourcing
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -943,8 +943,7 @@ requires its history to be accessible.</p>
 yes or no.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomaineventdomaineventhandlertrait"><code>MsgPhp\Domain\Event\DomainEventHandlerTrait</code><a class="headerlink" href="#msgphpdomaineventdomaineventhandlertrait" title="Permanent link">&para;</a></h3>
-<p>A utility trait implementing the event handler API. By convention it maps events to
-<code>handle&lt;Event_Class_Name_Without_Event_Suffix&gt;Event()</code> methods.</p>
+<p>A utility trait implementing the event handler API. By convention it maps events to methods named <code>on&lt;EventClassName&gt;Event()</code>.</p>
 <h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
@@ -954,7 +953,7 @@ yes or no.</p>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="k">class</span> <span class="nc">MyDomainEvent</span> <span class="k">implements</span> <span class="nx">DomainEvent</span>
+<span class="k">class</span> <span class="nc">ChangeValue</span> <span class="k">implements</span> <span class="nx">DomainEvent</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$newValue</span><span class="p">;</span>
 
@@ -970,7 +969,7 @@ yes or no.</p>
 
     <span class="k">public</span> <span class="nv">$value</span><span class="p">;</span>
 
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">handleMyDomainEvent</span><span class="p">(</span><span class="nx">MyDomainEvent</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">onChangeValueEvent</span><span class="p">(</span><span class="nx">ChangeValue</span> <span class="nv">$event</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">===</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">newValue</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
@@ -987,7 +986,7 @@ yes or no.</p>
 
 <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">(</span><span class="s1">&#39;new value&#39;</span><span class="p">)))</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="k">new</span> <span class="nx">ChangeValue</span><span class="p">(</span><span class="s1">&#39;new value&#39;</span><span class="p">)))</span> <span class="p">{</span>
     <span class="c1">// do something</span>
 <span class="p">}</span>
 </pre></div>

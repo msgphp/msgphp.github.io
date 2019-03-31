@@ -353,11 +353,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Domain-Driven-Design
+      Domain Driven Design
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Domain-Driven-Design
+        Domain Driven Design
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -437,11 +437,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Event-Sourcing
+      Event Sourcing
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Event-Sourcing
+        Event Sourcing
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -908,19 +908,12 @@ purpose is to ease the handling of command messages by sourcing a <a href="../..
 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">MyEntity</span> <span class="nv">$entity</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
-            <span class="c1">// do something when $command is handled</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
+        <span class="nv">$target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span> <span class="c1">// usually queried by ID, provided by the command</span>
+        <span class="nv">$event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">();</span>
 
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEvent</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">DomainEvent</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">MyDomainEvent</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getDomainEventTarget</span><span class="p">(</span><span class="nx">MyCommand</span> <span class="nv">$command</span><span class="p">)</span><span class="o">:</span> <span class="nx">MyEntity</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">handleEvent</span><span class="p">(</span><span class="nv">$target</span><span class="p">,</span> <span class="nv">$event</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// do something when $event is handled</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
