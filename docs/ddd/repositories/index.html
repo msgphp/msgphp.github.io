@@ -455,8 +455,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dofindid-object" title="doFind($id): object" class="md-nav__link">
-    doFind($id): object
+  <a href="#dofindmixed-id-object" title="doFind(mixed $id): object" class="md-nav__link">
+    doFind(mixed $id): object
   </a>
   
 </li>
@@ -469,8 +469,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#doexistsid-bool" title="doExists($id): bool" class="md-nav__link">
-    doExists($id): bool
+  <a href="#doexistsmixed-id-bool" title="doExists(mixed $id): bool" class="md-nav__link">
+    doExists(mixed $id): bool
   </a>
   
 </li>
@@ -916,8 +916,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dofindid-object" title="doFind($id): object" class="md-nav__link">
-    doFind($id): object
+  <a href="#dofindmixed-id-object" title="doFind(mixed $id): object" class="md-nav__link">
+    doFind(mixed $id): object
   </a>
   
 </li>
@@ -930,8 +930,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#doexistsid-bool" title="doExists($id): bool" class="md-nav__link">
-    doExists($id): bool
+  <a href="#doexistsmixed-id-bool" title="doExists(mixed $id): bool" class="md-nav__link">
+    doExists(mixed $id): bool
   </a>
   
 </li>
@@ -1014,14 +1014,14 @@ leverage a utility trait tied to specific infrastructure (e.g. <a href="../../in
 one of) and <code>object</code> (i.e. another entity or its <a href="../identifiers/">identifier</a>). An unlimited collection is implied by
 <code>$limit</code> set to zero.</p>
 <hr />
-<h3 id="dofindid-object"><code>doFind($id): object</code><a class="headerlink" href="#dofindid-object" title="Permanent link">&para;</a></h3>
+<h3 id="dofindmixed-id-object"><code>doFind(mixed $id): object</code><a class="headerlink" href="#dofindmixed-id-object" title="Permanent link">&para;</a></h3>
 <p>Finds a single entity by its identity. Supported identity values should be <code>scalar</code>, <code>array</code> (for composite identifiers), 
 and <code>object</code> (i.e. another entity or its <a href="../identifiers/">identifier</a>).</p>
 <hr />
 <h3 id="dofindbyfieldsarray-fields-object"><code>doFindByFields(array $fields): object</code><a class="headerlink" href="#dofindbyfieldsarray-fields-object" title="Permanent link">&para;</a></h3>
 <p>Finds the first entity matching the specified fields. See <code>doFindAllByFields()</code> for supported field values.</p>
 <hr />
-<h3 id="doexistsid-bool"><code>doExists($id): bool</code><a class="headerlink" href="#doexistsid-bool" title="Permanent link">&para;</a></h3>
+<h3 id="doexistsmixed-id-bool"><code>doExists(mixed $id): bool</code><a class="headerlink" href="#doexistsmixed-id-bool" title="Permanent link">&para;</a></h3>
 <p>Verifies if an entity exists by its identity. See <code>doFind()</code> for supported identity values.</p>
 <hr />
 <h3 id="doexistsbyfieldsarray-fields-bool"><code>doExistsByFields(array $fields): bool</code><a class="headerlink" href="#doexistsbyfieldsarray-fields-bool" title="Permanent link">&para;</a></h3>
