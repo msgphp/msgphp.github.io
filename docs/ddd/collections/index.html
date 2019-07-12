@@ -547,8 +547,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaindomaincollection" title="MsgPhp\Domain\DomainCollection" class="md-nav__link">
-    MsgPhp\Domain\DomainCollection
+  <a href="#msgphpdomaingenericdomaincollection" title="MsgPhp\Domain\GenericDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\GenericDomainCollection
   </a>
   
     <nav class="md-nav">
@@ -567,8 +567,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#msgphpdomainpaginateddomaincollection" title="MsgPhp\Domain\PaginatedDomainCollection" class="md-nav__link">
-    MsgPhp\Domain\PaginatedDomainCollection
+  <a href="#msgphpdomaingenericpaginateddomaincollection" title="MsgPhp\Domain\GenericPaginatedDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\GenericPaginatedDomainCollection
   </a>
   
 </li>
@@ -1123,8 +1123,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#msgphpdomaindomaincollection" title="MsgPhp\Domain\DomainCollection" class="md-nav__link">
-    MsgPhp\Domain\DomainCollection
+  <a href="#msgphpdomaingenericdomaincollection" title="MsgPhp\Domain\GenericDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\GenericDomainCollection
   </a>
   
     <nav class="md-nav">
@@ -1143,8 +1143,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#msgphpdomainpaginateddomaincollection" title="MsgPhp\Domain\PaginatedDomainCollection" class="md-nav__link">
-    MsgPhp\Domain\PaginatedDomainCollection
+  <a href="#msgphpdomaingenericpaginateddomaincollection" title="MsgPhp\Domain\GenericPaginatedDomainCollection" class="md-nav__link">
+    MsgPhp\Domain\GenericPaginatedDomainCollection
   </a>
   
 </li>
@@ -1247,16 +1247,16 @@ is to expose the current pagination.</p>
 <p><code>count()</code> should return the no. of items on the current page</p>
 </div>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
-<h3 id="msgphpdomaindomaincollection"><code>MsgPhp\Domain\DomainCollection</code><a class="headerlink" href="#msgphpdomaindomaincollection" title="Permanent link">&para;</a></h3>
-<p>A first class citizen domain collection.</p>
+<h3 id="msgphpdomaingenericdomaincollection"><code>MsgPhp\Domain\GenericDomainCollection</code><a class="headerlink" href="#msgphpdomaingenericdomaincollection" title="Permanent link">&para;</a></h3>
+<p>A first-class citizen domain collection compatible with any <code>iterable</code> value.</p>
 <h4 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\DomainCollection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">MsgPhp\Domain\GenericDomainCollection</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
 
-<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainCollection</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GenericDomainCollection</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">]);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
@@ -1288,8 +1288,8 @@ is to expose the current pagination.</p>
 </pre></div>
 
 
-<h3 id="msgphpdomainpaginateddomaincollection"><code>MsgPhp\Domain\PaginatedDomainCollection</code><a class="headerlink" href="#msgphpdomainpaginateddomaincollection" title="Permanent link">&para;</a></h3>
-<p>A first class citizen paginated domain collection to transform any collection into a paginated collection.</p>
+<h3 id="msgphpdomaingenericpaginateddomaincollection"><code>MsgPhp\Domain\GenericPaginatedDomainCollection</code><a class="headerlink" href="#msgphpdomaingenericpaginateddomaincollection" title="Permanent link">&para;</a></h3>
+<p>A first-class citizen paginated domain collection compatible with any <code>iterable</code> value.</p>
 <h3 id="msgphpdomaininfrastructuredoctrinedomaincollection"><code>MsgPhp\Domain\Infrastructure\Doctrine\DomainCollection</code><a class="headerlink" href="#msgphpdomaininfrastructuredoctrinedomaincollection" title="Permanent link">&para;</a></h3>
 <p>A Doctrine tailored domain collection.</p>
 <ul>
