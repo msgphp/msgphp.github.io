@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Message based domain layers. Shipped with industry standard infrastructure.">
+        <meta name="description" content="Reusable domain layers. Shipped with industry standard infrastructure.">
       
       
       
@@ -855,18 +855,12 @@ composer install messenger
 
         <span class="nt">default_bus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">command_bus</span>
         <span class="nt">buses</span><span class="p">:</span>
-            <span class="nt">command_bus</span><span class="p">:</span>
-                <span class="nt">middleware</span><span class="p">:</span>
-                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.console_message_receiver</span>
+            <span class="nt">command_bus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~</span>
             <span class="nt">event_bus</span><span class="p">:</span>
                 <span class="nt">default_middleware</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">allow_no_handlers</span>
-                <span class="nt">middleware</span><span class="p">:</span>
-                    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">msgphp.messenger.console_message_receiver</span>
 </pre></div>
 
 
-<p>By adding the <code>msgphp.messenger.console_message_receiver</code> middleware MsgPHP console commands are able to receive back a
-dispatched message. This is recommended to provide better output in CLI.</p>
 <h3 id="enable-the-command-and-event-bus">Enable the Command and Event Bus<a class="headerlink" href="#enable-the-command-and-event-bus" title="Permanent link">&para;</a></h3>
 <p>MsgPHP uses the bus configured with <code>framework.messenger.default_bus</code> for both command and event messages by default. To
 use your custom buses instead configure the bus aliases:</p>
