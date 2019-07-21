@@ -509,18 +509,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projection/document-transformers/" title="Document Transformers" class="md-nav__link">
-      Document Transformers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../projection/type-registry/" title="Type Registry" class="md-nav__link">
       Type Registry
     </a>
@@ -800,12 +788,9 @@
 <span class="p">}</span>
 
 <span class="sd">/** @var MessageBusInterface $commandBus */</span>
-<span class="nv">$commandBus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="sd">/** @var MessageBusInterface $commandBus */</span>
-<span class="nv">$eventBus</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$eventClasses</span> <span class="o">=</span> <span class="p">[</span><span class="nx">EventMessage</span><span class="o">::</span><span class="na">class</span><span class="p">];</span>
+<span class="sd">/** @var MessageBusInterface $eventBus */</span>
 
-<span class="nv">$domainBus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainMessageBus</span><span class="p">(</span><span class="nv">$commandBus</span><span class="p">,</span> <span class="nv">$eventBus</span><span class="p">,</span> <span class="nv">$eventClasses</span><span class="p">);</span>
+<span class="nv">$domainBus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainMessageBus</span><span class="p">(</span><span class="nv">$commandBus</span><span class="p">,</span> <span class="nv">$eventBus</span><span class="p">,</span> <span class="p">[</span><span class="nx">EventMessage</span><span class="o">::</span><span class="na">class</span><span class="p">]);</span>
 
 <span class="c1">// --- USAGE ---</span>
 

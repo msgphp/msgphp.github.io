@@ -511,18 +511,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../document-transformers/" title="Document Transformers" class="md-nav__link">
-      Document Transformers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../type-registry/" title="Type Registry" class="md-nav__link">
       Type Registry
     </a>
@@ -899,18 +887,14 @@ value indicates the document was actually deleted yes or no.</p>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
 
-<span class="c1">// --- SETUP ---</span>
-
-<span class="sd">/** @var ProjectionRepository $repository */</span>
-<span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-
 <span class="c1">// --- USAGE ---</span>
 
-<span class="nv">$id</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$document</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;my_projection&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+<span class="sd">/** @var ProjectionRepository $repository */</span>
+
+<span class="nv">$document</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;my_projection&#39;</span><span class="p">,</span> <span class="s1">&#39;ID&#39;</span><span class="p">);</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">===</span> <span class="nv">$document</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$document</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span> <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">];</span>
+    <span class="nv">$document</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">];</span>
     <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;my_projection&#39;</span><span class="p">,</span> <span class="nv">$document</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>

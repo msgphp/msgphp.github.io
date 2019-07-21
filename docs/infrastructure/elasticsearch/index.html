@@ -509,18 +509,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projection/document-transformers/" title="Document Transformers" class="md-nav__link">
-      Document Transformers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../projection/type-registry/" title="Type Registry" class="md-nav__link">
       Type Registry
     </a>
@@ -843,7 +831,7 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 <span class="c1">// --- SETUP ---</span>
 
 <span class="sd">/** @var Client $client */</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
 <span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionTypeRegistry</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;app_dev-&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;my_projection&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span> <span class="c1">// defaults to [&#39;type&#39; =&gt; &#39;some_type&#39;]</span>
@@ -874,7 +862,7 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 <span class="c1">// --- SETUP ---</span>
 
 <span class="sd">/** @var Client $client */</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
 <span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionRepository</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;app_dev-&#39;</span><span class="p">);</span>
 </pre></div>
                 

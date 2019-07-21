@@ -511,18 +511,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../document-transformers/" title="Document Transformers" class="md-nav__link">
-      Document Transformers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../type-registry/" title="Type Registry" class="md-nav__link">
       Type Registry
     </a>
@@ -826,17 +814,16 @@ projection documents from source objects.</p>
 <span class="p">}</span>
 
 <span class="sd">/** @var ProjectionTypeRegistry $typeRegistry */</span>
-<span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
 <span class="sd">/** @var ProjectionRepository $repository */</span>
-<span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="sd">/** @var ProjectionDocumentTransformer $transformer */</span>
-<span class="nv">$transformer</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionDocumentProvider</span><span class="p">(</span><span class="nv">$transformer</span><span class="p">,</span> <span class="p">[</span>
+
+<span class="nv">$provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionDocumentProvider</span><span class="p">([</span>
     <span class="k">function</span> <span class="p">()</span><span class="o">:</span> <span class="nx">iterable</span> <span class="p">{</span>
         <span class="k">yield</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
         <span class="k">yield</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
     <span class="p">},</span>
-<span class="p">]);</span>
+<span class="p">],</span> <span class="k">function</span> <span class="p">(</span><span class="nx">object</span> <span class="nv">$object</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">array</span><span class="p">)</span> <span class="nv">$object</span><span class="p">;</span>
+<span class="p">});</span>
 <span class="nv">$synchronization</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionSynchronization</span><span class="p">(</span><span class="nv">$typeRegistry</span><span class="p">,</span> <span class="nv">$repository</span><span class="p">,</span> <span class="nv">$provider</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>

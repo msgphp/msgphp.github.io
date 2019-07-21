@@ -509,18 +509,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projection/document-transformers/" title="Document Transformers" class="md-nav__link">
-      Document Transformers
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../projection/type-registry/" title="Type Registry" class="md-nav__link">
       Type Registry
     </a>
@@ -895,17 +883,17 @@
 <span class="p">}</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
 <span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntityRepository</span><span class="p">(</span><span class="nx">MyEntity</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$em</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="o">...</span><span class="p">]))</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">exists</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)]))</span> <span class="p">{</span>
     <span class="nv">$entity</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
-    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s1">&#39;...&#39;</span><span class="p">;</span>
+    <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">);</span>
 
     <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
 <span class="p">}</span>
@@ -949,7 +937,7 @@
 <span class="p">}</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
 <span class="nv">$factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DomainObjectFactory</span><span class="p">(</span><span class="k">new</span> <span class="nx">BaseDomainObjectFactory</span><span class="p">(),</span> <span class="nv">$em</span><span class="p">);</span>
 
 <span class="c1">// --- USAGE ---</span>
@@ -995,7 +983,7 @@ a problem can occur when hydrating scalar values, e.g. with <code>Query::getScal
 <span class="nx">Type</span><span class="o">::</span><span class="na">addType</span><span class="p">(</span><span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">MyDomainIdType</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 
 <span class="sd">/** @var EntityManagerInterface $em */</span>
-<span class="nv">$em</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
+
 <span class="nv">$config</span> <span class="o">=</span> <span class="nv">$em</span><span class="o">-&gt;</span><span class="na">getConfiguration</span><span class="p">();</span>
 
 <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">addCustomHydrationMode</span><span class="p">(</span><span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">NAME</span><span class="p">,</span> <span class="nx">ScalarHydrator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
