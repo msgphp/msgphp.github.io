@@ -795,11 +795,10 @@
 to transform arbitrary objects into documents.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <h3 id="transformobject-object-array"><code>transform(object $object): array</code><a class="headerlink" href="#transformobject-object-array" title="Permanent link">&para;</a></h3>
-<p>Transforms the domain object into a projection document.</p>
+<p>Transforms a domain object into its projection document.</p>
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentTransformer</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
@@ -808,26 +807,6 @@ to transform arbitrary objects into documents.</p>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
     <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
-    <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
-    <span class="p">{</span>
-        <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
-
-        <span class="k">return</span> <span class="nv">$projection</span><span class="p">;</span>
-    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">class</span> <span class="nc">MyTransformer</span> <span class="k">implements</span> <span class="nx">ProjectionDocumentTransformer</span>
@@ -849,7 +828,7 @@ to transform arbitrary objects into documents.</p>
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nv">$entity</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyEntity</span><span class="p">();</span>
 <span class="nv">$document</span> <span class="o">=</span> <span class="nv">$transformer</span><span class="o">-&gt;</span><span class="na">transform</span><span class="p">(</span><span class="nv">$entity</span><span class="p">);</span>
 </pre></div>
                 

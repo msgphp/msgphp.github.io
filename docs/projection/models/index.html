@@ -507,58 +507,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Models
-      </label>
-    
     <a href="./" title="Models" class="md-nav__link md-nav__link--active">
       Models
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#static-fromdocumentarray-document-projection" title="static fromDocument(array $document): Projection" class="md-nav__link">
-    static fromDocument(array $document): Projection
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -741,42 +692,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#api" title="API" class="md-nav__link">
-    API
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#static-fromdocumentarray-document-projection" title="static fromDocument(array $document): Projection" class="md-nav__link">
-    static fromDocument(array $document): Projection
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-example" title="Basic example" class="md-nav__link">
-    Basic example
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -791,41 +706,12 @@
                 
                 
                 <h1 id="projections">Projections<a class="headerlink" href="#projections" title="Permanent link">&para;</a></h1>
-<p>A projection is a model object and bound to <code>MsgPhp\Domain\Projection\Projection</code>. Its purpose is to convert raw model
-data (a document) into a projection.</p>
+<p>Projection models are "<a href="https://en.wikipedia.org/wiki/Plain_vanilla">vanilla</a> PHP objects". Its purpose is to represent a stored document.</p>
 <p>The document is usually a transformation from a domain object (e.g. an entity) and therefor projections should be
-considered read-only and disposable, as they can be re-created / synchronized at any time from a source of truth.</p>
-<p>A practical use case for projections are APIs, where each API resource is a so called projection from a corresponding
-entity. It enables decoupling and thus optimized API responses.</p>
-<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
-<h3 id="static-fromdocumentarray-document-projection"><code>static fromDocument(array $document): Projection</code><a class="headerlink" href="#static-fromdocumentarray-document-projection" title="Permanent link">&para;</a></h3>
-<p>Creates a projection from raw document data.</p>
-<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
-
-<span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
-    <span class="p">{</span>
-        <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
-
-        <span class="k">return</span> <span class="nv">$projection</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// --- USAGE ---</span>
-
-<span class="nv">$projection</span> <span class="o">=</span> <span class="nx">MyProjection</span><span class="o">::</span><span class="na">fromDocument</span><span class="p">([</span>
-    <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
-<span class="p">]);</span>
-</pre></div>
+considered read-only and disposable, given they can be re-created / synchronized at any point in time from a source of
+truth (the repository).</p>
+<p>A practical use case for projections are APIs, where each API resource is a so called projection, corresponding to its
+domain entity. It enables decoupling and thus optimized API responses.</p>
                 
                   
                 

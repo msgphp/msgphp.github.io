@@ -839,24 +839,8 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 
 <span class="k">use</span> <span class="nx">Elasticsearch\Client</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$someField</span><span class="p">;</span>
-    <span class="k">public</span> <span class="nv">$otherField</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
-    <span class="p">{</span>
-        <span class="nv">$projection</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">someField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;some_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
-        <span class="nv">$projection</span><span class="o">-&gt;</span><span class="na">otherField</span> <span class="o">=</span> <span class="nv">$document</span><span class="p">[</span><span class="s1">&#39;other_field&#39;</span><span class="p">]</span> <span class="o">??</span> <span class="k">null</span><span class="p">;</span>
-
-        <span class="k">return</span> <span class="nv">$projection</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
 
 <span class="sd">/** @var Client $client */</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>

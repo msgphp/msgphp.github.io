@@ -897,18 +897,9 @@ value indicates the document was actually deleted yes or no.</p>
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
-    <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-<span class="p">}</span>
 
 <span class="sd">/** @var ProjectionRepository $repository */</span>
 <span class="nv">$repository</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
