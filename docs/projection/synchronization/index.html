@@ -802,7 +802,6 @@ projection documents from source objects.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentProvider</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentTransformer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionSynchronization</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionTypeRegistry</span><span class="p">;</span>
@@ -823,6 +822,8 @@ projection documents from source objects.</p>
     <span class="p">},</span>
 <span class="p">],</span> <span class="k">function</span> <span class="p">(</span><span class="nx">object</span> <span class="nv">$object</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="k">array</span><span class="p">)</span> <span class="nv">$object</span><span class="p">;</span>
+<span class="p">},</span> <span class="k">function</span> <span class="p">(</span><span class="nx">object</span> <span class="nv">$object</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;index&#39;</span><span class="p">;</span>
 <span class="p">});</span>
 <span class="nv">$synchronization</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionSynchronization</span><span class="p">(</span><span class="nv">$typeRegistry</span><span class="p">,</span> <span class="nv">$repository</span><span class="p">,</span> <span class="nv">$provider</span><span class="p">);</span>
 
