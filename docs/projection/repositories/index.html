@@ -511,18 +511,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../documents/" title="Documents" class="md-nav__link">
-      Documents
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../document-transformers/" title="Document Transformers" class="md-nav__link">
       Document Transformers
     </a>
@@ -582,36 +570,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#findallstring-type-int-offset-0-int-limit-0-projectiondocument" title="findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]" class="md-nav__link">
-    findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]
+  <a href="#findstring-type-string-id-array" title="find(string $type, string $id): ?array" class="md-nav__link">
+    find(string $type, string $id): ?array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#findstring-type-string-id-projectiondocument" title="find(string $type, string $id): ?ProjectionDocument" class="md-nav__link">
-    find(string $type, string $id): ?ProjectionDocument
+  <a href="#savestring-type-array-document-void" title="save(string $type, array $document): void" class="md-nav__link">
+    save(string $type, array $document): void
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#clearstring-type-void" title="clear(string $type): void" class="md-nav__link">
-    clear(string $type): void
+  <a href="#saveallstring-type-iterableltint-arraygt-documents-void" title="saveAll(string $type, iterable&lt;int, array&gt; $documents): void" class="md-nav__link">
+    saveAll(string $type, iterable&lt;int, array&gt; $documents): void
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saveprojectiondocument-document-void" title="save(ProjectionDocument $document): void" class="md-nav__link">
-    save(ProjectionDocument $document): void
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deletestring-type-string-id-void" title="delete(string $type, string $id): void" class="md-nav__link">
-    delete(string $type, string $id): void
+  <a href="#deletestring-type-string-id-bool" title="delete(string $type, string $id): bool" class="md-nav__link">
+    delete(string $type, string $id): bool
   </a>
   
 </li>
@@ -694,18 +675,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/api-platform/" title="API Platform" class="md-nav__link">
-      API Platform
-    </a>
-  </li>
-
         
           
           
@@ -825,36 +794,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#findallstring-type-int-offset-0-int-limit-0-projectiondocument" title="findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]" class="md-nav__link">
-    findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]
+  <a href="#findstring-type-string-id-array" title="find(string $type, string $id): ?array" class="md-nav__link">
+    find(string $type, string $id): ?array
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#findstring-type-string-id-projectiondocument" title="find(string $type, string $id): ?ProjectionDocument" class="md-nav__link">
-    find(string $type, string $id): ?ProjectionDocument
+  <a href="#savestring-type-array-document-void" title="save(string $type, array $document): void" class="md-nav__link">
+    save(string $type, array $document): void
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#clearstring-type-void" title="clear(string $type): void" class="md-nav__link">
-    clear(string $type): void
+  <a href="#saveallstring-type-iterableltint-arraygt-documents-void" title="saveAll(string $type, iterable&lt;int, array&gt; $documents): void" class="md-nav__link">
+    saveAll(string $type, iterable&lt;int, array&gt; $documents): void
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saveprojectiondocument-document-void" title="save(ProjectionDocument $document): void" class="md-nav__link">
-    save(ProjectionDocument $document): void
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deletestring-type-string-id-void" title="delete(string $type, string $id): void" class="md-nav__link">
-    delete(string $type, string $id): void
+  <a href="#deletestring-type-string-id-bool" title="delete(string $type, string $id): bool" class="md-nav__link">
+    delete(string $type, string $id): bool
   </a>
   
 </li>
@@ -912,22 +874,20 @@
                 
                 <h1 id="projection-repositories">Projection Repositories<a class="headerlink" href="#projection-repositories" title="Permanent link">&para;</a></h1>
 <p>A projection repository is bound to <code>MsgPhp\Domain\Projection\ProjectionRepository</code>. Its purpose is to store and query
-<a href="../documents/">projection documents</a>.</p>
+projection documents.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
-<h3 id="findallstring-type-int-offset-0-int-limit-0-projectiondocument"><code>findAll(string $type, int $offset = 0, int $limit = 0): ProjectionDocument[]</code><a class="headerlink" href="#findallstring-type-int-offset-0-int-limit-0-projectiondocument" title="Permanent link">&para;</a></h3>
-<p>Finds all projection documents by type.</p>
+<h3 id="findstring-type-string-id-array"><code>find(string $type, string $id): ?array</code><a class="headerlink" href="#findstring-type-string-id-array" title="Permanent link">&para;</a></h3>
+<p>Finds a single projection document by type and ID. In case the document cannot be found <code>null</code> should be returned.</p>
 <hr />
-<h3 id="findstring-type-string-id-projectiondocument"><code>find(string $type, string $id): ?ProjectionDocument</code><a class="headerlink" href="#findstring-type-string-id-projectiondocument" title="Permanent link">&para;</a></h3>
-<p>Finds a single projection document by type and ID. In case its document cannot be found <code>null</code> should be returned.</p>
-<hr />
-<h3 id="clearstring-type-void"><code>clear(string $type): void</code><a class="headerlink" href="#clearstring-type-void" title="Permanent link">&para;</a></h3>
-<p>Deletes all projection documents by type.</p>
-<hr />
-<h3 id="saveprojectiondocument-document-void"><code>save(ProjectionDocument $document): void</code><a class="headerlink" href="#saveprojectiondocument-document-void" title="Permanent link">&para;</a></h3>
+<h3 id="savestring-type-array-document-void"><code>save(string $type, array $document): void</code><a class="headerlink" href="#savestring-type-array-document-void" title="Permanent link">&para;</a></h3>
 <p>Saves a projection document. The document will be available on any subsequent query.</p>
 <hr />
-<h3 id="deletestring-type-string-id-void"><code>delete(string $type, string $id): void</code><a class="headerlink" href="#deletestring-type-string-id-void" title="Permanent link">&para;</a></h3>
-<p>Deletes a projection document by type and ID. The document will be unavailable on any subsequent query.</p>
+<h3 id="saveallstring-type-iterableltint-arraygt-documents-void"><code>saveAll(string $type, iterable&lt;int, array&gt; $documents): void</code><a class="headerlink" href="#saveallstring-type-iterableltint-arraygt-documents-void" title="Permanent link">&para;</a></h3>
+<p>Saves all projection documents at once. The documents will be available on any subsequent query.</p>
+<hr />
+<h3 id="deletestring-type-string-id-bool"><code>delete(string $type, string $id): bool</code><a class="headerlink" href="#deletestring-type-string-id-bool" title="Permanent link">&para;</a></h3>
+<p>Deletes a projection document by type and ID. The document will be unavailable on any subsequent query. A boolean return
+value indicates the document was actually deleted yes or no.</p>
 <h2 id="implementations">Implementations<a class="headerlink" href="#implementations" title="Permanent link">&para;</a></h2>
 <h3 id="msgphpdomaininfrastructureelasticsearchprojectionrepository"><code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository</code><a class="headerlink" href="#msgphpdomaininfrastructureelasticsearchprojectionrepository" title="Permanent link">&para;</a></h3>
 <p>An Elasticsearch tailored projection repository.</p>
@@ -938,7 +898,6 @@
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
 
 <span class="c1">// --- SETUP ---</span>
@@ -957,13 +916,11 @@
 <span class="c1">// --- USAGE ---</span>
 
 <span class="nv">$id</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$document</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$document</span> <span class="o">=</span> <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="s1">&#39;my_projection&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">===</span> <span class="nv">$projection</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$document</span> <span class="o">=</span> <span class="nx">ProjectionDocument</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$id</span><span class="p">,</span> <span class="p">[</span>
-        <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
-    <span class="p">]);</span>
-    <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$document</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">===</span> <span class="nv">$document</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$document</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span> <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value&#39;</span><span class="p">];</span>
+    <span class="nv">$repository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;my_projection&#39;</span><span class="p">,</span> <span class="nv">$document</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
                 

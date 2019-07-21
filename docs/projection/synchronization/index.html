@@ -511,18 +511,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../documents/" title="Documents" class="md-nav__link">
-      Documents
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../document-transformers/" title="Document Transformers" class="md-nav__link">
       Document Transformers
     </a>
@@ -594,8 +582,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#synchronize-iterable" title="synchronize(): iterable" class="md-nav__link">
-    synchronize(): iterable
+  <a href="#synchronize-int" title="synchronize(): int" class="md-nav__link">
+    synchronize(): int
   </a>
   
 </li>
@@ -653,18 +641,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/api-platform/" title="API Platform" class="md-nav__link">
-      API Platform
-    </a>
-  </li>
-
         
           
           
@@ -784,8 +760,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#synchronize-iterable" title="synchronize(): iterable" class="md-nav__link">
-    synchronize(): iterable
+  <a href="#synchronize-int" title="synchronize(): int" class="md-nav__link">
+    synchronize(): int
   </a>
   
 </li>
@@ -830,14 +806,13 @@
                 
                 <h1 id="projection-synchronization">Projection Synchronization<a class="headerlink" href="#projection-synchronization" title="Permanent link">&para;</a></h1>
 <p><code>MsgPhp\Domain\Projection\ProjectionSynchronization</code> is a utility domain service. Its purpose is to ease synchronizing
-<a href="../documents/">projection documents</a> from source objects.</p>
+projection documents from source objects.</p>
 <h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
-<h3 id="synchronize-iterable"><code>synchronize(): iterable</code><a class="headerlink" href="#synchronize-iterable" title="Permanent link">&para;</a></h3>
-<p>Yields all projection documents attempted to be synchronized. The actual document status can be read from <a href="https://msgphp.github.io/api/MsgPhp/Domain/Projection/ProjectionDocument.html#property_status"><code>ProjectionDocument::$status</code></a>.</p>
+<h3 id="synchronize-int"><code>synchronize(): int</code><a class="headerlink" href="#synchronize-int" title="Permanent link">&para;</a></h3>
+<p>Synchronizes all projections. Returns the no. of projections synchronized.</p>
 <h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocument</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentProvider</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionDocumentTransformer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\ProjectionRepository</span><span class="p">;</span>
@@ -872,19 +847,7 @@
 
 <span class="c1">// --- USAGE ---</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$synchronization</span><span class="o">-&gt;</span><span class="na">synchronize</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$document</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">ProjectionDocument</span><span class="o">::</span><span class="na">STATUS_SYNCHRONIZED</span> <span class="o">===</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">status</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;Synchronized projection for &#39;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; with ID &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="o">-&gt;</span><span class="na">id</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
-        <span class="k">continue</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">echo</span> <span class="s1">&#39;Invalid projection for &#39;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; with ID &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="o">-&gt;</span><span class="na">id</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="k">null</span> <span class="o">!==</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;An error occurred for &#39;</span><span class="o">.</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; with ID &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">source</span><span class="o">-&gt;</span><span class="na">id</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">error</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; in &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">error</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; at &#39;</span><span class="o">.</span><span class="nv">$document</span><span class="o">-&gt;</span><span class="na">error</span><span class="o">-&gt;</span><span class="na">getLine</span><span class="p">()</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="nv">$numProjections</span> <span class="o">=</span> <span class="nv">$synchronization</span><span class="o">-&gt;</span><span class="na">synchronize</span><span class="p">();</span>
 </pre></div>
 
 
@@ -928,13 +891,13 @@
           </a>
         
         
-          <a href="../../infrastructure/api-platform/" title="API Platform" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../infrastructure/doctrine-collections/" title="Doctrine Collections" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                API Platform
+                Doctrine Collections
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

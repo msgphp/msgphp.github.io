@@ -509,18 +509,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projection/documents/" title="Documents" class="md-nav__link">
-      Documents
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../projection/document-transformers/" title="Document Transformers" class="md-nav__link">
       Document Transformers
     </a>
@@ -588,18 +576,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../api-platform/" title="API Platform" class="md-nav__link">
-      API Platform
-    </a>
-  </li>
-
         
           
           
@@ -680,13 +656,6 @@
           <li class="md-nav__item">
   <a href="#basic-example" title="Basic Example" class="md-nav__link">
     Basic Example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-mapping-example" title="Advanced Mapping Example" class="md-nav__link">
-    Advanced Mapping Example
   </a>
   
 </li>
@@ -803,13 +772,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#advanced-mapping-example" title="Advanced Mapping Example" class="md-nav__link">
-    Advanced Mapping Example
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -863,10 +825,11 @@
 <p>An Elasticsearch tailored <a href="../../projection/type-registry/">projection type registry</a> is provided by <code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</code>.
 It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/ElasticsearchPHP_Endpoints.html#Elasticsearch_Client"><code>Client</code></a> and a known configuration of type information.</p>
 <ul>
-<li><code>__construct(Client $client, string $index, array $mappings, array $settings = [], LoggerInterface $logger = null)</code><ul>
+<li><code>__construct(Client $client, string $prefix, array $mappings, array $settings = [], LoggerInterface $logger = null)</code><ul>
 <li><code>$client</code>: The client to work with</li>
-<li><code>$index</code>: The index to use</li>
-<li><code>$mappings</code> / <code>$settings</code>: Index management information. <a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/_index_management_operations.html">Read more</a>.</li>
+<li><code>$prefix</code>: The index prefix</li>
+<li><code>$mappings</code>: Index mappings keyed by type</li>
+<li><code>$settings</code>: Index settings keyed by type (use <code>'*' =&gt; [...]</code> for default settings)</li>
 <li><code>$logger</code>: An optional <a href="https://www.php-fig.org/psr/psr-3/">PSR logger</a></li>
 </ul>
 </li>
@@ -897,8 +860,8 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 
 <span class="sd">/** @var Client $client */</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionTypeRegistry</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;some_index&#39;</span><span class="p">,</span> <span class="p">[</span>
-    <span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionTypeRegistry</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;app_dev-&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;my_projection&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span> <span class="c1">// defaults to [&#39;type&#39; =&gt; &#39;some_type&#39;]</span>
         <span class="s1">&#39;other_field&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="c1">// defaults to [&#39;type&#39; =&gt; &#39;text&#39;, ...]</span>
             <span class="c1">// ...</span>
@@ -908,51 +871,13 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 </pre></div>
 
 
-<h3 id="advanced-mapping-example">Advanced Mapping Example<a class="headerlink" href="#advanced-mapping-example" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">use</span> <span class="nx">Elasticsearch\Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\DocumentMappingProvider</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionTypeRegistry</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">MsgPhp\Domain\Projection\Projection</span><span class="p">;</span>
-
-<span class="c1">// --- SETUP ---</span>
-
-<span class="k">class</span> <span class="nc">MyProjection</span> <span class="k">implements</span> <span class="nx">Projection</span><span class="p">,</span> <span class="nx">DocumentMappingProvider</span>
-<span class="p">{</span>
-    <span class="c1">// ...</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">fromDocument</span><span class="p">(</span><span class="k">array</span> <span class="nv">$document</span><span class="p">)</span><span class="o">:</span> <span class="nx">Projection</span>
-    <span class="p">{</span>
-        <span class="c1">// ...</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">provideDocumentMappings</span><span class="p">()</span><span class="o">:</span> <span class="nx">iterable</span>
-    <span class="p">{</span>
-        <span class="k">yield</span> <span class="k">static</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;some_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;some_type&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;other_field&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="c1">// ...</span>
-            <span class="p">],</span>
-        <span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="sd">/** @var Client $client */</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$typeRegistry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionTypeRegistry</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;some_index&#39;</span><span class="p">,</span> <span class="p">[</span>
-    <span class="nx">MyProjection</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
-<span class="p">]);</span>
-</pre></div>
-
-
 <h2 id="projection-repository">Projection Repository<a class="headerlink" href="#projection-repository" title="Permanent link">&para;</a></h2>
 <p>An Elasticsearch tailored <a href="../../projection/repositories/">projection repository</a> is provided by <code>MsgPhp\Domain\Infrastructure\Elasticsearch\ProjectionRepository</code>.
 It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/ElasticsearchPHP_Endpoints.html#Elasticsearch_Client"><code>Client</code></a>.</p>
 <ul>
-<li><code>__construct(Client $client, string $index)</code><ul>
+<li><code>__construct(Client $client, string $prefix)</code><ul>
 <li><code>$client</code>: The Client to work with</li>
-<li><code>$index</code>: The index to use</li>
+<li><code>$prefix</code>: The index prefix</li>
 </ul>
 </li>
 </ul>
@@ -966,7 +891,7 @@ It works directly with any <a href="https://www.elastic.co/guide/en/elasticsearc
 
 <span class="sd">/** @var Client $client */</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="o">...</span><span class="p">;</span>
-<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionRepository</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;some_index&#39;</span><span class="p">);</span>
+<span class="nv">$repository</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ProjectionRepository</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="s1">&#39;app_dev-&#39;</span><span class="p">);</span>
 </pre></div>
                 
                   
